@@ -1,0 +1,144 @@
+{
+  "hero": {
+    "badge": "Dostepny do wspolpracy",
+    "headline": "Tworzenie Stron Internetowych, Ktore Sprzedaja",
+    "subheadline": "Programista Full Stack | Specjalista React & Next.js",
+    "description": "Tworze nowoczesne, wydajne strony internetowe i aplikacje webowe, ktore pomagaja firmom sie rozwijac. Od tworzenia stron www po sklepy internetowe i pozycjonowanie SEO - dostarczam rezultaty, ktore maja znaczenie.",
+    "ctaPrimary": "Bezplatna Wycena",
+    "ctaSecondary": "Zobacz Portfolio"
+  },
+  "about": {
+    "headline": "Czesc, jestem Max Mendes",
+    "subheadline": "Programista Full Stack z Czestochowy",
+    "description": "Specjalizuje sie w React, Next.js, Node.js i TypeScript. Pomagam firmom budowac silna obecnosc online. Niezaleznie czy potrzebujesz strony internetowej, sklepu online czy pozycjonowania SEO - dostarczam rozwiazania, ktore przynosza rezultaty.",
+    "description2": "Wspolpracuje z klientami z Polski i calej Europy, oferujac profesjonalne uslugi tworzenia stron z jasna komunikacja i terminowa realizacja.",
+    "skills": ["React", "Next.js", "Node.js", "TypeScript", "PostgreSQL", "MongoDB", "Tailwind CSS", "Figma", "SEO"]
+  },
+  "services": {
+    "title": "Uslugi",
+    "subtitle": "Co Moge Dla Ciebie Zrobic",
+    "webDevelopment": {
+      "title": "Tworzenie Stron Internetowych",
+      "description": "Profesjonalne tworzenie stron i aplikacji webowych w React, Next.js i Node.js. Od prostych landing page po zlozone platformy - tworze skalowalne, wydajne rozwiazania dopasowane do potrzeb Twojego biznesu.",
+      "features": [
+        "Aplikacje React i Next.js",
+        "Backend w Node.js",
+        "API REST i GraphQL",
+        "Projektowanie baz danych",
+        "Wdrozenia w chmurze",
+        "Optymalizacja wydajnosci"
+      ]
+    },
+    "webDesign": {
+      "title": "Projektowanie Stron WWW & UI/UX",
+      "description": "Nowoczesny, responsywny design stron skoncentrowany na doswiadczeniu uzytkownika i konwersji. Tworze piekne interfejsy, ktore nie tylko swietnie wygladaja, ale tez zamieniaja odwiedzajacych w klientow.",
+      "features": [
+        "Projektowanie UI/UX",
+        "Responsywny Design",
+        "Prototypowanie w Figma",
+        "Systemy Designu",
+        "Podejscie Mobile-First",
+        "Optymalizacja Konwersji"
+      ]
+    },
+    "seo": {
+      "title": "Pozycjonowanie SEO",
+      "description": "SEO techniczne, optymalizacja on-page i poprawa wydajnosci dla lepszych pozycji w Google. Zostan znaleziony przez klientow aktywnie szukajacych Twoich uslug.",
+      "features": [
+        "Audyt Techniczny SEO",
+        "Optymalizacja On-Page",
+        "Optymalizacja Core Web Vitals",
+        "Znaczniki Schema (JSON-LD)",
+        "Lokalne SEO (Google Moja Firma)",
+        "Badanie Slow Kluczowych i Strategia"
+      ]
+    },
+    "ecommerce": {
+      "title": "Sklepy Internetowe & E-commerce",
+      "description": "Profesjonalne rozwiazania e-commerce z integracja platnosci, zarzadzaniem magazynem i optymalizacja konwersji. Uruchom swoj sklep online i zacznij sprzedawac klientom na calym swiecie.",
+      "features": [
+        "Dedykowane Rozwiazania E-commerce",
+        "Integracja Platnosci (Stripe, PayPal)",
+        "Systemy Zarzadzania Magazynem",
+        "Optymalizacja Koszyka",
+        "Wsparcie Wielowalutowe i Wielojezyczne",
+        "Zarzadzanie Zamowieniami i Analityka"
+      ]
+    }
+  },
+  "process": {
+    "title": "Jak Pracuje",
+    "subtitle": "Moj Proces",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Odkrycie i Strategia",
+        "description": "Zaczynamy od zrozumienia Twoich celow biznesowych, grupy docelowej i wymagan. Analizuje konkurencje i tworze strategiczny plan dla Twojego projektu."
+      },
+      {
+        "number": "02",
+        "title": "Projektowanie i Budowa",
+        "description": "Projektuje i tworze Twoja strone lub aplikacje wykorzystujac nowoczesne technologie. Widzisz postepy na biezaco i mozesz dawac feedback na kazdym etapie."
+      },
+      {
+        "number": "03",
+        "title": "Uruchomienie i Optymalizacja",
+        "description": "Po dokladnych testach uruchamiamy Twoj projekt. Zapewniam biezace wsparcie, pozycjonowanie SEO i monitoring wydajnosci dla ciaglego sukcesu."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Czesto Zadawane Pytania",
+    "items": [
+      {
+        "question": "Ile kosztuje strona internetowa?",
+        "answer": "Koszty strony zaleza od zlozonosci. Prosty landing page zaczyna sie od 2000 PLN, a zaawansowane aplikacje webowe od 8000-40000 PLN. Skontaktuj sie po bezplatna wycene."
+      },
+      {
+        "question": "Jak dlugo trwa tworzenie strony?",
+        "answer": "Prosta strona zajmuje 1-2 tygodnie, zlozone aplikacje 4-8 tygodni. Podaje realistyczne terminy na poczatku i informuje o postepach."
+      },
+      {
+        "question": "Czy pracujesz z klientami spoza Polski?",
+        "answer": "Tak! Wspolpracuje z klientami z Polski, UK, USA, Niemiec i calej Europy. Plynnie mowie po angielsku i polsku."
+      },
+      {
+        "question": "Jakich technologii uzywasz?",
+        "answer": "Specjalizuje sie w React, Next.js, Node.js, TypeScript i Tailwind CSS. Do baz danych uzywam PostgreSQL i MongoDB."
+      },
+      {
+        "question": "Czy oferujesz uslugi SEO?",
+        "answer": "Tak, wszystkie moje strony sa budowane z najlepszymi praktykami SEO. Oferuje tez dedykowane uslugi pozycjonowania."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Zbudujmy razem cos niesamowitego",
+    "cta": "Skontaktuj sie",
+    "contact": {
+      "email": "maxmendesnoah1991@gmail.com",
+      "phone": "+48 502 742 941",
+      "location": "Czestochowa, Polska"
+    },
+    "links": {
+      "services": "Uslugi",
+      "portfolio": "Portfolio",
+      "about": "O mnie",
+      "contact": "Kontakt"
+    },
+    "copyright": "2024 Max Mendes. Wszelkie prawa zastrzezone."
+  },
+  "nav": {
+    "home": "Strona glowna",
+    "services": "Uslugi",
+    "portfolio": "Portfolio",
+    "about": "O mnie",
+    "contact": "Kontakt"
+  },
+  "common": {
+    "learnMore": "Dowiedz sie wiecej",
+    "getStarted": "Rozpocznij",
+    "viewAll": "Zobacz wszystko",
+    "readMore": "Czytaj wiecej"
+  }
+}

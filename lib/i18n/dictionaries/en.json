@@ -1,0 +1,144 @@
+{
+  "hero": {
+    "badge": "Available for Hire",
+    "headline": "Web Development That Converts",
+    "subheadline": "Full Stack Developer | React & Next.js Specialist",
+    "description": "I create modern, high-performance websites and web applications that help businesses grow. From custom web development to e-commerce solutions and SEO optimization - I deliver results that matter.",
+    "ctaPrimary": "Get Free Quote",
+    "ctaSecondary": "View Portfolio"
+  },
+  "about": {
+    "headline": "Hi, I'm Max Mendes",
+    "subheadline": "Full Stack Web Developer based in Czestochowa, Poland",
+    "description": "With expertise in React, Next.js, Node.js, and TypeScript, I help businesses establish a powerful online presence. Whether you need a custom website, e-commerce store, or SEO optimization - I deliver solutions that drive results.",
+    "description2": "I work with clients from Poland, UK, US, and across Europe, offering professional web development services with clear communication and reliable delivery.",
+    "skills": ["React", "Next.js", "Node.js", "TypeScript", "PostgreSQL", "MongoDB", "Tailwind CSS", "Figma", "SEO"]
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "What I Can Do For You",
+    "webDevelopment": {
+      "title": "Full Stack Web Development",
+      "description": "Custom web applications built with React, Next.js, and Node.js. From simple landing pages to complex web platforms - I create scalable, performant solutions tailored to your business needs.",
+      "features": [
+        "React & Next.js Applications",
+        "Node.js Backend Development",
+        "REST & GraphQL APIs",
+        "Database Design & Implementation",
+        "Cloud Deployment (AWS, Vercel, Railway)",
+        "Performance Optimization"
+      ]
+    },
+    "webDesign": {
+      "title": "Web Design & UI/UX",
+      "description": "Modern, responsive web design focused on user experience and conversion. I create beautiful interfaces that not only look great but also convert visitors into customers.",
+      "features": [
+        "UI/UX Design",
+        "Responsive Web Design",
+        "Figma Prototyping",
+        "Design Systems",
+        "Mobile-First Approach",
+        "Conversion Rate Optimization"
+      ]
+    },
+    "seo": {
+      "title": "SEO Optimization",
+      "description": "Technical SEO, on-page optimization, and performance improvements to boost your search rankings. Get found by customers actively searching for your services on Google.",
+      "features": [
+        "Technical SEO Audit",
+        "On-Page Optimization",
+        "Core Web Vitals Optimization",
+        "Schema Markup (JSON-LD)",
+        "Local SEO (Google My Business)",
+        "Keyword Research & Strategy"
+      ]
+    },
+    "ecommerce": {
+      "title": "E-commerce & Online Stores",
+      "description": "Professional e-commerce solutions with payment integration, inventory management, and conversion optimization. Launch your online store and start selling to customers worldwide.",
+      "features": [
+        "Custom E-commerce Development",
+        "Payment Gateway Integration (Stripe, PayPal)",
+        "Inventory Management Systems",
+        "Shopping Cart Optimization",
+        "Multi-currency & Multi-language Support",
+        "Order Management & Analytics"
+      ]
+    }
+  },
+  "process": {
+    "title": "How I Work",
+    "subtitle": "My Process",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Discovery & Strategy",
+        "description": "We start by understanding your business goals, target audience, and requirements. I analyze your competition and create a strategic plan for your project."
+      },
+      {
+        "number": "02",
+        "title": "Design & Build",
+        "description": "I design and develop your website or application using modern technologies. You'll see progress throughout and can provide feedback at every stage."
+      },
+      {
+        "number": "03",
+        "title": "Launch & Optimize",
+        "description": "After thorough testing, we launch your project. I provide ongoing support, SEO optimization, and performance monitoring to ensure continued success."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "How much does a website cost?",
+        "answer": "Website costs vary based on complexity. A simple landing page starts from $500, while custom web applications can range from $2,000-$10,000+. Contact me for a free, detailed quote."
+      },
+      {
+        "question": "How long does it take to build a website?",
+        "answer": "A simple website takes 1-2 weeks, while complex applications can take 4-8 weeks. I provide realistic timelines upfront and keep you updated throughout the process."
+      },
+      {
+        "question": "Do you work with international clients?",
+        "answer": "Yes! I work with clients from Poland, UK, US, Germany, and across Europe. I'm fluent in English and Polish, and I'm available for calls in multiple timezones."
+      },
+      {
+        "question": "What technologies do you use?",
+        "answer": "I specialize in React, Next.js, Node.js, TypeScript, and modern CSS frameworks like Tailwind. For databases, I use PostgreSQL and MongoDB depending on project needs."
+      },
+      {
+        "question": "Do you offer SEO services?",
+        "answer": "Yes, all my websites are built with SEO best practices. I also offer dedicated SEO optimization services including technical audits, on-page optimization, and local SEO."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Let's build something amazing together",
+    "cta": "Get in Touch",
+    "contact": {
+      "email": "maxmendesnoah1991@gmail.com",
+      "phone": "+48 502 742 941",
+      "location": "Czestochowa, Poland"
+    },
+    "links": {
+      "services": "Services",
+      "portfolio": "Portfolio",
+      "about": "About",
+      "contact": "Contact"
+    },
+    "copyright": "2024 Max Mendes. All rights reserved."
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "viewAll": "View All",
+    "readMore": "Read More"
+  }
+}
