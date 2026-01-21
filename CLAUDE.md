@@ -5,6 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 > **IMPORTANT:** For i18n architecture, see [.claude/ARCHITECTURE.md](.claude/ARCHITECTURE.md)
 > For project roadmap, see [.claude/ROADMAP.md](.claude/ROADMAP.md)
 > For SEO management, see [.claude/skills/seo.md](.claude/skills/seo.md)
+> **For design system & UI components, see [.claude/DESIGN_SYSTEM.md](.claude/DESIGN_SYSTEM.md)**
 
 ## Project Overview
 
@@ -49,37 +50,43 @@ pnpm run lint        # Run ESLint
 
 ## Color System (MANDATORY)
 
-**Dark theme portfolio.** Use consistent color tokens.
+**Dark theme portfolio.** Use semantic color tokens defined in the design system.
 
-### Core Colors
+> **Full details:** See [.claude/DESIGN_SYSTEM.md](.claude/DESIGN_SYSTEM.md)
+
+### Semantic Tokens (Preferred)
 
 | Purpose | Tailwind Class | Value |
 |---------|---------------|-------|
-| Background | `bg-[#050505]` | `#050505` |
-| Background alt | `bg-black` | `#000000` |
-| Primary text | `text-white` | `#FFFFFF` |
-| Secondary text | `text-zinc-400` | zinc-400 |
-| Muted text | `text-zinc-500` | zinc-500 |
-| Subtle text | `text-zinc-600` | zinc-600 |
-| Borders | `border-white/10` | white 10% opacity |
-| Borders subtle | `border-white/5` | white 5% opacity |
+| Background | `bg-background` | `#050505` |
+| Surface | `bg-surface` | `#080808` |
+| Primary text | `text-text-primary` | `#FFFFFF` |
+| Secondary text | `text-text-secondary` | `#a1a1aa` |
+| Muted text | `text-text-muted` | `#71717a` |
+| Borders | `border-border` | `white/10` |
+| Borders subtle | `border-border-subtle` | `white/5` |
 
 ### Examples
 
 ```tsx
-// ✅ DO: Use consistent color system
-<div className="bg-[#050505] text-white">
-<p className="text-zinc-400">
-<div className="border border-white/10">
+// ✅ DO: Use semantic tokens
+<div className="bg-surface text-text-primary">
+<p className="text-text-secondary">
+<div className="border border-border">
 
-// ❌ DON'T: Use random grays
-<div className="bg-gray-900">
-<p className="text-gray-400">
+// ❌ DON'T: Use hardcoded values
+<div className="bg-[#080808] text-white">
+<p className="text-zinc-400">
 ```
 
-### Opacity Variants
+### UI Components
 
-Use Tailwind opacity syntax: `bg-white/5`, `border-white/10`, `text-zinc-500/60`
+Import from `@/components/ui`:
+
+```tsx
+import { Display, Text, Card, Button, Badge } from '@/components/ui';
+import { cn } from '@/lib/utils';
+```
 
 ---
 
@@ -465,6 +472,12 @@ Before commit:
 **Architecture & Planning:**
 - [.claude/ARCHITECTURE.md](.claude/ARCHITECTURE.md) - **i18n with localized URLs (MUST READ)**
 - [.claude/ROADMAP.md](.claude/ROADMAP.md) - Project phases and progress
+
+**Design System:**
+- [.claude/DESIGN_SYSTEM.md](.claude/DESIGN_SYSTEM.md) - **UI components, tokens, patterns (MUST READ)**
+- [components/ui/](components/ui/) - Reusable UI components (Button, Card, Badge, Typography, Icon)
+- [tailwind.config.ts](tailwind.config.ts) - Design tokens (colors, spacing, typography, shadows)
+- [lib/utils.ts](lib/utils.ts) - `cn()` utility for class merging
 
 **SEO:**
 - [.claude/skills/seo.md](.claude/skills/seo.md) - SEO management skill with keyword rules
