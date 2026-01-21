@@ -2,25 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================
+   CSS CUSTOM PROPERTIES (Design Tokens)
+   Use these for values not easily expressed in Tailwind
+   ============================================ */
 :root {
-  --background: #050505;
-  --foreground: #ffffff;
+  /* Core colors */
+  --color-background: #050505;
+  --color-background-alt: #000000;
+  --color-background-elevated: #080808;
+  --color-surface: #080808;
+  --color-foreground: #ffffff;
+
+  /* Text hierarchy */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #71717a;
+  --color-text-subtle: #52525b;
+
+  /* Borders */
+  --color-border: rgba(255, 255, 255, 0.10);
+  --color-border-subtle: rgba(255, 255, 255, 0.05);
+  --color-border-hover: rgba(255, 255, 255, 0.20);
+
+  /* Transitions */
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-snappy: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Durations */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --duration-slower: 800ms;
+
+  /* Shadows */
+  --shadow-glow-sm: 0 0 10px rgba(255, 255, 255, 0.3);
+  --shadow-glow-md: 0 0 20px rgba(255, 255, 255, 0.4);
+  --shadow-glow-lg: 0 0 40px rgba(255, 255, 255, 0.5);
+
+  /* Z-index scale */
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
 }
 
+/* ============================================
+   BASE STYLES
+   ============================================ */
 body {
   font-family: var(--font-outfit), sans-serif;
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom Scrollbar */
+/* ============================================
+   CUSTOM SCROLLBAR
+   ============================================ */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: var(--color-background);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -32,7 +83,150 @@ body {
   background: #333;
 }
 
-/* Marquee Animation */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #222 var(--color-background);
+}
+
+/* ============================================
+   FOCUS STYLES
+   Accessible focus indicators
+   ============================================ */
+:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* Remove focus outline for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ============================================
+   SELECTION STYLES
+   ============================================ */
+::selection {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   Custom utilities not in Tailwind
+   ============================================ */
+@layer utilities {
+  /* Text gradient */
+  .text-gradient {
+    background: linear-gradient(to right, #ffffff, #a1a1aa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glass effect */
+  .glass {
+    background: rgba(8, 8, 8, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .glass-subtle {
+    background: rgba(8, 8, 8, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  /* Hide scrollbar but allow scroll */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Smooth scroll container */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+
+  /* Animation utilities */
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  /* Hover lift effect */
+  .hover-lift {
+    transition: transform var(--duration-normal) var(--ease-smooth);
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Border glow on hover */
+  .border-glow-hover {
+    transition: box-shadow var(--duration-normal) var(--ease-smooth),
+                border-color var(--duration-normal) var(--ease-smooth);
+  }
+  .border-glow-hover:hover {
+    border-color: var(--color-border-hover);
+    box-shadow: var(--shadow-glow-sm);
+  }
+}
+
+/* ============================================
+   COMPONENT LAYER
+   Base component styles
+   ============================================ */
+@layer components {
+  /* Container */
+  .container-base {
+    @apply w-full mx-auto px-container-x md:px-container-x-md lg:px-container-x-lg max-w-container-xl;
+  }
+
+  /* Section */
+  .section-base {
+    @apply relative overflow-hidden;
+  }
+
+  /* Card base */
+  .card-base {
+    @apply bg-surface border border-border rounded-2xl transition-all duration-normal;
+  }
+
+  .card-interactive {
+    @apply card-base hover:border-border-hover hover:bg-surface-hover;
+  }
+
+  /* Link base */
+  .link-base {
+    @apply text-text-secondary hover:text-text-primary transition-colors duration-fast;
+  }
+
+  /* Input base */
+  .input-base {
+    @apply w-full bg-surface border border-border rounded-lg px-4 py-3
+           text-text-primary placeholder:text-text-muted
+           focus:border-border-hover focus:outline-none
+           transition-colors duration-fast;
+  }
+}
+
+/* ============================================
+   KEYFRAME ANIMATIONS
+   (Extended from Tailwind config)
+   ============================================ */
 @keyframes marquee {
   0% {
     transform: translateX(0);
@@ -44,4 +238,24 @@ body {
 
 .animate-marquee {
   animation: marquee 30s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
 }
