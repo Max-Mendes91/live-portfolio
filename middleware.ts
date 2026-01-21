@@ -13,17 +13,22 @@ const IGNORED_PATHS = [
 ];
 
 // Legacy path mappings (old paths -> new locale-prefixed paths)
-// English paths get /en prefix, Polish paths keep their structure under /pl
+// Redirects for backwards compatibility and SEO
 const LEGACY_REDIRECTS: Record<string, string> = {
+  // English legacy paths (root level -> /en/)
   '/contact': '/en/contact',
   '/projects': '/en/projects',
   '/services': '/en/services',
-  // Service pages
   '/services/web-development': '/en/services/web-development',
   '/services/web-design': '/en/services/web-design',
-  '/services/seo-optimization': '/en/services/seo-optimization',
+  '/services/seo-optimization': '/en/services/seo',
   '/services/seo': '/en/services/seo',
   '/services/ecommerce': '/en/services/ecommerce',
+  // Redirect English slugs under /pl/ to Polish canonical URLs
+  '/pl/about': '/pl/o-mnie',
+  '/pl/services': '/pl/uslugi',
+  '/pl/projects': '/pl/projekty',
+  '/pl/contact': '/pl/kontakt',
 };
 
 function getPreferredLocale(request: NextRequest): string {
@@ -61,6 +66,13 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
+  // Handle legacy redirects FIRST (301 for SEO)
+  // This includes both root-level paths and locale-prefixed redirects
+  if (LEGACY_REDIRECTS[pathname]) {
+    const newUrl = new URL(LEGACY_REDIRECTS[pathname], request.url);
+    return NextResponse.redirect(newUrl, 301);
+  }
+
   // Check if pathname starts with a valid locale
   const pathnameHasLocale = i18nConfig.locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
@@ -68,12 +80,6 @@ export function middleware(request: NextRequest) {
 
   if (pathnameHasLocale) {
     return NextResponse.next();
-  }
-
-  // Handle legacy redirects (301 for SEO)
-  if (LEGACY_REDIRECTS[pathname]) {
-    const newUrl = new URL(LEGACY_REDIRECTS[pathname], request.url);
-    return NextResponse.redirect(newUrl, 301);
   }
 
   // Handle legacy service paths with dynamic slugs

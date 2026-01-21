@@ -53,22 +53,176 @@ PL: Programista Czestochowa i okolice. Tworzenie stron internetowych React, Next
 - Include phone number for direct action
 - Add location ("i okolice" = "and surrounding areas")
 
-### 3. Keyword Rotation (Avoid Stuffing)
-Use synonyms to avoid repeating the same keyword:
+### 3. Heading Hierarchy (H1-H6) Rules
+
+**Structure:**
+```
+H1 - One per page, contains primary keyword
+└── H2 - Main sections (2-6 per page)
+    └── H3 - Subsections within H2
+        └── H4-H6 - Rarely needed, deep nesting
+```
+
+**Rules:**
+- **ONE H1 per page** - Never multiple H1s
+- **H1 must contain primary keyword** - Naturally, not forced
+- **Never skip levels** - Don't go H1 → H3 (must have H2 between)
+- **H2s are your main sections** - Services, About, FAQ, etc.
+- **H3s support H2s** - Individual service items, FAQ questions
+
+**Example - Homepage:**
+```html
+<h1>Web Developer Poland | Max Mendes</h1>           <!-- Primary keyword -->
+  <h2>Services</h2>                                   <!-- Section -->
+    <h3>Full Stack Development</h3>                   <!-- Service item -->
+    <h3>E-Commerce Solutions</h3>
+  <h2>About Me</h2>
+  <h2>Frequently Asked Questions</h2>
+    <h3>How much does a website cost?</h3>            <!-- FAQ item -->
+```
+
+**Example - Service Page:**
+```html
+<h1>Web Development Services in Poland</h1>
+  <h2>What I Offer</h2>
+    <h3>React & Next.js Applications</h3>
+    <h3>E-Commerce Stores</h3>
+  <h2>My Process</h2>
+  <h2>Pricing</h2>
+```
+
+---
+
+### 4. Keyword Stuffing Rules (AVOID)
+
+**What is stuffing?**
+Repeating the same keyword unnaturally. Google penalizes this.
+
+**Bad Example (stuffed):**
+```
+Web developer Częstochowa. I'm a web developer in Częstochowa.
+Looking for a web developer? This Częstochowa web developer...
+```
+
+**Good Example (natural with synonyms):**
+```
+Web developer based in Częstochowa. I'm a programmer specializing
+in modern websites. Looking for a developer? I create custom
+web solutions for businesses in Poland and beyond.
+```
+
+**Keyword Density Rule:**
+- Primary keyword: **1-2%** of content (1-2 times per 100 words)
+- Use **synonyms and variations** to reach 3-4% total keyword coverage
+
+**Rotation Table:**
 
 | Instead of repeating | Rotate with |
 |---------------------|-------------|
-| web developer | programista, twórca stron, developer |
-| strony internetowe | strony www, witryny, serwisy www |
-| tworzenie | budowa, projektowanie, wykonanie |
+| web developer | programista, twórca stron, developer, programmer |
+| strony internetowe | strony www, witryny, serwisy www, witryny internetowe |
+| tworzenie | budowa, projektowanie, wykonanie, realizacja |
+| Częstochowa | miasto, region, Śląskie, okolice |
 
-### 4. Footer SEO Pattern
-Include location keywords in footer:
+**Per-Section Limits:**
+- Hero: Primary keyword 1x in H1, 1x in description
+- About: 1-2 keyword mentions
+- Services: Keyword in section title, then use variations
+- FAQ: Use keyword in 1-2 questions naturally
+- Footer: Can list location keywords (this is acceptable)
+
+---
+
+### 5. Internal Linking (Deep Links) Rules
+
+**Why internal links matter:**
+- Passes SEO authority between pages
+- Helps Google discover all pages
+- Improves user navigation
+- Reduces bounce rate
+
+**Rules:**
+
+1. **Every page should link to 2-5 other internal pages**
+2. **Use descriptive anchor text** (not "click here")
+3. **Link to relevant content** (services → related projects)
+4. **Footer links don't count** - Need contextual links in content
+
+**Good Anchor Text:**
+```html
+<!-- ✅ DO: Descriptive anchor text -->
+<a href="/en/services">web development services</a>
+<a href="/pl/uslugi">usługi tworzenia stron</a>
+
+<!-- ❌ DON'T: Generic anchor text -->
+<a href="/en/services">click here</a>
+<a href="/en/services">learn more</a>
+```
+
+**Link Structure:**
+```
+Homepage
+├── links to → Services, Projects, About, Contact
+│
+Services Page
+├── links to → Individual service pages
+├── links to → Related projects
+├── links to → Contact (CTA)
+│
+Project Page
+├── links to → Related services used
+├── links to → Similar projects
+├── links to → Contact (CTA)
+```
+
+**Implementation Locations:**
+- **Hero**: CTA buttons → Services, Contact
+- **About**: "View my work" → Projects
+- **Services**: Each service → Service detail page
+- **Projects**: "Built with" → Related service
+- **FAQ**: Answers can link to relevant pages
+- **Footer**: Navigation links (these are standard, not deep links)
+
+**Deep Link Examples:**
+```tsx
+// In About section
+<p>
+  I specialize in <Link href="/en/services/web-development">
+  custom web development</Link> and
+  <Link href="/en/services/ecommerce">e-commerce solutions</Link>.
+</p>
+
+// In FAQ answer
+<p>
+  Yes, I offer <Link href="/en/services/seo">SEO optimization</Link>
+  as part of my services.
+</p>
+
+// In Project card
+<p>
+  Built with <Link href="/en/services/web-development">Next.js</Link>
+</p>
+```
+
+---
+
+### 6. Footer SEO Pattern
+
+Include location keywords in footer (this is acceptable, not stuffing):
+
 ```
 Web Developer Czestochowa · Programista Krakow · Tworzenie Stron Warszawa · React Developer Poland
 ```
 
-### 5. Trust Signals Data
+**Why footer keywords are OK:**
+- Users expect location info in footer
+- Google understands footer patterns
+- Helps with local SEO for multiple cities
+
+---
+
+### 7. Trust Signals Data
+
 Available in `lib/seo/config.ts`:
 - `TRUST_SIGNALS` - experience badges (2+ years, UK/US timezone, Fluent English)
 - `USP_BADGES` - unique selling points (Full-Stack, Remote-First, etc.)
@@ -399,22 +553,26 @@ Update sitemap entries.
 - [ ] Geo meta tags set
 
 ### On-Page SEO
-- [ ] H1 contains primary keyword
-- [ ] H2-H6 hierarchy correct
+- [ ] H1 contains primary keyword (ONE per page)
+- [ ] H2-H6 hierarchy correct (never skip levels)
+- [ ] No multiple H1s on same page
 - [ ] Keywords in first 100 words
-- [ ] Alt tags on all images
-- [ ] Internal links present
-- [ ] External links to authority sites
+- [ ] Alt tags on all images (with keywords where natural)
+- [ ] Internal/deep links present (2-5 per page)
+- [ ] Descriptive anchor text (not "click here")
+- [ ] External links to authority sites (1-2 per page)
 - [ ] Mobile-friendly design
 - [ ] Fast page load (< 3s)
 
 ### Content SEO
 - [ ] Unique content on each page
-- [ ] Keywords used naturally (no stuffing)
-- [ ] Synonyms and variations included
+- [ ] Keywords used naturally (1-2% density max)
+- [ ] Synonyms and variations included (rotate keywords)
+- [ ] No keyword stuffing (use rotation table)
 - [ ] FAQ section with rich content
 - [ ] Call-to-actions present
 - [ ] Contact information visible
+- [ ] Deep links to related content in body text
 
 ### Local SEO
 - [x] NAP (Name, Address, Phone) consistent (via SITE_CONFIG)

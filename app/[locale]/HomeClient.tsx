@@ -74,7 +74,7 @@ export default function HomeClient({ locale, dictionary }: HomeClientProps) {
               transition={{ duration: 0.8 }}
               className="w-full h-full"
             >
-              <AboutMe />
+              <AboutMe locale={locale} dictionary={dictionary.about} />
             </motion.div>
           </motion.div>
         )}
@@ -90,7 +90,7 @@ export default function HomeClient({ locale, dictionary }: HomeClientProps) {
         className="relative z-10 bg-[#050505] shadow-[0_50px_100px_rgba(0,0,0,0.5)]"
       >
         <Hero locale={locale} dictionary={dictionary.hero} />
-        <AboutMe />
+        <AboutMe locale={locale} dictionary={dictionary.about} />
         <WorkGrid />
         <ServiceSection />
         <ProcessSection />

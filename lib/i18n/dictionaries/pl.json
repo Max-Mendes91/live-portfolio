@@ -11,11 +11,11 @@
     "toSeeProjects": "aby zobaczyć projekty"
   },
   "about": {
-    "headline": "Cześć, jestem Max Mendes",
-    "subheadline": "Programista Full-Stack z Częstochowy, woj. śląskie",
-    "description": "Specjalizuję się w React, Next.js, Node.js i TypeScript. Pomagam firmom z Częstochowy, Katowic, Krakowa, Warszawy i całej Polski budować silną obecność online. Niezależnie czy potrzebujesz strony internetowej, sklepu online czy pozycjonowania SEO — dostarczam rozwiązania, które przynoszą rezultaty.",
-    "description2": "Współpracuję z klientami z całej Polski i Europy, oferując profesjonalne usługi tworzenia stron z jasną komunikacją i terminową realizacją. Siedziba w Częstochowie, obsługuję klientów zdalnie w całym kraju.",
-    "skills": ["React", "Next.js", "Node.js", "TypeScript", "PostgreSQL", "MongoDB", "Tailwind CSS", "Figma", "SEO"]
+    "headline": "Dlaczego Warto Ze Mną Pracować?",
+    "subheadline": "Nie buduję stron na WordPressie. Piszę prawdziwy kod w React i Next.js—to oznacza szybsze strony, lepsze SEO i możliwość rozwoju bez wymuszania migracji za rok czy dwa.",
+    "description": "Pracujesz bezpośrednio ze mną, nie z agencją gdzie projekt przechodzi przez kilka osób. Jeden developer. Pełna odpowiedzialność. Najpierw rozumiem problem biznesowy i analizuję konkurencję. Potem planuję strukturę. Dopiero wtedy piszę kod. Efekt: aplikacje i strony, które rozwiązują realne problemy i można je rozwijać.",
+    "description2": "Zbudowałem wszystko—od landing page'y po platformę SaaS (FlowMate) z autoryzacją, płatnościami i dashboardami (300+ godzin). Obsługuję firmy w Częstochowie, na Śląsku i w całej Polsce.",
+    "skills": ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS", "Figma", "SEO", "E-Commerce", "SaaS"]
   },
   "services": {
     "title": "Uslugi",
@@ -132,19 +132,19 @@
       "location": "Częstochowa, woj. śląskie, Polska"
     },
     "links": {
-      "services": "Usługi",
-      "portfolio": "Portfolio",
       "about": "O mnie",
+      "services": "Usługi",
+      "projects": "Projekty",
       "contact": "Kontakt"
     },
     "copyright": "2024 Max Mendes. Wszelkie prawa zastrzeżone.",
     "seoText": "Programista z Częstochowy · Tworzenie stron internetowych Śląskie · Obsługuję klientów: Katowice, Kraków, Warszawa, Wrocław i cała Polska"
   },
   "nav": {
-    "home": "Strona glowna",
-    "services": "Uslugi",
-    "portfolio": "Portfolio",
+    "home": "Strona główna",
     "about": "O mnie",
+    "services": "Usługi",
+    "projects": "Projekty",
     "contact": "Kontakt"
   },
   "common": {
@@ -190,16 +190,75 @@
   "projects": {
     "badge": "Portfolio",
     "title": "Wybrane Projekty",
-    "subtitle": "Kolekcja projektow web development i designu, nad ktorymi pracowalem. Kazdy projekt to unikalne wyzwanie i rozwiazanie.",
+    "subtitle": "Kolekcja projektów web development i designu, nad którymi pracowałem. Każdy projekt to unikalne wyzwanie i rozwiązanie.",
+    "categories": {
+      "all": "Wszystkie Projekty",
+      "websites": "Strony WWW",
+      "ecommerce": "E-Commerce",
+      "webApps": "Aplikacje Webowe"
+    },
     "cta": {
-      "title": "Masz Pomysl na Projekt?",
-      "description": "Porozmawiajmy o Twoim projekcie i zobaczmy jak moge pomoc w realizacji Twoich pomyslow.",
-      "getFreeQuote": "Bezplatna Wycena",
-      "viewServices": "Zobacz Uslugi"
+      "viewProject": "Zobacz Projekt",
+      "startProject": "Rozpocznij Projekt"
     }
   },
   "workGrid": {
     "title": "Ostatnie Prace",
     "viewCasestudy": "Zobacz Case Study"
+  },
+  "aboutPage": {
+    "meta": {
+      "title": "O Mnie - Programista Full-Stack Częstochowa | Max Mendes",
+      "description": "Programista full-stack z Częstochowy. Buduję strony i aplikacje w React & Next.js ✓ 300+ godzin pracy nad SaaS ✓ Nie WordPress ✓ Bezpłatna konsultacja"
+    },
+    "heading": "Programista Full-Stack Częstochowa",
+    "bio": [
+      "Nazywam się Max i jestem programistą full-stack z Częstochowy. Buduję strony internetowe, sklepy online i aplikacje webowe dla firm, które potrzebują czegoś więcej niż kolejny szablon WordPress.",
+      "Na lokalnym rynku prawie wszystkie agencje używają WordPressa. To szybkie na start, ale po roku pojawiają się problemy: wolne ładowanie, słabe SEO, niemożliwa rozbudowa bez migracji. Ja buduję w React i Next.js. Efekt: strony szybsze, lepiej pozycjonujące się w Google i gotowe na rozwój bez przepisywania wszystkiego od podstaw.",
+      "Nie jestem grafikiem ani specjalistą od brandingu. Nie tworzę logo ani identyfikacji wizualnych. Moja rola to kod: przekształcam pomysły w działające produkty. Implementuję interfejsy używając sprawdzonych bibliotek komponentów (shadcn/ui, Tailwind CSS) z naciskiem na wydajność, SEO i skalowalność.",
+      "Mój proces: najpierw rozumiem cel biznesowy, analizuję konkurencję i planuję wymagania techniczne. Potem robię proste prototypy w Figma żeby uporządkować przepływ użytkownika. Dopiero wtedy piszę kod, optymalizuję pod SEO, wdrażam i iteruję na podstawie feedbacku.",
+      "Pracuję z firmami z Częstochowy i Śląska które potrzebują solidnych stron lub sklepów internetowych, ale też z zagranicznymi klientami szukającymi freelance developera z Polski. Mówię płynnie po angielsku i bez problemu pracuję asynchronicznie w różnych strefach czasowych."
+    ],
+    "skills": {
+      "title": "Z czego korzystam",
+      "items": [
+        "Full-Stack Web Development",
+        "React & Next.js",
+        "TypeScript & JavaScript",
+        "Strony biznesowe i landing pages",
+        "Sklepy internetowe (Shopify + custom)",
+        "Aplikacje SaaS i web apps",
+        "Rozwój i integracja API",
+        "Optymalizacja SEO i wydajności",
+        "Prototypowanie w Figma (low-fidelity)",
+        "Implementacja UI (biblioteki komponentów)",
+        "PostgreSQL & Supabase",
+        "Wdrożenia (Vercel, AWS, DigitalOcean)"
+      ]
+    },
+    "experience": {
+      "title": "Doświadczenie",
+      "items": [
+        {
+          "role": "Programista Full-Stack (Freelance)",
+          "company": "Działalność własna",
+          "period": "2024 – obecnie",
+          "description": "Buduję strony, sklepy i aplikacje webowe dla firm i startupów. Stworzyłem FlowMate—platformę SaaS do zarządzania emailami z AI. 300+ godzin praktycznej pracy full-stack: dashboardy, integracje OAuth, systemy płatności, deployment produkcyjny."
+        },
+        {
+          "role": "Analityk IT",
+          "company": "Kontrakt",
+          "period": "2023 – obecnie",
+          "description": "Praca kontraktowa (160 godzin/miesiąc). Analiza procesów biznesowych, tłumaczenie wymagań na rozwiązania techniczne, wsparcie przy projektach webowych."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Współpraca",
+      "description": "Jeśli potrzebujesz strony biznesowej, sklepu internetowego lub aplikacji webowej—porozmawiajmy.",
+      "primaryButton": "Bezpłatna Konsultacja",
+      "secondaryButton": "Zobacz Projekty",
+      "tertiaryButton": "Usługi"
+    }
   }
 }

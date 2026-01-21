@@ -62,7 +62,7 @@ export default function PolishHome() {
               transition={{ duration: 0.8 }}
               className="w-full h-full"
             >
-              <AboutMe />
+              <AboutMe locale="pl" dictionary={plDict.about} />
             </motion.div>
           </motion.div>
         )}
@@ -77,7 +77,7 @@ export default function PolishHome() {
         className="relative z-10 bg-[#050505] shadow-[0_50px_100px_rgba(0,0,0,0.5)]"
       >
         <Hero locale="pl" dictionary={plDict.hero} />
-        <AboutMe />
+        <AboutMe locale="pl" dictionary={plDict.about} />
         <WorkGrid />
         <ServiceSection />
         <ProcessSection />

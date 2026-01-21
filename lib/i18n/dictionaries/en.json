@@ -11,11 +11,11 @@
     "toSeeProjects": "to see projects"
   },
   "about": {
-    "headline": "Hi, I'm Max Mendes",
-    "subheadline": "Full Stack Web Developer based in Czestochowa, Poland",
-    "description": "With expertise in React, Next.js, Node.js, and TypeScript, I help businesses establish a powerful online presence. Whether you need a custom website, e-commerce store, or SEO optimization - I deliver solutions that drive results.",
-    "description2": "I work with clients from Poland, UK, US, and across Europe, offering professional web development services with clear communication and reliable delivery.",
-    "skills": ["React", "Next.js", "Node.js", "TypeScript", "PostgreSQL", "MongoDB", "Tailwind CSS", "Figma", "SEO"]
+    "headline": "Why Work With Me?",
+    "subheadline": "I don't just code what you ask for—I help figure out what actually needs to be built first.",
+    "description": "Most developers jump straight into development. I spend time understanding the problem: what the site or app needs to achieve, who it's for, and how competitors approach it. Then I prototype, plan scope, and build something that actually solves the problem.",
+    "description2": "You work directly with me—not an agency team that hands off between designers, developers, and project managers. One person. Full ownership. From research through deployment. That means faster decisions, clearer communication, and code that reflects what you actually need.",
+    "skills": ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS", "Figma", "SEO", "E-Commerce", "SaaS"]
   },
   "services": {
     "title": "Services",
@@ -124,18 +124,18 @@
       "location": "Czestochowa, Poland"
     },
     "links": {
-      "services": "Services",
-      "portfolio": "Portfolio",
       "about": "About",
+      "services": "Services",
+      "projects": "Projects",
       "contact": "Contact"
     },
     "copyright": "2024 Max Mendes. All rights reserved."
   },
   "nav": {
     "home": "Home",
-    "services": "Services",
-    "portfolio": "Portfolio",
     "about": "About",
+    "services": "Services",
+    "projects": "Projects",
     "contact": "Contact"
   },
   "common": {
@@ -182,15 +182,73 @@
     "badge": "Portfolio",
     "title": "Selected Projects",
     "subtitle": "A collection of web development and design projects I've worked on. Each project represents a unique challenge and solution.",
+    "categories": {
+      "all": "All Projects",
+      "websites": "Websites",
+      "ecommerce": "E-Commerce",
+      "webApps": "Web Apps"
+    },
     "cta": {
-      "title": "Have a Project in Mind?",
-      "description": "Let's discuss your project and see how I can help bring your ideas to life.",
-      "getFreeQuote": "Get Free Quote",
-      "viewServices": "View Services"
+      "viewProject": "View Project",
+      "startProject": "Start Your Project"
     }
   },
   "workGrid": {
     "title": "Recent Works",
     "viewCasestudy": "View Casestudy"
+  },
+  "aboutPage": {
+    "meta": {
+      "title": "About Max Mendes - Full-Stack Developer Poland | React & Next.js",
+      "description": "Full-stack web developer in Częstochowa, Poland. I build websites, e-commerce, and web apps with React & Next.js. 300+ hours on production SaaS projects."
+    },
+    "heading": "About Max Mendes - Full-Stack Developer Poland",
+    "bio": [
+      "I'm Max, a full-stack web developer based in Częstochowa, Poland. I build modern business websites, e-commerce stores, and web applications for companies that need more than a basic template. My work focuses on clean, maintainable code, strong performance, and real-world usability.",
+      "I'm not a designer or a branding specialist. I don't create logos or visual identities from scratch. My role is technical: I write code and turn ideas into working products. I implement interfaces using proven UI patterns and component libraries like shadcn/ui and Tailwind CSS, with a strong focus on speed, SEO optimization, and scalability.",
+      "My process is structured and practical. I start with research—understanding the business goal, competitors, and technical requirements. Then I create low-fidelity prototypes in Figma to map user flows and features. After that, I build production-ready code using React and Next.js, handle deployment, optimization, and iteration based on feedback.",
+      "I work with Polish businesses that need reliable websites or online stores, as well as UK and US companies looking for an offshore freelance developer. I'm fluent in English and comfortable working asynchronously across time zones."
+    ],
+    "skills": {
+      "title": "What I Work With",
+      "items": [
+        "Full-Stack Web Development",
+        "React & Next.js",
+        "TypeScript & JavaScript",
+        "Business Websites & Landing Pages",
+        "E-Commerce Development (Shopify + Custom)",
+        "SaaS & Web Applications",
+        "API Development & Integration",
+        "SEO & Performance Optimization",
+        "Figma Prototyping (Low-Fidelity Wireframes)",
+        "UI Implementation (Component Libraries)",
+        "PostgreSQL & Supabase",
+        "Deployment (Vercel, AWS, DigitalOcean)"
+      ]
+    },
+    "experience": {
+      "title": "Background & Work History",
+      "items": [
+        {
+          "role": "Freelance Full-Stack Developer",
+          "company": "Self-Employed",
+          "period": "2024 – Present",
+          "description": "Building websites, e-commerce solutions, and web applications for businesses and startups. Creator of FlowMate, an AI-powered SaaS platform for email management, developed with 300+ hours of hands-on full-stack work covering dashboards, OAuth integrations, payment systems, and production deployment."
+        },
+        {
+          "role": "IT Analyst",
+          "company": "Contract",
+          "period": "2023 – Present",
+          "description": "Providing technical analysis and system support on a contract basis (160 hours/month). Focused on understanding business processes, translating requirements into technical solutions, and supporting web-related projects."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Work Together?",
+      "description": "I'm available for new projects. Whether you need a business website, e-commerce store, or custom web application, let's discuss your requirements.",
+      "primaryButton": "Schedule Free Consultation",
+      "secondaryButton": "View Portfolio",
+      "tertiaryButton": "See Services"
+    }
   }
 }

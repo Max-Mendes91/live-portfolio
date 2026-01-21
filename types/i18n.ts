@@ -79,9 +79,9 @@ export interface FooterDict {
     location: string;
   };
   links: {
-    services: string;
-    portfolio: string;
     about: string;
+    services: string;
+    projects: string;
     contact: string;
   };
   copyright: string;
@@ -92,9 +92,9 @@ export interface FooterDict {
 // Navigation dictionary
 export interface NavDict {
   home: string;
-  services: string;
-  portfolio: string;
   about: string;
+  services: string;
+  projects: string;
   contact: string;
 }
 
@@ -136,6 +136,7 @@ export interface ContactDict {
   servingRemote: string;
   flexibleTimezone: string;
   socialConnect: string;
+  availabilityHours: string;
   notSure: {
     title: string;
     description: string;
@@ -165,6 +166,36 @@ export interface WorkGridDict {
   viewCasestudy: string;
 }
 
+// About page (full page, not homepage section)
+export interface AboutPageDict {
+  meta: {
+    title: string;
+    description: string;
+  };
+  heading: string;
+  bio: string[];
+  skills: {
+    title: string;
+    items: string[];
+  };
+  experience: {
+    title: string;
+    items: Array<{
+      role: string;
+      company: string;
+      period: string;
+      description: string;
+    }>;
+  };
+  cta: {
+    title: string;
+    description: string;
+    primaryButton: string;
+    secondaryButton: string;
+    tertiaryButton: string;
+  };
+}
+
 // Full dictionary interface
 export interface Dictionary {
   hero: HeroDict;
@@ -178,4 +209,5 @@ export interface Dictionary {
   contact?: ContactDict;
   projects?: ProjectsDict;
   workGrid?: WorkGridDict;
+  aboutPage?: AboutPageDict;
 }
