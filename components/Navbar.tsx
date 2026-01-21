@@ -22,21 +22,26 @@ const Navbar: React.FC<NavbarProps> = ({ locale, dictionary }) => {
 
   // Fallback labels for backward compatibility
   const labels = {
+    about: dictionary?.about ?? (isPolish ? 'O mnie' : 'About'),
     services: dictionary?.services ?? (isPolish ? 'Usługi' : 'Services'),
-    portfolio: dictionary?.portfolio ?? (isPolish ? 'Projekty' : 'Projects'),
+    projects: dictionary?.projects ?? (isPolish ? 'Projekty' : 'Projects'),
     contact: dictionary?.contact ?? (isPolish ? 'Kontakt' : 'Contact'),
   };
 
-  // Navigation items with localized hrefs
+  // Navigation items with locale-specific slugs for SEO
+  // Order: About — Services — Projects — Contact
+  // Polish URLs use Polish keywords, English URLs use English keywords
   const navItems = isPolish
     ? [
-        { label: labels.services, href: '/pl/uslugi/web-development' },
-        { label: labels.portfolio, href: '/pl/projekty' },
+        { label: labels.about, href: '/pl/o-mnie' },
+        { label: labels.services, href: '/pl/uslugi' },
+        { label: labels.projects, href: '/pl/projekty' },
         { label: labels.contact, href: '/pl/kontakt' },
       ]
     : [
-        { label: labels.services, href: '/en/services/web-development' },
-        { label: labels.portfolio, href: '/en/projects' },
+        { label: labels.about, href: '/en/about' },
+        { label: labels.services, href: '/en/services' },
+        { label: labels.projects, href: '/en/projects' },
         { label: labels.contact, href: '/en/contact' },
       ];
 
