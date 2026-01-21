@@ -3,27 +3,46 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { SupportedLocale } from '@/types/i18n';
+import { NavDict } from '@/types/i18n';
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  locale?: SupportedLocale;
+  dictionary?: NavDict;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ locale, dictionary }) => {
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
   const pathname = usePathname();
-  const isPolish = pathname?.startsWith('/pl');
+
+  // Determine locale from props or fallback to pathname detection
+  const currentLocale = locale ?? (pathname?.startsWith('/pl') ? 'pl' : 'en');
+  const isPolish = currentLocale === 'pl';
+
+  // Fallback labels for backward compatibility
+  const labels = {
+    services: dictionary?.services ?? (isPolish ? 'Usługi' : 'Services'),
+    portfolio: dictionary?.portfolio ?? (isPolish ? 'Projekty' : 'Projects'),
+    contact: dictionary?.contact ?? (isPolish ? 'Kontakt' : 'Contact'),
+  };
 
   // Navigation items with localized hrefs
   const navItems = isPolish
     ? [
-        { label: 'Usługi', href: '/pl/uslugi/web-development' },
-        { label: 'Projekty', href: '/pl/projekty' },
-        { label: 'Kontakt', href: '/pl/kontakt' },
+        { label: labels.services, href: '/pl/uslugi/web-development' },
+        { label: labels.portfolio, href: '/pl/projekty' },
+        { label: labels.contact, href: '/pl/kontakt' },
       ]
     : [
-        { label: 'Services', href: '/services/web-development' },
-        { label: 'Projects', href: '/projects' },
-        { label: 'Contact', href: '/contact' },
+        { label: labels.services, href: '/en/services/web-development' },
+        { label: labels.portfolio, href: '/en/projects' },
+        { label: labels.contact, href: '/en/contact' },
       ];
 
-  const homeHref = isPolish ? '/pl' : '/';
+  const homeHref = isPolish ? '/pl' : '/en';
+  const alternateLang = isPolish ? 'en' : 'pl';
+  const alternateLabel = isPolish ? 'EN' : 'PL';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,6 +90,14 @@ const Navbar: React.FC = () => {
               </Link>
             ))}
           </div>
+
+          {/* Language Switcher */}
+          <Link
+            href={`/${alternateLang}`}
+            className="text-[10px] font-medium uppercase tracking-[0.3em] text-zinc-500 hover:text-white transition-colors px-3 py-1.5 border border-white/10 rounded-full hover:border-white/30"
+          >
+            {alternateLabel}
+          </Link>
         </div>
       </div>
     </nav>

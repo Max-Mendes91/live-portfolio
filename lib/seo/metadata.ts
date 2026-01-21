@@ -8,20 +8,20 @@ import { getPrimaryKeywords } from './keywords';
 const PAGE_META = {
   home: {
     en: {
-      title: 'Web Developer Poland | Max Mendes - React & Next.js Full Stack Specialist',
+      title: 'Freelance Web Developer for Hire - Full-Stack, E-commerce, SaaS | Poland',
       description:
-        'Web developer in Poland serving UK & US clients. Modern websites and web applications using React, Next.js, Node.js. E-commerce, SEO, UI/UX design. Free quote: +48 502 742 941',
-      ogTitle: 'Web Developer Poland - Max Mendes',
+        'Freelance full-stack developer for hire ✓ Websites, e-commerce, web apps, SaaS ✓ React, Next.js, Node.js ✓ Poland-based, UK/US friendly ✓ Free consultation',
+      ogTitle: 'Freelance Web Developer for Hire - Max Mendes',
       ogDescription:
-        'Professional web developer in Poland. React, Next.js, E-commerce, SEO. Serving UK & US clients.',
+        'Freelance full-stack developer. Websites, e-commerce, web apps, SaaS. Poland-based, UK/US clients welcome.',
     },
     pl: {
-      title: 'Programista Czestochowa | Max Mendes - Tworzenie Stron Internetowych React & Next.js',
+      title: 'Tworzenie Stron Internetowych - Programista Full-Stack Polska | Częstochowa',
       description:
-        'Programista Czestochowa i okolice. Tworzenie stron internetowych i aplikacji webowych React, Next.js, Node.js. Sklepy internetowe, SEO, UI/UX. Zadzwon: 502 742 941',
-      ogTitle: 'Programista Czestochowa - Max Mendes',
+        'Tworzenie stron internetowych i aplikacji webowych ✓ Programista full-stack Polska ✓ Strony, sklepy, SaaS ✓ Częstochowa, Śląsk ✓ Bezpłatna konsultacja ☎ 502 742 941',
+      ogTitle: 'Tworzenie Stron Internetowych - Max Mendes',
       ogDescription:
-        'Tworzenie stron internetowych w Czestochowie. React, Next.js, E-commerce, SEO.',
+        'Programista full-stack Polska. Tworzenie stron, sklepów internetowych, aplikacji webowych. Częstochowa, Śląsk.',
     },
   },
   services: {

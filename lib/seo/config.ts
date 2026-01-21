@@ -1,8 +1,10 @@
 import { SiteConfig, SupportedLocale } from '@/types/seo';
 
+// TODO: Replace with your actual domain when chosen
+// Options: maxmendes.dev, mendesdev.pl, maxmendes.com, etc.
 export const SITE_CONFIG: SiteConfig = {
   name: 'Max Mendes',
-  url: 'https://maxmendes.dev',
+  url: 'https://example.com', // PLACEHOLDER - Replace with your domain
   defaultLocale: 'en',
   locales: ['en', 'pl'],
   owner: {
@@ -50,26 +52,24 @@ export const TARGET_MARKETS = {
   ],
 };
 
-// hreflang configuration
+// hreflang configuration - Updated for [locale] routing structure
 export const HREFLANG_CONFIG = [
-  { hreflang: 'en', href: '/' },
-  { hreflang: 'en-US', href: '/' },
-  { hreflang: 'en-GB', href: '/' },
+  { hreflang: 'en', href: '/en' },
+  { hreflang: 'en-US', href: '/en' },
+  { hreflang: 'en-GB', href: '/en' },
   { hreflang: 'pl', href: '/pl' },
-  { hreflang: 'x-default', href: '/' },
+  { hreflang: 'x-default', href: '/en' },
 ];
 
 // Trust signals for hero/about sections (from SEO strategy - friend's advice)
 export const TRUST_SIGNALS = {
   en: [
-    { label: '5+ Years Experience', icon: 'trophy' },
-    { label: '20+ Projects Delivered', icon: 'folder' },
+    { label: '2+ Years Experience', icon: 'trophy' },
     { label: 'UK/US Friendly Timezone', icon: 'globe' },
     { label: 'Fluent English', icon: 'languages' },
   ],
   pl: [
-    { label: '5+ lat doświadczenia', icon: 'trophy' },
-    { label: '20+ zrealizowanych projektów', icon: 'folder' },
+    { label: '2+ lata doświadczenia', icon: 'trophy' },
     { label: 'Klienci z UK/US', icon: 'globe' },
     { label: 'Płynny angielski', icon: 'languages' },
   ],
@@ -116,10 +116,9 @@ export function getFullUrl(path: string = ''): string {
   return `${SITE_CONFIG.url}${cleanPath}`;
 }
 
-// Helper function to get localized URL
+// Helper function to get localized URL - Updated for [locale] routing structure
 export function getLocalizedUrl(path: string, locale: SupportedLocale): string {
-  if (locale === 'en') {
-    return getFullUrl(path);
-  }
-  return getFullUrl(`/${locale}${path}`);
+  // All locales now have explicit prefix: /en/path or /pl/path
+  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+  return getFullUrl(`/${locale}${cleanPath}`);
 }

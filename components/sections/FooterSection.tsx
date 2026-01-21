@@ -5,8 +5,25 @@ import { motion } from 'framer-motion';
 import { Twitter, Instagram, Linkedin, Github, ArrowUpRight } from 'lucide-react';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import { SITE_CONFIG } from '@/lib/seo/config';
+import { FooterDict, SupportedLocale } from '@/types/i18n';
 
-const FooterSection: React.FC = () => {
+interface FooterSectionProps {
+  locale?: SupportedLocale;
+  dictionary?: FooterDict;
+}
+
+const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary }) => {
+  const isPolish = locale === 'pl';
+
+  // Fallback content for backward compatibility
+  const content = {
+    tagline: dictionary?.tagline ?? "Curious about what we can create together? Let's bring something extraordinary to life!",
+    cta: dictionary?.cta ?? 'Book a Free Call',
+    availableBadge: dictionary?.availableBadge ?? (isPolish ? 'Dostępny do współpracy' : 'Available For Work'),
+    seoText: dictionary?.seoText ?? (isPolish
+      ? 'Programista z Częstochowy · Tworzenie stron internetowych Śląskie · Obsługuję klientów: Katowice, Kraków, Warszawa, Wrocław i cała Polska'
+      : 'Web Developer in Czestochowa, Poland · Serving clients in Poland, UK, US & Europe'),
+  };
   return (
     <footer className="relative h-screen w-full flex flex-col items-center justify-center px-6 overflow-hidden bg-black">
       {/* Smoke/Glow Effect using Radial Gradient */}
@@ -24,18 +41,18 @@ const FooterSection: React.FC = () => {
         {/* Available For Work Badge */}
         <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-10">
           <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981]" />
-          <span className="text-[10px] uppercase font-medium tracking-[0.2em] text-white/80">Available For Work</span>
+          <span className="text-[10px] uppercase font-medium tracking-[0.2em] text-white/80">{content.availableBadge}</span>
         </div>
 
         {/* Headline - Couture Light Weight */}
         <h2 className="text-4xl md:text-6xl font-light tracking-tighter leading-tight text-white mb-12">
-          Curious about what we can create together? <span className="text-zinc-500">Let&apos;s bring something extraordinary to life!</span>
+          {content.tagline}
         </h2>
 
         {/* CTA Button */}
         <div className="flex flex-col items-center justify-center">
           <CornerGlowButton>
-            Book a Free Call
+            {content.cta}
             <ArrowUpRight className="w-4 h-4" />
           </CornerGlowButton>
         </div>
@@ -85,7 +102,7 @@ const FooterSection: React.FC = () => {
 
         {/* Location keywords for SEO - from friend's advice */}
         <p className="mt-12 text-[10px] text-zinc-600 tracking-wide text-center max-w-lg">
-          Web Developer in Czestochowa, Poland · Serving clients in Poland, UK, US & Europe
+          {content.seoText}
         </p>
       </motion.div>
 
