@@ -1,11 +1,14 @@
 {
   "hero": {
-    "badge": "Available for Hire",
-    "headline": "Web Development That Converts",
-    "subheadline": "Full Stack Developer | React & Next.js Specialist",
-    "description": "I create modern, high-performance websites and web applications that help businesses grow. From custom web development to e-commerce solutions and SEO optimization - I deliver results that matter.",
-    "ctaPrimary": "Get Free Quote",
-    "ctaSecondary": "View Portfolio"
+    "badge": "Full-Stack Development",
+    "headline": "Freelance Developer for Hire",
+    "subheadline": "Websites. E-commerce. Web Apps. SaaS.",
+    "description": "I'm Max, a full-stack developer based in Poland. I build websites, e-commerce stores, web apps, and SaaS products. I handle everything — from research and prototyping to deployment. UK and US clients welcome.",
+    "ctaPrimary": "Book a Free Call",
+    "ctaSecondary": "See Projects",
+    "phoneLabel": "or call",
+    "scrollDown": "Scroll down",
+    "toSeeProjects": "to see projects"
   },
   "about": {
     "headline": "Hi, I'm Max Mendes",
@@ -139,6 +142,55 @@
     "learnMore": "Learn More",
     "getStarted": "Get Started",
     "viewAll": "View All",
-    "readMore": "Read More"
+    "readMore": "Read More",
+    "backToHome": "Back to Home"
+  },
+  "contact": {
+    "badge": "Contact",
+    "title": "Let's Work Together",
+    "subtitle": "Have a project in mind? I'd love to hear about it. Get in touch and let's create something amazing.",
+    "infoTitle": "Contact Information",
+    "formTitle": "Send a Message",
+    "labels": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
+      "availability": "Availability",
+      "name": "Name",
+      "subject": "Subject",
+      "message": "Message"
+    },
+    "placeholders": {
+      "name": "Your name",
+      "email": "your@email.com",
+      "subject": "Project inquiry",
+      "message": "Tell me about your project..."
+    },
+    "submit": "Send Message",
+    "success": "Message sent successfully!",
+    "error": "Failed to send message. Please try again.",
+    "servingRemote": "Serving UK, US & Europe remotely",
+    "flexibleTimezone": "Flexible for UK/US timezones",
+    "socialConnect": "Connect",
+    "availabilityHours": "Mon - Fri: 9:00 - 18:00 CET",
+    "notSure": {
+      "title": "Not Sure What You Need?",
+      "description": "Check out my services to see how I can help with your project."
+    }
+  },
+  "projects": {
+    "badge": "Portfolio",
+    "title": "Selected Projects",
+    "subtitle": "A collection of web development and design projects I've worked on. Each project represents a unique challenge and solution.",
+    "cta": {
+      "title": "Have a Project in Mind?",
+      "description": "Let's discuss your project and see how I can help bring your ideas to life.",
+      "getFreeQuote": "Get Free Quote",
+      "viewServices": "View Services"
+    }
+  },
+  "workGrid": {
+    "title": "Recent Works",
+    "viewCasestudy": "View Casestudy"
   }
 }

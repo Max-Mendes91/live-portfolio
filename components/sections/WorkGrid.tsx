@@ -4,8 +4,19 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { PROJECTS } from '@/lib/constants';
 import { ArrowUpRight, ArrowDownCircle } from 'lucide-react';
+import { WorkGridDict } from '@/types/i18n';
 
-const WorkGrid: React.FC = () => {
+interface WorkGridProps {
+  dictionary?: WorkGridDict;
+}
+
+const WorkGrid: React.FC<WorkGridProps> = ({ dictionary }) => {
+  // Fallback content for backward compatibility
+  const content = {
+    title: dictionary?.title ?? 'Recent Works',
+    viewCasestudy: dictionary?.viewCasestudy ?? 'View Casestudy',
+  };
+
   return (
     <section id="works" className="pb-24 px-6 md:px-12 bg-[#050505] overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -16,7 +27,7 @@ const WorkGrid: React.FC = () => {
           viewport={{ once: true }}
           className="flex items-center gap-3 mb-16"
         >
-          <h2 className="text-2xl font-medium tracking-tight text-white/90">Recent Works</h2>
+          <h2 className="text-2xl font-medium tracking-tight text-white/90">{content.title}</h2>
           <ArrowDownCircle className="w-5 h-5 text-white/40" />
         </motion.div>
 
@@ -44,7 +55,7 @@ const WorkGrid: React.FC = () => {
               <div className="absolute inset-0 p-4 flex flex-col justify-end">
                 <div className="flex justify-center">
                   <button className="w-full backdrop-blur-lg bg-white/10 border border-white/20 py-3 rounded-full text-white text-[10px] font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-2 opacity-100 group-hover:bg-white/20 transition-all duration-500">
-                    View Casestudy
+                    {content.viewCasestudy}
                     <ArrowUpRight className="w-3 h-3" />
                   </button>
                 </div>

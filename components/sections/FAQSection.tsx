@@ -6,6 +6,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Plus } from 'lucide-react';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import PulseBadge from '@/components/ui/PulseBadge';
+import { FAQDict } from '@/types/i18n';
+
+interface FAQSectionProps {
+  dictionary?: FAQDict;
+}
 
 interface FAQItemProps {
   question: string;
@@ -54,10 +59,11 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onClick }) 
   );
 };
 
-const FAQSection: React.FC = () => {
+const FAQSection: React.FC<FAQSectionProps> = ({ dictionary }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-  const faqs = [
+  // Fallback FAQs for backward compatibility
+  const defaultFaqs = [
     {
       question: "What services do you provide?",
       answer: "I specialize in brand identity and package design, helping businesses build a cohesive visual presence that resonates with their target audience. From logo design to complex physical product packaging, I handle the creative strategy and execution."
@@ -84,6 +90,11 @@ const FAQSection: React.FC = () => {
     }
   ];
 
+  const content = {
+    title: dictionary?.title ?? 'Answers',
+    faqs: dictionary?.items ?? defaultFaqs,
+  };
+
   return (
     <section className="relative w-full bg-[#050505] pt-20">
       {/* The "Panel" Line & Container */}
@@ -108,7 +119,7 @@ const FAQSection: React.FC = () => {
 
                 {/* 2. Title */}
                 <h2 className="text-6xl md:text-8xl font-normal tracking-tighter leading-tight mb-6 text-white">
-                  Answers
+                  {content.title}
                 </h2>
 
                 {/* 3. Subtext */}
@@ -149,7 +160,7 @@ const FAQSection: React.FC = () => {
 
             {/* Right Column: Separated Accordion Cards */}
             <div className="col-span-12 lg:col-span-7 pt-4">
-              {faqs.map((faq, index) => (
+              {content.faqs.map((faq, index) => (
                 <FAQItem
                   key={index}
                   question={faq.question}

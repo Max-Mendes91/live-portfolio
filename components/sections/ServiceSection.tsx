@@ -10,6 +10,11 @@ import {
 } from 'lucide-react';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import PulseBadge from '@/components/ui/PulseBadge';
+import { ServicesDict } from '@/types/i18n';
+
+interface ServiceSectionProps {
+  dictionary?: ServicesDict;
+}
 
 const FeatureCard: React.FC<{ icon: React.ReactNode; title: string; desc: string }> = ({ icon, title, desc }) => (
   <motion.div
@@ -58,7 +63,7 @@ const MarqueeRow: React.FC<{ items: string[]; direction: 'left' | 'right' }> = (
   );
 };
 
-const ServiceSection: React.FC = () => {
+const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
   const marqueeItems1 = [
     "Brand Migration", "Package Design", "Branding", "Slide Decks", "Copywriting", "Brand Graphics"
   ];
@@ -66,6 +71,12 @@ const ServiceSection: React.FC = () => {
   const marqueeItems2 = [
     "Icons", "Brand Visibility", "Brand Integrations", "Optimization", "Brand Landing Pages", "Social Media"
   ];
+
+  // Fallback content for backward compatibility
+  const content = {
+    title: dictionary?.title ?? 'Services',
+    subtitle: dictionary?.subtitle ?? 'What I Can Do For You',
+  };
 
   return (
     <section className="relative w-full bg-[#050505] pt-20">
@@ -87,7 +98,7 @@ const ServiceSection: React.FC = () => {
               </div>
 
               <h2 className="text-6xl md:text-8xl font-normal tracking-tighter leading-tight mb-8 text-white">
-                Services
+                {content.title}
               </h2>
 
               <p className="font-light tracking-tight text-zinc-400 text-lg mb-10 max-w-md leading-relaxed opacity-80">

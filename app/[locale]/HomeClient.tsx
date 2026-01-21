@@ -11,9 +11,15 @@ import ProcessSection from '@/components/sections/ProcessSection';
 import FooterSection from '@/components/sections/FooterSection';
 import AboutMe from '@/components/sections/AboutMe';
 import { HomePageJsonLd } from '@/components/seo/JsonLd';
-import plDict from '@/lib/i18n/dictionaries/pl.json';
+import { SupportedLocale } from '@/types/seo';
+import { Dictionary } from '@/lib/i18n/config';
 
-export default function PolishHome() {
+interface HomeClientProps {
+  locale: SupportedLocale;
+  dictionary: Dictionary;
+}
+
+export default function HomeClient({ locale, dictionary }: HomeClientProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [introComplete, setIntroComplete] = useState(false);
   const [showHero, setShowHero] = useState(false);
@@ -27,10 +33,12 @@ export default function PolishHome() {
   const scale = useTransform(scrollYProgress, [0.8, 1], [1, 0.95]);
 
   useEffect(() => {
+    // Phase 1 & 2 logic
     const timer = setTimeout(() => {
       setIntroComplete(true);
     }, 1500);
 
+    // Phase 3 logic
     const heroTimer = setTimeout(() => {
       setShowHero(true);
     }, 2000);
@@ -41,11 +49,15 @@ export default function PolishHome() {
     };
   }, []);
 
+  // Pass dictionary sections to components as they are refactored
+  // Components without dictionary props still use hardcoded text (backward compatible)
+
   return (
     <div className="relative bg-black selection:bg-white/10">
-      <HomePageJsonLd locale="pl" />
-      <Navbar />
+      <HomePageJsonLd locale={locale} />
+      <Navbar locale={locale} dictionary={dictionary.nav} />
 
+      {/* Redline 4: The "Meily Entrance" Loader Overlay */}
       <AnimatePresence>
         {!introComplete && (
           <motion.div
@@ -68,6 +80,7 @@ export default function PolishHome() {
         )}
       </AnimatePresence>
 
+      {/* Main Content Stack */}
       <motion.div
         ref={containerRef}
         style={{ opacity, scale }}
@@ -76,7 +89,7 @@ export default function PolishHome() {
         transition={{ duration: 1.5 }}
         className="relative z-10 bg-[#050505] shadow-[0_50px_100px_rgba(0,0,0,0.5)]"
       >
-        <Hero locale="pl" dictionary={plDict.hero} />
+        <Hero locale={locale} dictionary={dictionary.hero} />
         <AboutMe />
         <WorkGrid />
         <ServiceSection />
@@ -85,6 +98,7 @@ export default function PolishHome() {
         <div className="h-[20vh]" />
       </motion.div>
 
+      {/* Sticky Reveal Footer */}
       <div className="sticky bottom-0 z-0 h-screen w-full">
         <FooterSection />
       </div>

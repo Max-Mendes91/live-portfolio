@@ -3,17 +3,29 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { AboutDict } from '@/types/i18n';
 
-const AboutMe: React.FC = () => {
+interface AboutMeProps {
+  dictionary?: AboutDict;
+}
+
+const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
   const experience = [
     { role: 'Freelance', company: 'GreenLeaf Co', period: 'Currently' },
     { role: 'Brand Designer', company: 'UrbanFit Studio', period: '2023-24' },
     { role: 'Package Designer', company: 'GreenK Studio', period: '2020-22' },
   ];
 
-  const tags = [
+  // Use dictionary skills or fallback to default tags
+  const tags = dictionary?.skills ?? [
     'Product Design', 'Brand Identity Design', 'UX Design', 'Branding', 'Packaging Design', 'Figma', 'Photoshop'
   ];
+
+  // Fallback content for backward compatibility
+  const content = {
+    headline: dictionary?.headline ?? 'Meet Meily',
+    description: dictionary?.description ?? "I'm Meily, a passionate Brand Identity & Package Designer based in Tokyo. I specialize in crafting bold visual identities and packaging that captivates and inspire, blending creativity with strategy to elevate brands.",
+  };
 
   return (
     <section id="about" className="pt-10 pb-24 px-6 md:px-12 bg-[#050505] overflow-hidden">
@@ -26,12 +38,10 @@ const AboutMe: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-6xl md:text-8xl font-light tracking-tighter mb-8 text-white">Meet Meily</h2>
+            <h2 className="text-6xl md:text-8xl font-light tracking-tighter mb-8 text-white">{content.headline}</h2>
 
             <p className="text-zinc-400 text-lg font-light leading-relaxed max-w-lg mb-12">
-              I&apos;m Meily, a passionate Brand Identity & Package Designer based in Tokyo. I
-              specialize in crafting bold visual identities and packaging that captivates and
-              inspire, blending creativity with strategy to elevate brands.
+              {content.description}
             </p>
 
             <div className="h-[1px] bg-white/10 w-full mb-10" />

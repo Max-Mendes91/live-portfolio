@@ -6,6 +6,11 @@ import { motion } from 'framer-motion';
 import { Lightbulb, ListTodo, Rocket } from 'lucide-react';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import PulseBadge from '@/components/ui/PulseBadge';
+import { ProcessDict } from '@/types/i18n';
+
+interface ProcessSectionProps {
+  dictionary?: ProcessDict;
+}
 
 interface ProcessCardProps {
   icon: React.ReactNode;
@@ -60,7 +65,18 @@ const ProcessCard: React.FC<ProcessCardProps> = ({ icon, number, title, descript
   </motion.div>
 );
 
-const ProcessSection: React.FC = () => {
+const ProcessSection: React.FC<ProcessSectionProps> = ({ dictionary }) => {
+  // Fallback content for backward compatibility
+  const content = {
+    title: dictionary?.title ?? 'Structured Excellence',
+    subtitle: dictionary?.subtitle ?? 'Design process',
+    steps: dictionary?.steps ?? [
+      { number: '01', title: 'Vision Mapping', description: 'We dive deep into your brand DNA and market landscape to establish a strategic foundation for everything that follows.' },
+      { number: '02', title: 'Iterative Refinement', description: 'Collaborative feedback cycles and high-fidelity prototyping ensure every pixel aligns with your vision and user needs.' },
+      { number: '03', title: 'Final Deployment', description: 'Precision-engineered assets delivered and ready for immediate implementation across your entire brand ecosystem.' },
+    ],
+  };
+
   return (
     <section className="relative w-full bg-[#050505] pt-20">
       {/* The "Panel" Line & Container */}
@@ -99,11 +115,11 @@ const ProcessSection: React.FC = () => {
                 className="mb-16"
               >
                 <div className="mb-8">
-                  <PulseBadge text="Design process" />
+                  <PulseBadge text={content.subtitle} />
                 </div>
 
                 <h2 className="text-5xl md:text-7xl font-normal tracking-tighter leading-tight text-white mb-6">
-                  Structured <br /> Excellence
+                  {content.title}
                 </h2>
 
                 <p className="font-light tracking-tight text-zinc-400 text-lg max-w-md mb-12 leading-relaxed opacity-80">
@@ -118,24 +134,22 @@ const ProcessSection: React.FC = () => {
 
               {/* Process Cards Grid */}
               <div className="grid grid-cols-1 gap-6">
-                <ProcessCard
-                  icon={<Lightbulb className="w-6 h-6 stroke-[1.5px]" />}
-                  number="01"
-                  title="Vision Mapping"
-                  description="We dive deep into your brand DNA and market landscape to establish a strategic foundation for everything that follows."
-                />
-                <ProcessCard
-                  icon={<ListTodo className="w-6 h-6 stroke-[1.5px]" />}
-                  number="02"
-                  title="Iterative Refinement"
-                  description="Collaborative feedback cycles and high-fidelity prototyping ensure every pixel aligns with your vision and user needs."
-                />
-                <ProcessCard
-                  icon={<Rocket className="w-6 h-6 stroke-[1.5px]" />}
-                  number="03"
-                  title="Final Deployment"
-                  description="Precision-engineered assets delivered and ready for immediate implementation across your entire brand ecosystem."
-                />
+                {content.steps.map((step, index) => {
+                  const icons = [
+                    <Lightbulb key="1" className="w-6 h-6 stroke-[1.5px]" />,
+                    <ListTodo key="2" className="w-6 h-6 stroke-[1.5px]" />,
+                    <Rocket key="3" className="w-6 h-6 stroke-[1.5px]" />,
+                  ];
+                  return (
+                    <ProcessCard
+                      key={step.number}
+                      icon={icons[index] || icons[0]}
+                      number={step.number}
+                      title={step.title}
+                      description={step.description}
+                    />
+                  );
+                })}
               </div>
             </div>
 

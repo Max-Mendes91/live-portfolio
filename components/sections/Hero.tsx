@@ -4,7 +4,13 @@ import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Trophy, FolderOpen, Globe, Languages } from 'lucide-react';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
-import { TRUST_SIGNALS } from '@/lib/seo/config';
+import { SITE_CONFIG, TRUST_SIGNALS } from '@/lib/seo/config';
+import { HeroDict, SupportedLocale } from '@/types/i18n';
+
+interface HeroProps {
+  locale?: SupportedLocale;
+  dictionary?: HeroDict;
+}
 
 // Map icon names to Lucide components
 const iconMap = {
@@ -55,11 +61,24 @@ const LiquidBackground: React.FC = () => {
   );
 };
 
-const Hero: React.FC = () => {
+const Hero: React.FC<HeroProps> = ({ locale = 'en', dictionary }) => {
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, 600], [1, 0]);
   const yContent = useTransform(scrollY, [0, 600], [0, 100]);
   const [wheelY, setWheelY] = useState(0);
+
+  // Fallback values for backward compatibility
+  const content = {
+    badge: dictionary?.badge ?? 'Full-Stack Development',
+    headline: dictionary?.headline ?? 'Freelance Developer for Hire',
+    subheadline: dictionary?.subheadline ?? 'Websites. E-commerce. Web Apps. SaaS.',
+    description: dictionary?.description ?? "I'm Max, a full-stack developer based in Poland. I build websites, e-commerce stores, web apps, and SaaS products. I handle everything — from research and prototyping to deployment. UK and US clients welcome.",
+    ctaPrimary: dictionary?.ctaPrimary ?? 'Book a Free Call',
+    ctaSecondary: dictionary?.ctaSecondary ?? 'See Projects',
+    phoneLabel: dictionary?.phoneLabel ?? 'or call',
+    scrollDown: dictionary?.scrollDown ?? 'Scroll down',
+    toSeeProjects: dictionary?.toSeeProjects ?? 'to see projects',
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -90,24 +109,37 @@ const Hero: React.FC = () => {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]"></span>
             </span>
             <span className="text-[10px] font-medium tracking-[0.25em] text-white uppercase opacity-80">
-              Crafting Unique Brand Identities
+              {content.badge}
             </span>
           </div>
 
           {/* Lighter Typography with Tight Tracking */}
-          <h1 className="text-6xl md:text-[100px] font-light tracking-tighter leading-[1.1] pb-2 mb-12 select-none text-white max-w-[1200px]">
-            <span className="block">Branding that you</span>
-            <span className="block">need Indeed</span>
+          <h1 className="text-6xl md:text-[100px] font-light tracking-tighter leading-[1.1] pb-2 mb-6 select-none text-white max-w-[1200px]">
+            {content.headline}
           </h1>
 
+          <h2 className="text-xl md:text-2xl font-light tracking-tight text-zinc-300 mb-12">
+            {content.subheadline}
+          </h2>
+
           <p className="font-light tracking-tight text-zinc-400 text-base md:text-lg max-w-2xl mx-auto mb-16 leading-relaxed opacity-90">
-            Elevate your brand with custom identity and package design. Showcase your
-            story through bold visuals and strategic design solutions.
+            {content.description}
           </p>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 relative mb-16">
-            <CornerGlowButton>Get Started Now</CornerGlowButton>
-            <CornerGlowButton>See Projects</CornerGlowButton>
+          <div className="flex flex-col items-center gap-4 mb-16">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 relative">
+              <CornerGlowButton>{content.ctaPrimary}</CornerGlowButton>
+              <CornerGlowButton>{content.ctaSecondary}</CornerGlowButton>
+            </div>
+            <p className="text-sm text-zinc-500">
+              {content.phoneLabel}{' '}
+              <a
+                href={`tel:${SITE_CONFIG.owner.phone.replace(/\s/g, '')}`}
+                className="text-zinc-400 hover:text-white transition-colors"
+              >
+                {SITE_CONFIG.owner.phone}
+              </a>
+            </p>
           </div>
 
           {/* Trust Signals - SEO badges from friend's advice */}
@@ -117,7 +149,7 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-wrap items-center justify-center gap-3 md:gap-4"
           >
-            {TRUST_SIGNALS.en.map((signal) => {
+            {TRUST_SIGNALS[locale].map((signal) => {
               const IconComponent = iconMap[signal.icon as keyof typeof iconMap];
               return (
                 <div
@@ -141,7 +173,7 @@ const Hero: React.FC = () => {
       >
         <div className="flex-1 h-[1px] bg-white/[0.05] mr-12" />
         <div className="flex items-center">
-          <span className="text-[10px] font-medium tracking-[0.3em] text-zinc-500/60 uppercase whitespace-nowrap text-right mr-10">Scroll down</span>
+          <span className="text-[10px] font-medium tracking-[0.3em] text-zinc-500/60 uppercase whitespace-nowrap text-right mr-10">{content.scrollDown}</span>
           <div className="w-5 h-8 rounded-full border border-white/20 flex justify-center p-1.5 backdrop-blur-[2px]">
             <motion.div
               animate={{ y: wheelY }}
@@ -149,7 +181,7 @@ const Hero: React.FC = () => {
               className="w-0.5 h-2.5 bg-white/80 rounded-full shadow-[0_0_8px_white]"
             />
           </div>
-          <span className="text-[10px] font-medium tracking-[0.3em] text-zinc-500/60 uppercase whitespace-nowrap text-left ml-10">to see projects</span>
+          <span className="text-[10px] font-medium tracking-[0.3em] text-zinc-500/60 uppercase whitespace-nowrap text-left ml-10">{content.toSeeProjects}</span>
         </div>
         <div className="flex-1 h-[1px] bg-white/[0.05] ml-12" />
       </motion.div>

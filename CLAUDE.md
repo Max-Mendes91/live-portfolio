@@ -6,7 +6,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Dark-themed portfolio website for Max Mendes, a freelance web developer based in Poland targeting UK/US/EU clients. Bilingual (EN at `/`, PL at `/pl`).
+Dark-themed portfolio website for Max Mendes, a freelance web developer based in Częstochowa, Poland.
+
+**Target markets:**
+- **English** (`/en`) → UK, US, EU clients
+- **Polish** (`/pl`) → Local (Częstochowa), Regional (Śląskie), National (Poland)
+
+**Routing:** Uses `[locale]` dynamic segments with middleware for locale detection.
 
 ## Tech Stack
 
@@ -20,12 +26,14 @@ Dark-themed portfolio website for Max Mendes, a freelance web developer based in
 ## Commands
 
 ```bash
-npm install          # Install dependencies
-npm run dev          # Start dev server on port 3000
-npm run build        # Production build
-npm run start        # Start production server
-npm run lint         # Run ESLint
+pnpm install         # Install dependencies
+pnpm run dev         # Start dev server on port 3000
+pnpm run build       # Production build
+pnpm run start       # Start production server
+pnpm run lint        # Run ESLint
 ```
+
+> **Note:** This project uses pnpm (not npm). Lock file: `pnpm-lock.yaml`
 
 ---
 
@@ -118,10 +126,10 @@ Before commit, verify:
 
 ```bash
 # Run ESLint check - MUST PASS
-npm run lint
+pnpm run lint
 
 # Run build to check TypeScript - MUST PASS
-npm run build
+pnpm run build
 
 # If errors, FIX THEM before continuing
 ```
@@ -162,8 +170,8 @@ git pull origin main
 git checkout -b feature/description
 
 # 2. Run checks BEFORE committing
-npm run lint
-npm run build
+pnpm run lint
+pnpm run build
 
 # 3. Stage and commit
 git add [files]
@@ -291,19 +299,40 @@ export function StaticContent() { ... }
 - Font: Outfit (loaded in root layout via `next/font/google`)
 - Path alias: `@/` maps to project root
 
+### i18n Pattern
+Components receive dictionary props for localized content:
+
+```tsx
+interface HeroProps {
+  locale: SupportedLocale;
+  dictionary: HeroDict;
+}
+
+const Hero: React.FC<HeroProps> = ({ locale, dictionary }) => {
+  return <h1>{dictionary.headline}</h1>;
+};
+```
+
+Dictionary types defined in `types/i18n.ts`. JSON files in `lib/i18n/dictionaries/`.
+
 ## File Structure
 
 ```
 app/
-├── layout.tsx           # Root layout (metadata, fonts, hreflang)
-├── page.tsx             # Home page
+├── [locale]/            # Dynamic locale segment (en, pl)
+│   ├── layout.tsx       # Locale-specific layout (html lang, hreflang)
+│   ├── page.tsx         # Home page (server component)
+│   └── HomeClient.tsx   # Home page client component
 ├── globals.css          # Tailwind + custom styles
 ├── robots.ts            # Robots.txt generation
 ├── sitemap.ts           # Sitemap generation
 ├── manifest.ts          # PWA manifest
-└── pl/                  # Polish locale
-    ├── layout.tsx
-    └── page.tsx
+├── contact/             # Legacy English routes (redirect via middleware)
+├── projects/
+├── services/
+└── pl/                  # Legacy Polish routes
+
+middleware.ts            # Locale detection & redirects
 
 components/
 ├── ui/                  # Reusable UI (CornerGlowButton, PulseBadge, Marquee)
@@ -314,10 +343,13 @@ components/
 
 lib/
 ├── seo/                 # SEO (config, keywords, metadata, schemas)
-├── i18n/                # Dictionaries (en.json, pl.json)
+├── i18n/                # i18n config + dictionaries (en.json, pl.json)
 └── constants.tsx        # Static data
 
-types/                   # TypeScript types (index.ts, seo.ts)
+types/
+├── index.ts             # General types
+├── seo.ts               # SEO types (SupportedLocale, SiteConfig)
+└── i18n.ts              # Dictionary interfaces (HeroDict, AboutDict, etc.)
 ```
 
 ---
@@ -395,8 +427,8 @@ import { SITE_CONFIG } from '@/lib/seo/config';
 ## Quality Checklist
 
 Before commit:
-- [ ] `npm run lint` passes
-- [ ] `npm run build` passes
+- [ ] `pnpm run lint` passes
+- [ ] `pnpm run build` passes
 - [ ] No `console.log` in code
 - [ ] No `any` types
 - [ ] Mobile responsive tested
@@ -411,3 +443,5 @@ Before commit:
 - [.claude/skills/seo.md](.claude/skills/seo.md) - SEO management skill with keyword rules
 - [lib/seo/config.ts](lib/seo/config.ts) - Site configuration and trust signals
 - [lib/seo/metadata.ts](lib/seo/metadata.ts) - Page metadata with keyword-first titles
+- [types/i18n.ts](types/i18n.ts) - Dictionary TypeScript interfaces
+- [lib/i18n/dictionaries/](lib/i18n/dictionaries/) - EN/PL content dictionaries

@@ -5,10 +5,13 @@ This skill helps manage SEO for the Max Mendes portfolio website targeting Polan
 ## Quick Reference
 
 **Site Owner:** Max Mendes
-**Primary Language:** English (default at `/`)
+**Primary Language:** English (at `/en`)
 **Secondary Language:** Polish (at `/pl`)
-**Target Markets:** Poland, UK, US
-**Target Cities:** Częstochowa, Kraków, Warszawa, Katowice, Wrocław
+**Routing:** Dynamic `[locale]` segments with middleware
+**Target Markets:**
+- **Polish:** Local (Częstochowa), Regional (Śląskie), National (Poland)
+- **International:** UK, US, EU
+**Target Cities:** Częstochowa, Katowice, Kraków, Warszawa, Wrocław
 
 ---
 
@@ -67,10 +70,10 @@ Web Developer Czestochowa · Programista Krakow · Tworzenie Stron Warszawa · R
 
 ### 5. Trust Signals Data
 Available in `lib/seo/config.ts`:
-- `TRUST_SIGNALS` - experience badges (5+ years, 20+ projects, etc.)
+- `TRUST_SIGNALS` - experience badges (2+ years, UK/US timezone, Fluent English)
 - `USP_BADGES` - unique selling points (Full-Stack, Remote-First, etc.)
 
-Use these in About section or wherever social proof is needed.
+Use these in Hero section and wherever social proof is needed.
 
 ---
 
@@ -350,12 +353,14 @@ Update sitemap entries.
 
 ### hreflang Configuration
 ```html
-<link rel="alternate" hreflang="en" href="https://maxmendes.dev/" />
-<link rel="alternate" hreflang="en-US" href="https://maxmendes.dev/" />
-<link rel="alternate" hreflang="en-GB" href="https://maxmendes.dev/" />
-<link rel="alternate" hreflang="pl" href="https://maxmendes.dev/pl" />
-<link rel="alternate" hreflang="x-default" href="https://maxmendes.dev/" />
+<link rel="alternate" hreflang="en" href="https://example.com/en" />
+<link rel="alternate" hreflang="en-US" href="https://example.com/en" />
+<link rel="alternate" hreflang="en-GB" href="https://example.com/en" />
+<link rel="alternate" hreflang="pl" href="https://example.com/pl" />
+<link rel="alternate" hreflang="x-default" href="https://example.com/en" />
 ```
+
+> Note: Domain is placeholder. Update when domain is chosen.
 
 ---
 
@@ -363,13 +368,16 @@ Update sitemap entries.
 
 | File | Purpose |
 |------|---------|
-| `lib/seo/config.ts` | Site configuration |
-| `lib/seo/keywords.ts` | Keyword database |
+| `lib/seo/config.ts` | Site configuration, trust signals |
+| `lib/seo/keywords.ts` | Keyword database (EN/PL) |
 | `lib/seo/schemas.ts` | JSON-LD generators |
 | `lib/seo/metadata.ts` | Metadata generators |
 | `components/seo/JsonLd.tsx` | Schema injection |
 | `app/sitemap.ts` | Sitemap generation |
 | `app/robots.ts` | Robots.txt |
+| `app/[locale]/layout.tsx` | Locale-specific layout |
+| `middleware.ts` | Locale detection & redirects |
+| `types/i18n.ts` | Dictionary TypeScript interfaces |
 | `lib/i18n/dictionaries/en.json` | English content |
 | `lib/i18n/dictionaries/pl.json` | Polish content |
 

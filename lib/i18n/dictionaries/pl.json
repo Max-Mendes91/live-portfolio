@@ -1,17 +1,20 @@
 {
   "hero": {
-    "badge": "Dostepny do wspolpracy",
-    "headline": "Tworzenie Stron Internetowych, Ktore Sprzedaja",
-    "subheadline": "Programista Full Stack | Specjalista React & Next.js",
-    "description": "Tworze nowoczesne, wydajne strony internetowe i aplikacje webowe, ktore pomagaja firmom sie rozwijac. Od tworzenia stron www po sklepy internetowe i pozycjonowanie SEO - dostarczam rezultaty, ktore maja znaczenie.",
-    "ctaPrimary": "Bezplatna Wycena",
-    "ctaSecondary": "Zobacz Portfolio"
+    "badge": "Full-Stack Development",
+    "headline": "Nowoczesne Aplikacje Webowe",
+    "subheadline": "React & Next.js. Pełny Proces. Częstochowa & Śląskie.",
+    "description": "Jestem Max, programista full-stack z Częstochowy. Buduję strony biznesowe, sklepy internetowe i aplikacje webowe w React, Next.js i TypeScript. Obsługuję cały proces — od researchu i prototypu po wdrożenie. Pracuję z firmami z Częstochowy, Katowic, Krakowa i całej Polski.",
+    "ctaPrimary": "Bezpłatna Konsultacja",
+    "ctaSecondary": "Zobacz Projekty",
+    "phoneLabel": "lub zadzwoń",
+    "scrollDown": "Przewiń w dół",
+    "toSeeProjects": "aby zobaczyć projekty"
   },
   "about": {
-    "headline": "Czesc, jestem Max Mendes",
-    "subheadline": "Programista Full Stack z Czestochowy",
-    "description": "Specjalizuje sie w React, Next.js, Node.js i TypeScript. Pomagam firmom budowac silna obecnosc online. Niezaleznie czy potrzebujesz strony internetowej, sklepu online czy pozycjonowania SEO - dostarczam rozwiazania, ktore przynosza rezultaty.",
-    "description2": "Wspolpracuje z klientami z Polski i calej Europy, oferujac profesjonalne uslugi tworzenia stron z jasna komunikacja i terminowa realizacja.",
+    "headline": "Cześć, jestem Max Mendes",
+    "subheadline": "Programista Full-Stack z Częstochowy, woj. śląskie",
+    "description": "Specjalizuję się w React, Next.js, Node.js i TypeScript. Pomagam firmom z Częstochowy, Katowic, Krakowa, Warszawy i całej Polski budować silną obecność online. Niezależnie czy potrzebujesz strony internetowej, sklepu online czy pozycjonowania SEO — dostarczam rozwiązania, które przynoszą rezultaty.",
+    "description2": "Współpracuję z klientami z całej Polski i Europy, oferując profesjonalne usługi tworzenia stron z jasną komunikacją i terminową realizacją. Siedziba w Częstochowie, obsługuję klientów zdalnie w całym kraju.",
     "skills": ["React", "Next.js", "Node.js", "TypeScript", "PostgreSQL", "MongoDB", "Tailwind CSS", "Figma", "SEO"]
   },
   "services": {
@@ -88,45 +91,54 @@
     ]
   },
   "faq": {
-    "title": "Czesto Zadawane Pytania",
+    "title": "Często Zadawane Pytania",
     "items": [
       {
         "question": "Ile kosztuje strona internetowa?",
-        "answer": "Koszty strony zaleza od zlozonosci. Prosty landing page zaczyna sie od 2000 PLN, a zaawansowane aplikacje webowe od 8000-40000 PLN. Skontaktuj sie po bezplatna wycene."
+        "answer": "Koszty strony zależą od złożoności. Prosty landing page zaczyna się od 2000 PLN, a zaawansowane aplikacje webowe od 8000-40000 PLN. Skontaktuj się po bezpłatną wycenę."
       },
       {
-        "question": "Jak dlugo trwa tworzenie strony?",
-        "answer": "Prosta strona zajmuje 1-2 tygodnie, zlozone aplikacje 4-8 tygodni. Podaje realistyczne terminy na poczatku i informuje o postepach."
+        "question": "Jak długo trwa tworzenie strony?",
+        "answer": "Prosta strona zajmuje 1-2 tygodnie, złożone aplikacje 4-8 tygodni. Podaję realistyczne terminy na początku i informuję o postępach."
+      },
+      {
+        "question": "Czy obsługujesz klientów spoza Częstochowy?",
+        "answer": "Tak! Mam siedzibę w Częstochowie, ale obsługuję klientów z całego województwa śląskiego — Katowice, Gliwice, Sosnowiec, Bielsko-Biała — oraz z całej Polski: Kraków, Warszawa, Wrocław, Poznań i inne miasta. Pracuję zdalnie, więc lokalizacja nie ma znaczenia."
       },
       {
         "question": "Czy pracujesz z klientami spoza Polski?",
-        "answer": "Tak! Wspolpracuje z klientami z Polski, UK, USA, Niemiec i calej Europy. Plynnie mowie po angielsku i polsku."
+        "answer": "Tak! Współpracuję z klientami z Polski, UK, USA, Niemiec i całej Europy. Płynnie mówię po angielsku i polsku."
       },
       {
-        "question": "Jakich technologii uzywasz?",
-        "answer": "Specjalizuje sie w React, Next.js, Node.js, TypeScript i Tailwind CSS. Do baz danych uzywam PostgreSQL i MongoDB."
+        "question": "Jakich technologii używasz?",
+        "answer": "Specjalizuję się w React, Next.js, Node.js, TypeScript i Tailwind CSS. Do baz danych używam PostgreSQL i MongoDB."
       },
       {
-        "question": "Czy oferujesz uslugi SEO?",
-        "answer": "Tak, wszystkie moje strony sa budowane z najlepszymi praktykami SEO. Oferuje tez dedykowane uslugi pozycjonowania."
+        "question": "Czy oferujesz usługi SEO dla firm z Częstochowy?",
+        "answer": "Tak, oferuję pozycjonowanie lokalne dla firm z Częstochowy i okolic, jak również SEO dla firm działających w całej Polsce. Wszystkie moje strony są budowane z najlepszymi praktykami SEO."
+      },
+      {
+        "question": "Czy możemy spotkać się osobiście?",
+        "answer": "Tak, jeśli jesteś z Częstochowy lub okolic, chętnie spotkam się osobiście. Dla klientów z innych miast oferuję wideokonferencje przez Google Meet lub Zoom."
       }
     ]
   },
   "footer": {
-    "tagline": "Zbudujmy razem cos niesamowitego",
-    "cta": "Skontaktuj sie",
+    "tagline": "Zbudujmy razem coś niesamowitego",
+    "cta": "Skontaktuj się",
     "contact": {
       "email": "maxmendesnoah1991@gmail.com",
       "phone": "+48 502 742 941",
-      "location": "Czestochowa, Polska"
+      "location": "Częstochowa, woj. śląskie, Polska"
     },
     "links": {
-      "services": "Uslugi",
+      "services": "Usługi",
       "portfolio": "Portfolio",
       "about": "O mnie",
       "contact": "Kontakt"
     },
-    "copyright": "2024 Max Mendes. Wszelkie prawa zastrzezone."
+    "copyright": "2024 Max Mendes. Wszelkie prawa zastrzeżone.",
+    "seoText": "Programista z Częstochowy · Tworzenie stron internetowych Śląskie · Obsługuję klientów: Katowice, Kraków, Warszawa, Wrocław i cała Polska"
   },
   "nav": {
     "home": "Strona glowna",
@@ -139,6 +151,55 @@
     "learnMore": "Dowiedz sie wiecej",
     "getStarted": "Rozpocznij",
     "viewAll": "Zobacz wszystko",
-    "readMore": "Czytaj wiecej"
+    "readMore": "Czytaj wiecej",
+    "backToHome": "Powrot do strony glownej"
+  },
+  "contact": {
+    "badge": "Kontakt",
+    "title": "Wspolpracujmy",
+    "subtitle": "Masz pomysl na projekt? Chetnie o nim porozmawiam. Skontaktuj sie i stworzmy razem cos niesamowitego.",
+    "infoTitle": "Dane Kontaktowe",
+    "formTitle": "Wyslij Wiadomosc",
+    "labels": {
+      "email": "Email",
+      "phone": "Telefon",
+      "location": "Lokalizacja",
+      "availability": "Dostepnosc",
+      "name": "Imie",
+      "subject": "Temat",
+      "message": "Wiadomosc"
+    },
+    "placeholders": {
+      "name": "Twoje imie",
+      "email": "twoj@email.com",
+      "subject": "Zapytanie o projekt",
+      "message": "Opowiedz mi o swoim projekcie..."
+    },
+    "submit": "Wyslij Wiadomosc",
+    "success": "Wiadomosc wyslana pomyslnie!",
+    "error": "Nie udalo sie wyslac wiadomosci. Sprobuj ponownie.",
+    "servingRemote": "Obsluguje klientow z calej Polski i Europy",
+    "flexibleTimezone": "Elastyczne godziny pracy",
+    "socialConnect": "Polacz sie",
+    "availabilityHours": "Pon - Pt: 9:00 - 18:00",
+    "notSure": {
+      "title": "Nie Wiesz Czego Potrzebujesz?",
+      "description": "Sprawdz moje uslugi, zeby zobaczyc jak moge pomoc w Twoim projekcie."
+    }
+  },
+  "projects": {
+    "badge": "Portfolio",
+    "title": "Wybrane Projekty",
+    "subtitle": "Kolekcja projektow web development i designu, nad ktorymi pracowalem. Kazdy projekt to unikalne wyzwanie i rozwiazanie.",
+    "cta": {
+      "title": "Masz Pomysl na Projekt?",
+      "description": "Porozmawiajmy o Twoim projekcie i zobaczmy jak moge pomoc w realizacji Twoich pomyslow.",
+      "getFreeQuote": "Bezplatna Wycena",
+      "viewServices": "Zobacz Uslugi"
+    }
+  },
+  "workGrid": {
+    "title": "Ostatnie Prace",
+    "viewCasestudy": "Zobacz Case Study"
   }
 }
