@@ -2,7 +2,9 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-> For SEO management see `.claude/skills/seo.md`.
+> **IMPORTANT:** For i18n architecture, see [.claude/ARCHITECTURE.md](.claude/ARCHITECTURE.md)
+> For project roadmap, see [.claude/ROADMAP.md](.claude/ROADMAP.md)
+> For SEO management, see [.claude/skills/seo.md](.claude/skills/seo.md)
 
 ## Project Overview
 
@@ -12,7 +14,15 @@ Dark-themed portfolio website for Max Mendes, a freelance web developer based in
 - **English** (`/en`) → UK, US, EU clients
 - **Polish** (`/pl`) → Local (Częstochowa), Regional (Śląskie), National (Poland)
 
-**Routing:** Uses `[locale]` dynamic segments with middleware for locale detection.
+**Routing:** Uses **localized URLs** for better SEO (see Architecture doc):
+
+| English | Polish |
+|---------|--------|
+| `/en` | `/pl` |
+| `/en/about` | `/pl/o-mnie` |
+| `/en/contact` | `/pl/kontakt` |
+| `/en/projects` | `/pl/projekty` |
+| `/en/services` | `/pl/uslugi` |
 
 ## Tech Stack
 
@@ -317,20 +327,31 @@ Dictionary types defined in `types/i18n.ts`. JSON files in `lib/i18n/dictionarie
 
 ## File Structure
 
+> **Full details:** See [.claude/ARCHITECTURE.md](.claude/ARCHITECTURE.md)
+
 ```
 app/
-├── [locale]/            # Dynamic locale segment (en, pl)
+├── [locale]/            # Homepage only (en, pl)
 │   ├── layout.tsx       # Locale-specific layout (html lang, hreflang)
 │   ├── page.tsx         # Home page (server component)
 │   └── HomeClient.tsx   # Home page client component
+│
+├── en/                  # English subpages (English slugs)
+│   ├── about/
+│   ├── contact/
+│   ├── projects/
+│   └── services/
+│
+├── pl/                  # Polish subpages (Polish slugs!)
+│   ├── o-mnie/          # NOT /pl/about
+│   ├── kontakt/         # NOT /pl/contact
+│   ├── projekty/        # NOT /pl/projects
+│   └── uslugi/          # NOT /pl/services
+│
 ├── globals.css          # Tailwind + custom styles
 ├── robots.ts            # Robots.txt generation
 ├── sitemap.ts           # Sitemap generation
-├── manifest.ts          # PWA manifest
-├── contact/             # Legacy English routes (redirect via middleware)
-├── projects/
-├── services/
-└── pl/                  # Legacy Polish routes
+└── manifest.ts          # PWA manifest
 
 middleware.ts            # Locale detection & redirects
 
@@ -344,6 +365,7 @@ components/
 lib/
 ├── seo/                 # SEO (config, keywords, metadata, schemas)
 ├── i18n/                # i18n config + dictionaries (en.json, pl.json)
+│   └── routes.ts        # Route mapping between locales
 └── constants.tsx        # Static data
 
 types/
@@ -440,8 +462,16 @@ Before commit:
 
 ## References
 
+**Architecture & Planning:**
+- [.claude/ARCHITECTURE.md](.claude/ARCHITECTURE.md) - **i18n with localized URLs (MUST READ)**
+- [.claude/ROADMAP.md](.claude/ROADMAP.md) - Project phases and progress
+
+**SEO:**
 - [.claude/skills/seo.md](.claude/skills/seo.md) - SEO management skill with keyword rules
 - [lib/seo/config.ts](lib/seo/config.ts) - Site configuration and trust signals
 - [lib/seo/metadata.ts](lib/seo/metadata.ts) - Page metadata with keyword-first titles
+
+**i18n:**
+- [lib/i18n/routes.ts](lib/i18n/routes.ts) - Route mapping between locales
 - [types/i18n.ts](types/i18n.ts) - Dictionary TypeScript interfaces
 - [lib/i18n/dictionaries/](lib/i18n/dictionaries/) - EN/PL content dictionaries
