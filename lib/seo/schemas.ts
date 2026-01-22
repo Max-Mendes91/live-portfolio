@@ -7,6 +7,7 @@ import {
   BreadcrumbSchema,
   SupportedLocale,
 } from '@/types/seo';
+import { ServiceLink } from '@/types/i18n';
 import { SITE_CONFIG, GEO_COORDINATES, TARGET_MARKETS, SKILLS, getFullUrl } from './config';
 
 // Generate Person schema for Max Mendes
@@ -239,4 +240,26 @@ export function generateBreadcrumbSchema(
 // Generate all schemas for homepage
 export function generateHomePageSchemas(locale: SupportedLocale = 'en') {
   return [generatePersonSchema(), generateLocalBusinessSchema(locale), generateWebsiteSchema()];
+}
+
+// Generate Service schema from dictionary ServiceLink data
+export function generateServicePageSchema(serviceData: ServiceLink): ServiceSchema {
+  const { id, schema, seo } = serviceData;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${SITE_CONFIG.url}/#service-${id}`,
+    name: seo.h1,
+    description: schema.description,
+    provider: {
+      '@type': 'Person',
+      name: SITE_CONFIG.owner.name,
+    },
+    areaServed: schema.areaServed.map((area) => ({
+      '@type': 'Place',
+      name: area,
+    })),
+    serviceType: schema.serviceType,
+  };
 }

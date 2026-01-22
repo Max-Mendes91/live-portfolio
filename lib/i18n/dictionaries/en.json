@@ -116,20 +116,41 @@
     ]
   },
   "footer": {
-    "tagline": "Let's build something amazing together",
-    "cta": "Get in Touch",
-    "contact": {
-      "email": "maxmendesnoah1991@gmail.com",
-      "phone": "+48 502 742 941",
-      "location": "Czestochowa, Poland"
+    "availableBadge": "Available For Work",
+    "headline": "Not an Agency. Not WordPress. Just Code.",
+    "subheadline": "One full-stack developer in Poland building software for real businesses. Available for projects worldwide.",
+    "cta": "Start a Conversation",
+    "seoText": "No Committees, Just Code",
+    "sections": {
+      "quickLinks": "Quick Links",
+      "services": "Services",
+      "contact": "Contact"
     },
-    "links": {
+    "quickLinks": {
+      "home": "Home",
       "about": "About",
       "services": "Services",
       "projects": "Projects",
       "contact": "Contact"
     },
-    "copyright": "2024 Max Mendes. All rights reserved."
+    "serviceLinks": [
+      { "label": "Full-Stack Web Development", "href": "/en/services/web-development" },
+      { "label": "SaaS & Web Applications", "href": "/en/services/saas-web-apps" },
+      { "label": "E-Commerce Development", "href": "/en/services/ecommerce-development" },
+      { "label": "SEO & Performance", "href": "/en/services/seo-performance-optimization" },
+      { "label": "AI Integration", "href": "/en/services/ai-integration" }
+    ],
+    "contact": {
+      "name": "Max Mendes",
+      "location": "Częstochowa, Poland",
+      "email": "maxmendesnoah1991@gmail.com",
+      "available": "Available for work"
+    },
+    "bottom": {
+      "copyright": "Max Mendes",
+      "tagline": "Web Developer in Częstochowa, Poland",
+      "serving": "Serving clients in Poland, UK, US & Europe"
+    }
   },
   "nav": {
     "home": "Home",
@@ -204,9 +225,10 @@
     },
     "heading": "About Max Mendes - Full-Stack Developer Poland",
     "bio": [
-      "I'm Max, a full-stack web developer based in Częstochowa, Poland. I build modern business websites, e-commerce stores, and web applications for companies that need more than a basic template. My work focuses on clean, maintainable code, strong performance, and real-world usability.",
-      "I'm not a designer or a branding specialist. I don't create logos or visual identities from scratch. My role is technical: I write code and turn ideas into working products. I implement interfaces using proven UI patterns and component libraries like shadcn/ui and Tailwind CSS, with a strong focus on speed, SEO optimization, and scalability.",
+      "I'm Max, a full-stack web developer based in Częstochowa, Poland. I build modern business websites, e-commerce stores, and AI-powered web applications for companies that need more than a basic template. My work focuses on clean, maintainable code, strong performance, and real-world usability.",
+      "I'm not a designer or a branding specialist. I don't create logos or visual identities from scratch. My role is technical: I write code and turn ideas into working products. I implement interfaces using proven UI patterns and component libraries like shadcn/ui and Tailwind CSS, with a strong focus on speed, SEO optimization, and scalability. I also integrate AI capabilities using OpenAI and Anthropic APIs—tools I've used in production to build features like smart content generation, automated workflows, and intelligent data processing.",
       "My process is structured and practical. I start with research—understanding the business goal, competitors, and technical requirements. Then I create low-fidelity prototypes in Figma to map user flows and features. After that, I build production-ready code using React and Next.js, handle deployment, optimization, and iteration based on feedback.",
+      "My biggest project, FlowMate, is an AI-powered email management platform that handles multi-platform broadcasting and smart content generation. It took 300+ hours to build and taught me how to architect production SaaS applications with authentication, payments, AI integration, and real user data at scale.",
       "I work with Polish businesses that need reliable websites or online stores, as well as UK and US companies looking for an offshore freelance developer. I'm fluent in English and comfortable working asynchronously across time zones."
     ],
     "skills": {
@@ -215,6 +237,9 @@
         "Full-Stack Web Development",
         "React & Next.js",
         "TypeScript & JavaScript",
+        "AI Integration",
+        "OpenAI API",
+        "LLM Implementation",
         "Business Websites & Landing Pages",
         "E-Commerce Development (Shopify + Custom)",
         "SaaS & Web Applications",
@@ -249,6 +274,245 @@
       "primaryButton": "Schedule Free Consultation",
       "secondaryButton": "View Portfolio",
       "tertiaryButton": "See Services"
+    }
+  },
+  "servicesPage": {
+    "hero": {
+      "badge": "Product Mindset",
+      "title": "Every project starts with thinking",
+      "subtitle": "One person, end-to-end responsibility",
+      "description": "Before anything is built, I focus on structure, constraints, and what actually needs to work. No handoffs, no account managers, no guessing between departments. You get clear decisions, fast feedback, and products built with intent—not feature bloat. This works for Polish businesses and international teams who value clarity over bureaucracy."
+    },
+    "services": [
+      {
+        "id": "full-stack",
+        "icon1": "Terminal",
+        "icon2": "CodeXml",
+        "iconCenter1": "Braces",
+        "iconCenter2": "Server",
+        "badge": "Development",
+        "title": "Full-Stack Web Development",
+        "description": "Business websites should feel solid, fast, and easy to grow—not fragile or locked into shortcuts. Projects here are treated like real products, with clean structure and long-term use in mind. Everything runs on a modern stack using React, Next.js, and TypeScript, so performance and speed are built in from day one.",
+        "features": [
+          "Custom business website or web solution",
+          "Clean, maintainable codebase",
+          "SEO-friendly structure and fast loading",
+          "Responsive layout for all screen sizes",
+          "Deployment and launch setup"
+        ],
+        "href": "/en/services/web-development"
+      },
+      {
+        "id": "saas",
+        "icon1": "Cloud",
+        "icon2": "Database",
+        "iconCenter1": "Globe",
+        "iconCenter2": "Lock",
+        "badge": "SaaS",
+        "title": "SaaS & Web Applications",
+        "description": "When a website isn't enough, you're usually dealing with software. User accounts, dashboards, permissions, subscriptions—these projects need clear logic and room to evolve. The goal is a system that works today and doesn't fall apart when features are added later.",
+        "features": [
+          "Custom web app or SaaS platform",
+          "User authentication and access control",
+          "Dashboards and application workflows",
+          "Payment handling and subscriptions",
+          "Production-ready deployment"
+        ],
+        "href": "/en/services/saas-web-apps"
+      },
+      {
+        "id": "ecommerce",
+        "icon1": "ShoppingCart",
+        "icon2": "CreditCard",
+        "iconCenter1": "Truck",
+        "iconCenter2": "Wallet",
+        "badge": "E-commerce",
+        "title": "E-Commerce Development",
+        "description": "Online stores need to be simple to use and easy to manage behind the scenes. Whether it's a Shopify-based store or a fully custom setup, the focus is on smooth checkout, clear product structure, and a store that can scale with sales.",
+        "features": [
+          "Online store setup (Shopify or custom)",
+          "Product and category structure",
+          "Checkout and payment configuration",
+          "Optimized product pages",
+          "Launch support and adjustments"
+        ],
+        "href": "/en/services/ecommerce-development"
+      },
+      {
+        "id": "seo",
+        "icon1": "Search",
+        "icon2": "LineChart",
+        "iconCenter1": "FileSearch",
+        "iconCenter2": "TrendingUp",
+        "badge": "SEO",
+        "title": "SEO & Performance Optimization",
+        "description": "Slow pages and messy structure quietly hurt results. This work is about making sites load faster, feel smoother, and make more sense to search engines. You end up with better visibility, better user experience, and fewer technical issues down the road.",
+        "features": [
+          "Technical SEO review and fixes",
+          "Page speed and performance improvements",
+          "Image optimization and cleanup",
+          "Metadata and indexing improvements",
+          "Clear recommendations for next steps"
+        ],
+        "href": "/en/services/seo-performance-optimization"
+      },
+      {
+        "id": "ai-integration",
+        "icon1": "Bot",
+        "icon2": "Zap",
+        "iconCenter1": "MessageSquare",
+        "iconCenter2": "Cpu",
+        "badge": "AI",
+        "title": "AI Integration & Automation",
+        "description": "Smart features powered by AI language models. I integrate AI into your product where it actually helps—handling support questions, generating content, or automating workflows that waste your team's time.",
+        "features": [
+          "AI chatbots for customer support, onboarding, or internal tools",
+          "Content generation and summarization inside your app or admin panel",
+          "Automation of repetitive workflows (emails, tagging, classification)",
+          "Custom AI features designed for your specific business needs"
+        ],
+        "href": "/en/services/ai-integration"
+      }
+    ],
+    "cta": {
+      "title": "Let's talk through your project",
+      "description": "No forms, no sales layer. Just a conversation to understand your goals, constraints, and whether I'm the right person to build it. If it's a fit, we'll outline next steps clearly.",
+      "primaryButton": "Start a Conversation",
+      "secondaryButton": "Explore Projects"
+    }
+  },
+  "servicePages": {
+    "web-development": {
+      "id": "web-development",
+      "label": "Full-Stack Web Development",
+      "href": "/en/services/web-development",
+      "hrefLang": {
+        "en": "/en/services/web-development",
+        "pl": "/pl/uslugi/tworzenie-stron"
+      },
+      "seo": {
+        "title": "Full-Stack Web Development | Max Mendes",
+        "metaDescription": "Custom websites and web applications built with React, Next.js & TypeScript. Clean code, fast loading, SEO-ready. Poland-based developer serving UK, US & EU clients.",
+        "keywords": ["web development", "react developer", "nextjs developer", "full-stack developer", "custom websites", "typescript developer", "web developer poland"],
+        "h1": "Full-Stack Web Development",
+        "ogTitle": "Full-Stack Web Development | Max Mendes",
+        "canonical": "https://maxmendes.dev/en/services/web-development"
+      },
+      "schema": {
+        "serviceType": "Web Development Service",
+        "description": "Custom web applications and business websites built with React, Next.js, and TypeScript. From landing pages to complex platforms.",
+        "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+      }
+    },
+    "saas-web-apps": {
+      "id": "saas-web-apps",
+      "label": "SaaS & Web Applications",
+      "href": "/en/services/saas-web-apps",
+      "hrefLang": {
+        "en": "/en/services/saas-web-apps",
+        "pl": "/pl/uslugi/aplikacje-webowe"
+      },
+      "seo": {
+        "title": "SaaS & Web App Development | Max Mendes",
+        "metaDescription": "Custom SaaS platforms and web applications with user auth, dashboards, payments & subscriptions. React, Next.js, Node.js. Poland-based, serving global clients.",
+        "keywords": ["saas development", "web application development", "custom software", "dashboard development", "subscription platform", "react web app", "nextjs saas"],
+        "h1": "SaaS & Web Application Development",
+        "ogTitle": "SaaS & Web App Development | Max Mendes",
+        "canonical": "https://maxmendes.dev/en/services/saas-web-apps"
+      },
+      "schema": {
+        "serviceType": "Software Development Service",
+        "description": "Custom SaaS platforms and web applications with authentication, dashboards, payment integration, and scalable architecture.",
+        "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+      }
+    },
+    "ecommerce-development": {
+      "id": "ecommerce-development",
+      "label": "E-Commerce Development",
+      "href": "/en/services/ecommerce-development",
+      "hrefLang": {
+        "en": "/en/services/ecommerce-development",
+        "pl": "/pl/uslugi/sklepy-internetowe"
+      },
+      "seo": {
+        "title": "E-Commerce Development | Max Mendes",
+        "metaDescription": "Professional e-commerce development with Shopify or custom solutions. Payment integration, inventory management, fast checkout. Based in Poland, global delivery.",
+        "keywords": ["ecommerce development", "online store development", "shopify developer", "custom ecommerce", "payment integration", "shopping cart", "ecommerce poland"],
+        "h1": "E-Commerce Development",
+        "ogTitle": "E-Commerce Development | Max Mendes",
+        "canonical": "https://maxmendes.dev/en/services/ecommerce-development"
+      },
+      "schema": {
+        "serviceType": "E-Commerce Development Service",
+        "description": "Professional e-commerce solutions with payment integration, inventory management, and conversion optimization. Shopify or custom builds.",
+        "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+      }
+    },
+    "seo-performance-optimization": {
+      "id": "seo-performance-optimization",
+      "label": "SEO & Performance Optimization",
+      "href": "/en/services/seo-performance-optimization",
+      "hrefLang": {
+        "en": "/en/services/seo-performance-optimization",
+        "pl": "/pl/uslugi/pozycjonowanie"
+      },
+      "seo": {
+        "title": "SEO & Performance Optimization | Max Mendes",
+        "metaDescription": "Technical SEO, Core Web Vitals optimization, and page speed improvements. Fix what's slowing your site and hurting rankings. Developer-focused SEO services.",
+        "keywords": ["technical seo", "seo optimization", "core web vitals", "page speed optimization", "seo audit", "website performance", "seo developer"],
+        "h1": "SEO & Performance Optimization",
+        "ogTitle": "SEO & Performance Optimization | Max Mendes",
+        "canonical": "https://maxmendes.dev/en/services/seo-performance-optimization"
+      },
+      "schema": {
+        "serviceType": "SEO Service",
+        "description": "Technical SEO audits, Core Web Vitals optimization, page speed improvements, and metadata fixes. Developer-focused approach to search optimization.",
+        "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+      }
+    },
+    "ai-integration": {
+      "id": "ai-integration",
+      "label": "AI Integration & Automation",
+      "href": "/en/services/ai-integration",
+      "hrefLang": {
+        "en": "/en/services/ai-integration",
+        "pl": "/pl/uslugi/integracja-ai"
+      },
+      "seo": {
+        "title": "AI Integration & Automation | Max Mendes",
+        "metaDescription": "AI integration for web applications. Chatbots, content generation, workflow automation using OpenAI & Claude APIs. Poland-based developer, global clients.",
+        "keywords": ["ai integration", "chatbot development", "openai integration", "llm implementation", "ai automation", "chatgpt api", "ai developer"],
+        "h1": "AI Integration & Automation",
+        "ogTitle": "AI Integration & Automation | Max Mendes",
+        "canonical": "https://maxmendes.dev/en/services/ai-integration"
+      },
+      "schema": {
+        "serviceType": "AI Integration Service",
+        "description": "AI-powered features for web applications including chatbots, content generation, and workflow automation using OpenAI and Anthropic APIs.",
+        "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+      }
+    },
+    "services-overview": {
+      "id": "services-overview",
+      "label": "Web Development Services",
+      "href": "/en/services",
+      "hrefLang": {
+        "en": "/en/services",
+        "pl": "/pl/uslugi"
+      },
+      "seo": {
+        "title": "Web Development Services | Max Mendes",
+        "metaDescription": "Professional web development services including websites, e-commerce stores, and web applications. React, Next.js, TypeScript. Based in Poland, serving UK, US & Europe.",
+        "keywords": ["web development services", "freelance developer", "react developer", "nextjs developer", "web developer poland", "custom websites", "web applications"],
+        "h1": "Web Development Services",
+        "ogTitle": "Web Development Services | Max Mendes",
+        "canonical": "https://maxmendes.dev/en/services"
+      },
+      "schema": {
+        "serviceType": "Web Development Services",
+        "description": "Professional web development services including custom websites, e-commerce stores, SaaS platforms, and web applications built with React, Next.js, and TypeScript.",
+        "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+      }
     }
   }
 }

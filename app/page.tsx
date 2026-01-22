@@ -11,6 +11,7 @@ import ProcessSection from '@/components/sections/ProcessSection';
 import FooterSection from '@/components/sections/FooterSection';
 import AboutMe from '@/components/sections/AboutMe';
 import { HomePageJsonLd } from '@/components/seo/JsonLd';
+import enDict from '@/lib/i18n/dictionaries/en.json';
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -90,7 +91,7 @@ export default function Home() {
 
       {/* Sticky Reveal Footer */}
       <div className="sticky bottom-0 z-0 h-screen w-full">
-        <FooterSection />
+        <FooterSection locale="en" dictionary={enDict.footer} />
       </div>
     </div>
   );

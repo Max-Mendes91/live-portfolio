@@ -1,17 +1,20 @@
 # SEO Management Skill
 
-This skill helps manage SEO for the Max Mendes portfolio website targeting Poland (Częstochowa, Kraków, Warszawa) and international markets (UK, US).
+This skill helps manage SEO for the Max Mendes portfolio website targeting Poland (Częstochowa, Śląskie) and international markets (UK, US, EU).
 
 ## Quick Reference
 
 **Site Owner:** Max Mendes
 **Primary Language:** English (at `/en`)
 **Secondary Language:** Polish (at `/pl`)
-**Routing:** Dynamic `[locale]` segments with middleware
+**Routing:** Localized URLs (see [ARCHITECTURE.md](../ARCHITECTURE.md))
 **Target Markets:**
-- **Polish:** Local (Częstochowa), Regional (Śląskie), National (Poland)
-- **International:** UK, US, EU
-**Target Cities:** Częstochowa, Katowice, Kraków, Warszawa, Wrocław
+- **Polish:** Local (Częstochowa), Regional (Śląskie), National (Polska)
+- **International:** UK, US, EU (Poland, United Kingdom, United States, European Union)
+**areaServed (Polish):** Częstochowa, Śląskie, Polska
+**areaServed (English):** Poland, United Kingdom, United States, European Union
+
+> **IMPORTANT:** All SEO metadata MUST use the dictionary-based pattern. See [CLAUDE.md](../../CLAUDE.md#seo-dictionary-pattern-mandatory-for-all-pages)
 
 ---
 
@@ -322,16 +325,18 @@ Analyze competitor SEO for insights.
 - Suggest improvements
 
 ### 7. Local SEO
-Manage local SEO for Polish cities.
+Manage local SEO for Polish market.
 
 ```
-/seo local <city>
+/seo local <area>
 ```
 
-**Cities:** `czestochowa`, `krakow`, `warszawa`, `katowice`, `wroclaw`
+**Areas:** `czestochowa`, `slaskie`, `polska`
+
+> **Note:** We focus on Częstochowa (local), Śląskie (regional), and Polska (national). Do NOT add other cities like Katowice, Kraków, etc. - these were removed from our SEO strategy.
 
 **Actions:**
-- Generate city-specific keywords
+- Generate area-specific keywords
 - Create location schema markup
 - Suggest local content additions
 - Update geo meta tags

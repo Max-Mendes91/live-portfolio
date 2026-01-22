@@ -1,7 +1,9 @@
 import { SupportedLocale } from '@/types/seo';
+import { ServiceLink } from '@/types/i18n';
 import {
   generateHomePageSchemas,
   generateServiceSchema,
+  generateServicePageSchema,
   generateFAQSchema,
   generateBreadcrumbSchema,
 } from '@/lib/seo/schemas';
@@ -58,4 +60,10 @@ export function AllServicesJsonLd({ locale = 'en' }: { locale?: SupportedLocale 
   const serviceIds = ['webDevelopment', 'webDesign', 'seo', 'ecommerce'];
   const schemas = serviceIds.map((id) => generateServiceSchema(id, locale));
   return <JsonLd data={schemas} />;
+}
+
+// Service page JSON-LD using dictionary ServiceLink data
+export function ServicePageJsonLd({ serviceData }: { serviceData: ServiceLink }) {
+  const schema = generateServicePageSchema(serviceData);
+  return <JsonLd data={schema} />;
 }

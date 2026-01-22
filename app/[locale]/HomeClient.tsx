@@ -100,7 +100,7 @@ export default function HomeClient({ locale, dictionary }: HomeClientProps) {
 
       {/* Sticky Reveal Footer */}
       <div className="sticky bottom-0 z-0 h-screen w-full">
-        <FooterSection />
+        <FooterSection locale={locale} dictionary={dictionary.footer} />
       </div>
     </div>
   );

@@ -33,7 +33,18 @@ This project uses **localized URLs** for better SEO targeting in each market.
 | Contact | `/en/contact` | `/pl/kontakt` |
 | Projects | `/en/projects` | `/pl/projekty` |
 | Services | `/en/services` | `/pl/uslugi` |
-| Service Detail | `/en/services/[slug]` | `/pl/uslugi/[slug]` |
+
+### Service Detail Pages (Localized Slugs)
+
+| Service | English URL | Polish URL |
+|---------|-------------|------------|
+| Web Development | `/en/services/web-development` | `/pl/uslugi/tworzenie-stron` |
+| SaaS & Web Apps | `/en/services/saas-web-apps` | `/pl/uslugi/aplikacje-webowe` |
+| E-Commerce | `/en/services/ecommerce-development` | `/pl/uslugi/sklepy-internetowe` |
+| SEO & Performance | `/en/services/seo-performance-optimization` | `/pl/uslugi/pozycjonowanie` |
+| AI Integration | `/en/services/ai-integration` | `/pl/uslugi/integracja-ai` |
+
+> **Note:** Service pages use dictionary-based SEO metadata. See [../CLAUDE.md](../CLAUDE.md#seo-dictionary-pattern-mandatory-for-all-pages) for implementation pattern.
 
 ### Root URL Behavior
 

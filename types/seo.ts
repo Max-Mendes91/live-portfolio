@@ -163,7 +163,7 @@ export interface ServiceSchema {
     name: string;
   };
   areaServed: Array<{
-    '@type': 'Country' | 'City';
+    '@type': 'Country' | 'City' | 'Place' | 'AdministrativeArea';
     name: string;
   }>;
   serviceType: string;

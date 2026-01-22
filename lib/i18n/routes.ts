@@ -13,9 +13,10 @@ const ROUTE_SLUGS = {
     contact: 'contact',
     // Service sub-pages
     'services/web-development': 'services/web-development',
-    'services/web-design': 'services/web-design',
-    'services/seo': 'services/seo',
-    'services/ecommerce': 'services/ecommerce',
+    'services/saas': 'services/saas-web-apps',
+    'services/ecommerce': 'services/ecommerce-development',
+    'services/seo': 'services/seo-performance-optimization',
+    'services/ai-integration': 'services/ai-integration',
   },
   pl: {
     home: '',
@@ -23,11 +24,12 @@ const ROUTE_SLUGS = {
     services: 'uslugi',
     projects: 'projekty',
     contact: 'kontakt',
-    // Service sub-pages (Polish slugs)
+    // Service sub-pages (Polish slugs for SEO)
     'services/web-development': 'uslugi/tworzenie-stron',
-    'services/web-design': 'uslugi/projektowanie-stron',
-    'services/seo': 'uslugi/pozycjonowanie',
+    'services/saas': 'uslugi/aplikacje-webowe',
     'services/ecommerce': 'uslugi/sklepy-internetowe',
+    'services/seo': 'uslugi/pozycjonowanie',
+    'services/ai-integration': 'uslugi/integracja-ai',
   },
 } as const;
 
