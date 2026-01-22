@@ -2,10 +2,10 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { ArrowLeft, ArrowRight, Code, Palette, Search, ShoppingCart } from 'lucide-react';
-import PulseBadge from '@/components/ui/PulseBadge';
-import CornerGlowButton from '@/components/ui/CornerGlowButton';
+import ScrollServices, { ScrollServiceItem } from '@/components/sections/ScrollServices';
+import { Button } from '@/components/ui';
+import Navbar from '@/components/Navbar';
+import FooterSection from '@/components/sections/FooterSection';
 import { SupportedLocale } from '@/types/seo';
 import { Dictionary } from '@/types/i18n';
 
@@ -14,148 +14,106 @@ interface ServicesClientProps {
   dictionary: Dictionary;
 }
 
-const ServicesClient: React.FC<ServicesClientProps> = ({ dictionary }) => {
-  const { services } = dictionary;
+const ServicesClient: React.FC<ServicesClientProps> = ({ locale, dictionary }) => {
+  const { nav, servicesPage } = dictionary;
 
-  const servicesList = [
-    {
-      icon: Code,
-      title: services.webDevelopment.title,
-      description: services.webDevelopment.description,
-      features: services.webDevelopment.features,
-      href: '/en/services/web-development',
-    },
-    {
-      icon: Palette,
-      title: services.webDesign.title,
-      description: services.webDesign.description,
-      features: services.webDesign.features,
-      href: '/en/services/web-design',
-    },
-    {
-      icon: Search,
-      title: services.seo.title,
-      description: services.seo.description,
-      features: services.seo.features,
-      href: '/en/services/seo',
-    },
-    {
-      icon: ShoppingCart,
-      title: services.ecommerce.title,
-      description: services.ecommerce.description,
-      features: services.ecommerce.features,
-      href: '/en/services/ecommerce',
-    },
-  ];
+  // Transform dictionary services to ScrollServiceItem format
+  const services: ScrollServiceItem[] = servicesPage?.services || [];
 
   return (
-    <main className="min-h-screen bg-[#050505]">
-      <div className="max-w-6xl mx-auto px-6 pt-32">
-        <Link
-          href="/en"
-          className="inline-flex items-center gap-2 text-zinc-500 hover:text-white transition-colors text-sm"
+    <div className="relative">
+      {/* Main content - sits above footer */}
+      <div className="relative z-10 bg-background">
+        <Navbar locale={locale} dictionary={nav} />
+        <main className="min-h-screen bg-background">
+
+      {/* Hero section */}
+      <section className="relative overflow-hidden pt-48 pb-4">
+        <motion.div
+          initial={{ opacity: 0, y: 200, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{
+            duration: 1.6,
+            ease: [0.22, 1, 0.36, 1],
+            y: {
+              type: "spring",
+              damping: 25,
+              stiffness: 80,
+              mass: 1.2,
+            },
+          }}
+          className="max-w-[90rem] mx-auto border-t border-border rounded-t-[3rem] bg-background relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)] pt-20 lg:pt-32 pb-16 lg:pb-20"
         >
-          <ArrowLeft className="w-4 h-4" />
-          Back to Home
-        </Link>
-      </div>
+          <div className="max-w-7xl mx-auto px-6 lg:px-12">
+            <div className="text-center flex flex-col items-center">
+              <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full border-l border-t border-b border-border-hover border-r-transparent bg-gradient-to-r from-white/10 via-white/5 to-transparent backdrop-blur-sm mb-8 w-fit">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]"></span>
+                </span>
+                <span className="text-[10px] font-medium tracking-[0.25em] text-white uppercase opacity-80">
+                  {servicesPage?.hero.badge}
+                </span>
+              </div>
 
-      <section className="relative overflow-hidden pt-12 pb-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <div className="mb-6">
-              <PulseBadge text={services.title} />
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal tracking-tighter text-text-primary mb-4">
+                {servicesPage?.hero.title}
+              </h1>
+
+              <h2 className="text-2xl md:text-3xl font-normal tracking-tight text-text-secondary mb-8">
+                {servicesPage?.hero.subtitle}
+              </h2>
+
+              <p className="text-lg md:text-xl text-text-muted font-light leading-relaxed max-w-3xl">
+                {servicesPage?.hero.description}
+              </p>
             </div>
-
-            <h1 className="text-5xl md:text-7xl font-normal tracking-tighter text-white mb-8">
-              {services.subtitle}
-            </h1>
-
-            <p className="text-xl text-zinc-400 max-w-2xl leading-relaxed font-light">
-              Comprehensive web development services for businesses and startups. From simple
-              websites to complex applications.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="py-12 border-t border-white/5">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {servicesList.map((service, index) => (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <Link
-                  href={service.href}
-                  className="block h-full p-8 rounded-2xl bg-[#080808] border border-white/5 hover:border-white/20 transition-all group"
-                >
-                  <div className="w-14 h-14 rounded-xl bg-white/5 flex items-center justify-center text-zinc-400 group-hover:text-white transition-colors mb-6">
-                    <service.icon className="w-6 h-6" />
-                  </div>
-
-                  <h2 className="text-2xl font-normal tracking-tight text-white mb-4 group-hover:text-white/90 transition-colors">
-                    {service.title}
-                  </h2>
-
-                  <p className="text-zinc-400 text-sm font-light leading-relaxed mb-6">
-                    {service.description}
-                  </p>
-
-                  <ul className="space-y-2 mb-6">
-                    {service.features.slice(0, 4).map((feature) => (
-                      <li
-                        key={feature}
-                        className="text-zinc-500 text-sm font-light flex items-center gap-2"
-                      >
-                        <span className="w-1 h-1 rounded-full bg-zinc-600" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <span className="inline-flex items-center gap-2 text-zinc-400 group-hover:text-white transition-colors text-sm">
-                    Learn more
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                </Link>
-              </motion.div>
-            ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
-      <section className="py-20 border-t border-white/5">
-        <div className="max-w-6xl mx-auto px-6">
+      {/* Scroll reveal services section */}
+      <ScrollServices services={services} />
+
+      {/* CTA Section */}
+      <section className="py-20 lg:py-32">
+        <div className="max-w-[90rem] mx-auto border-t border-border rounded-t-[3rem] bg-background relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)] pt-20 lg:pt-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-normal tracking-tighter text-white mb-6">
-              Ready to Get Started?
+            <h2 className="text-3xl md:text-5xl font-normal tracking-tighter text-text-primary mb-6">
+              {servicesPage?.cta.title}
             </h2>
-            <p className="text-zinc-400 text-lg mb-10 max-w-xl mx-auto font-light">
-              Let&apos;s discuss your project and see how I can help bring your ideas to life.
+            <p className="text-text-secondary text-lg mb-10 max-w-2xl mx-auto font-light">
+              {servicesPage?.cta.description}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <CornerGlowButton href="/en/contact">Get Free Quote</CornerGlowButton>
-              <CornerGlowButton href="/en/projects">View Projects</CornerGlowButton>
+              <Button href="/en/contact" variant="corner-glow">
+                {servicesPage?.cta.primaryButton}
+              </Button>
+              <Button href="/en/projects" variant="corner-glow">
+                {servicesPage?.cta.secondaryButton}
+              </Button>
             </div>
           </motion.div>
         </div>
+        </div>
       </section>
-    </main>
+        {/* Spacer for footer reveal */}
+        <div className="h-[20vh]" />
+      </main>
+      </div>
+
+      {/* Sticky Reveal Footer */}
+      <div className="sticky bottom-0 z-0 h-screen w-full">
+        <FooterSection locale={locale} dictionary={dictionary.footer} hideCTA />
+      </div>
+    </div>
   );
 };
 

@@ -1,7 +1,7 @@
 # Development Roadmap
 
 > Portfolio website for Max Mendes - Full-Stack Developer
-> Last updated: 2026-01-21
+> Last updated: 2026-01-22
 
 ---
 
@@ -72,9 +72,18 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for full details.
 - [ ] Project data structure in constants
 - [ ] Case study template component
 
-### 2.2 Service Pages (Already started)
+### 2.2 Service Pages (SEO Infrastructure Complete)
 - [x] `/en/services` + `/pl/uslugi` - Service listing pages
-- [x] `/en/services/[slug]` + `/pl/uslugi/[slug]` - Service detail pages
+- [x] Individual service pages (5 EN + 5 PL) with localized URLs:
+  - Web Development: `/en/services/web-development` ↔ `/pl/uslugi/tworzenie-stron`
+  - SaaS & Web Apps: `/en/services/saas-web-apps` ↔ `/pl/uslugi/aplikacje-webowe`
+  - E-Commerce: `/en/services/ecommerce-development` ↔ `/pl/uslugi/sklepy-internetowe`
+  - SEO & Performance: `/en/services/seo-performance-optimization` ↔ `/pl/uslugi/pozycjonowanie`
+  - AI Integration: `/en/services/ai-integration` ↔ `/pl/uslugi/integracja-ai`
+- [x] Dictionary-based SEO metadata (title, description, keywords, h1, canonical)
+- [x] Hreflang tags for language alternates
+- [x] JSON-LD Service schema markup
+- [x] Sitemap with all service pages and hreflang
 - [ ] Populate real content for each service
 - [ ] Add pricing/packages info (optional)
 

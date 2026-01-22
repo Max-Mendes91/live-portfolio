@@ -86,7 +86,7 @@ export default function PolishHome() {
       </motion.div>
 
       <div className="sticky bottom-0 z-0 h-screen w-full">
-        <FooterSection />
+        <FooterSection locale="pl" dictionary={plDict.footer} />
       </div>
     </div>
   );

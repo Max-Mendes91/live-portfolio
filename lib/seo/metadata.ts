@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { SupportedLocale } from '@/types/seo';
+import { ServiceLink } from '@/types/i18n';
 import { SITE_CONFIG, HREFLANG_CONFIG, getFullUrl, getLocalizedUrl } from './config';
 import { getPrimaryKeywords } from './keywords';
 
@@ -191,6 +192,56 @@ export function generatePortfolioMetadata(locale: SupportedLocale = 'en'): Metad
 export function generateContactMetadata(locale: SupportedLocale = 'en'): Metadata {
   const path = locale === 'en' ? '/contact' : '/kontakt';
   return generatePageMetadata('contact', locale, path);
+}
+
+// Generate metadata for individual service pages from dictionary
+export function generateServicePageMetadata(
+  serviceData: ServiceLink,
+  locale: SupportedLocale = 'en'
+): Metadata {
+  const { seo, hrefLang } = serviceData;
+
+  // Generate alternate language URLs from hrefLang
+  const languages: Record<string, string> = {};
+  Object.entries(hrefLang).forEach(([lang, path]) => {
+    languages[lang] = getFullUrl(path);
+  });
+
+  return {
+    ...generateBaseMetadata(locale),
+    title: seo.title,
+    description: seo.metaDescription,
+    keywords: seo.keywords.join(', '),
+    alternates: {
+      canonical: seo.canonical,
+      languages,
+    },
+    openGraph: {
+      title: seo.ogTitle,
+      description: seo.metaDescription,
+      url: seo.canonical,
+      siteName: SITE_CONFIG.name,
+      locale: locale === 'en' ? 'en_US' : 'pl_PL',
+      alternateLocale: locale === 'en' ? 'pl_PL' : 'en_US',
+      type: 'website',
+      images: [
+        {
+          url: '/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: `${seo.h1} - ${SITE_CONFIG.name}`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: seo.ogTitle,
+      description: seo.metaDescription,
+      site: SITE_CONFIG.owner.social.twitterHandle,
+      creator: SITE_CONFIG.owner.social.twitterHandle,
+      images: ['/og-image.png'],
+    },
+  };
 }
 
 // Viewport configuration

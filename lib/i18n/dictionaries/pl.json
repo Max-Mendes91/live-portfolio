@@ -124,21 +124,41 @@
     ]
   },
   "footer": {
-    "tagline": "Zbudujmy razem coś niesamowitego",
-    "cta": "Skontaktuj się",
-    "contact": {
-      "email": "maxmendesnoah1991@gmail.com",
-      "phone": "+48 502 742 941",
-      "location": "Częstochowa, woj. śląskie, Polska"
+    "availableBadge": "Dostępny do współpracy",
+    "headline": "Nie agencja. Nie WordPress. Tylko kod.",
+    "subheadline": "Jeden programista full-stack w Polsce, tworzący oprogramowanie dla prawdziwych firm. Dostępny dla projektów na całym świecie.",
+    "cta": "Rozpocznij Rozmowę",
+    "seoText": "Bez Komitetów, Tylko Kod",
+    "sections": {
+      "quickLinks": "Szybkie Linki",
+      "services": "Usługi",
+      "contact": "Kontakt"
     },
-    "links": {
-      "about": "O mnie",
+    "quickLinks": {
+      "home": "Strona główna",
+      "about": "O Mnie",
       "services": "Usługi",
       "projects": "Projekty",
       "contact": "Kontakt"
     },
-    "copyright": "2024 Max Mendes. Wszelkie prawa zastrzeżone.",
-    "seoText": "Programista z Częstochowy · Tworzenie stron internetowych Śląskie · Obsługuję klientów: Katowice, Kraków, Warszawa, Wrocław i cała Polska"
+    "serviceLinks": [
+      { "label": "Tworzenie Stron Internetowych", "href": "/pl/uslugi/tworzenie-stron" },
+      { "label": "Aplikacje Webowe i SaaS", "href": "/pl/uslugi/aplikacje-webowe" },
+      { "label": "Sklepy Internetowe", "href": "/pl/uslugi/sklepy-internetowe" },
+      { "label": "Pozycjonowanie SEO", "href": "/pl/uslugi/pozycjonowanie" },
+      { "label": "Integracja AI", "href": "/pl/uslugi/integracja-ai" }
+    ],
+    "contact": {
+      "name": "Max Mendes",
+      "location": "Częstochowa, Polska",
+      "email": "maxmendesnoah1991@gmail.com",
+      "available": "Dostępny do pracy"
+    },
+    "bottom": {
+      "copyright": "Max Mendes",
+      "tagline": "Programista z Częstochowy",
+      "serving": "Obsługuję klientów: Katowice, Kraków, Warszawa, Wrocław i cała Polska"
+    }
   },
   "nav": {
     "home": "Strona główna",
@@ -213,10 +233,11 @@
     },
     "heading": "Programista Full-Stack Częstochowa",
     "bio": [
-      "Nazywam się Max i jestem programistą full-stack z Częstochowy. Buduję strony internetowe, sklepy online i aplikacje webowe dla firm, które potrzebują czegoś więcej niż kolejny szablon WordPress.",
+      "Nazywam się Max i jestem programistą full-stack z Częstochowy. Buduję nowoczesne strony internetowe, sklepy online i aplikacje webowe z integracją AI dla firm, które potrzebują czegoś więcej niż kolejny szablon WordPress.",
       "Na lokalnym rynku prawie wszystkie agencje używają WordPressa. To szybkie na start, ale po roku pojawiają się problemy: wolne ładowanie, słabe SEO, niemożliwa rozbudowa bez migracji. Ja buduję w React i Next.js. Efekt: strony szybsze, lepiej pozycjonujące się w Google i gotowe na rozwój bez przepisywania wszystkiego od podstaw.",
-      "Nie jestem grafikiem ani specjalistą od brandingu. Nie tworzę logo ani identyfikacji wizualnych. Moja rola to kod: przekształcam pomysły w działające produkty. Implementuję interfejsy używając sprawdzonych bibliotek komponentów (shadcn/ui, Tailwind CSS) z naciskiem na wydajność, SEO i skalowalność.",
+      "Nie jestem grafikiem ani specjalistą od brandingu. Nie tworzę logo ani identyfikacji wizualnych. Moja rola to kod: przekształcam pomysły w działające produkty. Implementuję interfejsy używając sprawdzonych bibliotek komponentów (shadcn/ui, Tailwind CSS) z naciskiem na wydajność, SEO i skalowalność. Integruję również funkcje AI wykorzystując API OpenAI i Anthropic—narzędzia, których używałem w produkcji do tworzenia inteligentnej generacji treści, automatyzacji procesów i przetwarzania danych.",
       "Mój proces: najpierw rozumiem cel biznesowy, analizuję konkurencję i planuję wymagania techniczne. Potem robię proste prototypy w Figma żeby uporządkować przepływ użytkownika. Dopiero wtedy piszę kod, optymalizuję pod SEO, wdrażam i iteruję na podstawie feedbacku.",
+      "Mój największy projekt, FlowMate, to platforma SaaS do zarządzania emailami z wykorzystaniem AI, która obsługuje wysyłkę na wielu platformach i inteligentną generację treści. Budowa zajęła ponad 300 godzin i nauczyła mnie, jak projektować produkcyjne aplikacje SaaS z autentykacją, płatnościami, integracją AI i rzeczywistymi danymi użytkowników na dużą skalę.",
       "Pracuję z firmami z Częstochowy i Śląska które potrzebują solidnych stron lub sklepów internetowych, ale też z zagranicznymi klientami szukającymi freelance developera z Polski. Mówię płynnie po angielsku i bez problemu pracuję asynchronicznie w różnych strefach czasowych."
     ],
     "skills": {
@@ -225,6 +246,9 @@
         "Full-Stack Web Development",
         "React & Next.js",
         "TypeScript & JavaScript",
+        "Integracja AI",
+        "OpenAI API",
+        "Implementacja LLM",
         "Strony biznesowe i landing pages",
         "Sklepy internetowe (Shopify + custom)",
         "Aplikacje SaaS i web apps",
@@ -259,6 +283,245 @@
       "primaryButton": "Bezpłatna Konsultacja",
       "secondaryButton": "Zobacz Projekty",
       "tertiaryButton": "Usługi"
+    }
+  },
+  "servicesPage": {
+    "hero": {
+      "badge": "Podejście Produktowe",
+      "title": "Każdy projekt zaczyna się od myślenia",
+      "subtitle": "Jedna osoba, pełna odpowiedzialność",
+      "description": "Zanim cokolwiek powstanie, koncentruję się na strukturze, ograniczeniach i tym, co naprawdę musi działać. Bez przekazywania między działami, bez account managerów, bez zgadywania. Otrzymujesz jasne decyzje, szybki feedback i produkty budowane z intencją—nie przeładowane funkcjami."
+    },
+    "services": [
+      {
+        "id": "full-stack",
+        "icon1": "Terminal",
+        "icon2": "CodeXml",
+        "iconCenter1": "Braces",
+        "iconCenter2": "Server",
+        "badge": "Programowanie",
+        "title": "Tworzenie Stron Internetowych",
+        "description": "Kod napisany od zera, nie WordPress ani gotowe szablony. Strony biznesowe powinny być szybkie, stabilne i gotowe na rozwój. Projekty traktuję jak produkty—z czystą strukturą i myśleniem długoterminowym. Wszystko działa na nowoczesnym stacku: React, Next.js i TypeScript.",
+        "features": [
+          "Strona firmowa lub rozwiązanie webowe od podstaw",
+          "Czysta, utrzymywalna baza kodu",
+          "Struktura przyjazna SEO i szybkie ładowanie",
+          "Responsywny układ na wszystkie urządzenia",
+          "Wdrożenie i konfiguracja hostingu"
+        ],
+        "href": "/pl/uslugi/tworzenie-stron"
+      },
+      {
+        "id": "saas",
+        "icon1": "Cloud",
+        "icon2": "Database",
+        "iconCenter1": "Globe",
+        "iconCenter2": "Lock",
+        "badge": "Aplikacje",
+        "title": "Aplikacje Webowe i SaaS",
+        "description": "Kiedy zwykła strona nie wystarczy, potrzebujesz oprogramowania. Konta użytkowników, dashboardy, uprawnienia, subskrypcje—te projekty wymagają jasnej logiki i miejsca na rozwój. Cel: system, który działa dziś i nie rozpadnie się przy dodawaniu funkcji.",
+        "features": [
+          "Aplikacja webowa lub platforma SaaS",
+          "Autentykacja i kontrola dostępu",
+          "Dashboardy i przepływy aplikacji",
+          "Obsługa płatności i subskrypcji",
+          "Wdrożenie produkcyjne"
+        ],
+        "href": "/pl/uslugi/aplikacje-webowe"
+      },
+      {
+        "id": "ecommerce",
+        "icon1": "ShoppingCart",
+        "icon2": "CreditCard",
+        "iconCenter1": "Truck",
+        "iconCenter2": "Wallet",
+        "badge": "E-commerce",
+        "title": "Sklepy Internetowe",
+        "description": "Sklepy internetowe z integracją Subiekt GT, szybką kasą i prostym zarządzaniem. Czy to sklep na Shopify czy rozwiązanie dedykowane—nacisk na płynny checkout, przejrzystą strukturę produktów i sklep, który skaluje się ze sprzedażą.",
+        "features": [
+          "Sklep internetowy (Shopify lub dedykowany)",
+          "Integracja Subiekt GT i systemów księgowych",
+          "Konfiguracja płatności i checkout",
+          "Optymalizacja stron produktowych",
+          "Wsparcie przy uruchomieniu i poprawki"
+        ],
+        "href": "/pl/uslugi/sklepy-internetowe"
+      },
+      {
+        "id": "seo",
+        "icon1": "Search",
+        "icon2": "LineChart",
+        "iconCenter1": "FileSearch",
+        "iconCenter2": "TrendingUp",
+        "badge": "SEO",
+        "title": "Pozycjonowanie Techniczne",
+        "description": "Pozycjonowanie techniczne, nie tylko treść i linki. Wolne strony i bałagan w strukturze cicho psują wyniki. Ta praca to szybsze ładowanie, lepsza płynność i większy sens dla wyszukiwarek. Efekt: lepsza widoczność, lepsze doświadczenie użytkownika i mniej problemów technicznych.",
+        "features": [
+          "Audyt techniczny SEO i naprawy",
+          "Poprawa szybkości i wydajności",
+          "Optymalizacja obrazów i cleanup",
+          "Poprawa metadanych i indeksowania",
+          "Jasne rekomendacje dalszych kroków"
+        ],
+        "href": "/pl/uslugi/pozycjonowanie"
+      },
+      {
+        "id": "ai-integration",
+        "icon1": "Bot",
+        "icon2": "Zap",
+        "iconCenter1": "MessageSquare",
+        "iconCenter2": "Cpu",
+        "badge": "AI",
+        "title": "Integracja AI i Automatyzacja",
+        "description": "Inteligentne funkcje oparte na modelach językowych AI. Integruję AI tam, gdzie naprawdę pomaga—obsługa zapytań klientów, generowanie treści czy automatyzacja procesów, które marnują czas Twojego zespołu.",
+        "features": [
+          "Chatboty AI do obsługi klienta, onboardingu lub narzędzi wewnętrznych",
+          "Generowanie i podsumowywanie treści w aplikacji lub panelu admina",
+          "Automatyzacja powtarzalnych procesów (emaile, tagowanie, klasyfikacja)",
+          "Niestandardowe funkcje AI zaprojektowane pod Twoje potrzeby biznesowe"
+        ],
+        "href": "/pl/uslugi/integracja-ai"
+      }
+    ],
+    "cta": {
+      "title": "Porozmawiajmy o Twoim Projekcie",
+      "description": "Bez formularzy, bez warstwy sprzedażowej. Rozmowa, żeby zrozumieć Twoje cele, ograniczenia i czy jestem odpowiednią osobą do budowy. Jeśli pasujemy, jasno określimy kolejne kroki.",
+      "primaryButton": "Rozpocznij Rozmowę",
+      "secondaryButton": "Zobacz Projekty"
+    }
+  },
+  "servicePages": {
+    "web-development": {
+      "id": "web-development",
+      "label": "Tworzenie Stron Internetowych",
+      "href": "/pl/uslugi/tworzenie-stron",
+      "hrefLang": {
+        "en": "/en/services/web-development",
+        "pl": "/pl/uslugi/tworzenie-stron"
+      },
+      "seo": {
+        "title": "Tworzenie Stron Częstochowa | Max Mendes",
+        "metaDescription": "Strony internetowe pisane od zera w React i Next.js. Nie WordPress, nie szablony. Programista z Częstochowy. Szybkie strony, czyste SEO. Śląskie i cała Polska.",
+        "keywords": ["tworzenie stron internetowych", "strony www częstochowa", "programista częstochowa", "strony react", "strony nextjs", "programista śląskie", "strony firmowe"],
+        "h1": "Tworzenie Stron Internetowych",
+        "ogTitle": "Tworzenie Stron Częstochowa | Max Mendes",
+        "canonical": "https://maxmendes.dev/pl/uslugi/tworzenie-stron"
+      },
+      "schema": {
+        "serviceType": "Tworzenie Stron Internetowych",
+        "description": "Profesjonalne strony internetowe pisane od zera w React i Next.js. Kod, nie WordPress ani gotowe szablony.",
+        "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+      }
+    },
+    "saas-web-apps": {
+      "id": "saas-web-apps",
+      "label": "Aplikacje Webowe i SaaS",
+      "href": "/pl/uslugi/aplikacje-webowe",
+      "hrefLang": {
+        "en": "/en/services/saas-web-apps",
+        "pl": "/pl/uslugi/aplikacje-webowe"
+      },
+      "seo": {
+        "title": "Aplikacje Webowe Częstochowa | Max Mendes",
+        "metaDescription": "Tworzenie aplikacji webowych i platform SaaS. Logowanie, dashboardy, płatności, subskrypcje. Programista z Częstochowy. Systemy dla firm z całej Polski.",
+        "keywords": ["aplikacje webowe", "tworzenie aplikacji", "systemy dla firm", "aplikacje saas", "platformy internetowe", "oprogramowanie na zamówienie", "programista aplikacji"],
+        "h1": "Aplikacje Webowe i Platformy SaaS",
+        "ogTitle": "Aplikacje Webowe Częstochowa | Max Mendes",
+        "canonical": "https://maxmendes.dev/pl/uslugi/aplikacje-webowe"
+      },
+      "schema": {
+        "serviceType": "Tworzenie Aplikacji Webowych",
+        "description": "Aplikacje webowe i platformy SaaS z autoryzacją, dashboardami i integracją płatności. Systemy na zamówienie dla firm.",
+        "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+      }
+    },
+    "ecommerce-development": {
+      "id": "ecommerce-development",
+      "label": "Sklepy Internetowe",
+      "href": "/pl/uslugi/sklepy-internetowe",
+      "hrefLang": {
+        "en": "/en/services/ecommerce-development",
+        "pl": "/pl/uslugi/sklepy-internetowe"
+      },
+      "seo": {
+        "title": "Sklepy Internetowe Częstochowa | Max Mendes",
+        "metaDescription": "Sklepy internetowe z integracją Subiekt GT i szybką kasą. Shopify lub dedykowane. Programista z Częstochowy. Sklepy dla firm ze Śląskiego i całej Polski.",
+        "keywords": ["sklepy internetowe", "sklep online częstochowa", "integracja subiekt gt", "tworzenie sklepów", "sklep shopify", "sklep dedykowany", "e-commerce śląskie"],
+        "h1": "Sklepy Internetowe",
+        "ogTitle": "Sklepy Internetowe Częstochowa | Max Mendes",
+        "canonical": "https://maxmendes.dev/pl/uslugi/sklepy-internetowe"
+      },
+      "schema": {
+        "serviceType": "Tworzenie Sklepów Internetowych",
+        "description": "Sklepy internetowe z integracją Subiekt GT, bramek płatności i systemów magazynowych. Shopify lub rozwiązania dedykowane.",
+        "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+      }
+    },
+    "seo-performance-optimization": {
+      "id": "seo-performance-optimization",
+      "label": "Pozycjonowanie Techniczne SEO",
+      "href": "/pl/uslugi/pozycjonowanie",
+      "hrefLang": {
+        "en": "/en/services/seo-performance-optimization",
+        "pl": "/pl/uslugi/pozycjonowanie"
+      },
+      "seo": {
+        "title": "Pozycjonowanie Techniczne | Max Mendes",
+        "metaDescription": "Pozycjonowanie techniczne, nie tylko treść i linki. Audyt SEO, optymalizacja szybkości, Core Web Vitals. Programista SEO z Częstochowy. Śląskie i Polska.",
+        "keywords": ["pozycjonowanie stron", "seo techniczne", "audyt seo częstochowa", "optymalizacja strony", "core web vitals", "pozycjonowanie śląskie", "seo programista"],
+        "h1": "Pozycjonowanie Techniczne SEO",
+        "ogTitle": "Pozycjonowanie Techniczne | Max Mendes",
+        "canonical": "https://maxmendes.dev/pl/uslugi/pozycjonowanie"
+      },
+      "schema": {
+        "serviceType": "Pozycjonowanie Stron Internetowych",
+        "description": "Pozycjonowanie techniczne: audyty SEO, optymalizacja Core Web Vitals, szybkość ładowania. Nie tylko treść i linki—naprawiam kod.",
+        "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+      }
+    },
+    "ai-integration": {
+      "id": "ai-integration",
+      "label": "Integracja AI i Automatyzacja",
+      "href": "/pl/uslugi/integracja-ai",
+      "hrefLang": {
+        "en": "/en/services/ai-integration",
+        "pl": "/pl/uslugi/integracja-ai"
+      },
+      "seo": {
+        "title": "Integracja AI Częstochowa | Max Mendes",
+        "metaDescription": "Integracja AI w aplikacjach webowych. Chatboty, generowanie treści, automatyzacja procesów. OpenAI i Claude API. Programista z Częstochowy. Śląskie i Polska.",
+        "keywords": ["integracja ai", "chatboty ai", "automatyzacja ai", "openai api", "sztuczna inteligencja", "chatgpt integracja", "ai dla firm"],
+        "h1": "Integracja AI i Automatyzacja",
+        "ogTitle": "Integracja AI Częstochowa | Max Mendes",
+        "canonical": "https://maxmendes.dev/pl/uslugi/integracja-ai"
+      },
+      "schema": {
+        "serviceType": "Integracja Sztucznej Inteligencji",
+        "description": "Funkcje AI dla aplikacji webowych: chatboty, generowanie treści, automatyzacja procesów. Integracja OpenAI i Anthropic API.",
+        "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+      }
+    },
+    "services-overview": {
+      "id": "services-overview",
+      "label": "Usługi Web Development",
+      "href": "/pl/uslugi",
+      "hrefLang": {
+        "en": "/en/services",
+        "pl": "/pl/uslugi"
+      },
+      "seo": {
+        "title": "Usługi Web Development Częstochowa | Max Mendes",
+        "metaDescription": "Profesjonalne usługi tworzenia stron internetowych, sklepów e-commerce i aplikacji webowych. React, Next.js, TypeScript. Częstochowa, Śląskie i cała Polska.",
+        "keywords": ["usługi web development", "tworzenie stron częstochowa", "programista częstochowa", "strony internetowe śląskie", "aplikacje webowe", "sklepy internetowe", "freelancer polska"],
+        "h1": "Usługi Web Development",
+        "ogTitle": "Usługi Web Development Częstochowa | Max Mendes",
+        "canonical": "https://maxmendes.dev/pl/uslugi"
+      },
+      "schema": {
+        "serviceType": "Usługi Web Development",
+        "description": "Profesjonalne usługi tworzenia stron internetowych, sklepów e-commerce, platform SaaS i aplikacji webowych w React, Next.js i TypeScript.",
+        "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+      }
     }
   }
 }

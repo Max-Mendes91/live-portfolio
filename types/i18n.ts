@@ -69,24 +69,72 @@ export interface FAQDict {
   items: FAQItemDict[];
 }
 
-// Footer section dictionary
-export interface FooterDict {
-  tagline: string;
-  cta: string;
-  contact: {
-    email: string;
-    phone: string;
-    location: string;
+// SEO metadata for service pages
+export interface ServiceSEO {
+  title: string;
+  metaDescription: string;
+  keywords: string[];
+  h1: string;
+  ogTitle: string;
+  canonical: string;
+}
+
+// Schema.org markup for service pages
+export interface ServiceSchema {
+  serviceType: string;
+  description: string;
+  areaServed: string[];
+}
+
+// Complete service link with SEO metadata
+export interface ServiceLink {
+  id: string;
+  label: string;
+  href: string;
+  hrefLang: {
+    en: string;
+    pl: string;
   };
-  links: {
+  seo: ServiceSEO;
+  schema: ServiceSchema;
+}
+
+// Footer section dictionary (reveal footer)
+export interface FooterDict {
+  availableBadge: string;
+  headline: string;
+  subheadline: string;
+  cta: string;
+  seoText: string;
+  // Navigation links
+  sections: {
+    quickLinks: string;
+    services: string;
+    contact: string;
+  };
+  quickLinks: {
+    home: string;
     about: string;
     services: string;
     projects: string;
     contact: string;
   };
-  copyright: string;
-  seoText?: string;
-  availableBadge?: string;
+  // Service links with localized hrefs (same pattern as servicesPage.services)
+  serviceLinks: Array<{
+    label: string;
+    href: string;
+  }>;
+  contact: {
+    name: string;
+    location: string;
+    email: string;
+    available: string;
+  };
+  bottom: {
+    copyright: string;
+    tagline: string;
+    serving: string;
+  };
 }
 
 // Navigation dictionary
@@ -166,6 +214,34 @@ export interface WorkGridDict {
   viewCasestudy: string;
 }
 
+// Services page dictionary (full page, not homepage section)
+export interface ServicesPageDict {
+  hero: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    description: string;
+  };
+  services: Array<{
+    id: string;
+    icon1: string;
+    icon2: string;
+    iconCenter1: string;
+    iconCenter2: string;
+    badge: string;
+    title: string;
+    description: string;
+    features: string[];
+    href: string;
+  }>;
+  cta: {
+    title: string;
+    description: string;
+    primaryButton: string;
+    secondaryButton: string;
+  };
+}
+
 // About page (full page, not homepage section)
 export interface AboutPageDict {
   meta: {
@@ -196,6 +272,11 @@ export interface AboutPageDict {
   };
 }
 
+// Service pages with full SEO metadata (for individual service pages)
+export interface ServicePagesDict {
+  [key: string]: ServiceLink;
+}
+
 // Full dictionary interface
 export interface Dictionary {
   hero: HeroDict;
@@ -210,4 +291,6 @@ export interface Dictionary {
   projects?: ProjectsDict;
   workGrid?: WorkGridDict;
   aboutPage?: AboutPageDict;
+  servicesPage?: ServicesPageDict;
+  servicePages?: ServicePagesDict;
 }

@@ -332,6 +332,130 @@ const Hero: React.FC<HeroProps> = ({ locale, dictionary }) => {
 
 Dictionary types defined in `types/i18n.ts`. JSON files in `lib/i18n/dictionaries/`.
 
+---
+
+## SEO Dictionary Pattern (MANDATORY FOR ALL PAGES)
+
+**ALL content pages MUST use dictionary-based SEO metadata.** Never hardcode SEO data in components.
+
+This pattern ensures:
+- Full control over titles, descriptions, keywords per market
+- Localized URLs with keyword-rich slugs
+- Hreflang tags for language alternates
+- JSON-LD schema markup for rich results
+- Single source of truth in dictionaries
+
+### Dictionary Structure
+
+Add SEO metadata to dictionaries (`en.json`, `pl.json`) for each page:
+
+```json
+{
+  "pageSlug": {
+    "id": "page-slug",
+    "label": "Page Name",
+    "href": "/en/page-slug",
+    "hrefLang": {
+      "en": "/en/page-slug",
+      "pl": "/pl/polish-slug"
+    },
+    "seo": {
+      "title": "Page Title | Max Mendes",
+      "metaDescription": "150-160 char description with keywords",
+      "keywords": ["keyword1", "keyword2", "keyword3"],
+      "h1": "Page Main Heading",
+      "ogTitle": "OG Title | Max Mendes",
+      "canonical": "https://maxmendes.dev/en/page-slug"
+    },
+    "schema": {
+      "type": "WebPage or Service or Article",
+      "description": "Schema description",
+      "areaServed": ["Poland", "UK", "US"]
+    }
+  }
+}
+```
+
+### Page Implementation Template
+
+```tsx
+import { Metadata } from 'next';
+import { getDictionary } from '@/lib/i18n/config';
+import { generateServicePageMetadata } from '@/lib/seo/metadata';
+import { ServicePageJsonLd } from '@/components/seo/JsonLd';
+import { ServiceLink } from '@/types/i18n';
+
+const PAGE_ID = 'page-slug';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const dictionary = await getDictionary('en'); // or 'pl'
+  const pageData = dictionary.servicePages?.[PAGE_ID] as ServiceLink | undefined;
+
+  if (!pageData) {
+    return { title: 'Fallback Title | Max Mendes' };
+  }
+
+  return generateServicePageMetadata(pageData, 'en');
+}
+
+export default async function Page() {
+  const dictionary = await getDictionary('en');
+  const pageData = dictionary.servicePages?.[PAGE_ID] as ServiceLink | undefined;
+
+  return (
+    <>
+      {pageData && <ServicePageJsonLd serviceData={pageData} />}
+      <h1>{pageData?.seo.h1 || 'Page Title'}</h1>
+      {/* Page content */}
+    </>
+  );
+}
+```
+
+### SEO Requirements Checklist
+
+For EVERY new page:
+
+- [ ] Add entry to BOTH `en.json` AND `pl.json` dictionaries
+- [ ] Title: under 60 characters, keyword first
+- [ ] Meta description: 150-160 characters
+- [ ] Keywords: 5-7 relevant terms per market
+- [ ] Localized hrefs (Polish uses Polish slugs: `/pl/uslugi/` not `/pl/services/`)
+- [ ] Both hrefLang entries (en + pl)
+- [ ] Schema with correct type and areaServed
+- [ ] Page uses dictionary metadata functions
+- [ ] Added to `app/sitemap.ts` with hreflang alternates
+
+### Polish vs English Market
+
+| Aspect | English | Polish |
+|--------|---------|--------|
+| **URLs** | `/en/services/web-development` | `/pl/uslugi/tworzenie-stron` |
+| **Keywords** | Global terms | Local + "Częstochowa", "Śląskie" |
+| **Emphasis** | Modern tech stack | "Nie WordPress, kod od zera" |
+| **areaServed** | Poland, UK, US, EU | Częstochowa, Śląskie, Polska |
+
+### DO NOT
+
+```tsx
+// ❌ NEVER hardcode SEO in components
+export const metadata: Metadata = {
+  title: 'Hardcoded Title',  // NO!
+  description: 'Hardcoded desc'  // NO!
+};
+
+// ❌ NEVER use different patterns per page
+// All pages MUST use dictionary + generateMetadata pattern
+```
+
+### Helper Functions Reference
+
+| Function | File | Purpose |
+|----------|------|---------|
+| `generateServicePageMetadata()` | `lib/seo/metadata.ts` | Generates Next.js Metadata |
+| `generateServicePageSchema()` | `lib/seo/schemas.ts` | Generates JSON-LD schema |
+| `ServicePageJsonLd` | `components/seo/JsonLd.tsx` | Schema injection component |
+
 ## File Structure
 
 > **Full details:** See [.claude/ARCHITECTURE.md](.claude/ARCHITECTURE.md)
@@ -363,11 +487,10 @@ app/
 middleware.ts            # Locale detection & redirects
 
 components/
-├── ui/                  # Reusable UI (CornerGlowButton, PulseBadge, Marquee)
-├── sections/            # Page sections (Hero, AboutMe, WorkGrid, etc.)
-├── seo/                 # SEO components (JsonLd)
-├── Navbar.tsx
-└── Footer.tsx
+├── ui/                  # Reusable UI (Button, Card, Badge, Typography)
+├── sections/            # Page sections (Hero, AboutMe, WorkGrid, FooterSection, etc.)
+├── seo/                 # SEO components (JsonLd, ServicePageJsonLd)
+└── Navbar.tsx
 
 lib/
 ├── seo/                 # SEO (config, keywords, metadata, schemas)
