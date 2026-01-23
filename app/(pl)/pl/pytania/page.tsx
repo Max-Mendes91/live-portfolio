@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { getDictionary } from '@/lib/i18n/config';
 import { getFullUrl } from '@/lib/seo/config';
 import { FAQPageDict } from '@/types/i18n';
-import FAQClient from '@/app/en/faq/FAQClient';
+import FAQClient from '@/app/(en)/en/faq/FAQClient';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 export async function generateMetadata(): Promise<Metadata> {

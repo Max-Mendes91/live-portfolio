@@ -8,7 +8,7 @@
     "ctaSecondary": "Zobacz Projekty",
     "phoneLabel": "lub zadzwoń",
     "scrollDown": "Przewiń w dół",
-    "toSeeProjects": "aby zobaczyć projekty",
+    "toSeeProjects": "po dowody",
     "trustSignals": [
       { "label": "2+ lata doświadczenia", "icon": "trophy" },
       { "label": "Klienci z UK/US", "icon": "globe" },
@@ -189,7 +189,7 @@
       "services": "Usługi",
       "projects": "Projekty",
       "contact": "Kontakt",
-      "faq": "FAQ"
+      "faq": "Pytania"
     },
     "serviceLinks": [
       { "label": "Tworzenie Stron Internetowych", "href": "/pl/uslugi/tworzenie-stron" },
@@ -280,20 +280,47 @@
         "title": "FlowMate — Platforma AI do Zarządzania Emailami",
         "description": "Full-stack SaaS łączący Gmail, Outlook, Slack i Telegram w jeden przepływ pracy sterowany AI. Obsługuje autoryzację, przetwarzanie asynchroniczne i integracje z wieloma dostawcami na poziomie produkcyjnym.",
         "metric": "Uruchomiony styczeń 2025 · 300+ godzin rozwoju · Integracja AI z wieloma kanałami",
-        "href": "https://www.flowmate.click/",
-        "cta": "Odwiedź FlowMate",
-        "tags": ["SaaS", "AI", "Full-Stack"]
+        "href": "/pl/projekty",
+        "externalUrl": "https://www.flowmate.click/",
+        "cta": "Zobacz Projekt",
+        "externalCta": "Odwiedź Stronę",
+        "tags": ["SaaS", "AI", "Full-Stack"],
+        "tech": ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "OpenAI", "Stripe"]
       },
       {
         "id": "markmind",
         "title": "MarkMind — Menedżer Zakładek z AI",
         "description": "Rozszerzenie Chrome automatycznie organizujące zakładki za pomocą klasyfikacji AI. Przetwarzanie w czasie rzeczywistym bez wpływu na wydajność przeglądarki.",
         "metric": "401+ Aktywnych Użytkowników · Dostępne w Chrome Web Store",
-        "href": "https://chromewebstore.google.com/detail/markmind/bdobgdkpeffdbonfpokgkbncgnbnjnoo",
-        "cta": "Pobierz Rozszerzenie",
-        "tags": ["Rozszerzenie Chrome", "AI", "Produktywność"]
+        "href": "/pl/projekty",
+        "externalUrl": "https://chromewebstore.google.com/detail/markmind/bdobgdkpeffdbonfpokgkbncgnbnjnoo",
+        "cta": "Zobacz Projekt",
+        "externalCta": "Pobierz Rozszerzenie",
+        "tags": ["Rozszerzenie Chrome", "AI", "Produktywność"],
+        "tech": ["JavaScript", "Chrome APIs", "OpenAI", "IndexedDB"]
       }
     ]
+  },
+  "homePage": {
+    "id": "home",
+    "label": "Strona Główna",
+    "href": "/pl",
+    "hrefLang": {
+      "en": "/en",
+      "pl": "/pl"
+    },
+    "seo": {
+      "title": "Tworzenie Stron Internetowych Częstochowa | Max Mendes",
+      "metaDescription": "Tworzenie stron internetowych i aplikacji webowych. Programista full-stack Polska. Strony, sklepy, SaaS. Częstochowa, Śląsk. Bezpłatna konsultacja. Tel: 502 742 941",
+      "keywords": ["tworzenie stron internetowych", "programista częstochowa", "full-stack developer polska", "strony www częstochowa", "aplikacje webowe", "sklepy internetowe śląsk", "programista react", "nextjs developer polska"],
+      "h1": "Freelance Developer do Wynajęcia",
+      "ogTitle": "Tworzenie Stron Internetowych Częstochowa | Max Mendes"
+    },
+    "schema": {
+      "type": "WebSite",
+      "description": "Profesjonalne tworzenie stron internetowych i aplikacji webowych przez Max Mendes - Programista Full-Stack specjalizujący się w React, Next.js i nowoczesnych technologiach webowych.",
+      "areaServed": ["Częstochowa", "Śląskie", "Polska", "Unia Europejska"]
+    }
   },
   "aboutPage": {
     "id": "about",
@@ -304,11 +331,11 @@
       "pl": "/pl/o-mnie"
     },
     "seo": {
-      "title": "Programista Full-Stack Częstochowa | Max Mendes",
+      "title": "O Mnie - Programista Full-Stack | Max Mendes",
       "metaDescription": "Programista full-stack z Częstochowy. Buduję strony i aplikacje w React & Next.js ✓ 300+ godzin pracy nad SaaS ✓ Nie WordPress ✓ Bezpłatna konsultacja",
       "keywords": ["programista częstochowa", "programista full-stack", "tworzenie stron częstochowa", "react developer polska", "programista śląskie", "freelancer polska"],
       "h1": "Programista Full-Stack Częstochowa",
-      "ogTitle": "Programista Full-Stack Częstochowa | Max Mendes"
+      "ogTitle": "O Mnie - Programista Full-Stack | Max Mendes"
     },
     "schema": {
       "type": "ProfilePage",
@@ -615,11 +642,11 @@
       "pl": "/pl/pytania"
     },
     "seo": {
-      "title": "Tworzenie Stron Częstochowa - Pytania i Odpowiedzi | Max Mendes",
+      "title": "Tworzenie Stron FAQ - Częstochowa | Max Mendes",
       "metaDescription": "Pytania o tworzenie stron internetowych Częstochowa. Cennik, terminy, technologie i proces. Zadzwoń: 502 742 941. Programista React i Next.js.",
       "keywords": ["faq tworzenie stron", "pytania programista częstochowa", "cennik stron internetowych", "ile kosztuje strona", "programista częstochowa", "tworzenie stron śląskie"],
       "h1": "Pytania o Tworzenie Stron Internetowych",
-      "ogTitle": "Tworzenie Stron Częstochowa - Pytania i Odpowiedzi | Max Mendes"
+      "ogTitle": "Tworzenie Stron FAQ - Częstochowa | Max Mendes"
     },
     "schema": {
       "type": "FAQPage",
@@ -744,6 +771,35 @@
         "label": "Skontaktuj się",
         "href": "/pl/kontakt"
       }
+    }
+  },
+  "projectsPage": {
+    "id": "projekty",
+    "label": "Projekty",
+    "href": "/pl/projekty",
+    "hrefLang": {
+      "en": "/en/projects",
+      "pl": "/pl/projekty"
+    },
+    "seo": {
+      "title": "Portfolio Programisty - Częstochowa | Max Mendes",
+      "metaDescription": "Zobacz moje projekty: platformy SaaS, integracje AI, aplikacje produkcyjne. 300+ godzin na FlowMate. React, Next.js, TypeScript. Częstochowa, Śląskie.",
+      "keywords": ["portfolio programisty", "projekty react", "portfolio nextjs", "tworzenie saas", "aplikacje ai", "projekty full-stack", "programista częstochowa"],
+      "h1": "Projekty Web Development",
+      "ogTitle": "Portfolio Programisty - Częstochowa | Max Mendes"
+    },
+    "schema": {
+      "type": "CollectionPage",
+      "description": "Kolekcja projektów web development autorstwa Max Mendes, w tym platformy SaaS, integracje AI i produkcyjne aplikacje webowe."
+    },
+    "badge": "Portfolio",
+    "title": "Wybrane Projekty",
+    "subtitle": "Prawdziwe projekty, prawdziwy kod, prawdziwe rezultaty. Każdy projekt to gotowa do produkcji praca zbudowana od podstaw.",
+    "cta": {
+      "title": "Masz pomysł na projekt?",
+      "description": "Porozmawiajmy o Twoim projekcie i zobaczmy, jak mogę pomóc zrealizować Twoje pomysły.",
+      "primaryButton": "Bezpłatna Wycena",
+      "secondaryButton": "Zobacz Usługi"
     }
   }
 }

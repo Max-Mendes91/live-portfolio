@@ -29,7 +29,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
   };
 
   return (
-    <section id="about" className="pt-10 pb-24 px-6 md:px-12 bg-[#050505] overflow-hidden">
+    <section id="about" className="pt-10 pb-24 px-6 md:px-12 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left Column: Bio & Info */}

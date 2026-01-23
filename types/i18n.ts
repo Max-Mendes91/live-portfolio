@@ -254,8 +254,12 @@ export interface WorkGridProjectDict {
   description: string;
   metric: string;
   href: string;
+  externalUrl?: string;
   cta: string;
+  externalCta?: string;
   tags: string[];
+  image?: string;
+  tech?: string[];
 }
 
 // Work grid section dictionary
@@ -399,6 +403,72 @@ export interface FAQPageDict {
   };
 }
 
+// SEO metadata for projects page
+export interface ProjectsPageSEO {
+  title: string;
+  metaDescription: string;
+  keywords: string[];
+  h1: string;
+  ogTitle: string;
+}
+
+// Schema.org markup for projects page
+export interface ProjectsPageSchema {
+  type: string;
+  description: string;
+}
+
+// Projects page dictionary with SEO metadata (full page)
+export interface ProjectsPageDict {
+  id: string;
+  label: string;
+  href: string;
+  hrefLang: {
+    en: string;
+    pl: string;
+  };
+  seo: ProjectsPageSEO;
+  schema: ProjectsPageSchema;
+  badge: string;
+  title: string;
+  subtitle: string;
+  cta: {
+    title: string;
+    description: string;
+    primaryButton: string;
+    secondaryButton: string;
+  };
+}
+
+// SEO metadata for home page (same pattern as other pages)
+export interface HomePageSEO {
+  title: string;
+  metaDescription: string;
+  keywords: string[];
+  h1: string;
+  ogTitle: string;
+}
+
+// Schema.org markup for home page
+export interface HomePageSchema {
+  type: string;
+  description: string;
+  areaServed: string[];
+}
+
+// Home page dictionary with SEO metadata (consistent with aboutPage, faqPage, etc.)
+export interface HomePageDict {
+  id: string;
+  label: string;
+  href: string;
+  hrefLang: {
+    en: string;
+    pl: string;
+  };
+  seo: HomePageSEO;
+  schema: HomePageSchema;
+}
+
 // Full dictionary interface
 export interface Dictionary {
   hero: HeroDict;
@@ -413,8 +483,10 @@ export interface Dictionary {
   contact?: ContactDict;
   projects?: ProjectsDict;
   workGrid?: WorkGridDict;
+  homePage?: HomePageDict;
   aboutPage?: AboutPageDict;
   faqPage?: FAQPageDict;
+  projectsPage?: ProjectsPageDict;
   servicesPage?: ServicesPageDict;
   servicePages?: ServicePagesDict;
 }
