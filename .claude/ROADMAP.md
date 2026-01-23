@@ -1,7 +1,7 @@
 # Development Roadmap
 
 > Portfolio website for Max Mendes - Full-Stack Developer
-> Last updated: 2026-01-23
+> Last updated: 2026-01-24
 
 ---
 
@@ -32,6 +32,7 @@ We use **different URL slugs per locale** for better SEO:
 | `/en/contact` | `/pl/kontakt` |
 | `/en/projects` | `/pl/projekty` |
 | `/en/services` | `/pl/uslugi` |
+| `/en/faq` | `/pl/pytania` |
 
 See [ARCHITECTURE.md](ARCHITECTURE.md) for full details.
 
@@ -40,26 +41,29 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for full details.
 ## Phase 1: Homepage Completion (Current)
 
 ### 1.1 Content Population
-- [x] Hero section - real headline, CTAs (text done)
-- [x] About Me - bio, skills tags (text done)
+- [x] Hero section - real headline, CTAs, trust signals from dictionary
+- [x] About Me - bio, skills tags, trust badges from dictionary
 - [ ] About Me - professional photo
-- [ ] Work Grid - real project images + descriptions
+- [x] Work Grid - real projects only (Flowmate, Markmind) with dictionary data
 - [x] Services - card-based layout with real copy (text done)
-- [ ] Process - customize steps
-- [ ] FAQ - write real Q&As
-- [x] Footer - social links from SITE_CONFIG (text done)
+- [x] Process - steps customized
+- [x] FAQ - real Q&As with FAQTeaserSection on homepage
+- [x] Footer - social links from SITE_CONFIG, refined layout
 
 ### 1.2 Assets
 - [ ] Professional photo for About section
 - [ ] Project screenshots/mockups (4-6 projects)
 - [ ] Favicon and OG images
 - [ ] Logo/wordmark
+- [ ] PWA icons (icon-192x192.png, icon-512x512.png) - **needed for Lighthouse**
 
 ### 1.3 Polish
 - [ ] Mobile responsiveness audit
 - [ ] Animation performance check
-- [ ] Lighthouse score optimization
+- [x] Lighthouse score optimization (near-perfect, missing PWA icons)
 - [ ] Cross-browser testing
+- [x] SmokeEffect visual component added
+- [x] SEO titles optimized: [Keyword] - [Differentiator] | Max Mendes
 
 ---
 
@@ -68,9 +72,11 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for full details.
 > **Note:** Using localized URLs. See [ARCHITECTURE.md](ARCHITECTURE.md) for full URL map.
 
 ### 2.1 Project Detail Pages
-- [ ] `/en/projects` + `/pl/projekty` - Projects listing page
+- [x] `/en/projects` + `/pl/projekty` - Projects listing page (dictionary-based)
 - [ ] `/en/projects/[slug]` + `/pl/projekty/[slug]` - Individual project pages
-- [ ] Project data structure in constants
+- [x] Project data structure in dictionaries (ProjectsPageDict, WorkGridProjectDict)
+- [x] Real projects only: Flowmate, Markmind (removed placeholders)
+- [x] External URL support for projects
 - [ ] Case study template component
 
 ### 2.2 Service Pages (SEO Infrastructure Complete)
@@ -106,7 +112,13 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for full details.
 - [x] Social links from SITE_CONFIG (GitHub, LinkedIn, Twitter, Instagram)
 - [x] Real content populated (bio, experience, skills - text done)
 
-### 2.5 Legal Pages
+### 2.5 FAQ Pages (Complete)
+- [x] `/en/faq` + `/pl/pytania` - FAQ pages with localized routes
+- [x] FAQTeaserSection component on homepage
+- [x] Dictionary-based FAQ content (EN/PL)
+- [x] Added to sitemap with hreflang
+
+### 2.6 Legal Pages
 - [ ] `/en/privacy` + `/pl/polityka-prywatnosci` - Privacy policy
 - [ ] `/en/terms` + `/pl/regulamin` - Terms of service
 - [ ] Cookie consent banner (if needed)
@@ -223,4 +235,12 @@ git push origin main  # Auto-deploys via Vercel
 
 ## Notes
 
-_Add notes, ideas, and decisions here as the project evolves._
+### Jan 23-24, 2026
+- **Route Groups**: Refactored to Next.js route groups `(en)` and `(pl)` for cleaner organization
+- **SEO Formula**: All titles follow `[Keyword] - [Differentiator] | Max Mendes`
+- **Trust Signals**: Moved from hardcoded constants to dictionary (hero + about sections)
+- **FAQ Pages**: Added `/en/faq` + `/pl/pytania` with localized content
+- **Projects**: Cleaned up to real projects only (Flowmate, Markmind), dictionary-based
+- **UI Polish**: Added SmokeEffect component, refined Hero/AboutMe/Footer/WorkGrid
+- **Handoff Skill**: Added `.claude/skills/handoff.md` for session continuity
+- **Lighthouse**: Near-perfect score, only missing PWA icons (404)
