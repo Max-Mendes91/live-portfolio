@@ -21,7 +21,7 @@ const iconMap = {
 
 const LiquidBackground: React.FC = () => {
   return (
-    <div className="absolute inset-0 z-0 bg-[#050505] overflow-hidden">
+    <div className="absolute inset-0 z-0 bg-background overflow-hidden">
       <div className="absolute inset-0 opacity-30">
         <motion.div
           animate={{
@@ -54,7 +54,7 @@ const LiquidBackground: React.FC = () => {
         />
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-tr from-[#050505] via-transparent to-[#050505] opacity-60" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-background via-transparent to-background opacity-60" />
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
     </div>
   );
@@ -93,7 +93,7 @@ const Hero: React.FC<HeroProps> = ({ dictionary }) => {
   }, []);
 
   return (
-    <section className="relative min-h-screen w-full flex flex-col items-center justify-center pt-24 pb-32 px-6 overflow-hidden">
+    <section className="relative min-h-screen w-full flex flex-col items-center justify-center pt-20 pb-24 px-6 overflow-hidden">
       <LiquidBackground />
 
       <motion.div
@@ -107,7 +107,7 @@ const Hero: React.FC<HeroProps> = ({ dictionary }) => {
           className="flex flex-col items-center"
         >
           {/* Redline 3: The Pill Gradient Fade */}
-          <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full border-l border-t border-b border-white/20 border-r-transparent bg-gradient-to-r from-white/10 via-white/5 to-transparent backdrop-blur-sm mb-8 w-fit">
+          <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full border-l border-t border-b border-white/20 border-r-transparent bg-gradient-to-r from-white/10 via-white/5 to-transparent backdrop-blur-sm mb-6 w-fit">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]"></span>
@@ -118,19 +118,19 @@ const Hero: React.FC<HeroProps> = ({ dictionary }) => {
           </div>
 
           {/* Lighter Typography with Tight Tracking */}
-          <h1 className="text-6xl md:text-[100px] font-light tracking-tighter leading-[1.1] pb-2 mb-6 select-none text-white max-w-[1200px]">
+          <h1 className="text-5xl md:text-[90px] font-light tracking-tighter leading-[1.1] pb-2 mb-4 select-none text-white max-w-[1200px]">
             {content.headline}
           </h1>
 
-          <h2 className="text-xl md:text-2xl font-light tracking-tight text-zinc-300 mb-8">
+          <h2 className="text-lg md:text-xl font-light tracking-tight text-zinc-300 mb-6">
             {content.subheadline}
           </h2>
 
-          <p className="font-light tracking-tight text-zinc-400 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed opacity-90">
+          <p className="font-light tracking-tight text-zinc-400 text-sm md:text-base max-w-2xl mx-auto mb-8 leading-relaxed opacity-90">
             {content.description}
           </p>
 
-          <div className="flex flex-col items-center gap-4 mb-10">
+          <div className="flex flex-col items-center gap-3 mb-6">
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 relative">
               <CornerGlowButton>{content.ctaPrimary}</CornerGlowButton>
               <CornerGlowButton>{content.ctaSecondary}</CornerGlowButton>
@@ -151,14 +151,14 @@ const Hero: React.FC<HeroProps> = ({ dictionary }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-wrap items-center justify-center gap-3 md:gap-4"
+            className="flex flex-wrap items-center justify-center gap-3"
           >
             {content.trustSignals.map((signal) => {
               const IconComponent = iconMap[signal.icon as keyof typeof iconMap];
               return (
                 <div
                   key={signal.label}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm"
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm"
                 >
                   {IconComponent && <IconComponent className="w-3.5 h-3.5 text-white/60" />}
                   <span className="text-[10px] md:text-xs font-medium tracking-wide text-white/70">
@@ -173,7 +173,7 @@ const Hero: React.FC<HeroProps> = ({ dictionary }) => {
 
       <motion.div
         style={{ opacity }}
-        className="absolute bottom-16 w-full max-w-[1400px] flex items-center justify-center px-12 z-20"
+        className="absolute bottom-10 w-full max-w-[1400px] flex items-center justify-center px-12 z-20"
       >
         <div className="flex-1 h-[1px] bg-white/[0.05] mr-12" />
         <div className="flex items-center">

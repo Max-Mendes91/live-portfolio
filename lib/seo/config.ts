@@ -24,6 +24,7 @@ export const SITE_CONFIG: SiteConfig = {
       github: 'https://github.com/Max-Mendes91',
       twitter: 'https://x.com/maxmendes91',
       instagram: 'https://www.instagram.com/max_mendes91/',
+      twitterHandle: '@max-mendes91',
     },
   },
 };

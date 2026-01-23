@@ -8,7 +8,7 @@
     "ctaSecondary": "See Projects",
     "phoneLabel": "or call",
     "scrollDown": "Scroll down",
-    "toSeeProjects": "to see projects",
+    "toSeeProjects": "for the proof",
     "trustSignals": [
       { "label": "2+ Years Experience", "icon": "trophy" },
       { "label": "UK/US Friendly Timezone", "icon": "globe" },
@@ -272,20 +272,47 @@
         "title": "FlowMate — AI Email Management Platform",
         "description": "Full-stack SaaS that unifies Gmail, Outlook, Slack, and Telegram into one AI-powered workflow. Handles authentication, async processing, and multi-provider integrations at production scale.",
         "metric": "Launched January 2025 · 300+ dev hours · Multi-channel AI integration",
-        "href": "https://www.flowmate.click/",
-        "cta": "Visit FlowMate",
-        "tags": ["SaaS", "AI", "Full-Stack"]
+        "href": "/en/projects",
+        "externalUrl": "https://www.flowmate.click/",
+        "cta": "View Project",
+        "externalCta": "Visit Live Site",
+        "tags": ["SaaS", "AI", "Full-Stack"],
+        "tech": ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "OpenAI", "Stripe"]
       },
       {
         "id": "markmind",
         "title": "MarkMind — AI Bookmark Manager",
         "description": "Chrome extension that automatically organizes bookmarks using AI classification. Real-time processing without impacting browser performance.",
         "metric": "401+ Active Users · Live on Chrome Web Store",
-        "href": "https://chromewebstore.google.com/detail/markmind/bdobgdkpeffdbonfpokgkbncgnbnjnoo",
-        "cta": "Get Extension",
-        "tags": ["Chrome Extension", "AI", "Productivity"]
+        "href": "/en/projects",
+        "externalUrl": "https://chromewebstore.google.com/detail/markmind/bdobgdkpeffdbonfpokgkbncgnbnjnoo",
+        "cta": "View Project",
+        "externalCta": "Get Extension",
+        "tags": ["Chrome Extension", "AI", "Productivity"],
+        "tech": ["JavaScript", "Chrome APIs", "OpenAI", "IndexedDB"]
       }
     ]
+  },
+  "homePage": {
+    "id": "home",
+    "label": "Home",
+    "href": "/en",
+    "hrefLang": {
+      "en": "/en",
+      "pl": "/pl"
+    },
+    "seo": {
+      "title": "Freelance Web Developer - Full-Stack React & Next.js | Max Mendes",
+      "metaDescription": "Freelance full-stack developer for hire. Websites, e-commerce, web apps, SaaS. React, Next.js, Node.js. Poland-based, UK/US friendly. Free consultation.",
+      "keywords": ["freelance web developer", "hire web developer", "full-stack developer poland", "react developer for hire", "nextjs developer", "web developer czestochowa", "ecommerce developer", "saas developer"],
+      "h1": "Freelance Developer for Hire",
+      "ogTitle": "Freelance Web Developer - Full-Stack React & Next.js | Max Mendes"
+    },
+    "schema": {
+      "type": "WebSite",
+      "description": "Professional web development portfolio and services by Max Mendes - Full Stack Developer specializing in React, Next.js, and modern web technologies.",
+      "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+    }
   },
   "aboutPage": {
     "id": "about",
@@ -296,11 +323,11 @@
       "pl": "/pl/o-mnie"
     },
     "seo": {
-      "title": "About Max Mendes | Full-Stack Developer Poland",
+      "title": "Full-Stack Developer Poland - React & Next.js | Max Mendes",
       "metaDescription": "Full-stack web developer in Częstochowa, Poland. I build websites, e-commerce, and web apps with React & Next.js. 300+ hours on production SaaS projects.",
       "keywords": ["about max mendes", "full-stack developer poland", "react developer poland", "nextjs developer", "web developer częstochowa", "freelance developer europe"],
       "h1": "About Max Mendes",
-      "ogTitle": "About Max Mendes | Full-Stack Developer Poland"
+      "ogTitle": "Full-Stack Developer Poland - React & Next.js | Max Mendes"
     },
     "schema": {
       "type": "ProfilePage",
@@ -479,11 +506,11 @@
         "pl": "/pl/uslugi/tworzenie-stron"
       },
       "seo": {
-        "title": "Full-Stack Web Development | Max Mendes",
+        "title": "Web Development - React & Next.js Sites | Max Mendes",
         "metaDescription": "Custom websites and web applications built with React, Next.js & TypeScript. Clean code, fast loading, SEO-ready. Poland-based developer serving UK, US & EU clients.",
         "keywords": ["web development", "react developer", "nextjs developer", "full-stack developer", "custom websites", "typescript developer", "web developer poland"],
         "h1": "Full-Stack Web Development",
-        "ogTitle": "Full-Stack Web Development | Max Mendes"
+        "ogTitle": "Web Development - React & Next.js Sites | Max Mendes"
       },
       "schema": {
         "serviceType": "Web Development Service",
@@ -500,11 +527,11 @@
         "pl": "/pl/uslugi/aplikacje-webowe"
       },
       "seo": {
-        "title": "SaaS & Web App Development | Max Mendes",
+        "title": "SaaS Development - Custom Web Applications | Max Mendes",
         "metaDescription": "Custom SaaS platforms and web applications with user auth, dashboards, payments & subscriptions. React, Next.js, Node.js. Poland-based, serving global clients.",
         "keywords": ["saas development", "web application development", "custom software", "dashboard development", "subscription platform", "react web app", "nextjs saas"],
         "h1": "SaaS & Web Application Development",
-        "ogTitle": "SaaS & Web App Development | Max Mendes"
+        "ogTitle": "SaaS Development - Custom Web Applications | Max Mendes"
       },
       "schema": {
         "serviceType": "Software Development Service",
@@ -521,11 +548,11 @@
         "pl": "/pl/uslugi/sklepy-internetowe"
       },
       "seo": {
-        "title": "E-Commerce Development | Max Mendes",
+        "title": "E-Commerce Development - Custom Online Stores | Max Mendes",
         "metaDescription": "Professional e-commerce development with Shopify or custom solutions. Payment integration, inventory management, fast checkout. Based in Poland, global delivery.",
         "keywords": ["ecommerce development", "online store development", "shopify developer", "custom ecommerce", "payment integration", "shopping cart", "ecommerce poland"],
         "h1": "E-Commerce Development",
-        "ogTitle": "E-Commerce Development | Max Mendes"
+        "ogTitle": "E-Commerce Development - Custom Online Stores | Max Mendes"
       },
       "schema": {
         "serviceType": "E-Commerce Development Service",
@@ -542,11 +569,11 @@
         "pl": "/pl/uslugi/pozycjonowanie"
       },
       "seo": {
-        "title": "SEO & Performance Optimization | Max Mendes",
+        "title": "Technical SEO - Performance Optimization | Max Mendes",
         "metaDescription": "Technical SEO, Core Web Vitals optimization, and page speed improvements. Fix what's slowing your site and hurting rankings. Developer-focused SEO services.",
         "keywords": ["technical seo", "seo optimization", "core web vitals", "page speed optimization", "seo audit", "website performance", "seo developer"],
         "h1": "SEO & Performance Optimization",
-        "ogTitle": "SEO & Performance Optimization | Max Mendes"
+        "ogTitle": "Technical SEO - Performance Optimization | Max Mendes"
       },
       "schema": {
         "serviceType": "SEO Service",
@@ -563,11 +590,11 @@
         "pl": "/pl/uslugi/integracja-ai"
       },
       "seo": {
-        "title": "AI Integration & Automation | Max Mendes",
+        "title": "AI Integration - OpenAI & Workflow Automation | Max Mendes",
         "metaDescription": "AI integration for web applications. Chatbots, content generation, workflow automation using OpenAI & Claude APIs. Poland-based developer, global clients.",
         "keywords": ["ai integration", "chatbot development", "openai integration", "llm implementation", "ai automation", "chatgpt api", "ai developer"],
         "h1": "AI Integration & Automation",
-        "ogTitle": "AI Integration & Automation | Max Mendes"
+        "ogTitle": "AI Integration - OpenAI & Workflow Automation | Max Mendes"
       },
       "schema": {
         "serviceType": "AI Integration Service",
@@ -584,11 +611,11 @@
         "pl": "/pl/uslugi"
       },
       "seo": {
-        "title": "Web Development Services | Max Mendes",
+        "title": "Web Development Services - React & Next.js | Max Mendes",
         "metaDescription": "Professional web development services including websites, e-commerce stores, and web applications. React, Next.js, TypeScript. Based in Poland, serving UK, US & Europe.",
         "keywords": ["web development services", "freelance developer", "react developer", "nextjs developer", "web developer poland", "custom websites", "web applications"],
         "h1": "Web Development Services",
-        "ogTitle": "Web Development Services | Max Mendes"
+        "ogTitle": "Web Development Services - React & Next.js | Max Mendes"
       },
       "schema": {
         "serviceType": "Web Development Services",
@@ -606,11 +633,11 @@
       "pl": "/pl/pytania"
     },
     "seo": {
-      "title": "Web Development Questions | Max Mendes - FAQ",
+      "title": "Web Development FAQ - Pricing & Process | Max Mendes",
       "metaDescription": "Web development questions answered. Pricing, timelines, tech stack. Call: +48 502 742 941. React & Next.js developer in Poland serving UK & US.",
       "keywords": ["web development faq", "freelance developer questions", "web development pricing", "hire developer poland", "react developer questions", "nextjs developer faq"],
       "h1": "Web Development Questions & Answers",
-      "ogTitle": "Web Development Questions | Max Mendes - FAQ"
+      "ogTitle": "Web Development FAQ - Pricing & Process | Max Mendes"
     },
     "schema": {
       "type": "FAQPage",
@@ -735,6 +762,35 @@
         "label": "Contact Me",
         "href": "/en/contact"
       }
+    }
+  },
+  "projectsPage": {
+    "id": "projects",
+    "label": "Projects",
+    "href": "/en/projects",
+    "hrefLang": {
+      "en": "/en/projects",
+      "pl": "/pl/projekty"
+    },
+    "seo": {
+      "title": "Web Development Portfolio - React Projects | Max Mendes",
+      "metaDescription": "Explore my web development projects: SaaS platforms, AI integrations, and production applications. 300+ hours on FlowMate. React, Next.js, TypeScript.",
+      "keywords": ["web development portfolio", "react projects", "nextjs portfolio", "saas development", "ai web apps", "full-stack projects", "freelance developer work"],
+      "h1": "Web Development Projects",
+      "ogTitle": "Web Development Portfolio - React Projects | Max Mendes"
+    },
+    "schema": {
+      "type": "CollectionPage",
+      "description": "A collection of web development projects by Max Mendes, including SaaS platforms, AI integrations, and production web applications."
+    },
+    "badge": "Portfolio",
+    "title": "Selected Projects",
+    "subtitle": "Real projects, real code, real results. Each project represents production-ready work built from the ground up.",
+    "cta": {
+      "title": "Have a Project in Mind?",
+      "description": "Let's discuss your project and see how I can help bring your ideas to life.",
+      "primaryButton": "Get Free Quote",
+      "secondaryButton": "View Services"
     }
   }
 }
