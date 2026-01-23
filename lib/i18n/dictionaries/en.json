@@ -40,12 +40,12 @@
     "secondaryButton": "View Projects",
     "cards": [
       {
-        "id": "web-development",
-        "icon": "Code2",
-        "title": "Full-Stack Web Development",
-        "description": "I build fast, modern business websites with React, Next.js, and TypeScript. No page builders, no templates—just clean code that loads quickly, scales well, and is easy to maintain as your business grows.",
-        "linkText": "business websites",
-        "linkHref": "/en/services/web-development"
+        "id": "ecommerce",
+        "icon": "ShoppingCart",
+        "title": "E-Commerce & Online Stores",
+        "description": "I build custom e-commerce platforms using React and Next.js with Stripe or PayPal payments, inventory control, and order management. Ideal for businesses that have outgrown Shopify or need full control over their store logic.",
+        "linkText": "e-commerce platforms",
+        "linkHref": "/en/services/ecommerce-development"
       },
       {
         "id": "saas",
@@ -56,12 +56,12 @@
         "linkHref": "/en/services/saas-web-apps"
       },
       {
-        "id": "ecommerce",
-        "icon": "ShoppingCart",
-        "title": "E-Commerce & Online Stores",
-        "description": "I build custom e-commerce platforms using React and Next.js with Stripe or PayPal payments, inventory control, and order management. Ideal for businesses that have outgrown Shopify or need full control over their store logic.",
-        "linkText": "e-commerce platforms",
-        "linkHref": "/en/services/ecommerce-development"
+        "id": "web-development",
+        "icon": "Code2",
+        "title": "Full-Stack Web Development",
+        "description": "I build fast, modern business websites with React, Next.js, and TypeScript. No page builders, no templates—just clean code that loads quickly, scales well, and is easy to maintain as your business grows.",
+        "linkText": "business websites",
+        "linkHref": "/en/services/web-development"
       },
       {
         "id": "seo",
@@ -75,8 +75,8 @@
         "id": "ai",
         "icon": "Bot",
         "title": "AI Integration",
-        "description": "I add practical AI-powered features using OpenAI and Anthropic (Claude) APIs—automation, content processing, smart assistants, and internal tools. Real AI features embedded into your product, not hype or standalone demos.",
-        "linkText": "AI-powered features",
+        "description": "I integrate AI features into your product: email automation, document processing, intelligent search, custom workflows. Built with production-ready APIs (OpenAI, Anthropic, Google), not proof-of-concepts.",
+        "linkText": "AI features",
         "linkHref": "/en/services/ai-integration"
       }
     ],
@@ -84,24 +84,32 @@
     "marquee2": ["Stripe", "OpenAI", "Claude API", "Vercel", "AWS", "SEO"]
   },
   "process": {
-    "title": "How I Work",
-    "subtitle": "My Process",
+    "badge": "Development Process",
+    "title": "How I Build Your Software",
+    "subtitle": "A proven workflow for building SaaS applications, e-commerce platforms, and AI-powered features that scale—not prototypes or WordPress templates.",
     "steps": [
       {
         "number": "01",
-        "title": "Discovery & Strategy",
-        "description": "We start by understanding your business goals, target audience, and requirements. I analyze your competition and create a strategic plan for your project."
+        "title": "Requirements & Architecture",
+        "subtitle": "Technical Discovery",
+        "description": "I analyze your business requirements, select the optimal React and Next.js stack, and design database architecture and API structure for scalability."
       },
       {
         "number": "02",
-        "title": "Design & Build",
-        "description": "I design and develop your website or application using modern technologies. You'll see progress throughout and can provide feedback at every stage."
+        "title": "Development & Integration",
+        "subtitle": "Build & Test",
+        "description": "I write production TypeScript code, implement features with real-time updates and authentication, test continuously, and integrate AI capabilities where needed."
       },
       {
         "number": "03",
-        "title": "Launch & Optimize",
-        "description": "After thorough testing, we launch your project. I provide ongoing support, SEO optimization, and performance monitoring to ensure continued success."
+        "title": "Production Deployment",
+        "subtitle": "Deploy & Document",
+        "description": "I deploy to production infrastructure, optimize performance and SEO, provide complete documentation, and train your team on maintenance."
       }
+    ],
+    "ctas": [
+      { "label": "View Services", "href": "/en/services" },
+      { "label": "See Projects", "href": "/en/projects" }
     ]
   },
   "faq": {
@@ -129,6 +137,33 @@
       }
     ]
   },
+  "faqTeaser": {
+    "badge": "FAQ",
+    "title": "Common Questions",
+    "subtitle": "What clients usually ask before we start",
+    "items": [
+      {
+        "question": "What do you build?",
+        "answer": "Production web applications—SaaS platforms, custom e-commerce systems, and business websites—built with React, Next.js, and TypeScript. No WordPress or templates."
+      },
+      {
+        "question": "How long does a typical project take?",
+        "answer": "Small projects: 3-5 weeks. SaaS or e-commerce platforms: 8-12 weeks, depending on scope and integrations."
+      },
+      {
+        "question": "What's your pricing structure?",
+        "answer": "Fixed-price for defined scopes, or monthly retainer for ongoing development. Pricing depends on complexity and required integrations."
+      },
+      {
+        "question": "Do you offer ongoing maintenance?",
+        "answer": "Yes. I provide ongoing support, updates, and performance improvements after launch, usually as a monthly maintenance or development agreement."
+      }
+    ],
+    "cta": {
+      "label": "See All Questions",
+      "href": "/en/faq"
+    }
+  },
   "footer": {
     "availableBadge": "Available For Work",
     "headline": "Not an Agency. Not WordPress. Just Code.",
@@ -145,7 +180,8 @@
       "about": "About",
       "services": "Services",
       "projects": "Projects",
-      "contact": "Contact"
+      "contact": "Contact",
+      "faq": "FAQ"
     },
     "serviceLinks": [
       { "label": "Full-Stack Web Development", "href": "/en/services/web-development" },
@@ -229,7 +265,27 @@
   },
   "workGrid": {
     "title": "Recent Works",
-    "viewCasestudy": "View Casestudy"
+    "viewProject": "View Project",
+    "projects": [
+      {
+        "id": "flowmate",
+        "title": "FlowMate — AI Email Management Platform",
+        "description": "Full-stack SaaS that unifies Gmail, Outlook, Slack, and Telegram into one AI-powered workflow. Handles authentication, async processing, and multi-provider integrations at production scale.",
+        "metric": "Launched January 2025 · 300+ dev hours · Multi-channel AI integration",
+        "href": "https://www.flowmate.click/",
+        "cta": "Visit FlowMate",
+        "tags": ["SaaS", "AI", "Full-Stack"]
+      },
+      {
+        "id": "markmind",
+        "title": "MarkMind — AI Bookmark Manager",
+        "description": "Chrome extension that automatically organizes bookmarks using AI classification. Real-time processing without impacting browser performance.",
+        "metric": "401+ Active Users · Live on Chrome Web Store",
+        "href": "https://chromewebstore.google.com/detail/markmind/bdobgdkpeffdbonfpokgkbncgnbnjnoo",
+        "cta": "Get Extension",
+        "tags": ["Chrome Extension", "AI", "Productivity"]
+      }
+    ]
   },
   "aboutPage": {
     "id": "about",
@@ -538,6 +594,146 @@
         "serviceType": "Web Development Services",
         "description": "Professional web development services including custom websites, e-commerce stores, SaaS platforms, and web applications built with React, Next.js, and TypeScript.",
         "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+      }
+    }
+  },
+  "faqPage": {
+    "id": "faq",
+    "label": "Frequently Asked Questions",
+    "href": "/en/faq",
+    "hrefLang": {
+      "en": "/en/faq",
+      "pl": "/pl/pytania"
+    },
+    "seo": {
+      "title": "Web Development Questions | Max Mendes - FAQ",
+      "metaDescription": "Web development questions answered. Pricing, timelines, tech stack. Call: +48 502 742 941. React & Next.js developer in Poland serving UK & US.",
+      "keywords": ["web development faq", "freelance developer questions", "web development pricing", "hire developer poland", "react developer questions", "nextjs developer faq"],
+      "h1": "Web Development Questions & Answers",
+      "ogTitle": "Web Development Questions | Max Mendes - FAQ"
+    },
+    "schema": {
+      "type": "FAQPage",
+      "description": "Frequently asked questions about web development services, pricing, timelines, and technical details."
+    },
+    "intro": "How we work together, what to expect, and what happens after launch.",
+    "categories": [
+      {
+        "title": "Services & Approach",
+        "items": [
+          {
+            "question": "What services do you provide?",
+            "answer": "I build production web applications: business websites, SaaS platforms, custom e-commerce systems, and AI-powered features. Everything is built with React, Next.js, and TypeScript—production-ready from day one, not demos or prototypes.",
+            "linkText": "View service details",
+            "linkHref": "/en/services"
+          },
+          {
+            "question": "What don't you build?",
+            "answer": "I don't build WordPress sites, page-builder websites, or design-only projects. I also don't offer branding, visual identity, or marketing services. My work is software development—writing real code that scales."
+          },
+          {
+            "question": "Do you work solo or with a team?",
+            "answer": "I work as a solo full-stack developer and handle the entire build myself. No handoffs, no project managers, no communication gaps. You work directly with the person writing your code."
+          },
+          {
+            "question": "Can you handle both Polish and international clients?",
+            "answer": "Yes. I work with companies in Poland and international clients in the UK and US. Communication is in English or Polish, and Polish content is reviewed with my wife to ensure natural language and accuracy."
+          }
+        ]
+      },
+      {
+        "title": "Process & Timeline",
+        "items": [
+          {
+            "question": "How do we start working together?",
+            "answer": "We start with a conversation about your problem and goals. I review the requirements, ask technical questions, and propose a clear scope, timeline, and pricing before any work begins.",
+            "linkText": "Get in touch to discuss your project",
+            "linkHref": "/en/contact"
+          },
+          {
+            "question": "What's your development process?",
+            "answer": "I start by defining requirements and technical architecture, then move into iterative development with regular checkpoints. Features are built and tested as we go, with adjustments based on your feedback."
+          },
+          {
+            "question": "How long does a typical project take?",
+            "answer": "Simple business websites take 3-5 weeks. SaaS platforms or custom e-commerce systems typically take 8-12 weeks, depending on integrations, database complexity, and feature requirements."
+          },
+          {
+            "question": "How do we communicate during the project?",
+            "answer": "Direct communication via email, Slack, or calls—whatever works for you. Weekly check-ins keep you updated on progress, blockers, and next steps. No unnecessary meetings or status reports."
+          }
+        ]
+      },
+      {
+        "title": "Pricing & Payment",
+        "items": [
+          {
+            "question": "What's your pricing structure?",
+            "answer": "Most projects are fixed-price based on a clearly defined scope. For ongoing development or evolving products, I offer monthly development retainers."
+          },
+          {
+            "question": "Do you require a deposit?",
+            "answer": "Yes. Projects start with a 30-50% deposit, with the remainder paid in milestones or at delivery. This keeps timelines predictable and protects both sides."
+          },
+          {
+            "question": "What payment methods do you accept?",
+            "answer": "I accept bank transfers (SWIFT/SEPA for international clients) and online payment platforms. All transactions are straightforward and compliant with EU regulations."
+          },
+          {
+            "question": "Can I pay in installments?",
+            "answer": "Yes, for larger projects. Payments are split into clear milestones tied to delivered work, so you're paying for real progress."
+          }
+        ]
+      },
+      {
+        "title": "Technical Details",
+        "items": [
+          {
+            "question": "What tech stack do you use?",
+            "answer": "React, Next.js, and TypeScript for frontend and full-stack applications. PostgreSQL or Supabase for databases, with additional tools based on your specific requirements. This stack delivers fast, secure, maintainable software that scales without major rewrites."
+          },
+          {
+            "question": "Can you work with my existing codebase?",
+            "answer": "Yes, if the codebase is reasonably maintained and documented. I'll review it first and tell you honestly whether it makes sense to extend it, refactor parts, or start fresh."
+          },
+          {
+            "question": "Do you handle hosting and deployment?",
+            "answer": "Yes. I handle production deployment, environment configuration, and performance optimization. Your application launches stable, monitored, and ready for real users—not just pushed live and forgotten."
+          },
+          {
+            "question": "How do you ensure my site is secure and performant?",
+            "answer": "I follow modern security practices for authentication and data handling. Server-side rendering, optimized images, and proper caching are built in by default. Core Web Vitals and load times are treated as requirements, not extras."
+          }
+        ]
+      },
+      {
+        "title": "Post-Launch",
+        "items": [
+          {
+            "question": "What happens after the project launches?",
+            "answer": "I monitor stability after launch, fix any early issues, and ensure everything works as expected. You're not left alone with a fresh deployment."
+          },
+          {
+            "question": "Do you offer ongoing maintenance?",
+            "answer": "Yes. I offer maintenance and development plans covering updates, bug fixes, performance improvements, and new features as your product evolves."
+          },
+          {
+            "question": "Can you train my team to manage the site?",
+            "answer": "Yes. I provide documentation and walkthroughs so your team understands the system and can manage content or basic operations confidently."
+          },
+          {
+            "question": "What if I need new features later?",
+            "answer": "New features can be added as separate projects or as part of a maintenance agreement. Clean code means extending functionality is usually straightforward and predictable."
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "title": "Didn't find your answer here?",
+      "description": "Drop me an email or give me a call—I'll give you a straight answer about your project, no sales pitch.",
+      "primaryButton": {
+        "label": "Contact Me",
+        "href": "/en/contact"
       }
     }
   }

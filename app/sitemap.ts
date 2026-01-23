@@ -82,6 +82,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
       changeFrequency: 'monthly',
     },
+    // FAQ
+    {
+      en: '/en/faq',
+      pl: '/pl/pytania',
+      priority: 0.7,
+      changeFrequency: 'monthly',
+    },
   ];
 
   // Generate sitemap entries with hreflang alternates
