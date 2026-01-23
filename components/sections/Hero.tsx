@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Trophy, FolderOpen, Globe, Languages } from 'lucide-react';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
+import SmokeEffect from '@/components/effects/SmokeEffect';
 import { SITE_CONFIG } from '@/lib/seo/config';
 import { HeroDict } from '@/types/i18n';
 
@@ -22,20 +23,23 @@ const iconMap = {
 const LiquidBackground: React.FC = () => {
   return (
     <div className="absolute inset-0 z-0 bg-background overflow-hidden">
+      {/* Cinematic Smoke Effect */}
+      <SmokeEffect intensity={0.7} />
+
       <div className="absolute inset-0 opacity-30">
+        {/* GPU-composited: only x, y, scale - no borderRadius */}
         <motion.div
           animate={{
             x: [-120, 160, -30],
             y: [120, -160, 60],
             scale: [1, 1.3, 0.85, 1],
-            borderRadius: ["40% 60% 70% 30%", "60% 40% 30% 70%", "50% 50% 50% 50%", "40% 60% 70% 30%"]
           }}
           transition={{
             duration: 22,
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute bottom-[-25%] left-[-15%] w-[1300px] h-[1000px] bg-white/[0.06] blur-[160px] pointer-events-none"
+          className="absolute bottom-[-25%] left-[-15%] w-[1300px] h-[1000px] rounded-full bg-white/[0.06] blur-[160px] pointer-events-none will-change-transform"
         />
 
         <motion.div
@@ -43,14 +47,13 @@ const LiquidBackground: React.FC = () => {
             x: [160, -120, 50],
             y: [-160, 140, -40],
             scale: [1.15, 0.9, 1.25, 1.15],
-            borderRadius: ["60% 40% 30% 70%", "40% 60% 70% 30%", "50% 50% 50% 50%", "60% 40% 30% 70%"]
           }}
           transition={{
             duration: 28,
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-[-20%] right-[-15%] w-[1100px] h-[900px] bg-zinc-400/[0.04] blur-[180px] pointer-events-none"
+          className="absolute top-[-20%] right-[-15%] w-[1100px] h-[900px] rounded-full bg-zinc-400/[0.04] blur-[180px] pointer-events-none will-change-transform"
         />
       </div>
 

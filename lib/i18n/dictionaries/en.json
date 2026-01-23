@@ -24,7 +24,6 @@
     "learnMoreHref": "/en/about",
     "trustBadges": [
       "500+ Hours Building Production Software",
-      "Working with Teams in Poland, UK & US",
       "One Developer, Complete Ownership",
       "Modern Architecture, Zero Technical Debt"
     ]
@@ -270,7 +269,7 @@
       {
         "id": "flowmate",
         "title": "FlowMate — AI Email Management Platform",
-        "description": "Full-stack SaaS that unifies Gmail, Outlook, Slack, and Telegram into one AI-powered workflow. Handles authentication, async processing, and multi-provider integrations at production scale.",
+        "description": "Production SaaS platform built with Next.js and React for high-volume email and messaging management. Full-stack architecture with secure authentication, async processing, and AI integrations handling real workloads at scale.",
         "metric": "Launched January 2025 · 300+ dev hours · Multi-channel AI integration",
         "href": "/en/projects",
         "externalUrl": "https://www.flowmate.click/",
@@ -282,7 +281,7 @@
       {
         "id": "markmind",
         "title": "MarkMind — AI Bookmark Manager",
-        "description": "Chrome extension that automatically organizes bookmarks using AI classification. Real-time processing without impacting browser performance.",
+        "description": "MarkMind is a live Chrome browser extension built with JavaScript and AI integration to organize bookmarks automatically. It runs in production for hundreds of users and processes data instantly without impacting browser performance.",
         "metric": "401+ Active Users · Live on Chrome Web Store",
         "href": "/en/projects",
         "externalUrl": "https://chromewebstore.google.com/detail/markmind/bdobgdkpeffdbonfpokgkbncgnbnjnoo",
@@ -784,11 +783,11 @@
       "description": "A collection of web development projects by Max Mendes, including SaaS platforms, AI integrations, and production web applications."
     },
     "badge": "Portfolio",
-    "title": "Selected Projects",
-    "subtitle": "Real projects, real code, real results. Each project represents production-ready work built from the ground up.",
+    "title": "Selected Full-Stack Projects",
+    "subtitle": "Production web applications built with Next.js and React. Real products, real users, and systems designed to run reliably beyond launch.",
     "cta": {
-      "title": "Have a Project in Mind?",
-      "description": "Let's discuss your project and see how I can help bring your ideas to life.",
+      "title": "Need a developer, not an agency?",
+      "description": "I build custom SaaS, e-commerce, and full-stack web applications with React and Next.js. Let's discuss your project.",
       "primaryButton": "Get Free Quote",
       "secondaryButton": "View Services"
     }
