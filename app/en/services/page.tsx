@@ -21,69 +21,32 @@ export async function generateMetadata(): Promise<Metadata> {
   return generateServicePageMetadata(pageData, 'en');
 }
 
-function generateServicesListSchema() {
+function generateServicesListSchema(services: Array<{ title: string; href: string }>, listName: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Web Development Services',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        item: {
-          '@type': 'Service',
-          name: 'Full Stack Web Development',
-          url: getFullUrl('/en/services/web-development'),
-        },
+    name: listName,
+    itemListElement: services.map((service, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Service',
+        name: service.title,
+        url: getFullUrl(service.href),
       },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        item: {
-          '@type': 'Service',
-          name: 'SaaS & Web Applications',
-          url: getFullUrl('/en/services/saas-web-apps'),
-        },
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        item: {
-          '@type': 'Service',
-          name: 'E-commerce Development',
-          url: getFullUrl('/en/services/ecommerce-development'),
-        },
-      },
-      {
-        '@type': 'ListItem',
-        position: 4,
-        item: {
-          '@type': 'Service',
-          name: 'SEO & Performance Optimization',
-          url: getFullUrl('/en/services/seo-performance-optimization'),
-        },
-      },
-      {
-        '@type': 'ListItem',
-        position: 5,
-        item: {
-          '@type': 'Service',
-          name: 'AI Integration & Automation',
-          url: getFullUrl('/en/services/ai-integration'),
-        },
-      },
-    ],
+    })),
   };
 }
 
 export default async function ServicesPageEN() {
   const dictionary = await getDictionary('en');
   const pageData = dictionary.servicePages?.[PAGE_ID] as ServiceLink | undefined;
+  const services = dictionary.servicesPage?.services || [];
 
   return (
     <>
       {pageData && <ServicePageJsonLd serviceData={pageData} />}
-      <JsonLd data={generateServicesListSchema()} />
+      <JsonLd data={generateServicesListSchema(services, 'Web Development Services')} />
       <ServicesClient locale="en" dictionary={dictionary} />
     </>
   );

@@ -30,11 +30,11 @@ export function generatePersonSchema(): PersonSchema {
       addressRegion: owner.address.region,
     },
     sameAs: [
-      owner.social.twitter,
       owner.social.linkedin,
       owner.social.github,
+      owner.social.twitter,
       owner.social.instagram,
-    ],
+    ].filter(Boolean) as string[],
     jobTitle: 'Full Stack Web Developer',
     worksFor: {
       '@type': 'Organization',
@@ -82,11 +82,11 @@ export function generateLocalBusinessSchema(locale: SupportedLocale = 'en'): Loc
     priceRange: '$$',
     openingHours: 'Mo-Fr 09:00-18:00',
     sameAs: [
-      owner.social.twitter,
       owner.social.linkedin,
       owner.social.github,
+      owner.social.twitter,
       owner.social.instagram,
-    ],
+    ].filter(Boolean) as string[],
     founder: {
       '@type': 'Person',
       name: owner.name,

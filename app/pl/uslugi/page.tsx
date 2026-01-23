@@ -21,69 +21,32 @@ export async function generateMetadata(): Promise<Metadata> {
   return generateServicePageMetadata(pageData, 'pl');
 }
 
-function generateServicesListSchema() {
+function generateServicesListSchema(services: Array<{ title: string; href: string }>, listName: string) {
   return {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Usługi Web Development',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        item: {
-          '@type': 'Service',
-          name: 'Tworzenie Stron Internetowych',
-          url: getFullUrl('/pl/uslugi/tworzenie-stron'),
-        },
+    name: listName,
+    itemListElement: services.map((service, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Service',
+        name: service.title,
+        url: getFullUrl(service.href),
       },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        item: {
-          '@type': 'Service',
-          name: 'Aplikacje Webowe i SaaS',
-          url: getFullUrl('/pl/uslugi/aplikacje-webowe'),
-        },
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        item: {
-          '@type': 'Service',
-          name: 'Sklepy Internetowe',
-          url: getFullUrl('/pl/uslugi/sklepy-internetowe'),
-        },
-      },
-      {
-        '@type': 'ListItem',
-        position: 4,
-        item: {
-          '@type': 'Service',
-          name: 'Pozycjonowanie Techniczne SEO',
-          url: getFullUrl('/pl/uslugi/pozycjonowanie'),
-        },
-      },
-      {
-        '@type': 'ListItem',
-        position: 5,
-        item: {
-          '@type': 'Service',
-          name: 'Integracja AI i Automatyzacja',
-          url: getFullUrl('/pl/uslugi/integracja-ai'),
-        },
-      },
-    ],
+    })),
   };
 }
 
 export default async function ServicesPagePL() {
   const dictionary = await getDictionary('pl');
   const pageData = dictionary.servicePages?.[PAGE_ID] as ServiceLink | undefined;
+  const services = dictionary.servicesPage?.services || [];
 
   return (
     <>
       {pageData && <ServicePageJsonLd serviceData={pageData} />}
-      <JsonLd data={generateServicesListSchema()} />
+      <JsonLd data={generateServicesListSchema(services, 'Usługi Web Development')} />
       <ServicesClient locale="pl" dictionary={dictionary} />
     </>
   );

@@ -79,7 +79,7 @@ export default function PolishHome() {
         <Hero locale="pl" dictionary={plDict.hero} />
         <AboutMe locale="pl" dictionary={plDict.about} />
         <WorkGrid />
-        <ServiceSection />
+        <ServiceSection dictionary={plDict.services} />
         <ProcessSection />
         <FAQSection />
         <div className="h-[20vh]" />

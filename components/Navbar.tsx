@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { SupportedLocale } from '@/types/i18n';
 import { NavDict } from '@/types/i18n';
+import { getRouteFromPathname, getLocalizedUrl } from '@/lib/i18n/routes';
 
 interface NavbarProps {
   locale?: SupportedLocale;
@@ -46,8 +47,21 @@ const Navbar: React.FC<NavbarProps> = ({ locale, dictionary }) => {
       ];
 
   const homeHref = isPolish ? '/pl' : '/en';
-  const alternateLang = isPolish ? 'en' : 'pl';
+  const alternateLang: SupportedLocale = isPolish ? 'en' : 'pl';
   const alternateLabel = isPolish ? 'EN' : 'PL';
+
+  // Get the equivalent page URL in the alternate language
+  const getAlternateHref = (): string => {
+    if (!pathname) return `/${alternateLang}`;
+
+    const routeKey = getRouteFromPathname(pathname);
+    if (routeKey) {
+      return getLocalizedUrl(alternateLang, routeKey);
+    }
+
+    // Fallback to home if route not found
+    return `/${alternateLang}`;
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -98,7 +112,7 @@ const Navbar: React.FC<NavbarProps> = ({ locale, dictionary }) => {
 
           {/* Language Switcher */}
           <Link
-            href={`/${alternateLang}`}
+            href={getAlternateHref()}
             className="text-[10px] font-medium uppercase tracking-[0.3em] text-zinc-500 hover:text-white transition-colors px-3 py-1.5 border border-white/10 rounded-full hover:border-white/30"
           >
             {alternateLabel}

@@ -92,7 +92,7 @@ export default function HomeClient({ locale, dictionary }: HomeClientProps) {
         <Hero locale={locale} dictionary={dictionary.hero} />
         <AboutMe locale={locale} dictionary={dictionary.about} />
         <WorkGrid />
-        <ServiceSection />
+        <ServiceSection dictionary={dictionary.services} />
         <ProcessSection />
         <FAQSection />
         <div className="h-[20vh]" />

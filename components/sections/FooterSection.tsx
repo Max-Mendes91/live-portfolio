@@ -140,11 +140,11 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
                 {content.contact.location}
               </a>
               <a
-                href={`mailto:${content.contact.email}`}
+                href={`mailto:${SITE_CONFIG.owner.email}`}
                 className="text-text-secondary hover:text-text-primary transition-colors flex items-center gap-2"
               >
                 <Mail className="w-4 h-4 text-text-muted" />
-                {content.contact.email}
+                {SITE_CONFIG.owner.email}
               </a>
             </div>
           </div>

@@ -345,6 +345,26 @@ This pattern ensures:
 - JSON-LD schema markup for rich results
 - Single source of truth in dictionaries
 
+### What Goes Where (MANDATORY)
+
+**In Dictionaries (translatable text only):**
+- Titles, descriptions, keywords (SEO text)
+- UI labels (buttons, headings, navigation)
+- Content paragraphs
+- `href` (page path) and `hrefLang` (language alternates as paths)
+
+**In SITE_CONFIG (`lib/seo/config.ts`):**
+- Email address (`SITE_CONFIG.owner.email`)
+- Phone number (`SITE_CONFIG.owner.phone`)
+- Social media URLs (`SITE_CONFIG.owner.social.*`)
+- Domain URL (`SITE_CONFIG.url`)
+- Owner name (`SITE_CONFIG.owner.name`)
+- Address (`SITE_CONFIG.owner.address`)
+
+**Generated Dynamically (NEVER hardcode in dictionaries):**
+- Canonical URLs → Use `getFullUrl(href)` from dictionary path
+- Full hreflang URLs → Use `getFullUrl(hrefLang.en)`, `getFullUrl(hrefLang.pl)`
+
 ### Dictionary Structure
 
 Add SEO metadata to dictionaries (`en.json`, `pl.json`) for each page:
@@ -364,8 +384,7 @@ Add SEO metadata to dictionaries (`en.json`, `pl.json`) for each page:
       "metaDescription": "150-160 char description with keywords",
       "keywords": ["keyword1", "keyword2", "keyword3"],
       "h1": "Page Main Heading",
-      "ogTitle": "OG Title | Max Mendes",
-      "canonical": "https://maxmendes.dev/en/page-slug"
+      "ogTitle": "OG Title | Max Mendes"
     },
     "schema": {
       "type": "WebPage or Service or Article",
@@ -375,6 +394,8 @@ Add SEO metadata to dictionaries (`en.json`, `pl.json`) for each page:
   }
 }
 ```
+
+> **Note:** `canonical` is NOT in the dictionary. It's generated dynamically using `getFullUrl(href)`.
 
 ### Page Implementation Template
 
@@ -412,6 +433,69 @@ export default async function Page() {
 }
 ```
 
+### Dynamic Canonical URL Pattern (for all pages)
+
+All pages MUST generate canonical URLs dynamically from dictionary `href`.
+
+**Option 1: Use the centralized utility (PREFERRED for service pages)**
+```tsx
+import { generateServicePageMetadata } from '@/lib/seo/metadata';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const dictionary = await getDictionary('en');
+  const pageData = dictionary.servicePages?.[PAGE_ID] as ServiceLink | undefined;
+  if (!pageData) return { title: 'Fallback Title | Max Mendes' };
+  return generateServicePageMetadata(pageData, 'en');
+}
+```
+
+**Option 2: Inline implementation (for pages with custom needs like About)**
+```tsx
+import { getFullUrl } from '@/lib/seo/config';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const dictionary = await getDictionary('en');
+  const pageData = dictionary.aboutPage;
+
+  if (!pageData) return {};
+
+  // Generate canonical URL dynamically from dictionary href
+  const canonicalUrl = getFullUrl(pageData.href);
+
+  // Generate alternate language URLs from hrefLang
+  const languages: Record<string, string> = {};
+  Object.entries(pageData.hrefLang).forEach(([lang, path]) => {
+    languages[lang] = getFullUrl(path);
+  });
+  languages['x-default'] = languages['en'];
+
+  return {
+    title: pageData.seo.title,
+    description: pageData.seo.metaDescription,
+    keywords: pageData.seo.keywords,
+    alternates: {
+      canonical: canonicalUrl,
+      languages,
+    },
+    openGraph: {
+      title: pageData.seo.ogTitle,
+      description: pageData.seo.metaDescription,
+      url: canonicalUrl,
+      siteName: 'Max Mendes',
+      locale: 'en_US',
+      type: 'website',
+      images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: pageData.seo.ogTitle,
+      description: pageData.seo.metaDescription,
+      images: ['/og-image.png'],
+    },
+  };
+}
+```
+
 ### SEO Requirements Checklist
 
 For EVERY new page:
@@ -444,17 +528,34 @@ export const metadata: Metadata = {
   description: 'Hardcoded desc'  // NO!
 };
 
+// ❌ NEVER hardcode canonical URLs in dictionaries
+"seo": {
+  "canonical": "https://maxmendes.dev/..."  // NO! Use getFullUrl(href)
+}
+
+// ❌ NEVER hardcode email, phone, or social URLs in dictionaries or components
+<a href="mailto:hardcoded@email.com">  // NO! Use SITE_CONFIG.owner.email
+<a href="https://github.com/hardcoded">  // NO! Use SITE_CONFIG.owner.social.github
+
 // ❌ NEVER use different patterns per page
 // All pages MUST use dictionary + generateMetadata pattern
+
+// ✅ DO: Use centralized config
+import { SITE_CONFIG, getFullUrl } from '@/lib/seo/config';
+<a href={`mailto:${SITE_CONFIG.owner.email}`}>
+<a href={SITE_CONFIG.owner.social.github}>
+const canonicalUrl = getFullUrl(dictionary.href);
 ```
 
 ### Helper Functions Reference
 
 | Function | File | Purpose |
 |----------|------|---------|
-| `generateServicePageMetadata()` | `lib/seo/metadata.ts` | Generates Next.js Metadata |
+| `getFullUrl(path)` | `lib/seo/config.ts` | Converts path to full URL with domain |
+| `generateServicePageMetadata()` | `lib/seo/metadata.ts` | Generates Next.js Metadata from dictionary |
 | `generateServicePageSchema()` | `lib/seo/schemas.ts` | Generates JSON-LD schema |
 | `ServicePageJsonLd` | `components/seo/JsonLd.tsx` | Schema injection component |
+| `SITE_CONFIG` | `lib/seo/config.ts` | Central config (email, social, domain) |
 
 ## File Structure
 

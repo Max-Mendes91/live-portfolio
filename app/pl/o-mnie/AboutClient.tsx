@@ -3,9 +3,13 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Github, Linkedin, Mail, MapPin, Briefcase } from 'lucide-react';
+import { Github, Linkedin, MapPin, Briefcase } from 'lucide-react';
 import Navbar from '@/components/Navbar';
+import FooterSection from '@/components/sections/FooterSection';
+import CornerGlowButton from '@/components/ui/CornerGlowButton';
+import { Display, Heading, Text, Badge } from '@/components/ui';
 import { Dictionary, SupportedLocale } from '@/types/i18n';
+import { SITE_CONFIG } from '@/lib/seo/config';
 
 interface AboutClientProps {
   locale: SupportedLocale;
@@ -17,10 +21,10 @@ const linkPatterns: Record<string, string> = {
   'strony internetowe': '/pl/uslugi/tworzenie-stron',
   'sklepy online': '/pl/uslugi/sklepy-internetowe',
   'sklepy internetowe': '/pl/uslugi/sklepy-internetowe',
-  'aplikacje webowe': '/pl/uslugi/tworzenie-stron',
-  'optymalizuję pod SEO': '/pl/uslugi/pozycjonowanie',
-  'FlowMate': '/pl/projekty',
-  'React': 'https://react.dev',
+  'aplikacje webowe': '/pl/uslugi/aplikacje-webowe',
+  'integracją AI': '/pl/uslugi/integracja-ai',
+  'słabe SEO': '/pl/uslugi/pozycjonowanie',
+  React: 'https://react.dev',
   'Next.js': 'https://nextjs.org',
 };
 
@@ -44,7 +48,7 @@ function linkifyBio(text: string): React.ReactNode {
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white underline decoration-white/30 underline-offset-4 hover:decoration-white/60 transition-colors"
+                className="text-text-primary underline decoration-border underline-offset-4 hover:decoration-text-secondary transition-colors"
               >
                 {segment}
               </a>
@@ -54,7 +58,7 @@ function linkifyBio(text: string): React.ReactNode {
             <Link
               key={`${index}-${i}`}
               href={url}
-              className="text-white underline decoration-white/30 underline-offset-4 hover:decoration-white/60 transition-colors"
+              className="text-text-primary underline decoration-border underline-offset-4 hover:decoration-text-secondary transition-colors"
             >
               {segment}
             </Link>
@@ -68,241 +72,218 @@ function linkifyBio(text: string): React.ReactNode {
   return result;
 }
 
+// Shared section container style (matching services page)
+const sectionContainerStyle = "max-w-[90rem] mx-auto border-t border-border rounded-t-[3rem] bg-background relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)]";
+
 const AboutClient: React.FC<AboutClientProps> = ({ locale, dictionary }) => {
-  const { aboutPage, nav } = dictionary;
+  const { aboutPage, nav, footer } = dictionary;
 
   if (!aboutPage) return null;
 
   return (
-    <main className="min-h-screen bg-[#050505]">
-      <Navbar locale={locale} dictionary={nav} />
+    <div className="relative">
+      {/* Main content - sits above footer */}
+      <div className="relative z-10 bg-background">
+        <Navbar locale={locale} dictionary={nav} />
+        <main className="min-h-screen bg-background">
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-white/[0.02] rounded-full blur-[120px]" />
-        </div>
+      <section className="relative pt-48 pb-4 overflow-hidden">
+        <motion.div
+          initial={{ y: 200, scale: 0.98 }}
+          animate={{ y: 0, scale: 1 }}
+          transition={{
+            duration: 1.6,
+            ease: [0.22, 1, 0.36, 1],
+            y: {
+              type: "spring",
+              damping: 25,
+              stiffness: 80,
+              mass: 1.2,
+            },
+          }}
+          className="max-w-4xl mx-auto border-t border-white/10 rounded-t-[2rem] pt-20 lg:pt-32 pb-16 lg:pb-20 px-6 lg:px-12"
+        >
+          <div className="text-center flex flex-col items-center">
+            <Badge variant="outline" size="md" icon={<MapPin className="w-4 h-4" />} className="mb-8">
+              {aboutPage.location}
+            </Badge>
 
-        <div className="relative max-w-4xl mx-auto px-6">
-          <motion.nav
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex items-center gap-2 text-sm text-zinc-500 mb-8"
-          >
-            <Link href="/pl" className="hover:text-white transition-colors">
-              Strona główna
-            </Link>
-            <span>/</span>
-            <span className="text-zinc-400">O mnie</span>
-          </motion.nav>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-tight mb-8"
-          >
-            {aboutPage.heading}
-          </motion.h1>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full text-zinc-400 text-sm mb-12"
-          >
-            <MapPin className="w-4 h-4" />
-            <span>Częstochowa, Polska</span>
-          </motion.div>
-        </div>
+            <Display size="md" as="h1" className="mb-8">
+              {aboutPage.heading}
+            </Display>
+          </div>
+        </motion.div>
       </section>
 
       {/* Bio Section */}
-      <section className="py-16 border-t border-white/5">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="space-y-6">
-            {aboutPage.bio.map((paragraph, index) => (
-              <motion.p
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-lg text-zinc-400 leading-relaxed"
-              >
-                {linkifyBio(paragraph)}
-              </motion.p>
-            ))}
+      <section className="py-12 lg:py-20">
+        <div className={sectionContainerStyle + " pt-16 lg:pt-24 pb-16 lg:pb-24"}>
+          <div className="max-w-4xl mx-auto px-6 lg:px-12">
+            <div className="space-y-6">
+              {aboutPage.bio.map((paragraph, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                >
+                  <Text size="lg" color="secondary" className="leading-relaxed">
+                    {linkifyBio(paragraph)}
+                  </Text>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Skills Section */}
-      <section className="py-16 border-t border-white/5">
-        <div className="max-w-4xl mx-auto px-6">
-          <motion.h2
+      {/* Tech Stack Section */}
+      <section className="py-12 lg:py-20">
+        <div className="max-w-4xl mx-auto border-t border-white/10 rounded-t-[2rem] pt-16 px-6 lg:px-12">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-2xl md:text-3xl font-semibold text-white mb-8"
           >
-            {aboutPage.skills.title}
-          </motion.h2>
+            <Heading size="lg" as="h2" className="mb-10">
+              {aboutPage.skills.title}
+            </Heading>
+          </motion.div>
 
+          {/* Categorized Skills */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex flex-wrap gap-3"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-8"
           >
-            {aboutPage.skills.items.map((skill, index) => (
-              <span
-                key={index}
-                className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-zinc-300 text-sm hover:bg-white/10 hover:border-white/20 transition-colors"
-              >
-                {skill}
-              </span>
+            {aboutPage.skills.categories?.map((category, index) => (
+              <div key={index}>
+                <Text size="sm" color="muted" className="uppercase tracking-widest mb-3">
+                  {category.name}
+                </Text>
+                <div className="flex flex-wrap gap-2">
+                  {category.items.map((item, idx) => (
+                    <span
+                      key={idx}
+                      className="px-4 py-2 rounded-full bg-zinc-900/50 border border-white/5 text-xs font-medium text-zinc-300 hover:bg-zinc-800 transition-colors cursor-default"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
             ))}
           </motion.div>
         </div>
       </section>
 
       {/* Experience Section */}
-      <section className="py-16 border-t border-white/5">
-        <div className="max-w-4xl mx-auto px-6">
-          <motion.h2
+      <section className="py-12 lg:py-20">
+        <div className={sectionContainerStyle + " pt-16 lg:pt-24 pb-16 lg:pb-24"}>
+          <div className="max-w-4xl mx-auto px-6 lg:px-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <Heading size="lg" as="h2" className="mb-8">
+                {aboutPage.experience.title}
+              </Heading>
+            </motion.div>
+
+            <div className="space-y-8">
+              {aboutPage.experience.items.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="relative pl-8 border-l border-border"
+                >
+                  <div className="absolute left-0 top-0 w-3 h-3 -translate-x-[7px] bg-surface-hover rounded-full" />
+                  <div className="flex flex-wrap items-center gap-3 mb-2">
+                    <Heading size="sm" as="h3">{item.role}</Heading>
+                    <span className="text-text-muted">·</span>
+                    <Text color="secondary">{item.company}</Text>
+                  </div>
+                  <Text size="sm" color="muted" className="mb-3 flex items-center gap-2">
+                    <Briefcase className="w-4 h-4" />
+                    {item.period}
+                  </Text>
+                  <Text color="secondary" className="leading-relaxed">{item.description}</Text>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="mt-8 flex items-center gap-4"
+            >
+              <a
+                href={SITE_CONFIG.owner.social.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors"
+              >
+                <Github className="w-5 h-5" />
+                <span>{aboutPage.social.github}</span>
+              </a>
+              <a
+                href={SITE_CONFIG.owner.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors"
+              >
+                <Linkedin className="w-5 h-5" />
+                <span>{aboutPage.social.linkedin}</span>
+              </a>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Decision Section */}
+      <section className="py-12 lg:py-20">
+        <div className="max-w-4xl mx-auto border-t border-white/10 rounded-t-[2rem] pt-16 px-6 lg:px-12">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-2xl md:text-3xl font-semibold text-white mb-8"
+            className="text-center"
           >
-            {aboutPage.experience.title}
-          </motion.h2>
-
-          <div className="space-y-8">
-            {aboutPage.experience.items.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="relative pl-8 border-l border-white/10"
-              >
-                <div className="absolute left-0 top-0 w-3 h-3 -translate-x-[7px] bg-white/20 rounded-full" />
-                <div className="flex flex-wrap items-center gap-3 mb-2">
-                  <h3 className="text-xl font-medium text-white">{item.role}</h3>
-                  <span className="text-zinc-500">·</span>
-                  <span className="text-zinc-400">{item.company}</span>
-                </div>
-                <p className="text-sm text-zinc-500 mb-3 flex items-center gap-2">
-                  <Briefcase className="w-4 h-4" />
-                  {item.period}
-                </p>
-                <p className="text-zinc-400 leading-relaxed">{item.description}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-8 flex items-center gap-4"
-          >
-            <a
-              href="https://github.com/Max-Mendes91"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors"
-            >
-              <Github className="w-5 h-5" />
-              <span>GitHub</span>
-            </a>
-            <a
-              href="https://linkedin.com/in/max-mendes"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-zinc-400 hover:text-white transition-colors"
-            >
-              <Linkedin className="w-5 h-5" />
-              <span>LinkedIn</span>
-            </a>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 border-t border-white/5">
-        <div className="max-w-4xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="bg-white/[0.02] border border-white/10 rounded-2xl p-8 md:p-12"
-          >
-            <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4">
+            <Display size="sm" as="h2" className="mb-6">
               {aboutPage.cta.title}
-            </h2>
-            <p className="text-zinc-400 mb-8 max-w-2xl">
+            </Display>
+            <Text color="secondary" className="mb-10 max-w-2xl mx-auto">
               {aboutPage.cta.description}
-            </p>
+            </Text>
 
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/pl/kontakt"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-medium rounded-full hover:bg-zinc-200 transition-colors"
-              >
-                <Mail className="w-4 h-4" />
-                {aboutPage.cta.primaryButton}
-              </Link>
-
-              <Link
-                href="/pl/projekty"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-white/20 text-white rounded-full hover:bg-white/5 transition-colors"
-              >
-                {aboutPage.cta.secondaryButton}
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-
-              <Link
-                href="/pl/uslugi"
-                className="inline-flex items-center gap-2 px-6 py-3 text-zinc-400 hover:text-white transition-colors"
-              >
-                {aboutPage.cta.tertiaryButton}
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
+            <CornerGlowButton href="/pl/kontakt">{aboutPage.cta.button}</CornerGlowButton>
           </motion.div>
         </div>
       </section>
 
-      {/* Footer breadcrumb */}
-      <section className="py-12 border-t border-white/5">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-zinc-500">
-            <Link href="/pl" className="hover:text-white transition-colors">
-              Strona główna
-            </Link>
-            <Link href="/pl/uslugi" className="hover:text-white transition-colors">
-              Usługi
-            </Link>
-            <Link href="/pl/projekty" className="hover:text-white transition-colors">
-              Portfolio
-            </Link>
-            <Link href="/pl/kontakt" className="hover:text-white transition-colors">
-              Kontakt
-            </Link>
-          </div>
-        </div>
-      </section>
-    </main>
+          {/* Spacer for footer reveal */}
+          <div className="h-[20vh]" />
+        </main>
+      </div>
+
+      {/* Sticky Reveal Footer */}
+      <div className="sticky bottom-0 z-0 h-screen w-full">
+        <FooterSection locale={locale} dictionary={footer} hideCTA />
+      </div>
+    </div>
   );
 };
 

@@ -18,56 +18,58 @@
     "skills": ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS", "Figma", "SEO", "E-Commerce", "SaaS"]
   },
   "services": {
-    "title": "Uslugi",
-    "subtitle": "Co Moge Dla Ciebie Zrobic",
-    "webDevelopment": {
-      "title": "Tworzenie Stron Internetowych",
-      "description": "Profesjonalne tworzenie stron i aplikacji webowych w React, Next.js i Node.js. Od prostych landing page po zlozone platformy - tworze skalowalne, wydajne rozwiazania dopasowane do potrzeb Twojego biznesu.",
-      "features": [
-        "Aplikacje React i Next.js",
-        "Backend w Node.js",
-        "API REST i GraphQL",
-        "Projektowanie baz danych",
-        "Wdrozenia w chmurze",
-        "Optymalizacja wydajnosci"
-      ]
+    "hero": {
+      "badge": "Co Tworzę",
+      "title": "Produkcyjne oprogramowanie webowe. Bez szablonów. Bez WordPress.",
+      "subtitle": "Tworzę produkcyjne aplikacje webowe w React i Next.js—nie prototypy, nie szablony. Jeden programista. Full stack. Prawdziwy kod."
     },
-    "webDesign": {
-      "title": "Projektowanie Stron WWW & UI/UX",
-      "description": "Nowoczesny, responsywny design stron skoncentrowany na doswiadczeniu uzytkownika i konwersji. Tworze piekne interfejsy, ktore nie tylko swietnie wygladaja, ale tez zamieniaja odwiedzajacych w klientow.",
-      "features": [
-        "Projektowanie UI/UX",
-        "Responsywny Design",
-        "Prototypowanie w Figma",
-        "Systemy Designu",
-        "Podejscie Mobile-First",
-        "Optymalizacja Konwersji"
-      ]
-    },
-    "seo": {
-      "title": "Pozycjonowanie SEO",
-      "description": "SEO techniczne, optymalizacja on-page i poprawa wydajnosci dla lepszych pozycji w Google. Zostan znaleziony przez klientow aktywnie szukajacych Twoich uslug.",
-      "features": [
-        "Audyt Techniczny SEO",
-        "Optymalizacja On-Page",
-        "Optymalizacja Core Web Vitals",
-        "Znaczniki Schema (JSON-LD)",
-        "Lokalne SEO (Google Moja Firma)",
-        "Badanie Slow Kluczowych i Strategia"
-      ]
-    },
-    "ecommerce": {
-      "title": "Sklepy Internetowe & E-commerce",
-      "description": "Profesjonalne rozwiazania e-commerce z integracja platnosci, zarzadzaniem magazynem i optymalizacja konwersji. Uruchom swoj sklep online i zacznij sprzedawac klientom na calym swiecie.",
-      "features": [
-        "Dedykowane Rozwiazania E-commerce",
-        "Integracja Platnosci (Stripe, PayPal)",
-        "Systemy Zarzadzania Magazynem",
-        "Optymalizacja Koszyka",
-        "Wsparcie Wielowalutowe i Wielojezyczne",
-        "Zarzadzanie Zamowieniami i Analityka"
-      ]
-    }
+    "pills": ["Tworzenie Stron", "Aplikacje SaaS", "E-Commerce", "SEO i Wydajność", "Integracja AI"],
+    "primaryButton": "Zobacz Usługi",
+    "secondaryButton": "Zobacz Projekty",
+    "cards": [
+      {
+        "id": "web-development",
+        "icon": "Code2",
+        "title": "Tworzenie Stron Internetowych",
+        "description": "Tworzę szybkie, nowoczesne strony firmowe w React, Next.js i TypeScript. Bez kreatorów stron, bez szablonów—tylko czysty kod, który szybko się ładuje, dobrze skaluje i jest łatwy w utrzymaniu wraz z rozwojem Twojej firmy.",
+        "linkText": "strony firmowe",
+        "linkHref": "/pl/uslugi/tworzenie-stron"
+      },
+      {
+        "id": "saas",
+        "icon": "Cloud",
+        "title": "Aplikacje SaaS i Webowe",
+        "description": "Dedykowane aplikacje webowe z uwierzytelnianiem, dashboardami, API i prawdziwymi przepływami użytkowników. Budowane dla produkcji od pierwszego dnia—obsługa danych, uprawnień, płatności i integracji bez prowizorycznych rozwiązań.",
+        "linkText": "aplikacje webowe",
+        "linkHref": "/pl/uslugi/aplikacje-webowe"
+      },
+      {
+        "id": "ecommerce",
+        "icon": "ShoppingCart",
+        "title": "Sklepy Internetowe i E-Commerce",
+        "description": "Buduję dedykowane platformy e-commerce w React i Next.js z płatnościami Stripe lub PayPal, kontrolą magazynu i zarządzaniem zamówieniami. Idealne dla firm, które przerosły Shopify lub potrzebują pełnej kontroli nad logiką sklepu.",
+        "linkText": "platformy e-commerce",
+        "linkHref": "/pl/uslugi/sklepy-internetowe"
+      },
+      {
+        "id": "seo",
+        "icon": "Search",
+        "title": "SEO i Optymalizacja Wydajności",
+        "description": "Techniczne pozycjonowanie SEO skoncentrowane na szybkości, strukturze i widoczności w wyszukiwarkach. Poprawiam Core Web Vitals, naprawiam problemy z renderowaniem i indeksowaniem, zapewniam że strona jest szybka i zbudowana zgodnie z oczekiwaniami Google.",
+        "linkText": "pozycjonowanie SEO",
+        "linkHref": "/pl/uslugi/pozycjonowanie"
+      },
+      {
+        "id": "ai",
+        "icon": "Bot",
+        "title": "Integracja AI",
+        "description": "Dodaję praktyczne funkcje AI wykorzystując API OpenAI i Anthropic (Claude)—automatyzacja, przetwarzanie treści, inteligentni asystenci i narzędzia wewnętrzne. Prawdziwe funkcje AI wbudowane w Twój produkt, nie hype ani oddzielne demo.",
+        "linkText": "funkcje AI",
+        "linkHref": "/pl/uslugi/integracja-ai"
+      }
+    ],
+    "marquee1": ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
+    "marquee2": ["Stripe", "OpenAI", "Claude API", "Vercel", "AWS", "SEO"]
   },
   "process": {
     "title": "Jak Pracuje",
@@ -126,7 +128,7 @@
   "footer": {
     "availableBadge": "Dostępny do współpracy",
     "headline": "Nie agencja. Nie WordPress. Tylko kod.",
-    "subheadline": "Jeden programista full-stack w Polsce, tworzący oprogramowanie dla prawdziwych firm. Dostępny dla projektów na całym świecie.",
+    "subheadline": "Jeden programista full-stack w Polsce tworzący produkcyjne oprogramowanie webowe. Dostępny dla projektów na całym świecie.",
     "cta": "Rozpocznij Rozmowę",
     "seoText": "Bez Komitetów, Tylko Kod",
     "sections": {
@@ -151,7 +153,6 @@
     "contact": {
       "name": "Max Mendes",
       "location": "Częstochowa, Polska",
-      "email": "maxmendesnoah1991@gmail.com",
       "available": "Dostępny do pracy"
     },
     "bottom": {
@@ -227,62 +228,81 @@
     "viewCasestudy": "Zobacz Case Study"
   },
   "aboutPage": {
-    "meta": {
-      "title": "O Mnie - Programista Full-Stack Częstochowa | Max Mendes",
-      "description": "Programista full-stack z Częstochowy. Buduję strony i aplikacje w React & Next.js ✓ 300+ godzin pracy nad SaaS ✓ Nie WordPress ✓ Bezpłatna konsultacja"
+    "id": "about",
+    "label": "O Mnie",
+    "href": "/pl/o-mnie",
+    "hrefLang": {
+      "en": "/en/about",
+      "pl": "/pl/o-mnie"
+    },
+    "seo": {
+      "title": "Programista Full-Stack Częstochowa | Max Mendes",
+      "metaDescription": "Programista full-stack z Częstochowy. Buduję strony i aplikacje w React & Next.js ✓ 300+ godzin pracy nad SaaS ✓ Nie WordPress ✓ Bezpłatna konsultacja",
+      "keywords": ["programista częstochowa", "programista full-stack", "tworzenie stron częstochowa", "react developer polska", "programista śląskie", "freelancer polska"],
+      "h1": "Programista Full-Stack Częstochowa",
+      "ogTitle": "Programista Full-Stack Częstochowa | Max Mendes"
+    },
+    "schema": {
+      "type": "ProfilePage",
+      "description": "Programista full-stack z Częstochowy specjalizujący się w React, Next.js i TypeScript. Tworzenie stron, sklepów i aplikacji webowych.",
+      "areaServed": ["Częstochowa", "Śląskie", "Polska"]
     },
     "heading": "Programista Full-Stack Częstochowa",
+    "location": "Częstochowa, Polska",
     "bio": [
       "Nazywam się Max i jestem programistą full-stack z Częstochowy. Buduję nowoczesne strony internetowe, sklepy online i aplikacje webowe z integracją AI dla firm, które potrzebują czegoś więcej niż kolejny szablon WordPress.",
       "Na lokalnym rynku prawie wszystkie agencje używają WordPressa. To szybkie na start, ale po roku pojawiają się problemy: wolne ładowanie, słabe SEO, niemożliwa rozbudowa bez migracji. Ja buduję w React i Next.js. Efekt: strony szybsze, lepiej pozycjonujące się w Google i gotowe na rozwój bez przepisywania wszystkiego od podstaw.",
       "Nie jestem grafikiem ani specjalistą od brandingu. Nie tworzę logo ani identyfikacji wizualnych. Moja rola to kod: przekształcam pomysły w działające produkty. Implementuję interfejsy używając sprawdzonych bibliotek komponentów (shadcn/ui, Tailwind CSS) z naciskiem na wydajność, SEO i skalowalność. Integruję również funkcje AI wykorzystując API OpenAI i Anthropic—narzędzia, których używałem w produkcji do tworzenia inteligentnej generacji treści, automatyzacji procesów i przetwarzania danych.",
       "Mój proces: najpierw rozumiem cel biznesowy, analizuję konkurencję i planuję wymagania techniczne. Potem robię proste prototypy w Figma żeby uporządkować przepływ użytkownika. Dopiero wtedy piszę kod, optymalizuję pod SEO, wdrażam i iteruję na podstawie feedbacku.",
-      "Mój największy projekt, FlowMate, to platforma SaaS do zarządzania emailami z wykorzystaniem AI, która obsługuje wysyłkę na wielu platformach i inteligentną generację treści. Budowa zajęła ponad 300 godzin i nauczyła mnie, jak projektować produkcyjne aplikacje SaaS z autentykacją, płatnościami, integracją AI i rzeczywistymi danymi użytkowników na dużą skalę.",
-      "Pracuję z firmami z Częstochowy i Śląska które potrzebują solidnych stron lub sklepów internetowych, ale też z zagranicznymi klientami szukającymi freelance developera z Polski. Mówię płynnie po angielsku i bez problemu pracuję asynchronicznie w różnych strefach czasowych."
+      "Buduję również własne projekty, co pozwala mi testować nowe technologie przed wdrożeniem u klientów.",
+      "Jestem dostępny dla firm z Częstochowy i Śląska, które potrzebują nowoczesnych stron internetowych lub sklepów online, a także dla zagranicznych klientów szukających full-stack developera z Polski. Mówię płynnie po angielsku i bez problemu pracuję asynchronicznie w różnych strefach czasowych."
     ],
     "skills": {
-      "title": "Z czego korzystam",
-      "items": [
-        "Full-Stack Web Development",
-        "React & Next.js",
-        "TypeScript & JavaScript",
-        "Integracja AI",
-        "OpenAI API",
-        "Implementacja LLM",
-        "Strony biznesowe i landing pages",
-        "Sklepy internetowe (Shopify + custom)",
-        "Aplikacje SaaS i web apps",
-        "Rozwój i integracja API",
-        "Optymalizacja SEO i wydajności",
-        "Prototypowanie w Figma (low-fidelity)",
-        "Implementacja UI (biblioteki komponentów)",
-        "PostgreSQL & Supabase",
-        "Wdrożenia (Vercel, AWS, DigitalOcean)"
+      "title": "Technologie",
+      "categories": [
+        {
+          "name": "Frontend",
+          "items": ["React", "Next.js", "TypeScript", "Tailwind CSS"]
+        },
+        {
+          "name": "Backend",
+          "items": ["Node.js", "PostgreSQL", "Prisma", "Supabase"]
+        },
+        {
+          "name": "AI i API",
+          "items": ["OpenAI API", "Integracja LLM", "REST APIs"]
+        },
+        {
+          "name": "Narzędzia",
+          "items": ["Git", "Vercel", "Figma", "VS Code"]
+        }
       ]
     },
     "experience": {
       "title": "Doświadczenie",
       "items": [
         {
-          "role": "Programista Full-Stack (Freelance)",
-          "company": "Działalność własna",
-          "period": "2024 – obecnie",
-          "description": "Buduję strony, sklepy i aplikacje webowe dla firm i startupów. Stworzyłem FlowMate—platformę SaaS do zarządzania emailami z AI. 300+ godzin praktycznej pracy full-stack: dashboardy, integracje OAuth, systemy płatności, deployment produkcyjny."
+          "role": "Freelancer – Programista Full-Stack",
+          "company": "Własna działalność",
+          "period": "2024 – Obecnie",
+          "description": "Działam lokalnie z Częstochowy, specjalizuję się w tworzeniu stron internetowych, sklepów online i aplikacji webowych w React i Next.js. Projektuję i buduję rozwiązania webowe od podstaw—od analizy wymagań po wdrożenie produkcyjne. Każdy projekt prowadzę samodzielnie, co oznacza pełną kontrolę nad kodem i terminami realizacji."
         },
         {
           "role": "Analityk IT",
           "company": "Kontrakt",
-          "period": "2023 – obecnie",
-          "description": "Praca kontraktowa (160 godzin/miesiąc). Analiza procesów biznesowych, tłumaczenie wymagań na rozwiązania techniczne, wsparcie przy projektach webowych."
+          "period": "2023 – Obecnie",
+          "description": "160 godzin miesięcznie analizuję systemy biznesowe i tłumaczę wymagania klientów na rozwiązania techniczne. Ta praca nauczyła mnie, jak przedsiębiorstwa naprawdę korzystają z oprogramowania—umiejętność, którą wykorzystuję przy projektowaniu aplikacji webowych i sklepów internetowych."
         }
       ]
     },
+    "social": {
+      "github": "Profil GitHub",
+      "linkedin": "LinkedIn"
+    },
     "cta": {
-      "title": "Współpraca",
-      "description": "Jeśli potrzebujesz strony biznesowej, sklepu internetowego lub aplikacji webowej—porozmawiajmy.",
-      "primaryButton": "Bezpłatna Konsultacja",
-      "secondaryButton": "Zobacz Projekty",
-      "tertiaryButton": "Usługi"
+      "title": "Teraz wiesz wystarczająco, żeby zdecydować.",
+      "description": "Jeśli współpraca ma sens dla Twojego projektu, odezwij się. Jeśli nie—w porządku. Wolę pracować z odpowiednimi klientami niż ze wszystkimi.",
+      "button": "Porozmawiajmy"
     }
   },
   "servicesPage": {
@@ -404,8 +424,7 @@
         "metaDescription": "Strony internetowe pisane od zera w React i Next.js. Nie WordPress, nie szablony. Programista z Częstochowy. Szybkie strony, czyste SEO. Śląskie i cała Polska.",
         "keywords": ["tworzenie stron internetowych", "strony www częstochowa", "programista częstochowa", "strony react", "strony nextjs", "programista śląskie", "strony firmowe"],
         "h1": "Tworzenie Stron Internetowych",
-        "ogTitle": "Tworzenie Stron Częstochowa | Max Mendes",
-        "canonical": "https://maxmendes.dev/pl/uslugi/tworzenie-stron"
+        "ogTitle": "Tworzenie Stron Częstochowa | Max Mendes"
       },
       "schema": {
         "serviceType": "Tworzenie Stron Internetowych",
@@ -426,8 +445,7 @@
         "metaDescription": "Tworzenie aplikacji webowych i platform SaaS. Logowanie, dashboardy, płatności, subskrypcje. Programista z Częstochowy. Systemy dla firm z całej Polski.",
         "keywords": ["aplikacje webowe", "tworzenie aplikacji", "systemy dla firm", "aplikacje saas", "platformy internetowe", "oprogramowanie na zamówienie", "programista aplikacji"],
         "h1": "Aplikacje Webowe i Platformy SaaS",
-        "ogTitle": "Aplikacje Webowe Częstochowa | Max Mendes",
-        "canonical": "https://maxmendes.dev/pl/uslugi/aplikacje-webowe"
+        "ogTitle": "Aplikacje Webowe Częstochowa | Max Mendes"
       },
       "schema": {
         "serviceType": "Tworzenie Aplikacji Webowych",
@@ -448,8 +466,7 @@
         "metaDescription": "Sklepy internetowe z integracją Subiekt GT i szybką kasą. Shopify lub dedykowane. Programista z Częstochowy. Sklepy dla firm ze Śląskiego i całej Polski.",
         "keywords": ["sklepy internetowe", "sklep online częstochowa", "integracja subiekt gt", "tworzenie sklepów", "sklep shopify", "sklep dedykowany", "e-commerce śląskie"],
         "h1": "Sklepy Internetowe",
-        "ogTitle": "Sklepy Internetowe Częstochowa | Max Mendes",
-        "canonical": "https://maxmendes.dev/pl/uslugi/sklepy-internetowe"
+        "ogTitle": "Sklepy Internetowe Częstochowa | Max Mendes"
       },
       "schema": {
         "serviceType": "Tworzenie Sklepów Internetowych",
@@ -470,8 +487,7 @@
         "metaDescription": "Pozycjonowanie techniczne, nie tylko treść i linki. Audyt SEO, optymalizacja szybkości, Core Web Vitals. Programista SEO z Częstochowy. Śląskie i Polska.",
         "keywords": ["pozycjonowanie stron", "seo techniczne", "audyt seo częstochowa", "optymalizacja strony", "core web vitals", "pozycjonowanie śląskie", "seo programista"],
         "h1": "Pozycjonowanie Techniczne SEO",
-        "ogTitle": "Pozycjonowanie Techniczne | Max Mendes",
-        "canonical": "https://maxmendes.dev/pl/uslugi/pozycjonowanie"
+        "ogTitle": "Pozycjonowanie Techniczne | Max Mendes"
       },
       "schema": {
         "serviceType": "Pozycjonowanie Stron Internetowych",
@@ -492,8 +508,7 @@
         "metaDescription": "Integracja AI w aplikacjach webowych. Chatboty, generowanie treści, automatyzacja procesów. OpenAI i Claude API. Programista z Częstochowy. Śląskie i Polska.",
         "keywords": ["integracja ai", "chatboty ai", "automatyzacja ai", "openai api", "sztuczna inteligencja", "chatgpt integracja", "ai dla firm"],
         "h1": "Integracja AI i Automatyzacja",
-        "ogTitle": "Integracja AI Częstochowa | Max Mendes",
-        "canonical": "https://maxmendes.dev/pl/uslugi/integracja-ai"
+        "ogTitle": "Integracja AI Częstochowa | Max Mendes"
       },
       "schema": {
         "serviceType": "Integracja Sztucznej Inteligencji",
@@ -514,8 +529,7 @@
         "metaDescription": "Profesjonalne usługi tworzenia stron internetowych, sklepów e-commerce i aplikacji webowych. React, Next.js, TypeScript. Częstochowa, Śląskie i cała Polska.",
         "keywords": ["usługi web development", "tworzenie stron częstochowa", "programista częstochowa", "strony internetowe śląskie", "aplikacje webowe", "sklepy internetowe", "freelancer polska"],
         "h1": "Usługi Web Development",
-        "ogTitle": "Usługi Web Development Częstochowa | Max Mendes",
-        "canonical": "https://maxmendes.dev/pl/uslugi"
+        "ogTitle": "Usługi Web Development Częstochowa | Max Mendes"
       },
       "schema": {
         "serviceType": "Usługi Web Development",
