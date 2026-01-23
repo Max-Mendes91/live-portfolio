@@ -3,11 +3,12 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, MapPin, Briefcase } from 'lucide-react';
+import { Github, Linkedin, Briefcase } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import FooterSection from '@/components/sections/FooterSection';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
-import { Display, Heading, Text, Badge } from '@/components/ui';
+import PulseBadge from '@/components/ui/PulseBadge';
+import { Display, Heading, Text } from '@/components/ui';
 import { Dictionary, SupportedLocale } from '@/types/i18n';
 import { SITE_CONFIG } from '@/lib/seo/config';
 
@@ -104,9 +105,9 @@ const AboutClient: React.FC<AboutClientProps> = ({ locale, dictionary }) => {
           className="max-w-4xl mx-auto border-t border-white/10 rounded-t-[2rem] pt-20 lg:pt-32 pb-16 lg:pb-20 px-6 lg:px-12"
         >
           <div className="text-center flex flex-col items-center">
-            <Badge variant="outline" size="md" icon={<MapPin className="w-4 h-4" />} className="mb-8">
-              {aboutPage.location}
-            </Badge>
+            <div className="mb-8">
+              <PulseBadge text={aboutPage.location} />
+            </div>
 
             <Display size="md" as="h1" className="mb-8">
               {aboutPage.heading}

@@ -28,15 +28,64 @@ interface ServiceSectionProps {
   dictionary: ServicesDict;
 }
 
+// Code snippet with syntax highlighting
+const CodeSnippet: React.FC = () => {
+  return (
+    <div className="w-full rounded-xl bg-[#0a0a0a] border-l-2 border-emerald-500/50 p-4 font-mono text-xs leading-relaxed overflow-hidden">
+      <div className="flex items-center gap-2 mb-3 text-text-muted">
+        <div className="flex gap-1.5">
+          <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+          <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+          <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+        </div>
+        <span className="text-[10px] uppercase tracking-wider">app/products/page.tsx</span>
+      </div>
+      <code className="block">
+        <span className="text-blue-400">const</span>{' '}
+        <span className="text-white">products</span>{' '}
+        <span className="text-blue-400">=</span>{' '}
+        <span className="text-blue-400">await</span>{' '}
+        <span className="text-white">db.products.</span>
+        <span className="text-yellow-300">findMany</span>
+        <span className="text-white">()</span>
+      </code>
+      <code className="block mt-1">
+        <span className="text-purple-400">if</span>{' '}
+        <span className="text-white">(!</span>
+        <span className="text-white">products.length</span>
+        <span className="text-white">)</span>{' '}
+        <span className="text-purple-400">return</span>{' '}
+        <span className="text-blue-400">&lt;</span>
+        <span className="text-emerald-400">EmptyState</span>{' '}
+        <span className="text-blue-400">/&gt;</span>
+      </code>
+      <code className="block mt-1">
+        <span className="text-purple-400">return</span>{' '}
+        <span className="text-blue-400">&lt;</span>
+        <span className="text-emerald-400">ProductGrid</span>{' '}
+        <span className="text-orange-300">items</span>
+        <span className="text-blue-400">=</span>
+        <span className="text-white">{'{'}products{'}'}</span>{' '}
+        <span className="text-blue-400">/&gt;</span>
+      </code>
+      <code className="block mt-2">
+        <span className="text-zinc-500">{'// Error boundary handles failures'}</span>
+      </code>
+    </div>
+  );
+};
+
 interface FeatureCardProps {
   icon: React.ReactNode;
   title: string;
   description: string;
   linkText: string;
   linkHref: string;
+  className?: string;
+  showCodeSnippet?: boolean;
 }
 
-const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, linkText, linkHref }) => {
+const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, linkText, linkHref, className, showCodeSnippet }) => {
   // Split description to insert link
   const parts = description.split(linkText);
 
@@ -45,35 +94,43 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, lin
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="p-6 rounded-2xl bg-surface border border-border hover:border-border-hover transition-all duration-500 group flex flex-col justify-between"
+      className={`p-6 rounded-2xl bg-surface border border-border hover:border-border-hover transition-all duration-500 group flex flex-col ${className || ''}`}
     >
-      <div className="flex items-center gap-4 mb-4">
-        <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-text-muted group-hover:text-text-primary group-hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-500">
-          {icon}
+      <div>
+        <div className="flex items-center gap-4 mb-4">
+          <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-text-muted group-hover:text-text-primary group-hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-500">
+            {icon}
+          </div>
+          <h3 className="text-lg font-normal tracking-tight text-text-primary">
+            {title}
+          </h3>
         </div>
-        <h3 className="text-lg font-normal tracking-tight text-text-primary">
-          {title}
-        </h3>
+
+        <div className="h-[1px] bg-border-subtle w-full mb-4" />
+
+        <p className="font-light tracking-tight text-text-secondary text-sm leading-relaxed">
+          {parts.length > 1 ? (
+            <>
+              {parts[0]}
+              <Link
+                href={linkHref}
+                className="text-text-primary underline underline-offset-2 hover:text-white transition-colors"
+              >
+                {linkText}
+              </Link>
+              {parts[1]}
+            </>
+          ) : (
+            description
+          )}
+        </p>
       </div>
 
-      <div className="h-[1px] bg-border-subtle w-full mb-4" />
-
-      <p className="font-light tracking-tight text-text-secondary text-sm leading-relaxed">
-        {parts.length > 1 ? (
-          <>
-            {parts[0]}
-            <Link
-              href={linkHref}
-              className="text-text-primary underline underline-offset-2 hover:text-white transition-colors"
-            >
-              {linkText}
-            </Link>
-            {parts[1]}
-          </>
-        ) : (
-          description
-        )}
-      </p>
+      {showCodeSnippet && (
+        <div className="flex-1 flex items-center">
+          <CodeSnippet />
+        </div>
+      )}
     </motion.div>
   );
 };
@@ -155,34 +212,73 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
             </motion.div>
           </div>
 
-          {/* Block B: Feature Grid (2x2) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {cards.slice(0, 4).map((card: ServiceCardDict) => (
-              <FeatureCard
-                key={card.id}
-                icon={getIcon(card.icon)}
-                title={card.title}
-                description={card.description}
-                linkText={card.linkText}
-                linkHref={card.linkHref}
-              />
-            ))}
-          </div>
+          {/* Block B: Bento Grid Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* Row 1: Wide card (2 cols) + Regular card (1 col) */}
+            {cards[0] && (
+              <div className="md:col-span-2 h-full">
+                <FeatureCard
+                  icon={getIcon(cards[0].icon)}
+                  title={cards[0].title}
+                  description={cards[0].description}
+                  linkText={cards[0].linkText}
+                  linkHref={cards[0].linkHref}
+                  className="h-full"
+                />
+              </div>
+            )}
+            {cards[1] && (
+              <div className="md:col-span-1 h-full">
+                <FeatureCard
+                  icon={getIcon(cards[1].icon)}
+                  title={cards[1].title}
+                  description={cards[1].description}
+                  linkText={cards[1].linkText}
+                  linkHref={cards[1].linkHref}
+                  className="h-full"
+                />
+              </div>
+            )}
 
-          {/* 5th Card - Centered */}
-          {cards[4] && (
-            <div className="flex justify-center">
-              <div className="w-full md:w-1/2">
+            {/* Row 2-3: Tall card (2 rows) with code snippet + 2 stacked cards */}
+            {cards[2] && (
+              <div className="md:col-span-2 md:row-span-2 h-full">
+                <FeatureCard
+                  icon={getIcon(cards[2].icon)}
+                  title={cards[2].title}
+                  description={cards[2].description}
+                  linkText={cards[2].linkText}
+                  linkHref={cards[2].linkHref}
+                  className="h-full"
+                  showCodeSnippet
+                />
+              </div>
+            )}
+            {cards[3] && (
+              <div className="md:col-span-1 h-full">
+                <FeatureCard
+                  icon={getIcon(cards[3].icon)}
+                  title={cards[3].title}
+                  description={cards[3].description}
+                  linkText={cards[3].linkText}
+                  linkHref={cards[3].linkHref}
+                  className="h-full"
+                />
+              </div>
+            )}
+            {cards[4] && (
+              <div className="md:col-span-1 h-full">
                 <FeatureCard
                   icon={getIcon(cards[4].icon)}
                   title={cards[4].title}
                   description={cards[4].description}
                   linkText={cards[4].linkText}
                   linkHref={cards[4].linkHref}
+                  className="h-full"
                 />
               </div>
-            </div>
-          )}
+            )}
+          </div>
 
           {/* Block C: Dual Infinite Marquee with Side Fades */}
           <div className="relative space-y-6 pt-12">

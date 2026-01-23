@@ -92,9 +92,11 @@ const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
             className="relative aspect-[4/5] md:aspect-square overflow-hidden rounded-3xl"
           >
             <Image
-              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=1200"
-              alt="Max Mendes - Full Stack Web Developer"
+              src="/images/aboutme.webp"
+              alt="Max Mendes - Full Stack Web Developer based in Poland, specializing in React and Next.js development"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              quality={85}
               className="object-cover grayscale brightness-90 hover:brightness-100 transition-all duration-1000"
             />
             {/* Subtle glow behind the image */}

@@ -64,26 +64,49 @@ export interface ServicesDict {
 export interface ProcessStepDict {
   number: string;
   title: string;
+  subtitle: string;
   description: string;
+}
+
+// CTA link with internal href
+export interface ProcessCTADict {
+  label: string;
+  href: string;
 }
 
 // Process section dictionary
 export interface ProcessDict {
+  badge: string;
   title: string;
   subtitle: string;
   steps: ProcessStepDict[];
+  ctas: ProcessCTADict[];
 }
 
 // FAQ item within FAQ section
 export interface FAQItemDict {
   question: string;
   answer: string;
+  linkText?: string;
+  linkHref?: string;
 }
 
 // FAQ section dictionary
 export interface FAQDict {
   title: string;
   items: FAQItemDict[];
+}
+
+// FAQ Teaser section dictionary (homepage teaser)
+export interface FAQTeaserDict {
+  badge: string;
+  title: string;
+  subtitle: string;
+  items: FAQItemDict[];
+  cta: {
+    label: string;
+    href: string;
+  };
 }
 
 // SEO metadata for service pages
@@ -134,6 +157,7 @@ export interface FooterDict {
     services: string;
     projects: string;
     contact: string;
+    faq: string;
   };
   // Service links with localized hrefs (same pattern as servicesPage.services)
   serviceLinks: Array<{
@@ -223,10 +247,22 @@ export interface ProjectsDict {
   };
 }
 
+// Project item for work grid
+export interface WorkGridProjectDict {
+  id: string;
+  title: string;
+  description: string;
+  metric: string;
+  href: string;
+  cta: string;
+  tags: string[];
+}
+
 // Work grid section dictionary
 export interface WorkGridDict {
   title: string;
-  viewCasestudy: string;
+  viewProject: string;
+  projects: WorkGridProjectDict[];
 }
 
 // Services page dictionary (full page, not homepage section)
@@ -319,6 +355,50 @@ export interface ServicePagesDict {
   [key: string]: ServiceLink;
 }
 
+// FAQ category with questions
+export interface FAQCategoryDict {
+  title: string;
+  items: FAQItemDict[];
+}
+
+// SEO metadata for FAQ page
+export interface FAQPageSEO {
+  title: string;
+  metaDescription: string;
+  keywords: string[];
+  h1: string;
+  ogTitle: string;
+}
+
+// Schema.org markup for FAQ page
+export interface FAQPageSchema {
+  type: string;
+  description: string;
+}
+
+// FAQ page dictionary (full page)
+export interface FAQPageDict {
+  id: string;
+  label: string;
+  href: string;
+  hrefLang: {
+    en: string;
+    pl: string;
+  };
+  seo: FAQPageSEO;
+  schema: FAQPageSchema;
+  intro: string;
+  categories: FAQCategoryDict[];
+  cta: {
+    title: string;
+    description: string;
+    primaryButton: {
+      label: string;
+      href: string;
+    };
+  };
+}
+
 // Full dictionary interface
 export interface Dictionary {
   hero: HeroDict;
@@ -326,6 +406,7 @@ export interface Dictionary {
   services: ServicesDict;
   process: ProcessDict;
   faq: FAQDict;
+  faqTeaser?: FAQTeaserDict;
   footer: FooterDict;
   nav: NavDict;
   common: CommonDict;
@@ -333,6 +414,7 @@ export interface Dictionary {
   projects?: ProjectsDict;
   workGrid?: WorkGridDict;
   aboutPage?: AboutPageDict;
+  faqPage?: FAQPageDict;
   servicesPage?: ServicesPageDict;
   servicePages?: ServicePagesDict;
 }

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Lightbulb, ListTodo, Rocket } from 'lucide-react';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
@@ -16,17 +17,18 @@ interface ProcessCardProps {
   icon: React.ReactNode;
   number: string;
   title: string;
+  subtitle: string;
   description: string;
 }
 
-const ProcessCard: React.FC<ProcessCardProps> = ({ icon, number, title, description }) => (
+const ProcessCard: React.FC<ProcessCardProps> = ({ icon, number, title, subtitle, description }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     className="relative bg-[#0A0A0A] border border-white/5 rounded-2xl p-8 transition-colors hover:border-white/10 group overflow-hidden"
   >
-    <div className="flex justify-between items-start mb-8">
+    <div className="flex justify-between items-start mb-6">
       <div className="text-zinc-500 group-hover:text-white transition-colors duration-500 group-hover:scale-110 transform origin-left">
         {icon}
       </div>
@@ -53,6 +55,10 @@ const ProcessCard: React.FC<ProcessCardProps> = ({ icon, number, title, descript
       </div>
     </div>
 
+    <p className="text-xs font-medium uppercase tracking-widest text-zinc-500 mb-2">
+      {subtitle}
+    </p>
+
     <h3 className="text-xl font-normal tracking-tight text-white mb-4">
       {title}
     </h3>
@@ -68,12 +74,17 @@ const ProcessCard: React.FC<ProcessCardProps> = ({ icon, number, title, descript
 const ProcessSection: React.FC<ProcessSectionProps> = ({ dictionary }) => {
   // Fallback content for backward compatibility
   const content = {
-    title: dictionary?.title ?? 'Structured Excellence',
-    subtitle: dictionary?.subtitle ?? 'Design process',
+    badge: dictionary?.badge ?? 'Development Process',
+    title: dictionary?.title ?? 'How I Build Your Software',
+    subtitle: dictionary?.subtitle ?? 'A proven workflow for building SaaS applications, e-commerce platforms, and AI-powered features that scale.',
     steps: dictionary?.steps ?? [
-      { number: '01', title: 'Vision Mapping', description: 'We dive deep into your brand DNA and market landscape to establish a strategic foundation for everything that follows.' },
-      { number: '02', title: 'Iterative Refinement', description: 'Collaborative feedback cycles and high-fidelity prototyping ensure every pixel aligns with your vision and user needs.' },
-      { number: '03', title: 'Final Deployment', description: 'Precision-engineered assets delivered and ready for immediate implementation across your entire brand ecosystem.' },
+      { number: '01', title: 'Requirements & Architecture', subtitle: 'Technical Discovery', description: 'I analyze your business requirements, select the optimal React and Next.js stack, and design database architecture and API structure for scalability.' },
+      { number: '02', title: 'Development & Integration', subtitle: 'Build & Test', description: 'I write production TypeScript code, implement features with real-time updates and authentication, test continuously, and integrate AI capabilities where needed.' },
+      { number: '03', title: 'Production Deployment', subtitle: 'Deploy & Document', description: 'I deploy to production infrastructure, optimize performance and SEO, provide complete documentation, and train your team on maintenance.' },
+    ],
+    ctas: dictionary?.ctas ?? [
+      { label: 'View Services', href: '/en/services' },
+      { label: 'See Projects', href: '/en/projects' },
     ],
   };
 
@@ -94,15 +105,15 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ dictionary }) => {
               className="relative h-full min-h-[500px] lg:min-h-0 rounded-3xl overflow-hidden shadow-2xl border border-white/5"
             >
               <Image
-                src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&q=80&w=1200"
-                alt="Design Process Sketching"
+                src="/images/process.webp"
+                alt="Development Process Planning"
                 fill
                 className="object-cover grayscale brightness-75 hover:scale-105 transition-transform duration-[3s] ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
               <div className="absolute bottom-12 left-12">
-                <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-white/40">Studio Process 2024</p>
+                <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-white/40">Development Workflow</p>
               </div>
             </motion.div>
 
@@ -115,20 +126,23 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ dictionary }) => {
                 className="mb-16"
               >
                 <div className="mb-8">
-                  <PulseBadge text={content.subtitle} />
+                  <PulseBadge text={content.badge} />
                 </div>
 
                 <h2 className="text-5xl md:text-7xl font-normal tracking-tighter leading-tight text-white mb-6">
                   {content.title}
                 </h2>
 
-                <p className="font-light tracking-tight text-zinc-400 text-lg max-w-md mb-12 leading-relaxed opacity-80">
-                  Crafting bold visuals that inspire and building strong brand identities through a calibrated, results-driven workflow.
+                <p className="font-light tracking-tight text-zinc-400 text-lg max-w-lg mb-12 leading-relaxed opacity-80">
+                  {content.subtitle}
                 </p>
 
                 <div className="flex flex-col md:flex-row items-center gap-4">
-                  <CornerGlowButton>Book a Free Call</CornerGlowButton>
-                  <CornerGlowButton>Case Studies</CornerGlowButton>
+                  {content.ctas.map((cta, index) => (
+                    <Link key={index} href={cta.href}>
+                      <CornerGlowButton>{cta.label}</CornerGlowButton>
+                    </Link>
+                  ))}
                 </div>
               </motion.div>
 
@@ -146,6 +160,7 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ dictionary }) => {
                       icon={icons[index] || icons[0]}
                       number={step.number}
                       title={step.title}
+                      subtitle={step.subtitle}
                       description={step.description}
                     />
                   );

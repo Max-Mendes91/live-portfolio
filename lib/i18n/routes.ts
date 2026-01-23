@@ -11,6 +11,7 @@ const ROUTE_SLUGS = {
     services: 'services',
     projects: 'projects',
     contact: 'contact',
+    faq: 'faq',
     // Service sub-pages
     'services/web-development': 'services/web-development',
     'services/saas': 'services/saas-web-apps',
@@ -24,6 +25,7 @@ const ROUTE_SLUGS = {
     services: 'uslugi',
     projects: 'projekty',
     contact: 'kontakt',
+    faq: 'pytania',
     // Service sub-pages (Polish slugs for SEO)
     'services/web-development': 'uslugi/tworzenie-stron',
     'services/saas': 'uslugi/aplikacje-webowe',

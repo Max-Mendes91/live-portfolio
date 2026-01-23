@@ -80,7 +80,7 @@ export default function PolishHome() {
         <AboutMe dictionary={plDict.about} />
         <WorkGrid />
         <ServiceSection dictionary={plDict.services} />
-        <ProcessSection />
+        <ProcessSection dictionary={plDict.process} />
         <FAQSection />
         <div className="h-[20vh]" />
       </motion.div>

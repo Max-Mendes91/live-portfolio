@@ -40,12 +40,12 @@
     "secondaryButton": "Zobacz Projekty",
     "cards": [
       {
-        "id": "web-development",
-        "icon": "Code2",
-        "title": "Tworzenie Stron Internetowych",
-        "description": "Tworzę szybkie, nowoczesne strony firmowe w React, Next.js i TypeScript. Bez kreatorów stron, bez szablonów—tylko czysty kod, który szybko się ładuje, dobrze skaluje i jest łatwy w utrzymaniu wraz z rozwojem Twojej firmy.",
-        "linkText": "strony firmowe",
-        "linkHref": "/pl/uslugi/tworzenie-stron"
+        "id": "ecommerce",
+        "icon": "ShoppingCart",
+        "title": "Sklepy Internetowe i E-Commerce",
+        "description": "Buduję dedykowane platformy e-commerce w React i Next.js z płatnościami Stripe lub PayPal, kontrolą magazynu i zarządzaniem zamówieniami. Idealne dla firm, które przerosły Shopify lub potrzebują pełnej kontroli nad logiką sklepu.",
+        "linkText": "platformy e-commerce",
+        "linkHref": "/pl/uslugi/sklepy-internetowe"
       },
       {
         "id": "saas",
@@ -56,12 +56,12 @@
         "linkHref": "/pl/uslugi/aplikacje-webowe"
       },
       {
-        "id": "ecommerce",
-        "icon": "ShoppingCart",
-        "title": "Sklepy Internetowe i E-Commerce",
-        "description": "Buduję dedykowane platformy e-commerce w React i Next.js z płatnościami Stripe lub PayPal, kontrolą magazynu i zarządzaniem zamówieniami. Idealne dla firm, które przerosły Shopify lub potrzebują pełnej kontroli nad logiką sklepu.",
-        "linkText": "platformy e-commerce",
-        "linkHref": "/pl/uslugi/sklepy-internetowe"
+        "id": "web-development",
+        "icon": "Code2",
+        "title": "Tworzenie Stron Internetowych",
+        "description": "Tworzę szybkie, nowoczesne strony firmowe w React, Next.js i TypeScript. Bez kreatorów stron, bez szablonów—tylko czysty kod, który szybko się ładuje, dobrze skaluje i jest łatwy w utrzymaniu wraz z rozwojem Twojej firmy.",
+        "linkText": "strony firmowe",
+        "linkHref": "/pl/uslugi/tworzenie-stron"
       },
       {
         "id": "seo",
@@ -75,7 +75,7 @@
         "id": "ai",
         "icon": "Bot",
         "title": "Integracja AI",
-        "description": "Dodaję praktyczne funkcje AI wykorzystując API OpenAI i Anthropic (Claude)—automatyzacja, przetwarzanie treści, inteligentni asystenci i narzędzia wewnętrzne. Prawdziwe funkcje AI wbudowane w Twój produkt, nie hype ani oddzielne demo.",
+        "description": "Dodaję funkcje AI do Twojego produktu: automatyzacja emaili, przetwarzanie dokumentów, inteligentne wyszukiwanie, własne procesy. Oparte na produkcyjnych API (OpenAI, Anthropic, Google), nie demka ani prototypy.",
         "linkText": "funkcje AI",
         "linkHref": "/pl/uslugi/integracja-ai"
       }
@@ -84,24 +84,32 @@
     "marquee2": ["Stripe", "OpenAI", "Claude API", "Vercel", "AWS", "SEO"]
   },
   "process": {
-    "title": "Jak Pracuje",
-    "subtitle": "Moj Proces",
+    "badge": "Proces Tworzenia",
+    "title": "Jak Buduję Twoje Oprogramowanie",
+    "subtitle": "Sprawdzony proces tworzenia sklepów internetowych, systemów webowych i funkcji AI które rosną z Twoim biznesem—bez szablonów i WordPress.",
     "steps": [
       {
         "number": "01",
-        "title": "Odkrycie i Strategia",
-        "description": "Zaczynamy od zrozumienia Twoich celow biznesowych, grupy docelowej i wymagan. Analizuje konkurencje i tworze strategiczny plan dla Twojego projektu."
+        "title": "Wymagania i Architektura",
+        "subtitle": "Analiza Techniczna",
+        "description": "Analizuję wymagania biznesowe, wybieram nowoczesne technologie webowe, projektuję strukturę bazy danych i API dla skalowalności."
       },
       {
         "number": "02",
-        "title": "Projektowanie i Budowa",
-        "description": "Projektuje i tworze Twoja strone lub aplikacje wykorzystujac nowoczesne technologie. Widzisz postepy na biezaco i mozesz dawac feedback na kazdym etapie."
+        "title": "Programowanie i Integracja",
+        "subtitle": "Rozwój i Testowanie",
+        "description": "Piszę kod produkcyjny, implementuję funkcje z autoryzacją i aktualizacjami w czasie rzeczywistym, testuję na bieżąco i integruję funkcje AI gdzie potrzeba."
       },
       {
         "number": "03",
-        "title": "Uruchomienie i Optymalizacja",
-        "description": "Po dokladnych testach uruchamiamy Twoj projekt. Zapewniam biezace wsparcie, pozycjonowanie SEO i monitoring wydajnosci dla ciaglego sukcesu."
+        "title": "Uruchomienie Produkcyjne",
+        "subtitle": "Wdrożenie i Dokumentacja",
+        "description": "Wdrażam na środowisko produkcyjne, optymalizuję wydajność i SEO, dostarczam kompletną dokumentację i szkolę Twój zespół z utrzymania systemu."
       }
+    ],
+    "ctas": [
+      { "label": "Zobacz Usługi", "href": "/pl/uslugi" },
+      { "label": "Zobacz Projekty", "href": "/pl/projekty" }
     ]
   },
   "faq": {
@@ -137,6 +145,33 @@
       }
     ]
   },
+  "faqTeaser": {
+    "badge": "FAQ",
+    "title": "Najczęstsze Pytania",
+    "subtitle": "O co pytają klienci przed rozpoczęciem współpracy",
+    "items": [
+      {
+        "question": "Co budujesz?",
+        "answer": "Produkcyjne aplikacje webowe—platformy SaaS, niestandardowe systemy e-commerce i strony biznesowe—zbudowane w React, Next.js i TypeScript. Bez WordPress ani szablonów."
+      },
+      {
+        "question": "Jak długo trwa realizacja projektu?",
+        "answer": "Małe projekty: 3-5 tygodni. Platformy SaaS lub e-commerce: 8-12 tygodni, w zależności od zakresu i integracji."
+      },
+      {
+        "question": "Jaka jest struktura cenowa?",
+        "answer": "Stała cena dla zdefiniowanego zakresu lub miesięczny abonament dla ciągłego rozwoju. Cena zależy od złożoności i wymaganych integracji."
+      },
+      {
+        "question": "Czy oferujesz bieżące utrzymanie?",
+        "answer": "Tak. Zapewniam bieżące wsparcie, aktualizacje i usprawnienia wydajności po uruchomieniu, zazwyczaj w ramach miesięcznej umowy na utrzymanie lub rozwój."
+      }
+    ],
+    "cta": {
+      "label": "Zobacz wszystkie pytania",
+      "href": "/pl/pytania"
+    }
+  },
   "footer": {
     "availableBadge": "Dostępny do współpracy",
     "headline": "Nie agencja. Nie WordPress. Tylko kod.",
@@ -153,7 +188,8 @@
       "about": "O Mnie",
       "services": "Usługi",
       "projects": "Projekty",
-      "contact": "Kontakt"
+      "contact": "Kontakt",
+      "faq": "FAQ"
     },
     "serviceLinks": [
       { "label": "Tworzenie Stron Internetowych", "href": "/pl/uslugi/tworzenie-stron" },
@@ -237,7 +273,27 @@
   },
   "workGrid": {
     "title": "Ostatnie Prace",
-    "viewCasestudy": "Zobacz Case Study"
+    "viewProject": "Zobacz Projekt",
+    "projects": [
+      {
+        "id": "flowmate",
+        "title": "FlowMate — Platforma AI do Zarządzania Emailami",
+        "description": "Full-stack SaaS łączący Gmail, Outlook, Slack i Telegram w jeden przepływ pracy sterowany AI. Obsługuje autoryzację, przetwarzanie asynchroniczne i integracje z wieloma dostawcami na poziomie produkcyjnym.",
+        "metric": "Uruchomiony styczeń 2025 · 300+ godzin rozwoju · Integracja AI z wieloma kanałami",
+        "href": "https://www.flowmate.click/",
+        "cta": "Odwiedź FlowMate",
+        "tags": ["SaaS", "AI", "Full-Stack"]
+      },
+      {
+        "id": "markmind",
+        "title": "MarkMind — Menedżer Zakładek z AI",
+        "description": "Rozszerzenie Chrome automatycznie organizujące zakładki za pomocą klasyfikacji AI. Przetwarzanie w czasie rzeczywistym bez wpływu na wydajność przeglądarki.",
+        "metric": "401+ Aktywnych Użytkowników · Dostępne w Chrome Web Store",
+        "href": "https://chromewebstore.google.com/detail/markmind/bdobgdkpeffdbonfpokgkbncgnbnjnoo",
+        "cta": "Pobierz Rozszerzenie",
+        "tags": ["Rozszerzenie Chrome", "AI", "Produktywność"]
+      }
+    ]
   },
   "aboutPage": {
     "id": "about",
@@ -547,6 +603,146 @@
         "serviceType": "Usługi Web Development",
         "description": "Profesjonalne usługi tworzenia stron internetowych, sklepów e-commerce, platform SaaS i aplikacji webowych w React, Next.js i TypeScript.",
         "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+      }
+    }
+  },
+  "faqPage": {
+    "id": "faq",
+    "label": "Najczęściej Zadawane Pytania",
+    "href": "/pl/pytania",
+    "hrefLang": {
+      "en": "/en/faq",
+      "pl": "/pl/pytania"
+    },
+    "seo": {
+      "title": "Tworzenie Stron Częstochowa - Pytania i Odpowiedzi | Max Mendes",
+      "metaDescription": "Pytania o tworzenie stron internetowych Częstochowa. Cennik, terminy, technologie i proces. Zadzwoń: 502 742 941. Programista React i Next.js.",
+      "keywords": ["faq tworzenie stron", "pytania programista częstochowa", "cennik stron internetowych", "ile kosztuje strona", "programista częstochowa", "tworzenie stron śląskie"],
+      "h1": "Pytania o Tworzenie Stron Internetowych",
+      "ogTitle": "Tworzenie Stron Częstochowa - Pytania i Odpowiedzi | Max Mendes"
+    },
+    "schema": {
+      "type": "FAQPage",
+      "description": "Często zadawane pytania o usługi tworzenia stron internetowych, cennik, terminy i szczegóły techniczne."
+    },
+    "intro": "Jak pracujemy, czego się spodziewać i co dzieje się po uruchomieniu.",
+    "categories": [
+      {
+        "title": "Usługi i Podejście",
+        "items": [
+          {
+            "question": "Jakie usługi świadczysz?",
+            "answer": "Buduję produkcyjne aplikacje webowe: strony biznesowe, platformy SaaS, niestandardowe sklepy internetowe i funkcje oparte na AI. Wszystko w React, Next.js i TypeScript—gotowe do użycia od pierwszego dnia, nie prototypy ani demka.",
+            "linkText": "Zobacz szczegóły usług",
+            "linkHref": "/pl/uslugi"
+          },
+          {
+            "question": "Czego nie budujesz?",
+            "answer": "Nie tworzę stron WordPress, witryn z page builderów ani projektów tylko-design. Nie oferuję również brandingu, identyfikacji wizualnej czy usług marketingowych. Moja praca to rozwój oprogramowania—pisanie prawdziwego kodu, który się skaluje."
+          },
+          {
+            "question": "Pracujesz sam czy z zespołem?",
+            "answer": "Pracuję jako samodzielny full-stack developer i sam obsługuję cały projekt. Bez przekazywania między osobami, bez project managerów, bez luk w komunikacji. Pracujesz bezpośrednio z osobą, która pisze Twój kod."
+          },
+          {
+            "question": "Obsługujesz zarówno polskich jak i międzynarodowych klientów?",
+            "answer": "Tak. Współpracuję z firmami w Polsce oraz z klientami międzynarodowymi z UK i USA. Komunikacja w języku polskim lub angielskim, a polska treść jest weryfikowana razem z moją żoną dla zapewnienia naturalności i precyzji."
+          }
+        ]
+      },
+      {
+        "title": "Proces i Harmonogram",
+        "items": [
+          {
+            "question": "Jak zaczynamy współpracę?",
+            "answer": "Zaczynamy od rozmowy o Twoim problemie i celach. Analizuję wymagania, zadaję pytania techniczne i proponuję jasny zakres, harmonogram i wycenę przed rozpoczęciem pracy.",
+            "linkText": "Skontaktuj się, żeby omówić projekt",
+            "linkHref": "/pl/kontakt"
+          },
+          {
+            "question": "Jaki jest Twój proces tworzenia?",
+            "answer": "Zaczynam od określenia wymagań i architektury technicznej, następnie przechodzę do iteracyjnego rozwoju z regularnymi punktami kontrolnymi. Funkcje są budowane i testowane na bieżąco, z dostosowaniami na podstawie Twojego feedbacku."
+          },
+          {
+            "question": "Jak długo trwa realizacja typowego projektu?",
+            "answer": "Proste strony biznesowe: 3-5 tygodni. Platformy SaaS lub niestandardowe sklepy internetowe: zazwyczaj 8-12 tygodni, w zależności od integracji, złożoności bazy danych i wymagań funkcjonalnych."
+          },
+          {
+            "question": "Jak komunikujemy się podczas projektu?",
+            "answer": "Bezpośrednia komunikacja przez email, Slack lub telefon—jak wolisz. Cotygodniowe spotkania informują Cię o postępach, przeszkodach i kolejnych krokach. Bez niepotrzebnych zebrań czy raportów statusowych."
+          }
+        ]
+      },
+      {
+        "title": "Cennik i Płatność",
+        "items": [
+          {
+            "question": "Jaka jest struktura cenowa?",
+            "answer": "Większość projektów to stała cena oparta na jasno określonym zakresie. Dla ciągłego rozwoju lub rozwijających się produktów oferuję miesięczne umowy deweloperskie."
+          },
+          {
+            "question": "Czy wymagasz zadatku?",
+            "answer": "Tak. Projekty rozpoczynają się z zadatkiem 30-50%, pozostała część płatna w etapach lub przy odbiorze. To zapewnia przewidywalny harmonogram i zabezpiecza obie strony."
+          },
+          {
+            "question": "Jakie metody płatności akceptujesz?",
+            "answer": "Akceptuję przelewy bankowe (SEPA dla klientów międzynarodowych, polskie banki dla lokalnych firm) oraz platformy płatności online. Wszystkie transakcje są zgodne z przepisami UE."
+          },
+          {
+            "question": "Czy mogę płacić w ratach?",
+            "answer": "Tak, przy większych projektach. Płatności są podzielone na jasne etapy powiązane z dostarczoną pracą, więc płacisz za rzeczywisty postęp."
+          }
+        ]
+      },
+      {
+        "title": "Szczegóły Techniczne",
+        "items": [
+          {
+            "question": "Jakiego tech stacku używasz?",
+            "answer": "React, Next.js i TypeScript do frontend i full-stack aplikacji. PostgreSQL lub Supabase do baz danych, z dodatkowymi narzędziami w zależności od specyficznych wymagań. Ten stack dostarcza szybkie, bezpieczne, łatwe w utrzymaniu oprogramowanie, które się skaluje bez większych przepisywań."
+          },
+          {
+            "question": "Czy możesz pracować z moim istniejącym kodem?",
+            "answer": "Tak, jeśli kod jest rozsądnie utrzymany i udokumentowany. Najpierw go przeanalizuję i powiem szczerze, czy warto go rozbudować, zrefaktorować części, czy zacząć od nowa."
+          },
+          {
+            "question": "Czy obsługujesz hosting i wdrożenie?",
+            "answer": "Tak. Obsługuję wdrożenie produkcyjne, konfigurację środowiska i optymalizację wydajności. Twoja aplikacja startuje stabilna, monitorowana i gotowa na prawdziwych użytkowników—nie tylko wypuszczona i zapomniana."
+          },
+          {
+            "question": "Jak zapewniasz bezpieczeństwo i wydajność mojej strony?",
+            "answer": "Stosuję nowoczesne praktyki bezpieczeństwa dla uwierzytelniania i obsługi danych. Renderowanie po stronie serwera, zoptymalizowane obrazy i odpowiednie cachowanie są wbudowane domyślnie. Core Web Vitals i czasy ładowania są traktowane jako wymagania, nie dodatki."
+          }
+        ]
+      },
+      {
+        "title": "Po Uruchomieniu",
+        "items": [
+          {
+            "question": "Co dzieje się po uruchomieniu projektu?",
+            "answer": "Po uruchomieniu monitoruję stabilność, naprawiam wczesne problemy i upewniam się, że wszystko działa zgodnie z oczekiwaniami. Nie zostajesz sam ze świeżym wdrożeniem."
+          },
+          {
+            "question": "Czy oferujesz bieżące utrzymanie?",
+            "answer": "Tak. Oferuję plany utrzymania i rozwoju obejmujące aktualizacje, naprawy błędów, usprawnienia wydajności i nowe funkcje w miarę rozwoju Twojego produktu."
+          },
+          {
+            "question": "Czy możesz przeszkolić mój zespół w zarządzaniu stroną?",
+            "answer": "Tak. Dostarczam dokumentację i instrukcje, aby Twój zespół rozumiał system i mógł pewnie zarządzać treścią lub podstawowymi operacjami."
+          },
+          {
+            "question": "Co jeśli później potrzebuję nowych funkcji?",
+            "answer": "Nowe funkcje mogą być dodane jako osobne projekty lub w ramach umowy serwisowej. Czysty kod oznacza, że rozszerzanie funkcjonalności jest zwykle proste i przewidywalne."
+          }
+        ]
+      }
+    ],
+    "cta": {
+      "title": "Masz inne pytania?",
+      "description": "Napisz maila lub zadzwoń—porozmawiamy o Twoim projekcie bez zbędnych ceregieli.",
+      "primaryButton": {
+        "label": "Skontaktuj się",
+        "href": "/pl/kontakt"
       }
     }
   }

@@ -93,7 +93,7 @@ const Hero: React.FC<HeroProps> = ({ dictionary }) => {
   }, []);
 
   return (
-    <section className="relative min-h-screen w-full flex flex-col items-center justify-start pt-48 pb-48 px-6 overflow-hidden">
+    <section className="relative min-h-screen w-full flex flex-col items-center justify-center pt-24 pb-32 px-6 overflow-hidden">
       <LiquidBackground />
 
       <motion.div
@@ -107,7 +107,7 @@ const Hero: React.FC<HeroProps> = ({ dictionary }) => {
           className="flex flex-col items-center"
         >
           {/* Redline 3: The Pill Gradient Fade */}
-          <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full border-l border-t border-b border-white/20 border-r-transparent bg-gradient-to-r from-white/10 via-white/5 to-transparent backdrop-blur-sm mb-12 w-fit">
+          <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full border-l border-t border-b border-white/20 border-r-transparent bg-gradient-to-r from-white/10 via-white/5 to-transparent backdrop-blur-sm mb-8 w-fit">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]"></span>
@@ -122,15 +122,15 @@ const Hero: React.FC<HeroProps> = ({ dictionary }) => {
             {content.headline}
           </h1>
 
-          <h2 className="text-xl md:text-2xl font-light tracking-tight text-zinc-300 mb-12">
+          <h2 className="text-xl md:text-2xl font-light tracking-tight text-zinc-300 mb-8">
             {content.subheadline}
           </h2>
 
-          <p className="font-light tracking-tight text-zinc-400 text-base md:text-lg max-w-2xl mx-auto mb-16 leading-relaxed opacity-90">
+          <p className="font-light tracking-tight text-zinc-400 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed opacity-90">
             {content.description}
           </p>
 
-          <div className="flex flex-col items-center gap-4 mb-16">
+          <div className="flex flex-col items-center gap-4 mb-10">
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 relative">
               <CornerGlowButton>{content.ctaPrimary}</CornerGlowButton>
               <CornerGlowButton>{content.ctaSecondary}</CornerGlowButton>

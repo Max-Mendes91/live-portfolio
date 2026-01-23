@@ -2,65 +2,113 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { PROJECTS } from '@/lib/constants';
-import { ArrowUpRight, ArrowDownCircle } from 'lucide-react';
+import { ArrowDownCircle, ArrowUpRight } from 'lucide-react';
 import { WorkGridDict } from '@/types/i18n';
+import { cn } from '@/lib/utils';
 
 interface WorkGridProps {
   dictionary?: WorkGridDict;
 }
 
 const WorkGrid: React.FC<WorkGridProps> = ({ dictionary }) => {
-  // Fallback content for backward compatibility
   const content = {
     title: dictionary?.title ?? 'Recent Works',
-    viewCasestudy: dictionary?.viewCasestudy ?? 'View Casestudy',
+    viewProject: dictionary?.viewProject ?? 'View Project',
+    projects: dictionary?.projects ?? [],
   };
 
+  if (content.projects.length === 0) {
+    return null;
+  }
+
   return (
-    <section id="works" className="pb-24 px-6 md:px-12 bg-[#050505] overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        {/* Screenshot Style Header */}
+    <section id="works" className="py-24 px-6 md:px-12 bg-background overflow-hidden">
+      <div className="max-w-6xl mx-auto">
+        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="flex items-center gap-3 mb-16"
+          className="flex items-center gap-3 mb-12"
         >
-          <h2 className="text-2xl font-medium tracking-tight text-white/90">{content.title}</h2>
-          <ArrowDownCircle className="w-5 h-5 text-white/40" />
+          <h2 className="text-2xl font-medium tracking-tight text-text-primary">
+            {content.title}
+          </h2>
+          <ArrowDownCircle className="w-5 h-5 text-text-muted" />
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {PROJECTS.map((project, index) => (
-            <motion.div
+        {/* Project Cards Grid - 2 columns on desktop, 1 on mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {content.projects.map((project, index) => (
+            <motion.article
               key={project.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.15, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               viewport={{ once: true }}
-              className="group relative overflow-hidden rounded-xl bg-[#0a0a0a] aspect-[3/4]"
+              className="group relative"
             >
-              <motion.img
-                src={project.image}
-                alt={project.title}
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 brightness-90 group-hover:brightness-100 transition-all duration-700"
-              />
-
-              {/* Card Overlay as per screenshot */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-              <div className="absolute inset-0 p-4 flex flex-col justify-end">
-                <div className="flex justify-center">
-                  <button className="w-full backdrop-blur-lg bg-white/10 border border-white/20 py-3 rounded-full text-white text-[10px] font-bold uppercase tracking-[0.2em] flex items-center justify-center gap-2 opacity-100 group-hover:bg-white/20 transition-all duration-500">
-                    {content.viewCasestudy}
-                    <ArrowUpRight className="w-3 h-3" />
-                  </button>
+              <div
+                className={cn(
+                  'relative h-full p-6 md:p-8 rounded-2xl',
+                  'bg-surface border border-border',
+                  'transition-all duration-300',
+                  'hover:border-border-hover hover:bg-surface-hover'
+                )}
+              >
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className={cn(
+                        'inline-flex items-center h-6 px-2.5',
+                        'text-[10px] font-medium uppercase tracking-wider',
+                        'bg-white/5 border border-border rounded-md',
+                        'text-text-muted'
+                      )}
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
+
+                {/* Title */}
+                <h3 className="text-xl md:text-2xl font-semibold text-text-primary mb-3 leading-tight">
+                  {project.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-text-secondary text-sm md:text-base leading-relaxed mb-4">
+                  {project.description}
+                </p>
+
+                {/* Metric */}
+                <div className="mb-6">
+                  <p className="text-text-muted text-xs md:text-sm font-medium tracking-wide">
+                    {project.metric}
+                  </p>
+                </div>
+
+                {/* CTA Link */}
+                {project.href !== '#' && (
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={cn(
+                      'inline-flex items-center gap-2',
+                      'text-sm font-medium text-text-secondary',
+                      'hover:text-text-primary transition-colors duration-200',
+                      'group/link'
+                    )}
+                  >
+                    <span>{project.cta}</span>
+                    <ArrowUpRight className="w-4 h-4 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                  </a>
+                )}
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>

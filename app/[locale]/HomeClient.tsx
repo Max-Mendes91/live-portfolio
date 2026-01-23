@@ -6,7 +6,7 @@ import Navbar from '@/components/Navbar';
 import Hero from '@/components/sections/Hero';
 import WorkGrid from '@/components/sections/WorkGrid';
 import ServiceSection from '@/components/sections/ServiceSection';
-import FAQSection from '@/components/sections/FAQSection';
+import FAQTeaserSection from '@/components/sections/FAQTeaserSection';
 import ProcessSection from '@/components/sections/ProcessSection';
 import FooterSection from '@/components/sections/FooterSection';
 import AboutMe from '@/components/sections/AboutMe';
@@ -91,10 +91,10 @@ export default function HomeClient({ locale, dictionary }: HomeClientProps) {
       >
         <Hero dictionary={dictionary.hero} />
         <AboutMe dictionary={dictionary.about} />
-        <WorkGrid />
+        <WorkGrid dictionary={dictionary.workGrid} />
         <ServiceSection dictionary={dictionary.services} />
-        <ProcessSection />
-        <FAQSection />
+        <ProcessSection dictionary={dictionary.process} />
+        <FAQTeaserSection dictionary={dictionary.faqTeaser} />
         <div className="h-[20vh]" />
       </motion.div>
 
