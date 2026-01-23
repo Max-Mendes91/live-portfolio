@@ -6,6 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 > For project roadmap, see [.claude/ROADMAP.md](.claude/ROADMAP.md)
 > For SEO management, see [.claude/skills/seo.md](.claude/skills/seo.md)
 > **For design system & UI components, see [.claude/DESIGN_SYSTEM.md](.claude/DESIGN_SYSTEM.md)**
+> **CRITICAL:** For session handoffs, see [.claude/skills/handoff.md](.claude/skills/handoff.md) - USE THIS when user asks for "handoff"
 
 ## Project Overview
 

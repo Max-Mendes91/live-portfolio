@@ -1,7 +1,7 @@
 # Development Roadmap
 
 > Portfolio website for Max Mendes - Full-Stack Developer
-> Last updated: 2026-01-22
+> Last updated: 2026-01-23
 
 ---
 
@@ -40,13 +40,14 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for full details.
 ## Phase 1: Homepage Completion (Current)
 
 ### 1.1 Content Population
-- [ ] Hero section - real headline, CTAs
-- [ ] About Me - bio, photo, skills tags
+- [x] Hero section - real headline, CTAs (text done)
+- [x] About Me - bio, skills tags (text done)
+- [ ] About Me - professional photo
 - [ ] Work Grid - real project images + descriptions
-- [ ] Services - finalize service offerings
+- [x] Services - card-based layout with real copy (text done)
 - [ ] Process - customize steps
 - [ ] FAQ - write real Q&As
-- [ ] Footer - social links, contact info
+- [x] Footer - social links from SITE_CONFIG (text done)
 
 ### 1.2 Assets
 - [ ] Professional photo for About section
@@ -84,7 +85,9 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for full details.
 - [x] Hreflang tags for language alternates
 - [x] JSON-LD Service schema markup
 - [x] Sitemap with all service pages and hreflang
-- [ ] Populate real content for each service
+- [x] Homepage services section restructured (card-based with hero, pills, marquee)
+- [x] Real content for homepage services (text done)
+- [ ] Populate individual service page content
 - [ ] Add pricing/packages info (optional)
 
 ### 2.3 Contact Page
@@ -94,9 +97,14 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for full details.
 - [ ] Email integration (Resend/SendGrid)
 - [ ] Success/error states
 
-### 2.4 About Page
+### 2.4 About Page (SEO & Content Complete)
 - [x] `/en/about` + `/pl/o-mnie` - About pages (structure done)
-- [ ] Populate real content
+- [x] Dictionary-based SEO metadata (title, description, keywords, h1, ogTitle)
+- [x] Hreflang tags for language alternates
+- [x] JSON-LD Person schema markup
+- [x] Breadcrumb schema markup
+- [x] Social links from SITE_CONFIG (GitHub, LinkedIn, Twitter, Instagram)
+- [x] Real content populated (bio, experience, skills - text done)
 
 ### 2.5 Legal Pages
 - [ ] `/en/privacy` + `/pl/polityka-prywatnosci` - Privacy policy
