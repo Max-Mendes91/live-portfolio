@@ -5,29 +5,28 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { AboutDict, SupportedLocale } from '@/types/i18n';
+import { AboutDict } from '@/types/i18n';
 
 interface AboutMeProps {
-  locale?: SupportedLocale;
   dictionary?: AboutDict;
 }
 
-const AboutMe: React.FC<AboutMeProps> = ({ locale = 'en', dictionary }) => {
-  // Use dictionary skills or fallback to default tags
-  const tags = dictionary?.skills ?? [
-    'React', 'Next.js', 'TypeScript', 'Node.js', 'PostgreSQL', 'Tailwind CSS', 'Figma', 'SEO'
-  ];
-
+const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
   // Fallback content for backward compatibility
   const content = {
     headline: dictionary?.headline ?? "Hi, I'm Max Mendes",
     subheadline: dictionary?.subheadline ?? 'Full Stack Web Developer based in Częstochowa, Poland',
     description: dictionary?.description ?? "With expertise in React, Next.js, Node.js, and TypeScript, I help businesses establish a powerful online presence. Whether you need a custom website, e-commerce store, or SEO optimization - I deliver solutions that drive results.",
     description2: dictionary?.description2 ?? "",
+    learnMoreText: dictionary?.learnMoreText ?? 'Learn More About Me',
+    learnMoreHref: dictionary?.learnMoreHref ?? '/en/about',
+    trustBadges: dictionary?.trustBadges ?? [
+      '500+ Hours Building Production Software',
+      'Working with Teams in Poland, UK & US',
+      'One Developer, Complete Ownership',
+      'Modern Architecture, Zero Technical Debt',
+    ],
   };
-
-  const isPolish = locale === 'pl';
-  const learnMoreText = isPolish ? 'Dowiedz się więcej' : 'Learn More About Me';
 
   return (
     <section id="about" className="pt-10 pb-24 px-6 md:px-12 bg-[#050505] overflow-hidden">
@@ -60,25 +59,25 @@ const AboutMe: React.FC<AboutMeProps> = ({ locale = 'en', dictionary }) => {
 
             {/* Learn More Link - Internal link for SEO */}
             <Link
-              href={`/${locale}/about`}
+              href={content.learnMoreHref}
               className="inline-flex items-center gap-2 text-white hover:text-zinc-300 transition-colors mb-10 group"
             >
               <span className="underline underline-offset-4 decoration-white/30 group-hover:decoration-white/60">
-                {learnMoreText}
+                {content.learnMoreText}
               </span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
 
             <div className="h-[1px] bg-white/10 w-full mb-10" />
 
-            {/* Skills Tags */}
+            {/* Trust Badges */}
             <div className="flex flex-wrap gap-3">
-              {tags.map((tag) => (
+              {content.trustBadges.map((badge) => (
                 <span
-                  key={tag}
+                  key={badge}
                   className="px-4 py-2 rounded-lg bg-zinc-900/50 border border-white/5 text-[10px] font-medium uppercase tracking-widest text-zinc-300 hover:bg-zinc-800 transition-colors cursor-default"
                 >
-                  {tag}
+                  {badge}
                 </span>
               ))}
             </div>

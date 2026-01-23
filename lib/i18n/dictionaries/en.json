@@ -8,14 +8,26 @@
     "ctaSecondary": "See Projects",
     "phoneLabel": "or call",
     "scrollDown": "Scroll down",
-    "toSeeProjects": "to see projects"
+    "toSeeProjects": "to see projects",
+    "trustSignals": [
+      { "label": "2+ Years Experience", "icon": "trophy" },
+      { "label": "UK/US Friendly Timezone", "icon": "globe" },
+      { "label": "Fluent English", "icon": "languages" }
+    ]
   },
   "about": {
     "headline": "Why Work With Me?",
     "subheadline": "I don't just code what you ask for—I help figure out what actually needs to be built first.",
     "description": "Most developers jump straight into development. I spend time understanding the problem: what the site or app needs to achieve, who it's for, and how competitors approach it. Then I prototype, plan scope, and build something that actually solves the problem.",
     "description2": "You work directly with me—not an agency team that hands off between designers, developers, and project managers. One person. Full ownership. From research through deployment. That means faster decisions, clearer communication, and code that reflects what you actually need.",
-    "skills": ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS", "Figma", "SEO", "E-Commerce", "SaaS"]
+    "learnMoreText": "Learn More About Me",
+    "learnMoreHref": "/en/about",
+    "trustBadges": [
+      "500+ Hours Building Production Software",
+      "Working with Teams in Poland, UK & US",
+      "One Developer, Complete Ownership",
+      "Modern Architecture, Zero Technical Debt"
+    ]
   },
   "services": {
     "hero": {

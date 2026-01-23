@@ -8,14 +8,26 @@
     "ctaSecondary": "Zobacz Projekty",
     "phoneLabel": "lub zadzwoń",
     "scrollDown": "Przewiń w dół",
-    "toSeeProjects": "aby zobaczyć projekty"
+    "toSeeProjects": "aby zobaczyć projekty",
+    "trustSignals": [
+      { "label": "2+ lata doświadczenia", "icon": "trophy" },
+      { "label": "Klienci z UK/US", "icon": "globe" },
+      { "label": "Płynny angielski", "icon": "languages" }
+    ]
   },
   "about": {
     "headline": "Dlaczego Warto Ze Mną Pracować?",
     "subheadline": "Nie buduję stron na WordPressie. Piszę prawdziwy kod w React i Next.js—to oznacza szybsze strony, lepsze SEO i możliwość rozwoju bez wymuszania migracji za rok czy dwa.",
     "description": "Pracujesz bezpośrednio ze mną, nie z agencją gdzie projekt przechodzi przez kilka osób. Jeden developer. Pełna odpowiedzialność. Najpierw rozumiem problem biznesowy i analizuję konkurencję. Potem planuję strukturę. Dopiero wtedy piszę kod. Efekt: aplikacje i strony, które rozwiązują realne problemy i można je rozwijać.",
     "description2": "Zbudowałem wszystko—od landing page'y po platformę SaaS (FlowMate) z autoryzacją, płatnościami i dashboardami (300+ godzin). Obsługuję firmy w Częstochowie, na Śląsku i w całej Polsce.",
-    "skills": ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS", "Figma", "SEO", "E-Commerce", "SaaS"]
+    "learnMoreText": "Dowiedz się więcej o mnie",
+    "learnMoreHref": "/pl/o-mnie",
+    "trustBadges": [
+      "500+ godzin w produkcyjnym kodzie",
+      "Projekty w Polsce i za granicą",
+      "Jeden deweloper, pełna własność projektu",
+      "Bez WordPress, tylko nowoczesny kod"
+    ]
   },
   "services": {
     "hero": {
