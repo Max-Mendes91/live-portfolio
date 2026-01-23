@@ -97,7 +97,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               quality={85}
-              className="object-cover grayscale brightness-90 hover:brightness-100 transition-all duration-1000"
+              className="object-cover grayscale brightness-90 hover:brightness-100 transition-[filter] duration-1000"
             />
             {/* Subtle glow behind the image */}
             <div className="absolute -inset-4 bg-white/5 blur-3xl -z-10 rounded-full" />

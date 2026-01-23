@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowDownCircle, ArrowUpRight } from 'lucide-react';
 import { WorkGridDict } from '@/types/i18n';
@@ -90,12 +91,10 @@ const WorkGrid: React.FC<WorkGridProps> = ({ dictionary }) => {
                   </p>
                 </div>
 
-                {/* CTA Link */}
+                {/* CTA Link - Internal navigation */}
                 {project.href !== '#' && (
-                  <a
+                  <Link
                     href={project.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className={cn(
                       'inline-flex items-center gap-2',
                       'text-sm font-medium text-text-secondary',
@@ -105,7 +104,7 @@ const WorkGrid: React.FC<WorkGridProps> = ({ dictionary }) => {
                   >
                     <span>{project.cta}</span>
                     <ArrowUpRight className="w-4 h-4 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
-                  </a>
+                  </Link>
                 )}
               </div>
             </motion.article>

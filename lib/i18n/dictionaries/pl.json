@@ -3,7 +3,7 @@
     "badge": "Full-Stack Development",
     "headline": "Nowoczesne Aplikacje Webowe",
     "subheadline": "React & Next.js. Pełny Proces. Częstochowa & Śląskie.",
-    "description": "Jestem Max, programista full-stack z Częstochowy. Buduję strony biznesowe, sklepy internetowe i aplikacje webowe w React, Next.js i TypeScript. Obsługuję cały proces — od researchu i prototypu po wdrożenie. Pracuję z firmami z Częstochowy, Katowic, Krakowa i całej Polski.",
+    "description": "Jestem Max, programista full-stack z Częstochowy. Buduję strony biznesowe, sklepy internetowe i aplikacje webowe w React, Next.js i TypeScript. Obsługuję cały proces — od researchu i prototypu po wdrożenie. Otwarty na projekty z Częstochowy, Katowic, Krakowa i całej Polski.",
     "ctaPrimary": "Bezpłatna Konsultacja",
     "ctaSecondary": "Zobacz Projekty",
     "phoneLabel": "lub zadzwoń",
@@ -19,12 +19,11 @@
     "headline": "Dlaczego Warto Ze Mną Pracować?",
     "subheadline": "Nie buduję stron na WordPressie. Piszę prawdziwy kod w React i Next.js—to oznacza szybsze strony, lepsze SEO i możliwość rozwoju bez wymuszania migracji za rok czy dwa.",
     "description": "Pracujesz bezpośrednio ze mną, nie z agencją gdzie projekt przechodzi przez kilka osób. Jeden developer. Pełna odpowiedzialność. Najpierw rozumiem problem biznesowy i analizuję konkurencję. Potem planuję strukturę. Dopiero wtedy piszę kod. Efekt: aplikacje i strony, które rozwiązują realne problemy i można je rozwijać.",
-    "description2": "Zbudowałem wszystko—od landing page'y po platformę SaaS (FlowMate) z autoryzacją, płatnościami i dashboardami (300+ godzin). Obsługuję firmy w Częstochowie, na Śląsku i w całej Polsce.",
+    "description2": "Zbudowałem wszystko—od landing page'y po platformę SaaS (FlowMate) z autoryzacją, płatnościami i dashboardami (300+ godzin). Otwarty na współpracę z firmami w Częstochowie, na Śląsku i w całej Polsce.",
     "learnMoreText": "Dowiedz się więcej o mnie",
     "learnMoreHref": "/pl/o-mnie",
     "trustBadges": [
       "500+ godzin w produkcyjnym kodzie",
-      "Projekty w Polsce i za granicą",
       "Jeden deweloper, pełna własność projektu",
       "Bez WordPress, tylko nowoczesny kod"
     ]
@@ -278,7 +277,7 @@
       {
         "id": "flowmate",
         "title": "FlowMate — Platforma AI do Zarządzania Emailami",
-        "description": "Full-stack SaaS łączący Gmail, Outlook, Slack i Telegram w jeden przepływ pracy sterowany AI. Obsługuje autoryzację, przetwarzanie asynchroniczne i integracje z wieloma dostawcami na poziomie produkcyjnym.",
+        "description": "Produkcyjna platforma SaaS w Next.js i React do zarządzania dużymi wolumenami e-maili i komunikacji. Architektura full-stack z bezpieczną autoryzacją, przetwarzaniem asynchronicznym i integracjami AI, obsługująca realne obciążenia na skalę.",
         "metric": "Uruchomiony styczeń 2025 · 300+ godzin rozwoju · Integracja AI z wieloma kanałami",
         "href": "/pl/projekty",
         "externalUrl": "https://www.flowmate.click/",
@@ -290,7 +289,7 @@
       {
         "id": "markmind",
         "title": "MarkMind — Menedżer Zakładek z AI",
-        "description": "Rozszerzenie Chrome automatycznie organizujące zakładki za pomocą klasyfikacji AI. Przetwarzanie w czasie rzeczywistym bez wpływu na wydajność przeglądarki.",
+        "description": "MarkMind to działające w produkcji rozszerzenie Chrome stworzone w JavaScript z integracją AI do automatycznej organizacji zakładek. Aplikacja jest używana przez setki użytkowników i przetwarza dane w czasie rzeczywistym bez wpływu na wydajność przeglądarki.",
         "metric": "401+ Aktywnych Użytkowników · Dostępne w Chrome Web Store",
         "href": "/pl/projekty",
         "externalUrl": "https://chromewebstore.google.com/detail/markmind/bdobgdkpeffdbonfpokgkbncgnbnjnoo",
@@ -793,11 +792,11 @@
       "description": "Kolekcja projektów web development autorstwa Max Mendes, w tym platformy SaaS, integracje AI i produkcyjne aplikacje webowe."
     },
     "badge": "Portfolio",
-    "title": "Wybrane Projekty",
-    "subtitle": "Prawdziwe projekty, prawdziwy kod, prawdziwe rezultaty. Każdy projekt to gotowa do produkcji praca zbudowana od podstaw.",
+    "title": "Wybrane Projekty Full-Stack",
+    "subtitle": "Produkcyjne aplikacje webowe w React i Next.js. Prawdziwe projekty, realni użytkownicy i systemy gotowe do działania po wdrożeniu.",
     "cta": {
-      "title": "Masz pomysł na projekt?",
-      "description": "Porozmawiajmy o Twoim projekcie i zobaczmy, jak mogę pomóc zrealizować Twoje pomysły.",
+      "title": "Potrzebujesz programisty, nie agencji?",
+      "description": "Tworzę aplikacje SaaS, sklepy internetowe i aplikacje webowe w React i Next.js — bez WordPress. Porozmawiajmy o projekcie.",
       "primaryButton": "Bezpłatna Wycena",
       "secondaryButton": "Zobacz Usługi"
     }

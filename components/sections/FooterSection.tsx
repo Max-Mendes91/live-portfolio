@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Github, Linkedin, Twitter, Instagram, ArrowUpRight, Mail, MapPin } from 'lucide-react';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
+import SmokeEffect from '@/components/effects/SmokeEffect';
 import { SITE_CONFIG } from '@/lib/seo/config';
 import { getLocalizedUrl } from '@/lib/i18n/routes';
 import { SupportedLocale, FooterDict } from '@/types/i18n';
@@ -42,9 +43,11 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
 
   return (
     <footer className="relative h-screen w-full flex flex-col items-center justify-center px-6 overflow-hidden bg-black">
-      {/* Smoke/Glow Effect using Radial Gradient */}
+      {/* Cinematic Smoke Effect */}
+      <SmokeEffect intensity={0.5} />
+      {/* Additional Radial Glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_center,_rgba(120,120,120,0.15)_0%,_rgba(0,0,0,1)_70%)]" />
+        <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,_rgba(120,120,120,0.12)_0%,_rgba(0,0,0,1)_70%)]" />
       </div>
 
       <motion.div
