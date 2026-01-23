@@ -199,13 +199,17 @@ export function generateServicePageMetadata(
   serviceData: ServiceLink,
   locale: SupportedLocale = 'en'
 ): Metadata {
-  const { seo, hrefLang } = serviceData;
+  const { seo, hrefLang, href } = serviceData;
+
+  // Generate canonical URL dynamically from href
+  const canonicalUrl = getFullUrl(href);
 
   // Generate alternate language URLs from hrefLang
   const languages: Record<string, string> = {};
   Object.entries(hrefLang).forEach(([lang, path]) => {
     languages[lang] = getFullUrl(path);
   });
+  languages['x-default'] = languages['en'];
 
   return {
     ...generateBaseMetadata(locale),
@@ -213,13 +217,13 @@ export function generateServicePageMetadata(
     description: seo.metaDescription,
     keywords: seo.keywords.join(', '),
     alternates: {
-      canonical: seo.canonical,
+      canonical: canonicalUrl,
       languages,
     },
     openGraph: {
       title: seo.ogTitle,
       description: seo.metaDescription,
-      url: seo.canonical,
+      url: canonicalUrl,
       siteName: SITE_CONFIG.name,
       locale: locale === 'en' ? 'en_US' : 'pl_PL',
       alternateLocale: locale === 'en' ? 'pl_PL' : 'en_US',

@@ -15,11 +15,11 @@ export interface SiteOwner {
     region: string;
   };
   social: {
-    twitter: string;
-    twitterHandle: string;
     linkedin: string;
     github: string;
-    instagram: string;
+    twitter?: string;
+    twitterHandle?: string;
+    instagram?: string;
   };
 }
 

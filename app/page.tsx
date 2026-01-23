@@ -83,7 +83,7 @@ export default function Home() {
         <Hero />
         <AboutMe />
         <WorkGrid />
-        <ServiceSection />
+        <ServiceSection dictionary={enDict.services} />
         <ProcessSection />
         <FAQSection />
         <div className="h-[20vh]" />

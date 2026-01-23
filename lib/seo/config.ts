@@ -20,11 +20,10 @@ export const SITE_CONFIG: SiteConfig = {
       region: 'Slaskie',
     },
     social: {
-      twitter: 'https://twitter.com/maxmendes91',
-      twitterHandle: '@maxmendes91',
-      linkedin: 'https://linkedin.com/in/maxmendes',
-      github: 'https://github.com/maxmendes',
-      instagram: 'https://instagram.com/maxmendes',
+      linkedin: 'https://www.linkedin.com/in/max-mendes-776ab5212',
+      github: 'https://github.com/Max-Mendes91',
+      twitter: 'https://x.com/maxmendes91',
+      instagram: 'https://www.instagram.com/max_mendes91/',
     },
   },
 };

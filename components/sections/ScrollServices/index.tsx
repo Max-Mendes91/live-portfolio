@@ -173,12 +173,12 @@ const ScrollServices: React.FC<ScrollServicesProps> = ({
       style={{ height: `${services.length * 100}vh` }}
     >
       {/* Decorative rounded top edge - NOT sticky, visual separator */}
-      <div className="relative z-20">
+      <div className="relative z-10">
         <div className="w-full h-24 bg-background rounded-t-[4rem] border-t border-border shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)]" />
       </div>
 
       {/* Desktop: Sticky split view - NOT inside overflow-hidden */}
-      <div className="sticky top-0 h-screen w-full hidden lg:flex items-center z-10 -mt-24">
+      <div className="sticky top-0 h-screen w-full hidden lg:flex items-center z-20 -mt-24">
         <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-2 gap-16 items-center">
             {/* Left: Text content */}

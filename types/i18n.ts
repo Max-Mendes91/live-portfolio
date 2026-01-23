@@ -26,21 +26,29 @@ export interface AboutDict {
   skills: string[];
 }
 
-// Service item within services section
-export interface ServiceItemDict {
+// Service card for home page services section
+export interface ServiceCardDict {
+  id: string;
+  icon: string;
   title: string;
   description: string;
-  features: string[];
+  linkText: string;
+  linkHref: string;
 }
 
-// Services section dictionary
+// Services section dictionary (home page)
 export interface ServicesDict {
-  title: string;
-  subtitle: string;
-  webDevelopment: ServiceItemDict;
-  webDesign: ServiceItemDict;
-  seo: ServiceItemDict;
-  ecommerce: ServiceItemDict;
+  hero: {
+    badge: string;
+    title: string;
+    subtitle: string;
+  };
+  pills: string[];
+  primaryButton: string;
+  secondaryButton: string;
+  cards: ServiceCardDict[];
+  marquee1: string[];
+  marquee2: string[];
 }
 
 // Process step within process section
@@ -76,7 +84,6 @@ export interface ServiceSEO {
   keywords: string[];
   h1: string;
   ogTitle: string;
-  canonical: string;
 }
 
 // Schema.org markup for service pages
@@ -127,7 +134,6 @@ export interface FooterDict {
   contact: {
     name: string;
     location: string;
-    email: string;
     available: string;
   };
   bottom: {
@@ -242,17 +248,42 @@ export interface ServicesPageDict {
   };
 }
 
+// SEO metadata for about page (same pattern as ServiceSEO)
+export interface AboutPageSEO {
+  title: string;
+  metaDescription: string;
+  keywords: string[];
+  h1: string;
+  ogTitle: string;
+}
+
+// Schema.org markup for about page
+export interface AboutPageSchema {
+  type: string;
+  description: string;
+  areaServed: string[];
+}
+
 // About page (full page, not homepage section)
 export interface AboutPageDict {
-  meta: {
-    title: string;
-    description: string;
+  id: string;
+  label: string;
+  href: string;
+  hrefLang: {
+    en: string;
+    pl: string;
   };
+  seo: AboutPageSEO;
+  schema: AboutPageSchema;
   heading: string;
+  location: string;
   bio: string[];
   skills: {
     title: string;
-    items: string[];
+    categories: Array<{
+      name: string;
+      items: string[];
+    }>;
   };
   experience: {
     title: string;
@@ -263,12 +294,14 @@ export interface AboutPageDict {
       description: string;
     }>;
   };
+  social: {
+    github: string;
+    linkedin: string;
+  };
   cta: {
     title: string;
     description: string;
-    primaryButton: string;
-    secondaryButton: string;
-    tertiaryButton: string;
+    button: string;
   };
 }
 
