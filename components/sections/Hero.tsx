@@ -4,11 +4,10 @@ import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Trophy, FolderOpen, Globe, Languages } from 'lucide-react';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
-import { SITE_CONFIG, TRUST_SIGNALS } from '@/lib/seo/config';
-import { HeroDict, SupportedLocale } from '@/types/i18n';
+import { SITE_CONFIG } from '@/lib/seo/config';
+import { HeroDict } from '@/types/i18n';
 
 interface HeroProps {
-  locale?: SupportedLocale;
   dictionary?: HeroDict;
 }
 
@@ -61,7 +60,7 @@ const LiquidBackground: React.FC = () => {
   );
 };
 
-const Hero: React.FC<HeroProps> = ({ locale = 'en', dictionary }) => {
+const Hero: React.FC<HeroProps> = ({ dictionary }) => {
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, 600], [1, 0]);
   const yContent = useTransform(scrollY, [0, 600], [0, 100]);
@@ -78,6 +77,11 @@ const Hero: React.FC<HeroProps> = ({ locale = 'en', dictionary }) => {
     phoneLabel: dictionary?.phoneLabel ?? 'or call',
     scrollDown: dictionary?.scrollDown ?? 'Scroll down',
     toSeeProjects: dictionary?.toSeeProjects ?? 'to see projects',
+    trustSignals: dictionary?.trustSignals ?? [
+      { label: '2+ Years Experience', icon: 'trophy' },
+      { label: 'UK/US Friendly Timezone', icon: 'globe' },
+      { label: 'Fluent English', icon: 'languages' },
+    ],
   };
 
   useEffect(() => {
@@ -142,14 +146,14 @@ const Hero: React.FC<HeroProps> = ({ locale = 'en', dictionary }) => {
             </p>
           </div>
 
-          {/* Trust Signals - SEO badges from friend's advice */}
+          {/* Trust Signals - SEO badges from dictionary */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-wrap items-center justify-center gap-3 md:gap-4"
           >
-            {TRUST_SIGNALS[locale].map((signal) => {
+            {content.trustSignals.map((signal) => {
               const IconComponent = iconMap[signal.icon as keyof typeof iconMap];
               return (
                 <div

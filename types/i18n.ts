@@ -4,6 +4,12 @@ import { SupportedLocale } from './seo';
 // Re-export for convenience
 export type { SupportedLocale };
 
+// Trust signal item (used in Hero)
+export interface TrustSignalDict {
+  label: string;
+  icon: string;
+}
+
 // Hero section dictionary
 export interface HeroDict {
   badge: string;
@@ -15,15 +21,18 @@ export interface HeroDict {
   phoneLabel?: string;
   scrollDown?: string;
   toSeeProjects?: string;
+  trustSignals?: TrustSignalDict[];
 }
 
-// About section dictionary
+// About section dictionary (homepage)
 export interface AboutDict {
   headline: string;
   subheadline: string;
   description: string;
   description2: string;
-  skills: string[];
+  learnMoreText: string;
+  learnMoreHref: string;
+  trustBadges: string[];
 }
 
 // Service card for home page services section
