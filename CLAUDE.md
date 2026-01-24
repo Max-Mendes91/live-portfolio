@@ -6,6 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 > For project roadmap, see [.claude/ROADMAP.md](.claude/ROADMAP.md)
 > For SEO management, see [.claude/skills/seo.md](.claude/skills/seo.md)
 > **For design system & UI components, see [.claude/DESIGN_SYSTEM.md](.claude/DESIGN_SYSTEM.md)**
+> **MANDATORY FOR RESPONSIVE:** For device breakpoints, see [.claude/DEVICE_BREAKPOINTS.md](.claude/DEVICE_BREAKPOINTS.md) - **ALWAYS reference when creating/editing components**
 > **CRITICAL:** For session handoffs, see [.claude/skills/handoff.md](.claude/skills/handoff.md) - USE THIS when user asks for "handoff"
 
 ## Project Overview
@@ -135,6 +136,50 @@ Before commit, verify:
 - [ ] Sections with animations have `overflow-hidden`
 - [ ] No horizontal scroll on mobile
 - [ ] Blur effects contained within parent
+
+---
+
+## Responsive Design Rules (MANDATORY)
+
+**Reference:** See [.claude/DEVICE_BREAKPOINTS.md](.claude/DEVICE_BREAKPOINTS.md) for target device dimensions.
+
+### Core Principles
+
+1. **NEVER delete content for mobile** - All text, links, and elements must remain visible on ALL screen sizes
+2. **NEVER hide content with `hidden sm:block`** - Instead, reduce sizes and spacing to fit
+3. **Desktop/Laptop views are untouched** - Only modify classes for mobile breakpoints (below `sm:`)
+4. **Test all device dimensions** - Use the device list in DEVICE_BREAKPOINTS.md
+
+### Mobile-First Approach
+
+```tsx
+// ✅ DO: Reduce sizes for mobile, keep content visible
+<p className="text-xs sm:text-sm md:text-base">Content visible everywhere</p>
+<div className="gap-1 sm:gap-4 md:gap-8">Tighter on mobile</div>
+
+// ❌ DON'T: Hide content on mobile
+<p className="hidden sm:block">This content is lost on mobile!</p>
+<div className="sm:flex hidden">Hidden on mobile - BAD</div>
+```
+
+### Breakpoint Strategy
+
+| Breakpoint | Target | Strategy |
+|------------|--------|----------|
+| Default (< 640px) | Mobile phones | Smallest text, tightest spacing, 3-col grids |
+| `sm:` (640px+) | Large phones/tablets | Slightly larger, normal spacing |
+| `md:` (768px+) | Tablets | **DO NOT CHANGE** - Works fine |
+| `lg:` (1024px+) | Laptops | **DO NOT CHANGE** - Works fine |
+| `xl:` (1280px+) | Desktops | **DO NOT CHANGE** - Works fine |
+
+### Quality Checklist - Responsive
+
+Before commit, verify on DEVICE_BREAKPOINTS.md devices:
+- [ ] All content visible (no hidden elements on mobile)
+- [ ] Text readable (min 10px font)
+- [ ] Touch targets adequate (min 44px)
+- [ ] No overlapping elements
+- [ ] Desktop/laptop unchanged
 
 ---
 

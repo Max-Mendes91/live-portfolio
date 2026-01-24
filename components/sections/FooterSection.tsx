@@ -42,7 +42,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
   ];
 
   return (
-    <footer className="relative h-screen w-full flex flex-col items-center justify-center px-4 sm:px-6 overflow-hidden bg-black">
+    <footer className="relative h-screen w-full flex flex-col items-center justify-center px-2 sm:px-6 overflow-hidden bg-black">
       {/* Cinematic Smoke Effect */}
       <SmokeEffect intensity={0.5} />
       {/* Additional Radial Glow */}
@@ -58,24 +58,24 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
         className="relative z-10 flex flex-col items-center text-center max-w-5xl"
       >
         {/* Available For Work Badge */}
-        <div className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-6 sm:mb-8 md:mb-10 short:mb-4">
-          <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981]" />
-          <span className="text-[10px] uppercase font-medium tracking-[0.2em] text-white/80">{content.availableBadge}</span>
+        <div className="inline-flex items-center gap-1.5 sm:gap-2.5 px-3 sm:px-5 py-1.5 sm:py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-3 sm:mb-8 md:mb-10 short:mb-4">
+          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981]" />
+          <span className="text-[8px] sm:text-[10px] uppercase font-medium tracking-[0.15em] sm:tracking-[0.2em] text-white/80">{content.availableBadge}</span>
         </div>
 
         {/* H1 - Main Headline */}
-        <h2 className="text-3xl sm:text-4xl md:text-6xl short:text-4xl font-light tracking-tighter leading-tight text-white mb-4 sm:mb-6 short:mb-3">
+        <h2 className="text-xl sm:text-4xl md:text-6xl short:text-4xl font-light tracking-tighter leading-tight text-white mb-2 sm:mb-6 short:mb-3 px-1">
           {content.headline}
         </h2>
 
         {/* H2 - Subheadline */}
-        <p className="text-text-secondary text-base sm:text-lg short:text-base mb-8 sm:mb-10 md:mb-12 short:mb-6 max-w-2xl font-light px-2 sm:px-0">
+        <p className="text-text-secondary text-xs sm:text-lg short:text-base mb-4 sm:mb-10 md:mb-12 short:mb-6 max-w-2xl font-light px-2 sm:px-0">
           {content.subheadline}
         </p>
 
         {/* CTA Button */}
         {!hideCTA && (
-          <div className="flex flex-col items-center justify-center mb-10 sm:mb-12 md:mb-16 short:mb-6">
+          <div className="flex flex-col items-center justify-center mb-4 sm:mb-12 md:mb-16 short:mb-6">
             <CornerGlowButton href={contactUrl}>
               {content.cta}
               <ArrowUpRight className="w-4 h-4" />
@@ -83,20 +83,20 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
           </div>
         )}
 
-        {/* Links Grid: Quick Links | Services | Contact */}
-        <div className="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 md:gap-8 short:gap-4 text-center mt-6 sm:mt-8 short:mt-4">
+        {/* Links Grid: Quick Links | Services | Contact - Always 3 columns */}
+        <div className="w-full max-w-4xl grid grid-cols-3 gap-2 sm:gap-6 md:gap-8 short:gap-4 text-center mt-4 sm:mt-8 short:mt-4">
           {/* Quick Links */}
           <div className="flex flex-col items-center">
-            <div className="text-left">
-              <h3 className="text-[10px] font-medium uppercase tracking-[0.2em] text-text-muted mb-4">
+            <div className="text-center sm:text-left">
+              <h3 className="text-[8px] sm:text-[10px] font-medium uppercase tracking-[0.15em] sm:tracking-[0.2em] text-text-muted mb-2 sm:mb-4">
                 {content.sections.quickLinks}
               </h3>
-              <nav className="flex flex-col gap-2">
+              <nav className="flex flex-col gap-1 sm:gap-2 items-center sm:items-start">
                 {quickLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+                    className="text-[10px] sm:text-sm text-text-secondary hover:text-text-primary transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -107,16 +107,16 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
 
           {/* Services */}
           <div className="flex flex-col items-center">
-            <div className="text-left">
-              <h3 className="text-[10px] font-medium uppercase tracking-[0.2em] text-text-muted mb-4 text-center">
+            <div className="text-center sm:text-left">
+              <h3 className="text-[8px] sm:text-[10px] font-medium uppercase tracking-[0.15em] sm:tracking-[0.2em] text-text-muted mb-2 sm:mb-4">
                 {content.sections.services}
               </h3>
-              <nav className="flex flex-col gap-2">
+              <nav className="flex flex-col gap-1 sm:gap-2 items-center sm:items-start">
                 {serviceLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-sm text-text-secondary hover:text-text-primary transition-colors"
+                    className="text-[10px] sm:text-sm text-text-secondary hover:text-text-primary transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -127,10 +127,10 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
 
           {/* Contact */}
           <div>
-            <h3 className="text-[10px] font-medium uppercase tracking-[0.2em] text-text-muted mb-4">
+            <h3 className="text-[8px] sm:text-[10px] font-medium uppercase tracking-[0.15em] sm:tracking-[0.2em] text-text-muted mb-2 sm:mb-4">
               {content.sections.contact}
             </h3>
-            <div className="flex flex-col gap-2 text-sm items-center">
+            <div className="flex flex-col gap-1 sm:gap-2 text-[10px] sm:text-sm items-center">
               <span className="text-text-primary font-medium">
                 {content.contact.name}
               </span>
@@ -138,24 +138,28 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
                 href="https://maps.google.com/?q=Częstochowa,Poland"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-secondary hover:text-text-primary transition-colors flex items-center gap-2"
+                className="text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1 sm:gap-2"
               >
-                <MapPin className="w-4 h-4 text-text-muted" />
-                {content.contact.location}
+                <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-text-muted flex-shrink-0" />
+                {/* Abbreviated on mobile, full on desktop */}
+                <span className="sm:hidden">Częstochowa, PL</span>
+                <span className="hidden sm:inline">{content.contact.location}</span>
               </a>
               <a
                 href={`mailto:${SITE_CONFIG.owner.email}`}
-                className="text-text-secondary hover:text-text-primary transition-colors flex items-center gap-2"
+                className="text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1 sm:gap-2"
               >
-                <Mail className="w-4 h-4 text-text-muted" />
-                {SITE_CONFIG.owner.email}
+                <Mail className="w-3 h-3 sm:w-4 sm:h-4 text-text-muted flex-shrink-0" />
+                {/* "Email me" on mobile, full email on desktop */}
+                <span className="sm:hidden">Email me</span>
+                <span className="hidden sm:inline">{SITE_CONFIG.owner.email}</span>
               </a>
             </div>
           </div>
         </div>
 
         {/* Social Icons */}
-        <div className="mt-8 sm:mt-10 md:mt-12 short:mt-4 flex items-center gap-4 sm:gap-6 md:gap-8">
+        <div className="mt-4 sm:mt-10 md:mt-12 short:mt-4 flex items-center gap-3 sm:gap-6 md:gap-8">
           {socialLinks.map((social, index) => (
             <React.Fragment key={social.label}>
               <a
@@ -164,7 +168,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 text-zinc-500 hover:text-white transition-colors"
               >
-                <social.icon className="w-5 h-5" />
+                <social.icon className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span className="text-[10px] font-medium uppercase tracking-widest hidden md:block">{social.label}</span>
               </a>
               {index < socialLinks.length - 1 && (
@@ -174,16 +178,16 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
           ))}
         </div>
 
-        {/* Location keywords for SEO - hidden on short viewports */}
-        <p className="mt-6 sm:mt-8 md:mt-12 text-[10px] text-zinc-600 tracking-wide text-center max-w-lg px-4 sm:px-0 short:hidden">
+        {/* Location keywords for SEO */}
+        <p className="mt-3 sm:mt-8 md:mt-12 text-[8px] sm:text-[10px] text-zinc-600 tracking-wide text-center max-w-lg px-2 sm:px-0 short:text-[8px]">
           {content.seoText}
         </p>
       </motion.div>
 
       {/* Copyright footer sub-bar */}
-      <div className="absolute bottom-4 sm:bottom-6 md:bottom-10 short:bottom-2 w-full px-4 sm:px-8 md:px-12 flex flex-col sm:flex-row justify-between items-center text-[9px] font-medium tracking-[0.2em] text-zinc-700 uppercase">
+      <div className="absolute bottom-2 sm:bottom-6 md:bottom-10 short:bottom-2 w-full px-2 sm:px-8 md:px-12 flex flex-row justify-between items-center text-[7px] sm:text-[9px] font-medium tracking-[0.1em] sm:tracking-[0.2em] text-zinc-700 uppercase">
         <span>© {new Date().getFullYear()} {SITE_CONFIG.name}</span>
-        <span className="mt-2 sm:mt-0">{content.contact.location}</span>
+        <span>{content.contact.location}</span>
       </div>
     </footer>
   );
