@@ -58,24 +58,24 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
         className="relative z-10 flex flex-col items-center text-center max-w-5xl"
       >
         {/* Available For Work Badge */}
-        <div className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-6 sm:mb-8 md:mb-10">
+        <div className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-6 sm:mb-8 md:mb-10 short:mb-4">
           <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981]" />
           <span className="text-[10px] uppercase font-medium tracking-[0.2em] text-white/80">{content.availableBadge}</span>
         </div>
 
         {/* H1 - Main Headline */}
-        <h2 className="text-3xl sm:text-4xl md:text-6xl font-light tracking-tighter leading-tight text-white mb-4 sm:mb-6">
+        <h2 className="text-3xl sm:text-4xl md:text-6xl short:text-4xl font-light tracking-tighter leading-tight text-white mb-4 sm:mb-6 short:mb-3">
           {content.headline}
         </h2>
 
         {/* H2 - Subheadline */}
-        <p className="text-text-secondary text-base sm:text-lg mb-8 sm:mb-10 md:mb-12 max-w-2xl font-light px-2 sm:px-0">
+        <p className="text-text-secondary text-base sm:text-lg short:text-base mb-8 sm:mb-10 md:mb-12 short:mb-6 max-w-2xl font-light px-2 sm:px-0">
           {content.subheadline}
         </p>
 
         {/* CTA Button */}
         {!hideCTA && (
-          <div className="flex flex-col items-center justify-center mb-10 sm:mb-12 md:mb-16">
+          <div className="flex flex-col items-center justify-center mb-10 sm:mb-12 md:mb-16 short:mb-6">
             <CornerGlowButton href={contactUrl}>
               {content.cta}
               <ArrowUpRight className="w-4 h-4" />
@@ -84,7 +84,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
         )}
 
         {/* Links Grid: Quick Links | Services | Contact */}
-        <div className="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 md:gap-8 text-center mt-6 sm:mt-8">
+        <div className="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 md:gap-8 short:gap-4 text-center mt-6 sm:mt-8 short:mt-4">
           {/* Quick Links */}
           <div className="flex flex-col items-center">
             <div className="text-left">
@@ -155,7 +155,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
         </div>
 
         {/* Social Icons */}
-        <div className="mt-8 sm:mt-10 md:mt-12 flex items-center gap-4 sm:gap-6 md:gap-8">
+        <div className="mt-8 sm:mt-10 md:mt-12 short:mt-4 flex items-center gap-4 sm:gap-6 md:gap-8">
           {socialLinks.map((social, index) => (
             <React.Fragment key={social.label}>
               <a
@@ -174,14 +174,14 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
           ))}
         </div>
 
-        {/* Location keywords for SEO */}
-        <p className="mt-6 sm:mt-8 md:mt-12 text-[10px] text-zinc-600 tracking-wide text-center max-w-lg px-4 sm:px-0">
+        {/* Location keywords for SEO - hidden on short viewports */}
+        <p className="mt-6 sm:mt-8 md:mt-12 text-[10px] text-zinc-600 tracking-wide text-center max-w-lg px-4 sm:px-0 short:hidden">
           {content.seoText}
         </p>
       </motion.div>
 
       {/* Copyright footer sub-bar */}
-      <div className="absolute bottom-4 sm:bottom-6 md:bottom-10 w-full px-4 sm:px-8 md:px-12 flex flex-col sm:flex-row justify-between items-center text-[9px] font-medium tracking-[0.2em] text-zinc-700 uppercase">
+      <div className="absolute bottom-4 sm:bottom-6 md:bottom-10 short:bottom-2 w-full px-4 sm:px-8 md:px-12 flex flex-col sm:flex-row justify-between items-center text-[9px] font-medium tracking-[0.2em] text-zinc-700 uppercase">
         <span>© {new Date().getFullYear()} {SITE_CONFIG.name}</span>
         <span className="mt-2 sm:mt-0">{content.contact.location}</span>
       </div>
