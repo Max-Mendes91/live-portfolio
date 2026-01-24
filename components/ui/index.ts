@@ -46,6 +46,9 @@ export {
   ListIcon,
 } from './Icon';
 
+// Decorative
+export { default as BinderClip } from './BinderClip';
+
 // Legacy (for backwards compatibility - will be deprecated)
 export { default as PulseBadge } from './PulseBadge';
 export { default as GlowButton } from './GlowButton';
