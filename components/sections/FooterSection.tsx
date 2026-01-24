@@ -42,7 +42,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
   ];
 
   return (
-    <footer className="relative h-screen w-full flex flex-col items-center justify-center px-6 overflow-hidden bg-black">
+    <footer className="relative h-screen w-full flex flex-col items-center justify-center px-4 sm:px-6 overflow-hidden bg-black">
       {/* Cinematic Smoke Effect */}
       <SmokeEffect intensity={0.5} />
       {/* Additional Radial Glow */}
@@ -58,24 +58,24 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
         className="relative z-10 flex flex-col items-center text-center max-w-5xl"
       >
         {/* Available For Work Badge */}
-        <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-10">
+        <div className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-6 sm:mb-8 md:mb-10">
           <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981]" />
           <span className="text-[10px] uppercase font-medium tracking-[0.2em] text-white/80">{content.availableBadge}</span>
         </div>
 
         {/* H1 - Main Headline */}
-        <h2 className="text-4xl md:text-6xl font-light tracking-tighter leading-tight text-white mb-6">
+        <h2 className="text-3xl sm:text-4xl md:text-6xl font-light tracking-tighter leading-tight text-white mb-4 sm:mb-6">
           {content.headline}
         </h2>
 
         {/* H2 - Subheadline */}
-        <p className="text-text-secondary text-lg mb-12 max-w-2xl font-light">
+        <p className="text-text-secondary text-base sm:text-lg mb-8 sm:mb-10 md:mb-12 max-w-2xl font-light px-2 sm:px-0">
           {content.subheadline}
         </p>
 
         {/* CTA Button */}
         {!hideCTA && (
-          <div className="flex flex-col items-center justify-center mb-16">
+          <div className="flex flex-col items-center justify-center mb-10 sm:mb-12 md:mb-16">
             <CornerGlowButton href={contactUrl}>
               {content.cta}
               <ArrowUpRight className="w-4 h-4" />
@@ -84,7 +84,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
         )}
 
         {/* Links Grid: Quick Links | Services | Contact */}
-        <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 text-center mt-8">
+        <div className="w-full max-w-4xl grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 md:gap-8 text-center mt-6 sm:mt-8">
           {/* Quick Links */}
           <div className="flex flex-col items-center">
             <div className="text-left">
@@ -155,7 +155,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
         </div>
 
         {/* Social Icons */}
-        <div className="mt-12 flex items-center gap-8">
+        <div className="mt-8 sm:mt-10 md:mt-12 flex items-center gap-4 sm:gap-6 md:gap-8">
           {socialLinks.map((social, index) => (
             <React.Fragment key={social.label}>
               <a
@@ -168,22 +168,22 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
                 <span className="text-[10px] font-medium uppercase tracking-widest hidden md:block">{social.label}</span>
               </a>
               {index < socialLinks.length - 1 && (
-                <div className="w-[1px] h-4 bg-white/10" />
+                <div className="hidden sm:block w-[1px] h-4 bg-white/10" />
               )}
             </React.Fragment>
           ))}
         </div>
 
         {/* Location keywords for SEO */}
-        <p className="mt-12 text-[10px] text-zinc-600 tracking-wide text-center max-w-lg">
+        <p className="mt-6 sm:mt-8 md:mt-12 text-[10px] text-zinc-600 tracking-wide text-center max-w-lg px-4 sm:px-0">
           {content.seoText}
         </p>
       </motion.div>
 
       {/* Copyright footer sub-bar */}
-      <div className="absolute bottom-10 w-full px-12 flex flex-col md:flex-row justify-between items-center text-[9px] font-medium tracking-[0.2em] text-zinc-700 uppercase">
+      <div className="absolute bottom-4 sm:bottom-6 md:bottom-10 w-full px-4 sm:px-8 md:px-12 flex flex-col sm:flex-row justify-between items-center text-[9px] font-medium tracking-[0.2em] text-zinc-700 uppercase">
         <span>© {new Date().getFullYear()} {SITE_CONFIG.name}</span>
-        <span className="mt-4 md:mt-0">{content.contact.location}</span>
+        <span className="mt-2 sm:mt-0">{content.contact.location}</span>
       </div>
     </footer>
   );
