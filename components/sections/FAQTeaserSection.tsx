@@ -24,20 +24,20 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onClick }) 
     <motion.div
       initial={false}
       onClick={onClick}
-      className={`mb-4 overflow-hidden rounded-xl border cursor-pointer transition-all duration-500 ${
+      className={`mb-4 sm:mb-4 overflow-hidden rounded-xl border cursor-pointer transition-all duration-500 ${
         isOpen ? 'bg-[#0F0F0F] border-white/20' : 'bg-[#0A0A0A] border-white/5 hover:border-white/10'
       }`}
     >
-      <div className="w-full flex items-center justify-between p-6 text-left focus:outline-none">
-        <span className="text-lg font-normal tracking-tight text-white">{question}</span>
+      <div className="w-full flex items-center justify-between p-5 sm:p-6 text-left focus:outline-none">
+        <span className="text-base sm:text-lg font-normal tracking-tight text-white">{question}</span>
         <motion.div
           animate={{ rotate: isOpen ? 45 : 0 }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          className={`flex items-center justify-center w-8 h-8 rounded-full border transition-colors flex-shrink-0 ml-4 ${
+          className={`flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full border transition-colors flex-shrink-0 ml-3 sm:ml-4 ${
             isOpen ? 'bg-transparent border-white text-white' : 'bg-transparent border-white/10 text-zinc-500'
           }`}
         >
-          <Plus className="w-4 h-4" />
+          <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
         </motion.div>
       </div>
 
@@ -49,7 +49,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onClick }) 
             exit={{ height: 0, opacity: 0 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
-            <div className="px-6 pb-6 font-light tracking-tight text-zinc-400 text-sm leading-relaxed max-w-[95%]">
+            <div className="px-5 pb-5 sm:px-6 sm:pb-6 font-light tracking-tight text-zinc-400 text-xs sm:text-sm leading-relaxed max-w-[95%]">
               {answer}
             </div>
           </motion.div>
@@ -89,9 +89,9 @@ const FAQTeaserSection: React.FC<FAQTeaserSectionProps> = ({ dictionary }) => {
   };
 
   return (
-    <section className="relative w-full bg-[#050505] py-24">
-      <div className="max-w-[90rem] mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-24 items-start">
+    <section className="relative w-full bg-[#050505] py-12 sm:py-16 md:py-20 lg:py-24">
+      <div className="max-w-[90rem] mx-auto px-4 sm:px-6 md:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 xl:gap-24 items-start">
 
           {/* Left Column: Header Content */}
           <motion.div
@@ -100,15 +100,15 @@ const FAQTeaserSection: React.FC<FAQTeaserSectionProps> = ({ dictionary }) => {
             viewport={{ once: true }}
             className="lg:sticky lg:top-24"
           >
-            <div className="mb-8">
+            <div className="mb-5 sm:mb-6 md:mb-8">
               <PulseBadge text={content.badge} />
             </div>
 
-            <h2 className="text-5xl md:text-7xl font-normal tracking-tighter leading-tight text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-normal tracking-tighter leading-tight text-white mb-3 sm:mb-4 md:mb-6">
               {content.title}
             </h2>
 
-            <p className="font-light tracking-tight text-zinc-400 text-lg max-w-md mb-12 leading-relaxed opacity-80">
+            <p className="font-light tracking-tight text-zinc-400 text-sm sm:text-base md:text-lg max-w-md mb-5 sm:mb-8 md:mb-12 leading-relaxed opacity-80">
               {content.subtitle}
             </p>
 
