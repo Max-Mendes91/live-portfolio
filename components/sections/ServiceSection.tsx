@@ -31,14 +31,14 @@ interface ServiceSectionProps {
 // Code snippet with syntax highlighting
 const CodeSnippet: React.FC = () => {
   return (
-    <div className="w-full rounded-xl bg-[#0a0a0a] border-l-2 border-emerald-500/50 p-4 font-mono text-xs leading-relaxed overflow-hidden">
-      <div className="flex items-center gap-2 mb-3 text-text-muted">
-        <div className="flex gap-1.5">
-          <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
-          <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
-          <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+    <div className="w-full rounded-lg sm:rounded-xl bg-[#0a0a0a] border-l-2 border-emerald-500/50 p-3 sm:p-4 font-mono text-[10px] sm:text-xs leading-relaxed overflow-hidden">
+      <div className="flex items-center gap-2 mb-2 sm:mb-3 text-text-muted">
+        <div className="flex gap-1 sm:gap-1.5">
+          <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/10" />
+          <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/10" />
+          <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/10" />
         </div>
-        <span className="text-[10px] uppercase tracking-wider">app/products/page.tsx</span>
+        <span className="text-[9px] sm:text-[10px] uppercase tracking-wider">app/products/page.tsx</span>
       </div>
       <code className="block">
         <span className="text-blue-400">const</span>{' '}
@@ -94,21 +94,21 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, lin
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className={`p-6 rounded-2xl bg-surface border border-border hover:border-border-hover transition-all duration-500 group flex flex-col ${className || ''}`}
+      className={`p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl bg-surface border border-border hover:border-border-hover transition-all duration-500 group flex flex-col ${className || ''}`}
     >
       <div>
-        <div className="flex items-center gap-4 mb-4">
-          <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-text-muted group-hover:text-text-primary group-hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-500">
+        <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+          <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg sm:rounded-xl bg-white/5 flex items-center justify-center text-text-muted group-hover:text-text-primary group-hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-500">
             {icon}
           </div>
-          <h3 className="text-lg font-normal tracking-tight text-text-primary">
+          <h3 className="text-base sm:text-lg font-normal tracking-tight text-text-primary">
             {title}
           </h3>
         </div>
 
-        <div className="h-[1px] bg-border-subtle w-full mb-4" />
+        <div className="h-[1px] bg-border-subtle w-full mb-3 sm:mb-4" />
 
-        <p className="font-light tracking-tight text-text-secondary text-sm leading-relaxed">
+        <p className="font-light tracking-tight text-text-secondary text-xs sm:text-sm leading-relaxed">
           {parts.length > 1 ? (
             <>
               {parts[0]}
@@ -142,12 +142,12 @@ const MarqueeRow: React.FC<{ items: string[]; direction: 'left' | 'right' }> = (
       <motion.div
         animate={{ x: direction === 'left' ? ["0%", "-50%"] : ["-50%", "0%"] }}
         transition={{ repeat: Infinity, ease: "linear", duration: 25 }}
-        className="flex gap-4 py-2"
+        className="flex gap-2 sm:gap-3 md:gap-4 py-1.5 sm:py-2"
       >
         {duplicatedItems.map((item, idx) => (
           <div
             key={idx}
-            className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/5 border border-border whitespace-nowrap text-[10px] font-medium uppercase tracking-widest text-text-muted hover:text-text-primary hover:bg-white/10 transition-all cursor-default"
+            className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-2.5 rounded-full bg-white/5 border border-border whitespace-nowrap text-[9px] sm:text-[10px] font-medium uppercase tracking-wider sm:tracking-widest text-text-muted hover:text-text-primary hover:bg-white/10 transition-all cursor-default"
           >
             <div className="w-1 h-1 rounded-full bg-text-muted" />
             {item}
@@ -168,12 +168,12 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
   };
 
   return (
-    <section className="relative w-full bg-background pt-20">
+    <section className="relative w-full bg-background pt-12 sm:pt-16 md:pt-20">
       {/* The "Panel" Line & Container */}
-      <div className="max-w-[90rem] mx-auto border-t border-border rounded-t-[3rem] bg-background relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)]">
+      <div className="max-w-[90rem] mx-auto border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] md:rounded-t-[3rem] bg-background relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)]">
 
         {/* Content Container */}
-        <div className="px-6 md:px-12 py-24 space-y-16">
+        <div className="px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-24 space-y-10 sm:space-y-12 md:space-y-16">
 
           {/* Block A: Service Hero */}
           <div className="max-w-4xl">
@@ -182,30 +182,30 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <div className="mb-6">
+              <div className="mb-4 sm:mb-5 md:mb-6">
                 <PulseBadge text={hero.badge} />
               </div>
 
-              <h2 className="text-4xl md:text-6xl font-normal tracking-tighter leading-tight mb-6 text-text-primary">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tighter leading-tight mb-4 sm:mb-5 md:mb-6 text-text-primary">
                 {hero.title}
               </h2>
 
-              <p className="font-light tracking-tight text-text-secondary text-lg mb-10 max-w-2xl leading-relaxed">
+              <p className="font-light tracking-tight text-text-secondary text-sm sm:text-base md:text-lg mb-6 sm:mb-8 md:mb-10 max-w-2xl leading-relaxed">
                 {hero.subtitle}
               </p>
 
-              <div className="flex flex-wrap gap-2 mb-10">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6 sm:mb-8 md:mb-10">
                 {pills.map((pill) => (
                   <span
                     key={pill}
-                    className="px-3 py-1.5 rounded-md bg-white/5 border border-border text-[10px] text-text-muted uppercase font-medium tracking-wider"
+                    className="px-2 sm:px-3 py-1 sm:py-1.5 rounded-md bg-white/5 border border-border text-[9px] sm:text-[10px] text-text-muted uppercase font-medium tracking-wider"
                   >
                     {pill}
                   </span>
                 ))}
               </div>
 
-              <div className="flex flex-col sm:flex-row items-start gap-4">
+              <div className="flex flex-row items-start gap-2 sm:gap-3 md:gap-4">
                 <CornerGlowButton href="/en/services">{primaryButton}</CornerGlowButton>
                 <CornerGlowButton href="/en/projects">{secondaryButton}</CornerGlowButton>
               </div>
@@ -213,7 +213,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
           </div>
 
           {/* Block B: Bento Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
             {/* Row 1: Wide card (2 cols) + Regular card (1 col) */}
             {cards[0] && (
               <div className="md:col-span-2 h-full">
@@ -281,7 +281,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
           </div>
 
           {/* Block C: Dual Infinite Marquee with Side Fades */}
-          <div className="relative space-y-6 pt-12">
+          <div className="relative space-y-3 sm:space-y-4 md:space-y-6 pt-6 sm:pt-8 md:pt-12">
             <MarqueeRow items={marquee1} direction="left" />
             <MarqueeRow items={marquee2} direction="right" />
           </div>
