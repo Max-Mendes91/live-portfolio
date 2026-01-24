@@ -12,6 +12,7 @@ import ServiceContent from './ServiceContent';
 import ServiceVisuals from './ServiceVisuals';
 import ProgressDots from './ProgressDots';
 import { cn } from '@/lib/utils';
+import { BinderClip } from '@/components/ui';
 
 // Icon mapping
 const ICONS: Record<string, LucideIcon> = {
@@ -164,79 +165,101 @@ const ScrollServices: React.FC<ScrollServicesProps> = ({
   const activeService = services[activeIndex];
 
   return (
-    <section
-      ref={containerRef}
-      className={cn(
-        'relative bg-background',
-        className
-      )}
-      style={{ height: `${services.length * 100}vh` }}
-    >
-      {/* Decorative rounded top edge - NOT sticky, visual separator */}
-      <div className="relative z-10">
-        <div className="w-full h-24 bg-background rounded-t-[4rem] border-t border-border shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)]" />
-      </div>
-
-      {/* Desktop: Sticky split view - NOT inside overflow-hidden */}
-      <div className="sticky top-0 h-screen w-full hidden lg:flex items-center z-20 -mt-24">
-        <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid grid-cols-2 gap-16 items-center">
-            {/* Left: Text content */}
-            <ServiceContent
-              service={activeService}
-              isSettled={isSettled}
-            />
-
-            {/* Right: 2 Large icons */}
-            <ServiceVisuals
-              service={activeService}
-              activeIndex={activeIndex}
-              isSettled={isSettled}
-              icons={ICONS}
-            />
-          </div>
+    <>
+      {/* ===== DESKTOP/LAPTOP: Sticky scroll section (lg+) ===== */}
+      {/* This section has dynamic height for sticky scroll mechanism */}
+      <section
+        ref={containerRef}
+        className={cn(
+          'relative bg-background hidden lg:block',
+          className
+        )}
+        style={{ height: `${services.length * 100}vh` }}
+      >
+        {/* Decorative rounded top edge */}
+        <div className="relative z-10">
+          <div className="w-full h-24 bg-background rounded-t-[4rem] border-t border-border shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)]" />
         </div>
 
-        {/* Progress indicator */}
-        <ProgressDots
-          activeIndex={activeIndex}
-          total={services.length}
-        />
-      </div>
+        {/* Sticky split view */}
+        <div className="sticky top-0 h-screen w-full flex items-center z-20 -mt-24">
+          <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
+            <div className="grid grid-cols-2 gap-16 items-center">
+              {/* Left: Text content */}
+              <ServiceContent
+                service={activeService}
+                isSettled={isSettled}
+              />
 
-      {/* Mobile: Stacked sections with whileInView */}
-      <div className="lg:hidden">
-        {services.map((service) => (
-          <motion.div
-            key={service.id}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, amount: 0.3 }}
-            className="min-h-screen py-20 px-6 flex flex-col items-center justify-center"
-          >
-            {/* Single icon on mobile */}
+              {/* Right: 2 Large icons */}
+              <ServiceVisuals
+                service={activeService}
+                activeIndex={activeIndex}
+                isSettled={isSettled}
+                icons={ICONS}
+              />
+            </div>
+          </div>
+
+          {/* Progress indicator */}
+          <ProgressDots
+            activeIndex={activeIndex}
+            total={services.length}
+          />
+        </div>
+      </section>
+
+      {/* ===== MOBILE/TABLET: Stacked sections (below lg) ===== */}
+      {/* Separate section without the massive height */}
+      <section className={cn('relative bg-background lg:hidden', className)}>
+        {/* Container with BinderClips */}
+        <div className="relative max-w-4xl mx-auto">
+          {/* Binder Clips - matching other sections */}
+          <BinderClip position="top-left" size="md" />
+          <BinderClip position="top-right" size="md" />
+
+          {/* Rounded border container - using border on top, left, right for visible rounded corners */}
+          <div className="border-t border-l border-r border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] bg-background relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)]">
+          {services.map((service, index) => (
             <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="mb-12"
+              key={service.id}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              className="py-10 sm:py-14 md:py-16 px-4 sm:px-6 md:px-8 flex flex-col items-center"
             >
-              {React.createElement(ICONS[service.icon1], {
-                className: 'w-24 h-24 text-text-primary drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]',
-              })}
-            </motion.div>
+              {/* Single icon on mobile - smaller on XS */}
+              <motion.div
+                initial={{ scale: 0.8, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                className="mb-6 sm:mb-8 md:mb-10"
+              >
+                {React.createElement(ICONS[service.icon1], {
+                  className: 'w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 text-text-primary drop-shadow-[0_0_20px_rgba(255,255,255,0.2)] sm:drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]',
+                })}
+              </motion.div>
 
-            {/* Text content */}
-            <ServiceContent
-              service={service}
-              isSettled={true}
-              mobile
-            />
-          </motion.div>
-        ))}
-      </div>
-    </section>
+              {/* Text content */}
+              <ServiceContent
+                service={service}
+                isSettled={true}
+                mobile
+              />
+
+              {/* Separator between services - rounded like other borders */}
+              {index < services.length - 1 && (
+                <div className="w-full max-w-md mx-auto mt-10 sm:mt-14 md:mt-16">
+                  <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent rounded-full" />
+                </div>
+              )}
+            </motion.div>
+          ))}
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 
