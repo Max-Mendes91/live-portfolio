@@ -11,12 +11,14 @@ interface ServiceContentProps {
   service: ScrollServiceItem;
   isSettled: boolean;
   mobile?: boolean;
+  learnMoreText?: string;
 }
 
 const ServiceContent: React.FC<ServiceContentProps> = ({
   service,
   isSettled,
   mobile = false,
+  learnMoreText = 'Learn More',
 }) => {
   const contentVariants = {
     hidden: {
@@ -185,7 +187,7 @@ const ServiceContent: React.FC<ServiceContentProps> = ({
                 isSettled ? 'text-text-primary' : 'text-text-muted',
                 'transition-colors duration-500'
               )}>
-                Learn More
+                {learnMoreText}
               </span>
               <ArrowRight
                 className={cn(

@@ -16,7 +16,7 @@ interface ServicesClientProps {
 }
 
 const ServicesClient: React.FC<ServicesClientProps> = ({ locale, dictionary }) => {
-  const { nav, servicesPage } = dictionary;
+  const { nav, servicesPage, common } = dictionary;
 
   // Transform dictionary services to ScrollServiceItem format
   const services: ScrollServiceItem[] = servicesPage?.services || [];
@@ -81,7 +81,7 @@ const ServicesClient: React.FC<ServicesClientProps> = ({ locale, dictionary }) =
       </section>
 
       {/* Scroll reveal services section */}
-      <ScrollServices services={services} />
+      <ScrollServices services={services} learnMoreText={common?.learnMore} />
 
       {/* CTA Section */}
       <section className="py-8 sm:py-12 md:py-20 lg:py-32">

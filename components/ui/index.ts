@@ -20,7 +20,6 @@ export {
   CardContent,
   CardFooter,
   CardIcon,
-  ServiceCard,
 } from './Card';
 
 // Button

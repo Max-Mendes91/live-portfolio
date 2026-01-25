@@ -54,6 +54,7 @@ export interface ScrollServiceItem {
 interface ScrollServicesProps {
   services?: ScrollServiceItem[];
   className?: string;
+  learnMoreText?: string;
 }
 
 // Default services for English version
@@ -135,6 +136,7 @@ const DEFAULT_SERVICES: ScrollServiceItem[] = [
 const ScrollServices: React.FC<ScrollServicesProps> = ({
   services = DEFAULT_SERVICES,
   className,
+  learnMoreText = 'Learn More',
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -189,6 +191,7 @@ const ScrollServices: React.FC<ScrollServicesProps> = ({
               <ServiceContent
                 service={activeService}
                 isSettled={isSettled}
+                learnMoreText={learnMoreText}
               />
 
               {/* Right: 2 Large icons */}
@@ -246,6 +249,7 @@ const ScrollServices: React.FC<ScrollServicesProps> = ({
                 service={service}
                 isSettled={true}
                 mobile
+                learnMoreText={learnMoreText}
               />
 
               {/* Separator between services - rounded like other borders */}
