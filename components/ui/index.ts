@@ -20,7 +20,6 @@ export {
   CardContent,
   CardFooter,
   CardIcon,
-  ServiceCard,
 } from './Card';
 
 // Button
@@ -45,6 +44,9 @@ export {
   FeatureIcon,
   ListIcon,
 } from './Icon';
+
+// Decorative
+export { default as BinderClip } from './BinderClip';
 
 // Legacy (for backwards compatibility - will be deprecated)
 export { default as PulseBadge } from './PulseBadge';

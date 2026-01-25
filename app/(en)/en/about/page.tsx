@@ -48,6 +48,8 @@ export async function generateMetadata(): Promise<Metadata> {
       card: 'summary_large_image',
       title: aboutPage.seo.ogTitle,
       description: aboutPage.seo.metaDescription,
+      site: SITE_CONFIG.owner.social.twitterHandle,
+      creator: SITE_CONFIG.owner.social.twitterHandle,
       images: ['/og-image.png'],
     },
   };

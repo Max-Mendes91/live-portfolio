@@ -7,6 +7,26 @@ const config: Config = {
     './lib/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    // ============================================
+    // CUSTOM SCREENS (Height-based breakpoints)
+    // For devices like Nest Hub (1024x600)
+    // ============================================
+    screens: {
+      // Width-based (Tailwind defaults)
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+      // Height-based (custom)
+      'short': { 'raw': '(max-height: 700px)' },
+      'tall': { 'raw': '(min-height: 800px)' },
+      // Orientation-based
+      'landscape': { 'raw': '(orientation: landscape)' },
+      'portrait': { 'raw': '(orientation: portrait)' },
+      // Combined: wide but short (Nest Hub, landscape tablets)
+      'wide-short': { 'raw': '(min-width: 1024px) and (max-height: 700px)' },
+    },
     extend: {
       // ============================================
       // FONT FAMILY

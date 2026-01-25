@@ -29,9 +29,9 @@ const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
   };
 
   return (
-    <section id="about" className="pt-10 pb-24 px-6 md:px-12 bg-background overflow-hidden">
+    <section id="about" className="pt-8 sm:pt-10 pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 md:px-12 bg-background overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-start">
           {/* Left Column: Bio & Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -39,20 +39,20 @@ const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl md:text-7xl font-light tracking-tighter mb-4 text-white">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light tracking-tighter mb-3 sm:mb-4 text-white">
               {content.headline}
             </h2>
 
-            <p className="text-zinc-500 text-lg mb-8">
+            <p className="text-zinc-500 text-sm sm:text-base md:text-lg mb-5 sm:mb-6 md:mb-8">
               {content.subheadline}
             </p>
 
-            <p className="text-zinc-400 text-lg font-light leading-relaxed max-w-lg mb-6">
+            <p className="text-zinc-400 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-lg mb-4 sm:mb-6">
               {content.description}
             </p>
 
             {content.description2 && (
-              <p className="text-zinc-400 text-lg font-light leading-relaxed max-w-lg mb-8">
+              <p className="text-zinc-400 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-lg mb-6 sm:mb-8">
                 {content.description2}
               </p>
             )}
@@ -60,22 +60,22 @@ const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
             {/* Learn More Link - Internal link for SEO */}
             <Link
               href={content.learnMoreHref}
-              className="inline-flex items-center gap-2 text-white hover:text-zinc-300 transition-colors mb-10 group"
+              className="inline-flex items-center gap-2 text-white hover:text-zinc-300 transition-colors mb-6 sm:mb-8 md:mb-10 group text-sm sm:text-base"
             >
               <span className="underline underline-offset-4 decoration-white/30 group-hover:decoration-white/60">
                 {content.learnMoreText}
               </span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
 
-            <div className="h-[1px] bg-white/10 w-full mb-10" />
+            <div className="h-[1px] bg-white/10 w-full mb-6 sm:mb-8 md:mb-10" />
 
             {/* Trust Badges */}
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2 sm:gap-3">
               {content.trustBadges.map((badge) => (
                 <span
                   key={badge}
-                  className="px-4 py-2 rounded-lg bg-zinc-900/50 border border-white/5 text-[10px] font-medium uppercase tracking-widest text-zinc-300 hover:bg-zinc-800 transition-colors cursor-default"
+                  className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-zinc-900/50 border border-white/5 text-[9px] sm:text-[10px] font-medium uppercase tracking-wider sm:tracking-widest text-zinc-300 hover:bg-zinc-800 transition-colors cursor-default"
                 >
                   {badge}
                 </span>
@@ -89,7 +89,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="relative aspect-[4/5] md:aspect-square overflow-hidden rounded-3xl"
+            className="relative aspect-[4/5] xl:aspect-square overflow-hidden rounded-2xl sm:rounded-3xl"
           >
             <Image
               src="/images/aboutme.webp"

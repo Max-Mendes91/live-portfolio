@@ -5,9 +5,11 @@ import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import FooterSection from '@/components/sections/FooterSection';
+import SmokeEffect from '@/components/effects/SmokeEffect';
+import { FloatingTechIcons } from '@/components/effects/FloatingTechIcons';
 import PulseBadge from '@/components/ui/PulseBadge';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
-import { Display, Text } from '@/components/ui';
+import { BinderClip } from '@/components/ui';
 import { SupportedLocale } from '@/types/seo';
 import { Dictionary } from '@/types/i18n';
 
@@ -15,10 +17,6 @@ interface ProjectsClientProps {
   locale: SupportedLocale;
   dictionary: Dictionary;
 }
-
-// Shared section container style (matching about/services pages)
-const sectionContainerStyle =
-  'max-w-[90rem] mx-auto border-t border-border rounded-t-[3rem] bg-background relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)]';
 
 const ProjectsClient: React.FC<ProjectsClientProps> = ({
   locale,
@@ -32,15 +30,18 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
 
   return (
     <div className="relative">
+      {/* Floating Achievement Icons */}
+      <FloatingTechIcons preset="projects" />
+
       {/* Main content - sits above footer */}
       <div className="relative z-10 bg-background">
         <Navbar locale={locale} dictionary={nav} />
         <main className="min-h-screen bg-background">
           {/* Hero Section */}
-          <section className="relative pt-48 pb-4 overflow-hidden">
+          <section className="relative pt-24 sm:pt-32 md:pt-40 lg:pt-48 pb-4 overflow-hidden">
             <motion.div
-              initial={{ y: 200, scale: 0.98 }}
-              animate={{ y: 0, scale: 1 }}
+              initial={{ opacity: 0, y: 200, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{
                 duration: 1.6,
                 ease: [0.22, 1, 0.36, 1],
@@ -51,126 +52,140 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
                   mass: 1.2,
                 },
               }}
-              className="max-w-4xl mx-auto border-t border-white/10 rounded-t-[2rem] pt-20 lg:pt-32 pb-16 lg:pb-20 px-6 lg:px-12"
+              className="relative max-w-4xl mx-auto"
             >
-              <div className="text-center flex flex-col items-center">
-                <div className="mb-8">
-                  <PulseBadge text={projectsPage.badge} />
+              {/* Binder Clips */}
+              <BinderClip position="top-left" size="md" />
+              <BinderClip position="top-right" size="md" />
+
+              <div className="border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] bg-background relative z-10 overflow-hidden pt-12 sm:pt-16 md:pt-20 lg:pt-32 pb-10 sm:pb-12 md:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-12">
+                {/* Smoke Effect Background */}
+                <SmokeEffect intensity={0.5} />
+
+                <div className="relative z-10 text-center flex flex-col items-center">
+                  <div className="mb-5 sm:mb-6 md:mb-8">
+                    <PulseBadge text={projectsPage.badge} />
+                  </div>
+
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tighter text-text-primary mb-3 sm:mb-4 md:mb-6">
+                    {projectsPage.title}
+                  </h1>
+
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-text-secondary font-light leading-relaxed max-w-2xl">
+                    {projectsPage.subtitle}
+                  </p>
                 </div>
-
-                <Display size="md" as="h1" className="mb-6">
-                  {projectsPage.title}
-                </Display>
-
-                <Text
-                  size="lg"
-                  color="secondary"
-                  className="max-w-2xl leading-relaxed"
-                >
-                  {projectsPage.subtitle}
-                </Text>
               </div>
             </motion.div>
           </section>
 
           {/* Projects Grid Section */}
-          <section className="py-12 lg:py-20">
-            <div className={sectionContainerStyle + ' pt-16 lg:pt-24 pb-16 lg:pb-24'}>
-              <div className="max-w-6xl mx-auto px-6 lg:px-12">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {projects.map((project, index) => (
-                    <motion.div
-                      key={project.id}
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
-                      className="group"
-                    >
-                      <div className="relative overflow-hidden rounded-2xl bg-surface border border-border hover:border-white/20 transition-all p-6">
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {project.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="px-3 py-1 rounded-full bg-white/5 border border-border text-[10px] text-text-muted uppercase tracking-wider"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
+          <section className="py-8 sm:py-12 md:py-16 lg:py-20">
+            <div className="relative max-w-[90rem] mx-auto">
+              {/* Binder Clips */}
+              <BinderClip position="top-left" size="md" />
+              <BinderClip position="top-right" size="md" />
 
-                        <h3 className="text-2xl font-normal tracking-tight text-text-primary mb-3">
-                          {project.title}
-                        </h3>
-
-                        <p className="text-text-secondary text-sm font-light leading-relaxed mb-4">
-                          {project.description}
-                        </p>
-
-                        <p className="text-text-muted text-xs mb-6">
-                          {project.metric}
-                        </p>
-
-                        {project.tech && (
-                          <div className="flex flex-wrap gap-2 mb-6">
-                            {project.tech.map((tech) => (
+              <div className="border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] md:rounded-t-[3rem] bg-background relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)] pt-10 sm:pt-12 md:pt-16 lg:pt-24 pb-10 sm:pb-12 md:pb-16 lg:pb-24">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+                    {projects.map((project, index) => (
+                      <motion.div
+                        key={project.id}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                        className="group"
+                      >
+                        <div className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-surface border border-border hover:border-white/20 transition-all p-4 sm:p-5 md:p-6 h-full flex flex-col">
+                          <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
+                            {project.tags.map((tag) => (
                               <span
-                                key={tech}
-                                className="px-2 py-0.5 rounded bg-white/5 text-[10px] text-text-muted"
+                                key={tag}
+                                className="px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-white/5 border border-border text-[9px] sm:text-[10px] text-text-muted uppercase tracking-wider"
                               >
-                                {tech}
+                                {tag}
                               </span>
                             ))}
                           </div>
-                        )}
 
-                        {project.externalUrl && (
-                          <a
-                            href={project.externalUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 text-sm text-text-secondary hover:text-text-primary transition-colors"
-                          >
-                            {project.externalCta || 'Odwiedź Stronę'}
-                            <ExternalLink className="w-4 h-4" />
-                          </a>
-                        )}
-                      </div>
-                    </motion.div>
-                  ))}
+                          <h3 className="text-xl sm:text-2xl font-normal tracking-tight text-text-primary mb-2 sm:mb-3">
+                            {project.title}
+                          </h3>
+
+                          <p className="text-text-secondary text-xs sm:text-sm font-light leading-relaxed mb-3 sm:mb-4 flex-1">
+                            {project.description}
+                          </p>
+
+                          <p className="text-text-muted text-[10px] sm:text-xs mb-4 sm:mb-6">
+                            {project.metric}
+                          </p>
+
+                          {project.tech && (
+                            <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
+                              {project.tech.map((tech) => (
+                                <span
+                                  key={tech}
+                                  className="px-1.5 sm:px-2 py-0.5 rounded bg-white/5 text-[9px] sm:text-[10px] text-text-muted"
+                                >
+                                  {tech}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+
+                          {project.externalUrl && (
+                            <a
+                              href={project.externalUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-text-secondary hover:text-text-primary transition-colors"
+                            >
+                              {project.externalCta || 'Odwiedź Stronę'}
+                              <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                            </a>
+                          )}
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
           </section>
 
           {/* CTA Section */}
-          <section className="py-12 lg:py-20">
-            <div className="max-w-4xl mx-auto border-t border-white/10 rounded-t-[2rem] pt-16 px-6 lg:px-12">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="text-center"
-              >
-                <Display size="sm" as="h2" className="mb-6">
-                  {projectsPage.cta.title}
-                </Display>
-                <Text
-                  color="secondary"
-                  className="mb-10 max-w-xl mx-auto font-light"
+          <section className="py-8 sm:py-12 md:py-16 lg:py-20">
+            <div className="relative max-w-4xl mx-auto">
+              {/* Binder Clips */}
+              <BinderClip position="top-left" size="md" />
+              <BinderClip position="top-right" size="md" />
+
+              <div className="border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] bg-background relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)] pt-10 sm:pt-12 md:pt-16 lg:pt-20 pb-10 sm:pb-12 md:pb-16 px-4 sm:px-6 lg:px-12">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8 }}
+                  className="text-center"
                 >
-                  {projectsPage.cta.description}
-                </Text>
-                <div className="flex flex-col sm:flex-row justify-center gap-4">
-                  <CornerGlowButton href="/pl/kontakt">
-                    {projectsPage.cta.primaryButton}
-                  </CornerGlowButton>
-                  <CornerGlowButton href="/pl/uslugi">
-                    {projectsPage.cta.secondaryButton}
-                  </CornerGlowButton>
-                </div>
-              </motion.div>
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal tracking-tighter text-text-primary mb-4 sm:mb-5 md:mb-6">
+                    {projectsPage.cta.title}
+                  </h2>
+                  <p className="text-text-secondary text-sm sm:text-base md:text-lg mb-6 sm:mb-8 md:mb-10 max-w-xl mx-auto font-light">
+                    {projectsPage.cta.description}
+                  </p>
+                  <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+                    <CornerGlowButton href="/pl/kontakt">
+                      {projectsPage.cta.primaryButton}
+                    </CornerGlowButton>
+                    <CornerGlowButton href="/pl/uslugi">
+                      {projectsPage.cta.secondaryButton}
+                    </CornerGlowButton>
+                  </div>
+                </motion.div>
+              </div>
             </div>
           </section>
 

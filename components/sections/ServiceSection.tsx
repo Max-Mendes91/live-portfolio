@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import {
   Code2,
@@ -14,6 +14,16 @@ import {
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import PulseBadge from '@/components/ui/PulseBadge';
 import { ServicesDict, ServiceCardDict } from '@/types/i18n';
+import {
+  ReactIcon,
+  TypeScriptIcon,
+  TailwindIcon,
+  DockerIcon,
+  NextjsIcon,
+  PostgresqlIcon,
+  GitIcon,
+  VercelIcon,
+} from '@/components/effects/FloatingTechIcons/icons';
 
 // Icon mapping for dynamic icon rendering
 const ICONS: Record<string, LucideIcon> = {
@@ -31,14 +41,14 @@ interface ServiceSectionProps {
 // Code snippet with syntax highlighting
 const CodeSnippet: React.FC = () => {
   return (
-    <div className="w-full rounded-xl bg-[#0a0a0a] border-l-2 border-emerald-500/50 p-4 font-mono text-xs leading-relaxed overflow-hidden">
-      <div className="flex items-center gap-2 mb-3 text-text-muted">
-        <div className="flex gap-1.5">
-          <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
-          <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
-          <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
+    <div className="w-full rounded-lg sm:rounded-xl bg-[#0a0a0a] border-l-2 border-emerald-500/50 p-3 sm:p-4 font-mono text-[10px] sm:text-xs leading-relaxed overflow-hidden">
+      <div className="flex items-center gap-2 mb-2 sm:mb-3 text-text-muted">
+        <div className="flex gap-1 sm:gap-1.5">
+          <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/10" />
+          <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/10" />
+          <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/10" />
         </div>
-        <span className="text-[10px] uppercase tracking-wider">app/products/page.tsx</span>
+        <span className="text-[9px] sm:text-[10px] uppercase tracking-wider">app/products/page.tsx</span>
       </div>
       <code className="block">
         <span className="text-blue-400">const</span>{' '}
@@ -94,21 +104,21 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, lin
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className={`p-6 rounded-2xl bg-surface border border-border hover:border-border-hover transition-all duration-500 group flex flex-col ${className || ''}`}
+      className={`p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl bg-surface border border-border hover:border-border-hover transition-all duration-500 group flex flex-col ${className || ''}`}
     >
       <div>
-        <div className="flex items-center gap-4 mb-4">
-          <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-text-muted group-hover:text-text-primary group-hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-500">
+        <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+          <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg sm:rounded-xl bg-white/5 flex items-center justify-center text-text-muted group-hover:text-text-primary group-hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-500">
             {icon}
           </div>
-          <h3 className="text-lg font-normal tracking-tight text-text-primary">
+          <h3 className="text-base sm:text-lg font-normal tracking-tight text-text-primary">
             {title}
           </h3>
         </div>
 
-        <div className="h-[1px] bg-border-subtle w-full mb-4" />
+        <div className="h-[1px] bg-border-subtle w-full mb-3 sm:mb-4" />
 
-        <p className="font-light tracking-tight text-text-secondary text-sm leading-relaxed">
+        <p className="font-light tracking-tight text-text-secondary text-xs sm:text-sm leading-relaxed">
           {parts.length > 1 ? (
             <>
               {parts[0]}
@@ -135,6 +145,71 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, lin
   );
 };
 
+// Floating icon configuration for service hero
+interface FloatingIconConfig {
+  Icon: React.FC<{ size?: number; className?: string }>;
+  position: { x: number; y: number };
+  size: number;
+  rotation: number;
+  parallaxY: number;
+}
+
+const FLOATING_ICONS: FloatingIconConfig[] = [
+  // Left column (x: 102-105%) - shifted another +15%
+  { Icon: ReactIcon, position: { x: 102, y: 5 }, size: 55, rotation: -8, parallaxY: 35 },
+  { Icon: TailwindIcon, position: { x: 105, y: 38 }, size: 42, rotation: 6, parallaxY: 28 },
+  { Icon: GitIcon, position: { x: 102, y: 70 }, size: 38, rotation: -5, parallaxY: 22 },
+  // Middle column (x: 118-121%) - off-screen
+  { Icon: NextjsIcon, position: { x: 118, y: 12 }, size: 50, rotation: 10, parallaxY: 32 },
+  { Icon: TypeScriptIcon, position: { x: 121, y: 48 }, size: 45, rotation: -6, parallaxY: 25 },
+  { Icon: PostgresqlIcon, position: { x: 118, y: 82 }, size: 35, rotation: 8, parallaxY: 30 },
+  // Right column (x: 134-136%) - off-screen
+  { Icon: DockerIcon, position: { x: 134, y: 22 }, size: 40, rotation: 5, parallaxY: 28 },
+  { Icon: VercelIcon, position: { x: 132, y: 58 }, size: 36, rotation: -8, parallaxY: 20 },
+];
+
+// Individual floating icon with scroll-based animation
+const FloatingServiceIcon: React.FC<{
+  config: FloatingIconConfig;
+  containerRef: React.RefObject<HTMLDivElement | null>;
+}> = ({ config, containerRef }) => {
+  const { Icon, position, size, rotation, parallaxY } = config;
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start end', 'end start'],
+  });
+
+  // Fade in when section enters viewport, fade out when scrolling past hero
+  // 0.3 = section top reaches ~70% of viewport (entering)
+  // 0.5 = section middle (hero ends, cards start)
+  const opacity = useTransform(
+    scrollYProgress,
+    [0.25, 0.35, 0.45, 0.55],
+    [0, 1, 1, 0]
+  );
+
+  // Parallax vertical movement
+  const y = useTransform(scrollYProgress, [0, 1], [0, parallaxY]);
+
+  return (
+    <motion.div
+      className="absolute pointer-events-none hidden lg:block"
+      style={{
+        left: `${position.x}%`,
+        top: `${position.y}%`,
+        rotate: rotation,
+        opacity,
+        y,
+      }}
+    >
+      <div className="text-text-primary drop-shadow-[0_0_30px_rgba(96,165,250,0.3)]">
+        <Icon size={size} />
+      </div>
+    </motion.div>
+  );
+};
+
 const MarqueeRow: React.FC<{ items: string[]; direction: 'left' | 'right' }> = ({ items, direction }) => {
   const duplicatedItems = [...items, ...items, ...items, ...items, ...items, ...items, ...items, ...items];
   return (
@@ -142,12 +217,12 @@ const MarqueeRow: React.FC<{ items: string[]; direction: 'left' | 'right' }> = (
       <motion.div
         animate={{ x: direction === 'left' ? ["0%", "-50%"] : ["-50%", "0%"] }}
         transition={{ repeat: Infinity, ease: "linear", duration: 25 }}
-        className="flex gap-4 py-2"
+        className="flex gap-2 sm:gap-3 md:gap-4 py-1.5 sm:py-2"
       >
         {duplicatedItems.map((item, idx) => (
           <div
             key={idx}
-            className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/5 border border-border whitespace-nowrap text-[10px] font-medium uppercase tracking-widest text-text-muted hover:text-text-primary hover:bg-white/10 transition-all cursor-default"
+            className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-2.5 rounded-full bg-white/5 border border-border whitespace-nowrap text-[9px] sm:text-[10px] font-medium uppercase tracking-wider sm:tracking-widest text-text-muted hover:text-text-primary hover:bg-white/10 transition-all cursor-default"
           >
             <div className="w-1 h-1 rounded-full bg-text-muted" />
             {item}
@@ -160,6 +235,7 @@ const MarqueeRow: React.FC<{ items: string[]; direction: 'left' | 'right' }> = (
 
 const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
   const { hero, pills, primaryButton, secondaryButton, cards, marquee1, marquee2 } = dictionary;
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   // Get icon component from string name
   const getIcon = (iconName: string) => {
@@ -168,44 +244,52 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
   };
 
   return (
-    <section className="relative w-full bg-background pt-20">
+    <section ref={sectionRef} className="relative w-full bg-background pt-12 sm:pt-16 md:pt-20">
       {/* The "Panel" Line & Container */}
-      <div className="max-w-[90rem] mx-auto border-t border-border rounded-t-[3rem] bg-background relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)]">
+      <div className="max-w-[90rem] mx-auto border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] md:rounded-t-[3rem] bg-background relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)]">
 
         {/* Content Container */}
-        <div className="px-6 md:px-12 py-24 space-y-16">
+        <div className="px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-24 space-y-10 sm:space-y-12 md:space-y-16">
 
           {/* Block A: Service Hero */}
-          <div className="max-w-4xl">
+          <div className="max-w-4xl relative">
+            {/* Floating Tech Icons - positioned in the empty space on the right */}
+            {FLOATING_ICONS.map((config, index) => (
+              <FloatingServiceIcon
+                key={index}
+                config={config}
+                containerRef={sectionRef}
+              />
+            ))}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <div className="mb-6">
+              <div className="mb-4 sm:mb-5 md:mb-6">
                 <PulseBadge text={hero.badge} />
               </div>
 
-              <h2 className="text-4xl md:text-6xl font-normal tracking-tighter leading-tight mb-6 text-text-primary">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tighter leading-tight mb-4 sm:mb-5 md:mb-6 text-text-primary">
                 {hero.title}
               </h2>
 
-              <p className="font-light tracking-tight text-text-secondary text-lg mb-10 max-w-2xl leading-relaxed">
+              <p className="font-light tracking-tight text-text-secondary text-sm sm:text-base md:text-lg mb-6 sm:mb-8 md:mb-10 max-w-2xl leading-relaxed">
                 {hero.subtitle}
               </p>
 
-              <div className="flex flex-wrap gap-2 mb-10">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6 sm:mb-8 md:mb-10">
                 {pills.map((pill) => (
                   <span
                     key={pill}
-                    className="px-3 py-1.5 rounded-md bg-white/5 border border-border text-[10px] text-text-muted uppercase font-medium tracking-wider"
+                    className="px-2 sm:px-3 py-1 sm:py-1.5 rounded-md bg-white/5 border border-border text-[9px] sm:text-[10px] text-text-muted uppercase font-medium tracking-wider"
                   >
                     {pill}
                   </span>
                 ))}
               </div>
 
-              <div className="flex flex-col sm:flex-row items-start gap-4">
+              <div className="flex flex-row items-start gap-2 sm:gap-3 md:gap-4">
                 <CornerGlowButton href="/en/services">{primaryButton}</CornerGlowButton>
                 <CornerGlowButton href="/en/projects">{secondaryButton}</CornerGlowButton>
               </div>
@@ -213,7 +297,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
           </div>
 
           {/* Block B: Bento Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
             {/* Row 1: Wide card (2 cols) + Regular card (1 col) */}
             {cards[0] && (
               <div className="md:col-span-2 h-full">
@@ -281,7 +365,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
           </div>
 
           {/* Block C: Dual Infinite Marquee with Side Fades */}
-          <div className="relative space-y-6 pt-12">
+          <div className="relative space-y-3 sm:space-y-4 md:space-y-6 pt-6 sm:pt-8 md:pt-12">
             <MarqueeRow items={marquee1} direction="left" />
             <MarqueeRow items={marquee2} direction="right" />
           </div>

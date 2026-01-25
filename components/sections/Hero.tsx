@@ -96,7 +96,7 @@ const Hero: React.FC<HeroProps> = ({ dictionary }) => {
   }, []);
 
   return (
-    <section className="relative min-h-screen w-full flex flex-col items-center justify-center pt-20 pb-24 px-6 overflow-hidden">
+    <section className="relative min-h-screen w-full flex flex-col items-center justify-center pt-16 sm:pt-20 pb-20 sm:pb-24 px-4 sm:px-6 overflow-hidden">
       <LiquidBackground />
 
       <motion.div
@@ -110,35 +110,35 @@ const Hero: React.FC<HeroProps> = ({ dictionary }) => {
           className="flex flex-col items-center"
         >
           {/* Redline 3: The Pill Gradient Fade */}
-          <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full border-l border-t border-b border-white/20 border-r-transparent bg-gradient-to-r from-white/10 via-white/5 to-transparent backdrop-blur-sm mb-6 w-fit">
-            <span className="relative flex h-2 w-2">
+          <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border-l border-t border-b border-white/20 border-r-transparent bg-gradient-to-r from-white/10 via-white/5 to-transparent backdrop-blur-sm mb-4 sm:mb-6 w-fit">
+            <span className="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]"></span>
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]"></span>
             </span>
-            <span className="text-[10px] font-medium tracking-[0.25em] text-white uppercase opacity-80">
+            <span className="text-[9px] sm:text-[10px] font-medium tracking-[0.2em] sm:tracking-[0.25em] text-white uppercase opacity-80">
               {content.badge}
             </span>
           </div>
 
           {/* Lighter Typography with Tight Tracking */}
-          <h1 className="text-5xl md:text-[90px] font-light tracking-tighter leading-[1.1] pb-2 mb-4 select-none text-white max-w-[1200px]">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[90px] font-light tracking-tighter leading-[1.1] pb-1 sm:pb-2 mb-3 sm:mb-4 select-none text-white max-w-[1200px]">
             {content.headline}
           </h1>
 
-          <h2 className="text-lg md:text-xl font-light tracking-tight text-zinc-300 mb-6">
+          <h2 className="text-base sm:text-lg md:text-xl font-light tracking-tight text-zinc-300 mb-4 sm:mb-6">
             {content.subheadline}
           </h2>
 
-          <p className="font-light tracking-tight text-zinc-400 text-sm md:text-base max-w-2xl mx-auto mb-8 leading-relaxed opacity-90">
+          <p className="font-light tracking-tight text-zinc-400 text-xs sm:text-sm md:text-base max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed opacity-90 px-2 sm:px-0">
             {content.description}
           </p>
 
-          <div className="flex flex-col items-center gap-3 mb-6">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6 relative">
+          <div className="flex flex-col items-center gap-2 sm:gap-3 mb-5 sm:mb-6">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6 relative">
               <CornerGlowButton>{content.ctaPrimary}</CornerGlowButton>
               <CornerGlowButton>{content.ctaSecondary}</CornerGlowButton>
             </div>
-            <p className="text-sm text-zinc-500">
+            <p className="text-xs sm:text-sm text-zinc-500">
               {content.phoneLabel}{' '}
               <a
                 href={`tel:${SITE_CONFIG.owner.phone.replace(/\s/g, '')}`}
@@ -154,17 +154,17 @@ const Hero: React.FC<HeroProps> = ({ dictionary }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-wrap items-center justify-center gap-3"
+            className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-2 sm:px-0"
           >
             {content.trustSignals.map((signal) => {
               const IconComponent = iconMap[signal.icon as keyof typeof iconMap];
               return (
                 <div
                   key={signal.label}
-                  className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm"
+                  className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm"
                 >
-                  {IconComponent && <IconComponent className="w-3.5 h-3.5 text-white/60" />}
-                  <span className="text-[10px] md:text-xs font-medium tracking-wide text-white/70">
+                  {IconComponent && <IconComponent className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white/60" />}
+                  <span className="text-[9px] sm:text-[10px] md:text-xs font-medium tracking-wide text-white/70">
                     {signal.label}
                   </span>
                 </div>
@@ -176,21 +176,21 @@ const Hero: React.FC<HeroProps> = ({ dictionary }) => {
 
       <motion.div
         style={{ opacity }}
-        className="absolute bottom-10 w-full max-w-[1400px] flex items-center justify-center px-12 z-20"
+        className="absolute bottom-6 sm:bottom-10 w-full max-w-[1400px] flex items-center justify-center px-4 sm:px-12 z-20"
       >
-        <div className="flex-1 h-[1px] bg-white/[0.05] mr-12" />
+        <div className="hidden md:block flex-1 h-[1px] bg-white/[0.05] mr-12" />
         <div className="flex items-center">
-          <span className="text-[10px] font-medium tracking-[0.3em] text-zinc-500/60 uppercase whitespace-nowrap text-right mr-10">{content.scrollDown}</span>
-          <div className="w-5 h-8 rounded-full border border-white/20 flex justify-center p-1.5 backdrop-blur-[2px]">
+          <span className="hidden sm:block text-[9px] sm:text-[10px] font-medium tracking-[0.2em] sm:tracking-[0.3em] text-zinc-500/60 uppercase whitespace-nowrap text-right mr-4 sm:mr-10">{content.scrollDown}</span>
+          <div className="w-4 h-7 sm:w-5 sm:h-8 rounded-full border border-white/20 flex justify-center p-1 sm:p-1.5 backdrop-blur-[2px]">
             <motion.div
               animate={{ y: wheelY }}
               transition={{ type: "spring", stiffness: 350, damping: 25 }}
-              className="w-0.5 h-2.5 bg-white/80 rounded-full shadow-[0_0_8px_white]"
+              className="w-0.5 h-2 sm:h-2.5 bg-white/80 rounded-full shadow-[0_0_8px_white]"
             />
           </div>
-          <span className="text-[10px] font-medium tracking-[0.3em] text-zinc-500/60 uppercase whitespace-nowrap text-left ml-10">{content.toSeeProjects}</span>
+          <span className="hidden sm:block text-[9px] sm:text-[10px] font-medium tracking-[0.2em] sm:tracking-[0.3em] text-zinc-500/60 uppercase whitespace-nowrap text-left ml-4 sm:ml-10">{content.toSeeProjects}</span>
         </div>
-        <div className="flex-1 h-[1px] bg-white/[0.05] ml-12" />
+        <div className="hidden md:block flex-1 h-[1px] bg-white/[0.05] ml-12" />
       </motion.div>
     </section>
   );

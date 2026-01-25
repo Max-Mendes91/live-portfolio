@@ -6,9 +6,11 @@ import { motion } from 'framer-motion';
 import { Github, Linkedin, Briefcase } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import FooterSection from '@/components/sections/FooterSection';
+import SmokeEffect from '@/components/effects/SmokeEffect';
+import { FloatingTechIcons } from '@/components/effects/FloatingTechIcons';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import PulseBadge from '@/components/ui/PulseBadge';
-import { Display, Heading, Text } from '@/components/ui';
+import { Display, Heading, Text, BinderClip } from '@/components/ui';
 import { Dictionary, SupportedLocale } from '@/types/i18n';
 import { SITE_CONFIG } from '@/lib/seo/config';
 
@@ -73,9 +75,6 @@ function linkifyBio(text: string): React.ReactNode {
   return result;
 }
 
-// Shared section container style (matching services page)
-const sectionContainerStyle = "max-w-[90rem] mx-auto border-t border-border rounded-t-[3rem] bg-background relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)]";
-
 const AboutClient: React.FC<AboutClientProps> = ({ locale, dictionary }) => {
   const { aboutPage, nav, footer } = dictionary;
 
@@ -83,13 +82,16 @@ const AboutClient: React.FC<AboutClientProps> = ({ locale, dictionary }) => {
 
   return (
     <div className="relative">
+      {/* Floating Tech Icons - Fixed position, appears above all content */}
+      <FloatingTechIcons preset="about" />
+
       {/* Main content - sits above footer */}
       <div className="relative z-10 bg-background">
         <Navbar locale={locale} dictionary={nav} />
-        <main className="min-h-screen bg-background">
+        <main className="relative min-h-screen bg-background overflow-hidden">
 
       {/* Hero Section */}
-      <section className="relative pt-48 pb-4 overflow-hidden">
+      <section className="relative pt-24 sm:pt-32 md:pt-40 lg:pt-48 pb-4 overflow-hidden">
         <motion.div
           initial={{ y: 200, scale: 0.98 }}
           animate={{ y: 0, scale: 1 }}
@@ -103,14 +105,17 @@ const AboutClient: React.FC<AboutClientProps> = ({ locale, dictionary }) => {
               mass: 1.2,
             },
           }}
-          className="max-w-4xl mx-auto border-t border-white/10 rounded-t-[2rem] pt-20 lg:pt-32 pb-16 lg:pb-20 px-6 lg:px-12"
+          className="relative max-w-4xl mx-auto border-t border-white/10 rounded-t-[1.5rem] sm:rounded-t-[2rem] pt-12 sm:pt-16 md:pt-20 lg:pt-32 pb-10 sm:pb-12 md:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-12 overflow-hidden"
         >
-          <div className="text-center flex flex-col items-center">
-            <div className="mb-8">
+          {/* Smoke Effect Background */}
+          <SmokeEffect intensity={0.5} />
+
+          <div className="relative z-10 text-center flex flex-col items-center">
+            <div className="mb-5 sm:mb-6 md:mb-8">
               <PulseBadge text={aboutPage.location} />
             </div>
 
-            <Display size="md" as="h1" className="mb-8">
+            <Display size="md" as="h1" className="mb-5 sm:mb-6 md:mb-8">
               {aboutPage.heading}
             </Display>
           </div>
@@ -118,38 +123,49 @@ const AboutClient: React.FC<AboutClientProps> = ({ locale, dictionary }) => {
       </section>
 
       {/* Bio Section */}
-      <section className="py-12 lg:py-20">
-        <div className={sectionContainerStyle + " pt-16 lg:pt-24 pb-16 lg:pb-24"}>
-          <div className="max-w-4xl mx-auto px-6 lg:px-12">
-            <div className="space-y-6">
-              {aboutPage.bio.map((paragraph, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                >
-                  <Text size="lg" color="secondary" className="leading-relaxed">
-                    {linkifyBio(paragraph)}
-                  </Text>
-                </motion.div>
-              ))}
+      <section className="py-8 sm:py-10 md:py-12 lg:py-20">
+        <div className="relative max-w-[90rem] mx-auto">
+          {/* Binder Clips */}
+          <BinderClip position="top-left" size="md" />
+          <BinderClip position="top-right" size="md" />
+
+          <div className="border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] md:rounded-t-[3rem] bg-background relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)] pt-10 sm:pt-12 md:pt-16 lg:pt-24 pb-10 sm:pb-12 md:pb-16 lg:pb-24">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
+              <div className="space-y-4 sm:space-y-5 md:space-y-6">
+                {aboutPage.bio.map((paragraph, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                  >
+                    <Text size="lg" color="secondary" className="leading-relaxed">
+                      {linkifyBio(paragraph)}
+                    </Text>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Tech Stack Section */}
-      <section className="py-12 lg:py-20">
-        <div className="max-w-4xl mx-auto border-t border-white/10 rounded-t-[2rem] pt-16 px-6 lg:px-12">
+      <section className="py-8 sm:py-10 md:py-12 lg:py-20">
+        <div className="relative max-w-4xl mx-auto">
+          {/* Binder Clips */}
+          <BinderClip position="top-left" size="md" />
+          <BinderClip position="top-right" size="md" />
+
+          <div className="border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] pt-10 sm:pt-12 md:pt-16 px-4 sm:px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Heading size="lg" as="h2" className="mb-10">
+            <Heading size="lg" as="h2" className="mb-6 sm:mb-8 md:mb-10">
               {aboutPage.skills.title}
             </Heading>
           </motion.div>
@@ -160,18 +176,18 @@ const AboutClient: React.FC<AboutClientProps> = ({ locale, dictionary }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-8"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-7 md:gap-8"
           >
             {aboutPage.skills.categories?.map((category, index) => (
               <div key={index}>
-                <Text size="sm" color="muted" className="uppercase tracking-widest mb-3">
+                <Text size="sm" color="muted" className="uppercase tracking-wider sm:tracking-widest mb-2 sm:mb-3">
                   {category.name}
                 </Text>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {category.items.map((item, idx) => (
                     <span
                       key={idx}
-                      className="px-4 py-2 rounded-full bg-zinc-900/50 border border-white/5 text-xs font-medium text-zinc-300 hover:bg-zinc-800 transition-colors cursor-default"
+                      className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-surface/50 border border-border-subtle text-[10px] sm:text-xs font-medium text-text-secondary hover:bg-surface-hover transition-colors cursor-default"
                     >
                       {item}
                     </span>
@@ -180,25 +196,31 @@ const AboutClient: React.FC<AboutClientProps> = ({ locale, dictionary }) => {
               </div>
             ))}
           </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Experience Section */}
-      <section className="py-12 lg:py-20">
-        <div className={sectionContainerStyle + " pt-16 lg:pt-24 pb-16 lg:pb-24"}>
-          <div className="max-w-4xl mx-auto px-6 lg:px-12">
+      <section className="py-8 sm:py-10 md:py-12 lg:py-20">
+        <div className="relative max-w-[90rem] mx-auto">
+          {/* Binder Clips */}
+          <BinderClip position="top-left" size="md" />
+          <BinderClip position="top-right" size="md" />
+
+          <div className="border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] md:rounded-t-[3rem] bg-background relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)] pt-10 sm:pt-12 md:pt-16 lg:pt-24 pb-10 sm:pb-12 md:pb-16 lg:pb-24">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <Heading size="lg" as="h2" className="mb-8">
+              <Heading size="lg" as="h2" className="mb-5 sm:mb-6 md:mb-8">
                 {aboutPage.experience.title}
               </Heading>
             </motion.div>
 
-            <div className="space-y-8">
+            <div className="space-y-5 sm:space-y-6 md:space-y-8">
               {aboutPage.experience.items.map((item, index) => (
                 <motion.div
                   key={index}
@@ -206,19 +228,19 @@ const AboutClient: React.FC<AboutClientProps> = ({ locale, dictionary }) => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="relative pl-8 border-l border-border"
+                  className="relative pl-5 sm:pl-6 md:pl-8 border-l border-border"
                 >
-                  <div className="absolute left-0 top-0 w-3 h-3 -translate-x-[7px] bg-surface-hover rounded-full" />
-                  <div className="flex flex-wrap items-center gap-3 mb-2">
+                  <div className="absolute left-0 top-0 w-2.5 h-2.5 sm:w-3 sm:h-3 -translate-x-[6px] sm:-translate-x-[7px] bg-surface-hover rounded-full" />
+                  <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-1.5 sm:mb-2">
                     <Heading size="sm" as="h3">{item.role}</Heading>
                     <span className="text-text-muted">·</span>
                     <Text color="secondary">{item.company}</Text>
                   </div>
-                  <Text size="sm" color="muted" className="mb-3 flex items-center gap-2">
-                    <Briefcase className="w-4 h-4" />
+                  <Text size="sm" color="muted" className="mb-2 sm:mb-3 flex items-center gap-1.5 sm:gap-2">
+                    <Briefcase className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     {item.period}
                   </Text>
-                  <Text color="secondary" className="leading-relaxed">{item.description}</Text>
+                  <Text color="secondary" className="leading-relaxed text-sm sm:text-base">{item.description}</Text>
                 </motion.div>
               ))}
             </div>
@@ -228,50 +250,57 @@ const AboutClient: React.FC<AboutClientProps> = ({ locale, dictionary }) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="mt-8 flex items-center gap-4"
+              className="mt-5 sm:mt-6 md:mt-8 flex flex-wrap items-center gap-3 sm:gap-4"
             >
               <a
                 href={SITE_CONFIG.owner.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors"
+                className="inline-flex items-center gap-1.5 sm:gap-2 text-text-secondary hover:text-text-primary transition-colors text-sm sm:text-base"
               >
-                <Github className="w-5 h-5" />
+                <Github className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span>{aboutPage.social.github}</span>
               </a>
               <a
                 href={SITE_CONFIG.owner.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors"
+                className="inline-flex items-center gap-1.5 sm:gap-2 text-text-secondary hover:text-text-primary transition-colors text-sm sm:text-base"
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span>{aboutPage.social.linkedin}</span>
               </a>
             </motion.div>
           </div>
         </div>
+      </div>
       </section>
 
       {/* Decision Section */}
-      <section className="py-12 lg:py-20">
-        <div className="max-w-4xl mx-auto border-t border-white/10 rounded-t-[2rem] pt-16 px-6 lg:px-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
-            <Display size="sm" as="h2" className="mb-6">
-              {aboutPage.cta.title}
-            </Display>
-            <Text color="secondary" className="mb-10 max-w-2xl mx-auto">
-              {aboutPage.cta.description}
-            </Text>
+      <section className="py-8 sm:py-10 md:py-12 lg:py-20">
+        <div className="relative max-w-4xl mx-auto">
+          {/* Binder Clips */}
+          <BinderClip position="top-left" size="md" />
+          <BinderClip position="top-right" size="md" />
 
-            <CornerGlowButton href="/pl/kontakt">{aboutPage.cta.button}</CornerGlowButton>
-          </motion.div>
+          <div className="border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] pt-10 sm:pt-12 md:pt-16 px-4 sm:px-6 lg:px-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center"
+            >
+              <Display size="sm" as="h2" className="mb-4 sm:mb-5 md:mb-6">
+                {aboutPage.cta.title}
+              </Display>
+              <Text color="secondary" className="mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto text-sm sm:text-base">
+                {aboutPage.cta.description}
+              </Text>
+
+              <CornerGlowButton href="/pl/kontakt">{aboutPage.cta.button}</CornerGlowButton>
+            </motion.div>
+          </div>
         </div>
       </section>
 
