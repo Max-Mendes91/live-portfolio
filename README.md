@@ -2,7 +2,7 @@
 
 Production portfolio for freelance web development.
 
-**Live:** [Coming soon - deploying to Vercel]
+**Live:** https://live-portfolio-sm3r0z9oi-max-mendes91s-projects.vercel.app
 
 ## Tech Stack
 
