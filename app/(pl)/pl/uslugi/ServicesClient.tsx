@@ -7,6 +7,7 @@ import { Button, BinderClip } from '@/components/ui';
 import Navbar from '@/components/Navbar';
 import FooterSection from '@/components/sections/FooterSection';
 import SmokeEffect from '@/components/effects/SmokeEffect';
+import { FloatingTechIcons } from '@/components/effects/FloatingTechIcons';
 import { SupportedLocale } from '@/types/seo';
 import { Dictionary } from '@/types/i18n';
 
@@ -23,6 +24,9 @@ const ServicesClient: React.FC<ServicesClientProps> = ({ locale, dictionary }) =
 
   return (
     <div className="relative">
+      {/* Floating Service Icons - Hero + CTA only */}
+      <FloatingTechIcons preset="services" />
+
       {/* Main content - sits above footer */}
       <div className="relative z-10 bg-background">
         <Navbar locale={locale} dictionary={nav} />

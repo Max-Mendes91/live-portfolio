@@ -192,7 +192,8 @@
     "contact": {
       "name": "Max Mendes",
       "location": "Częstochowa, Poland",
-      "available": "Available for work"
+      "available": "Available for work",
+      "phone": "+48 502 742 941"
     },
     "bottom": {
       "copyright": "Max Mendes",
@@ -270,7 +271,7 @@
         "id": "flowmate",
         "title": "FlowMate — AI Email Management Platform",
         "description": "Production SaaS platform built with Next.js and React for high-volume email and messaging management. Full-stack architecture with secure authentication, async processing, and AI integrations handling real workloads at scale.",
-        "metric": "Launched January 2025 · 300+ dev hours · Multi-channel AI integration",
+        "metric": "Launched January 2026 · 300+ dev hours · Multi-channel AI integration",
         "href": "/en/projects",
         "externalUrl": "https://www.flowmate.click/",
         "cta": "View Project",
@@ -280,15 +281,16 @@
       },
       {
         "id": "markmind",
-        "title": "MarkMind — AI Bookmark Manager",
-        "description": "MarkMind is a live Chrome browser extension built with JavaScript and AI integration to organize bookmarks automatically. It runs in production for hundreds of users and processes data instantly without impacting browser performance.",
-        "metric": "401+ Active Users · Live on Chrome Web Store",
+        "title": "MarkMind V2 — Chrome Extension Development",
+        "role": "Contributor Role",
+        "description": "Working with the MarkMind team to develop V2 of this AI-powered bookmark manager. Contributing to feature development and AI integration for a Chrome extension that serves 401+ active users in production.",
+        "metric": "401+ Users · V2 in Development",
         "href": "/en/projects",
         "externalUrl": "https://chromewebstore.google.com/detail/markmind/bdobgdkpeffdbonfpokgkbncgnbnjnoo",
         "cta": "View Project",
-        "externalCta": "Get Extension",
+        "externalCta": "View Live Extension",
         "tags": ["Chrome Extension", "AI", "Productivity"],
-        "tech": ["JavaScript", "Chrome APIs", "OpenAI", "IndexedDB"]
+        "tech": ["JavaScript", "Chrome APIs", "AI Integration"]
       }
     ]
   },
@@ -377,6 +379,24 @@
           "company": "Contract",
           "period": "2023 – Present",
           "description": "160 hours/month analyzing systems and translating business requirements into technical solutions. This role taught me how businesses actually use software—skills that directly feed my development work. It's a constant loop: understand constraints, build solutions that fit reality."
+        },
+        {
+          "role": "Support Technician",
+          "company": "Cognizant Technology Solutions",
+          "period": "Jan 2021 – Dec 2022",
+          "description": "Delivered technical support across multiple platforms and enterprise tools. Worked with ticketing systems and cloud environments—early exposure to how software runs in production."
+        },
+        {
+          "role": "Manager / Owner",
+          "company": "Multiple Businesses",
+          "period": "2013 – 2020",
+          "description": "Managed operations, staffing, and financial planning for multiple businesses. Built communication and problem-solving skills that directly translate to client work and project management."
+        },
+        {
+          "role": "Master in Management",
+          "company": "University of Lusíada",
+          "period": "Education",
+          "description": ""
         }
       ]
     },

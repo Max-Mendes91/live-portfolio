@@ -54,7 +54,8 @@ const WorkGrid: React.FC<WorkGridProps> = ({ dictionary }) => {
                   'relative h-full p-6 md:p-8 rounded-2xl',
                   'bg-surface border border-border',
                   'transition-all duration-300',
-                  'hover:border-border-hover hover:bg-surface-hover'
+                  'hover:border-border-hover hover:bg-surface-hover',
+                  'flex flex-col'
                 )}
               >
                 {/* Tags */}
@@ -79,8 +80,8 @@ const WorkGrid: React.FC<WorkGridProps> = ({ dictionary }) => {
                   {project.title}
                 </h3>
 
-                {/* Description */}
-                <p className="text-text-secondary text-sm md:text-base leading-relaxed mb-4">
+                {/* Description - flex-1 to take available space */}
+                <p className="text-text-secondary text-sm md:text-base leading-relaxed mb-4 flex-1">
                   {project.description}
                 </p>
 

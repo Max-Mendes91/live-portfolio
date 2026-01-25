@@ -168,6 +168,7 @@ export interface FooterDict {
     name: string;
     location: string;
     available: string;
+    phone: string;
   };
   bottom: {
     copyright: string;

@@ -200,7 +200,8 @@
     "contact": {
       "name": "Max Mendes",
       "location": "Częstochowa, Polska",
-      "available": "Dostępny do pracy"
+      "available": "Dostępny do pracy",
+      "phone": "502 742 941"
     },
     "bottom": {
       "copyright": "Max Mendes",
@@ -278,7 +279,7 @@
         "id": "flowmate",
         "title": "FlowMate — Platforma AI do Zarządzania Emailami",
         "description": "Produkcyjna platforma SaaS w Next.js i React do zarządzania dużymi wolumenami e-maili i komunikacji. Architektura full-stack z bezpieczną autoryzacją, przetwarzaniem asynchronicznym i integracjami AI, obsługująca realne obciążenia na skalę.",
-        "metric": "Uruchomiony styczeń 2025 · 300+ godzin rozwoju · Integracja AI z wieloma kanałami",
+        "metric": "Uruchomiony styczeń 2026 · 300+ godzin rozwoju · Integracja AI z wieloma kanałami",
         "href": "/pl/projekty",
         "externalUrl": "https://www.flowmate.click/",
         "cta": "Zobacz Projekt",
@@ -288,15 +289,16 @@
       },
       {
         "id": "markmind",
-        "title": "MarkMind — Menedżer Zakładek z AI",
-        "description": "MarkMind to działające w produkcji rozszerzenie Chrome stworzone w JavaScript z integracją AI do automatycznej organizacji zakładek. Aplikacja jest używana przez setki użytkowników i przetwarza dane w czasie rzeczywistym bez wpływu na wydajność przeglądarki.",
-        "metric": "401+ Aktywnych Użytkowników · Dostępne w Chrome Web Store",
+        "title": "MarkMind V2 — Rozwój Rozszerzenia Chrome",
+        "role": "Rola Współtwórcy",
+        "description": "Współpracuję z zespołem MarkMind przy tworzeniu wersji V2 tego menedżera zakładek opartego na AI. Biorę udział w rozwoju funkcji i integracji AI dla rozszerzenia Chrome obsługującego 401+ aktywnych użytkowników w produkcji.",
+        "metric": "401+ Użytkowników · V2 w Rozwoju",
         "href": "/pl/projekty",
         "externalUrl": "https://chromewebstore.google.com/detail/markmind/bdobgdkpeffdbonfpokgkbncgnbnjnoo",
         "cta": "Zobacz Projekt",
-        "externalCta": "Pobierz Rozszerzenie",
+        "externalCta": "Zobacz Rozszerzenie",
         "tags": ["Rozszerzenie Chrome", "AI", "Produktywność"],
-        "tech": ["JavaScript", "Chrome APIs", "OpenAI", "IndexedDB"]
+        "tech": ["JavaScript", "Chrome APIs", "Integracja AI"]
       }
     ]
   },
@@ -386,6 +388,24 @@
           "company": "Kontrakt",
           "period": "2023 – Obecnie",
           "description": "160 godzin miesięcznie analizuję systemy biznesowe i tłumaczę wymagania klientów na rozwiązania techniczne. Ta praca nauczyła mnie, jak przedsiębiorstwa naprawdę korzystają z oprogramowania—umiejętność, którą wykorzystuję przy projektowaniu aplikacji webowych i sklepów internetowych."
+        },
+        {
+          "role": "Specjalista Wsparcia Technicznego",
+          "company": "Cognizant Technology Solutions",
+          "period": "Styczeń 2021 – Grudzień 2022",
+          "description": "Dostarczałem wsparcie techniczne na wielu platformach i narzędziach korporacyjnych. Praca z systemami ticketowymi i środowiskami chmurowymi—wczesne doświadczenie z tym, jak oprogramowanie działa w produkcji."
+        },
+        {
+          "role": "Menedżer / Właściciel",
+          "company": "Kilka Firm",
+          "period": "2013 – 2020",
+          "description": "Zarządzałem operacjami, kadrami i planowaniem finansowym w kilku firmach. Zbudowałem umiejętności komunikacyjne i rozwiązywania problemów, które bezpośrednio przekładają się na pracę z klientami i zarządzanie projektami."
+        },
+        {
+          "role": "Magister Zarządzania",
+          "company": "Uniwersytet Lusíada",
+          "period": "Wykształcenie",
+          "description": ""
         }
       ]
     },

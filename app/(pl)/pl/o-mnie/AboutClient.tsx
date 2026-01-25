@@ -7,6 +7,7 @@ import { Github, Linkedin, Briefcase } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import FooterSection from '@/components/sections/FooterSection';
 import SmokeEffect from '@/components/effects/SmokeEffect';
+import { FloatingTechIcons } from '@/components/effects/FloatingTechIcons';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import PulseBadge from '@/components/ui/PulseBadge';
 import { Display, Heading, Text, BinderClip } from '@/components/ui';
@@ -81,10 +82,13 @@ const AboutClient: React.FC<AboutClientProps> = ({ locale, dictionary }) => {
 
   return (
     <div className="relative">
+      {/* Floating Tech Icons - Fixed position, appears above all content */}
+      <FloatingTechIcons preset="about" />
+
       {/* Main content - sits above footer */}
       <div className="relative z-10 bg-background">
         <Navbar locale={locale} dictionary={nav} />
-        <main className="min-h-screen bg-background">
+        <main className="relative min-h-screen bg-background overflow-hidden">
 
       {/* Hero Section */}
       <section className="relative pt-24 sm:pt-32 md:pt-40 lg:pt-48 pb-4 overflow-hidden">
@@ -183,7 +187,7 @@ const AboutClient: React.FC<AboutClientProps> = ({ locale, dictionary }) => {
                   {category.items.map((item, idx) => (
                     <span
                       key={idx}
-                      className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-zinc-900/50 border border-white/5 text-[10px] sm:text-xs font-medium text-zinc-300 hover:bg-zinc-800 transition-colors cursor-default"
+                      className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-surface/50 border border-border-subtle text-[10px] sm:text-xs font-medium text-text-secondary hover:bg-surface-hover transition-colors cursor-default"
                     >
                       {item}
                     </span>

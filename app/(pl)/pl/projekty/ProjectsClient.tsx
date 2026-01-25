@@ -6,6 +6,7 @@ import { ExternalLink } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import FooterSection from '@/components/sections/FooterSection';
 import SmokeEffect from '@/components/effects/SmokeEffect';
+import { FloatingTechIcons } from '@/components/effects/FloatingTechIcons';
 import PulseBadge from '@/components/ui/PulseBadge';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import { BinderClip } from '@/components/ui';
@@ -29,6 +30,9 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
 
   return (
     <div className="relative">
+      {/* Floating Achievement Icons */}
+      <FloatingTechIcons preset="projects" />
+
       {/* Main content - sits above footer */}
       <div className="relative z-10 bg-background">
         <Navbar locale={locale} dictionary={nav} />
@@ -94,7 +98,7 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
                         transition={{ duration: 0.6, delay: index * 0.1 }}
                         className="group"
                       >
-                        <div className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-surface border border-border hover:border-white/20 transition-all p-4 sm:p-5 md:p-6">
+                        <div className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-surface border border-border hover:border-white/20 transition-all p-4 sm:p-5 md:p-6 h-full flex flex-col">
                           <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                             {project.tags.map((tag) => (
                               <span
@@ -110,7 +114,7 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
                             {project.title}
                           </h3>
 
-                          <p className="text-text-secondary text-xs sm:text-sm font-light leading-relaxed mb-3 sm:mb-4">
+                          <p className="text-text-secondary text-xs sm:text-sm font-light leading-relaxed mb-3 sm:mb-4 flex-1">
                             {project.description}
                           </p>
 

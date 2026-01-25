@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import {
   Code2,
@@ -14,6 +14,16 @@ import {
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import PulseBadge from '@/components/ui/PulseBadge';
 import { ServicesDict, ServiceCardDict } from '@/types/i18n';
+import {
+  ReactIcon,
+  TypeScriptIcon,
+  TailwindIcon,
+  DockerIcon,
+  NextjsIcon,
+  PostgresqlIcon,
+  GitIcon,
+  VercelIcon,
+} from '@/components/effects/FloatingTechIcons/icons';
 
 // Icon mapping for dynamic icon rendering
 const ICONS: Record<string, LucideIcon> = {
@@ -135,6 +145,71 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, lin
   );
 };
 
+// Floating icon configuration for service hero
+interface FloatingIconConfig {
+  Icon: React.FC<{ size?: number; className?: string }>;
+  position: { x: number; y: number };
+  size: number;
+  rotation: number;
+  parallaxY: number;
+}
+
+const FLOATING_ICONS: FloatingIconConfig[] = [
+  // Left column (x: 102-105%) - shifted another +15%
+  { Icon: ReactIcon, position: { x: 102, y: 5 }, size: 55, rotation: -8, parallaxY: 35 },
+  { Icon: TailwindIcon, position: { x: 105, y: 38 }, size: 42, rotation: 6, parallaxY: 28 },
+  { Icon: GitIcon, position: { x: 102, y: 70 }, size: 38, rotation: -5, parallaxY: 22 },
+  // Middle column (x: 118-121%) - off-screen
+  { Icon: NextjsIcon, position: { x: 118, y: 12 }, size: 50, rotation: 10, parallaxY: 32 },
+  { Icon: TypeScriptIcon, position: { x: 121, y: 48 }, size: 45, rotation: -6, parallaxY: 25 },
+  { Icon: PostgresqlIcon, position: { x: 118, y: 82 }, size: 35, rotation: 8, parallaxY: 30 },
+  // Right column (x: 134-136%) - off-screen
+  { Icon: DockerIcon, position: { x: 134, y: 22 }, size: 40, rotation: 5, parallaxY: 28 },
+  { Icon: VercelIcon, position: { x: 132, y: 58 }, size: 36, rotation: -8, parallaxY: 20 },
+];
+
+// Individual floating icon with scroll-based animation
+const FloatingServiceIcon: React.FC<{
+  config: FloatingIconConfig;
+  containerRef: React.RefObject<HTMLDivElement | null>;
+}> = ({ config, containerRef }) => {
+  const { Icon, position, size, rotation, parallaxY } = config;
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start end', 'end start'],
+  });
+
+  // Fade in when section enters viewport, fade out when scrolling past hero
+  // 0.3 = section top reaches ~70% of viewport (entering)
+  // 0.5 = section middle (hero ends, cards start)
+  const opacity = useTransform(
+    scrollYProgress,
+    [0.25, 0.35, 0.45, 0.55],
+    [0, 1, 1, 0]
+  );
+
+  // Parallax vertical movement
+  const y = useTransform(scrollYProgress, [0, 1], [0, parallaxY]);
+
+  return (
+    <motion.div
+      className="absolute pointer-events-none hidden lg:block"
+      style={{
+        left: `${position.x}%`,
+        top: `${position.y}%`,
+        rotate: rotation,
+        opacity,
+        y,
+      }}
+    >
+      <div className="text-text-primary drop-shadow-[0_0_30px_rgba(96,165,250,0.3)]">
+        <Icon size={size} />
+      </div>
+    </motion.div>
+  );
+};
+
 const MarqueeRow: React.FC<{ items: string[]; direction: 'left' | 'right' }> = ({ items, direction }) => {
   const duplicatedItems = [...items, ...items, ...items, ...items, ...items, ...items, ...items, ...items];
   return (
@@ -160,6 +235,7 @@ const MarqueeRow: React.FC<{ items: string[]; direction: 'left' | 'right' }> = (
 
 const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
   const { hero, pills, primaryButton, secondaryButton, cards, marquee1, marquee2 } = dictionary;
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   // Get icon component from string name
   const getIcon = (iconName: string) => {
@@ -168,7 +244,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
   };
 
   return (
-    <section className="relative w-full bg-background pt-12 sm:pt-16 md:pt-20">
+    <section ref={sectionRef} className="relative w-full bg-background pt-12 sm:pt-16 md:pt-20">
       {/* The "Panel" Line & Container */}
       <div className="max-w-[90rem] mx-auto border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] md:rounded-t-[3rem] bg-background relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)]">
 
@@ -176,7 +252,15 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
         <div className="px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-24 space-y-10 sm:space-y-12 md:space-y-16">
 
           {/* Block A: Service Hero */}
-          <div className="max-w-4xl">
+          <div className="max-w-4xl relative">
+            {/* Floating Tech Icons - positioned in the empty space on the right */}
+            {FLOATING_ICONS.map((config, index) => (
+              <FloatingServiceIcon
+                key={index}
+                config={config}
+                containerRef={sectionRef}
+              />
+            ))}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}

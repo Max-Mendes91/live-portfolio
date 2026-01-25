@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Github, Linkedin, Twitter, Instagram, ArrowUpRight, Mail, MapPin } from 'lucide-react';
+import { Github, Linkedin, Twitter, Instagram, ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import SmokeEffect from '@/components/effects/SmokeEffect';
 import { SITE_CONFIG } from '@/lib/seo/config';
@@ -91,12 +91,12 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
               <h3 className="text-[8px] sm:text-[10px] font-medium uppercase tracking-[0.15em] sm:tracking-[0.2em] text-text-muted mb-2 sm:mb-4">
                 {content.sections.quickLinks}
               </h3>
-              <nav className="flex flex-col gap-1 sm:gap-2 items-center sm:items-start">
+              <nav className="flex flex-col items-center sm:items-start">
                 {quickLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-[10px] sm:text-sm text-text-secondary hover:text-text-primary transition-colors"
+                    className="text-[10px] sm:text-sm text-text-secondary hover:text-text-primary transition-colors py-1.5 sm:py-1 min-h-[36px] sm:min-h-0 flex items-center"
                   >
                     {link.label}
                   </Link>
@@ -111,12 +111,12 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
               <h3 className="text-[8px] sm:text-[10px] font-medium uppercase tracking-[0.15em] sm:tracking-[0.2em] text-text-muted mb-2 sm:mb-4">
                 {content.sections.services}
               </h3>
-              <nav className="flex flex-col gap-1 sm:gap-2 items-center sm:items-start">
+              <nav className="flex flex-col items-center sm:items-start">
                 {serviceLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="text-[10px] sm:text-sm text-text-secondary hover:text-text-primary transition-colors"
+                    className="text-[10px] sm:text-sm text-text-secondary hover:text-text-primary transition-colors py-1.5 sm:py-1 min-h-[36px] sm:min-h-0 flex items-center"
                   >
                     {link.label}
                   </Link>
@@ -130,15 +130,15 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
             <h3 className="text-[8px] sm:text-[10px] font-medium uppercase tracking-[0.15em] sm:tracking-[0.2em] text-text-muted mb-2 sm:mb-4">
               {content.sections.contact}
             </h3>
-            <div className="flex flex-col gap-1 sm:gap-2 text-[10px] sm:text-sm items-center">
-              <span className="text-text-primary font-medium">
+            <div className="flex flex-col text-[10px] sm:text-sm items-center">
+              <span className="text-text-primary font-medium py-1.5 sm:py-1">
                 {content.contact.name}
               </span>
               <a
                 href="https://maps.google.com/?q=Częstochowa,Poland"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1 sm:gap-2"
+                className="text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1 sm:gap-2 py-1.5 sm:py-1 min-h-[36px] sm:min-h-0"
               >
                 <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-text-muted flex-shrink-0" />
                 {/* Abbreviated on mobile, full on desktop */}
@@ -147,12 +147,19 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
               </a>
               <a
                 href={`mailto:${SITE_CONFIG.owner.email}`}
-                className="text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1 sm:gap-2"
+                className="text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1 sm:gap-2 py-1.5 sm:py-1 min-h-[36px] sm:min-h-0"
               >
                 <Mail className="w-3 h-3 sm:w-4 sm:h-4 text-text-muted flex-shrink-0" />
                 {/* "Email me" on mobile, full email on desktop */}
                 <span className="sm:hidden">Email me</span>
                 <span className="hidden sm:inline">{SITE_CONFIG.owner.email}</span>
+              </a>
+              <a
+                href={`tel:${SITE_CONFIG.owner.phone}`}
+                className="text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1 sm:gap-2 py-1.5 sm:py-1 min-h-[36px] sm:min-h-0"
+              >
+                <Phone className="w-3 h-3 sm:w-4 sm:h-4 text-text-muted flex-shrink-0" />
+                <span>{content.contact.phone}</span>
               </a>
             </div>
           </div>
@@ -166,7 +173,8 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-2 text-zinc-500 hover:text-white transition-colors"
+                aria-label={social.label}
+                className="group flex items-center gap-2 text-zinc-500 hover:text-white transition-colors min-h-[44px] min-w-[44px] justify-center"
               >
                 <social.icon className="w-4 h-4 sm:w-5 sm:h-5" />
                 <span className="text-[10px] font-medium uppercase tracking-widest hidden md:block">{social.label}</span>
