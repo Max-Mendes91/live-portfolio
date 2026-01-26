@@ -31,6 +31,8 @@ export type TechIconId =
   | 'question'
   | 'help'
   | 'search'
+  // Contact icons
+  | 'send'
   // Achievement/Projects icons
   | 'rocket'
   | 'users'
@@ -122,7 +124,7 @@ export interface FloatingIconsPreset {
 }
 
 // Available preset names
-export type PresetName = 'about' | 'projects' | 'faq' | 'services';
+export type PresetName = 'about' | 'projects' | 'faq' | 'services' | 'contact';
 
 // Main component props
 export interface FloatingTechIconsProps {

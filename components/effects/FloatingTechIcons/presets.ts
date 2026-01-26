@@ -470,6 +470,63 @@ const faqShapes: GeometricShapeConfig[] = [
 ];
 
 // ============================================
+// CONTACT PAGE PRESET
+// Communication-themed icons: message, send, checkmark
+// Shorter page - 3 icons spread across hero + content
+// ============================================
+const contactIcons: FloatingIconConfig[] = [
+  // === HERO SECTION (scroll 3-30%) - Message bubble, top right ===
+  {
+    id: 'message',
+    initialPosition: { x: 89, y: 10 },
+    movement: { x: -12, y: 60 },
+    parallaxSpeed: 0.35,
+    size: 75,
+    opacity: 0.5,
+    fadeInAt: 0.03,
+    fadeOutAt: 0.30,
+    rotation: -8,
+    zIndex: 10,
+  },
+  // === CONTENT SECTION (scroll 25-55%) - Send arrow, left middle ===
+  {
+    id: 'send',
+    initialPosition: { x: 4, y: 35 },
+    movement: { x: 12, y: 50 },
+    parallaxSpeed: 0.4,
+    size: 70,
+    opacity: 0.45,
+    fadeInAt: 0.25,
+    fadeOutAt: 0.55,
+    rotation: 6,
+    zIndex: 9,
+  },
+  // === BOTTOM SECTION (scroll 45-72%) - Checkmark, right bottom ===
+  {
+    id: 'checkmark',
+    initialPosition: { x: 90, y: 55 },
+    movement: { x: -10, y: 40 },
+    parallaxSpeed: 0.3,
+    size: 65,
+    opacity: 0.45,
+    fadeInAt: 0.45,
+    fadeOutAt: 0.72,
+    rotation: 5,
+    zIndex: 8,
+  },
+];
+
+const contactShapes: GeometricShapeConfig[] = [
+  {
+    type: 'circle',
+    position: { x: 85, y: 30 },
+    size: 160,
+    parallaxSpeed: 0.15,
+    opacity: 0.035,
+  },
+];
+
+// ============================================
 // PRESET REGISTRY
 // ============================================
 export const PRESETS: Record<PresetName, FloatingIconsPreset> = {
@@ -513,6 +570,17 @@ export const PRESETS: Record<PresetName, FloatingIconsPreset> = {
       maxIcons: 4,
       maxShapes: 0,
       sizeMultiplier: 0.6,
+    },
+  },
+  contact: {
+    name: 'contact',
+    icons: contactIcons,
+    shapes: contactShapes,
+    // Mobile: Show all 3 icons, smaller
+    mobile: {
+      maxIcons: 3,
+      maxShapes: 0,
+      sizeMultiplier: 0.55,
     },
   },
 };

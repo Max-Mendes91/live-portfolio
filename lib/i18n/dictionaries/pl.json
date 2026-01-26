@@ -86,6 +86,7 @@
     "badge": "Proces Tworzenia",
     "title": "Jak Buduję Twoje Oprogramowanie",
     "subtitle": "Sprawdzony proces tworzenia sklepów internetowych, systemów webowych i funkcji AI które rosną z Twoim biznesem—bez szablonów i WordPress.",
+    "imageLabel": "Kod w Akcji",
     "steps": [
       {
         "number": "01",
@@ -214,7 +215,8 @@
     "about": "O mnie",
     "services": "Usługi",
     "projects": "Projekty",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "logoAlt": "Max Mendes - Freelance Programista Webowy"
   },
   "common": {
     "learnMore": "Dowiedz sie wiecej",
@@ -225,35 +227,57 @@
   },
   "contact": {
     "badge": "Kontakt",
-    "title": "Wspolpracujmy",
-    "subtitle": "Masz pomysl na projekt? Chetnie o nim porozmawiam. Skontaktuj sie i stworzmy razem cos niesamowitego.",
+    "title": "Skontaktuj Się",
+    "subtitle": "Gotowy do rozpoczęcia projektu? Napisz wiadomość, a odpowiem w ciągu 24 godzin z pytaniami o zakres, harmonogram i podejście.",
     "infoTitle": "Dane Kontaktowe",
-    "formTitle": "Wyslij Wiadomosc",
+    "formTitle": "Zapytania Projektowe",
+    "formDescription": "Opisz cele projektu i harmonogram. Wrócę z pytaniami technicznymi i propozycją.",
     "labels": {
       "email": "Email",
       "phone": "Telefon",
       "location": "Lokalizacja",
-      "availability": "Dostepnosc",
-      "name": "Imie",
-      "subject": "Temat",
-      "message": "Wiadomosc"
+      "availability": "Dostępność",
+      "name": "Imię",
+      "message": "Wiadomość"
     },
     "placeholders": {
-      "name": "Twoje imie",
+      "name": "Twoje imię",
       "email": "twoj@email.com",
-      "subject": "Zapytanie o projekt",
-      "message": "Opowiedz mi o swoim projekcie..."
+      "message": "Co budujesz? Podaj harmonogram i orientacyjny budżet, jeśli znasz."
     },
-    "submit": "Wyslij Wiadomosc",
-    "success": "Wiadomosc wyslana pomyslnie!",
-    "error": "Nie udalo sie wyslac wiadomosci. Sprobuj ponownie.",
-    "servingRemote": "Obsluguje klientow z calej Polski i Europy",
-    "flexibleTimezone": "Elastyczne godziny pracy",
-    "socialConnect": "Polacz sie",
+    "submit": "Wyślij Wiadomość",
+    "success": "Wiadomość wysłana pomyślnie!",
+    "error": "Nie udało się wysłać wiadomości. Spróbuj ponownie.",
+    "servingRemote": "Projekty zdalne na całym świecie",
+    "flexibleTimezone": "Elastyczne planowanie dla klientów międzynarodowych",
+    "socialConnect": "Połącz się",
     "availabilityHours": "Pon - Pt: 9:00 - 18:00",
     "notSure": {
       "title": "Nie Wiesz Czego Potrzebujesz?",
-      "description": "Sprawdz moje uslugi, zeby zobaczyc jak moge pomoc w Twoim projekcie."
+      "description": "Sprawdź moje usługi, żeby zobaczyć jak mogę pomóc w Twoim projekcie.",
+      "ctaServices": "Tworzenie Stron",
+      "ctaProjects": "Zobacz Portfolio"
+    }
+  },
+  "contactPage": {
+    "id": "contact",
+    "label": "Kontakt",
+    "href": "/pl/kontakt",
+    "hrefLang": {
+      "en": "/en/contact",
+      "pl": "/pl/kontakt"
+    },
+    "seo": {
+      "title": "Kontakt - Programista Częstochowa | Max Mendes",
+      "metaDescription": "Kontakt do Max Mendes - tworzenie stron internetowych Częstochowa. Programista React i Next.js. Tel: 502 742 941. Odpowiedź w ciągu 24 godzin.",
+      "keywords": ["kontakt programista", "programista częstochowa kontakt", "wycena strony internetowej", "kontakt web developer", "programista śląskie", "bezpłatna wycena"],
+      "h1": "Skontaktuj Się",
+      "ogTitle": "Kontakt - Programista Częstochowa | Max Mendes"
+    },
+    "schema": {
+      "type": "ContactPage",
+      "description": "Strona kontaktowa Max Mendes - programista full-stack z Częstochowy obsługujący klientów z Polski i Europy.",
+      "areaServed": ["Częstochowa", "Śląskie", "Polska"]
     }
   },
   "projects": {
