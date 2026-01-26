@@ -79,6 +79,7 @@ export interface ProcessDict {
   badge: string;
   title: string;
   subtitle: string;
+  imageLabel: string;
   steps: ProcessStepDict[];
   ctas: ProcessCTADict[];
 }
@@ -184,6 +185,7 @@ export interface NavDict {
   services: string;
   projects: string;
   contact: string;
+  logoAlt: string;
 }
 
 // Common UI strings
@@ -203,19 +205,18 @@ export interface ContactDict {
   subtitle: string;
   infoTitle: string;
   formTitle: string;
+  formDescription?: string;
   labels: {
     email: string;
     phone: string;
     location: string;
     availability: string;
     name: string;
-    subject: string;
     message: string;
   };
   placeholders: {
     name: string;
     email: string;
-    subject: string;
     message: string;
   };
   submit: string;
@@ -228,7 +229,38 @@ export interface ContactDict {
   notSure: {
     title: string;
     description: string;
+    ctaServices?: string;
+    ctaProjects?: string;
   };
+}
+
+// SEO metadata for contact page
+export interface ContactPageSEO {
+  title: string;
+  metaDescription: string;
+  keywords: string[];
+  h1: string;
+  ogTitle: string;
+}
+
+// Schema.org markup for contact page
+export interface ContactPageSchema {
+  type: string;
+  description: string;
+  areaServed: string[];
+}
+
+// Contact page with SEO metadata (full page)
+export interface ContactPageDict {
+  id: string;
+  label: string;
+  href: string;
+  hrefLang: {
+    en: string;
+    pl: string;
+  };
+  seo: ContactPageSEO;
+  schema: ContactPageSchema;
 }
 
 // Projects page dictionary
@@ -486,6 +518,7 @@ export interface Dictionary {
   workGrid?: WorkGridDict;
   homePage?: HomePageDict;
   aboutPage?: AboutPageDict;
+  contactPage?: ContactPageDict;
   faqPage?: FAQPageDict;
   projectsPage?: ProjectsPageDict;
   servicesPage?: ServicesPageDict;

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { SupportedLocale } from '@/types/i18n';
 import { NavDict } from '@/types/i18n';
@@ -89,11 +90,15 @@ const Navbar: React.FC<NavbarProps> = ({ locale, dictionary }) => {
       }`}
     >
       <div className="max-w-screen-2xl mx-auto flex items-center justify-between">
-        <Link href={homeHref} className="flex items-center gap-2 group">
-          <div className="w-6 h-6 bg-white flex items-center justify-center rounded-sm group-hover:rotate-12 transition-transform">
-            <div className="w-4 h-4 bg-black rounded-[1px]" />
-          </div>
-          <span className="text-xl font-semibold tracking-tight">Max Mendes</span>
+        <Link href={homeHref} className="group">
+          <Image
+            src="/navbar-logo.png"
+            alt={dictionary?.logoAlt ?? 'Max Mendes - Web Developer'}
+            width={266}
+            height={53}
+            className="h-7 sm:h-8 w-auto group-hover:opacity-80 transition-opacity"
+            priority
+          />
         </Link>
 
         <div className="flex items-center gap-10">

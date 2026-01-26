@@ -712,6 +712,33 @@ const GlobeIcon: React.FC<IconProps> = ({ size = 80, className }) => (
   </svg>
 );
 
+// Send/Paper Plane - Represents sending a message
+const SendIcon: React.FC<IconProps> = ({ size = 80, className }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <path
+      d="m22 2-7 20-4-9-9-4 20-7Z"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="m22 2-11 11"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 // Icon registry
 const ICON_COMPONENTS: Record<TechIconId, React.FC<IconProps>> = {
   // Tech icons
@@ -738,6 +765,8 @@ const ICON_COMPONENTS: Record<TechIconId, React.FC<IconProps>> = {
   question: QuestionIcon,
   help: HelpIcon,
   search: SearchIcon,
+  // Contact icons
+  send: SendIcon,
   // Achievement/Projects icons
   rocket: RocketIcon,
   users: UsersIcon,
@@ -793,6 +822,8 @@ export {
   QuestionIcon,
   HelpIcon,
   SearchIcon,
+  // Contact icons
+  SendIcon,
   // Achievement/Projects icons
   RocketIcon,
   UsersIcon,

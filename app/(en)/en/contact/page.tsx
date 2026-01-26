@@ -5,28 +5,50 @@ import ContactClient from './ContactClient';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const canonicalUrl = getFullUrl('/en/contact');
+  const dictionary = await getDictionary('en');
+  const contactPage = dictionary.contactPage;
+
+  if (!contactPage) return {};
+
+  const canonicalUrl = getFullUrl(contactPage.href);
+
+  const languages: Record<string, string> = {};
+  Object.entries(contactPage.hrefLang).forEach(([lang, path]) => {
+    languages[lang] = getFullUrl(path);
+  });
+  languages['x-default'] = languages['en'];
 
   return {
-    title: 'Contact - Freelance Web Developer Poland | Max Mendes',
-    description:
-      'Get in touch for your web project. Full-stack developer based in Poland. Free quote. Websites, e-commerce, web apps.',
+    title: contactPage.seo.title,
+    description: contactPage.seo.metaDescription,
+    keywords: contactPage.seo.keywords,
     alternates: {
       canonical: canonicalUrl,
-      languages: {
-        en: canonicalUrl,
-        pl: getFullUrl('/pl/kontakt'),
-        'x-default': canonicalUrl,
-      },
+      languages,
     },
     openGraph: {
-      title: 'Contact - Freelance Web Developer | Max Mendes',
-      description:
-        'Get in touch for your web project. Full-stack developer based in Poland.',
+      title: contactPage.seo.ogTitle,
+      description: contactPage.seo.metaDescription,
       url: canonicalUrl,
       siteName: 'Max Mendes',
       locale: 'en_US',
       type: 'website',
+      images: [
+        {
+          url: '/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: `${contactPage.seo.h1} - Max Mendes`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: contactPage.seo.ogTitle,
+      description: contactPage.seo.metaDescription,
+      site: SITE_CONFIG.owner.social.twitterHandle,
+      creator: SITE_CONFIG.owner.social.twitterHandle,
+      images: ['/og-image.png'],
     },
   };
 }
@@ -38,11 +60,13 @@ function generateContactPageSchema() {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
     name: 'Contact - Max Mendes',
-    description: 'Contact page for Max Mendes - full-stack web developer based in Poland',
+    description:
+      'Contact page for Max Mendes - full-stack web developer based in Poland serving UK, US & EU clients.',
     url: getFullUrl('/en/contact'),
     mainEntity: {
       '@type': 'Person',
       name: 'Max Mendes',
+      jobTitle: 'Full-Stack Web Developer',
       email: owner.email,
       telephone: owner.phone,
       address: {
@@ -55,12 +79,34 @@ function generateContactPageSchema() {
   };
 }
 
+function generateBreadcrumbSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: getFullUrl('/en'),
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Contact',
+        item: getFullUrl('/en/contact'),
+      },
+    ],
+  };
+}
+
 export default async function ContactPageEN() {
   const dictionary = await getDictionary('en');
 
   return (
     <>
       <JsonLd data={generateContactPageSchema()} />
+      <JsonLd data={generateBreadcrumbSchema()} />
       <ContactClient locale="en" dictionary={dictionary} />
     </>
   );

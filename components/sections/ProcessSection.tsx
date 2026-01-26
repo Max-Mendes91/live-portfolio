@@ -77,6 +77,7 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ dictionary }) => {
     badge: dictionary?.badge ?? 'Development Process',
     title: dictionary?.title ?? 'How I Build Your Software',
     subtitle: dictionary?.subtitle ?? 'A proven workflow for building SaaS applications, e-commerce platforms, and AI-powered features that scale.',
+    imageLabel: dictionary?.imageLabel ?? 'Development Workflow',
     steps: dictionary?.steps ?? [
       { number: '01', title: 'Requirements & Architecture', subtitle: 'Technical Discovery', description: 'I analyze your business requirements, select the optimal React and Next.js stack, and design database architecture and API structure for scalability.' },
       { number: '02', title: 'Development & Integration', subtitle: 'Build & Test', description: 'I write production TypeScript code, implement features with real-time updates and authentication, test continuously, and integrate AI capabilities where needed.' },
@@ -113,7 +114,7 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ dictionary }) => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
               <div className="absolute bottom-6 left-6 sm:bottom-8 sm:left-8 md:bottom-12 md:left-12">
-                <p className="text-[9px] sm:text-[10px] font-medium uppercase tracking-[0.2em] sm:tracking-[0.3em] text-white/40">Development Workflow</p>
+                <p className="text-[9px] sm:text-[10px] font-medium uppercase tracking-[0.2em] sm:tracking-[0.3em] text-white/40">{content.imageLabel}</p>
               </div>
             </motion.div>
 

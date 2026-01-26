@@ -86,6 +86,7 @@
     "badge": "Development Process",
     "title": "How I Build Your Software",
     "subtitle": "A proven workflow for building SaaS applications, e-commerce platforms, and AI-powered features that scale—not prototypes or WordPress templates.",
+    "imageLabel": "Live Code",
     "steps": [
       {
         "number": "01",
@@ -206,7 +207,8 @@
     "about": "About",
     "services": "Services",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "logoAlt": "Max Mendes - Freelance Web Developer"
   },
   "common": {
     "learnMore": "Learn More",
@@ -217,35 +219,57 @@
   },
   "contact": {
     "badge": "Contact",
-    "title": "Let's Work Together",
-    "subtitle": "Have a project in mind? I'd love to hear about it. Get in touch and let's create something amazing.",
+    "title": "Get in Touch",
+    "subtitle": "Ready to start your project? Send a message and I'll respond within 24 hours with questions about scope, timeline, and approach.",
     "infoTitle": "Contact Information",
-    "formTitle": "Send a Message",
+    "formTitle": "Project Inquiries",
+    "formDescription": "Describe your project goals and timeline. I'll follow up with technical questions and a proposal.",
     "labels": {
       "email": "Email",
       "phone": "Phone",
       "location": "Location",
       "availability": "Availability",
       "name": "Name",
-      "subject": "Subject",
       "message": "Message"
     },
     "placeholders": {
       "name": "Your name",
       "email": "your@email.com",
-      "subject": "Project inquiry",
-      "message": "Tell me about your project..."
+      "message": "What are you building? Include your timeline and budget range if known."
     },
     "submit": "Send Message",
     "success": "Message sent successfully!",
     "error": "Failed to send message. Please try again.",
-    "servingRemote": "Serving UK, US & Europe remotely",
-    "flexibleTimezone": "Flexible for UK/US timezones",
+    "servingRemote": "Remote projects worldwide",
+    "flexibleTimezone": "Flexible scheduling for international clients",
     "socialConnect": "Connect",
     "availabilityHours": "Mon - Fri: 9:00 - 18:00 CET",
     "notSure": {
       "title": "Not Sure What You Need?",
-      "description": "Check out my services to see how I can help with your project."
+      "description": "Check out my services to see how I can help with your project.",
+      "ctaServices": "Web Development",
+      "ctaProjects": "View Portfolio"
+    }
+  },
+  "contactPage": {
+    "id": "contact",
+    "label": "Contact",
+    "href": "/en/contact",
+    "hrefLang": {
+      "en": "/en/contact",
+      "pl": "/pl/kontakt"
+    },
+    "seo": {
+      "title": "Contact - Web Developer Poland | Max Mendes",
+      "metaDescription": "Contact Max Mendes for web development projects. React & Next.js developer in Częstochowa, Poland. Call: +48 502 742 941. Response within 24 hours.",
+      "keywords": ["contact web developer", "hire developer poland", "freelance developer contact", "web development quote", "developer czestochowa", "react developer hire"],
+      "h1": "Get in Touch",
+      "ogTitle": "Contact - Web Developer Poland | Max Mendes"
+    },
+    "schema": {
+      "type": "ContactPage",
+      "description": "Contact page for Max Mendes - full-stack web developer based in Poland serving UK, US & EU clients.",
+      "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
     }
   },
   "projects": {
