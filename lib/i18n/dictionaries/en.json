@@ -623,16 +623,68 @@
         "pl": "/pl/uslugi/aplikacje-webowe"
       },
       "seo": {
-        "title": "SaaS Development - Custom Web Applications | Max Mendes",
-        "metaDescription": "Custom SaaS platforms and web applications with user auth, dashboards, payments & subscriptions. React, Next.js, Node.js. Poland-based, serving global clients.",
-        "keywords": ["saas development", "web application development", "custom software", "dashboard development", "subscription platform", "react web app", "nextjs saas"],
-        "h1": "SaaS & Web Application Development",
-        "ogTitle": "SaaS Development - Custom Web Applications | Max Mendes"
+        "title": "SaaS Development - Subscription Platforms | Max Mendes",
+        "metaDescription": "SaaS development services. Build subscription platforms with React and Next.js. Production-ready architecture. Częstochowa, Poland. International projects.",
+        "keywords": ["saas development", "subscription platform", "web application development", "react saas", "nextjs saas", "saas developer poland", "multi-tenant saas"],
+        "h1": "SaaS & Web Applications",
+        "ogTitle": "SaaS Development - Subscription Platforms | Max Mendes"
       },
       "schema": {
         "serviceType": "Software Development Service",
-        "description": "Custom SaaS platforms and web applications with authentication, dashboards, payment integration, and scalable architecture.",
+        "description": "Production SaaS development for subscription platforms. Scalable architecture with authentication, payments, and multi-tenant data models.",
         "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+      },
+      "content": {
+        "subtitle": "Production SaaS development for subscription platforms built with React. Scalable architecture from day one—built for production and designed to grow with your users.",
+        "sections": [
+          {
+            "title": "What SaaS Development Means",
+            "paragraphs": [
+              "SaaS development is about building subscription-based software that users rely on continuously, not a one-time website or a simple web app. A SaaS product manages accounts, permissions, data isolation, and recurring payments across many customers at once. This is known as multi-tenancy—your platform serves multiple businesses or users while keeping their data separate and secure.",
+              "Unlike regular websites, SaaS products must handle onboarding, billing cycles, upgrades, cancellations, and long-term maintenance. These are business-critical systems, not just interfaces."
+            ]
+          },
+          {
+            "title": "What's Included in This Service",
+            "paragraphs": [
+              "I build SaaS platforms that cover the full product lifecycle. Projects can include secure user authentication with email/password, OAuth, and social logins; subscription management with Stripe; and database structures designed for multi-tenant data. Admin dashboards allow you to manage users, plans, and usage without manual work.",
+              "Email notifications and onboarding flows guide users through signup, activation, and billing events. APIs are built to support integrations with third-party services or future mobile and partner applications. Built to add features without rebuilding the foundation."
+            ]
+          },
+          {
+            "title": "Who This Is For and Use Cases",
+            "paragraphs": [
+              "This service is for SaaS founders building an MVP that is meant to become a real product, not a disposable prototype. It also fits businesses launching subscription platforms or internal SaaS tools that replace spreadsheets or manual workflows. Common use cases include productivity tools, B2B platforms, analytics dashboards, and subscription-based services.",
+              "FlowMate—the SaaS platform I built for email management—handles multi-provider authentication, async processing (background tasks that don't slow down the UI), AI integrations, and Stripe subscriptions at production scale. It demonstrates how these systems work together in a real product."
+            ],
+            "links": [
+              { "text": "See FlowMate on the Projects page →", "href": "/en/projects" }
+            ]
+          },
+          {
+            "title": "How It's Delivered",
+            "paragraphs": [
+              "You work directly with one developer, without agency handoffs or junior teams. The focus is production-ready code from day one, so the platform does not need rebuilding after validation. TypeScript is used across the stack to reduce runtime errors and support long-term scalability. Applications are deployed on modern infrastructure such as Vercel, Supabase, or AWS, depending on requirements. The goal is a SaaS platform ready for real users and steady growth.",
+              "Based in Częstochowa, Poland. Available for SaaS projects across Poland and internationally."
+            ],
+            "links": [
+              { "text": "Questions about SaaS development pricing or process? Check the FAQ →", "href": "/en/faq" }
+            ]
+          }
+        ],
+        "techStackTitle": "Technical Stack",
+        "techStack": [
+          { "title": "Frontend", "description": "React 19, Next.js 15, TypeScript—fast, SEO-friendly SaaS frontends with reliability as features grow" },
+          { "title": "Backend", "description": "Node.js, PostgreSQL (Supabase, Prisma)—scalable, multi-tenant data models keeping customer data separate and secure" },
+          { "title": "Authentication", "description": "Clerk or NextAuth for secure user management with social logins and OAuth" },
+          { "title": "Payments", "description": "Stripe subscriptions and webhooks—automating the full billing lifecycle" },
+          { "title": "Real-time & Deployment", "description": "WebSockets or SSE when required. Vercel with managed databases for predictable performance and scaling" }
+        ],
+        "cta": {
+          "title": "Ready to Build Your SaaS Platform?",
+          "subtitle": "Tell me about your project and I'll respond within 24 hours with questions about architecture, timeline, and technical approach.",
+          "button": "Start Your Project"
+        }
       }
     },
     "ecommerce-development": {

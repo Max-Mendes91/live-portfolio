@@ -42,7 +42,7 @@
         "id": "ecommerce",
         "icon": "ShoppingCart",
         "title": "Sklepy Internetowe i E-Commerce",
-        "description": "Buduję dedykowane platformy e-commerce w React i Next.js z płatnościami Stripe lub PayPal, kontrolą magazynu i zarządzaniem zamówieniami. Idealne dla firm, które przerosły Shopify lub potrzebują pełnej kontroli nad logiką sklepu.",
+        "description": "Buduję dedykowane platformy e-commerce w React i Next.js z płatnościami Przelewy24, PayU lub Stripe, kontrolą magazynu i zarządzaniem zamówieniami. Idealne dla firm, które przerosły Shopify lub potrzebują pełnej kontroli nad logiką sklepu.",
         "linkText": "platformy e-commerce",
         "linkHref": "/pl/uslugi/sklepy-internetowe"
       },
@@ -80,7 +80,7 @@
       }
     ],
     "marquee1": ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
-    "marquee2": ["Stripe", "OpenAI", "Claude API", "Vercel", "AWS", "SEO"]
+    "marquee2": ["Przelewy24", "OpenAI", "Claude API", "Vercel", "AWS", "SEO"]
   },
   "process": {
     "badge": "Proces Tworzenia",
@@ -583,14 +583,14 @@
           {
             "title": "Co Buduję",
             "paragraphs": [
-              "Tworzę dedykowane interfejsy w React i Next.js, które zapewniają szybkie i responsywne doświadczenie. Użytkownicy otrzymują jakość aplikacji z natychmiastową nawigacją i aktualizacjami w czasie rzeczywistym, gdy są potrzebne. Backend obsługuje kluczową logikę biznesową—zarządzanie użytkownikami, przetwarzanie danych, transakcje i integracje z zewnętrznymi systemami—zbudowany na Node.js i PostgreSQL dla niezawodności.",
-              "Projekty mogą obejmować systemy uwierzytelniania, kontrolę dostępu opartą na rolach, obsługę płatności przez Stripe, integracje API oraz funkcje czasu rzeczywistego jak dashboardy czy powiadomienia. Używam TypeScript w całym projekcie, aby wychwytywać błędy przed wdrożeniem i zapewnić długoterminową utrzymywalność."
+              "Buduję interfejsy użytkownika w React i Next.js, które są szybkie i responsywne. Użytkownicy otrzymują jakość aplikacji z natychmiastową nawigacją i aktualizacjami w czasie rzeczywistym, gdy są potrzebne. Backend obsługuje kluczową logikę biznesową—zarządzanie użytkownikami, przetwarzanie danych, transakcje i integracje z zewnętrznymi systemami—zbudowany na Node.js i PostgreSQL dla niezawodności.",
+              "Projekty mogą obejmować systemy uwierzytelniania, kontrolę dostępu opartą na rolach, integracje płatności (Przelewy24, PayU, Stripe), integracje API oraz funkcje czasu rzeczywistego jak dashboardy czy powiadomienia. Używam TypeScript w całym projekcie, aby wychwytywać błędy przed wdrożeniem i zapewnić długoterminową utrzymywalność."
             ]
           },
           {
             "title": "Dla Kogo Jest Ta Usługa",
             "paragraphs": [
-              "Ta usługa jest dla firm budujących aplikacje webowe wymagające dedykowanej logiki i obsługi danych. Platformy SaaS, portale klienckie, systemy rezerwacyjne, wewnętrzne dashboardy i produkty oparte na subskrypcjach należą do tej kategorii.",
+              "Ta usługa jest dla firm budujących aplikacje webowe wymagające dedykowanej logiki i obsługi danych. Platformy SaaS, systemy klienckie, systemy rezerwacyjne, wewnętrzne dashboardy i produkty oparte na subskrypcjach należą do tej kategorii.",
               "Jeśli Twój projekt obejmuje użytkowników, uwierzytelnianie, przetwarzanie danych lub logikę biznesową wykraczającą poza proste strony treściowe, potrzebujesz rozwoju full-stack. FlowMate—platforma SaaS, którą zbudowałem do zarządzania emailami—demonstruje to podejście: uwierzytelnianie wielu dostawców, przetwarzanie asynchroniczne, integracje AI i infrastruktura produkcyjna obsługująca rzeczywiste obciążenia."
             ],
             "links": [
@@ -600,8 +600,8 @@
           {
             "title": "Jak Pracuję",
             "paragraphs": [
-              "Pracujesz bezpośrednio ze mną—bez pośredników agencyjnych czy przekazywania projektu. Obsługuję wymagania, architekturę, development i wdrożenie. Kod jest gotowy do produkcji od pierwszego dnia, nie prototypy wymagające przebudowy później.",
-              "Aplikacje są wdrażane na nowoczesnej infrastrukturze (Vercel, AWS) z dystrybucją CDN dla wydajności. Jestem z Częstochowy i dostępny dla projektów z całej Polski oraz międzynarodowych."
+              "Pracujesz bezpośrednio ze mną—bez pośredników agencyjnych czy przekazywania projektu. Obsługuję wymagania, architekturę, development i wdrożenie. Kod jest gotowy do wdrożenia od pierwszego dnia, nie prototypy wymagające przebudowy później.",
+              "Aplikacje są wdrażane na profesjonalnej infrastrukturze cloud z dystrybucją CDN dla wydajności. Jestem z Częstochowy i dostępny dla projektów z całej Polski oraz międzynarodowych."
             ],
             "links": [
               { "text": "Zobacz stronę Pytania →", "href": "/pl/pytania" }
@@ -612,8 +612,8 @@
         "techStack": [
           { "title": "Frontend", "description": "React 19, Next.js 15, TypeScript, Tailwind CSS—szybki, przyjazny SEO, łatwy w utrzymaniu" },
           { "title": "Backend", "description": "Node.js, PostgreSQL, Prisma ORM—skalowalna obsługa danych z bezpieczeństwem typów" },
-          { "title": "Integracje", "description": "Płatności Stripe, uwierzytelnianie OAuth, usługi email, zewnętrzne API" },
-          { "title": "Wdrożenie", "description": "Vercel lub AWS z CDN, automatyczny CI/CD, monitoring" },
+          { "title": "Integracje", "description": "Przelewy24/PayU dla rynku polskiego, Stripe dla klientów międzynarodowych, uwierzytelnianie OAuth, usługi email, zewnętrzne API" },
+          { "title": "Wdrożenie", "description": "Infrastruktura cloud z CDN, automatyczne wdrażanie CI/CD, monitoring produkcyjny" },
           { "title": "Narzędzia", "description": "Kontrola wersji Git, automatyczne testy, śledzenie błędów produkcyjnych" }
         ],
         "cta": {
@@ -635,13 +635,65 @@
         "title": "Aplikacje Webowe Częstochowa | Max Mendes",
         "metaDescription": "Tworzenie aplikacji webowych i platform SaaS. Logowanie, dashboardy, płatności, subskrypcje. Programista z Częstochowy. Systemy dla firm z całej Polski.",
         "keywords": ["aplikacje webowe", "tworzenie aplikacji", "systemy dla firm", "aplikacje saas", "platformy internetowe", "oprogramowanie na zamówienie", "programista aplikacji"],
-        "h1": "Aplikacje Webowe i Platformy SaaS",
+        "h1": "SaaS i Aplikacje Webowe",
         "ogTitle": "Aplikacje Webowe Częstochowa | Max Mendes"
       },
       "schema": {
         "serviceType": "Tworzenie Aplikacji Webowych",
-        "description": "Aplikacje webowe i platformy SaaS z autoryzacją, dashboardami i integracją płatności. Systemy na zamówienie dla firm.",
+        "description": "Profesjonalny SaaS development dla platform subskrypcyjnych. Skalowalna architektura z autoryzacją, płatnościami i wielodostępowymi modelami danych.",
         "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+      },
+      "content": {
+        "subtitle": "Profesjonalny SaaS development dla platform subskrypcyjnych tworzonych w React. Skalowalna architektura od pierwszego dnia — rozwiązania gotowe na rozwój, a nie prototypy do przepisywania.",
+        "sections": [
+          {
+            "title": "Czym jest SaaS Development",
+            "paragraphs": [
+              "SaaS development to tworzenie oprogramowania subskrypcyjnego, z którego użytkownicy korzystają stale, a nie jednorazowo jak ze zwykłej strony internetowej. Tego typu platformy zarządzają kontami, uprawnieniami, danymi oraz cyklicznymi płatnościami dla wielu klientów jednocześnie. W praktyce oznacza to architekturę wielodostępową — obsługę wielu firm lub użytkowników z wyraźnie oddzielonymi danymi.",
+              "W przeciwieństwie do klasycznych aplikacji webowych, SaaS musi obsługiwać onboarding, cykle rozliczeniowe, zmiany planów i długoterminowe utrzymanie. To fundament działania produktu, a nie tylko warstwa wizualna."
+            ]
+          },
+          {
+            "title": "Co Obejmuje Ta Usługa",
+            "paragraphs": [
+              "Buduję platformy SaaS obejmujące pełny cykl życia produktu. Projekty mogą zawierać bezpieczną autoryzację użytkowników (email/hasło, OAuth, logowanie społecznościowe), zarządzanie subskrypcjami i płatnościami (Przelewy24, PayU, Stripe) oraz strukturę bazy danych przygotowaną pod obsługę wielu klientów. Panele administracyjne umożliwiają kontrolę użytkowników, planów i wykorzystania bez ręcznej obsługi.",
+              "Wdrażane są również powiadomienia email oraz procesy onboardingowe, które prowadzą użytkownika od rejestracji do aktywnej subskrypcji. API umożliwia integracje z zewnętrznymi systemami lub przyszłe rozszerzenia produktu."
+            ]
+          },
+          {
+            "title": "Dla Kogo i Przykładowe Zastosowania",
+            "paragraphs": [
+              "Ta usługa jest przeznaczona dla founderów SaaS budujących MVP, które ma stać się realnym produktem, a nie jednorazowym testem. Sprawdza się także dla firm w Polsce tworzących platformy subskrypcyjne lub wewnętrzne narzędzia SaaS zastępujące arkusze i ręczne procesy. Typowe zastosowania to narzędzia produktywności, platformy B2B, panele analityczne oraz usługi abonamentowe.",
+              "FlowMate — platforma SaaS, którą stworzyłem do zarządzania emailami — obsługuje wielodostępową architekturę, asynchroniczne przetwarzanie, integracje AI oraz subskrypcje Stripe w środowisku produkcyjnym."
+            ],
+            "links": [
+              { "text": "Zobacz FlowMate w sekcji Projekty →", "href": "/pl/projekty" }
+            ]
+          },
+          {
+            "title": "Jak Przebiega Realizacja",
+            "paragraphs": [
+              "Pracujesz bezpośrednio z jednym developerem — bez przekazywania projektu między zespołami. Od początku tworzony jest kod gotowy do produkcji, bez potrzeby późniejszego przepisywania architektury. TypeScript zwiększa stabilność i ułatwia rozwój funkcji w dłuższej perspektywie. Aplikacje wdrażane są na profesjonalnej infrastrukturze cloud lub serwerach klienta, zależnie od potrzeb projektu. Celem jest SaaS przygotowany na realnych użytkowników i kontrolowany wzrost.",
+              "Projekty realizuję z Częstochowy dla firm z Polski i rynków międzynarodowych."
+            ],
+            "links": [
+              { "text": "Pytania o proces lub wycenę SaaS? Sprawdź FAQ →", "href": "/pl/pytania" }
+            ]
+          }
+        ],
+        "techStackTitle": "Stos Technologiczny",
+        "techStack": [
+          { "title": "Frontend", "description": "React 19, Next.js 15, TypeScript — szybkie, SEO-przyjazne interfejsy SaaS z niezawodnością w miarę rozwoju" },
+          { "title": "Backend", "description": "Node.js, PostgreSQL (Supabase, Prisma) — skalowalne modele danych dla wielu klientów" },
+          { "title": "Uwierzytelnianie", "description": "Clerk lub NextAuth — bezpieczne zarządzanie użytkownikami z logowaniem społecznościowym i OAuth" },
+          { "title": "Płatności", "description": "Przelewy24/PayU dla rynku polskiego, Stripe dla klientów międzynarodowych — automatyzacja subskrypcji i rozliczeń" },
+          { "title": "Real-time i Wdrożenie", "description": "WebSockets lub SSE. Wdrożenie na infrastrukturze cloud z zarządzanymi bazami danych" }
+        ],
+        "cta": {
+          "title": "Gotowy Zbudować Swoją Platformę SaaS?",
+          "subtitle": "Opisz swój projekt, a odpowiem w ciągu 24 godzin z pytaniami o architekturę, harmonogram i podejście techniczne.",
+          "button": "Rozpocznij Projekt"
+        }
       }
     },
     "ecommerce-development": {
@@ -748,7 +800,7 @@
       "type": "FAQPage",
       "description": "Często zadawane pytania o usługi tworzenia stron internetowych, cennik, terminy i szczegóły techniczne."
     },
-    "intro": "Jak pracujemy, czego się spodziewać i co dzieje się po uruchomieniu.",
+    "intro": "Jak pracuję, czego się spodziewać i co dzieje się po uruchomieniu.",
     "categories": [
       {
         "title": "Usługi i Podejście",

@@ -11,6 +11,12 @@ import { FloatingTechIcons } from '@/components/effects/FloatingTechIcons';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import { Display, Heading, Text, BinderClip } from '@/components/ui';
 import { Dictionary, SupportedLocale, ServiceLink } from '@/types/i18n';
+import type { PresetName } from '@/components/effects/FloatingTechIcons/types';
+
+const SERVICE_ICON_PRESETS: Record<string, PresetName> = {
+  'web-development': 'web-development',
+  'saas-web-apps': 'saas',
+};
 
 interface ServicePageClientProps {
   locale: SupportedLocale;
@@ -25,11 +31,12 @@ const ServicePageClient: React.FC<ServicePageClientProps> = ({ locale, dictionar
   if (!content) return null;
 
   const contactHref = locale === 'en' ? '/en/contact' : '/pl/kontakt';
+  const iconPreset = SERVICE_ICON_PRESETS[serviceData.id] || 'web-development';
 
   return (
     <div className="relative">
       {/* Floating Tech Icons - Fixed position, appears above all content */}
-      <FloatingTechIcons preset="web-development" />
+      <FloatingTechIcons preset={iconPreset} />
 
       {/* Main content - sits above footer */}
       <div className="relative z-10 bg-background">

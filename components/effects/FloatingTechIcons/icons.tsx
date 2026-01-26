@@ -6,6 +6,14 @@
  */
 
 import React from 'react';
+import {
+  RefreshCw,
+  Lock,
+  LayoutDashboard,
+  CreditCard,
+  Bell,
+  Settings,
+} from 'lucide-react';
 import { TechIconId } from './types';
 
 interface IconProps {
@@ -777,6 +785,40 @@ const ApiIcon: React.FC<IconProps> = ({ size = 80, className }) => (
   </svg>
 );
 
+// ============================================
+// SaaS-Specific Icons (Lucide wrappers)
+// ============================================
+
+// Cycle - Recurring subscription concept
+const CycleIcon: React.FC<IconProps> = ({ size = 80, className }) => (
+  <RefreshCw size={size} className={className} strokeWidth={1.5} />
+);
+
+// Lock - Authentication/security
+const LockIcon: React.FC<IconProps> = ({ size = 80, className }) => (
+  <Lock size={size} className={className} strokeWidth={1.5} />
+);
+
+// Dashboard - Admin panel/analytics
+const DashboardIcon: React.FC<IconProps> = ({ size = 80, className }) => (
+  <LayoutDashboard size={size} className={className} strokeWidth={1.5} />
+);
+
+// CreditCard - Billing/payments
+const CreditCardIcon: React.FC<IconProps> = ({ size = 80, className }) => (
+  <CreditCard size={size} className={className} strokeWidth={1.5} />
+);
+
+// Bell - Notifications
+const BellIcon: React.FC<IconProps> = ({ size = 80, className }) => (
+  <Bell size={size} className={className} strokeWidth={1.5} />
+);
+
+// Settings - Configuration/admin
+const SettingsIcon: React.FC<IconProps> = ({ size = 80, className }) => (
+  <Settings size={size} className={className} strokeWidth={1.5} />
+);
+
 // Icon registry
 const ICON_COMPONENTS: Record<TechIconId, React.FC<IconProps>> = {
   // Tech icons
@@ -820,6 +862,13 @@ const ICON_COMPONENTS: Record<TechIconId, React.FC<IconProps>> = {
   // Full-stack development icons
   server: ServerIcon,
   api: ApiIcon,
+  // SaaS-specific icons
+  cycle: CycleIcon,
+  lock: LockIcon,
+  dashboard: DashboardIcon,
+  creditCard: CreditCardIcon,
+  bell: BellIcon,
+  settings: SettingsIcon,
 };
 
 // Main TechIcon component
@@ -880,4 +929,11 @@ export {
   // Full-stack development icons
   ServerIcon,
   ApiIcon,
+  // SaaS-specific icons
+  CycleIcon,
+  LockIcon,
+  DashboardIcon,
+  CreditCardIcon,
+  BellIcon,
+  SettingsIcon,
 };
