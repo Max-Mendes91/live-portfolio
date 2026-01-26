@@ -739,6 +739,44 @@ const SendIcon: React.FC<IconProps> = ({ size = 80, className }) => (
   </svg>
 );
 
+// ============================================
+// Full-Stack Development Icons
+// ============================================
+
+// Server - Backend/server infrastructure
+const ServerIcon: React.FC<IconProps> = ({ size = 80, className }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <rect x="2" y="2" width="20" height="8" rx="2" stroke="currentColor" strokeWidth="1.5" />
+    <rect x="2" y="14" width="20" height="8" rx="2" stroke="currentColor" strokeWidth="1.5" />
+    <circle cx="6" cy="6" r="1" fill="currentColor" />
+    <circle cx="6" cy="18" r="1" fill="currentColor" />
+    <path d="M16 6h2M16 18h2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+  </svg>
+);
+
+// API - Code brackets with connection
+const ApiIcon: React.FC<IconProps> = ({ size = 80, className }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <path d="m8 3-5 9 5 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="m16 3 5 9-5 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M14 4 10 20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+  </svg>
+);
+
 // Icon registry
 const ICON_COMPONENTS: Record<TechIconId, React.FC<IconProps>> = {
   // Tech icons
@@ -779,6 +817,9 @@ const ICON_COMPONENTS: Record<TechIconId, React.FC<IconProps>> = {
   sparkles: SparklesIcon,
   codeWindow: CodeWindowIcon,
   globe: GlobeIcon,
+  // Full-stack development icons
+  server: ServerIcon,
+  api: ApiIcon,
 };
 
 // Main TechIcon component
@@ -836,4 +877,7 @@ export {
   SparklesIcon,
   CodeWindowIcon,
   GlobeIcon,
+  // Full-stack development icons
+  ServerIcon,
+  ApiIcon,
 };

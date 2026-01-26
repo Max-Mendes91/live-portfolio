@@ -126,6 +126,32 @@ export interface ServiceSchema {
   areaServed: string[];
 }
 
+// Service page content section (for full service pages)
+export interface ServicePageContentSection {
+  title: string;
+  paragraphs: string[];
+  links?: Array<{ text: string; href: string }>;
+}
+
+// Tech stack item for service pages
+export interface ServicePageTechItem {
+  title: string;
+  description: string;
+}
+
+// Full content for service pages (hero + sections + tech stack)
+export interface ServicePageContent {
+  subtitle: string;
+  sections: ServicePageContentSection[];
+  techStackTitle: string;
+  techStack: ServicePageTechItem[];
+  cta: {
+    title: string;
+    subtitle: string;
+    button: string;
+  };
+}
+
 // Complete service link with SEO metadata
 export interface ServiceLink {
   id: string;
@@ -137,6 +163,7 @@ export interface ServiceLink {
   };
   seo: ServiceSEO;
   schema: ServiceSchema;
+  content?: ServicePageContent;
 }
 
 // Footer section dictionary (reveal footer)

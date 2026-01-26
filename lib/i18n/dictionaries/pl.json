@@ -552,23 +552,75 @@
   "servicePages": {
     "web-development": {
       "id": "web-development",
-      "label": "Tworzenie Stron Internetowych",
+      "label": "Tworzenie Aplikacji Full-Stack",
       "href": "/pl/uslugi/tworzenie-stron",
       "hrefLang": {
         "en": "/en/services/web-development",
         "pl": "/pl/uslugi/tworzenie-stron"
       },
       "seo": {
-        "title": "Tworzenie Stron Częstochowa | Max Mendes",
-        "metaDescription": "Strony internetowe pisane od zera w React i Next.js. Nie WordPress, nie szablony. Programista z Częstochowy. Szybkie strony, czyste SEO. Śląskie i cała Polska.",
-        "keywords": ["tworzenie stron internetowych", "strony www częstochowa", "programista częstochowa", "strony react", "strony nextjs", "programista śląskie", "strony firmowe"],
-        "h1": "Tworzenie Stron Internetowych",
-        "ogTitle": "Tworzenie Stron Częstochowa | Max Mendes"
+        "title": "Tworzenie Aplikacji Full-Stack Częstochowa | Max Mendes",
+        "metaDescription": "Tworzenie aplikacji webowych full-stack Częstochowa. Dedykowane rozwiązania w React i Next.js dla Twojej firmy. Bez WordPress. Projekty dla Polski i zagranicy.",
+        "keywords": ["tworzenie aplikacji full-stack", "dedykowane aplikacje webowe", "programista react częstochowa", "nextjs development", "systemy webowe", "programista częstochowa", "aplikacje webowe śląskie"],
+        "h1": "Tworzenie Aplikacji Full-Stack",
+        "ogTitle": "Tworzenie Aplikacji Full-Stack Częstochowa | Max Mendes"
       },
       "schema": {
-        "serviceType": "Tworzenie Stron Internetowych",
-        "description": "Profesjonalne strony internetowe pisane od zera w React i Next.js. Kod, nie WordPress ani gotowe szablony.",
+        "serviceType": "Tworzenie Aplikacji Full-Stack",
+        "description": "Dedykowane aplikacje webowe full-stack w React, Next.js, Node.js i PostgreSQL. Frontend i backend dostosowany do wymagań biznesowych.",
         "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+      },
+      "content": {
+        "subtitle": "Dedykowane aplikacje webowe w React i Next.js. Kod produkcyjny dostosowany do wymagań Twojej firmy, nie ograniczeń szablonów.",
+        "sections": [
+          {
+            "title": "Czym Jest Ta Usługa",
+            "paragraphs": [
+              "Tworzenie aplikacji full-stack oznacza budowanie zarówno tego, co użytkownicy widzą (frontend), jak i systemów działających w tle (backend). Otrzymujesz spójną aplikację, w której interfejs, dane i logika działają razem bez szwów.",
+              "W przeciwieństwie do WordPress czy kreatorów stron, dedykowane aplikacje są budowane wokół Twoich konkretnych wymagań. Twoja firma nie dostosowuje się do szablonu—oprogramowanie jest projektowane pod Twoje dokładne procesy, struktury danych i plany rozwoju."
+            ]
+          },
+          {
+            "title": "Co Buduję",
+            "paragraphs": [
+              "Tworzę dedykowane interfejsy w React i Next.js, które zapewniają szybkie i responsywne doświadczenie. Użytkownicy otrzymują jakość aplikacji z natychmiastową nawigacją i aktualizacjami w czasie rzeczywistym, gdy są potrzebne. Backend obsługuje kluczową logikę biznesową—zarządzanie użytkownikami, przetwarzanie danych, transakcje i integracje z zewnętrznymi systemami—zbudowany na Node.js i PostgreSQL dla niezawodności.",
+              "Projekty mogą obejmować systemy uwierzytelniania, kontrolę dostępu opartą na rolach, obsługę płatności przez Stripe, integracje API oraz funkcje czasu rzeczywistego jak dashboardy czy powiadomienia. Używam TypeScript w całym projekcie, aby wychwytywać błędy przed wdrożeniem i zapewnić długoterminową utrzymywalność."
+            ]
+          },
+          {
+            "title": "Dla Kogo Jest Ta Usługa",
+            "paragraphs": [
+              "Ta usługa jest dla firm budujących aplikacje webowe wymagające dedykowanej logiki i obsługi danych. Platformy SaaS, portale klienckie, systemy rezerwacyjne, wewnętrzne dashboardy i produkty oparte na subskrypcjach należą do tej kategorii.",
+              "Jeśli Twój projekt obejmuje użytkowników, uwierzytelnianie, przetwarzanie danych lub logikę biznesową wykraczającą poza proste strony treściowe, potrzebujesz rozwoju full-stack. FlowMate—platforma SaaS, którą zbudowałem do zarządzania emailami—demonstruje to podejście: uwierzytelnianie wielu dostawców, przetwarzanie asynchroniczne, integracje AI i infrastruktura produkcyjna obsługująca rzeczywiste obciążenia."
+            ],
+            "links": [
+              { "text": "Zobacz stronę Projekty →", "href": "/pl/projekty" }
+            ]
+          },
+          {
+            "title": "Jak Pracuję",
+            "paragraphs": [
+              "Pracujesz bezpośrednio ze mną—bez pośredników agencyjnych czy przekazywania projektu. Obsługuję wymagania, architekturę, development i wdrożenie. Kod jest gotowy do produkcji od pierwszego dnia, nie prototypy wymagające przebudowy później.",
+              "Aplikacje są wdrażane na nowoczesnej infrastrukturze (Vercel, AWS) z dystrybucją CDN dla wydajności. Jestem z Częstochowy i dostępny dla projektów z całej Polski oraz międzynarodowych."
+            ],
+            "links": [
+              { "text": "Zobacz stronę Pytania →", "href": "/pl/pytania" }
+            ]
+          }
+        ],
+        "techStackTitle": "Stack Techniczny",
+        "techStack": [
+          { "title": "Frontend", "description": "React 19, Next.js 15, TypeScript, Tailwind CSS—szybki, przyjazny SEO, łatwy w utrzymaniu" },
+          { "title": "Backend", "description": "Node.js, PostgreSQL, Prisma ORM—skalowalna obsługa danych z bezpieczeństwem typów" },
+          { "title": "Integracje", "description": "Płatności Stripe, uwierzytelnianie OAuth, usługi email, zewnętrzne API" },
+          { "title": "Wdrożenie", "description": "Vercel lub AWS z CDN, automatyczny CI/CD, monitoring" },
+          { "title": "Narzędzia", "description": "Kontrola wersji Git, automatyczne testy, śledzenie błędów produkcyjnych" }
+        ],
+        "cta": {
+          "title": "Zbudujmy Twoją Aplikację",
+          "subtitle": "Opisz swój projekt, a odpowiem w ciągu 24 godzin z pytaniami o zakres, harmonogram i podejście.",
+          "button": "Rozpocznij Projekt"
+        }
       }
     },
     "saas-web-apps": {

@@ -44,7 +44,10 @@ export type TechIconId =
   | 'layers'
   | 'sparkles'
   | 'codeWindow'
-  | 'globe';
+  | 'globe'
+  // Full-stack development icons
+  | 'server'
+  | 'api';
 
 // Parallax speed multipliers (0.1 = slow, 1.0 = match scroll speed)
 export type ParallaxSpeed = 0.15 | 0.2 | 0.3 | 0.35 | 0.4 | 0.45 | 0.5 | 0.6 | 0.7;
@@ -124,7 +127,7 @@ export interface FloatingIconsPreset {
 }
 
 // Available preset names
-export type PresetName = 'about' | 'projects' | 'faq' | 'services' | 'contact';
+export type PresetName = 'about' | 'projects' | 'faq' | 'services' | 'contact' | 'web-development';
 
 // Main component props
 export interface FloatingTechIconsProps {

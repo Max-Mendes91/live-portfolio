@@ -550,16 +550,68 @@
         "pl": "/pl/uslugi/tworzenie-stron"
       },
       "seo": {
-        "title": "Web Development - React & Next.js Sites | Max Mendes",
-        "metaDescription": "Custom websites and web applications built with React, Next.js & TypeScript. Clean code, fast loading, SEO-ready. Poland-based developer serving UK, US & EU clients.",
-        "keywords": ["web development", "react developer", "nextjs developer", "full-stack developer", "custom websites", "typescript developer", "web developer poland"],
+        "title": "Full-Stack Web Development - React & Next.js | Max Mendes",
+        "metaDescription": "Full-stack web development services. Custom React and Next.js applications built for your business. Based in Częstochowa, Poland. Available worldwide.",
+        "keywords": ["full-stack web development", "custom web applications", "react developer", "nextjs development", "web developer poland", "typescript developer", "częstochowa"],
         "h1": "Full-Stack Web Development",
-        "ogTitle": "Web Development - React & Next.js Sites | Max Mendes"
+        "ogTitle": "Full-Stack Web Development - React & Next.js | Max Mendes"
       },
       "schema": {
-        "serviceType": "Web Development Service",
-        "description": "Custom web applications and business websites built with React, Next.js, and TypeScript. From landing pages to complex platforms.",
+        "serviceType": "Full-Stack Web Development Service",
+        "description": "Custom full-stack web applications built with React, Next.js, Node.js, and PostgreSQL. Frontend and backend development for business requirements.",
         "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+      },
+      "content": {
+        "subtitle": "Custom web applications built with React and Next.js. Production code designed for your business requirements, not template limitations.",
+        "sections": [
+          {
+            "title": "What This Service Is",
+            "paragraphs": [
+              "Full-stack web development means building both what users see (frontend) and the systems running behind the scenes (backend). You get one cohesive application where interface, data, and logic work together seamlessly.",
+              "Unlike WordPress or website builders, custom applications are built around your specific requirements. Your business doesn't adapt to a template—the software is designed for your exact workflows, data structures, and growth plans."
+            ]
+          },
+          {
+            "title": "What I Build",
+            "paragraphs": [
+              "I develop custom frontends using React and Next.js that deliver fast, responsive interfaces. Users get application-quality experiences with instant navigation and real-time updates when needed. The backend handles core business logic—user management, data processing, transactions, and third-party integrations—built with Node.js and PostgreSQL for reliability.",
+              "Projects can include authentication systems, role-based access control, payment processing with Stripe, API integrations, and real-time features like live dashboards or notifications. I use TypeScript throughout to catch errors before deployment and ensure long-term maintainability."
+            ]
+          },
+          {
+            "title": "Who This Service Fits",
+            "paragraphs": [
+              "This service is for businesses building web applications that require custom logic and data handling. SaaS platforms, client portals, booking systems, internal dashboards, and subscription-based products all fall into this category.",
+              "If your project involves users, authentication, data processing, or business logic beyond simple content pages, you need full-stack development. FlowMate—the SaaS platform I built for email management—demonstrates this approach: multi-provider authentication, async processing, AI integrations, and production infrastructure handling real workloads."
+            ],
+            "links": [
+              { "text": "Check the Projects page →", "href": "/en/projects" }
+            ]
+          },
+          {
+            "title": "How I Work",
+            "paragraphs": [
+              "You work directly with me—no agency layers or project handoffs. I handle requirements, architecture, development, and deployment. Code is production-ready from day one, not prototypes that need rebuilding later.",
+              "Applications deploy to modern infrastructure (Vercel, AWS) with CDN distribution for performance. I'm based in Częstochowa, Poland, and available for projects across Poland and internationally."
+            ],
+            "links": [
+              { "text": "See the FAQ page →", "href": "/en/faq" }
+            ]
+          }
+        ],
+        "techStackTitle": "Technical Stack",
+        "techStack": [
+          { "title": "Frontend", "description": "React 19, Next.js 15, TypeScript, Tailwind CSS—fast, SEO-friendly, maintainable" },
+          { "title": "Backend", "description": "Node.js, PostgreSQL, Prisma ORM—scalable data handling with type safety" },
+          { "title": "Integrations", "description": "Stripe payments, OAuth authentication, email services, third-party APIs" },
+          { "title": "Deployment", "description": "Vercel or AWS with CDN, automated CI/CD, monitoring" },
+          { "title": "Tools", "description": "Git version control, automated testing, production-grade error tracking" }
+        ],
+        "cta": {
+          "title": "Ready to Build Your Application?",
+          "subtitle": "Tell me about your project and I'll respond within 24 hours with questions about scope, timeline, and approach.",
+          "button": "Start Your Project"
+        }
       }
     },
     "saas-web-apps": {
