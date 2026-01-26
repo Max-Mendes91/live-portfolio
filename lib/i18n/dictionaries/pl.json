@@ -708,13 +708,59 @@
         "title": "Sklepy Internetowe Częstochowa | Max Mendes",
         "metaDescription": "Sklepy internetowe z integracją Subiekt GT i szybką kasą. Shopify lub dedykowane. Programista z Częstochowy. Sklepy dla firm ze Śląskiego i całej Polski.",
         "keywords": ["sklepy internetowe", "sklep online częstochowa", "integracja subiekt gt", "tworzenie sklepów", "sklep shopify", "sklep dedykowany", "e-commerce śląskie"],
-        "h1": "Sklepy Internetowe",
+        "h1": "Tworzenie Sklepów Internetowych",
         "ogTitle": "Sklepy Internetowe Częstochowa | Max Mendes"
       },
       "schema": {
         "serviceType": "Tworzenie Sklepów Internetowych",
-        "description": "Sklepy internetowe z integracją Subiekt GT, bramek płatności i systemów magazynowych. Shopify lub rozwiązania dedykowane.",
+        "description": "Sklepy internetowe z integracją bramek płatności i systemów magazynowych. Rozwiązania dedykowane bez ograniczeń szablonów.",
         "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+      },
+      "content": {
+        "subtitle": "Niestandardowe sklepy internetowe tworzone w React — szybkie, wydajne i nastawione na konwersję. Projektowane pod Twój katalog i logikę biznesową, bez kompromisów narzuconych przez szablony WooCommerce.",
+        "sections": [
+          {
+            "title": "Czym jest niestandardowy sklep internetowy",
+            "paragraphs": [
+              "Tworzenie niestandardowego sklepu internetowego oznacza budowę rozwiązania dopasowanego do realnych potrzeb Twojej firmy, a nie do ograniczeń gotowych motywów WooCommerce. Szablony sprawdzają się na początku, ale wiele firm szybko je przerasta — gdy pojawia się niestandardowa polityka cenowa, złożona logika magazynowa lub potrzeba integracji z innymi systemami. Sklep oparty na React i Next.js daje pełną kontrolę nad wydajnością, SEO i sposobem działania sprzedaży. Szybkość ładowania oraz dobre wyniki Core Web Vitals mają bezpośredni wpływ na konwersję i widoczność w Google."
+            ]
+          },
+          {
+            "title": "Co obejmuje ta usługa",
+            "paragraphs": [
+              "Buduję sklepy internetowe obejmujące cały proces sprzedaży. Projekty mogą zawierać katalog produktów z zarządzaniem stanami magazynowymi, koszyk i dopasowany proces checkoutu, a także integrację płatności. Dla rynku polskiego obsługiwane są Przelewy24 i PayU, a dla klientów międzynarodowych — Stripe. System zamówień pozwala śledzić status realizacji i wysyłki, a konta klientów dają dostęp do historii zakupów. Wyszukiwarka i filtry ułatwiają szybkie znalezienie produktów, a panel administracyjny umożliwia sprawne zarządzanie ofertą i zamówieniami. Automatyczne maile (potwierdzenia, aktualizacje wysyłki) ograniczają ręczną obsługę."
+            ]
+          },
+          {
+            "title": "Dla kogo i przykładowe zastosowania",
+            "paragraphs": [
+              "Ta usługa jest przeznaczona dla firm, które nie chcą lub nie mogą działać w ramach standardowego WooCommerce. Sprawdza się w modelach B2B z indywidualnymi cenami lub rabatami ilościowymi, przy integracjach z systemami księgowymi, ERP lub magazynowymi, a także przy produktach konfigurowalnych i rozbudowanych wariantach. To również dobre rozwiązanie dla sklepów działających międzynarodowo (wielowalutowość, wiele języków) lub szukających realnej alternatywy dla WooCommerce."
+            ]
+          },
+          {
+            "title": "Wydajność i SEO jako fundament sprzedaży",
+            "paragraphs": [
+              "Wydajność sklepu ma bezpośredni wpływ na sprzedaż. Szybkie strony produktowe poprawiają doświadczenie użytkownika i zwiększają konwersję. Każdy sklep jest optymalizowany pod SEO: odpowiednia struktura treści, metadane, dane strukturalne oraz renderowanie po stronie serwera, dzięki czemu produkty są dobrze indeksowane. Obrazy są optymalizowane i ładowane asynchronicznie, a całość projektowana w podejściu mobile-first — zgodnie z tym, jak dziś kupują klienci.",
+              "Z Częstochowy, dostępny dla projektów z Polski i zagranicy."
+            ],
+            "links": [
+              { "text": "Pytania o zakres, czas realizacji lub koszty? Sprawdź FAQ →", "href": "/pl/pytania" }
+            ]
+          }
+        ],
+        "techStackTitle": "Stos Technologiczny",
+        "techStack": [
+          { "title": "Frontend", "description": "React 19, Next.js 15 i TypeScript zapewniają szybkie, przyjazne SEO strony produktowe, które realnie wspierają konwersję." },
+          { "title": "Płatności", "description": "Przelewy24 i PayU dla rynku polskiego oraz Stripe dla sprzedaży zagranicznej." },
+          { "title": "Baza danych", "description": "PostgreSQL z Supabase odpowiada za produkty, zamówienia i stany magazynowe." },
+          { "title": "Wyszukiwanie", "description": "Algolia lub rozwiązanie dedykowane umożliwia szybkie odnajdywanie produktów. Obrazy są optymalizowane pod wydajność." },
+          { "title": "Wdrożenie", "description": "Całość działa na profesjonalnej infrastrukturze cloud z szybkim hostingiem i dystrybucją CDN." }
+        ],
+        "cta": {
+          "title": "Gotowy Zbudować Swój Sklep Internetowy?",
+          "subtitle": "Opisz swój katalog, integracje i wymagania biznesowe. Odpowiem w ciągu 24 godzin z pytaniami o podejście techniczne i harmonogram.",
+          "button": "Rozpocznij Projekt"
+        }
       }
     },
     "seo-performance-optimization": {

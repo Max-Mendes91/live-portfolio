@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { getDictionary } from '@/lib/i18n/config';
 import { generateServicePageMetadata } from '@/lib/seo/metadata';
 import { ServicePageJsonLd } from '@/components/seo/JsonLd';
+import ServicePageClient from '@/components/sections/ServicePageClient';
 import { ServiceLink } from '@/types/i18n';
 
 const SERVICE_ID = 'ecommerce-development';
@@ -12,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   if (!serviceData) {
     return {
-      title: 'E-Commerce Development | Max Mendes',
+      title: 'E-Commerce Development - Custom Online Stores | Max Mendes',
     };
   }
 
@@ -23,17 +24,14 @@ export default async function EcommerceDevelopmentPage() {
   const dictionary = await getDictionary('en');
   const serviceData = dictionary.servicePages?.[SERVICE_ID] as ServiceLink | undefined;
 
+  if (!serviceData) {
+    return null;
+  }
+
   return (
     <>
-      {serviceData && <ServicePageJsonLd serviceData={serviceData} />}
-      <div className="min-h-screen bg-background text-text-primary">
-        <div className="max-w-4xl mx-auto px-6 py-24">
-          <h1 className="text-4xl font-light tracking-tight mb-6">
-            {serviceData?.seo.h1 || 'E-Commerce Development'}
-          </h1>
-          <p className="text-text-secondary">Content coming soon...</p>
-        </div>
-      </div>
+      <ServicePageJsonLd serviceData={serviceData} />
+      <ServicePageClient locale="en" dictionary={dictionary} serviceData={serviceData} />
     </>
   );
 }

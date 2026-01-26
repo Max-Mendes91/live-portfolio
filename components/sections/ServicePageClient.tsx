@@ -16,6 +16,7 @@ import type { PresetName } from '@/components/effects/FloatingTechIcons/types';
 const SERVICE_ICON_PRESETS: Record<string, PresetName> = {
   'web-development': 'web-development',
   'saas-web-apps': 'saas',
+  'ecommerce-development': 'ecommerce',
 };
 
 interface ServicePageClientProps {

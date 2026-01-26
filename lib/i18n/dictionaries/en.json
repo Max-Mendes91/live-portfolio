@@ -697,15 +697,66 @@
       },
       "seo": {
         "title": "E-Commerce Development - Custom Online Stores | Max Mendes",
-        "metaDescription": "Professional e-commerce development with Shopify or custom solutions. Payment integration, inventory management, fast checkout. Based in Poland, global delivery.",
-        "keywords": ["ecommerce development", "online store development", "shopify developer", "custom ecommerce", "payment integration", "shopping cart", "ecommerce poland"],
+        "metaDescription": "Custom e-commerce development with React and Next.js. Fast, conversion-focused online stores. No Shopify/WooCommerce limitations. Częstochowa, Poland.",
+        "keywords": ["ecommerce development", "custom online store", "react ecommerce", "nextjs ecommerce", "online store development", "ecommerce developer poland", "custom shopping cart"],
         "h1": "E-Commerce Development",
         "ogTitle": "E-Commerce Development - Custom Online Stores | Max Mendes"
       },
       "schema": {
         "serviceType": "E-Commerce Development Service",
-        "description": "Professional e-commerce solutions with payment integration, inventory management, and conversion optimization. Shopify or custom builds.",
+        "description": "Custom e-commerce development with React and Next.js. Fast, conversion-focused online stores with payment integration and inventory management.",
         "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+      },
+      "content": {
+        "subtitle": "Custom online stores built with React for speed and conversions. Designed around your catalog and business logic—not template compromises.",
+        "sections": [
+          {
+            "title": "What Custom E-Commerce Development Means",
+            "paragraphs": [
+              "Custom e-commerce development means your online store is built specifically for how your business operates, instead of adapting your processes to a Shopify or WooCommerce template. Templates work well at the start, but many businesses outgrow them when pricing rules become complex, inventory logic is non-standard, or integrations are required.",
+              "A custom online store allows full control over performance, SEO, and business logic. With React and Next.js, product pages load faster and meet Core Web Vitals standards—factors that directly affect conversion rates and search visibility."
+            ]
+          },
+          {
+            "title": "What's Included in This Service",
+            "paragraphs": [
+              "I build e-commerce platforms that cover the entire sales flow. Projects can include a structured product catalog with inventory management, a streamlined shopping cart, and a checkout process tailored to your users.",
+              "Payment processing is integrated flexibly, supporting both international methods (Stripe) and Polish payment processors (Przelewy24, PayU). Order management features handle fulfillment status and customer communication. Customer accounts provide order history and saved details.",
+              "Advanced search and filtering help users find products quickly, while a custom admin dashboard allows you to manage products, orders, and inventory efficiently. Automated email notifications handle order confirmations and shipping updates without manual work."
+            ]
+          },
+          {
+            "title": "Who This Is For and Use Cases",
+            "paragraphs": [
+              "This service is suited for businesses with requirements that exceed standard templates. Examples include B2B wholesale stores with custom pricing or volume discounts, companies needing integrations with accounting, ERP, or inventory systems, and stores offering configurable or highly variant products.",
+              "It also fits international businesses requiring multi-currency and multi-language support, or brands looking for a Shopify alternative when platform limitations start affecting growth. Typical use cases include B2B wholesale platforms, subscription boxes, and custom product builders."
+            ]
+          },
+          {
+            "title": "Performance and SEO Focus",
+            "paragraphs": [
+              "Performance is a core part of every build. Fast loading times improve user experience and directly impact conversion rates. Product pages are SEO-optimized with proper metadata and structured data, while server-side rendering ensures search engines can index content effectively.",
+              "Images are optimized and loaded lazily to reduce page weight. The entire store is designed mobile-first, reflecting how most customers browse and purchase today.",
+              "Based in Częstochowa, Poland. Available for e-commerce projects across Poland and internationally."
+            ],
+            "links": [
+              { "text": "Questions about e-commerce development timelines or pricing? Check the FAQ →", "href": "/en/faq" }
+            ]
+          }
+        ],
+        "techStackTitle": "Technical Stack",
+        "techStack": [
+          { "title": "Frontend", "description": "React 19, Next.js 15, and TypeScript power fast, SEO-friendly product pages where performance directly supports conversions." },
+          { "title": "Payments", "description": "Stripe for international sales, Przelewy24 or PayU for Polish market—flexible integration based on your target customers." },
+          { "title": "Database", "description": "PostgreSQL with Supabase manages products, orders, and inventory with reliability and scale." },
+          { "title": "Search", "description": "Algolia or custom search solutions for fast product discovery. Image optimization via Cloudinary or Next.js Image." },
+          { "title": "Deployment", "description": "Vercel or AWS ensures global speed and stability with CDN distribution." }
+        ],
+        "cta": {
+          "title": "Ready to Build Your Online Store?",
+          "subtitle": "Tell me about your catalog, integrations, and business requirements. I'll respond within 24 hours with questions about technical approach and timeline.",
+          "button": "Start Your Project"
+        }
       }
     },
     "seo-performance-optimization": {
