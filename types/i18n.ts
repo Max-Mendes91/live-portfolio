@@ -184,6 +184,7 @@ export interface NavDict {
   about: string;
   services: string;
   projects: string;
+  faq: string;
   contact: string;
   logoAlt: string;
 }
