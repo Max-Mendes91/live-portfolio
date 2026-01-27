@@ -97,7 +97,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               quality={85}
-              loading="lazy"
+              priority
               style={{ objectFit: 'cover', objectPosition: 'top' }}
               className="grayscale brightness-90 hover:brightness-100 transition-[filter] duration-1000"
             />
