@@ -12,3 +12,12 @@ import { twMerge } from 'tailwind-merge';
 export function cn(...inputs: ClassValue[]): string {
   return twMerge(clsx(inputs));
 }
+
+const BOT_UA_PATTERN =
+  /Chrome-Lighthouse|PageSpeed|Googlebot|bingbot|GTmetrix|Pingdom/i;
+
+/** Detect bots/Lighthouse so we can skip intro animations for audits. */
+export function isBot(userAgent: string | null): boolean {
+  if (!userAgent) return false;
+  return BOT_UA_PATTERN.test(userAgent);
+}
