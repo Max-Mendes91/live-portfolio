@@ -550,16 +550,68 @@
         "pl": "/pl/uslugi/tworzenie-stron"
       },
       "seo": {
-        "title": "Web Development - React & Next.js Sites | Max Mendes",
-        "metaDescription": "Custom websites and web applications built with React, Next.js & TypeScript. Clean code, fast loading, SEO-ready. Poland-based developer serving UK, US & EU clients.",
-        "keywords": ["web development", "react developer", "nextjs developer", "full-stack developer", "custom websites", "typescript developer", "web developer poland"],
+        "title": "Full-Stack Web Development - React & Next.js | Max Mendes",
+        "metaDescription": "Full-stack web development services. Custom React and Next.js applications built for your business. Based in Częstochowa, Poland. Available worldwide.",
+        "keywords": ["full-stack web development", "custom web applications", "react developer", "nextjs development", "web developer poland", "typescript developer", "częstochowa"],
         "h1": "Full-Stack Web Development",
-        "ogTitle": "Web Development - React & Next.js Sites | Max Mendes"
+        "ogTitle": "Full-Stack Web Development - React & Next.js | Max Mendes"
       },
       "schema": {
-        "serviceType": "Web Development Service",
-        "description": "Custom web applications and business websites built with React, Next.js, and TypeScript. From landing pages to complex platforms.",
+        "serviceType": "Full-Stack Web Development Service",
+        "description": "Custom full-stack web applications built with React, Next.js, Node.js, and PostgreSQL. Frontend and backend development for business requirements.",
         "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+      },
+      "content": {
+        "subtitle": "Custom web applications built with React and Next.js. Production code designed for your business requirements, not template limitations.",
+        "sections": [
+          {
+            "title": "What This Service Is",
+            "paragraphs": [
+              "Full-stack web development means building both what users see (frontend) and the systems running behind the scenes (backend). You get one cohesive application where interface, data, and logic work together seamlessly.",
+              "Unlike WordPress or website builders, custom applications are built around your specific requirements. Your business doesn't adapt to a template—the software is designed for your exact workflows, data structures, and growth plans."
+            ]
+          },
+          {
+            "title": "What I Build",
+            "paragraphs": [
+              "I develop custom frontends using React and Next.js that deliver fast, responsive interfaces. Users get application-quality experiences with instant navigation and real-time updates when needed. The backend handles core business logic—user management, data processing, transactions, and third-party integrations—built with Node.js and PostgreSQL for reliability.",
+              "Projects can include authentication systems, role-based access control, payment processing with Stripe, API integrations, and real-time features like live dashboards or notifications. I use TypeScript throughout to catch errors before deployment and ensure long-term maintainability."
+            ]
+          },
+          {
+            "title": "Who This Service Fits",
+            "paragraphs": [
+              "This service is for businesses building web applications that require custom logic and data handling. SaaS platforms, client portals, booking systems, internal dashboards, and subscription-based products all fall into this category.",
+              "If your project involves users, authentication, data processing, or business logic beyond simple content pages, you need full-stack development. FlowMate—the SaaS platform I built for email management—demonstrates this approach: multi-provider authentication, async processing, AI integrations, and production infrastructure handling real workloads."
+            ],
+            "links": [
+              { "text": "Check the Projects page →", "href": "/en/projects" }
+            ]
+          },
+          {
+            "title": "How I Work",
+            "paragraphs": [
+              "You work directly with me—no agency layers or project handoffs. I handle requirements, architecture, development, and deployment. Code is production-ready from day one, not prototypes that need rebuilding later.",
+              "Applications deploy to modern infrastructure (Vercel, AWS) with CDN distribution for performance. I'm based in Częstochowa, Poland, and available for projects across Poland and internationally."
+            ],
+            "links": [
+              { "text": "See the FAQ page →", "href": "/en/faq" }
+            ]
+          }
+        ],
+        "techStackTitle": "Technical Stack",
+        "techStack": [
+          { "title": "Frontend", "description": "React 19, Next.js 15, TypeScript, Tailwind CSS—fast, SEO-friendly, maintainable" },
+          { "title": "Backend", "description": "Node.js, PostgreSQL, Prisma ORM—scalable data handling with type safety" },
+          { "title": "Integrations", "description": "Stripe payments, OAuth authentication, email services, third-party APIs" },
+          { "title": "Deployment", "description": "Vercel or AWS with CDN, automated CI/CD, monitoring" },
+          { "title": "Tools", "description": "Git version control, automated testing, production-grade error tracking" }
+        ],
+        "cta": {
+          "title": "Ready to Build Your Application?",
+          "subtitle": "Tell me about your project and I'll respond within 24 hours with questions about scope, timeline, and approach.",
+          "button": "Start Your Project"
+        }
       }
     },
     "saas-web-apps": {
@@ -571,16 +623,68 @@
         "pl": "/pl/uslugi/aplikacje-webowe"
       },
       "seo": {
-        "title": "SaaS Development - Custom Web Applications | Max Mendes",
-        "metaDescription": "Custom SaaS platforms and web applications with user auth, dashboards, payments & subscriptions. React, Next.js, Node.js. Poland-based, serving global clients.",
-        "keywords": ["saas development", "web application development", "custom software", "dashboard development", "subscription platform", "react web app", "nextjs saas"],
-        "h1": "SaaS & Web Application Development",
-        "ogTitle": "SaaS Development - Custom Web Applications | Max Mendes"
+        "title": "SaaS Development - Subscription Platforms | Max Mendes",
+        "metaDescription": "SaaS development services. Build subscription platforms with React and Next.js. Production-ready architecture. Częstochowa, Poland. International projects.",
+        "keywords": ["saas development", "subscription platform", "web application development", "react saas", "nextjs saas", "saas developer poland", "multi-tenant saas"],
+        "h1": "SaaS & Web Applications",
+        "ogTitle": "SaaS Development - Subscription Platforms | Max Mendes"
       },
       "schema": {
         "serviceType": "Software Development Service",
-        "description": "Custom SaaS platforms and web applications with authentication, dashboards, payment integration, and scalable architecture.",
+        "description": "Production SaaS development for subscription platforms. Scalable architecture with authentication, payments, and multi-tenant data models.",
         "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+      },
+      "content": {
+        "subtitle": "Production SaaS development for subscription platforms built with React. Scalable architecture from day one—built for production and designed to grow with your users.",
+        "sections": [
+          {
+            "title": "What SaaS Development Means",
+            "paragraphs": [
+              "SaaS development is about building subscription-based software that users rely on continuously, not a one-time website or a simple web app. A SaaS product manages accounts, permissions, data isolation, and recurring payments across many customers at once. This is known as multi-tenancy—your platform serves multiple businesses or users while keeping their data separate and secure.",
+              "Unlike regular websites, SaaS products must handle onboarding, billing cycles, upgrades, cancellations, and long-term maintenance. These are business-critical systems, not just interfaces."
+            ]
+          },
+          {
+            "title": "What's Included in This Service",
+            "paragraphs": [
+              "I build SaaS platforms that cover the full product lifecycle. Projects can include secure user authentication with email/password, OAuth, and social logins; subscription management with Stripe; and database structures designed for multi-tenant data. Admin dashboards allow you to manage users, plans, and usage without manual work.",
+              "Email notifications and onboarding flows guide users through signup, activation, and billing events. APIs are built to support integrations with third-party services or future mobile and partner applications. Built to add features without rebuilding the foundation."
+            ]
+          },
+          {
+            "title": "Who This Is For and Use Cases",
+            "paragraphs": [
+              "This service is for SaaS founders building an MVP that is meant to become a real product, not a disposable prototype. It also fits businesses launching subscription platforms or internal SaaS tools that replace spreadsheets or manual workflows. Common use cases include productivity tools, B2B platforms, analytics dashboards, and subscription-based services.",
+              "FlowMate—the SaaS platform I built for email management—handles multi-provider authentication, async processing (background tasks that don't slow down the UI), AI integrations, and Stripe subscriptions at production scale. It demonstrates how these systems work together in a real product."
+            ],
+            "links": [
+              { "text": "See FlowMate on the Projects page →", "href": "/en/projects" }
+            ]
+          },
+          {
+            "title": "How It's Delivered",
+            "paragraphs": [
+              "You work directly with one developer, without agency handoffs or junior teams. The focus is production-ready code from day one, so the platform does not need rebuilding after validation. TypeScript is used across the stack to reduce runtime errors and support long-term scalability. Applications are deployed on modern infrastructure such as Vercel, Supabase, or AWS, depending on requirements. The goal is a SaaS platform ready for real users and steady growth.",
+              "Based in Częstochowa, Poland. Available for SaaS projects across Poland and internationally."
+            ],
+            "links": [
+              { "text": "Questions about SaaS development pricing or process? Check the FAQ →", "href": "/en/faq" }
+            ]
+          }
+        ],
+        "techStackTitle": "Technical Stack",
+        "techStack": [
+          { "title": "Frontend", "description": "React 19, Next.js 15, TypeScript—fast, SEO-friendly SaaS frontends with reliability as features grow" },
+          { "title": "Backend", "description": "Node.js, PostgreSQL (Supabase, Prisma)—scalable, multi-tenant data models keeping customer data separate and secure" },
+          { "title": "Authentication", "description": "Clerk or NextAuth for secure user management with social logins and OAuth" },
+          { "title": "Payments", "description": "Stripe subscriptions and webhooks—automating the full billing lifecycle" },
+          { "title": "Real-time & Deployment", "description": "WebSockets or SSE when required. Vercel with managed databases for predictable performance and scaling" }
+        ],
+        "cta": {
+          "title": "Ready to Build Your SaaS Platform?",
+          "subtitle": "Tell me about your project and I'll respond within 24 hours with questions about architecture, timeline, and technical approach.",
+          "button": "Start Your Project"
+        }
       }
     },
     "ecommerce-development": {
@@ -593,15 +697,66 @@
       },
       "seo": {
         "title": "E-Commerce Development - Custom Online Stores | Max Mendes",
-        "metaDescription": "Professional e-commerce development with Shopify or custom solutions. Payment integration, inventory management, fast checkout. Based in Poland, global delivery.",
-        "keywords": ["ecommerce development", "online store development", "shopify developer", "custom ecommerce", "payment integration", "shopping cart", "ecommerce poland"],
+        "metaDescription": "Custom e-commerce development with React and Next.js. Fast, conversion-focused online stores. No Shopify/WooCommerce limitations. Częstochowa, Poland.",
+        "keywords": ["ecommerce development", "custom online store", "react ecommerce", "nextjs ecommerce", "online store development", "ecommerce developer poland", "custom shopping cart"],
         "h1": "E-Commerce Development",
         "ogTitle": "E-Commerce Development - Custom Online Stores | Max Mendes"
       },
       "schema": {
         "serviceType": "E-Commerce Development Service",
-        "description": "Professional e-commerce solutions with payment integration, inventory management, and conversion optimization. Shopify or custom builds.",
+        "description": "Custom e-commerce development with React and Next.js. Fast, conversion-focused online stores with payment integration and inventory management.",
         "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+      },
+      "content": {
+        "subtitle": "Custom online stores built with React for speed and conversions. Designed around your catalog and business logic—not template compromises.",
+        "sections": [
+          {
+            "title": "What Custom E-Commerce Development Means",
+            "paragraphs": [
+              "Custom e-commerce development means your online store is built specifically for how your business operates, instead of adapting your processes to a Shopify or WooCommerce template. Templates work well at the start, but many businesses outgrow them when pricing rules become complex, inventory logic is non-standard, or integrations are required.",
+              "A custom online store allows full control over performance, SEO, and business logic. With React and Next.js, product pages load faster and meet Core Web Vitals standards—factors that directly affect conversion rates and search visibility."
+            ]
+          },
+          {
+            "title": "What's Included in This Service",
+            "paragraphs": [
+              "I build e-commerce platforms that cover the entire sales flow. Projects can include a structured product catalog with inventory management, a streamlined shopping cart, and a checkout process tailored to your users.",
+              "Payment processing is integrated flexibly, supporting both international methods (Stripe) and Polish payment processors (Przelewy24, PayU). Order management features handle fulfillment status and customer communication. Customer accounts provide order history and saved details.",
+              "Advanced search and filtering help users find products quickly, while a custom admin dashboard allows you to manage products, orders, and inventory efficiently. Automated email notifications handle order confirmations and shipping updates without manual work."
+            ]
+          },
+          {
+            "title": "Who This Is For and Use Cases",
+            "paragraphs": [
+              "This service is suited for businesses with requirements that exceed standard templates. Examples include B2B wholesale stores with custom pricing or volume discounts, companies needing integrations with accounting, ERP, or inventory systems, and stores offering configurable or highly variant products.",
+              "It also fits international businesses requiring multi-currency and multi-language support, or brands looking for a Shopify alternative when platform limitations start affecting growth. Typical use cases include B2B wholesale platforms, subscription boxes, and custom product builders."
+            ]
+          },
+          {
+            "title": "Performance and SEO Focus",
+            "paragraphs": [
+              "Performance is a core part of every build. Fast loading times improve user experience and directly impact conversion rates. Product pages are SEO-optimized with proper metadata and structured data, while server-side rendering ensures search engines can index content effectively.",
+              "Images are optimized and loaded lazily to reduce page weight. The entire store is designed mobile-first, reflecting how most customers browse and purchase today.",
+              "Based in Częstochowa, Poland. Available for e-commerce projects across Poland and internationally."
+            ],
+            "links": [
+              { "text": "Questions about e-commerce development timelines or pricing? Check the FAQ →", "href": "/en/faq" }
+            ]
+          }
+        ],
+        "techStackTitle": "Technical Stack",
+        "techStack": [
+          { "title": "Frontend", "description": "React 19, Next.js 15, and TypeScript power fast, SEO-friendly product pages where performance directly supports conversions." },
+          { "title": "Payments", "description": "Stripe for international sales, Przelewy24 or PayU for Polish market—flexible integration based on your target customers." },
+          { "title": "Database", "description": "PostgreSQL with Supabase manages products, orders, and inventory with reliability and scale." },
+          { "title": "Search", "description": "Algolia or custom search solutions for fast product discovery. Image optimization via Cloudinary or Next.js Image." },
+          { "title": "Deployment", "description": "Vercel or AWS ensures global speed and stability with CDN distribution." }
+        ],
+        "cta": {
+          "title": "Ready to Build Your Online Store?",
+          "subtitle": "Tell me about your catalog, integrations, and business requirements. I'll respond within 24 hours with questions about technical approach and timeline.",
+          "button": "Start Your Project"
+        }
       }
     },
     "seo-performance-optimization": {
@@ -613,16 +768,71 @@
         "pl": "/pl/uslugi/pozycjonowanie"
       },
       "seo": {
-        "title": "Technical SEO - Performance Optimization | Max Mendes",
-        "metaDescription": "Technical SEO, Core Web Vitals optimization, and page speed improvements. Fix what's slowing your site and hurting rankings. Developer-focused SEO services.",
-        "keywords": ["technical seo", "seo optimization", "core web vitals", "page speed optimization", "seo audit", "website performance", "seo developer"],
+        "title": "SEO & Performance Optimization - Faster Sites | Max Mendes",
+        "metaDescription": "SEO and performance optimization services. Improve page speed, Core Web Vitals, and search rankings. Technical optimization for better conversions. Częstochowa, Poland.",
+        "keywords": ["technical seo", "seo optimization", "core web vitals", "page speed optimization", "seo audit", "website performance", "seo developer", "częstochowa"],
         "h1": "SEO & Performance Optimization",
-        "ogTitle": "Technical SEO - Performance Optimization | Max Mendes"
+        "ogTitle": "SEO & Performance Optimization - Faster Sites | Max Mendes"
       },
       "schema": {
         "serviceType": "SEO Service",
-        "description": "Technical SEO audits, Core Web Vitals optimization, page speed improvements, and metadata fixes. Developer-focused approach to search optimization.",
+        "description": "Performance optimization and SEO focused on real business results. Faster page speed improves rankings, conversions, and revenue through Core Web Vitals optimization.",
         "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+      },
+      "content": {
+        "subtitle": "Performance optimization and SEO focused on real business results. Faster page speed improves rankings, conversions, and revenue—not just technical scores.",
+        "sections": [
+          {
+            "title": "Why performance and SEO matter for business",
+            "paragraphs": [
+              "Website performance and SEO are directly tied to business outcomes. Slow websites lose users before they convert, while search engines rank faster, more reliable pages higher. Google's Core Web Vitals are official ranking factors, which means page speed and stability affect how visible your site is in search results.",
+              "Even small delays matter—industry data shows that a one-second slowdown can reduce conversions by around 7%. With mobile-first indexing, Google primarily evaluates the mobile version of your site, making mobile performance critical. The goal of optimization is not technical perfection for its own sake, but more qualified traffic, better user engagement, and higher conversion rates."
+            ]
+          },
+          {
+            "title": "What's included: Performance optimization",
+            "paragraphs": [
+              "I focus on measurable improvements to how fast and stable your website feels to real users. This includes improving Core Web Vitals metrics such as LCP (Largest Contentful Paint), FID/INP (interaction responsiveness), and CLS (layout stability).",
+              "Page speed is optimized through image compression, modern formats, lazy loading, and reducing unnecessary JavaScript. Code splitting and asset optimization ensure users load only what they need. Caching strategies and CDN usage reduce server response times, while database queries are reviewed to eliminate bottlenecks. Each project includes before-and-after measurements using tools like Lighthouse and real-user metrics, so improvements are clear and verifiable."
+            ]
+          },
+          {
+            "title": "What's included: Technical SEO improvements",
+            "paragraphs": [
+              "SEO optimization starts with a technical audit to identify crawlability and indexing issues that limit visibility. I address problems such as broken internal links, duplicate content signals, incorrect redirects, and poor URL structures.",
+              "Structured data (Schema.org) is implemented to improve eligibility for rich results and enhanced listings. Meta titles and descriptions are optimized for clarity, relevance, and click-through rate—not keyword stuffing. Server-side rendering and correct handling of JavaScript ensure search engines can fully index your content. The result is a technically sound foundation that supports long-term SEO growth."
+            ]
+          },
+          {
+            "title": "Who this is for",
+            "paragraphs": [
+              "This service fits businesses with slow-loading websites, sites with poor Google rankings despite good content, e-commerce stores with high bounce rates, and companies losing mobile traffic. It's also suited for websites built on WordPress or outdated platforms needing optimization, sites that failed Core Web Vitals assessment, and businesses wanting to improve conversion rates through speed improvements."
+            ]
+          },
+          {
+            "title": "How the work is delivered",
+            "paragraphs": [
+              "Optimization work is handled directly by one developer, without agency layers. The process starts with a comprehensive audit covering both performance and SEO issues. I identify specific problems, prioritize fixes based on impact, implement optimizations, and validate results with measurable data. Changes are implemented carefully to avoid regressions.",
+              "Based in Częstochowa, Poland. Available for optimization projects across Poland and internationally."
+            ],
+            "links": [
+              { "text": "Questions about the optimization process, timeline, or pricing? Check the FAQ →", "href": "/en/faq" }
+            ]
+          }
+        ],
+        "techStackTitle": "Technical Focus Areas",
+        "techStack": [
+          { "title": "Performance", "description": "Core Web Vitals, page speed, and stability using modern frontend practices with React, Next.js, and TypeScript." },
+          { "title": "Technical SEO", "description": "Crawlability, structured data, and rendering for search engines—ensuring Google can index your content correctly." },
+          { "title": "Image Optimization", "description": "Compression, modern formats (WebP, AVIF), and lazy loading to reduce page weight without quality loss." },
+          { "title": "Caching & CDN", "description": "Browser caching, server-side caching, and CDN delivery to reduce load times globally." },
+          { "title": "Measurement", "description": "Lighthouse, PageSpeed Insights, and real-user monitoring—every change is validated with metrics." }
+        ],
+        "cta": {
+          "title": "Ready to Optimize Your Website?",
+          "subtitle": "Tell me about your current performance issues and business goals. I'll respond within 24 hours with an initial assessment and optimization approach.",
+          "button": "Start Your Project"
+        }
       }
     },
     "ai-integration": {
@@ -634,16 +844,73 @@
         "pl": "/pl/uslugi/integracja-ai"
       },
       "seo": {
-        "title": "AI Integration - OpenAI & Workflow Automation | Max Mendes",
-        "metaDescription": "AI integration for web applications. Chatbots, content generation, workflow automation using OpenAI & Claude APIs. Poland-based developer, global clients.",
+        "title": "AI Integration - Intelligent Features | Max Mendes",
+        "metaDescription": "AI integration services for practical business solutions. Add intelligent features with OpenAI, Claude, and machine learning. Automation, search, recommendations. Częstochowa, Poland.",
         "keywords": ["ai integration", "chatbot development", "openai integration", "llm implementation", "ai automation", "chatgpt api", "ai developer"],
-        "h1": "AI Integration & Automation",
-        "ogTitle": "AI Integration - OpenAI & Workflow Automation | Max Mendes"
+        "h1": "AI Integration",
+        "ogTitle": "AI Integration - Intelligent Features | Max Mendes"
       },
       "schema": {
         "serviceType": "AI Integration Service",
         "description": "AI-powered features for web applications including chatbots, content generation, and workflow automation using OpenAI and Anthropic APIs.",
         "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+      },
+      "content": {
+        "subtitle": "Intelligent features that solve real business problems. Automation, smarter search, and AI-powered workflows built with practical implementation—no hype.",
+        "sections": [
+          {
+            "title": "What AI integration means for business",
+            "paragraphs": [
+              "AI integration means adding focused, intelligent features to products you already run—not rebuilding everything or chasing trends. In practice, AI can help automate repetitive work, classify and route information, improve search relevance, generate summaries, or assist users with clearer responses. The difference between useful AI and \"AI for AI's sake\" is intent: each feature starts with a specific problem. The goal is to reduce manual effort, improve user experience, or unlock a capability that wasn't feasible before. This is not about replacing teams or promising perfect accuracy. It is about practical gains where machine learning genuinely adds value."
+            ]
+          },
+          {
+            "title": "What's included: common AI features",
+            "paragraphs": [
+              "Projects can include text classification and categorization, content generation and summarization, and intelligent search with semantic matching. Other frequent needs are recommendations and personalization, image recognition and processing, and natural language processing for user input. Automated responses and chatbots are used when appropriate—typically as assistance, not full automation. Data analysis and pattern recognition can surface trends or anomalies that are hard to detect with rules alone. Each feature is scoped to a clear outcome, measured against real usage, and designed to fail safely."
+            ]
+          },
+          {
+            "title": "Technical implementation and providers",
+            "paragraphs": [
+              "I integrate with established AI providers such as OpenAI, Anthropic, and Google, as well as selected open-source models when appropriate. Work includes API integration, prompt design for consistent outputs, and cost management so usage stays predictable. Error handling and fallbacks are essential—AI is probabilistic and needs guardrails. Data privacy, security, and performance are considered from the start, including caching and asynchronous processing.",
+              "FlowMate uses AI integrations for email classification and smart response suggestions, handling real-world variability in email content."
+            ],
+            "links": [
+              { "text": "See FlowMate's AI implementation on the Projects page →", "href": "/en/projects" }
+            ]
+          },
+          {
+            "title": "Who this is for and typical use cases",
+            "paragraphs": [
+              "This service fits businesses with repetitive manual tasks that AI can assist, products needing intelligent search or recommendations, and customer support teams that want AI help without replacing humans. Content platforms benefit from summarization and categorization; e-commerce can add personalization; SaaS products can introduce smart features that improve retention.",
+              "Common examples include document classification, inquiry routing, content moderation, and product recommendations—implemented with clear limits and measurable impact.",
+              "Based in Częstochowa, Poland. Available for AI integration projects locally and internationally."
+            ],
+            "links": [
+              { "text": "Questions about AI integration costs or process? Check the FAQ →", "href": "/en/faq" }
+            ]
+          },
+          {
+            "title": "Approach and Considerations",
+            "paragraphs": [
+              "I start with a narrow use case, not \"add AI everywhere.\" A small proof of concept validates whether AI actually improves the workflow. Implementation is gradual, with fallbacks when results are uncertain. Costs are tracked early—AI API calls scale with usage. If a rule-based solution is better, I recommend it. The key question is always the same: will this intelligent feature materially improve the product?"
+            ]
+          }
+        ],
+        "techStackTitle": "Technical Stack",
+        "techStack": [
+          { "title": "AI Providers", "description": "Integration with GPT (OpenAI), Claude (Anthropic), and custom models when justified." },
+          { "title": "Backend Logic", "description": "Asynchronous processing with queues and caching to control latency and cost." },
+          { "title": "Error Handling", "description": "Robust fallbacks when AI services are unavailable—AI is probabilistic and needs guardrails." },
+          { "title": "Frontend", "description": "React components present AI-powered features smoothly and transparently." },
+          { "title": "Monitoring", "description": "Track usage, success rates, and spend—important because AI API costs grow with adoption." }
+        ],
+        "cta": {
+          "title": "Ready to Add AI Features?",
+          "subtitle": "Tell me about the problem you're solving and where AI could help. I'll respond within 24 hours with an honest assessment of whether AI is the right solution.",
+          "button": "Start Your Project"
+        }
       }
     },
     "services-overview": {
@@ -677,11 +944,11 @@
       "pl": "/pl/pytania"
     },
     "seo": {
-      "title": "Web Development FAQ - Pricing & Process | Max Mendes",
-      "metaDescription": "Web development questions answered. Pricing, timelines, tech stack. Call: +48 502 742 941. React & Next.js developer in Poland serving UK & US.",
-      "keywords": ["web development faq", "freelance developer questions", "web development pricing", "hire developer poland", "react developer questions", "nextjs developer faq"],
+      "title": "Web Development FAQ - Process, Pricing & AI | Max Mendes",
+      "metaDescription": "Web development FAQ covering process, pricing, technical stack, and AI integration. Direct answers about React, Next.js, SaaS, e-commerce, and AI costs. Częstochowa, Poland.",
+      "keywords": ["web development faq", "freelance developer questions", "web development pricing", "hire developer poland", "react developer questions", "nextjs developer faq", "ai integration faq", "ai costs"],
       "h1": "Web Development Questions & Answers",
-      "ogTitle": "Web Development FAQ - Pricing & Process | Max Mendes"
+      "ogTitle": "Web Development FAQ - Process, Pricing & AI | Max Mendes"
     },
     "schema": {
       "type": "FAQPage",
@@ -774,6 +1041,31 @@
           {
             "question": "How do you ensure my site is secure and performant?",
             "answer": "I follow modern security practices for authentication and data handling. Server-side rendering, optimized images, and proper caching are built in by default. Core Web Vitals and load times are treated as requirements, not extras."
+          }
+        ]
+      },
+      {
+        "title": "AI Integration Questions",
+        "items": [
+          {
+            "question": "How much do AI features cost in practice?",
+            "answer": "AI integration has two parts: one-time development cost and ongoing API usage costs. Development covers designing, integrating, and testing the AI feature, while API costs depend on how often users trigger AI actions. I explain both upfront so there are no surprises later."
+          },
+          {
+            "question": "How are AI costs kept predictable and under control?",
+            "answer": "AI costs are managed through caching, request limits, and only calling AI when it adds real value. Common results can be reused instead of regenerated, which significantly reduces usage. I also design features so costs scale with business value, not background noise."
+          },
+          {
+            "question": "What happens to my data when using AI providers?",
+            "answer": "Data sent to AI providers is processed by external services like OpenAI or Anthropic, so they technically see the input. I minimize what is sent, avoid unnecessary personal data, and follow provider privacy options where available. If strict data control is required, we discuss alternatives or limits before building anything."
+          },
+          {
+            "question": "How reliable and accurate is AI in real products?",
+            "answer": "AI is probabilistic, not deterministic, so it will sometimes be wrong or inconsistent. That's why I always build fallbacks, validation, and clear UI states for uncertain results. You should expect AI to assist and speed things up, not to be 100% correct."
+          },
+          {
+            "question": "Which AI provider should I use: OpenAI, Anthropic, or something else?",
+            "answer": "The best provider depends on the task, cost profile, and reliability requirements. Some models are better at structured classification, others at longer reasoning or safer outputs. I usually test providers on your specific use case and choose based on results, not brand names."
           }
         ]
       },

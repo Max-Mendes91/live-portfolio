@@ -6,6 +6,15 @@
  */
 
 import React from 'react';
+import {
+  RefreshCw,
+  Lock,
+  LayoutDashboard,
+  CreditCard,
+  Bell,
+  Settings,
+  Bot,
+} from 'lucide-react';
 import { TechIconId } from './types';
 
 interface IconProps {
@@ -739,6 +748,87 @@ const SendIcon: React.FC<IconProps> = ({ size = 80, className }) => (
   </svg>
 );
 
+// ============================================
+// Full-Stack Development Icons
+// ============================================
+
+// Server - Backend/server infrastructure
+const ServerIcon: React.FC<IconProps> = ({ size = 80, className }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <rect x="2" y="2" width="20" height="8" rx="2" stroke="currentColor" strokeWidth="1.5" />
+    <rect x="2" y="14" width="20" height="8" rx="2" stroke="currentColor" strokeWidth="1.5" />
+    <circle cx="6" cy="6" r="1" fill="currentColor" />
+    <circle cx="6" cy="18" r="1" fill="currentColor" />
+    <path d="M16 6h2M16 18h2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+  </svg>
+);
+
+// API - Code brackets with connection
+const ApiIcon: React.FC<IconProps> = ({ size = 80, className }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <path d="m8 3-5 9 5 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="m16 3 5 9-5 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M14 4 10 20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+  </svg>
+);
+
+// ============================================
+// SaaS-Specific Icons (Lucide wrappers)
+// ============================================
+
+// Cycle - Recurring subscription concept
+const CycleIcon: React.FC<IconProps> = ({ size = 80, className }) => (
+  <RefreshCw size={size} className={className} strokeWidth={1.5} />
+);
+
+// Lock - Authentication/security
+const LockIcon: React.FC<IconProps> = ({ size = 80, className }) => (
+  <Lock size={size} className={className} strokeWidth={1.5} />
+);
+
+// Dashboard - Admin panel/analytics
+const DashboardIcon: React.FC<IconProps> = ({ size = 80, className }) => (
+  <LayoutDashboard size={size} className={className} strokeWidth={1.5} />
+);
+
+// CreditCard - Billing/payments
+const CreditCardIcon: React.FC<IconProps> = ({ size = 80, className }) => (
+  <CreditCard size={size} className={className} strokeWidth={1.5} />
+);
+
+// Bell - Notifications
+const BellIcon: React.FC<IconProps> = ({ size = 80, className }) => (
+  <Bell size={size} className={className} strokeWidth={1.5} />
+);
+
+// Settings - Configuration/admin
+const SettingsIcon: React.FC<IconProps> = ({ size = 80, className }) => (
+  <Settings size={size} className={className} strokeWidth={1.5} />
+);
+
+// ============================================
+// AI-Specific Icons
+// ============================================
+
+// Bot - AI/automation
+const BotIcon: React.FC<IconProps> = ({ size = 80, className }) => (
+  <Bot size={size} className={className} strokeWidth={1.5} />
+);
+
 // Icon registry
 const ICON_COMPONENTS: Record<TechIconId, React.FC<IconProps>> = {
   // Tech icons
@@ -779,6 +869,18 @@ const ICON_COMPONENTS: Record<TechIconId, React.FC<IconProps>> = {
   sparkles: SparklesIcon,
   codeWindow: CodeWindowIcon,
   globe: GlobeIcon,
+  // Full-stack development icons
+  server: ServerIcon,
+  api: ApiIcon,
+  // SaaS-specific icons
+  cycle: CycleIcon,
+  lock: LockIcon,
+  dashboard: DashboardIcon,
+  creditCard: CreditCardIcon,
+  bell: BellIcon,
+  settings: SettingsIcon,
+  // AI-specific icons
+  bot: BotIcon,
 };
 
 // Main TechIcon component
@@ -836,4 +938,16 @@ export {
   SparklesIcon,
   CodeWindowIcon,
   GlobeIcon,
+  // Full-stack development icons
+  ServerIcon,
+  ApiIcon,
+  // SaaS-specific icons
+  CycleIcon,
+  LockIcon,
+  DashboardIcon,
+  CreditCardIcon,
+  BellIcon,
+  SettingsIcon,
+  // AI-specific icons
+  BotIcon,
 };

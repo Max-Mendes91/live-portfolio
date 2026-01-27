@@ -42,7 +42,7 @@
         "id": "ecommerce",
         "icon": "ShoppingCart",
         "title": "Sklepy Internetowe i E-Commerce",
-        "description": "Buduję dedykowane platformy e-commerce w React i Next.js z płatnościami Stripe lub PayPal, kontrolą magazynu i zarządzaniem zamówieniami. Idealne dla firm, które przerosły Shopify lub potrzebują pełnej kontroli nad logiką sklepu.",
+        "description": "Buduję dedykowane platformy e-commerce w React i Next.js z płatnościami Przelewy24, PayU lub Stripe, kontrolą magazynu i zarządzaniem zamówieniami. Idealne dla firm, które przerosły Shopify lub potrzebują pełnej kontroli nad logiką sklepu.",
         "linkText": "platformy e-commerce",
         "linkHref": "/pl/uslugi/sklepy-internetowe"
       },
@@ -80,7 +80,7 @@
       }
     ],
     "marquee1": ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
-    "marquee2": ["Stripe", "OpenAI", "Claude API", "Vercel", "AWS", "SEO"]
+    "marquee2": ["Przelewy24", "OpenAI", "Claude API", "Vercel", "AWS", "SEO"]
   },
   "process": {
     "badge": "Proces Tworzenia",
@@ -552,23 +552,75 @@
   "servicePages": {
     "web-development": {
       "id": "web-development",
-      "label": "Tworzenie Stron Internetowych",
+      "label": "Tworzenie Aplikacji Full-Stack",
       "href": "/pl/uslugi/tworzenie-stron",
       "hrefLang": {
         "en": "/en/services/web-development",
         "pl": "/pl/uslugi/tworzenie-stron"
       },
       "seo": {
-        "title": "Tworzenie Stron Częstochowa | Max Mendes",
-        "metaDescription": "Strony internetowe pisane od zera w React i Next.js. Nie WordPress, nie szablony. Programista z Częstochowy. Szybkie strony, czyste SEO. Śląskie i cała Polska.",
-        "keywords": ["tworzenie stron internetowych", "strony www częstochowa", "programista częstochowa", "strony react", "strony nextjs", "programista śląskie", "strony firmowe"],
-        "h1": "Tworzenie Stron Internetowych",
-        "ogTitle": "Tworzenie Stron Częstochowa | Max Mendes"
+        "title": "Tworzenie Aplikacji Full-Stack Częstochowa | Max Mendes",
+        "metaDescription": "Tworzenie aplikacji webowych full-stack Częstochowa. Dedykowane rozwiązania w React i Next.js dla Twojej firmy. Bez WordPress. Projekty dla Polski i zagranicy.",
+        "keywords": ["tworzenie aplikacji full-stack", "dedykowane aplikacje webowe", "programista react częstochowa", "nextjs development", "systemy webowe", "programista częstochowa", "aplikacje webowe śląskie"],
+        "h1": "Tworzenie Aplikacji Full-Stack",
+        "ogTitle": "Tworzenie Aplikacji Full-Stack Częstochowa | Max Mendes"
       },
       "schema": {
-        "serviceType": "Tworzenie Stron Internetowych",
-        "description": "Profesjonalne strony internetowe pisane od zera w React i Next.js. Kod, nie WordPress ani gotowe szablony.",
+        "serviceType": "Tworzenie Aplikacji Full-Stack",
+        "description": "Dedykowane aplikacje webowe full-stack w React, Next.js, Node.js i PostgreSQL. Frontend i backend dostosowany do wymagań biznesowych.",
         "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+      },
+      "content": {
+        "subtitle": "Dedykowane aplikacje webowe w React i Next.js. Kod produkcyjny dostosowany do wymagań Twojej firmy, nie ograniczeń szablonów.",
+        "sections": [
+          {
+            "title": "Czym Jest Ta Usługa",
+            "paragraphs": [
+              "Tworzenie aplikacji full-stack oznacza budowanie zarówno tego, co użytkownicy widzą (frontend), jak i systemów działających w tle (backend). Otrzymujesz spójną aplikację, w której interfejs, dane i logika działają razem bez szwów.",
+              "W przeciwieństwie do WordPress czy kreatorów stron, dedykowane aplikacje są budowane wokół Twoich konkretnych wymagań. Twoja firma nie dostosowuje się do szablonu—oprogramowanie jest projektowane pod Twoje dokładne procesy, struktury danych i plany rozwoju."
+            ]
+          },
+          {
+            "title": "Co Buduję",
+            "paragraphs": [
+              "Buduję interfejsy użytkownika w React i Next.js, które są szybkie i responsywne. Użytkownicy otrzymują jakość aplikacji z natychmiastową nawigacją i aktualizacjami w czasie rzeczywistym, gdy są potrzebne. Backend obsługuje kluczową logikę biznesową—zarządzanie użytkownikami, przetwarzanie danych, transakcje i integracje z zewnętrznymi systemami—zbudowany na Node.js i PostgreSQL dla niezawodności.",
+              "Projekty mogą obejmować systemy uwierzytelniania, kontrolę dostępu opartą na rolach, integracje płatności (Przelewy24, PayU, Stripe), integracje API oraz funkcje czasu rzeczywistego jak dashboardy czy powiadomienia. Używam TypeScript w całym projekcie, aby wychwytywać błędy przed wdrożeniem i zapewnić długoterminową utrzymywalność."
+            ]
+          },
+          {
+            "title": "Dla Kogo Jest Ta Usługa",
+            "paragraphs": [
+              "Ta usługa jest dla firm budujących aplikacje webowe wymagające dedykowanej logiki i obsługi danych. Platformy SaaS, systemy klienckie, systemy rezerwacyjne, wewnętrzne dashboardy i produkty oparte na subskrypcjach należą do tej kategorii.",
+              "Jeśli Twój projekt obejmuje użytkowników, uwierzytelnianie, przetwarzanie danych lub logikę biznesową wykraczającą poza proste strony treściowe, potrzebujesz rozwoju full-stack. FlowMate—platforma SaaS, którą zbudowałem do zarządzania emailami—demonstruje to podejście: uwierzytelnianie wielu dostawców, przetwarzanie asynchroniczne, integracje AI i infrastruktura produkcyjna obsługująca rzeczywiste obciążenia."
+            ],
+            "links": [
+              { "text": "Zobacz stronę Projekty →", "href": "/pl/projekty" }
+            ]
+          },
+          {
+            "title": "Jak Pracuję",
+            "paragraphs": [
+              "Pracujesz bezpośrednio ze mną—bez pośredników agencyjnych czy przekazywania projektu. Obsługuję wymagania, architekturę, development i wdrożenie. Kod jest gotowy do wdrożenia od pierwszego dnia, nie prototypy wymagające przebudowy później.",
+              "Aplikacje są wdrażane na profesjonalnej infrastrukturze cloud z dystrybucją CDN dla wydajności. Jestem z Częstochowy i dostępny dla projektów z całej Polski oraz międzynarodowych."
+            ],
+            "links": [
+              { "text": "Zobacz stronę Pytania →", "href": "/pl/pytania" }
+            ]
+          }
+        ],
+        "techStackTitle": "Stack Techniczny",
+        "techStack": [
+          { "title": "Frontend", "description": "React 19, Next.js 15, TypeScript, Tailwind CSS—szybki, przyjazny SEO, łatwy w utrzymaniu" },
+          { "title": "Backend", "description": "Node.js, PostgreSQL, Prisma ORM—skalowalna obsługa danych z bezpieczeństwem typów" },
+          { "title": "Integracje", "description": "Przelewy24/PayU dla rynku polskiego, Stripe dla klientów międzynarodowych, uwierzytelnianie OAuth, usługi email, zewnętrzne API" },
+          { "title": "Wdrożenie", "description": "Infrastruktura cloud z CDN, automatyczne wdrażanie CI/CD, monitoring produkcyjny" },
+          { "title": "Narzędzia", "description": "Kontrola wersji Git, automatyczne testy, śledzenie błędów produkcyjnych" }
+        ],
+        "cta": {
+          "title": "Zbudujmy Twoją Aplikację",
+          "subtitle": "Opisz swój projekt, a odpowiem w ciągu 24 godzin z pytaniami o zakres, harmonogram i podejście.",
+          "button": "Rozpocznij Projekt"
+        }
       }
     },
     "saas-web-apps": {
@@ -583,13 +635,65 @@
         "title": "Aplikacje Webowe Częstochowa | Max Mendes",
         "metaDescription": "Tworzenie aplikacji webowych i platform SaaS. Logowanie, dashboardy, płatności, subskrypcje. Programista z Częstochowy. Systemy dla firm z całej Polski.",
         "keywords": ["aplikacje webowe", "tworzenie aplikacji", "systemy dla firm", "aplikacje saas", "platformy internetowe", "oprogramowanie na zamówienie", "programista aplikacji"],
-        "h1": "Aplikacje Webowe i Platformy SaaS",
+        "h1": "SaaS i Aplikacje Webowe",
         "ogTitle": "Aplikacje Webowe Częstochowa | Max Mendes"
       },
       "schema": {
         "serviceType": "Tworzenie Aplikacji Webowych",
-        "description": "Aplikacje webowe i platformy SaaS z autoryzacją, dashboardami i integracją płatności. Systemy na zamówienie dla firm.",
+        "description": "Profesjonalny SaaS development dla platform subskrypcyjnych. Skalowalna architektura z autoryzacją, płatnościami i wielodostępowymi modelami danych.",
         "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+      },
+      "content": {
+        "subtitle": "Profesjonalny SaaS development dla platform subskrypcyjnych tworzonych w React. Skalowalna architektura od pierwszego dnia — rozwiązania gotowe na rozwój, a nie prototypy do przepisywania.",
+        "sections": [
+          {
+            "title": "Czym jest SaaS Development",
+            "paragraphs": [
+              "SaaS development to tworzenie oprogramowania subskrypcyjnego, z którego użytkownicy korzystają stale, a nie jednorazowo jak ze zwykłej strony internetowej. Tego typu platformy zarządzają kontami, uprawnieniami, danymi oraz cyklicznymi płatnościami dla wielu klientów jednocześnie. W praktyce oznacza to architekturę wielodostępową — obsługę wielu firm lub użytkowników z wyraźnie oddzielonymi danymi.",
+              "W przeciwieństwie do klasycznych aplikacji webowych, SaaS musi obsługiwać onboarding, cykle rozliczeniowe, zmiany planów i długoterminowe utrzymanie. To fundament działania produktu, a nie tylko warstwa wizualna."
+            ]
+          },
+          {
+            "title": "Co Obejmuje Ta Usługa",
+            "paragraphs": [
+              "Buduję platformy SaaS obejmujące pełny cykl życia produktu. Projekty mogą zawierać bezpieczną autoryzację użytkowników (email/hasło, OAuth, logowanie społecznościowe), zarządzanie subskrypcjami i płatnościami (Przelewy24, PayU, Stripe) oraz strukturę bazy danych przygotowaną pod obsługę wielu klientów. Panele administracyjne umożliwiają kontrolę użytkowników, planów i wykorzystania bez ręcznej obsługi.",
+              "Wdrażane są również powiadomienia email oraz procesy onboardingowe, które prowadzą użytkownika od rejestracji do aktywnej subskrypcji. API umożliwia integracje z zewnętrznymi systemami lub przyszłe rozszerzenia produktu."
+            ]
+          },
+          {
+            "title": "Dla Kogo i Przykładowe Zastosowania",
+            "paragraphs": [
+              "Ta usługa jest przeznaczona dla founderów SaaS budujących MVP, które ma stać się realnym produktem, a nie jednorazowym testem. Sprawdza się także dla firm w Polsce tworzących platformy subskrypcyjne lub wewnętrzne narzędzia SaaS zastępujące arkusze i ręczne procesy. Typowe zastosowania to narzędzia produktywności, platformy B2B, panele analityczne oraz usługi abonamentowe.",
+              "FlowMate — platforma SaaS, którą stworzyłem do zarządzania emailami — obsługuje wielodostępową architekturę, asynchroniczne przetwarzanie, integracje AI oraz subskrypcje Stripe w środowisku produkcyjnym."
+            ],
+            "links": [
+              { "text": "Zobacz FlowMate w sekcji Projekty →", "href": "/pl/projekty" }
+            ]
+          },
+          {
+            "title": "Jak Przebiega Realizacja",
+            "paragraphs": [
+              "Pracujesz bezpośrednio z jednym developerem — bez przekazywania projektu między zespołami. Od początku tworzony jest kod gotowy do produkcji, bez potrzeby późniejszego przepisywania architektury. TypeScript zwiększa stabilność i ułatwia rozwój funkcji w dłuższej perspektywie. Aplikacje wdrażane są na profesjonalnej infrastrukturze cloud lub serwerach klienta, zależnie od potrzeb projektu. Celem jest SaaS przygotowany na realnych użytkowników i kontrolowany wzrost.",
+              "Projekty realizuję z Częstochowy dla firm z Polski i rynków międzynarodowych."
+            ],
+            "links": [
+              { "text": "Pytania o proces lub wycenę SaaS? Sprawdź FAQ →", "href": "/pl/pytania" }
+            ]
+          }
+        ],
+        "techStackTitle": "Stos Technologiczny",
+        "techStack": [
+          { "title": "Frontend", "description": "React 19, Next.js 15, TypeScript — szybkie, SEO-przyjazne interfejsy SaaS z niezawodnością w miarę rozwoju" },
+          { "title": "Backend", "description": "Node.js, PostgreSQL (Supabase, Prisma) — skalowalne modele danych dla wielu klientów" },
+          { "title": "Uwierzytelnianie", "description": "Clerk lub NextAuth — bezpieczne zarządzanie użytkownikami z logowaniem społecznościowym i OAuth" },
+          { "title": "Płatności", "description": "Przelewy24/PayU dla rynku polskiego, Stripe dla klientów międzynarodowych — automatyzacja subskrypcji i rozliczeń" },
+          { "title": "Real-time i Wdrożenie", "description": "WebSockets lub SSE. Wdrożenie na infrastrukturze cloud z zarządzanymi bazami danych" }
+        ],
+        "cta": {
+          "title": "Gotowy Zbudować Swoją Platformę SaaS?",
+          "subtitle": "Opisz swój projekt, a odpowiem w ciągu 24 godzin z pytaniami o architekturę, harmonogram i podejście techniczne.",
+          "button": "Rozpocznij Projekt"
+        }
       }
     },
     "ecommerce-development": {
@@ -604,34 +708,135 @@
         "title": "Sklepy Internetowe Częstochowa | Max Mendes",
         "metaDescription": "Sklepy internetowe z integracją Subiekt GT i szybką kasą. Shopify lub dedykowane. Programista z Częstochowy. Sklepy dla firm ze Śląskiego i całej Polski.",
         "keywords": ["sklepy internetowe", "sklep online częstochowa", "integracja subiekt gt", "tworzenie sklepów", "sklep shopify", "sklep dedykowany", "e-commerce śląskie"],
-        "h1": "Sklepy Internetowe",
+        "h1": "Tworzenie Sklepów Internetowych",
         "ogTitle": "Sklepy Internetowe Częstochowa | Max Mendes"
       },
       "schema": {
         "serviceType": "Tworzenie Sklepów Internetowych",
-        "description": "Sklepy internetowe z integracją Subiekt GT, bramek płatności i systemów magazynowych. Shopify lub rozwiązania dedykowane.",
+        "description": "Sklepy internetowe z integracją bramek płatności i systemów magazynowych. Rozwiązania dedykowane bez ograniczeń szablonów.",
         "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+      },
+      "content": {
+        "subtitle": "Niestandardowe sklepy internetowe tworzone w React — szybkie, wydajne i nastawione na konwersję. Projektowane pod Twój katalog i logikę biznesową, bez kompromisów narzuconych przez szablony WooCommerce.",
+        "sections": [
+          {
+            "title": "Czym jest niestandardowy sklep internetowy",
+            "paragraphs": [
+              "Tworzenie niestandardowego sklepu internetowego oznacza budowę rozwiązania dopasowanego do realnych potrzeb Twojej firmy, a nie do ograniczeń gotowych motywów WooCommerce. Szablony sprawdzają się na początku, ale wiele firm szybko je przerasta — gdy pojawia się niestandardowa polityka cenowa, złożona logika magazynowa lub potrzeba integracji z innymi systemami. Sklep oparty na React i Next.js daje pełną kontrolę nad wydajnością, SEO i sposobem działania sprzedaży. Szybkość ładowania oraz dobre wyniki Core Web Vitals mają bezpośredni wpływ na konwersję i widoczność w Google."
+            ]
+          },
+          {
+            "title": "Co obejmuje ta usługa",
+            "paragraphs": [
+              "Buduję sklepy internetowe obejmujące cały proces sprzedaży. Projekty mogą zawierać katalog produktów z zarządzaniem stanami magazynowymi, koszyk i dopasowany proces checkoutu, a także integrację płatności. Dla rynku polskiego obsługiwane są Przelewy24 i PayU, a dla klientów międzynarodowych — Stripe. System zamówień pozwala śledzić status realizacji i wysyłki, a konta klientów dają dostęp do historii zakupów. Wyszukiwarka i filtry ułatwiają szybkie znalezienie produktów, a panel administracyjny umożliwia sprawne zarządzanie ofertą i zamówieniami. Automatyczne maile (potwierdzenia, aktualizacje wysyłki) ograniczają ręczną obsługę."
+            ]
+          },
+          {
+            "title": "Dla kogo i przykładowe zastosowania",
+            "paragraphs": [
+              "Ta usługa jest przeznaczona dla firm, które nie chcą lub nie mogą działać w ramach standardowego WooCommerce. Sprawdza się w modelach B2B z indywidualnymi cenami lub rabatami ilościowymi, przy integracjach z systemami księgowymi, ERP lub magazynowymi, a także przy produktach konfigurowalnych i rozbudowanych wariantach. To również dobre rozwiązanie dla sklepów działających międzynarodowo (wielowalutowość, wiele języków) lub szukających realnej alternatywy dla WooCommerce."
+            ]
+          },
+          {
+            "title": "Wydajność i SEO jako fundament sprzedaży",
+            "paragraphs": [
+              "Wydajność sklepu ma bezpośredni wpływ na sprzedaż. Szybkie strony produktowe poprawiają doświadczenie użytkownika i zwiększają konwersję. Każdy sklep jest optymalizowany pod SEO: odpowiednia struktura treści, metadane, dane strukturalne oraz renderowanie po stronie serwera, dzięki czemu produkty są dobrze indeksowane. Obrazy są optymalizowane i ładowane asynchronicznie, a całość projektowana w podejściu mobile-first — zgodnie z tym, jak dziś kupują klienci.",
+              "Z Częstochowy, dostępny dla projektów z Polski i zagranicy."
+            ],
+            "links": [
+              { "text": "Pytania o zakres, czas realizacji lub koszty? Sprawdź FAQ →", "href": "/pl/pytania" }
+            ]
+          }
+        ],
+        "techStackTitle": "Stos Technologiczny",
+        "techStack": [
+          { "title": "Frontend", "description": "React 19, Next.js 15 i TypeScript zapewniają szybkie, przyjazne SEO strony produktowe, które realnie wspierają konwersję." },
+          { "title": "Płatności", "description": "Przelewy24 i PayU dla rynku polskiego oraz Stripe dla sprzedaży zagranicznej." },
+          { "title": "Baza danych", "description": "PostgreSQL z Supabase odpowiada za produkty, zamówienia i stany magazynowe." },
+          { "title": "Wyszukiwanie", "description": "Algolia lub rozwiązanie dedykowane umożliwia szybkie odnajdywanie produktów. Obrazy są optymalizowane pod wydajność." },
+          { "title": "Wdrożenie", "description": "Całość działa na profesjonalnej infrastrukturze cloud z szybkim hostingiem i dystrybucją CDN." }
+        ],
+        "cta": {
+          "title": "Gotowy Zbudować Swój Sklep Internetowy?",
+          "subtitle": "Opisz swój katalog, integracje i wymagania biznesowe. Odpowiem w ciągu 24 godzin z pytaniami o podejście techniczne i harmonogram.",
+          "button": "Rozpocznij Projekt"
+        }
       }
     },
     "seo-performance-optimization": {
       "id": "seo-performance-optimization",
-      "label": "Pozycjonowanie Techniczne SEO",
+      "label": "SEO & Optymalizacja Wydajności",
       "href": "/pl/uslugi/pozycjonowanie",
       "hrefLang": {
         "en": "/en/services/seo-performance-optimization",
         "pl": "/pl/uslugi/pozycjonowanie"
       },
       "seo": {
-        "title": "Pozycjonowanie Techniczne | Max Mendes",
-        "metaDescription": "Pozycjonowanie techniczne, nie tylko treść i linki. Audyt SEO, optymalizacja szybkości, Core Web Vitals. Programista SEO z Częstochowy. Śląskie i Polska.",
+        "title": "SEO & Optymalizacja Wydajności Częstochowa | Max Mendes",
+        "metaDescription": "Optymalizacja SEO i wydajności stron. Core Web Vitals, szybkość ładowania, pozycje w Google. Nie WordPress, prawdziwy kod. Częstochowa, Śląskie, Polska.",
         "keywords": ["pozycjonowanie stron", "seo techniczne", "audyt seo częstochowa", "optymalizacja strony", "core web vitals", "pozycjonowanie śląskie", "seo programista"],
-        "h1": "Pozycjonowanie Techniczne SEO",
-        "ogTitle": "Pozycjonowanie Techniczne | Max Mendes"
+        "h1": "SEO & Optymalizacja Wydajności",
+        "ogTitle": "SEO & Optymalizacja Wydajności Częstochowa | Max Mendes"
       },
       "schema": {
         "serviceType": "Pozycjonowanie Stron Internetowych",
-        "description": "Pozycjonowanie techniczne: audyty SEO, optymalizacja Core Web Vitals, szybkość ładowania. Nie tylko treść i linki—naprawiam kod.",
+        "description": "Optymalizacja wydajności i SEO skoncentrowana na realnych wynikach biznesowych. Szybsza strona to lepsze pozycje w Google i wyższa konwersja.",
         "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+      },
+      "content": {
+        "subtitle": "Optymalizacja wydajności i SEO skoncentrowana na realnych wynikach biznesowych. Szybsza strona to lepsze pozycje w Google, wyższa konwersja i większe przychody — nie tylko lepsze wyniki techniczne.",
+        "sections": [
+          {
+            "title": "Dlaczego wydajność i SEO mają znaczenie dla biznesu",
+            "paragraphs": [
+              "Wydajność strony i SEO bezpośrednio wpływają na liczbę klientów oraz sprzedaż. Wolne strony tracą użytkowników, zanim ci zdążą wykonać jakąkolwiek akcję, a wyszukiwarki promują witryny szybkie i stabilne. Core Web Vitals (czyli kluczowe wskaźniki jakości strony) są oficjalnym czynnikiem rankingowym Google, dlatego szybkość i stabilność layoutu mają realny wpływ na widoczność w wynikach wyszukiwania.",
+              "Badania branżowe pokazują, że nawet 1 sekunda opóźnienia może obniżyć konwersję o około 7%. Dodatkowo Google stosuje mobile-first indexing, co oznacza, że wydajność wersji mobilnej ma kluczowe znaczenie. Celem optymalizacji jest więcej ruchu z Google, lepsze doświadczenie użytkownika i wyższe przychody — nie \u201Eładne wykresy\u201D bez przełożenia na biznes."
+            ]
+          },
+          {
+            "title": "Co obejmuje usługa: optymalizacja wydajności",
+            "paragraphs": [
+              "Skupiam się na realnej poprawie szybkości i stabilności strony widzianej przez użytkowników. Obejmuje to optymalizację Core Web Vitals: LCP (Largest Contentful Paint), FID/INP (reakcja na interakcję) oraz CLS (stabilność układu).",
+              "Przyspieszanie strony realizowane jest poprzez kompresję i optymalizację obrazów, lazy loading, redukcję nadmiarowego JavaScript oraz code splitting. Optymalizowane są również CSS i zasoby statyczne. Wdrażane są mechanizmy cache oraz CDN w celu skrócenia czasu odpowiedzi serwera. Sprawdzane są zapytania do bazy danych, aby wyeliminować wąskie gardła. Każdy projekt zawiera pomiary przed i po z użyciem Lighthouse i PageSpeed Insights, dzięki czemu efekty są mierzalne."
+            ]
+          },
+          {
+            "title": "Co obejmuje usługa: techniczne SEO",
+            "paragraphs": [
+              "Optymalizacja SEO zaczyna się od audytu technicznego: indeksowanie, crawlability i struktura strony. Usuwam problemy ograniczające widoczność, takie jak błędne przekierowania, duplikacja treści, błędy linkowania wewnętrznego czy nieprawidłowe adresy URL.",
+              "Wdrażane są dane strukturalne Schema.org, które zwiększają szanse na rich snippets w wynikach wyszukiwania. Meta title i description są optymalizowane pod czytelność i CTR, a nie pod sztuczne upychanie słów kluczowych. Poprawne renderowanie po stronie serwera zapewnia, że treści są w pełni dostępne dla robotów Google. Efektem jest solidna baza techniczna pod długofalowe SEO."
+            ]
+          },
+          {
+            "title": "Dla kogo jest ta usługa",
+            "paragraphs": [
+              "Ta usługa jest przeznaczona dla firm posiadających już stronę internetową — często opartą o WordPress — która działa wolno lub nie osiąga oczekiwanych pozycji w Google. Sprawdzi się dla biznesów, które chcą zwiększyć liczbę zapytań, sprzedaż online lub poprawić skuteczność kampanii marketingowych bez przebudowy całej strony od zera. Jeśli Twoja strona ma ruch, ale nie konwertuje, optymalizacja wydajności i SEO może przynieść najszybszy efekt."
+            ]
+          },
+          {
+            "title": "Jak wygląda realizacja",
+            "paragraphs": [
+              "Pracujesz bezpośrednio z jednym developerem, bez pośredników i gotowych checklist. Zakres działań jest dopasowany do Twojej strony i celów biznesowych. Zmiany są wdrażane ostrożnie i weryfikowane na podstawie danych.",
+              "Z Częstochowy, dostępny dla projektów z Polski i zagranicy."
+            ],
+            "links": [
+              { "text": "Pytania o zakres, proces lub koszty? Sprawdź FAQ →", "href": "/pl/pytania" }
+            ]
+          }
+        ],
+        "techStackTitle": "Obszary Techniczne Optymalizacji",
+        "techStack": [
+          { "title": "Wydajność", "description": "Core Web Vitals, szybkość strony i stabilność interfejsu z wykorzystaniem React, Next.js i TypeScript." },
+          { "title": "SEO techniczne", "description": "Indeksowanie, dane strukturalne (Schema.org) i renderowanie treści dla wyszukiwarek." },
+          { "title": "Obrazy", "description": "Kompresja, nowoczesne formaty (WebP, AVIF) i lazy loading redukują rozmiar bez utraty jakości." },
+          { "title": "Cache i CDN", "description": "Mechanizmy cache i CDN skracają czas ładowania globalnie." },
+          { "title": "Pomiar", "description": "Lighthouse, PageSpeed Insights i Google Search Console—każda zmiana jest mierzona, aby techniczne usprawnienia przekładały się na realne wyniki biznesowe." }
+        ],
+        "cta": {
+          "title": "Gotowy Zoptymalizować Swoją Stronę?",
+          "subtitle": "Opisz aktualne problemy z wydajnością oraz cele biznesowe. Odpowiem w ciągu 24 godzin z wstępną oceną i propozycją działań optymalizacyjnych.",
+          "button": "Rozpocznij Projekt"
+        }
       }
     },
     "ai-integration": {
@@ -643,16 +848,73 @@
         "pl": "/pl/uslugi/integracja-ai"
       },
       "seo": {
-        "title": "Integracja AI Częstochowa | Max Mendes",
-        "metaDescription": "Integracja AI w aplikacjach webowych. Chatboty, generowanie treści, automatyzacja procesów. OpenAI i Claude API. Programista z Częstochowy. Śląskie i Polska.",
-        "keywords": ["integracja ai", "chatboty ai", "automatyzacja ai", "openai api", "sztuczna inteligencja", "chatgpt integracja", "ai dla firm"],
-        "h1": "Integracja AI i Automatyzacja",
-        "ogTitle": "Integracja AI Częstochowa | Max Mendes"
+        "title": "Integracja AI - Inteligentne Funkcje | Max Mendes",
+        "metaDescription": "Usługi integracji AI dla praktycznych rozwiązań biznesowych. Automatyzacja, inteligentne wyszukiwanie, machine learning. OpenAI, Claude, GPT. Częstochowa, Polska.",
+        "keywords": ["integracja ai", "chatboty ai", "automatyzacja ai", "openai api", "sztuczna inteligencja", "chatgpt integracja", "ai dla firm", "machine learning częstochowa"],
+        "h1": "Integracja AI",
+        "ogTitle": "Integracja AI - Inteligentne Funkcje | Max Mendes"
       },
       "schema": {
         "serviceType": "Integracja Sztucznej Inteligencji",
         "description": "Funkcje AI dla aplikacji webowych: chatboty, generowanie treści, automatyzacja procesów. Integracja OpenAI i Anthropic API.",
         "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+      },
+      "content": {
+        "subtitle": "Inteligentne funkcje rozwiązujące realne problemy biznesowe. Automatyzacja, inteligentne wyszukiwanie i AI-powered procesy—praktyczne wdrożenie bez zbędnego hype'u.",
+        "sections": [
+          {
+            "title": "Co oznacza integracja AI dla biznesu",
+            "paragraphs": [
+              "Integracja AI to dodawanie inteligentnych funkcji do istniejących produktów i procesów — nie rewolucja całej firmy. W praktyce AI pomaga automatyzować powtarzalne zadania, klasyfikować dane, poprawiać wyszukiwanie, generować streszczenia lub wspierać użytkowników lepszymi podpowiedziami. Różnica między użytecznym AI a \"AI dla AI\" polega na celu: zaczynamy od konkretnego problemu biznesowego, a nie od technologii. Efekt, którego szukamy, to oszczędność czasu, redukcja kosztów i lepsze doświadczenie użytkownika. To nie są magiczne rozwiązania ani zamiennik zespołu — AI jako narzędzie, nie zamiennik pracowników."
+            ]
+          },
+          {
+            "title": "Co obejmuje usługa — typowe funkcje AI",
+            "paragraphs": [
+              "Zakres prac może obejmować: klasyfikację i kategoryzację tekstu, generowanie i streszczanie treści, inteligentne wyszukiwanie (dopasowanie semantyczne), rekomendacje i personalizację, rozpoznawanie i przetwarzanie obrazów, NLP dla zapytań użytkowników, automatyczne odpowiedzi i chatboty (tam, gdzie mają sens), a także analizę danych i wykrywanie wzorców. Każda funkcja jest projektowana pod konkretny rezultat, z myślą o stabilności i kontroli kosztów. Gdy prostsze reguły działają lepiej — rekomenduję je zamiast AI."
+            ]
+          },
+          {
+            "title": "Implementacja techniczna i dostawcy",
+            "paragraphs": [
+              "Integruję sprawdzonych dostawców, takich jak OpenAI (GPT), Anthropic (Claude) oraz rozwiązania od Google, a w uzasadnionych przypadkach także modele open-source. Zakres obejmuje integrację API, projektowanie promptów dla powtarzalnych wyników, zarządzanie kosztami, obsługę błędów i bezpieczne fallbacki (AI bywa niedoskonałe). Dbam o prywatność danych, bezpieczeństwo i wydajność (cache, przetwarzanie asynchroniczne).",
+              "FlowMate wykorzystuje AI do klasyfikacji e-maili i sugestii odpowiedzi, radząc sobie z realną zmiennością treści."
+            ],
+            "links": [
+              { "text": "Zobacz implementację AI w FlowMate na stronie Projekty →", "href": "/pl/projekty" }
+            ]
+          },
+          {
+            "title": "Dla kogo i typowe zastosowania",
+            "paragraphs": [
+              "Ta usługa jest dla firm z powtarzalną pracą manualną, produktów wymagających lepszego wyszukiwania lub rekomendacji, zespołów wsparcia szukających asysty AI (nie zastępstwa), platform treściowych (streszczenia/kategorie), e-commerce (personalizacja) oraz produktów SaaS dodających \"smart\" funkcje.",
+              "Przykłady: klasyfikacja dokumentów, routing zapytań klientów, moderacja treści, rekomendacje produktów—wdrażane z jasnymi limitami i mierzalnym wpływem.",
+              "Z Częstochowy, dostępny dla projektów z Polski i zagranicy."
+            ],
+            "links": [
+              { "text": "Pytania o koszty lub proces integracji AI? Sprawdź FAQ →", "href": "/pl/pytania" }
+            ]
+          },
+          {
+            "title": "Podejście i Założenia",
+            "paragraphs": [
+              "Zaczynam od jednego, jasno zdefiniowanego przypadku użycia, a nie od \"AI wszędzie\". Najpierw krótki proof of concept, który sprawdza, czy AI faktycznie pomaga. Wdrażanie jest stopniowe, z bezpiecznymi fallbackami. Koszty mają znaczenie — wywołania API skalują się z użyciem. I co ważne: nie każdy problem potrzebuje AI. Czasem reguły są szybsze i tańsze. Uczciwie oceniam, czy AI realnie poprawi Twój produkt."
+            ]
+          }
+        ],
+        "techStackTitle": "Stos Technologiczny",
+        "techStack": [
+          { "title": "Dostawcy AI", "description": "W zależności od potrzeb używam: GPT (OpenAI), Claude (Anthropic) lub modeli niestandardowych." },
+          { "title": "Backend", "description": "Przetwarzanie asynchroniczne z kolejkami i cache, aby nie blokować użytkowników i kontrolować koszty." },
+          { "title": "Obsługa Błędów", "description": "Solidna obsługa błędów i fallbacki na wypadek niedostępności usług AI." },
+          { "title": "Frontend", "description": "Frontend w React — płynna obsługa funkcji AI." },
+          { "title": "Monitoring", "description": "Monitoring zużycia, skuteczności i kosztów—istotne, bo koszty API rosną z użyciem." }
+        ],
+        "cta": {
+          "title": "Gotowy Dodać Funkcje AI?",
+          "subtitle": "Opisz problem, który chcesz rozwiązać, i miejsce, gdzie AI może pomóc. Odpowiem w ciągu 24 godzin z rzetelną oceną, czy AI to właściwe rozwiązanie w Twoim przypadku.",
+          "button": "Rozpocznij Projekt"
+        }
       }
     },
     "services-overview": {
@@ -686,17 +948,17 @@
       "pl": "/pl/pytania"
     },
     "seo": {
-      "title": "Tworzenie Stron FAQ - Częstochowa | Max Mendes",
-      "metaDescription": "Pytania o tworzenie stron internetowych Częstochowa. Cennik, terminy, technologie i proces. Zadzwoń: 502 742 941. Programista React i Next.js.",
-      "keywords": ["faq tworzenie stron", "pytania programista częstochowa", "cennik stron internetowych", "ile kosztuje strona", "programista częstochowa", "tworzenie stron śląskie"],
+      "title": "Pytania o Tworzenie Stron - Proces, Cennik & AI | Max Mendes",
+      "metaDescription": "FAQ o tworzeniu stron internetowych: proces, cennik, technologie i integracja AI. Odpowiedzi o React, Next.js, SaaS, e-commerce i kosztach AI. Częstochowa, Polska.",
+      "keywords": ["faq tworzenie stron", "pytania programista częstochowa", "cennik stron internetowych", "ile kosztuje strona", "programista częstochowa", "tworzenie stron śląskie", "integracja ai faq", "koszty ai"],
       "h1": "Pytania o Tworzenie Stron Internetowych",
-      "ogTitle": "Tworzenie Stron FAQ - Częstochowa | Max Mendes"
+      "ogTitle": "Pytania o Tworzenie Stron - Proces, Cennik & AI | Max Mendes"
     },
     "schema": {
       "type": "FAQPage",
       "description": "Często zadawane pytania o usługi tworzenia stron internetowych, cennik, terminy i szczegóły techniczne."
     },
-    "intro": "Jak pracujemy, czego się spodziewać i co dzieje się po uruchomieniu.",
+    "intro": "Jak pracuję, czego się spodziewać i co dzieje się po uruchomieniu.",
     "categories": [
       {
         "title": "Usługi i Podejście",
@@ -783,6 +1045,31 @@
           {
             "question": "Jak zapewniasz bezpieczeństwo i wydajność mojej strony?",
             "answer": "Stosuję nowoczesne praktyki bezpieczeństwa dla uwierzytelniania i obsługi danych. Renderowanie po stronie serwera, zoptymalizowane obrazy i odpowiednie cachowanie są wbudowane domyślnie. Core Web Vitals i czasy ładowania są traktowane jako wymagania, nie dodatki."
+          }
+        ]
+      },
+      {
+        "title": "Pytania o Integrację AI",
+        "items": [
+          {
+            "question": "Ile w praktyce kosztują funkcje AI?",
+            "answer": "Koszt integracji AI składa się z dwóch części: jednorazowego kosztu wdrożenia oraz bieżących kosztów API. Wdrożenie obejmuje zaprojektowanie, integrację i testy, a koszty API zależą od faktycznego użycia przez użytkowników. Oba elementy są omawiane z góry, tak aby nie było żadnych niespodzianek."
+          },
+          {
+            "question": "Jak utrzymywane są koszty AI pod kontrolą i w przewidywalnym zakresie?",
+            "answer": "Koszty są kontrolowane poprzez cache, limity zapytań i wywoływanie AI tylko tam, gdzie realnie wnosi wartość. Powtarzalne wyniki są ponownie wykorzystywane zamiast generowane od nowa, co znacząco ogranicza koszty API. Funkcje projektuję tak, aby koszty skalowały się z wartością biznesową, a nie z technicznym szumem."
+          },
+          {
+            "question": "Co dzieje się z moimi danymi przy korzystaniu z dostawców AI?",
+            "answer": "Dane wysyłane do dostawców AI, takich jak OpenAI czy Anthropic, są przetwarzane przez zewnętrzne usługi, więc technicznie mają one dostęp do treści wejściowych. Minimalizuję zakres danych, unikam zbędnych danych osobowych i stosuję ustawienia prywatności zgodne z wymogami RODO. Jeśli potrzebna jest ścisła kontrola danych, ustalamy ograniczenia lub alternatywy przed rozpoczęciem prac."
+          },
+          {
+            "question": "Jak niezawodne i dokładne jest AI w realnych produktach?",
+            "answer": "AI jest probabilistyczne, a nie deterministyczne, więc czasami może się mylić lub zwracać niespójne wyniki. Dlatego zawsze buduję fallbacki, walidację i czytelne stany interfejsu na wypadek niepewnych odpowiedzi. AI należy traktować jako wsparcie przyspieszające pracę, a nie rozwiązanie w 100% nieomylne."
+          },
+          {
+            "question": "Którego dostawcę AI wybrać: OpenAI, Anthropic czy innego?",
+            "answer": "Wybór dostawcy zależy od konkretnego zadania, kosztów i wymagań dotyczących niezawodności. Jedne modele lepiej radzą sobie z klasyfikacją, inne z dłuższym wnioskowaniem lub bezpieczniejszymi odpowiedziami. Zazwyczaj testuję kilku dostawców na realnym przypadku użycia i wybieram na podstawie wyników, nie marek."
           }
         ]
       },
