@@ -21,6 +21,7 @@ interface HomeClientProps {
 
 export default function HomeClient({ locale, dictionary }: HomeClientProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const skipIntroRef = useRef(false);
   const [introComplete, setIntroComplete] = useState(false);
   const [showHero, setShowHero] = useState(false);
 
@@ -33,14 +34,26 @@ export default function HomeClient({ locale, dictionary }: HomeClientProps) {
   const scale = useTransform(scrollYProgress, [0.8, 1], [1, 0.95]);
 
   useEffect(() => {
-    // Phase 1 & 2 logic
+    let hasSeenIntro = false;
+    try {
+      hasSeenIntro = sessionStorage.getItem('hasSeenIntro') === 'true';
+    } catch { /* sessionStorage unavailable */ }
+
+    if (hasSeenIntro) {
+      skipIntroRef.current = true;
+      setIntroComplete(true);
+      setShowHero(true);
+      return;
+    }
+
+    // First-time visitor: play the full intro sequence
     const timer = setTimeout(() => {
       setIntroComplete(true);
     }, 1500);
 
-    // Phase 3 logic
     const heroTimer = setTimeout(() => {
       setShowHero(true);
+      try { sessionStorage.setItem('hasSeenIntro', 'true'); } catch {}
     }, 2000);
 
     return () => {
@@ -57,14 +70,17 @@ export default function HomeClient({ locale, dictionary }: HomeClientProps) {
       <HomePageJsonLd locale={locale} />
       <Navbar locale={locale} dictionary={dictionary.nav} />
 
-      {/* Redline 4: The "Meily Entrance" Loader Overlay */}
-      <AnimatePresence>
+      {/* Intro Overlay — custom prop on AnimatePresence is read at exit time */}
+      <AnimatePresence custom={skipIntroRef.current}>
         {!introComplete && (
           <motion.div
             initial={{ opacity: 1 }}
-            exit={{
-              y: '100vh',
-              transition: { duration: 1, ease: [0.16, 1, 0.3, 1] },
+            exit="exit"
+            variants={{
+              exit: (skip: boolean) =>
+                skip
+                  ? { opacity: 0, transition: { duration: 0 } }
+                  : { y: '100vh', transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } },
             }}
             className="fixed inset-0 z-[100] bg-background flex items-center justify-center overflow-hidden"
           >
@@ -86,7 +102,7 @@ export default function HomeClient({ locale, dictionary }: HomeClientProps) {
         style={{ opacity, scale }}
         initial={{ opacity: 0 }}
         animate={{ opacity: showHero ? 1 : 0 }}
-        transition={{ duration: 1.5 }}
+        transition={{ duration: skipIntroRef.current ? 0 : 1.5 }}
         className="relative z-10 bg-background shadow-[0_50px_100px_rgba(0,0,0,0.5)]"
       >
         <Hero dictionary={dictionary.hero} />
@@ -99,7 +115,7 @@ export default function HomeClient({ locale, dictionary }: HomeClientProps) {
       </motion.div>
 
       {/* Sticky Reveal Footer */}
-      <div className="sticky bottom-0 z-0 h-screen w-full">
+      <div className="sticky bottom-0 z-0 h-screen w-full" style={{ visibility: showHero ? 'visible' : 'hidden' }}>
         <FooterSection locale={locale} dictionary={dictionary.footer} />
       </div>
     </div>
