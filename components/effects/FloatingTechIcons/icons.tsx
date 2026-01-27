@@ -13,6 +13,7 @@ import {
   CreditCard,
   Bell,
   Settings,
+  Bot,
 } from 'lucide-react';
 import { TechIconId } from './types';
 
@@ -819,6 +820,15 @@ const SettingsIcon: React.FC<IconProps> = ({ size = 80, className }) => (
   <Settings size={size} className={className} strokeWidth={1.5} />
 );
 
+// ============================================
+// AI-Specific Icons
+// ============================================
+
+// Bot - AI/automation
+const BotIcon: React.FC<IconProps> = ({ size = 80, className }) => (
+  <Bot size={size} className={className} strokeWidth={1.5} />
+);
+
 // Icon registry
 const ICON_COMPONENTS: Record<TechIconId, React.FC<IconProps>> = {
   // Tech icons
@@ -869,6 +879,8 @@ const ICON_COMPONENTS: Record<TechIconId, React.FC<IconProps>> = {
   creditCard: CreditCardIcon,
   bell: BellIcon,
   settings: SettingsIcon,
+  // AI-specific icons
+  bot: BotIcon,
 };
 
 // Main TechIcon component
@@ -936,4 +948,6 @@ export {
   CreditCardIcon,
   BellIcon,
   SettingsIcon,
+  // AI-specific icons
+  BotIcon,
 };

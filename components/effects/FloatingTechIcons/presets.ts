@@ -341,7 +341,7 @@ const servicesShapes: GeometricShapeConfig[] = [];
 // Communication/help themed icons mapped to FAQ sections
 // ============================================
 const faqIcons: FloatingIconConfig[] = [
-  // === HERO SECTION (scroll 3-25%) ===
+  // === HERO SECTION (scroll 3-14%) - Both icons together ===
   {
     id: 'help',
     initialPosition: { x: 88, y: 8 },
@@ -350,7 +350,7 @@ const faqIcons: FloatingIconConfig[] = [
     size: 75,
     opacity: 0.5,
     fadeInAt: 0.03,
-    fadeOutAt: 0.25,
+    fadeOutAt: 0.14,
     rotation: -8,
     zIndex: 10,
   },
@@ -362,11 +362,11 @@ const faqIcons: FloatingIconConfig[] = [
     size: 68,
     opacity: 0.45,
     fadeInAt: 0.03,
-    fadeOutAt: 0.28,
+    fadeOutAt: 0.14,
     rotation: 6,
     zIndex: 9,
   },
-  // === SERVICES & APPROACH (scroll 20-42%) ===
+  // === SERVICES & APPROACH (scroll 16-24%) - RIGHT side ===
   {
     id: 'document',
     initialPosition: { x: 90, y: 22 },
@@ -374,12 +374,12 @@ const faqIcons: FloatingIconConfig[] = [
     parallaxSpeed: 0.35,
     size: 70,
     opacity: 0.45,
-    fadeInAt: 0.18,
-    fadeOutAt: 0.42,
+    fadeInAt: 0.16,
+    fadeOutAt: 0.24,
     rotation: 10,
     zIndex: 8,
   },
-  // === PROCESS & TIMELINE (scroll 35-55%) ===
+  // === PROCESS & TIMELINE (scroll 26-34%) - LEFT side ===
   {
     id: 'workflow',
     initialPosition: { x: 5, y: 35 },
@@ -387,12 +387,12 @@ const faqIcons: FloatingIconConfig[] = [
     parallaxSpeed: 0.4,
     size: 65,
     opacity: 0.42,
-    fadeInAt: 0.32,
-    fadeOutAt: 0.55,
+    fadeInAt: 0.26,
+    fadeOutAt: 0.34,
     rotation: -5,
     zIndex: 11,
   },
-  // === PRICING & PAYMENT (scroll 48-68%) ===
+  // === PRICING & PAYMENT (scroll 36-44%) - RIGHT side ===
   {
     id: 'invoice',
     initialPosition: { x: 89, y: 45 },
@@ -400,12 +400,12 @@ const faqIcons: FloatingIconConfig[] = [
     parallaxSpeed: 0.35,
     size: 62,
     opacity: 0.4,
-    fadeInAt: 0.45,
-    fadeOutAt: 0.65,
+    fadeInAt: 0.36,
+    fadeOutAt: 0.44,
     rotation: 8,
     zIndex: 10,
   },
-  // === TECHNICAL DETAILS (scroll 55-65%) ===
+  // === TECHNICAL DETAILS (scroll 46-54%) - LEFT side ===
   {
     id: 'lightbulb',
     initialPosition: { x: 6, y: 55 },
@@ -413,49 +413,49 @@ const faqIcons: FloatingIconConfig[] = [
     parallaxSpeed: 0.35,
     size: 60,
     opacity: 0.4,
-    fadeInAt: 0.55,
-    fadeOutAt: 0.65,
+    fadeInAt: 0.46,
+    fadeOutAt: 0.54,
     rotation: -6,
     zIndex: 9,
   },
-  // === POST-LAUNCH (scroll 62-70%) ===
+  // === AI INTEGRATION (scroll 56-64%) - RIGHT side only ===
+  {
+    id: 'bot',
+    initialPosition: { x: 89, y: 58 },
+    movement: { x: -14, y: 42 },
+    parallaxSpeed: 0.35,
+    size: 64,
+    opacity: 0.42,
+    fadeInAt: 0.56,
+    fadeOutAt: 0.64,
+    rotation: 8,
+    zIndex: 10,
+  },
+  // === POST-LAUNCH (scroll 68-74%) - LEFT side (swapped for alternating pattern) ===
   {
     id: 'checkmark',
-    initialPosition: { x: 88, y: 62 },
-    movement: { x: -10, y: 35 },
+    initialPosition: { x: 6, y: 68 },
+    movement: { x: 10, y: 28 },
     parallaxSpeed: 0.3,
     size: 58,
     opacity: 0.38,
-    fadeInAt: 0.62,
-    fadeOutAt: 0.70,
-    rotation: 5,
+    fadeInAt: 0.68,
+    fadeOutAt: 0.74,
+    rotation: -5,
     zIndex: 8,
   },
-  // === GAP: 65-72% / 70-74% ===
-  // === CTA SECTION (scroll 72-78%) - Fade WELL before footer ===
+  // === CTA SECTION (scroll 76-80%) - RIGHT side, fades before footer reveal ===
   {
     id: 'message',
-    initialPosition: { x: 5, y: 70 },
-    movement: { x: 8, y: 25 },
+    initialPosition: { x: 88, y: 74 },
+    movement: { x: -8, y: 22 },
     parallaxSpeed: 0.3,
     size: 55,
     opacity: 0.35,
-    fadeInAt: 0.72,
-    fadeOutAt: 0.78,
-    rotation: -4,
-    zIndex: 11,
-  },
-  {
-    id: 'question',
-    initialPosition: { x: 87, y: 72 },
-    movement: { x: -6, y: 20 },
-    parallaxSpeed: 0.3,
-    size: 52,
-    opacity: 0.35,
-    fadeInAt: 0.74,
+    fadeInAt: 0.76,
     fadeOutAt: 0.80,
     rotation: 4,
-    zIndex: 10,
+    zIndex: 11,
   },
 ];
 
@@ -1083,6 +1083,144 @@ const seoIcons: FloatingIconConfig[] = [
 const seoShapes: GeometricShapeConfig[] = [];
 
 // ============================================
+// AI INTEGRATION SERVICE PAGE PRESET
+// Same layout as web-development, AI-themed icon IDs
+// ============================================
+const aiIntegrationIcons: FloatingIconConfig[] = [
+  // === HERO SECTION (scroll 3-14%) - AI concept ===
+  {
+    id: 'bot',
+    initialPosition: { x: 89, y: 8 },
+    movement: { x: -15, y: 75 },
+    parallaxSpeed: 0.3,
+    size: 85,
+    opacity: 0.5,
+    fadeInAt: 0.03,
+    fadeOutAt: 0.14,
+    rotation: -10,
+    zIndex: 10,
+  },
+  {
+    id: 'sparkles',
+    initialPosition: { x: 4, y: 14 },
+    movement: { x: 12, y: 60 },
+    parallaxSpeed: 0.35,
+    size: 72,
+    opacity: 0.45,
+    fadeInAt: 0.03,
+    fadeOutAt: 0.15,
+    rotation: 8,
+    zIndex: 9,
+  },
+  // === GAP: 15-20% ===
+  // === CONTENT SECTIONS (scroll 20-34%) - Business value / features ===
+  {
+    id: 'lightbulb',
+    initialPosition: { x: 90, y: 22 },
+    movement: { x: -18, y: 65 },
+    parallaxSpeed: 0.4,
+    size: 78,
+    opacity: 0.48,
+    fadeInAt: 0.20,
+    fadeOutAt: 0.34,
+    rotation: 6,
+    zIndex: 8,
+  },
+  {
+    id: 'search',
+    initialPosition: { x: 3, y: 30 },
+    movement: { x: 14, y: 50 },
+    parallaxSpeed: 0.45,
+    size: 70,
+    opacity: 0.45,
+    fadeInAt: 0.22,
+    fadeOutAt: 0.36,
+    rotation: -7,
+    zIndex: 12,
+  },
+  // === GAP: 36-40% ===
+  // === CONTENT SECTIONS (scroll 40-52%) - Technical / use cases ===
+  {
+    id: 'api',
+    initialPosition: { x: 88, y: 42 },
+    movement: { x: -15, y: 50 },
+    parallaxSpeed: 0.35,
+    size: 72,
+    opacity: 0.45,
+    fadeInAt: 0.40,
+    fadeOutAt: 0.52,
+    rotation: 10,
+    zIndex: 11,
+  },
+  {
+    id: 'workflow',
+    initialPosition: { x: 5, y: 48 },
+    movement: { x: 12, y: 42 },
+    parallaxSpeed: 0.4,
+    size: 65,
+    opacity: 0.42,
+    fadeInAt: 0.42,
+    fadeOutAt: 0.54,
+    rotation: -5,
+    zIndex: 10,
+  },
+  // === GAP: 54-58% ===
+  // === TECH STACK SECTION (scroll 58-68%) - Config / monitoring ===
+  {
+    id: 'settings',
+    initialPosition: { x: 90, y: 55 },
+    movement: { x: -12, y: 35 },
+    parallaxSpeed: 0.3,
+    size: 68,
+    opacity: 0.45,
+    fadeInAt: 0.58,
+    fadeOutAt: 0.66,
+    rotation: -8,
+    zIndex: 9,
+  },
+  {
+    id: 'target',
+    initialPosition: { x: 4, y: 60 },
+    movement: { x: 10, y: 30 },
+    parallaxSpeed: 0.35,
+    size: 62,
+    opacity: 0.42,
+    fadeInAt: 0.60,
+    fadeOutAt: 0.68,
+    rotation: 6,
+    zIndex: 8,
+  },
+  // === GAP: 68-72% ===
+  // === CTA SECTION (scroll 72-78%) - Fade before footer ===
+  {
+    id: 'globe',
+    initialPosition: { x: 87, y: 68 },
+    movement: { x: -8, y: 22 },
+    parallaxSpeed: 0.3,
+    size: 60,
+    opacity: 0.4,
+    fadeInAt: 0.70,
+    fadeOutAt: 0.76,
+    rotation: 5,
+    zIndex: 11,
+  },
+  {
+    id: 'message',
+    initialPosition: { x: 6, y: 72 },
+    movement: { x: 8, y: 18 },
+    parallaxSpeed: 0.35,
+    size: 55,
+    opacity: 0.38,
+    fadeInAt: 0.72,
+    fadeOutAt: 0.78,
+    rotation: -6,
+    zIndex: 10,
+  },
+];
+
+const aiIntegrationShapes: GeometricShapeConfig[] = [];
+
+// ============================================
 // PRESET REGISTRY
 // ============================================
 export const PRESETS: Record<PresetName, FloatingIconsPreset> = {
@@ -1176,6 +1314,17 @@ export const PRESETS: Record<PresetName, FloatingIconsPreset> = {
     name: 'seo',
     icons: seoIcons,
     shapes: seoShapes,
+    // Mobile: Show first 4 icons for sequential reveal coverage
+    mobile: {
+      maxIcons: 4,
+      maxShapes: 0,
+      sizeMultiplier: 0.6,
+    },
+  },
+  'ai-integration': {
+    name: 'ai-integration',
+    icons: aiIntegrationIcons,
+    shapes: aiIntegrationShapes,
     // Mobile: Show first 4 icons for sequential reveal coverage
     mobile: {
       maxIcons: 4,

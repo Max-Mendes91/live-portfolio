@@ -848,16 +848,73 @@
         "pl": "/pl/uslugi/integracja-ai"
       },
       "seo": {
-        "title": "Integracja AI Częstochowa | Max Mendes",
-        "metaDescription": "Integracja AI w aplikacjach webowych. Chatboty, generowanie treści, automatyzacja procesów. OpenAI i Claude API. Programista z Częstochowy. Śląskie i Polska.",
-        "keywords": ["integracja ai", "chatboty ai", "automatyzacja ai", "openai api", "sztuczna inteligencja", "chatgpt integracja", "ai dla firm"],
-        "h1": "Integracja AI i Automatyzacja",
-        "ogTitle": "Integracja AI Częstochowa | Max Mendes"
+        "title": "Integracja AI - Inteligentne Funkcje | Max Mendes",
+        "metaDescription": "Usługi integracji AI dla praktycznych rozwiązań biznesowych. Automatyzacja, inteligentne wyszukiwanie, machine learning. OpenAI, Claude, GPT. Częstochowa, Polska.",
+        "keywords": ["integracja ai", "chatboty ai", "automatyzacja ai", "openai api", "sztuczna inteligencja", "chatgpt integracja", "ai dla firm", "machine learning częstochowa"],
+        "h1": "Integracja AI",
+        "ogTitle": "Integracja AI - Inteligentne Funkcje | Max Mendes"
       },
       "schema": {
         "serviceType": "Integracja Sztucznej Inteligencji",
         "description": "Funkcje AI dla aplikacji webowych: chatboty, generowanie treści, automatyzacja procesów. Integracja OpenAI i Anthropic API.",
         "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+      },
+      "content": {
+        "subtitle": "Inteligentne funkcje rozwiązujące realne problemy biznesowe. Automatyzacja, inteligentne wyszukiwanie i AI-powered procesy—praktyczne wdrożenie bez zbędnego hype'u.",
+        "sections": [
+          {
+            "title": "Co oznacza integracja AI dla biznesu",
+            "paragraphs": [
+              "Integracja AI to dodawanie inteligentnych funkcji do istniejących produktów i procesów — nie rewolucja całej firmy. W praktyce AI pomaga automatyzować powtarzalne zadania, klasyfikować dane, poprawiać wyszukiwanie, generować streszczenia lub wspierać użytkowników lepszymi podpowiedziami. Różnica między użytecznym AI a \"AI dla AI\" polega na celu: zaczynamy od konkretnego problemu biznesowego, a nie od technologii. Efekt, którego szukamy, to oszczędność czasu, redukcja kosztów i lepsze doświadczenie użytkownika. To nie są magiczne rozwiązania ani zamiennik zespołu — AI jako narzędzie, nie zamiennik pracowników."
+            ]
+          },
+          {
+            "title": "Co obejmuje usługa — typowe funkcje AI",
+            "paragraphs": [
+              "Zakres prac może obejmować: klasyfikację i kategoryzację tekstu, generowanie i streszczanie treści, inteligentne wyszukiwanie (dopasowanie semantyczne), rekomendacje i personalizację, rozpoznawanie i przetwarzanie obrazów, NLP dla zapytań użytkowników, automatyczne odpowiedzi i chatboty (tam, gdzie mają sens), a także analizę danych i wykrywanie wzorców. Każda funkcja jest projektowana pod konkretny rezultat, z myślą o stabilności i kontroli kosztów. Gdy prostsze reguły działają lepiej — rekomenduję je zamiast AI."
+            ]
+          },
+          {
+            "title": "Implementacja techniczna i dostawcy",
+            "paragraphs": [
+              "Integruję sprawdzonych dostawców, takich jak OpenAI (GPT), Anthropic (Claude) oraz rozwiązania od Google, a w uzasadnionych przypadkach także modele open-source. Zakres obejmuje integrację API, projektowanie promptów dla powtarzalnych wyników, zarządzanie kosztami, obsługę błędów i bezpieczne fallbacki (AI bywa niedoskonałe). Dbam o prywatność danych, bezpieczeństwo i wydajność (cache, przetwarzanie asynchroniczne).",
+              "FlowMate wykorzystuje AI do klasyfikacji e-maili i sugestii odpowiedzi, radząc sobie z realną zmiennością treści."
+            ],
+            "links": [
+              { "text": "Zobacz implementację AI w FlowMate na stronie Projekty →", "href": "/pl/projekty" }
+            ]
+          },
+          {
+            "title": "Dla kogo i typowe zastosowania",
+            "paragraphs": [
+              "Ta usługa jest dla firm z powtarzalną pracą manualną, produktów wymagających lepszego wyszukiwania lub rekomendacji, zespołów wsparcia szukających asysty AI (nie zastępstwa), platform treściowych (streszczenia/kategorie), e-commerce (personalizacja) oraz produktów SaaS dodających \"smart\" funkcje.",
+              "Przykłady: klasyfikacja dokumentów, routing zapytań klientów, moderacja treści, rekomendacje produktów—wdrażane z jasnymi limitami i mierzalnym wpływem.",
+              "Z Częstochowy, dostępny dla projektów z Polski i zagranicy."
+            ],
+            "links": [
+              { "text": "Pytania o koszty lub proces integracji AI? Sprawdź FAQ →", "href": "/pl/pytania" }
+            ]
+          },
+          {
+            "title": "Podejście i Założenia",
+            "paragraphs": [
+              "Zaczynam od jednego, jasno zdefiniowanego przypadku użycia, a nie od \"AI wszędzie\". Najpierw krótki proof of concept, który sprawdza, czy AI faktycznie pomaga. Wdrażanie jest stopniowe, z bezpiecznymi fallbackami. Koszty mają znaczenie — wywołania API skalują się z użyciem. I co ważne: nie każdy problem potrzebuje AI. Czasem reguły są szybsze i tańsze. Uczciwie oceniam, czy AI realnie poprawi Twój produkt."
+            ]
+          }
+        ],
+        "techStackTitle": "Stos Technologiczny",
+        "techStack": [
+          { "title": "Dostawcy AI", "description": "W zależności od potrzeb używam: GPT (OpenAI), Claude (Anthropic) lub modeli niestandardowych." },
+          { "title": "Backend", "description": "Przetwarzanie asynchroniczne z kolejkami i cache, aby nie blokować użytkowników i kontrolować koszty." },
+          { "title": "Obsługa Błędów", "description": "Solidna obsługa błędów i fallbacki na wypadek niedostępności usług AI." },
+          { "title": "Frontend", "description": "Frontend w React — płynna obsługa funkcji AI." },
+          { "title": "Monitoring", "description": "Monitoring zużycia, skuteczności i kosztów—istotne, bo koszty API rosną z użyciem." }
+        ],
+        "cta": {
+          "title": "Gotowy Dodać Funkcje AI?",
+          "subtitle": "Opisz problem, który chcesz rozwiązać, i miejsce, gdzie AI może pomóc. Odpowiem w ciągu 24 godzin z rzetelną oceną, czy AI to właściwe rozwiązanie w Twoim przypadku.",
+          "button": "Rozpocznij Projekt"
+        }
       }
     },
     "services-overview": {
@@ -891,11 +948,11 @@
       "pl": "/pl/pytania"
     },
     "seo": {
-      "title": "Tworzenie Stron FAQ - Częstochowa | Max Mendes",
-      "metaDescription": "Pytania o tworzenie stron internetowych Częstochowa. Cennik, terminy, technologie i proces. Zadzwoń: 502 742 941. Programista React i Next.js.",
-      "keywords": ["faq tworzenie stron", "pytania programista częstochowa", "cennik stron internetowych", "ile kosztuje strona", "programista częstochowa", "tworzenie stron śląskie"],
+      "title": "Pytania o Tworzenie Stron - Proces, Cennik & AI | Max Mendes",
+      "metaDescription": "FAQ o tworzeniu stron internetowych: proces, cennik, technologie i integracja AI. Odpowiedzi o React, Next.js, SaaS, e-commerce i kosztach AI. Częstochowa, Polska.",
+      "keywords": ["faq tworzenie stron", "pytania programista częstochowa", "cennik stron internetowych", "ile kosztuje strona", "programista częstochowa", "tworzenie stron śląskie", "integracja ai faq", "koszty ai"],
       "h1": "Pytania o Tworzenie Stron Internetowych",
-      "ogTitle": "Tworzenie Stron FAQ - Częstochowa | Max Mendes"
+      "ogTitle": "Pytania o Tworzenie Stron - Proces, Cennik & AI | Max Mendes"
     },
     "schema": {
       "type": "FAQPage",
@@ -988,6 +1045,31 @@
           {
             "question": "Jak zapewniasz bezpieczeństwo i wydajność mojej strony?",
             "answer": "Stosuję nowoczesne praktyki bezpieczeństwa dla uwierzytelniania i obsługi danych. Renderowanie po stronie serwera, zoptymalizowane obrazy i odpowiednie cachowanie są wbudowane domyślnie. Core Web Vitals i czasy ładowania są traktowane jako wymagania, nie dodatki."
+          }
+        ]
+      },
+      {
+        "title": "Pytania o Integrację AI",
+        "items": [
+          {
+            "question": "Ile w praktyce kosztują funkcje AI?",
+            "answer": "Koszt integracji AI składa się z dwóch części: jednorazowego kosztu wdrożenia oraz bieżących kosztów API. Wdrożenie obejmuje zaprojektowanie, integrację i testy, a koszty API zależą od faktycznego użycia przez użytkowników. Oba elementy są omawiane z góry, tak aby nie było żadnych niespodzianek."
+          },
+          {
+            "question": "Jak utrzymywane są koszty AI pod kontrolą i w przewidywalnym zakresie?",
+            "answer": "Koszty są kontrolowane poprzez cache, limity zapytań i wywoływanie AI tylko tam, gdzie realnie wnosi wartość. Powtarzalne wyniki są ponownie wykorzystywane zamiast generowane od nowa, co znacząco ogranicza koszty API. Funkcje projektuję tak, aby koszty skalowały się z wartością biznesową, a nie z technicznym szumem."
+          },
+          {
+            "question": "Co dzieje się z moimi danymi przy korzystaniu z dostawców AI?",
+            "answer": "Dane wysyłane do dostawców AI, takich jak OpenAI czy Anthropic, są przetwarzane przez zewnętrzne usługi, więc technicznie mają one dostęp do treści wejściowych. Minimalizuję zakres danych, unikam zbędnych danych osobowych i stosuję ustawienia prywatności zgodne z wymogami RODO. Jeśli potrzebna jest ścisła kontrola danych, ustalamy ograniczenia lub alternatywy przed rozpoczęciem prac."
+          },
+          {
+            "question": "Jak niezawodne i dokładne jest AI w realnych produktach?",
+            "answer": "AI jest probabilistyczne, a nie deterministyczne, więc czasami może się mylić lub zwracać niespójne wyniki. Dlatego zawsze buduję fallbacki, walidację i czytelne stany interfejsu na wypadek niepewnych odpowiedzi. AI należy traktować jako wsparcie przyspieszające pracę, a nie rozwiązanie w 100% nieomylne."
+          },
+          {
+            "question": "Którego dostawcę AI wybrać: OpenAI, Anthropic czy innego?",
+            "answer": "Wybór dostawcy zależy od konkretnego zadania, kosztów i wymagań dotyczących niezawodności. Jedne modele lepiej radzą sobie z klasyfikacją, inne z dłuższym wnioskowaniem lub bezpieczniejszymi odpowiedziami. Zazwyczaj testuję kilku dostawców na realnym przypadku użycia i wybieram na podstawie wyników, nie marek."
           }
         ]
       },

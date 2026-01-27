@@ -844,16 +844,73 @@
         "pl": "/pl/uslugi/integracja-ai"
       },
       "seo": {
-        "title": "AI Integration - OpenAI & Workflow Automation | Max Mendes",
-        "metaDescription": "AI integration for web applications. Chatbots, content generation, workflow automation using OpenAI & Claude APIs. Poland-based developer, global clients.",
+        "title": "AI Integration - Intelligent Features | Max Mendes",
+        "metaDescription": "AI integration services for practical business solutions. Add intelligent features with OpenAI, Claude, and machine learning. Automation, search, recommendations. Częstochowa, Poland.",
         "keywords": ["ai integration", "chatbot development", "openai integration", "llm implementation", "ai automation", "chatgpt api", "ai developer"],
-        "h1": "AI Integration & Automation",
-        "ogTitle": "AI Integration - OpenAI & Workflow Automation | Max Mendes"
+        "h1": "AI Integration",
+        "ogTitle": "AI Integration - Intelligent Features | Max Mendes"
       },
       "schema": {
         "serviceType": "AI Integration Service",
         "description": "AI-powered features for web applications including chatbots, content generation, and workflow automation using OpenAI and Anthropic APIs.",
         "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+      },
+      "content": {
+        "subtitle": "Intelligent features that solve real business problems. Automation, smarter search, and AI-powered workflows built with practical implementation—no hype.",
+        "sections": [
+          {
+            "title": "What AI integration means for business",
+            "paragraphs": [
+              "AI integration means adding focused, intelligent features to products you already run—not rebuilding everything or chasing trends. In practice, AI can help automate repetitive work, classify and route information, improve search relevance, generate summaries, or assist users with clearer responses. The difference between useful AI and \"AI for AI's sake\" is intent: each feature starts with a specific problem. The goal is to reduce manual effort, improve user experience, or unlock a capability that wasn't feasible before. This is not about replacing teams or promising perfect accuracy. It is about practical gains where machine learning genuinely adds value."
+            ]
+          },
+          {
+            "title": "What's included: common AI features",
+            "paragraphs": [
+              "Projects can include text classification and categorization, content generation and summarization, and intelligent search with semantic matching. Other frequent needs are recommendations and personalization, image recognition and processing, and natural language processing for user input. Automated responses and chatbots are used when appropriate—typically as assistance, not full automation. Data analysis and pattern recognition can surface trends or anomalies that are hard to detect with rules alone. Each feature is scoped to a clear outcome, measured against real usage, and designed to fail safely."
+            ]
+          },
+          {
+            "title": "Technical implementation and providers",
+            "paragraphs": [
+              "I integrate with established AI providers such as OpenAI, Anthropic, and Google, as well as selected open-source models when appropriate. Work includes API integration, prompt design for consistent outputs, and cost management so usage stays predictable. Error handling and fallbacks are essential—AI is probabilistic and needs guardrails. Data privacy, security, and performance are considered from the start, including caching and asynchronous processing.",
+              "FlowMate uses AI integrations for email classification and smart response suggestions, handling real-world variability in email content."
+            ],
+            "links": [
+              { "text": "See FlowMate's AI implementation on the Projects page →", "href": "/en/projects" }
+            ]
+          },
+          {
+            "title": "Who this is for and typical use cases",
+            "paragraphs": [
+              "This service fits businesses with repetitive manual tasks that AI can assist, products needing intelligent search or recommendations, and customer support teams that want AI help without replacing humans. Content platforms benefit from summarization and categorization; e-commerce can add personalization; SaaS products can introduce smart features that improve retention.",
+              "Common examples include document classification, inquiry routing, content moderation, and product recommendations—implemented with clear limits and measurable impact.",
+              "Based in Częstochowa, Poland. Available for AI integration projects locally and internationally."
+            ],
+            "links": [
+              { "text": "Questions about AI integration costs or process? Check the FAQ →", "href": "/en/faq" }
+            ]
+          },
+          {
+            "title": "Approach and Considerations",
+            "paragraphs": [
+              "I start with a narrow use case, not \"add AI everywhere.\" A small proof of concept validates whether AI actually improves the workflow. Implementation is gradual, with fallbacks when results are uncertain. Costs are tracked early—AI API calls scale with usage. If a rule-based solution is better, I recommend it. The key question is always the same: will this intelligent feature materially improve the product?"
+            ]
+          }
+        ],
+        "techStackTitle": "Technical Stack",
+        "techStack": [
+          { "title": "AI Providers", "description": "Integration with GPT (OpenAI), Claude (Anthropic), and custom models when justified." },
+          { "title": "Backend Logic", "description": "Asynchronous processing with queues and caching to control latency and cost." },
+          { "title": "Error Handling", "description": "Robust fallbacks when AI services are unavailable—AI is probabilistic and needs guardrails." },
+          { "title": "Frontend", "description": "React components present AI-powered features smoothly and transparently." },
+          { "title": "Monitoring", "description": "Track usage, success rates, and spend—important because AI API costs grow with adoption." }
+        ],
+        "cta": {
+          "title": "Ready to Add AI Features?",
+          "subtitle": "Tell me about the problem you're solving and where AI could help. I'll respond within 24 hours with an honest assessment of whether AI is the right solution.",
+          "button": "Start Your Project"
+        }
       }
     },
     "services-overview": {
@@ -887,11 +944,11 @@
       "pl": "/pl/pytania"
     },
     "seo": {
-      "title": "Web Development FAQ - Pricing & Process | Max Mendes",
-      "metaDescription": "Web development questions answered. Pricing, timelines, tech stack. Call: +48 502 742 941. React & Next.js developer in Poland serving UK & US.",
-      "keywords": ["web development faq", "freelance developer questions", "web development pricing", "hire developer poland", "react developer questions", "nextjs developer faq"],
+      "title": "Web Development FAQ - Process, Pricing & AI | Max Mendes",
+      "metaDescription": "Web development FAQ covering process, pricing, technical stack, and AI integration. Direct answers about React, Next.js, SaaS, e-commerce, and AI costs. Częstochowa, Poland.",
+      "keywords": ["web development faq", "freelance developer questions", "web development pricing", "hire developer poland", "react developer questions", "nextjs developer faq", "ai integration faq", "ai costs"],
       "h1": "Web Development Questions & Answers",
-      "ogTitle": "Web Development FAQ - Pricing & Process | Max Mendes"
+      "ogTitle": "Web Development FAQ - Process, Pricing & AI | Max Mendes"
     },
     "schema": {
       "type": "FAQPage",
@@ -984,6 +1041,31 @@
           {
             "question": "How do you ensure my site is secure and performant?",
             "answer": "I follow modern security practices for authentication and data handling. Server-side rendering, optimized images, and proper caching are built in by default. Core Web Vitals and load times are treated as requirements, not extras."
+          }
+        ]
+      },
+      {
+        "title": "AI Integration Questions",
+        "items": [
+          {
+            "question": "How much do AI features cost in practice?",
+            "answer": "AI integration has two parts: one-time development cost and ongoing API usage costs. Development covers designing, integrating, and testing the AI feature, while API costs depend on how often users trigger AI actions. I explain both upfront so there are no surprises later."
+          },
+          {
+            "question": "How are AI costs kept predictable and under control?",
+            "answer": "AI costs are managed through caching, request limits, and only calling AI when it adds real value. Common results can be reused instead of regenerated, which significantly reduces usage. I also design features so costs scale with business value, not background noise."
+          },
+          {
+            "question": "What happens to my data when using AI providers?",
+            "answer": "Data sent to AI providers is processed by external services like OpenAI or Anthropic, so they technically see the input. I minimize what is sent, avoid unnecessary personal data, and follow provider privacy options where available. If strict data control is required, we discuss alternatives or limits before building anything."
+          },
+          {
+            "question": "How reliable and accurate is AI in real products?",
+            "answer": "AI is probabilistic, not deterministic, so it will sometimes be wrong or inconsistent. That's why I always build fallbacks, validation, and clear UI states for uncertain results. You should expect AI to assist and speed things up, not to be 100% correct."
+          },
+          {
+            "question": "Which AI provider should I use: OpenAI, Anthropic, or something else?",
+            "answer": "The best provider depends on the task, cost profile, and reliability requirements. Some models are better at structured classification, others at longer reasoning or safer outputs. I usually test providers on your specific use case and choose based on results, not brand names."
           }
         ]
       },

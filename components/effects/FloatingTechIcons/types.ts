@@ -54,7 +54,9 @@ export type TechIconId =
   | 'dashboard'
   | 'creditCard'
   | 'bell'
-  | 'settings';
+  | 'settings'
+  // AI-specific icons
+  | 'bot';
 
 // Parallax speed multipliers (0.1 = slow, 1.0 = match scroll speed)
 export type ParallaxSpeed = 0.15 | 0.2 | 0.3 | 0.35 | 0.4 | 0.45 | 0.5 | 0.6 | 0.7;
@@ -134,7 +136,7 @@ export interface FloatingIconsPreset {
 }
 
 // Available preset names
-export type PresetName = 'about' | 'projects' | 'faq' | 'services' | 'contact' | 'web-development' | 'saas' | 'ecommerce' | 'seo';
+export type PresetName = 'about' | 'projects' | 'faq' | 'services' | 'contact' | 'web-development' | 'saas' | 'ecommerce' | 'seo' | 'ai-integration';
 
 // Main component props
 export interface FloatingTechIconsProps {
