@@ -10,6 +10,7 @@ import { FloatingTechIcons } from '@/components/effects/FloatingTechIcons';
 import PulseBadge from '@/components/ui/PulseBadge';
 import { Display, Heading, Text, BinderClip } from '@/components/ui';
 import { SITE_CONFIG } from '@/lib/seo/config';
+import { useIsDesktop, usePrefersReducedMotion } from '@/hooks/useMediaQuery';
 import { SupportedLocale } from '@/types/seo';
 import { Dictionary } from '@/types/i18n';
 
@@ -94,6 +95,10 @@ const ContactClient: React.FC<ContactClientProps> = ({ locale, dictionary }) => 
     // Form is valid - handle submission here
   }, [validateField]);
 
+  const isDesktop = useIsDesktop();
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const shouldUseViewportTrigger = isDesktop && !prefersReducedMotion;
+
   if (!contact) return null;
 
   const inputBaseClass = 'w-full px-4 py-3 rounded-xl bg-surface border text-text-primary placeholder:text-text-muted focus:outline-none focus:border-border-active transition-colors';
@@ -112,18 +117,14 @@ const ContactClient: React.FC<ContactClientProps> = ({ locale, dictionary }) => 
           {/* Hero Section */}
           <section className="relative pt-24 sm:pt-32 md:pt-40 lg:pt-48 pb-4 overflow-hidden">
             <motion.div
-              initial={{ y: 200, scale: 0.98 }}
-              animate={{ y: 0, scale: 1 }}
+              initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 200, scale: prefersReducedMotion ? 1 : 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{
-                duration: 1.6,
+                duration: prefersReducedMotion ? 0.15 : 1.6,
                 ease: [0.22, 1, 0.36, 1],
-                y: {
-                  type: "spring",
-                  damping: 25,
-                  stiffness: 80,
-                  mass: 1.2,
-                },
+                ...(!prefersReducedMotion ? { y: { type: "spring", damping: 25, stiffness: 80, mass: 1.2 } } : {}),
               }}
+              style={{ willChange: 'transform, opacity' }}
               className="relative max-w-4xl mx-auto border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] pt-12 sm:pt-16 md:pt-20 lg:pt-32 pb-10 sm:pb-12 md:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-12 overflow-hidden"
             >
               {/* Smoke Effect Background */}
@@ -158,10 +159,12 @@ const ContactClient: React.FC<ContactClientProps> = ({ locale, dictionary }) => 
 
                     {/* Contact Information */}
                     <motion.div
-                      initial={{ opacity: 0, x: -30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.8 }}
+                      initial={{ opacity: 0, x: shouldUseViewportTrigger ? -30 : 0 }}
+                      animate={shouldUseViewportTrigger ? undefined : { opacity: 1, x: 0 }}
+                      whileInView={shouldUseViewportTrigger ? { opacity: 1, x: 0 } : undefined}
+                      viewport={shouldUseViewportTrigger ? { once: true } : undefined}
+                      transition={{ duration: shouldUseViewportTrigger ? 0.8 : 0.2 }}
+                      style={{ willChange: shouldUseViewportTrigger ? 'transform, opacity' : 'opacity' }}
                     >
                       <Heading size="lg" as="h2" className="mb-6 sm:mb-8">
                         {contact.infoTitle}
@@ -272,10 +275,12 @@ const ContactClient: React.FC<ContactClientProps> = ({ locale, dictionary }) => 
 
                     {/* Contact Form */}
                     <motion.div
-                      initial={{ opacity: 0, x: 30 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.8 }}
+                      initial={{ opacity: 0, x: shouldUseViewportTrigger ? 30 : 0 }}
+                      animate={shouldUseViewportTrigger ? undefined : { opacity: 1, x: 0 }}
+                      whileInView={shouldUseViewportTrigger ? { opacity: 1, x: 0 } : undefined}
+                      viewport={shouldUseViewportTrigger ? { once: true } : undefined}
+                      transition={{ duration: shouldUseViewportTrigger ? 0.8 : 0.2 }}
+                      style={{ willChange: shouldUseViewportTrigger ? 'transform, opacity' : 'opacity' }}
                     >
                       <Heading size="lg" as="h2" className="mb-2 sm:mb-3">
                         {contact.formTitle}

@@ -109,6 +109,9 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ dictionary }) => {
                 src="/images/process.webp"
                 alt="Development Process Planning"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 100vw, 50vw"
+                quality={80}
+                loading="lazy"
                 className="object-cover grayscale brightness-75 hover:scale-105 transition-transform duration-[3s] ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />

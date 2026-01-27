@@ -66,7 +66,7 @@ export default function HomeClient({ locale, dictionary }: HomeClientProps) {
   // Components without dictionary props still use hardcoded text (backward compatible)
 
   return (
-    <div className="relative bg-background selection:bg-white/10">
+    <div className="relative bg-background selection:bg-white/10" style={{ backfaceVisibility: 'hidden' }}>
       <HomePageJsonLd locale={locale} />
       <Navbar locale={locale} dictionary={dictionary.nav} />
 
@@ -82,6 +82,7 @@ export default function HomeClient({ locale, dictionary }: HomeClientProps) {
                   ? { opacity: 0, transition: { duration: 0 } }
                   : { y: '100vh', transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } },
             }}
+            style={{ willChange: 'transform, opacity' }}
             className="fixed inset-0 z-[100] bg-background flex items-center justify-center overflow-hidden"
           >
             <motion.div
@@ -99,10 +100,13 @@ export default function HomeClient({ locale, dictionary }: HomeClientProps) {
       {/* Main Content Stack */}
       <motion.div
         ref={containerRef}
-        style={{ opacity, scale }}
+        style={{ opacity, scale, willChange: 'transform, opacity' }}
         initial={{ opacity: 0 }}
         animate={{ opacity: showHero ? 1 : 0 }}
-        transition={{ duration: skipIntroRef.current ? 0 : 1.5 }}
+        transition={{
+          duration: skipIntroRef.current ? 0 : 1.5,
+          ease: [0.16, 1, 0.3, 1]
+        }}
         className="relative z-10 bg-background shadow-[0_50px_100px_rgba(0,0,0,0.5)]"
       >
         <Hero dictionary={dictionary.hero} />

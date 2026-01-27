@@ -100,19 +100,30 @@ const Navbar: React.FC<NavbarProps> = ({ locale, dictionary }) => {
     return () => document.removeEventListener('keydown', handleEscape);
   }, [isMobileMenuOpen]);
 
-  // Scroll-based navbar show/hide
+  // Scroll-based navbar show/hide with RAF throttling for better performance
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
       if (isMobileMenuOpen) return;
-      const currentScrollY = window.scrollY;
 
-      if (currentScrollY < lastScrollY.current || currentScrollY < 50) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
+      // Throttle with requestAnimationFrame - only update once per frame
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+
+          if (currentScrollY < lastScrollY.current || currentScrollY < 50) {
+            setIsVisible(true);
+          } else {
+            setIsVisible(false);
+          }
+
+          lastScrollY.current = currentScrollY;
+          ticking = false;
+        });
+
+        ticking = true;
       }
-
-      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -120,17 +131,18 @@ const Navbar: React.FC<NavbarProps> = ({ locale, dictionary }) => {
   }, [isMobileMenuOpen]);
 
   // Stagger animation variants for mobile menu items
+  // Performance optimized: No Y movement on mobile to prevent flickering
   const menuContainerVariants = {
-    open: { transition: { staggerChildren: 0.08, delayChildren: 0.15 } },
-    closed: { transition: { staggerChildren: 0.05, staggerDirection: -1 } },
+    open: { transition: { staggerChildren: 0.04, delayChildren: 0.05 } },  // Faster stagger
+    closed: { transition: { staggerChildren: 0.02, staggerDirection: -1 } },
   };
 
   const menuItemVariants = {
-    closed: { opacity: 0, y: 30 },
-    open: { opacity: 1, y: 0 },
+    closed: { opacity: 0 },  // No Y movement - prevents flicker
+    open: { opacity: 1 },
   };
 
-  const menuItemTransition = { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const };
+  const menuItemTransition = { duration: 0.2, ease: 'easeOut' as const };  // Faster transition
 
   return (
     <>
@@ -208,7 +220,8 @@ const Navbar: React.FC<NavbarProps> = ({ locale, dictionary }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.2 }}  // Faster fade
+            style={{ willChange: 'opacity' }}  // GPU hint
           >
             <motion.nav
               className="flex flex-col items-center justify-center h-full gap-7"
@@ -222,6 +235,7 @@ const Navbar: React.FC<NavbarProps> = ({ locale, dictionary }) => {
                   key={item.href}
                   variants={menuItemVariants}
                   transition={menuItemTransition}
+                  style={{ willChange: 'opacity' }}
                 >
                   <Link
                     href={item.href}
@@ -245,12 +259,14 @@ const Navbar: React.FC<NavbarProps> = ({ locale, dictionary }) => {
                   open: { opacity: 1, scaleX: 1 },
                 }}
                 transition={menuItemTransition}
+                style={{ willChange: 'opacity, transform' }}
               />
 
               {/* Language Switcher */}
               <motion.div
                 variants={menuItemVariants}
                 transition={menuItemTransition}
+                style={{ willChange: 'opacity' }}
               >
                 <Link
                   href={getAlternateHref()}

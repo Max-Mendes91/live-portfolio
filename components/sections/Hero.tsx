@@ -7,6 +7,7 @@ import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import SmokeEffect from '@/components/effects/SmokeEffect';
 import { SITE_CONFIG } from '@/lib/seo/config';
 import { HeroDict } from '@/types/i18n';
+import { usePrefersReducedMotion } from '@/hooks/useMediaQuery';
 
 interface HeroProps {
   dictionary?: HeroDict;
@@ -21,6 +22,8 @@ const iconMap = {
 };
 
 const LiquidBackground: React.FC = () => {
+  const prefersReducedMotion = usePrefersReducedMotion();
+
   return (
     <div className="absolute inset-0 z-0 bg-background overflow-hidden">
       {/* Cinematic Smoke Effect */}
@@ -28,33 +31,43 @@ const LiquidBackground: React.FC = () => {
 
       <div className="absolute inset-0 opacity-30">
         {/* GPU-composited: only x, y, scale - no borderRadius */}
-        <motion.div
-          animate={{
-            x: [-120, 160, -30],
-            y: [120, -160, 60],
-            scale: [1, 1.3, 0.85, 1],
-          }}
-          transition={{
-            duration: 22,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute bottom-[-25%] left-[-15%] w-[1300px] h-[1000px] rounded-full bg-white/[0.06] blur-[160px] pointer-events-none will-change-transform"
-        />
+        {/* Mobile: 60px blur, Desktop: 160px blur, Reduced Motion: Static */}
+        {!prefersReducedMotion ? (
+          <motion.div
+            animate={{
+              x: [-120, 160, -30],
+              y: [120, -160, 60],
+              scale: [1, 1.3, 0.85, 1],
+            }}
+            transition={{
+              duration: 22,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute bottom-[-25%] left-[-15%] w-[1300px] h-[1000px] rounded-full bg-white/[0.06] blur-[60px] lg:blur-[160px] pointer-events-none will-change-transform"
+          />
+        ) : (
+          <div className="absolute bottom-[-25%] left-[-15%] w-[1300px] h-[1000px] rounded-full bg-white/[0.06] blur-[60px] lg:blur-[160px] pointer-events-none" />
+        )}
 
-        <motion.div
-          animate={{
-            x: [160, -120, 50],
-            y: [-160, 140, -40],
-            scale: [1.15, 0.9, 1.25, 1.15],
-          }}
-          transition={{
-            duration: 28,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-[-20%] right-[-15%] w-[1100px] h-[900px] rounded-full bg-zinc-400/[0.04] blur-[180px] pointer-events-none will-change-transform"
-        />
+        {/* Second blur orb - Mobile: 60px blur, Desktop: 180px blur */}
+        {!prefersReducedMotion ? (
+          <motion.div
+            animate={{
+              x: [160, -120, 50],
+              y: [-160, 140, -40],
+              scale: [1.15, 0.9, 1.25, 1.15],
+            }}
+            transition={{
+              duration: 28,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute top-[-20%] right-[-15%] w-[1100px] h-[900px] rounded-full bg-zinc-400/[0.04] blur-[60px] lg:blur-[180px] pointer-events-none will-change-transform"
+          />
+        ) : (
+          <div className="absolute top-[-20%] right-[-15%] w-[1100px] h-[900px] rounded-full bg-zinc-400/[0.04] blur-[60px] lg:blur-[180px] pointer-events-none" />
+        )}
       </div>
 
       <div className="absolute inset-0 bg-gradient-to-tr from-background via-transparent to-background opacity-60" />
@@ -68,6 +81,7 @@ const Hero: React.FC<HeroProps> = ({ dictionary }) => {
   const opacity = useTransform(scrollY, [0, 600], [1, 0]);
   const yContent = useTransform(scrollY, [0, 600], [0, 100]);
   const [wheelY, setWheelY] = useState(0);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   // Fallback values for backward compatibility
   const content = {
@@ -88,12 +102,15 @@ const Hero: React.FC<HeroProps> = ({ dictionary }) => {
   };
 
   useEffect(() => {
+    // Don't run wheel animation for users who prefer reduced motion
+    if (prefersReducedMotion) return;
+
     const interval = setInterval(() => {
       setWheelY(5);
       setTimeout(() => setWheelY(0), 1000);
     }, 4500);
     return () => clearInterval(interval);
-  }, []);
+  }, [prefersReducedMotion]);
 
   return (
     <section className="relative min-h-screen w-full flex flex-col items-center justify-center pt-16 sm:pt-20 pb-20 sm:pb-24 px-4 sm:px-6 overflow-hidden">
@@ -104,9 +121,12 @@ const Hero: React.FC<HeroProps> = ({ dictionary }) => {
         className="relative z-10 text-center max-w-7xl flex flex-col items-center"
       >
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          transition={{
+            duration: prefersReducedMotion ? 0.15 : 1.2,
+            ease: prefersReducedMotion ? 'linear' : [0.16, 1, 0.3, 1]
+          }}
           className="flex flex-col items-center"
         >
           {/* Redline 3: The Pill Gradient Fade */}
@@ -151,9 +171,13 @@ const Hero: React.FC<HeroProps> = ({ dictionary }) => {
 
           {/* Trust Signals - SEO badges from dictionary */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            transition={{
+              duration: prefersReducedMotion ? 0.15 : 0.8,
+              delay: prefersReducedMotion ? 0 : 0.6,
+              ease: prefersReducedMotion ? 'linear' : [0.16, 1, 0.3, 1]
+            }}
             className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-2 sm:px-0"
           >
             {content.trustSignals.map((signal) => {
@@ -183,8 +207,12 @@ const Hero: React.FC<HeroProps> = ({ dictionary }) => {
           <span className="hidden sm:block text-[9px] sm:text-[10px] font-medium tracking-[0.2em] sm:tracking-[0.3em] text-zinc-500/60 uppercase whitespace-nowrap text-right mr-4 sm:mr-10">{content.scrollDown}</span>
           <div className="w-4 h-7 sm:w-5 sm:h-8 rounded-full border border-white/20 flex justify-center p-1 sm:p-1.5 backdrop-blur-[2px]">
             <motion.div
-              animate={{ y: wheelY }}
-              transition={{ type: "spring", stiffness: 350, damping: 25 }}
+              animate={{ y: prefersReducedMotion ? 0 : wheelY }}
+              transition={
+                prefersReducedMotion
+                  ? { duration: 0 }
+                  : { type: "spring", stiffness: 350, damping: 25 }
+              }
               className="w-0.5 h-2 sm:h-2.5 bg-white/80 rounded-full shadow-[0_0_8px_white]"
             />
           </div>

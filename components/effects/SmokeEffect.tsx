@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useIsDesktop, usePrefersReducedMotion } from '@/hooks/useMediaQuery';
 
 interface SmokeEffectProps {
   /** Intensity of the smoke effect (0-1) */
@@ -14,6 +15,25 @@ const SmokeEffect: React.FC<SmokeEffectProps> = ({
   intensity = 0.6,
   className = '',
 }) => {
+  const isDesktop = useIsDesktop();
+  const prefersReducedMotion = usePrefersReducedMotion();
+
+  // Mobile or Reduced Motion: Show static gradient (performance optimization)
+  if (!isDesktop || prefersReducedMotion) {
+    return (
+      <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
+        {/* Static gradient background - no animation for performance */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: `radial-gradient(ellipse 80% 60% at 40% 35%, rgba(255,255,255,${0.08 * intensity}) 0%, rgba(220,220,220,${0.05 * intensity}) 35%, transparent 70%)`,
+          }}
+        />
+      </div>
+    );
+  }
+
+  // Desktop with normal motion: Full 3-layer animated effect
   return (
     <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
       {/* Layer 1: Metallic grey core with white edges - GPU composited */}

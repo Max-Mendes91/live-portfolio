@@ -20,6 +20,8 @@ const ProcessTimeline: React.FC = () => {
               src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1000"
               alt="Process Context"
               fill
+              sizes="(max-width: 1024px) 0vw, 50vw"
+              loading="lazy"
               className="object-cover grayscale"
             />
             <div className="absolute inset-0 bg-black/20" />

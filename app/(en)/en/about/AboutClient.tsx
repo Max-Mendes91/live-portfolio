@@ -13,6 +13,7 @@ import PulseBadge from '@/components/ui/PulseBadge';
 import { Display, Heading, Text, BinderClip } from '@/components/ui';
 import { Dictionary, SupportedLocale } from '@/types/i18n';
 import { SITE_CONFIG } from '@/lib/seo/config';
+import { useIsDesktop, usePrefersReducedMotion } from '@/hooks/useMediaQuery';
 
 interface AboutClientProps {
   locale: SupportedLocale;
@@ -76,6 +77,9 @@ function linkifyBio(text: string): React.ReactNode {
 
 const AboutClient: React.FC<AboutClientProps> = ({ locale, dictionary }) => {
   const { aboutPage, nav, footer } = dictionary;
+  const isDesktop = useIsDesktop();
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const shouldUseViewportTrigger = isDesktop && !prefersReducedMotion;
 
   if (!aboutPage) return null;
 
@@ -92,18 +96,14 @@ const AboutClient: React.FC<AboutClientProps> = ({ locale, dictionary }) => {
       {/* Hero Section */}
       <section className="relative pt-24 sm:pt-32 md:pt-40 lg:pt-48 pb-4 overflow-hidden">
         <motion.div
-          initial={{ y: 200, scale: 0.98 }}
-          animate={{ y: 0, scale: 1 }}
+          initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 200, scale: prefersReducedMotion ? 1 : 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{
-            duration: 1.6,
+            duration: prefersReducedMotion ? 0.15 : 1.6,
             ease: [0.22, 1, 0.36, 1],
-            y: {
-              type: "spring",
-              damping: 25,
-              stiffness: 80,
-              mass: 1.2,
-            },
+            ...(!prefersReducedMotion ? { y: { type: "spring", damping: 25, stiffness: 80, mass: 1.2 } } : {}),
           }}
+          style={{ willChange: 'transform, opacity' }}
           className="relative max-w-4xl mx-auto border-t border-white/10 rounded-t-[1.5rem] sm:rounded-t-[2rem] pt-12 sm:pt-16 md:pt-20 lg:pt-32 pb-10 sm:pb-12 md:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-12 overflow-hidden"
         >
           {/* Smoke Effect Background */}
@@ -134,10 +134,12 @@ const AboutClient: React.FC<AboutClientProps> = ({ locale, dictionary }) => {
                 {aboutPage.bio.map((paragraph, index) => (
                   <motion.div
                     key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    initial={{ opacity: 0, y: shouldUseViewportTrigger ? 20 : 0 }}
+                    animate={shouldUseViewportTrigger ? undefined : { opacity: 1, y: 0 }}
+                    whileInView={shouldUseViewportTrigger ? { opacity: 1, y: 0 } : undefined}
+                    viewport={shouldUseViewportTrigger ? { once: true } : undefined}
+                    transition={{ duration: shouldUseViewportTrigger ? 0.6 : 0.2, delay: shouldUseViewportTrigger ? index * 0.1 : 0 }}
+                    style={{ willChange: shouldUseViewportTrigger ? 'transform, opacity' : 'opacity' }}
                   >
                     <Text size="lg" color="secondary" className="leading-relaxed">
                       {linkifyBio(paragraph)}
@@ -159,10 +161,12 @@ const AboutClient: React.FC<AboutClientProps> = ({ locale, dictionary }) => {
 
           <div className="border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] pt-10 sm:pt-12 md:pt-16 px-4 sm:px-6 lg:px-12">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, y: shouldUseViewportTrigger ? 20 : 0 }}
+              animate={shouldUseViewportTrigger ? undefined : { opacity: 1, y: 0 }}
+              whileInView={shouldUseViewportTrigger ? { opacity: 1, y: 0 } : undefined}
+              viewport={shouldUseViewportTrigger ? { once: true } : undefined}
+              transition={{ duration: shouldUseViewportTrigger ? 0.6 : 0.2 }}
+              style={{ willChange: shouldUseViewportTrigger ? 'transform, opacity' : 'opacity' }}
             >
               <Heading size="lg" as="h2" className="mb-6 sm:mb-8 md:mb-10">
                 {aboutPage.skills.title}
@@ -171,10 +175,12 @@ const AboutClient: React.FC<AboutClientProps> = ({ locale, dictionary }) => {
 
             {/* Categorized Skills */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              initial={{ opacity: 0, y: shouldUseViewportTrigger ? 20 : 0 }}
+              animate={shouldUseViewportTrigger ? undefined : { opacity: 1, y: 0 }}
+              whileInView={shouldUseViewportTrigger ? { opacity: 1, y: 0 } : undefined}
+              viewport={shouldUseViewportTrigger ? { once: true } : undefined}
+              transition={{ duration: shouldUseViewportTrigger ? 0.6 : 0.2, delay: shouldUseViewportTrigger ? 0.1 : 0 }}
+              style={{ willChange: shouldUseViewportTrigger ? 'transform, opacity' : 'opacity' }}
               className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-7 md:gap-8"
             >
               {aboutPage.skills.categories?.map((category, index) => (
@@ -209,10 +215,12 @@ const AboutClient: React.FC<AboutClientProps> = ({ locale, dictionary }) => {
           <div className="border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] md:rounded-t-[3rem] bg-background relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)] pt-10 sm:pt-12 md:pt-16 lg:pt-24 pb-10 sm:pb-12 md:pb-16 lg:pb-24">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, y: shouldUseViewportTrigger ? 20 : 0 }}
+              animate={shouldUseViewportTrigger ? undefined : { opacity: 1, y: 0 }}
+              whileInView={shouldUseViewportTrigger ? { opacity: 1, y: 0 } : undefined}
+              viewport={shouldUseViewportTrigger ? { once: true } : undefined}
+              transition={{ duration: shouldUseViewportTrigger ? 0.6 : 0.2 }}
+              style={{ willChange: shouldUseViewportTrigger ? 'transform, opacity' : 'opacity' }}
             >
               <Heading size="lg" as="h2" className="mb-5 sm:mb-6 md:mb-8">
                 {aboutPage.experience.title}
@@ -245,10 +253,12 @@ const AboutClient: React.FC<AboutClientProps> = ({ locale, dictionary }) => {
             </div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              initial={{ opacity: 0, y: shouldUseViewportTrigger ? 20 : 0 }}
+              animate={shouldUseViewportTrigger ? undefined : { opacity: 1, y: 0 }}
+              whileInView={shouldUseViewportTrigger ? { opacity: 1, y: 0 } : undefined}
+              viewport={shouldUseViewportTrigger ? { once: true } : undefined}
+              transition={{ duration: shouldUseViewportTrigger ? 0.6 : 0.2, delay: shouldUseViewportTrigger ? 0.3 : 0 }}
+              style={{ willChange: shouldUseViewportTrigger ? 'transform, opacity' : 'opacity' }}
               className="mt-5 sm:mt-6 md:mt-8 flex flex-wrap items-center gap-3 sm:gap-4"
             >
               <a

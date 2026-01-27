@@ -7,6 +7,8 @@ import { Plus } from 'lucide-react';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import PulseBadge from '@/components/ui/PulseBadge';
 import { FAQTeaserDict } from '@/types/i18n';
+import { useIsDesktop, usePrefersReducedMotion } from '@/hooks/useMediaQuery';
+import { getResponsiveVariant } from '@/lib/animation-variants';
 
 interface FAQTeaserSectionProps {
   dictionary?: FAQTeaserDict;
@@ -20,6 +22,32 @@ interface FAQItemProps {
 }
 
 const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onClick }) => {
+  const isDesktop = useIsDesktop();
+  const prefersReducedMotion = usePrefersReducedMotion();
+
+  // Determine animation variant based on user preferences
+  const variant = getResponsiveVariant(prefersReducedMotion, isDesktop);
+
+  // Accordion animation variants - GPU accelerated with scaleY
+  const accordionVariants = {
+    initial: { opacity: 0, scaleY: 0 },
+    desktop: {
+      opacity: 1,
+      scaleY: 1,
+      transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] as const }
+    },
+    mobile: {
+      opacity: 1,
+      scaleY: 1,
+      transition: { duration: 0.2, ease: 'linear' as const }
+    },
+    reduced: {
+      opacity: 1,
+      scaleY: 1,
+      transition: { duration: 0 }
+    }
+  };
+
   return (
     <motion.div
       initial={false}
@@ -32,7 +60,11 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onClick }) 
         <span className="text-base sm:text-lg font-normal tracking-tight text-white">{question}</span>
         <motion.div
           animate={{ rotate: isOpen ? 45 : 0 }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          transition={
+            prefersReducedMotion
+              ? { duration: 0 }
+              : { type: "spring", stiffness: 300, damping: 20 }
+          }
           className={`flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full border transition-colors flex-shrink-0 ml-3 sm:ml-4 ${
             isOpen ? 'bg-transparent border-white text-white' : 'bg-transparent border-white/10 text-zinc-500'
           }`}
@@ -44,10 +76,11 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onClick }) 
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            variants={accordionVariants}
+            initial="initial"
+            animate={variant}
+            exit="initial"
+            style={{ originY: 0 }}
           >
             <div className="px-5 pb-5 sm:px-6 sm:pb-6 font-light tracking-tight text-zinc-400 text-xs sm:text-sm leading-relaxed max-w-[95%]">
               {answer}
@@ -61,6 +94,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onClick }) 
 
 const FAQTeaserSection: React.FC<FAQTeaserSectionProps> = ({ dictionary }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   // Fallback content for backward compatibility
   const content = {
@@ -95,9 +129,13 @@ const FAQTeaserSection: React.FC<FAQTeaserSectionProps> = ({ dictionary }) => {
 
           {/* Left Column: Header Content */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: prefersReducedMotion ? 0 : -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{
+              duration: prefersReducedMotion ? 0.15 : 1,
+              ease: prefersReducedMotion ? 'linear' : [0.16, 1, 0.3, 1]
+            }}
             className="lg:sticky lg:top-24"
           >
             <div className="mb-5 sm:mb-6 md:mb-8">
@@ -119,10 +157,14 @@ const FAQTeaserSection: React.FC<FAQTeaserSectionProps> = ({ dictionary }) => {
 
           {/* Right Column: FAQ Accordion */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
+            transition={{
+              duration: prefersReducedMotion ? 0.15 : 1,
+              delay: prefersReducedMotion ? 0 : 0.1,
+              ease: prefersReducedMotion ? 'linear' : [0.16, 1, 0.3, 1]
+            }}
           >
             {content.items.map((faq, index) => (
               <FAQItem

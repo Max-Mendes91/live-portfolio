@@ -12,6 +12,7 @@ import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import { Display, Heading, Text, BinderClip } from '@/components/ui';
 import { Dictionary, SupportedLocale, ServiceLink } from '@/types/i18n';
 import type { PresetName } from '@/components/effects/FloatingTechIcons/types';
+import { useIsDesktop, usePrefersReducedMotion } from '@/hooks/useMediaQuery';
 
 const SERVICE_ICON_PRESETS: Record<string, PresetName> = {
   'web-development': 'web-development',
@@ -30,6 +31,9 @@ interface ServicePageClientProps {
 const ServicePageClient: React.FC<ServicePageClientProps> = ({ locale, dictionary, serviceData }) => {
   const { nav, footer } = dictionary;
   const content = serviceData.content;
+  const isDesktop = useIsDesktop();
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const shouldUseViewportTrigger = isDesktop && !prefersReducedMotion;
 
   if (!content) return null;
 
@@ -49,18 +53,14 @@ const ServicePageClient: React.FC<ServicePageClientProps> = ({ locale, dictionar
           {/* Hero Section */}
           <section className="relative pt-24 sm:pt-32 md:pt-40 lg:pt-48 pb-4 overflow-hidden">
             <motion.div
-              initial={{ y: 200, scale: 0.98 }}
-              animate={{ y: 0, scale: 1 }}
+              initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 200, scale: prefersReducedMotion ? 1 : 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{
-                duration: 1.6,
+                duration: prefersReducedMotion ? 0.15 : 1.6,
                 ease: [0.22, 1, 0.36, 1],
-                y: {
-                  type: 'spring',
-                  damping: 25,
-                  stiffness: 80,
-                  mass: 1.2,
-                },
+                ...(!prefersReducedMotion ? { y: { type: 'spring', damping: 25, stiffness: 80, mass: 1.2 } } : {}),
               }}
+              style={{ willChange: 'transform, opacity' }}
               className="relative max-w-4xl mx-auto border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] pt-12 sm:pt-16 md:pt-20 lg:pt-32 pb-10 sm:pb-12 md:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-12 overflow-hidden"
             >
               {/* Smoke Effect Background */}
@@ -89,10 +89,12 @@ const ServicePageClient: React.FC<ServicePageClientProps> = ({ locale, dictionar
                   {content.sections.map((section, sectionIndex) => (
                     <div key={sectionIndex}>
                       <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6 }}
+                        initial={{ opacity: 0, y: shouldUseViewportTrigger ? 20 : 0 }}
+                        animate={shouldUseViewportTrigger ? undefined : { opacity: 1, y: 0 }}
+                        whileInView={shouldUseViewportTrigger ? { opacity: 1, y: 0 } : undefined}
+                        viewport={shouldUseViewportTrigger ? { once: true } : undefined}
+                        transition={{ duration: shouldUseViewportTrigger ? 0.6 : 0.2 }}
+                        style={{ willChange: shouldUseViewportTrigger ? 'transform, opacity' : 'opacity' }}
                       >
                         <Heading size="lg" as="h2" className="mb-6 sm:mb-8 md:mb-10">
                           {section.title}
@@ -103,10 +105,12 @@ const ServicePageClient: React.FC<ServicePageClientProps> = ({ locale, dictionar
                         {section.paragraphs.map((paragraph, index) => (
                           <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: index * 0.1 }}
+                            initial={{ opacity: 0, y: shouldUseViewportTrigger ? 20 : 0 }}
+                            animate={shouldUseViewportTrigger ? undefined : { opacity: 1, y: 0 }}
+                            whileInView={shouldUseViewportTrigger ? { opacity: 1, y: 0 } : undefined}
+                            viewport={shouldUseViewportTrigger ? { once: true } : undefined}
+                            transition={{ duration: shouldUseViewportTrigger ? 0.6 : 0.2, delay: shouldUseViewportTrigger ? index * 0.1 : 0 }}
+                            style={{ willChange: shouldUseViewportTrigger ? 'transform, opacity' : 'opacity' }}
                           >
                             <Text size="lg" color="secondary" className="leading-relaxed">
                               {paragraph}
@@ -117,10 +121,12 @@ const ServicePageClient: React.FC<ServicePageClientProps> = ({ locale, dictionar
                         {/* Internal Links */}
                         {section.links && section.links.length > 0 && (
                           <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: section.paragraphs.length * 0.1 }}
+                            initial={{ opacity: 0, y: shouldUseViewportTrigger ? 20 : 0 }}
+                            animate={shouldUseViewportTrigger ? undefined : { opacity: 1, y: 0 }}
+                            whileInView={shouldUseViewportTrigger ? { opacity: 1, y: 0 } : undefined}
+                            viewport={shouldUseViewportTrigger ? { once: true } : undefined}
+                            transition={{ duration: shouldUseViewportTrigger ? 0.6 : 0.2, delay: shouldUseViewportTrigger ? section.paragraphs.length * 0.1 : 0 }}
+                            style={{ willChange: shouldUseViewportTrigger ? 'transform, opacity' : 'opacity' }}
                             className="pt-2 sm:pt-3"
                           >
                             {section.links.map((link, linkIndex) => (
@@ -153,10 +159,12 @@ const ServicePageClient: React.FC<ServicePageClientProps> = ({ locale, dictionar
 
               <div className="border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] pt-10 sm:pt-12 md:pt-16 px-4 sm:px-6 lg:px-12">
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
+                  initial={{ opacity: 0, y: shouldUseViewportTrigger ? 20 : 0 }}
+                  animate={shouldUseViewportTrigger ? undefined : { opacity: 1, y: 0 }}
+                  whileInView={shouldUseViewportTrigger ? { opacity: 1, y: 0 } : undefined}
+                  viewport={shouldUseViewportTrigger ? { once: true } : undefined}
+                  transition={{ duration: shouldUseViewportTrigger ? 0.6 : 0.2 }}
+                  style={{ willChange: shouldUseViewportTrigger ? 'transform, opacity' : 'opacity' }}
                 >
                   <Heading size="lg" as="h2" className="mb-6 sm:mb-8 md:mb-10">
                     {content.techStackTitle}
@@ -167,10 +175,12 @@ const ServicePageClient: React.FC<ServicePageClientProps> = ({ locale, dictionar
                   {content.techStack.map((tech, index) => (
                     <motion.div
                       key={index}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      initial={{ opacity: 0, y: shouldUseViewportTrigger ? 20 : 0 }}
+                      animate={shouldUseViewportTrigger ? undefined : { opacity: 1, y: 0 }}
+                      whileInView={shouldUseViewportTrigger ? { opacity: 1, y: 0 } : undefined}
+                      viewport={shouldUseViewportTrigger ? { once: true } : undefined}
+                      transition={{ duration: shouldUseViewportTrigger ? 0.6 : 0.2, delay: shouldUseViewportTrigger ? index * 0.1 : 0 }}
+                      style={{ willChange: shouldUseViewportTrigger ? 'transform, opacity' : 'opacity' }}
                     >
                       <Text size="sm" color="muted" className="uppercase tracking-wider sm:tracking-widest mb-2 sm:mb-3">
                         {tech.title}
@@ -194,10 +204,12 @@ const ServicePageClient: React.FC<ServicePageClientProps> = ({ locale, dictionar
 
               <div className="border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] pt-10 sm:pt-12 md:pt-16 px-4 sm:px-6 lg:px-12">
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
+                  initial={{ opacity: 0, y: shouldUseViewportTrigger ? 20 : 0 }}
+                  animate={shouldUseViewportTrigger ? undefined : { opacity: 1, y: 0 }}
+                  whileInView={shouldUseViewportTrigger ? { opacity: 1, y: 0 } : undefined}
+                  viewport={shouldUseViewportTrigger ? { once: true } : undefined}
+                  transition={{ duration: shouldUseViewportTrigger ? 0.6 : 0.2 }}
+                  style={{ willChange: shouldUseViewportTrigger ? 'transform, opacity' : 'opacity' }}
                   className="text-center"
                 >
                   <Display size="sm" as="h2" className="mb-4 sm:mb-5 md:mb-6">

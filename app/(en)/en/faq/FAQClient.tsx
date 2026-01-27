@@ -12,6 +12,7 @@ import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import PulseBadge from '@/components/ui/PulseBadge';
 import { Display, Heading, Text, BinderClip } from '@/components/ui';
 import { Dictionary, SupportedLocale, FAQCategoryDict } from '@/types/i18n';
+import { useIsDesktop, usePrefersReducedMotion } from '@/hooks/useMediaQuery';
 
 interface FAQClientProps {
   locale: SupportedLocale;
@@ -28,6 +29,9 @@ interface FAQItemProps {
 }
 
 const FAQItem: React.FC<FAQItemProps> = ({ question, answer, linkText, linkHref, isOpen, onClick }) => {
+  const isDesktop = useIsDesktop();
+  const prefersReducedMotion = usePrefersReducedMotion();
+
   return (
     <motion.div
       initial={false}
@@ -40,7 +44,11 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, linkText, linkHref,
         <span className="text-sm sm:text-base md:text-lg font-normal tracking-tight text-white pr-3 sm:pr-4">{question}</span>
         <motion.div
           animate={{ rotate: isOpen ? 45 : 0 }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          transition={
+            prefersReducedMotion
+              ? { duration: 0 }
+              : { type: "spring", stiffness: 300, damping: 20 }
+          }
           className={`flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full border transition-colors flex-shrink-0 ${
             isOpen ? 'bg-transparent border-white text-white' : 'bg-transparent border-white/10 text-zinc-500'
           }`}
@@ -52,10 +60,17 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, linkText, linkHref,
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            initial={{ opacity: 0, scaleY: 0 }}
+            animate={{ opacity: 1, scaleY: 1 }}
+            exit={{ opacity: 0, scaleY: 0 }}
+            transition={
+              prefersReducedMotion
+                ? { duration: 0 }
+                : isDesktop
+                  ? { duration: 0.3, ease: [0.16, 1, 0.3, 1] as const }
+                  : { duration: 0.2, ease: 'linear' as const }
+            }
+            style={{ originY: 0 }}
           >
             <div className="px-4 sm:px-5 md:px-6 pb-4 sm:pb-5 md:pb-6 font-light tracking-tight text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed">
               {answer}
@@ -83,13 +98,18 @@ interface FAQCategoryProps {
 
 const FAQCategory: React.FC<FAQCategoryProps> = ({ category, categoryIndex }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const isDesktopCat = useIsDesktop();
+  const prefersReducedMotionCat = usePrefersReducedMotion();
+  const shouldUseViewportTriggerCat = isDesktopCat && !prefersReducedMotionCat;
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
+      initial={{ opacity: 0, y: shouldUseViewportTriggerCat ? 20 : 0 }}
+      animate={shouldUseViewportTriggerCat ? undefined : { opacity: 1, y: 0 }}
+      whileInView={shouldUseViewportTriggerCat ? { opacity: 1, y: 0 } : undefined}
+      viewport={shouldUseViewportTriggerCat ? { once: true } : undefined}
+      transition={{ duration: shouldUseViewportTriggerCat ? 0.6 : 0.2, delay: shouldUseViewportTriggerCat ? categoryIndex * 0.1 : 0 }}
+      style={{ willChange: shouldUseViewportTriggerCat ? 'transform, opacity' : 'opacity' }}
     >
       <Heading size="md" as="h2" className="mb-4 sm:mb-5 md:mb-6">
         {category.title}
@@ -116,6 +136,9 @@ const sectionContainerStyle = "border-t border-border rounded-t-[1.5rem] sm:roun
 
 const FAQClient: React.FC<FAQClientProps> = ({ locale, dictionary }) => {
   const { faqPage, nav, footer } = dictionary;
+  const isDesktop = useIsDesktop();
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const shouldUseViewportTrigger = isDesktop && !prefersReducedMotion;
 
   if (!faqPage) return null;
 
@@ -132,18 +155,14 @@ const FAQClient: React.FC<FAQClientProps> = ({ locale, dictionary }) => {
           {/* Hero Section */}
           <section className="relative pt-24 sm:pt-32 md:pt-40 lg:pt-48 pb-4 overflow-hidden">
             <motion.div
-              initial={{ opacity: 0, y: 200, scale: 0.98 }}
+              initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 200, scale: prefersReducedMotion ? 1 : 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{
-                duration: 1.6,
+                duration: prefersReducedMotion ? 0.15 : 1.6,
                 ease: [0.22, 1, 0.36, 1],
-                y: {
-                  type: "spring",
-                  damping: 25,
-                  stiffness: 80,
-                  mass: 1.2,
-                },
+                ...(!prefersReducedMotion ? { y: { type: "spring", damping: 25, stiffness: 80, mass: 1.2 } } : {}),
               }}
+              style={{ willChange: 'transform, opacity' }}
               className="relative max-w-4xl mx-auto"
             >
               {/* Binder Clips */}
@@ -203,10 +222,12 @@ const FAQClient: React.FC<FAQClientProps> = ({ locale, dictionary }) => {
 
               <div className="border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] bg-background relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)] pt-10 sm:pt-12 md:pt-16 lg:pt-20 pb-10 sm:pb-12 md:pb-16 px-4 sm:px-6 lg:px-12">
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6 }}
+                  initial={{ opacity: 0, y: shouldUseViewportTrigger ? 20 : 0 }}
+                  animate={shouldUseViewportTrigger ? undefined : { opacity: 1, y: 0 }}
+                  whileInView={shouldUseViewportTrigger ? { opacity: 1, y: 0 } : undefined}
+                  viewport={shouldUseViewportTrigger ? { once: true } : undefined}
+                  transition={{ duration: shouldUseViewportTrigger ? 0.6 : 0.2 }}
+                  style={{ willChange: shouldUseViewportTrigger ? 'transform, opacity' : 'opacity' }}
                   className="text-center"
                 >
                   <Display size="sm" as="h2" className="mb-4 sm:mb-5 md:mb-6">
