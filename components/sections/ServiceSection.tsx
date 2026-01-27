@@ -43,7 +43,7 @@ interface ServiceSectionProps {
 const CodeSnippet: React.FC = () => {
   return (
     <div className="w-full rounded-lg sm:rounded-xl bg-[#0a0a0a] border-l-2 border-emerald-500/50 p-3 sm:p-4 font-mono text-[10px] sm:text-xs leading-relaxed overflow-hidden">
-      <div className="flex items-center gap-2 mb-2 sm:mb-3 text-text-muted">
+      <div className="flex items-center gap-2 mb-2 sm:mb-3 text-text-secondary">
         <div className="flex gap-1 sm:gap-1.5">
           <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/10" />
           <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/10" />
@@ -80,7 +80,7 @@ const CodeSnippet: React.FC = () => {
         <span className="text-blue-400">/&gt;</span>
       </code>
       <code className="block mt-2">
-        <span className="text-zinc-500">{'// Error boundary handles failures'}</span>
+        <span className="text-text-secondary">{'// Error boundary handles failures'}</span>
       </code>
     </div>
   );
