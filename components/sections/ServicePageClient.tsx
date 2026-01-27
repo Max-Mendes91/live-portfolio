@@ -17,6 +17,7 @@ const SERVICE_ICON_PRESETS: Record<string, PresetName> = {
   'web-development': 'web-development',
   'saas-web-apps': 'saas',
   'ecommerce-development': 'ecommerce',
+  'seo-performance-optimization': 'seo',
 };
 
 interface ServicePageClientProps {

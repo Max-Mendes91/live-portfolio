@@ -765,23 +765,78 @@
     },
     "seo-performance-optimization": {
       "id": "seo-performance-optimization",
-      "label": "Pozycjonowanie Techniczne SEO",
+      "label": "SEO & Optymalizacja Wydajności",
       "href": "/pl/uslugi/pozycjonowanie",
       "hrefLang": {
         "en": "/en/services/seo-performance-optimization",
         "pl": "/pl/uslugi/pozycjonowanie"
       },
       "seo": {
-        "title": "Pozycjonowanie Techniczne | Max Mendes",
-        "metaDescription": "Pozycjonowanie techniczne, nie tylko treść i linki. Audyt SEO, optymalizacja szybkości, Core Web Vitals. Programista SEO z Częstochowy. Śląskie i Polska.",
+        "title": "SEO & Optymalizacja Wydajności Częstochowa | Max Mendes",
+        "metaDescription": "Optymalizacja SEO i wydajności stron. Core Web Vitals, szybkość ładowania, pozycje w Google. Nie WordPress, prawdziwy kod. Częstochowa, Śląskie, Polska.",
         "keywords": ["pozycjonowanie stron", "seo techniczne", "audyt seo częstochowa", "optymalizacja strony", "core web vitals", "pozycjonowanie śląskie", "seo programista"],
-        "h1": "Pozycjonowanie Techniczne SEO",
-        "ogTitle": "Pozycjonowanie Techniczne | Max Mendes"
+        "h1": "SEO & Optymalizacja Wydajności",
+        "ogTitle": "SEO & Optymalizacja Wydajności Częstochowa | Max Mendes"
       },
       "schema": {
         "serviceType": "Pozycjonowanie Stron Internetowych",
-        "description": "Pozycjonowanie techniczne: audyty SEO, optymalizacja Core Web Vitals, szybkość ładowania. Nie tylko treść i linki—naprawiam kod.",
+        "description": "Optymalizacja wydajności i SEO skoncentrowana na realnych wynikach biznesowych. Szybsza strona to lepsze pozycje w Google i wyższa konwersja.",
         "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+      },
+      "content": {
+        "subtitle": "Optymalizacja wydajności i SEO skoncentrowana na realnych wynikach biznesowych. Szybsza strona to lepsze pozycje w Google, wyższa konwersja i większe przychody — nie tylko lepsze wyniki techniczne.",
+        "sections": [
+          {
+            "title": "Dlaczego wydajność i SEO mają znaczenie dla biznesu",
+            "paragraphs": [
+              "Wydajność strony i SEO bezpośrednio wpływają na liczbę klientów oraz sprzedaż. Wolne strony tracą użytkowników, zanim ci zdążą wykonać jakąkolwiek akcję, a wyszukiwarki promują witryny szybkie i stabilne. Core Web Vitals (czyli kluczowe wskaźniki jakości strony) są oficjalnym czynnikiem rankingowym Google, dlatego szybkość i stabilność layoutu mają realny wpływ na widoczność w wynikach wyszukiwania.",
+              "Badania branżowe pokazują, że nawet 1 sekunda opóźnienia może obniżyć konwersję o około 7%. Dodatkowo Google stosuje mobile-first indexing, co oznacza, że wydajność wersji mobilnej ma kluczowe znaczenie. Celem optymalizacji jest więcej ruchu z Google, lepsze doświadczenie użytkownika i wyższe przychody — nie \u201Eładne wykresy\u201D bez przełożenia na biznes."
+            ]
+          },
+          {
+            "title": "Co obejmuje usługa: optymalizacja wydajności",
+            "paragraphs": [
+              "Skupiam się na realnej poprawie szybkości i stabilności strony widzianej przez użytkowników. Obejmuje to optymalizację Core Web Vitals: LCP (Largest Contentful Paint), FID/INP (reakcja na interakcję) oraz CLS (stabilność układu).",
+              "Przyspieszanie strony realizowane jest poprzez kompresję i optymalizację obrazów, lazy loading, redukcję nadmiarowego JavaScript oraz code splitting. Optymalizowane są również CSS i zasoby statyczne. Wdrażane są mechanizmy cache oraz CDN w celu skrócenia czasu odpowiedzi serwera. Sprawdzane są zapytania do bazy danych, aby wyeliminować wąskie gardła. Każdy projekt zawiera pomiary przed i po z użyciem Lighthouse i PageSpeed Insights, dzięki czemu efekty są mierzalne."
+            ]
+          },
+          {
+            "title": "Co obejmuje usługa: techniczne SEO",
+            "paragraphs": [
+              "Optymalizacja SEO zaczyna się od audytu technicznego: indeksowanie, crawlability i struktura strony. Usuwam problemy ograniczające widoczność, takie jak błędne przekierowania, duplikacja treści, błędy linkowania wewnętrznego czy nieprawidłowe adresy URL.",
+              "Wdrażane są dane strukturalne Schema.org, które zwiększają szanse na rich snippets w wynikach wyszukiwania. Meta title i description są optymalizowane pod czytelność i CTR, a nie pod sztuczne upychanie słów kluczowych. Poprawne renderowanie po stronie serwera zapewnia, że treści są w pełni dostępne dla robotów Google. Efektem jest solidna baza techniczna pod długofalowe SEO."
+            ]
+          },
+          {
+            "title": "Dla kogo jest ta usługa",
+            "paragraphs": [
+              "Ta usługa jest przeznaczona dla firm posiadających już stronę internetową — często opartą o WordPress — która działa wolno lub nie osiąga oczekiwanych pozycji w Google. Sprawdzi się dla biznesów, które chcą zwiększyć liczbę zapytań, sprzedaż online lub poprawić skuteczność kampanii marketingowych bez przebudowy całej strony od zera. Jeśli Twoja strona ma ruch, ale nie konwertuje, optymalizacja wydajności i SEO może przynieść najszybszy efekt."
+            ]
+          },
+          {
+            "title": "Jak wygląda realizacja",
+            "paragraphs": [
+              "Pracujesz bezpośrednio z jednym developerem, bez pośredników i gotowych checklist. Zakres działań jest dopasowany do Twojej strony i celów biznesowych. Zmiany są wdrażane ostrożnie i weryfikowane na podstawie danych.",
+              "Z Częstochowy, dostępny dla projektów z Polski i zagranicy."
+            ],
+            "links": [
+              { "text": "Pytania o zakres, proces lub koszty? Sprawdź FAQ →", "href": "/pl/pytania" }
+            ]
+          }
+        ],
+        "techStackTitle": "Obszary Techniczne Optymalizacji",
+        "techStack": [
+          { "title": "Wydajność", "description": "Core Web Vitals, szybkość strony i stabilność interfejsu z wykorzystaniem React, Next.js i TypeScript." },
+          { "title": "SEO techniczne", "description": "Indeksowanie, dane strukturalne (Schema.org) i renderowanie treści dla wyszukiwarek." },
+          { "title": "Obrazy", "description": "Kompresja, nowoczesne formaty (WebP, AVIF) i lazy loading redukują rozmiar bez utraty jakości." },
+          { "title": "Cache i CDN", "description": "Mechanizmy cache i CDN skracają czas ładowania globalnie." },
+          { "title": "Pomiar", "description": "Lighthouse, PageSpeed Insights i Google Search Console—każda zmiana jest mierzona, aby techniczne usprawnienia przekładały się na realne wyniki biznesowe." }
+        ],
+        "cta": {
+          "title": "Gotowy Zoptymalizować Swoją Stronę?",
+          "subtitle": "Opisz aktualne problemy z wydajnością oraz cele biznesowe. Odpowiem w ciągu 24 godzin z wstępną oceną i propozycją działań optymalizacyjnych.",
+          "button": "Rozpocznij Projekt"
+        }
       }
     },
     "ai-integration": {

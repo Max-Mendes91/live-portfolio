@@ -768,16 +768,71 @@
         "pl": "/pl/uslugi/pozycjonowanie"
       },
       "seo": {
-        "title": "Technical SEO - Performance Optimization | Max Mendes",
-        "metaDescription": "Technical SEO, Core Web Vitals optimization, and page speed improvements. Fix what's slowing your site and hurting rankings. Developer-focused SEO services.",
-        "keywords": ["technical seo", "seo optimization", "core web vitals", "page speed optimization", "seo audit", "website performance", "seo developer"],
+        "title": "SEO & Performance Optimization - Faster Sites | Max Mendes",
+        "metaDescription": "SEO and performance optimization services. Improve page speed, Core Web Vitals, and search rankings. Technical optimization for better conversions. Częstochowa, Poland.",
+        "keywords": ["technical seo", "seo optimization", "core web vitals", "page speed optimization", "seo audit", "website performance", "seo developer", "częstochowa"],
         "h1": "SEO & Performance Optimization",
-        "ogTitle": "Technical SEO - Performance Optimization | Max Mendes"
+        "ogTitle": "SEO & Performance Optimization - Faster Sites | Max Mendes"
       },
       "schema": {
         "serviceType": "SEO Service",
-        "description": "Technical SEO audits, Core Web Vitals optimization, page speed improvements, and metadata fixes. Developer-focused approach to search optimization.",
+        "description": "Performance optimization and SEO focused on real business results. Faster page speed improves rankings, conversions, and revenue through Core Web Vitals optimization.",
         "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+      },
+      "content": {
+        "subtitle": "Performance optimization and SEO focused on real business results. Faster page speed improves rankings, conversions, and revenue—not just technical scores.",
+        "sections": [
+          {
+            "title": "Why performance and SEO matter for business",
+            "paragraphs": [
+              "Website performance and SEO are directly tied to business outcomes. Slow websites lose users before they convert, while search engines rank faster, more reliable pages higher. Google's Core Web Vitals are official ranking factors, which means page speed and stability affect how visible your site is in search results.",
+              "Even small delays matter—industry data shows that a one-second slowdown can reduce conversions by around 7%. With mobile-first indexing, Google primarily evaluates the mobile version of your site, making mobile performance critical. The goal of optimization is not technical perfection for its own sake, but more qualified traffic, better user engagement, and higher conversion rates."
+            ]
+          },
+          {
+            "title": "What's included: Performance optimization",
+            "paragraphs": [
+              "I focus on measurable improvements to how fast and stable your website feels to real users. This includes improving Core Web Vitals metrics such as LCP (Largest Contentful Paint), FID/INP (interaction responsiveness), and CLS (layout stability).",
+              "Page speed is optimized through image compression, modern formats, lazy loading, and reducing unnecessary JavaScript. Code splitting and asset optimization ensure users load only what they need. Caching strategies and CDN usage reduce server response times, while database queries are reviewed to eliminate bottlenecks. Each project includes before-and-after measurements using tools like Lighthouse and real-user metrics, so improvements are clear and verifiable."
+            ]
+          },
+          {
+            "title": "What's included: Technical SEO improvements",
+            "paragraphs": [
+              "SEO optimization starts with a technical audit to identify crawlability and indexing issues that limit visibility. I address problems such as broken internal links, duplicate content signals, incorrect redirects, and poor URL structures.",
+              "Structured data (Schema.org) is implemented to improve eligibility for rich results and enhanced listings. Meta titles and descriptions are optimized for clarity, relevance, and click-through rate—not keyword stuffing. Server-side rendering and correct handling of JavaScript ensure search engines can fully index your content. The result is a technically sound foundation that supports long-term SEO growth."
+            ]
+          },
+          {
+            "title": "Who this is for",
+            "paragraphs": [
+              "This service fits businesses with slow-loading websites, sites with poor Google rankings despite good content, e-commerce stores with high bounce rates, and companies losing mobile traffic. It's also suited for websites built on WordPress or outdated platforms needing optimization, sites that failed Core Web Vitals assessment, and businesses wanting to improve conversion rates through speed improvements."
+            ]
+          },
+          {
+            "title": "How the work is delivered",
+            "paragraphs": [
+              "Optimization work is handled directly by one developer, without agency layers. The process starts with a comprehensive audit covering both performance and SEO issues. I identify specific problems, prioritize fixes based on impact, implement optimizations, and validate results with measurable data. Changes are implemented carefully to avoid regressions.",
+              "Based in Częstochowa, Poland. Available for optimization projects across Poland and internationally."
+            ],
+            "links": [
+              { "text": "Questions about the optimization process, timeline, or pricing? Check the FAQ →", "href": "/en/faq" }
+            ]
+          }
+        ],
+        "techStackTitle": "Technical Focus Areas",
+        "techStack": [
+          { "title": "Performance", "description": "Core Web Vitals, page speed, and stability using modern frontend practices with React, Next.js, and TypeScript." },
+          { "title": "Technical SEO", "description": "Crawlability, structured data, and rendering for search engines—ensuring Google can index your content correctly." },
+          { "title": "Image Optimization", "description": "Compression, modern formats (WebP, AVIF), and lazy loading to reduce page weight without quality loss." },
+          { "title": "Caching & CDN", "description": "Browser caching, server-side caching, and CDN delivery to reduce load times globally." },
+          { "title": "Measurement", "description": "Lighthouse, PageSpeed Insights, and real-user monitoring—every change is validated with metrics." }
+        ],
+        "cta": {
+          "title": "Ready to Optimize Your Website?",
+          "subtitle": "Tell me about your current performance issues and business goals. I'll respond within 24 hours with an initial assessment and optimization approach.",
+          "button": "Start Your Project"
+        }
       }
     },
     "ai-integration": {
