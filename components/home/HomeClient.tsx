@@ -63,7 +63,8 @@ export default function HomeClient({ locale, dictionary, skipIntro = false }: Ho
     // Safari: tighter timing (lighter fade animation)
     // Others: original timing (heavier slide-down animation)
     const introDelay = safari ? 1200 : 1500;
-    const heroDelay = safari ? 1600 : 2000;
+    // Show hero BEFORE overlay starts exiting so content is ready behind it
+    const heroDelay = safari ? 1100 : 1400;
 
     const timer = setTimeout(() => {
       setIntroComplete(true);

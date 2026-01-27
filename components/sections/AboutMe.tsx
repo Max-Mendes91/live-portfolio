@@ -83,14 +83,9 @@ const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
             </div>
           </motion.div>
 
-          {/* Right Column: Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            className="relative aspect-[4/5] xl:aspect-square overflow-hidden rounded-2xl sm:rounded-3xl"
-          >
+          {/* Right Column: Image — plain div so it paints from server HTML
+               without waiting for JS hydration (critical for LCP) */}
+          <div className="relative aspect-[4/5] xl:aspect-square overflow-hidden rounded-2xl sm:rounded-3xl">
             <Image
               src="/images/aboutme.webp"
               alt="Max Mendes - Full Stack Web Developer based in Poland, specializing in React and Next.js development"
@@ -104,7 +99,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
             />
             {/* Subtle glow behind the image */}
             <div className="absolute -inset-4 bg-white/5 blur-3xl -z-10 rounded-full" />
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

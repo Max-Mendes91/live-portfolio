@@ -14,7 +14,7 @@ export function cn(...inputs: ClassValue[]): string {
 }
 
 const BOT_UA_PATTERN =
-  /Chrome-Lighthouse|PageSpeed|Googlebot|bingbot|GTmetrix|Pingdom/i;
+  /Chrome-Lighthouse|HeadlessChrome|PageSpeed|Googlebot|bingbot|GTmetrix|Pingdom/i;
 
 /** Detect bots/Lighthouse so we can skip intro animations for audits. */
 export function isBot(userAgent: string | null): boolean {
