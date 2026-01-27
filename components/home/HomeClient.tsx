@@ -33,31 +33,20 @@ export default function HomeClient({ locale, dictionary }: HomeClientProps) {
   const scale = useTransform(scrollYProgress, [0.8, 1], [1, 0.95]);
 
   useEffect(() => {
-    // Check if user has already seen the intro
-    const hasSeenIntro = localStorage.getItem('intro-seen') === 'true';
-
-    if (hasSeenIntro) {
-      // Skip intro animation for returning visitors
+    // Phase 1 & 2 logic
+    const timer = setTimeout(() => {
       setIntroComplete(true);
+    }, 1500);
+
+    // Phase 3 logic
+    const heroTimer = setTimeout(() => {
       setShowHero(true);
-    } else {
-      // Show intro for first-time visitors
-      // Phase 1 & 2 logic
-      const timer = setTimeout(() => {
-        setIntroComplete(true);
-        localStorage.setItem('intro-seen', 'true');
-      }, 1500);
+    }, 2000);
 
-      // Phase 3 logic
-      const heroTimer = setTimeout(() => {
-        setShowHero(true);
-      }, 2000);
-
-      return () => {
-        clearTimeout(timer);
-        clearTimeout(heroTimer);
-      };
-    }
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(heroTimer);
+    };
   }, []);
 
   // Pass dictionary sections to components as they are refactored
