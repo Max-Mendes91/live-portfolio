@@ -93,4 +93,17 @@ export function usePrefersReducedMotion(): boolean {
   return useMediaQuery('(prefers-reduced-motion: reduce)');
 }
 
+/** Detect Safari (excludes Chromium-based browsers like Chrome, Brave, Edge) */
+export function useIsSafari(): boolean {
+  const [isSafari, setIsSafari] = useState(false);
+
+  useEffect(() => {
+    setIsSafari(
+      /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
+    );
+  }, []);
+
+  return isSafari;
+}
+
 export default useMediaQuery;

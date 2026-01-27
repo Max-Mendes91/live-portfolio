@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { useIsDesktop, usePrefersReducedMotion } from '@/hooks/useMediaQuery';
 
 interface SmokeEffectProps {
@@ -11,32 +11,47 @@ interface SmokeEffectProps {
   className?: string;
 }
 
+const StaticGradient: React.FC<{ intensity: number }> = ({ intensity }) => (
+  <div
+    className="absolute inset-0"
+    style={{
+      background: `radial-gradient(ellipse 80% 60% at 40% 35%, rgba(255,255,255,${0.08 * intensity}) 0%, rgba(220,220,220,${0.05 * intensity}) 35%, transparent 70%)`,
+    }}
+  />
+);
+
 const SmokeEffect: React.FC<SmokeEffectProps> = ({
   intensity = 0.6,
   className = '',
 }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const isDesktop = useIsDesktop();
   const prefersReducedMotion = usePrefersReducedMotion();
+  // Start animations 300px before element enters viewport so transition is seamless
+  const isInView = useInView(containerRef, { margin: '300px 0px' });
 
   // Mobile or Reduced Motion: Show static gradient (performance optimization)
   if (!isDesktop || prefersReducedMotion) {
     return (
-      <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
-        {/* Static gradient background - no animation for performance */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `radial-gradient(ellipse 80% 60% at 40% 35%, rgba(255,255,255,${0.08 * intensity}) 0%, rgba(220,220,220,${0.05 * intensity}) 35%, transparent 70%)`,
-          }}
-        />
+      <div ref={containerRef} className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
+        <StaticGradient intensity={intensity} />
       </div>
     );
   }
 
-  // Desktop with normal motion: Full 3-layer animated effect
+  // Off-screen: show static gradient to free GPU resources (Safari performance)
+  if (!isInView) {
+    return (
+      <div ref={containerRef} className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
+        <StaticGradient intensity={intensity} />
+      </div>
+    );
+  }
+
+  // Desktop, in view, normal motion: Full 3-layer animated effect
   return (
-    <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
-      {/* Layer 1: Metallic grey core with white edges - GPU composited */}
+    <div ref={containerRef} className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
+      {/* Layer 1: Metallic grey core with white edges */}
       <motion.div
         className="absolute rounded-full will-change-transform"
         style={{
@@ -45,6 +60,7 @@ const SmokeEffect: React.FC<SmokeEffectProps> = ({
           top: '5%',
           left: '-5%',
           filter: 'blur(100px)',
+          backfaceVisibility: 'hidden',
           background: `radial-gradient(ellipse at center, rgba(169,169,169,${0.08 * intensity}) 0%, rgba(192,192,192,${0.1 * intensity}) 25%, rgba(255,255,255,${0.15 * intensity}) 50%, rgba(255,255,255,${0.06 * intensity}) 70%, transparent 85%)`,
         }}
         animate={{
@@ -59,7 +75,7 @@ const SmokeEffect: React.FC<SmokeEffectProps> = ({
         }}
       />
 
-      {/* Layer 2: Silver core with bright white outer - GPU composited */}
+      {/* Layer 2: Silver core with bright white outer */}
       <motion.div
         className="absolute rounded-full will-change-transform"
         style={{
@@ -68,6 +84,7 @@ const SmokeEffect: React.FC<SmokeEffectProps> = ({
           top: '20%',
           right: '-10%',
           filter: 'blur(90px)',
+          backfaceVisibility: 'hidden',
           background: `radial-gradient(ellipse at center, rgba(161,161,170,${0.06 * intensity}) 0%, rgba(212,212,216,${0.1 * intensity}) 30%, rgba(255,255,255,${0.14 * intensity}) 55%, rgba(250,250,250,${0.05 * intensity}) 70%, transparent 85%)`,
         }}
         animate={{
@@ -82,7 +99,7 @@ const SmokeEffect: React.FC<SmokeEffectProps> = ({
         }}
       />
 
-      {/* Layer 3: White outer glow - GPU composited */}
+      {/* Layer 3: White outer glow */}
       <motion.div
         className="absolute rounded-full will-change-transform"
         style={{
@@ -91,6 +108,7 @@ const SmokeEffect: React.FC<SmokeEffectProps> = ({
           top: '-10%',
           left: '10%',
           filter: 'blur(120px)',
+          backfaceVisibility: 'hidden',
           background: `radial-gradient(ellipse at center, transparent 20%, rgba(255,255,255,${0.1 * intensity}) 45%, rgba(255,255,255,${0.05 * intensity}) 65%, transparent 80%)`,
         }}
         animate={{

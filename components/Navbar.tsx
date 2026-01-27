@@ -216,7 +216,7 @@ const Navbar: React.FC<NavbarProps> = ({ locale, dictionary }) => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="fixed inset-0 z-[55] bg-background/95 backdrop-blur-xl md:hidden"
+            className="fixed inset-0 z-[55] bg-background md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

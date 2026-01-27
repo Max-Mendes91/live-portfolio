@@ -233,7 +233,7 @@ const ServicePageClient: React.FC<ServicePageClientProps> = ({ locale, dictionar
       </div>
 
       {/* Sticky Reveal Footer */}
-      <div className="sticky bottom-0 z-0 h-screen w-full">
+      <div className="sticky bottom-0 z-0 h-screen-safe w-full">
         <FooterSection locale={locale} dictionary={footer} hideCTA />
       </div>
     </div>

@@ -75,26 +75,27 @@ export const fadeIn: Variants = {
 };
 
 /**
- * Scale Fade - For accordions and expanding elements
- * Desktop: ScaleY with fade (smooth expansion)
- * Mobile: Fade only (simpler)
+ * Height Reveal - For accordions and expanding elements
+ * Uses height animation (Safari-compatible) instead of scaleY
+ * Desktop: Height reveal with fade
+ * Mobile: Height reveal with fade (faster)
  * Reduced: Instant appearance
  */
-export const scaleFade: Variants = {
-  initial: { opacity: 0, scaleY: 0 },
+export const heightReveal: Variants = {
+  initial: { height: 0, opacity: 0 },
   desktop: {
+    height: 'auto',
     opacity: 1,
-    scaleY: 1,
     transition: { duration: 0.3, ease: smoothEase },
   },
   mobile: {
+    height: 'auto',
     opacity: 1,
-    scaleY: 1,
     transition: { duration: 0.2, ease: 'linear' },
   },
   reduced: {
+    height: 'auto',
     opacity: 1,
-    scaleY: 1,
     transition: { duration: 0 },
   },
 };

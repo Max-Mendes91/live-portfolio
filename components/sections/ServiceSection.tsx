@@ -3,7 +3,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
-import { useIsDesktop, usePrefersReducedMotion } from '@/hooks/useMediaQuery';
+import { useIsDesktop } from '@/hooks/useMediaQuery';
 import {
   Code2,
   Cloud,
@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import PulseBadge from '@/components/ui/PulseBadge';
-import { ServicesDict, ServiceCardDict } from '@/types/i18n';
+import { ServicesDict } from '@/types/i18n';
 import {
   ReactIcon,
   TypeScriptIcon,
@@ -97,30 +97,11 @@ interface FeatureCardProps {
 }
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, linkText, linkHref, className, showCodeSnippet }) => {
-  const prefersReducedMotion = usePrefersReducedMotion();
-  const isDesktop = useIsDesktop();
-
   // Split description to insert link
   const parts = description.split(linkText);
 
-  // On mobile: No Y animation, immediate opacity fade to prevent flickering
-  // On desktop: Keep Y animation with whileInView trigger
-  const shouldUseViewportTrigger = isDesktop && !prefersReducedMotion;
-
   return (
-    <motion.div
-      initial={{
-        opacity: 0,
-        y: prefersReducedMotion ? 0 : (isDesktop ? 20 : 0)  // No Y movement on mobile
-      }}
-      animate={shouldUseViewportTrigger ? undefined : { opacity: 1, y: 0 }}  // Immediate animation on mobile
-      whileInView={shouldUseViewportTrigger ? { opacity: 1, y: 0 } : undefined}  // Viewport trigger only on desktop
-      viewport={shouldUseViewportTrigger ? { once: true, margin: "-50px" } : undefined}
-      transition={{
-        duration: prefersReducedMotion ? 0.15 : (isDesktop ? 0.6 : 0.2),  // Faster on mobile
-        ease: "easeOut"
-      }}
-      style={{ willChange: isDesktop ? 'transform, opacity' : 'opacity' }}  // Only opacity hint on mobile
+    <div
       className={`p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl bg-surface border border-border hover:border-border-hover transition-all duration-500 group flex flex-col ${className || ''}`}
     >
       <div>
@@ -158,7 +139,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, lin
           <CodeSnippet />
         </div>
       )}
-    </motion.div>
+    </div>
   );
 };
 

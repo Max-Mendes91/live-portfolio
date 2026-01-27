@@ -52,8 +52,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
 
       <motion.div
         initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         className="relative z-10 flex flex-col items-center text-center max-w-5xl"
       >

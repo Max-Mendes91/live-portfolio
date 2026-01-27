@@ -98,7 +98,8 @@ const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
               sizes="(max-width: 768px) 100vw, 50vw"
               quality={85}
               loading="lazy"
-              className="object-cover grayscale brightness-90 hover:brightness-100 transition-[filter] duration-1000"
+              style={{ objectFit: 'cover', objectPosition: 'top' }}
+              className="grayscale brightness-90 hover:brightness-100 transition-[filter] duration-1000"
             />
             {/* Subtle glow behind the image */}
             <div className="absolute -inset-4 bg-white/5 blur-3xl -z-10 rounded-full" />
