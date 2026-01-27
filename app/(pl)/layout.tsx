@@ -30,7 +30,7 @@ export default function PolishRootLayout({
           />
         ))}
         {/* Preconnect to external resources */}
-        <link rel="preconnect" href="https://grainy-gradients.vercel.app" />
+        <link rel="preconnect" href="https://grainy-gradients.vercel.app" crossOrigin="anonymous" />
         {/* Geo targeting meta tags */}
         <meta name="geo.region" content="PL-SL" />
         <meta name="geo.placename" content="Częstochowa" />

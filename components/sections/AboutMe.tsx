@@ -95,9 +95,10 @@ const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
               src="/images/aboutme.webp"
               alt="Max Mendes - Full Stack Web Developer based in Poland, specializing in React and Next.js development"
               fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              quality={85}
+              sizes="(max-width: 1023px) calc(100vw - 2rem), 50vw"
+              quality={80}
               priority
+              fetchPriority="high"
               style={{ objectFit: 'cover', objectPosition: 'top' }}
               className="grayscale brightness-90 hover:brightness-100 transition-[filter] duration-1000"
             />
