@@ -18,13 +18,14 @@ import { useIsSafari } from '@/hooks/useMediaQuery';
 interface HomeClientProps {
   locale: SupportedLocale;
   dictionary: Dictionary;
+  skipIntro?: boolean;
 }
 
-export default function HomeClient({ locale, dictionary }: HomeClientProps) {
+export default function HomeClient({ locale, dictionary, skipIntro = false }: HomeClientProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const skipIntroRef = useRef(false);
-  const [introComplete, setIntroComplete] = useState(false);
-  const [showHero, setShowHero] = useState(false);
+  const skipIntroRef = useRef(skipIntro);
+  const [introComplete, setIntroComplete] = useState(skipIntro);
+  const [showHero, setShowHero] = useState(skipIntro);
   const isSafari = useIsSafari();
 
   const { scrollYProgress } = useScroll({
@@ -40,6 +41,9 @@ export default function HomeClient({ locale, dictionary }: HomeClientProps) {
   useLayoutEffect(() => {
     // Reset scroll — Safari restores scroll position on back-navigation
     window.scrollTo(0, 0);
+
+    // Server detected bot/Lighthouse — intro already skipped via initial state
+    if (skipIntroRef.current) return;
 
     // Local detection for synchronous timer setup (hook value isn't ready yet)
     const safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
