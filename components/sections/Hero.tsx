@@ -1,16 +1,17 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { Trophy, FolderOpen, Globe, Languages } from 'lucide-react';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import SmokeEffect from '@/components/effects/SmokeEffect';
 import { SITE_CONFIG } from '@/lib/seo/config';
 import { HeroDict } from '@/types/i18n';
-import { usePrefersReducedMotion } from '@/hooks/useMediaQuery';
+import { usePrefersReducedMotion, useIsSafari } from '@/hooks/useMediaQuery';
 
 interface HeroProps {
   dictionary?: HeroDict;
+  isReady?: boolean;
 }
 
 // Map icon names to Lucide components
@@ -23,16 +24,20 @@ const iconMap = {
 
 const LiquidBackground: React.FC = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
+  const bgRef = useRef<HTMLDivElement>(null);
+  // Pause blur orb animations when Hero is off-screen (Safari GPU optimization)
+  const isInView = useInView(bgRef, { margin: '300px 0px' });
+  const shouldAnimate = !prefersReducedMotion && isInView;
 
   return (
-    <div className="absolute inset-0 z-0 bg-background overflow-hidden">
-      {/* Cinematic Smoke Effect */}
+    <div ref={bgRef} className="absolute inset-0 z-0 bg-background overflow-hidden">
+      {/* Cinematic Smoke Effect — has its own useInView internally */}
       <SmokeEffect intensity={0.7} />
 
       <div className="absolute inset-0 opacity-30">
         {/* GPU-composited: only x, y, scale - no borderRadius */}
         {/* Mobile: 60px blur, Desktop: 160px blur, Reduced Motion: Static */}
-        {!prefersReducedMotion ? (
+        {shouldAnimate ? (
           <motion.div
             animate={{
               x: [-120, 160, -30],
@@ -44,6 +49,7 @@ const LiquidBackground: React.FC = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
+            style={{ backfaceVisibility: 'hidden' }}
             className="absolute bottom-[-25%] left-[-15%] w-[1300px] h-[1000px] rounded-full bg-white/[0.06] blur-[60px] lg:blur-[160px] pointer-events-none will-change-transform"
           />
         ) : (
@@ -51,7 +57,7 @@ const LiquidBackground: React.FC = () => {
         )}
 
         {/* Second blur orb - Mobile: 60px blur, Desktop: 180px blur */}
-        {!prefersReducedMotion ? (
+        {shouldAnimate ? (
           <motion.div
             animate={{
               x: [160, -120, 50],
@@ -63,6 +69,7 @@ const LiquidBackground: React.FC = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
+            style={{ backfaceVisibility: 'hidden' }}
             className="absolute top-[-20%] right-[-15%] w-[1100px] h-[900px] rounded-full bg-zinc-400/[0.04] blur-[60px] lg:blur-[180px] pointer-events-none will-change-transform"
           />
         ) : (
@@ -76,12 +83,15 @@ const LiquidBackground: React.FC = () => {
   );
 };
 
-const Hero: React.FC<HeroProps> = ({ dictionary }) => {
+const Hero: React.FC<HeroProps> = ({ dictionary, isReady = true }) => {
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, 600], [1, 0]);
   const yContent = useTransform(scrollY, [0, 600], [0, 100]);
   const [wheelY, setWheelY] = useState(0);
   const prefersReducedMotion = usePrefersReducedMotion();
+  const isSafari = useIsSafari();
+  // Safari: lighter animations to avoid jank during intro overlay crossfade
+  const lite = isSafari || prefersReducedMotion;
 
   // Fallback values for backward compatibility
   const content = {
@@ -120,63 +130,78 @@ const Hero: React.FC<HeroProps> = ({ dictionary }) => {
         style={{ opacity, y: yContent }}
         className="relative z-10 text-center max-w-7xl flex flex-col items-center"
       >
-        <motion.div
-          initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: prefersReducedMotion ? 0.15 : 1.2,
-            ease: prefersReducedMotion ? 'linear' : [0.16, 1, 0.3, 1]
-          }}
-          className="flex flex-col items-center"
-        >
-          {/* Redline 3: The Pill Gradient Fade */}
-          <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border-l border-t border-b border-white/20 border-r-transparent bg-gradient-to-r from-white/10 via-white/5 to-transparent backdrop-blur-sm mb-4 sm:mb-6 w-fit">
-            <span className="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]"></span>
-            </span>
-            <span className="text-[9px] sm:text-[10px] font-medium tracking-[0.2em] sm:tracking-[0.25em] text-white uppercase opacity-80">
-              {content.badge}
-            </span>
-          </div>
-
-          {/* Lighter Typography with Tight Tracking */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[90px] font-light tracking-tighter leading-[1.1] pb-1 sm:pb-2 mb-3 sm:mb-4 select-none text-white max-w-[1200px]">
-            {content.headline}
-          </h1>
-
-          <h2 className="text-base sm:text-lg md:text-xl font-light tracking-tight text-zinc-300 mb-4 sm:mb-6">
-            {content.subheadline}
-          </h2>
-
-          <p className="font-light tracking-tight text-zinc-400 text-xs sm:text-sm md:text-base max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed opacity-90 px-2 sm:px-0">
-            {content.description}
-          </p>
-
-          <div className="flex flex-col items-center gap-2 sm:gap-3 mb-5 sm:mb-6">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6 relative">
-              <CornerGlowButton>{content.ctaPrimary}</CornerGlowButton>
-              <CornerGlowButton>{content.ctaSecondary}</CornerGlowButton>
-            </div>
-            <p className="text-xs sm:text-sm text-zinc-500">
-              {content.phoneLabel}{' '}
-              <a
-                href={`tel:${SITE_CONFIG.owner.phone.replace(/\s/g, '')}`}
-                className="text-zinc-400 hover:text-white transition-colors"
-              >
-                {SITE_CONFIG.owner.phone}
-              </a>
-            </p>
-          </div>
-
-          {/* Trust Signals - SEO badges from dictionary */}
+        <div className="flex flex-col items-center">
+          {/* Top group: Badge + H1 — fade in (no y-offset to avoid overflow:hidden clipping) */}
           <motion.div
-            initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: lite ? 1 : 0.97 }}
+            animate={isReady ? { opacity: 1, scale: 1 } : undefined}
             transition={{
-              duration: prefersReducedMotion ? 0.15 : 0.8,
-              delay: prefersReducedMotion ? 0 : 0.6,
-              ease: prefersReducedMotion ? 'linear' : [0.16, 1, 0.3, 1]
+              duration: lite ? 0.4 : 1.2,
+              ease: lite ? 'easeOut' : [0.16, 1, 0.3, 1]
+            }}
+            className="flex flex-col items-center"
+          >
+            {/* Redline 3: The Pill Gradient Fade */}
+            <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border-l border-t border-b border-white/20 border-r-transparent bg-gradient-to-r from-white/10 via-white/5 to-transparent backdrop-blur-sm mb-4 sm:mb-6 w-fit">
+              <span className="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]"></span>
+              </span>
+              <span className="text-[9px] sm:text-[10px] font-medium tracking-[0.2em] sm:tracking-[0.25em] text-white uppercase opacity-80">
+                {content.badge}
+              </span>
+            </div>
+
+            {/* Lighter Typography with Tight Tracking */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[90px] font-light tracking-tighter leading-[1.1] pb-1 sm:pb-2 mb-3 sm:mb-4 select-none text-white max-w-[1200px]">
+              {content.headline}
+            </h1>
+          </motion.div>
+
+          {/* Bottom group: Subheadline, description, CTAs — slide up from below */}
+          <motion.div
+            initial={{ opacity: 0, y: lite ? 0 : 30 }}
+            animate={isReady ? { opacity: 1, y: 0 } : undefined}
+            transition={{
+              duration: lite ? 0.4 : 1.2,
+              delay: lite ? 0.05 : 0.15,
+              ease: lite ? 'easeOut' : [0.16, 1, 0.3, 1]
+            }}
+            className="flex flex-col items-center"
+          >
+            <h2 className="text-base sm:text-lg md:text-xl font-light tracking-tight text-zinc-300 mb-4 sm:mb-6">
+              {content.subheadline}
+            </h2>
+
+            <p className="font-light tracking-tight text-zinc-400 text-xs sm:text-sm md:text-base max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed opacity-90 px-2 sm:px-0">
+              {content.description}
+            </p>
+
+            <div className="flex flex-col items-center gap-2 sm:gap-3 mb-5 sm:mb-6">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6 relative">
+                <CornerGlowButton>{content.ctaPrimary}</CornerGlowButton>
+                <CornerGlowButton>{content.ctaSecondary}</CornerGlowButton>
+              </div>
+              <p className="text-xs sm:text-sm text-zinc-500">
+                {content.phoneLabel}{' '}
+                <a
+                  href={`tel:${SITE_CONFIG.owner.phone.replace(/\s/g, '')}`}
+                  className="text-zinc-400 hover:text-white transition-colors"
+                >
+                  {SITE_CONFIG.owner.phone}
+                </a>
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Trust Signals — fade in last */}
+          <motion.div
+            initial={{ opacity: 0, y: lite ? 0 : 15 }}
+            animate={isReady ? { opacity: 1, y: 0 } : undefined}
+            transition={{
+              duration: lite ? 0.3 : 0.8,
+              delay: lite ? 0.15 : 0.6,
+              ease: lite ? 'easeOut' : [0.16, 1, 0.3, 1]
             }}
             className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-2 sm:px-0"
           >
@@ -195,7 +220,7 @@ const Hero: React.FC<HeroProps> = ({ dictionary }) => {
               );
             })}
           </motion.div>
-        </motion.div>
+        </div>
       </motion.div>
 
       <motion.div

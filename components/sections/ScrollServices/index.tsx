@@ -176,7 +176,7 @@ const ScrollServices: React.FC<ScrollServicesProps> = ({
           'relative bg-background hidden lg:block',
           className
         )}
-        style={{ height: `${services.length * 100}vh` }}
+        style={{ height: `${services.length * 100}dvh`, minHeight: `${services.length * 100}vh` }}
       >
         {/* Decorative rounded top edge */}
         <div className="relative z-10">
@@ -184,7 +184,7 @@ const ScrollServices: React.FC<ScrollServicesProps> = ({
         </div>
 
         {/* Sticky split view */}
-        <div className="sticky top-0 h-screen w-full flex items-center z-20 -mt-24">
+        <div className="sticky top-0 h-screen-safe w-full flex items-center z-20 -mt-24">
           <div className="w-full max-w-7xl mx-auto px-6 lg:px-12">
             <div className="grid grid-cols-2 gap-16 items-center">
               {/* Left: Text content */}

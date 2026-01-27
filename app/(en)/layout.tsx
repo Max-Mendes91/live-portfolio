@@ -43,6 +43,13 @@ export default function EnglishRootLayout({
         <meta name="ICBM" content="50.8118, 19.1203" />
       </head>
       <body className={`${outfit.variable} font-sans antialiased`}>
+        {/* Blocking script: marks intro as seen before browser paints,
+            preventing the splash overlay flash on revisits */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{if(sessionStorage.getItem('hasSeenIntro')==='true')document.documentElement.classList.add('intro-seen')}catch(e){}`,
+          }}
+        />
         {children}
       </body>
     </html>

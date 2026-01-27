@@ -54,11 +54,25 @@
 /* ============================================
    BASE STYLES
    ============================================ */
+html {
+  overscroll-behavior-y: none;
+}
+
+/* Prevent intro overlay flash on revisits.
+   An inline <script> in the layout adds .intro-seen to <html>
+   before paint when sessionStorage has the flag. */
+html.intro-seen .intro-overlay {
+  display: none !important;
+}
+
 body {
   font-family: var(--font-outfit), sans-serif;
   background-color: var(--color-background);
   color: var(--color-foreground);
-  overflow-x: hidden;
+  /* clip instead of hidden — hidden forces overflow-y to compute as 'auto'
+     per CSS spec, which creates a scroll container that breaks position:sticky
+     on Safari. clip prevents overflow without creating a new scroll context. */
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -164,6 +178,21 @@ body {
   }
   .animate-delay-500 {
     animation-delay: 500ms;
+  }
+
+  /* Safari-safe viewport height (iOS 100vh address bar fix) */
+  .h-screen-safe {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  /* Force GPU compositing layer (stable layer promotion) */
+  /* NOTE: Only use on static elements. For Framer Motion animated elements,
+     use inline style={{ backfaceVisibility: 'hidden' }} instead —
+     CSS transform: translateZ(0) conflicts with Framer Motion transforms. */
+  .gpu-layer {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 
   /* Hover lift effect */

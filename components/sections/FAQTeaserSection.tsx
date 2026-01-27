@@ -28,22 +28,22 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onClick }) 
   // Determine animation variant based on user preferences
   const variant = getResponsiveVariant(prefersReducedMotion, isDesktop);
 
-  // Accordion animation variants - GPU accelerated with scaleY
+  // Accordion animation variants - height-based reveal (Safari-compatible)
   const accordionVariants = {
-    initial: { opacity: 0, scaleY: 0 },
+    initial: { height: 0, opacity: 0 },
     desktop: {
+      height: 'auto' as const,
       opacity: 1,
-      scaleY: 1,
       transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] as const }
     },
     mobile: {
+      height: 'auto' as const,
       opacity: 1,
-      scaleY: 1,
       transition: { duration: 0.2, ease: 'linear' as const }
     },
     reduced: {
+      height: 'auto' as const,
       opacity: 1,
-      scaleY: 1,
       transition: { duration: 0 }
     }
   };
@@ -80,7 +80,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onClick }) 
             initial="initial"
             animate={variant}
             exit="initial"
-            style={{ originY: 0 }}
+            style={{ overflow: 'hidden' }}
           >
             <div className="px-5 pb-5 sm:px-6 sm:pb-6 font-light tracking-tight text-zinc-400 text-xs sm:text-sm leading-relaxed max-w-[95%]">
               {answer}
@@ -125,7 +125,7 @@ const FAQTeaserSection: React.FC<FAQTeaserSectionProps> = ({ dictionary }) => {
   return (
     <section className="relative w-full bg-[#050505] py-12 sm:py-16 md:py-20 lg:py-24">
       <div className="max-w-[90rem] mx-auto px-4 sm:px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 xl:gap-24 items-start">
+        <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 xl:gap-24 items-start">
 
           {/* Left Column: Header Content */}
           <motion.div

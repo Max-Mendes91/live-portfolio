@@ -60,9 +60,9 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, linkText, linkHref,
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, scaleY: 0 }}
-            animate={{ opacity: 1, scaleY: 1 }}
-            exit={{ opacity: 0, scaleY: 0 }}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
             transition={
               prefersReducedMotion
                 ? { duration: 0 }
@@ -70,7 +70,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, linkText, linkHref,
                   ? { duration: 0.3, ease: [0.16, 1, 0.3, 1] as const }
                   : { duration: 0.2, ease: 'linear' as const }
             }
-            style={{ originY: 0 }}
+            style={{ overflow: 'hidden' }}
           >
             <div className="px-4 sm:px-5 md:px-6 pb-4 sm:pb-5 md:pb-6 font-light tracking-tight text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed">
               {answer}
@@ -251,7 +251,7 @@ const FAQClient: React.FC<FAQClientProps> = ({ locale, dictionary }) => {
       </div>
 
       {/* Sticky Reveal Footer */}
-      <div className="sticky bottom-0 z-0 h-screen w-full">
+      <div className="sticky bottom-0 z-0 h-screen-safe w-full">
         <FooterSection locale={locale} dictionary={footer} hideCTA />
       </div>
     </div>
