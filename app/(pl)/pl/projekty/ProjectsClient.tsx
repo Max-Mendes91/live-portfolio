@@ -12,6 +12,7 @@ import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import { BinderClip } from '@/components/ui';
 import { SupportedLocale } from '@/types/seo';
 import { Dictionary } from '@/types/i18n';
+import { useIsDesktop, usePrefersReducedMotion } from '@/hooks/useMediaQuery';
 
 interface ProjectsClientProps {
   locale: SupportedLocale;
@@ -23,6 +24,9 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
   dictionary,
 }) => {
   const { projectsPage, workGrid, nav, footer } = dictionary;
+  const isDesktop = useIsDesktop();
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const shouldUseViewportTrigger = isDesktop && !prefersReducedMotion;
 
   if (!projectsPage || !workGrid) return null;
 
@@ -40,18 +44,14 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
           {/* Hero Section */}
           <section className="relative pt-24 sm:pt-32 md:pt-40 lg:pt-48 pb-4 overflow-hidden">
             <motion.div
-              initial={{ opacity: 0, y: 200, scale: 0.98 }}
+              initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 200, scale: prefersReducedMotion ? 1 : 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{
-                duration: 1.6,
+                duration: prefersReducedMotion ? 0.15 : 1.6,
                 ease: [0.22, 1, 0.36, 1],
-                y: {
-                  type: 'spring',
-                  damping: 25,
-                  stiffness: 80,
-                  mass: 1.2,
-                },
+                ...(!prefersReducedMotion ? { y: { type: 'spring', damping: 25, stiffness: 80, mass: 1.2 } } : {}),
               }}
+              style={{ willChange: 'transform, opacity' }}
               className="relative max-w-4xl mx-auto"
             >
               {/* Binder Clips */}
@@ -92,10 +92,12 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
                     {projects.map((project, index) => (
                       <motion.div
                         key={project.id}
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                        initial={{ opacity: 0, y: shouldUseViewportTrigger ? 30 : 0 }}
+                        animate={shouldUseViewportTrigger ? undefined : { opacity: 1, y: 0 }}
+                        whileInView={shouldUseViewportTrigger ? { opacity: 1, y: 0 } : undefined}
+                        viewport={shouldUseViewportTrigger ? { once: true } : undefined}
+                        transition={{ duration: shouldUseViewportTrigger ? 0.6 : 0.2, delay: shouldUseViewportTrigger ? index * 0.1 : 0 }}
+                        style={{ willChange: shouldUseViewportTrigger ? 'transform, opacity' : 'opacity' }}
                         className="group"
                       >
                         <div className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-surface border border-border hover:border-white/20 transition-all p-4 sm:p-5 md:p-6 h-full flex flex-col">
@@ -164,10 +166,12 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
 
               <div className="border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] bg-background relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)] pt-10 sm:pt-12 md:pt-16 lg:pt-20 pb-10 sm:pb-12 md:pb-16 px-4 sm:px-6 lg:px-12">
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8 }}
+                  initial={{ opacity: 0, y: shouldUseViewportTrigger ? 20 : 0 }}
+                  animate={shouldUseViewportTrigger ? undefined : { opacity: 1, y: 0 }}
+                  whileInView={shouldUseViewportTrigger ? { opacity: 1, y: 0 } : undefined}
+                  viewport={shouldUseViewportTrigger ? { once: true } : undefined}
+                  transition={{ duration: shouldUseViewportTrigger ? 0.8 : 0.2 }}
+                  style={{ willChange: shouldUseViewportTrigger ? 'transform, opacity' : 'opacity' }}
                   className="text-center"
                 >
                   <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal tracking-tighter text-text-primary mb-4 sm:mb-5 md:mb-6">

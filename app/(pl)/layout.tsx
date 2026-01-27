@@ -18,7 +18,7 @@ export default function PolishRootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pl">
+    <html lang="pl" suppressHydrationWarning>
       <head>
         {/* hreflang tags for multi-regional targeting */}
         {HREFLANG_CONFIG.map(({ hreflang, href }) => (

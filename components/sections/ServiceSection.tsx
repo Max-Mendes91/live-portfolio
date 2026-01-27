@@ -3,6 +3,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
+import { useIsDesktop, usePrefersReducedMotion } from '@/hooks/useMediaQuery';
 import {
   Code2,
   Cloud,
@@ -96,14 +97,30 @@ interface FeatureCardProps {
 }
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, linkText, linkHref, className, showCodeSnippet }) => {
+  const prefersReducedMotion = usePrefersReducedMotion();
+  const isDesktop = useIsDesktop();
+
   // Split description to insert link
   const parts = description.split(linkText);
 
+  // On mobile: No Y animation, immediate opacity fade to prevent flickering
+  // On desktop: Keep Y animation with whileInView trigger
+  const shouldUseViewportTrigger = isDesktop && !prefersReducedMotion;
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      initial={{
+        opacity: 0,
+        y: prefersReducedMotion ? 0 : (isDesktop ? 20 : 0)  // No Y movement on mobile
+      }}
+      animate={shouldUseViewportTrigger ? undefined : { opacity: 1, y: 0 }}  // Immediate animation on mobile
+      whileInView={shouldUseViewportTrigger ? { opacity: 1, y: 0 } : undefined}  // Viewport trigger only on desktop
+      viewport={shouldUseViewportTrigger ? { once: true, margin: "-50px" } : undefined}
+      transition={{
+        duration: prefersReducedMotion ? 0.15 : (isDesktop ? 0.6 : 0.2),  // Faster on mobile
+        ease: "easeOut"
+      }}
+      style={{ willChange: isDesktop ? 'transform, opacity' : 'opacity' }}  // Only opacity hint on mobile
       className={`p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl bg-surface border border-border hover:border-border-hover transition-all duration-500 group flex flex-col ${className || ''}`}
     >
       <div>
@@ -236,6 +253,7 @@ const MarqueeRow: React.FC<{ items: string[]; direction: 'left' | 'right' }> = (
 const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
   const { hero, pills, primaryButton, secondaryButton, cards, marquee1, marquee2 } = dictionary;
   const sectionRef = useRef<HTMLDivElement>(null);
+  const isDesktop = useIsDesktop();
 
   // Get icon component from string name
   const getIcon = (iconName: string) => {
@@ -253,8 +271,8 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
 
           {/* Block A: Service Hero */}
           <div className="max-w-4xl relative">
-            {/* Floating Tech Icons - positioned in the empty space on the right */}
-            {FLOATING_ICONS.map((config, index) => (
+            {/* Floating Tech Icons - Desktop only for performance */}
+            {isDesktop && FLOATING_ICONS.map((config, index) => (
               <FloatingServiceIcon
                 key={index}
                 config={config}

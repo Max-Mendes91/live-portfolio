@@ -18,7 +18,7 @@ export default function EnglishRootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* hreflang tags for multi-regional targeting */}
         {HREFLANG_CONFIG.map(({ hreflang, href }) => (

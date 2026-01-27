@@ -4,6 +4,7 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LucideIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { usePrefersReducedMotion } from '@/hooks/useMediaQuery';
 import type { ScrollServiceItem } from './index';
 
 interface ServiceVisualsProps {
@@ -18,6 +19,7 @@ const ServiceVisuals: React.FC<ServiceVisualsProps> = ({
   isSettled,
   icons,
 }) => {
+  const prefersReducedMotion = usePrefersReducedMotion();
   const Icon1 = icons[service.icon1];
   const Icon2 = icons[service.icon2];
   const IconCenter1 = icons[service.iconCenter1];
@@ -37,10 +39,10 @@ const ServiceVisuals: React.FC<ServiceVisualsProps> = ({
           {/* Icon 1 - Top Left Corner (stays in corner) */}
           <motion.div
             initial={{
-              x: -150,
-              y: -100,
+              x: prefersReducedMotion ? 0 : -150,
+              y: prefersReducedMotion ? 0 : -100,
               opacity: 0,
-              scale: 0.7,
+              scale: prefersReducedMotion ? 1 : 0.7,
             }}
             animate={{
               x: 0,
@@ -49,9 +51,10 @@ const ServiceVisuals: React.FC<ServiceVisualsProps> = ({
               scale: isSettled ? 1 : 0.85,
             }}
             transition={{
-              duration: 0.8,
-              ease: [0.16, 1, 0.3, 1] as const,
+              duration: prefersReducedMotion ? 0.15 : 0.8,
+              ease: prefersReducedMotion ? 'linear' : ([0.16, 1, 0.3, 1] as const),
             }}
+            style={{ willChange: 'transform' }}
             className="absolute top-0 left-0"
           >
             <Icon1
@@ -67,10 +70,10 @@ const ServiceVisuals: React.FC<ServiceVisualsProps> = ({
           {/* Icon 2 - Bottom Right Corner (stays in corner) */}
           <motion.div
             initial={{
-              x: 150,
-              y: 100,
+              x: prefersReducedMotion ? 0 : 150,
+              y: prefersReducedMotion ? 0 : 100,
               opacity: 0,
-              scale: 0.7,
+              scale: prefersReducedMotion ? 1 : 0.7,
             }}
             animate={{
               x: 0,
@@ -79,10 +82,11 @@ const ServiceVisuals: React.FC<ServiceVisualsProps> = ({
               scale: isSettled ? 1 : 0.85,
             }}
             transition={{
-              duration: 0.8,
-              ease: [0.16, 1, 0.3, 1] as const,
-              delay: 0.1,
+              duration: prefersReducedMotion ? 0.15 : 0.8,
+              ease: prefersReducedMotion ? 'linear' : ([0.16, 1, 0.3, 1] as const),
+              delay: prefersReducedMotion ? 0 : 0.1,
             }}
+            style={{ willChange: 'transform' }}
             className="absolute bottom-0 right-0"
           >
             <Icon2
@@ -101,24 +105,25 @@ const ServiceVisuals: React.FC<ServiceVisualsProps> = ({
               {/* IconCenter1 - Comes from bottom-left */}
               <motion.div
                 initial={{
-                  x: -250,
-                  y: 250,
+                  x: prefersReducedMotion ? 0 : -250,
+                  y: prefersReducedMotion ? 0 : 250,
                   opacity: 0,
-                  rotate: -20,
-                  scale: 0.4,
+                  rotate: prefersReducedMotion ? 0 : -20,
+                  scale: prefersReducedMotion ? 1 : 0.4,
                 }}
                 animate={{
                   x: 0,
                   y: 0,
                   opacity: isSettled ? 1 : 0.3,
-                  rotate: isSettled ? 0 : -10,
-                  scale: isSettled ? 1 : 0.7,
+                  rotate: isSettled ? 0 : (prefersReducedMotion ? 0 : -10),
+                  scale: isSettled ? 1 : (prefersReducedMotion ? 1 : 0.7),
                 }}
                 transition={{
-                  duration: 1,
-                  ease: [0.16, 1, 0.3, 1] as const,
-                  delay: 0.15,
+                  duration: prefersReducedMotion ? 0.15 : 1,
+                  ease: prefersReducedMotion ? 'linear' : ([0.16, 1, 0.3, 1] as const),
+                  delay: prefersReducedMotion ? 0 : 0.15,
                 }}
+                style={{ willChange: 'transform' }}
               >
                 <IconCenter1
                   className={cn(
@@ -133,24 +138,25 @@ const ServiceVisuals: React.FC<ServiceVisualsProps> = ({
               {/* IconCenter2 - Comes from top-right */}
               <motion.div
                 initial={{
-                  x: 250,
-                  y: -250,
+                  x: prefersReducedMotion ? 0 : 250,
+                  y: prefersReducedMotion ? 0 : -250,
                   opacity: 0,
-                  rotate: 20,
-                  scale: 0.4,
+                  rotate: prefersReducedMotion ? 0 : 20,
+                  scale: prefersReducedMotion ? 1 : 0.4,
                 }}
                 animate={{
                   x: 0,
                   y: 0,
                   opacity: isSettled ? 1 : 0.3,
-                  rotate: isSettled ? 0 : 10,
-                  scale: isSettled ? 1 : 0.7,
+                  rotate: isSettled ? 0 : (prefersReducedMotion ? 0 : 10),
+                  scale: isSettled ? 1 : (prefersReducedMotion ? 1 : 0.7),
                 }}
                 transition={{
-                  duration: 1,
-                  ease: [0.16, 1, 0.3, 1] as const,
-                  delay: 0.2,
+                  duration: prefersReducedMotion ? 0.15 : 1,
+                  ease: prefersReducedMotion ? 'linear' : ([0.16, 1, 0.3, 1] as const),
+                  delay: prefersReducedMotion ? 0 : 0.2,
                 }}
+                style={{ willChange: 'transform' }}
               >
                 <IconCenter2
                   className={cn(
