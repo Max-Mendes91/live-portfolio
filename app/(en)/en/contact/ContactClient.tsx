@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState, useCallback } from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Clock, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import React, { useState, useCallback, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Mail, Phone, MapPin, Clock, Send, Github, Linkedin, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
+import XIcon from '@/components/ui/XIcon';
 import Navbar from '@/components/Navbar';
 import FooterSection from '@/components/sections/FooterSection';
 import SmokeEffect from '@/components/effects/SmokeEffect';
@@ -27,12 +28,17 @@ interface FormErrors {
 
 const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
+type FormStatus = 'idle' | 'submitting' | 'success' | 'error';
+
 const ContactClient: React.FC<ContactClientProps> = ({ locale, dictionary }) => {
   const { owner } = SITE_CONFIG;
   const { contact, nav, footer } = dictionary;
+  const formRef = useRef<HTMLFormElement>(null);
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
+  const [formStatus, setFormStatus] = useState<FormStatus>('idle');
+  const [serverError, setServerError] = useState<string>('');
 
   const validateField = useCallback((name: string, value: string): string | undefined => {
     switch (name) {
@@ -71,7 +77,7 @@ const ContactClient: React.FC<ContactClientProps> = ({ locale, dictionary }) => 
     }
   }, [touched, validateField]);
 
-  const handleSubmit = useCallback((e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = useCallback(async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const formData = new FormData(form);
@@ -92,8 +98,42 @@ const ContactClient: React.FC<ContactClientProps> = ({ locale, dictionary }) => 
 
     if (hasError) return;
 
-    // Form is valid - handle submission here
-  }, [validateField]);
+    // Submit to API
+    setFormStatus('submitting');
+    setServerError('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.get('name'),
+          email: formData.get('email'),
+          message: formData.get('message'),
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+
+      setFormStatus('success');
+      formRef.current?.reset();
+      setTouched({});
+      setErrors({});
+    } catch (error) {
+      setFormStatus('error');
+      setServerError(
+        error instanceof Error
+          ? error.message
+          : locale === 'pl'
+            ? 'Nie udało się wysłać wiadomości. Spróbuj ponownie.'
+            : 'Failed to send message. Please try again.'
+      );
+    }
+  }, [validateField, locale]);
 
   const isDesktop = useIsDesktop();
   const prefersReducedMotion = usePrefersReducedMotion();
@@ -262,12 +302,12 @@ const ContactClient: React.FC<ContactClientProps> = ({ locale, dictionary }) => 
                             <Linkedin className="w-5 h-5" />
                           </a>
                           <a
-                            href={owner.social.twitter}
+                            href={owner.social.x}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="w-11 h-11 flex items-center justify-center text-text-muted hover:text-text-primary transition-colors"
                           >
-                            <Twitter className="w-5 h-5" />
+                            <XIcon className="w-5 h-5" />
                           </a>
                         </div>
                       </div>
@@ -292,7 +332,7 @@ const ContactClient: React.FC<ContactClientProps> = ({ locale, dictionary }) => 
                         </Text>
                       )}
 
-                      <form className="space-y-5 sm:space-y-6" onSubmit={handleSubmit} noValidate>
+                      <form ref={formRef} className="space-y-5 sm:space-y-6" onSubmit={handleSubmit} noValidate>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                           <div>
                             <label
@@ -357,9 +397,41 @@ const ContactClient: React.FC<ContactClientProps> = ({ locale, dictionary }) => 
                           )}
                         </div>
 
+                        {/* Success Message */}
+                        <AnimatePresence mode="wait">
+                          {formStatus === 'success' && (
+                            <motion.div
+                              initial={{ opacity: 0, y: -10 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              exit={{ opacity: 0, y: -10 }}
+                              className="flex items-center gap-3 p-4 rounded-xl bg-green-500/10 border border-green-500/20"
+                            >
+                              <CheckCircle2 className="w-5 h-5 text-green-400 flex-shrink-0" />
+                              <p className="text-green-400 text-sm">
+                                {locale === 'pl'
+                                  ? 'Wiadomość wysłana! Odpowiem najszybciej jak to możliwe.'
+                                  : 'Message sent! I\'ll get back to you as soon as possible.'}
+                              </p>
+                            </motion.div>
+                          )}
+
+                          {formStatus === 'error' && serverError && (
+                            <motion.div
+                              initial={{ opacity: 0, y: -10 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              exit={{ opacity: 0, y: -10 }}
+                              className="flex items-center gap-3 p-4 rounded-xl bg-red-500/10 border border-red-500/20"
+                            >
+                              <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
+                              <p className="text-red-400 text-sm">{serverError}</p>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+
                         <button
                           type="submit"
-                          className="group relative inline-flex h-12 items-center justify-center px-8 py-3.5 text-label-sm uppercase text-text-primary transition-all duration-300 hover:text-accent-muted w-full sm:w-auto"
+                          disabled={formStatus === 'submitting'}
+                          className="group relative inline-flex h-12 items-center justify-center px-8 py-3.5 text-label-sm uppercase text-text-primary transition-all duration-300 hover:text-accent-muted w-full sm:w-auto disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                           <span className="absolute top-0 right-0 w-8 h-[1px] bg-glow-soft group-hover:bg-accent-muted group-hover:shadow-glow-white transition-all duration-500" />
                           <span className="absolute top-0 right-0 w-[1px] h-8 bg-glow-soft group-hover:bg-accent-muted group-hover:shadow-glow-white transition-all duration-500" />
@@ -367,8 +439,17 @@ const ContactClient: React.FC<ContactClientProps> = ({ locale, dictionary }) => 
                           <span className="absolute bottom-0 left-0 w-[1px] h-8 bg-glow-soft group-hover:bg-accent-muted group-hover:shadow-glow-white transition-all duration-500" />
 
                           <span className="relative z-10 flex items-center justify-center gap-2 whitespace-nowrap">
-                            {contact.submit}
-                            <Send className="w-4 h-4" />
+                            {formStatus === 'submitting' ? (
+                              <>
+                                <Loader2 className="w-4 h-4 animate-spin" />
+                                {locale === 'pl' ? 'Wysyłanie...' : 'Sending...'}
+                              </>
+                            ) : (
+                              <>
+                                {contact.submit}
+                                <Send className="w-4 h-4" />
+                              </>
+                            )}
                           </span>
                         </button>
                       </form>

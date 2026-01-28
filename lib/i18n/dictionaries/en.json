@@ -315,7 +315,7 @@
         "cta": "View Project",
         "externalCta": "View Live Extension",
         "tags": ["Chrome Extension", "AI", "Productivity"],
-        "tech": ["JavaScript", "Chrome APIs", "AI Integration"]
+        "tech": ["React", "TypeScript", "Chrome APIs", "AI Integration"]
       }
     ]
   },

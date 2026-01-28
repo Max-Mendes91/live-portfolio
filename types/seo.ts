@@ -17,8 +17,8 @@ export interface SiteOwner {
   social: {
     linkedin: string;
     github: string;
-    twitter?: string;
-    twitterHandle?: string;
+    x?: string;
+    twitterHandle?: string; // Used for twitter: meta tags (web standard, not brand name)
     instagram?: string;
   };
 }

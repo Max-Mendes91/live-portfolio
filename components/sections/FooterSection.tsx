@@ -3,7 +3,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { Github, Linkedin, Twitter, Instagram, ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react';
+import { Github, Linkedin, Instagram, ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react';
+import XIcon from '@/components/ui/XIcon';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import SmokeEffect from '@/components/effects/SmokeEffect';
 import { SITE_CONFIG } from '@/lib/seo/config';
@@ -37,7 +38,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
   const socialLinks = [
     { href: SITE_CONFIG.owner.social.github, icon: Github, label: 'GitHub' },
     { href: SITE_CONFIG.owner.social.linkedin, icon: Linkedin, label: 'LinkedIn' },
-    { href: SITE_CONFIG.owner.social.twitter, icon: Twitter, label: 'Twitter' },
+    { href: SITE_CONFIG.owner.social.x, icon: XIcon, label: 'X' },
     { href: SITE_CONFIG.owner.social.instagram, icon: Instagram, label: 'Instagram' },
   ];
 

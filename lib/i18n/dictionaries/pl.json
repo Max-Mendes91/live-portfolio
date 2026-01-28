@@ -323,7 +323,7 @@
         "cta": "Zobacz Projekt",
         "externalCta": "Zobacz Rozszerzenie",
         "tags": ["Rozszerzenie Chrome", "AI", "Produktywność"],
-        "tech": ["JavaScript", "Chrome APIs", "Integracja AI"]
+        "tech": ["React", "TypeScript", "Chrome APIs", "Integracja AI"]
       }
     ]
   },

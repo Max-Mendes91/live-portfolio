@@ -1,16 +1,14 @@
 import { SiteConfig, SupportedLocale } from '@/types/seo';
 
-// TODO: Replace with your actual domain when chosen
-// Options: maxmendes.dev, mendesdev.pl, maxmendes.com, etc.
 export const SITE_CONFIG: SiteConfig = {
   name: 'Max Mendes',
-  url: 'https://example.com', // PLACEHOLDER - Replace with your domain
+  url: 'https://maxmendes.dev',
   defaultLocale: 'en',
   locales: ['en', 'pl'],
   owner: {
     name: 'Max Mendes',
     legalName: 'Max Mendes',
-    email: 'maxmendesnoah1991@gmail.com',
+    email: 'contact@maxmendes.dev',
     phone: '+48 502 742 941',
     address: {
       street: 'Slaska 30/8',
@@ -22,9 +20,10 @@ export const SITE_CONFIG: SiteConfig = {
     social: {
       linkedin: 'https://www.linkedin.com/in/max-mendes-776ab5212',
       github: 'https://github.com/Max-Mendes91',
-      twitter: 'https://x.com/maxmendes91',
+      x: 'https://x.com/maxmendes91',
       instagram: 'https://www.instagram.com/max_mendes91/',
-      twitterHandle: '@max-mendes91',
+      // Used for twitter: meta tags (web standard, not brand name)
+      twitterHandle: '@maxmendes91',
     },
   },
 };
@@ -53,10 +52,9 @@ export const TARGET_MARKETS = {
 };
 
 // hreflang configuration - Updated for [locale] routing structure
+// Using general 'en' for all English speakers (no region-specific content)
 export const HREFLANG_CONFIG = [
   { hreflang: 'en', href: '/en' },
-  { hreflang: 'en-US', href: '/en' },
-  { hreflang: 'en-GB', href: '/en' },
   { hreflang: 'pl', href: '/pl' },
   { hreflang: 'x-default', href: '/en' },
 ];

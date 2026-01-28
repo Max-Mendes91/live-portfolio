@@ -76,7 +76,7 @@ export async function generateMetadata({
 
   const meta = SERVICE_META[serviceKey];
   const canonicalPath = `/pl/uslugi/${slug}`;
-  const enPath = `/services/${slug}`;
+  const enPath = `/en/services/${slug}`;
 
   return {
     title: `${meta.title} | ${SITE_CONFIG.name}`,
@@ -86,8 +86,6 @@ export async function generateMetadata({
       canonical: getFullUrl(canonicalPath),
       languages: {
         en: getFullUrl(enPath),
-        'en-US': getFullUrl(enPath),
-        'en-GB': getFullUrl(enPath),
         pl: getFullUrl(canonicalPath),
         'x-default': getFullUrl(enPath),
       },
