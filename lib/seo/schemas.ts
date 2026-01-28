@@ -32,7 +32,7 @@ export function generatePersonSchema(): PersonSchema {
     sameAs: [
       owner.social.linkedin,
       owner.social.github,
-      owner.social.twitter,
+      owner.social.x,
       owner.social.instagram,
     ].filter(Boolean) as string[],
     jobTitle: 'Full Stack Web Developer',
@@ -84,7 +84,7 @@ export function generateLocalBusinessSchema(locale: SupportedLocale = 'en'): Loc
     sameAs: [
       owner.social.linkedin,
       owner.social.github,
-      owner.social.twitter,
+      owner.social.x,
       owner.social.instagram,
     ].filter(Boolean) as string[],
     founder: {

@@ -15,11 +15,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: getFullUrl('/pl/kontakt'),
     languages: {
-      en: getFullUrl('/contact'),
-      'en-US': getFullUrl('/contact'),
-      'en-GB': getFullUrl('/contact'),
+      en: getFullUrl('/en/contact'),
       pl: getFullUrl('/pl/kontakt'),
-      'x-default': getFullUrl('/contact'),
+      'x-default': getFullUrl('/en/contact'),
     },
   },
   openGraph: {

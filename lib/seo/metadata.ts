@@ -196,9 +196,7 @@ export function generateHomePageMetadata(
   Object.entries(hrefLang).forEach(([lang, path]) => {
     languages[lang] = getFullUrl(path);
   });
-  // Add regional variants for English
-  languages['en-US'] = languages['en'];
-  languages['en-GB'] = languages['en'];
+  // x-default points to English as the fallback
   languages['x-default'] = languages['en'];
 
   return {

@@ -64,7 +64,7 @@ function generatePersonSchema(href: string) {
     description:
       'Programista full-stack z Częstochowy specjalizujący się w React, Next.js i TypeScript',
     url: getFullUrl(href),
-    image: getFullUrl('/images/max-mendes.jpg'),
+    image: getFullUrl('/images/aboutme.webp'),
     email: SITE_CONFIG.owner.email,
     telephone: SITE_CONFIG.owner.phone,
     address: {
@@ -76,7 +76,7 @@ function generatePersonSchema(href: string) {
     sameAs: [
       SITE_CONFIG.owner.social.github,
       SITE_CONFIG.owner.social.linkedin,
-      SITE_CONFIG.owner.social.twitter,
+      SITE_CONFIG.owner.social.x,
       SITE_CONFIG.owner.social.instagram,
     ].filter(Boolean) as string[],
     knowsAbout: [

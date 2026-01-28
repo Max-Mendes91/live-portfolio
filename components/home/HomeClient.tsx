@@ -121,7 +121,7 @@ export default function HomeClient({ locale, dictionary, skipIntro = false }: Ho
         style={{ opacity, scale }}
         className={`relative z-10 bg-background shadow-[0_50px_100px_rgba(0,0,0,0.5)]${!showHero ? ' invisible' : ''}`}
       >
-        <Hero dictionary={dictionary.hero} isReady={showHero} />
+        <Hero dictionary={dictionary.hero} isReady={showHero} locale={locale} />
         <AboutMe dictionary={dictionary.about} />
         <WorkGrid dictionary={dictionary.workGrid} />
         <ServiceSection dictionary={dictionary.services} />

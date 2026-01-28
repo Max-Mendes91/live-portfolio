@@ -2,16 +2,18 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
-import { Trophy, FolderOpen, Globe, Languages } from 'lucide-react';
+import { Trophy, FolderOpen, Globe, Languages, ChevronDown } from 'lucide-react';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import SmokeEffect from '@/components/effects/SmokeEffect';
 import { SITE_CONFIG } from '@/lib/seo/config';
 import { HeroDict } from '@/types/i18n';
 import { usePrefersReducedMotion, useIsSafari } from '@/hooks/useMediaQuery';
+import { SupportedLocale } from '@/types/seo';
 
 interface HeroProps {
   dictionary?: HeroDict;
   isReady?: boolean;
+  locale?: SupportedLocale;
 }
 
 // Map icon names to Lucide components
@@ -83,7 +85,7 @@ const LiquidBackground: React.FC = () => {
   );
 };
 
-const Hero: React.FC<HeroProps> = ({ dictionary, isReady = true }) => {
+const Hero: React.FC<HeroProps> = ({ dictionary, isReady = true, locale = 'en' }) => {
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, 600], [1, 0]);
   const yContent = useTransform(scrollY, [0, 600], [0, 100]);
@@ -179,8 +181,8 @@ const Hero: React.FC<HeroProps> = ({ dictionary, isReady = true }) => {
 
             <div className="flex flex-col items-center gap-2 sm:gap-3 mb-5 sm:mb-6">
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6 relative">
-                <CornerGlowButton>{content.ctaPrimary}</CornerGlowButton>
-                <CornerGlowButton>{content.ctaSecondary}</CornerGlowButton>
+                <CornerGlowButton href={locale === 'pl' ? '/pl/kontakt' : '/en/contact'}>{content.ctaPrimary}</CornerGlowButton>
+                <CornerGlowButton href={locale === 'pl' ? '/pl/projekty' : '/en/projects'}>{content.ctaSecondary}</CornerGlowButton>
               </div>
               <p className="text-xs sm:text-sm text-zinc-500">
                 {content.phoneLabel}{' '}
@@ -230,7 +232,22 @@ const Hero: React.FC<HeroProps> = ({ dictionary, isReady = true }) => {
         <div className="hidden md:block flex-1 h-[1px] bg-white/[0.05] mr-12" />
         <div className="flex items-center">
           <span className="hidden sm:block text-[9px] sm:text-[10px] font-medium tracking-[0.2em] sm:tracking-[0.3em] text-zinc-500/60 uppercase whitespace-nowrap text-right mr-4 sm:mr-10">{content.scrollDown}</span>
-          <div className="w-4 h-7 sm:w-5 sm:h-8 rounded-full border border-white/20 flex justify-center p-1 sm:p-1.5 backdrop-blur-[2px]">
+
+          {/* Mobile: Chevron arrow */}
+          <motion.div
+            animate={{ y: prefersReducedMotion ? 0 : [0, 6, 0] }}
+            transition={
+              prefersReducedMotion
+                ? { duration: 0 }
+                : { duration: 1.5, repeat: Infinity, ease: "easeInOut" }
+            }
+            className="sm:hidden"
+          >
+            <ChevronDown className="w-6 h-6 text-white/40" />
+          </motion.div>
+
+          {/* Desktop: Mouse scroll wheel */}
+          <div className="hidden sm:flex w-5 h-8 rounded-full border border-white/20 justify-center p-1.5 backdrop-blur-[2px]">
             <motion.div
               animate={{ y: prefersReducedMotion ? 0 : wheelY }}
               transition={
@@ -238,7 +255,7 @@ const Hero: React.FC<HeroProps> = ({ dictionary, isReady = true }) => {
                   ? { duration: 0 }
                   : { type: "spring", stiffness: 350, damping: 25 }
               }
-              className="w-0.5 h-2 sm:h-2.5 bg-white/80 rounded-full shadow-[0_0_8px_white]"
+              className="w-0.5 h-2.5 bg-white/80 rounded-full shadow-[0_0_8px_white]"
             />
           </div>
           <span className="hidden sm:block text-[9px] sm:text-[10px] font-medium tracking-[0.2em] sm:tracking-[0.3em] text-zinc-500/60 uppercase whitespace-nowrap text-left ml-4 sm:ml-10">{content.toSeeProjects}</span>
