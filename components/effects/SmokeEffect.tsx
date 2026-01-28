@@ -48,75 +48,52 @@ const SmokeEffect: React.FC<SmokeEffectProps> = ({
     );
   }
 
-  // Desktop, in view, normal motion: Full 3-layer animated effect
+  // Desktop, in view, normal motion: Optimized 2-layer animated effect
   return (
     <div ref={containerRef} className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
-      {/* Layer 1: Metallic grey core with white edges */}
+      {/* Layer 1: Primary smoke - reduced blur for better performance */}
       <motion.div
         className="absolute rounded-full will-change-transform"
         style={{
-          width: '800px',
-          height: '600px',
+          width: '600px',
+          height: '450px',
           top: '5%',
           left: '-5%',
-          filter: 'blur(100px)',
+          filter: 'blur(70px)',
           backfaceVisibility: 'hidden',
-          background: `radial-gradient(ellipse at center, rgba(169,169,169,${0.08 * intensity}) 0%, rgba(192,192,192,${0.1 * intensity}) 25%, rgba(255,255,255,${0.15 * intensity}) 50%, rgba(255,255,255,${0.06 * intensity}) 70%, transparent 85%)`,
+          background: `radial-gradient(ellipse at center, rgba(169,169,169,${0.1 * intensity}) 0%, rgba(255,255,255,${0.18 * intensity}) 40%, rgba(255,255,255,${0.08 * intensity}) 65%, transparent 85%)`,
         }}
         animate={{
-          x: ['0%', '40%', '80%', '40%', '0%'],
-          y: ['0%', '-15%', '10%', '20%', '0%'],
-          scale: [1, 1.1, 0.92, 1.05, 1],
+          x: ['0%', '50%', '0%'],
+          y: ['0%', '-10%', '0%'],
+          scale: [1, 1.08, 1],
         }}
         transition={{
-          duration: 28,
+          duration: 30,
           repeat: Infinity,
           ease: 'easeInOut',
         }}
       />
 
-      {/* Layer 2: Silver core with bright white outer */}
+      {/* Layer 2: Secondary smoke - counter movement */}
       <motion.div
         className="absolute rounded-full will-change-transform"
         style={{
-          width: '700px',
-          height: '550px',
-          top: '20%',
-          right: '-10%',
-          filter: 'blur(90px)',
+          width: '550px',
+          height: '400px',
+          top: '15%',
+          right: '-8%',
+          filter: 'blur(60px)',
           backfaceVisibility: 'hidden',
-          background: `radial-gradient(ellipse at center, rgba(161,161,170,${0.06 * intensity}) 0%, rgba(212,212,216,${0.1 * intensity}) 30%, rgba(255,255,255,${0.14 * intensity}) 55%, rgba(250,250,250,${0.05 * intensity}) 70%, transparent 85%)`,
+          background: `radial-gradient(ellipse at center, rgba(200,200,200,${0.08 * intensity}) 0%, rgba(255,255,255,${0.15 * intensity}) 45%, rgba(250,250,250,${0.06 * intensity}) 70%, transparent 85%)`,
         }}
         animate={{
-          x: ['0%', '-50%', '-90%', '-45%', '0%'],
-          y: ['0%', '12%', '-8%', '15%', '0%'],
-          scale: [1, 0.95, 1.08, 0.98, 1],
+          x: ['0%', '-45%', '0%'],
+          y: ['0%', '10%', '0%'],
+          scale: [1, 0.95, 1],
         }}
         transition={{
           duration: 35,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-      />
-
-      {/* Layer 3: White outer glow */}
-      <motion.div
-        className="absolute rounded-full will-change-transform"
-        style={{
-          width: '900px',
-          height: '700px',
-          top: '-10%',
-          left: '10%',
-          filter: 'blur(120px)',
-          backfaceVisibility: 'hidden',
-          background: `radial-gradient(ellipse at center, transparent 20%, rgba(255,255,255,${0.1 * intensity}) 45%, rgba(255,255,255,${0.05 * intensity}) 65%, transparent 80%)`,
-        }}
-        animate={{
-          x: ['-5%', '20%', '45%', '15%', '-5%'],
-          y: ['5%', '-10%', '12%', '-5%', '5%'],
-        }}
-        transition={{
-          duration: 32,
           repeat: Infinity,
           ease: 'easeInOut',
         }}
@@ -126,7 +103,7 @@ const SmokeEffect: React.FC<SmokeEffectProps> = ({
       <div
         className="absolute inset-0"
         style={{
-          background: `radial-gradient(ellipse 70% 55% at 50% 50%, rgba(220,220,220,${0.03 * intensity}) 0%, transparent 50%)`,
+          background: `radial-gradient(ellipse 70% 55% at 50% 50%, rgba(220,220,220,${0.04 * intensity}) 0%, transparent 50%)`,
         }}
       />
     </div>

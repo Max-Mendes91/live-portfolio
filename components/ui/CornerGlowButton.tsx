@@ -21,13 +21,17 @@ const CornerGlowButton: React.FC<CornerGlowButtonProps> = ({
 
   const content = (
     <>
-      {/* Top-right corner border with glow */}
-      <span className="absolute top-0 right-0 w-6 sm:w-7 md:w-8 h-[1px] bg-white/30 group-hover:bg-white/60 group-hover:shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all duration-500" />
-      <span className="absolute top-0 right-0 w-[1px] h-6 sm:h-7 md:h-8 bg-white/30 group-hover:bg-white/60 group-hover:shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all duration-500" />
+      {/* Top-right corner border - opacity transition instead of box-shadow */}
+      <span className="absolute top-0 right-0 w-6 sm:w-7 md:w-8 h-[1px] bg-white/30 group-hover:bg-white/60 transition-opacity duration-500" />
+      <span className="absolute top-0 right-0 w-6 sm:w-7 md:w-8 h-[1px] bg-white/50 blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <span className="absolute top-0 right-0 w-[1px] h-6 sm:h-7 md:h-8 bg-white/30 group-hover:bg-white/60 transition-opacity duration-500" />
+      <span className="absolute top-0 right-0 w-[1px] h-6 sm:h-7 md:h-8 bg-white/50 blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-      {/* Bottom-left corner border with glow */}
-      <span className="absolute bottom-0 left-0 w-6 sm:w-7 md:w-8 h-[1px] bg-white/30 group-hover:bg-white/60 group-hover:shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all duration-500" />
-      <span className="absolute bottom-0 left-0 w-[1px] h-6 sm:h-7 md:h-8 bg-white/30 group-hover:bg-white/60 group-hover:shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-all duration-500" />
+      {/* Bottom-left corner border - opacity transition instead of box-shadow */}
+      <span className="absolute bottom-0 left-0 w-6 sm:w-7 md:w-8 h-[1px] bg-white/30 group-hover:bg-white/60 transition-opacity duration-500" />
+      <span className="absolute bottom-0 left-0 w-6 sm:w-7 md:w-8 h-[1px] bg-white/50 blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <span className="absolute bottom-0 left-0 w-[1px] h-6 sm:h-7 md:h-8 bg-white/30 group-hover:bg-white/60 transition-opacity duration-500" />
+      <span className="absolute bottom-0 left-0 w-[1px] h-6 sm:h-7 md:h-8 bg-white/50 blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       {/* Button text */}
       <span className="relative z-10 flex items-center justify-center gap-2 whitespace-nowrap">
