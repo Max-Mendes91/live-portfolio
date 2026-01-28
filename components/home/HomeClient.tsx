@@ -24,6 +24,8 @@ interface HomeClientProps {
 export default function HomeClient({ locale, dictionary, skipIntro = false }: HomeClientProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const skipIntroRef = useRef(skipIntro);
+  // Don't show intro overlay until we've checked sessionStorage (prevents flash on locale switch)
+  const [shouldShowIntro, setShouldShowIntro] = useState(false);
   const [introComplete, setIntroComplete] = useState(skipIntro);
   const [showHero, setShowHero] = useState(skipIntro);
   const isSafari = useIsSafari();
@@ -43,7 +45,10 @@ export default function HomeClient({ locale, dictionary, skipIntro = false }: Ho
     window.scrollTo(0, 0);
 
     // Server detected bot/Lighthouse — intro already skipped via initial state
-    if (skipIntroRef.current) return;
+    if (skipIntroRef.current) {
+      setShowHero(true);
+      return;
+    }
 
     // Local detection for synchronous timer setup (hook value isn't ready yet)
     const safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
@@ -54,11 +59,15 @@ export default function HomeClient({ locale, dictionary, skipIntro = false }: Ho
     } catch { /* sessionStorage unavailable */ }
 
     if (hasSeenIntro) {
+      // Returning visitor - skip intro entirely, no flash
       skipIntroRef.current = true;
       setIntroComplete(true);
       setShowHero(true);
       return;
     }
+
+    // First-time visitor - show intro animation
+    setShouldShowIntro(true);
 
     // Safari: tighter timing (lighter fade animation)
     // Others: original timing (heavier slide-down animation)
@@ -89,9 +98,10 @@ export default function HomeClient({ locale, dictionary, skipIntro = false }: Ho
       <HomePageJsonLd locale={locale} />
       <Navbar locale={locale} dictionary={dictionary.nav} />
 
-      {/* Intro Overlay — Safari: opacity fade / Others: slide-down reveal */}
+      {/* Intro Overlay — only rendered for first-time visitors after sessionStorage check
+          This prevents flash on locale switch for returning visitors */}
       <AnimatePresence>
-        {!introComplete && (
+        {shouldShowIntro && !introComplete && (
           <motion.div
             initial={{ opacity: 1 }}
             exit={isSafari ? { opacity: 0 } : { y: '100vh' }}

@@ -58,12 +58,9 @@ html {
   overscroll-behavior-y: none;
 }
 
-/* Prevent intro overlay flash on revisits.
-   An inline <script> in the layout adds .intro-seen to <html>
-   before paint when sessionStorage has the flag. */
-html.intro-seen .intro-overlay {
-  display: none !important;
-}
+/* Note: Intro overlay flash on locale switch is a known issue.
+   CSS-based solutions conflict with Framer Motion animations.
+   The flash is brief and acceptable for now. */
 
 body {
   font-family: var(--font-outfit), sans-serif;

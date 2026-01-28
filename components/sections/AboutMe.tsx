@@ -85,7 +85,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
 
           {/* Right Column: Image — plain div so it paints from server HTML
                without waiting for JS hydration (critical for LCP) */}
-          <div className="relative aspect-[4/5] xl:aspect-square overflow-hidden rounded-2xl sm:rounded-3xl">
+          <div className="group relative aspect-[4/5] xl:aspect-square overflow-hidden rounded-2xl sm:rounded-3xl">
             <Image
               src="/images/aboutme.webp"
               alt="Max Mendes - Full Stack Web Developer based in Poland, specializing in React and Next.js development"
@@ -95,8 +95,10 @@ const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
               priority
               fetchPriority="high"
               style={{ objectFit: 'cover', objectPosition: 'top' }}
-              className="grayscale brightness-90 hover:brightness-100 transition-[filter] duration-1000"
+              className="grayscale"
             />
+            {/* Hover overlay - opacity transition instead of filter (GPU-composited) */}
+            <div className="absolute inset-0 bg-black/10 opacity-100 group-hover:opacity-0 transition-opacity duration-700 pointer-events-none" />
             {/* Subtle glow behind the image */}
             <div className="absolute -inset-4 bg-white/5 blur-3xl -z-10 rounded-full" />
           </div>
