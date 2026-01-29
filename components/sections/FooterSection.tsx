@@ -201,6 +201,25 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
         <p className="mt-3 sm:mt-8 md:mt-12 text-[8px] sm:text-[10px] text-zinc-600 tracking-wide text-center max-w-lg px-2 sm:px-0 short:text-[8px]">
           {content.seoText}
         </p>
+
+        {/* Legal Links */}
+        {content.legal && (
+          <div className="mt-3 sm:mt-6 flex items-center gap-3 sm:gap-4 text-xs text-zinc-600">
+            <Link
+              href={getLocalizedUrl(locale, 'privacy')}
+              className="hover:text-zinc-400 transition-colors"
+            >
+              {content.legal.privacy}
+            </Link>
+            <span className="text-zinc-700">•</span>
+            <Link
+              href={getLocalizedUrl(locale, 'terms')}
+              className="hover:text-zinc-400 transition-colors"
+            >
+              {content.legal.terms}
+            </Link>
+          </div>
+        )}
       </div>
 
       {/* Copyright footer sub-bar */}

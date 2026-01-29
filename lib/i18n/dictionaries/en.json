@@ -170,6 +170,10 @@
     "subheadline": "One full-stack developer in Poland building production web software. Available for projects worldwide.",
     "cta": "Start a Conversation",
     "seoText": "No Committees, Just Code",
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms & Conditions"
+    },
     "sections": {
       "quickLinks": "Quick Links",
       "services": "Services",
@@ -1127,6 +1131,197 @@
       "description": "I build custom SaaS, e-commerce, and full-stack web applications with React and Next.js. Let's discuss your project.",
       "primaryButton": "Get Free Quote",
       "secondaryButton": "View Services"
+    }
+  },
+  "cookieConsent": {
+    "message": "This website uses cookies for analytics to improve your experience. No tracking occurs without your consent.",
+    "accept": "Accept Cookies",
+    "reject": "Reject"
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "January 2026",
+    "sections": {
+      "controller": {
+        "title": "1. Data Controller",
+        "content": "The data controller for this website is Max Mendes, a freelance web developer based in Częstochowa, Poland. For any privacy-related inquiries, you may contact the controller via email or phone as listed on the contact page."
+      },
+      "dataCollected": {
+        "title": "2. Data We Collect",
+        "content": "We collect the following categories of personal data:",
+        "items": [
+          "Contact information (name, email address) submitted through the contact form",
+          "Technical data (IP address, browser type, device information) collected automatically",
+          "Usage data (pages visited, time spent, interactions) via analytics cookies after consent",
+          "Communication records from email correspondence"
+        ]
+      },
+      "purpose": {
+        "title": "3. Purpose of Processing",
+        "content": "Your personal data is processed for the following purposes:",
+        "items": [
+          "To respond to inquiries and communicate about potential projects",
+          "To improve website functionality and user experience",
+          "To analyze website traffic and usage patterns (with consent)",
+          "To comply with legal obligations"
+        ]
+      },
+      "legalBasis": {
+        "title": "4. Legal Basis for Processing",
+        "content": "We process your personal data based on the following legal grounds under GDPR Article 6:",
+        "items": [
+          "Consent: For analytics cookies and marketing communications",
+          "Legitimate interest: For website security, fraud prevention, and service improvement",
+          "Contract: For communication regarding potential or ongoing projects",
+          "Legal obligation: For compliance with applicable laws and regulations"
+        ]
+      },
+      "thirdParties": {
+        "title": "5. Third-Party Recipients",
+        "content": "Your data may be shared with the following third-party service providers who assist in operating this website:",
+        "items": [
+          "Vercel Inc. (hosting and analytics) — processes technical data for website delivery",
+          "Google LLC (Google Analytics 4) — processes usage data for analytics after consent"
+        ],
+        "additionalContent": "These providers act as data processors and are bound by contractual obligations to protect your data in accordance with GDPR requirements."
+      },
+      "internationalTransfers": {
+        "title": "6. International Data Transfers",
+        "content": "Some of our service providers (Vercel, Google) are based in the United States. Data transfers to the US are protected by appropriate safeguards including Standard Contractual Clauses (SCCs) and the EU-US Data Privacy Framework where applicable. These mechanisms ensure that your data receives an adequate level of protection as required by GDPR."
+      },
+      "retention": {
+        "title": "7. Data Retention",
+        "content": "We retain your personal data only for as long as necessary to fulfill the purposes for which it was collected:",
+        "items": [
+          "Contact form submissions: 2 years from last communication",
+          "Analytics data: 14 months (Google Analytics default)",
+          "Email correspondence: Duration of business relationship plus 3 years",
+          "Technical logs: 90 days for security purposes"
+        ]
+      },
+      "rights": {
+        "title": "8. Your Rights",
+        "content": "Under GDPR, you have the following rights regarding your personal data:",
+        "items": [
+          "Right of access: Request a copy of your personal data",
+          "Right to rectification: Request correction of inaccurate data",
+          "Right to erasure: Request deletion of your data ('right to be forgotten')",
+          "Right to data portability: Receive your data in a structured, machine-readable format",
+          "Right to object: Object to processing based on legitimate interest",
+          "Right to withdraw consent: Withdraw consent for analytics at any time",
+          "Right to restriction: Request limited processing of your data"
+        ],
+        "additionalContent": "To exercise any of these rights, please contact us using the information provided on the contact page. We will respond to your request within 30 days."
+      },
+      "cookies": {
+        "title": "9. Cookies",
+        "content": "This website uses cookies to enhance your browsing experience. Cookies are categorized as follows:",
+        "items": [
+          "Essential cookies: Required for basic website functionality (no consent needed)",
+          "Analytics cookies: Used to understand how visitors interact with the website (requires consent)"
+        ],
+        "additionalContent": "Analytics cookies are only activated after you provide explicit consent through the cookie banner. You can change your cookie preferences at any time by clearing your browser cookies and revisiting the site."
+      },
+      "complaint": {
+        "title": "10. Right to Lodge a Complaint",
+        "content": "If you believe that your data protection rights have been violated, you have the right to lodge a complaint with the Polish supervisory authority:",
+        "authority": {
+          "name": "Urząd Ochrony Danych Osobowych (UODO)",
+          "address": "ul. Stawki 2, 00-193 Warszawa, Poland",
+          "website": "https://uodo.gov.pl"
+        },
+        "additionalContent": "We encourage you to contact us first to resolve any concerns before filing a complaint with the supervisory authority."
+      },
+      "automatedDecisions": {
+        "title": "11. Automated Decision-Making",
+        "content": "This website does not use automated decision-making or profiling that produces legal effects or similarly significantly affects you. Analytics data is used solely for aggregate insights about website performance."
+      },
+      "children": {
+        "title": "12. Children's Privacy",
+        "content": "This website is not directed at children under the age of 16. We do not knowingly collect personal data from children. If you believe that we have inadvertently collected data from a child, please contact us immediately so we can delete the information."
+      },
+      "updates": {
+        "title": "13. Policy Updates",
+        "content": "This Privacy Policy may be updated periodically to reflect changes in our practices or legal requirements. Any significant changes will be posted on this page with an updated revision date. We encourage you to review this policy regularly."
+      },
+      "contact": {
+        "title": "14. Contact Information",
+        "content": "For any questions or concerns regarding this Privacy Policy or your personal data, please contact us through the contact page on this website or via email. We aim to respond to all inquiries within 30 days."
+      }
+    }
+  },
+  "termsConditions": {
+    "title": "Terms & Conditions",
+    "lastUpdated": "January 2026",
+    "sections": {
+      "acceptance": {
+        "title": "1. Acceptance of Terms",
+        "content": "By accessing and using this website (maxmendes.dev), you acknowledge that you have read, understood, and agree to be bound by these Terms & Conditions. If you do not agree with any part of these terms, you must discontinue use of the website immediately."
+      },
+      "services": {
+        "title": "2. Description of Services",
+        "content": "This website serves as a professional portfolio and point of contact for freelance web development services. Services offered include but are not limited to:",
+        "items": [
+          "Full-stack web development (React, Next.js, TypeScript)",
+          "SaaS and web application development",
+          "E-commerce development and integration",
+          "SEO and performance optimization",
+          "AI integration and automation"
+        ],
+        "additionalContent": "Specific project terms, deliverables, timelines, and pricing are established through individual service agreements separate from these Terms & Conditions."
+      },
+      "userObligations": {
+        "title": "3. User Obligations",
+        "content": "When using this website, you agree to:",
+        "items": [
+          "Provide accurate and truthful information when submitting the contact form",
+          "Use the website for lawful purposes only",
+          "Not attempt to gain unauthorized access to any part of the website",
+          "Not transmit any malicious code, viruses, or harmful data",
+          "Not use automated systems to scrape or collect data from the website",
+          "Respect the intellectual property rights of the website owner"
+        ]
+      },
+      "intellectualProperty": {
+        "title": "4. Intellectual Property Rights",
+        "content": "All content on this website, including but not limited to text, graphics, logos, images, code samples, and design elements, is the property of Max Mendes unless otherwise stated. This content is protected by copyright and other intellectual property laws. You may not reproduce, distribute, modify, or create derivative works from any content without prior written permission."
+      },
+      "limitationLiability": {
+        "title": "5. Limitation of Liability",
+        "content": "To the maximum extent permitted by applicable law, Max Mendes shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of this website. This includes, but is not limited to, damages for loss of profits, data, or other intangible losses, even if advised of the possibility of such damages. The website is provided on an 'as is' and 'as available' basis."
+      },
+      "disclaimer": {
+        "title": "6. Disclaimer of Warranties",
+        "content": "This website is provided without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement. While reasonable efforts are made to ensure the accuracy of information presented, no guarantee is made regarding completeness, reliability, or suitability for any purpose."
+      },
+      "governingLaw": {
+        "title": "7. Governing Law",
+        "content": "These Terms & Conditions are governed by and construed in accordance with the laws of Poland and applicable European Union regulations. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the courts of Poland."
+      },
+      "disputeResolution": {
+        "title": "8. Dispute Resolution",
+        "content": "In the event of any dispute arising from these Terms & Conditions, the parties agree to first attempt to resolve the matter through good-faith negotiation. If resolution cannot be reached within 30 days, either party may pursue formal legal remedies in accordance with the governing law specified above."
+      },
+      "termination": {
+        "title": "9. Termination",
+        "content": "We reserve the right to terminate or suspend access to this website at any time, without prior notice, for conduct that we believe violates these Terms & Conditions or is harmful to other users, the website, or third parties. All provisions of these terms that by their nature should survive termination shall remain in effect."
+      },
+      "contactInfo": {
+        "title": "10. Contact Information",
+        "content": "For any questions regarding these Terms & Conditions, please contact us through the contact page on this website. We will make reasonable efforts to respond to inquiries in a timely manner."
+      },
+      "changes": {
+        "title": "11. Changes to Terms",
+        "content": "We reserve the right to modify these Terms & Conditions at any time. Changes become effective immediately upon posting to this page. Your continued use of the website after any modifications constitutes acceptance of the updated terms. We encourage users to review these terms periodically."
+      },
+      "severability": {
+        "title": "12. Severability",
+        "content": "If any provision of these Terms & Conditions is found to be unenforceable or invalid by a court of competent jurisdiction, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall continue in full force and effect."
+      },
+      "entireAgreement": {
+        "title": "13. Entire Agreement",
+        "content": "These Terms & Conditions, together with the Privacy Policy, constitute the entire agreement between you and Max Mendes regarding use of this website. Any separate service agreements for project work shall supplement but not replace these terms for general website use."
+      }
     }
   }
 }
