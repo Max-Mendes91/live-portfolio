@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef, useState, useLayoutEffect } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/sections/Hero';
 import WorkGrid from '@/components/sections/WorkGrid';
@@ -22,21 +22,12 @@ interface HomeClientProps {
 }
 
 export default function HomeClient({ locale, dictionary, skipIntro = false }: HomeClientProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
   const skipIntroRef = useRef(skipIntro);
   // Don't show intro overlay until we've checked sessionStorage (prevents flash on locale switch)
   const [shouldShowIntro, setShouldShowIntro] = useState(false);
   const [introComplete, setIntroComplete] = useState(skipIntro);
   const [showHero, setShowHero] = useState(skipIntro);
   const isSafari = useIsSafari();
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['end end', 'end start'],
-  });
-
-  const opacity = useTransform(scrollYProgress, [0.8, 1], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0.8, 1], [1, 0.95]);
 
   // useLayoutEffect runs before browser paint — prevents flash of
   // the intro overlay on revisits (sessionStorage skip path)
@@ -126,9 +117,7 @@ export default function HomeClient({ locale, dictionary, skipIntro = false }: Ho
 
       {/* Main Content Stack — visibility hides until intro finishes,
            Hero handles its own entrance animation via isReady */}
-      <motion.div
-        ref={containerRef}
-        style={{ opacity, scale }}
+      <div
         className={`relative z-10 bg-background shadow-[0_50px_100px_rgba(0,0,0,0.5)]${!showHero ? ' invisible' : ''}`}
       >
         <Hero dictionary={dictionary.hero} isReady={showHero} locale={locale} />
@@ -137,8 +126,9 @@ export default function HomeClient({ locale, dictionary, skipIntro = false }: Ho
         <ServiceSection dictionary={dictionary.services} />
         <ProcessSection dictionary={dictionary.process} />
         <FAQTeaserSection dictionary={dictionary.faqTeaser} />
+        {/* Spacer for footer reveal - creates scroll space so footer can be fully revealed */}
         <div className="h-[20vh]" />
-      </motion.div>
+      </div>
 
       {/* Sticky Reveal Footer */}
       <div className="sticky bottom-0 z-0 h-screen w-full" style={{ visibility: showHero ? 'visible' : 'hidden' }}>

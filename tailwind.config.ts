@@ -19,13 +19,13 @@ const config: Config = {
       'xl': '1280px',
       '2xl': '1536px',
       // Height-based (custom)
-      'short': { 'raw': '(max-height: 700px)' },
-      'tall': { 'raw': '(min-height: 800px)' },
+      'short': { 'raw': '(max-height: 850px)' },
+      'tall': { 'raw': '(min-height: 900px)' },
       // Orientation-based
       'landscape': { 'raw': '(orientation: landscape)' },
       'portrait': { 'raw': '(orientation: portrait)' },
-      // Combined: wide but short (Nest Hub, landscape tablets)
-      'wide-short': { 'raw': '(min-width: 1024px) and (max-height: 700px)' },
+      // Combined: wide but short (Nest Hub, landscape tablets, laptops with toolbars)
+      'wide-short': { 'raw': '(min-width: 1024px) and (max-height: 850px)' },
     },
     extend: {
       // ============================================

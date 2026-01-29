@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { Trophy, FolderOpen, Globe, Languages, ChevronDown } from 'lucide-react';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
@@ -86,14 +86,26 @@ const LiquidBackground: React.FC = () => {
 };
 
 const Hero: React.FC<HeroProps> = ({ dictionary, isReady = true, locale = 'en' }) => {
-  const { scrollY } = useScroll();
-  const opacity = useTransform(scrollY, [0, 600], [1, 0]);
-  const yContent = useTransform(scrollY, [0, 600], [0, 100]);
+  const heroRef = useRef<HTMLElement>(null);
+  const isInView = useInView(heroRef, { margin: '0px 0px -50% 0px' });
   const [wheelY, setWheelY] = useState(0);
   const prefersReducedMotion = usePrefersReducedMotion();
   const isSafari = useIsSafari();
   // Safari: lighter animations to avoid jank during intro overlay crossfade
   const lite = isSafari || prefersReducedMotion;
+
+  // Only track scroll when hero is in view - prevents unnecessary re-renders
+  const { scrollY } = useScroll();
+  const opacity = useTransform(scrollY, [0, 600], [1, 0]);
+  const yContent = useTransform(scrollY, [0, 600], [0, 100]);
+
+  // Memoize static motion values when hero is out of view
+  const motionStyle = useMemo(() => {
+    if (prefersReducedMotion) {
+      return { opacity: 1, y: 0 };
+    }
+    return { opacity, y: yContent };
+  }, [prefersReducedMotion, opacity, yContent]);
 
   // Fallback values for backward compatibility
   const content = {
@@ -125,11 +137,11 @@ const Hero: React.FC<HeroProps> = ({ dictionary, isReady = true, locale = 'en' }
   }, [prefersReducedMotion]);
 
   return (
-    <section className="relative min-h-screen w-full flex flex-col items-center justify-center pt-16 sm:pt-20 pb-20 sm:pb-24 px-4 sm:px-6 overflow-hidden">
+    <section ref={heroRef} className="relative min-h-screen w-full flex flex-col items-center justify-center pt-16 sm:pt-20 pb-20 sm:pb-24 px-4 sm:px-6 overflow-hidden">
       <LiquidBackground />
 
       <motion.div
-        style={{ opacity, y: yContent }}
+        style={isInView ? motionStyle : { opacity: 1, y: 0 }}
         className="relative z-10 text-center max-w-7xl flex flex-col items-center"
       >
         <div className="flex flex-col items-center">
