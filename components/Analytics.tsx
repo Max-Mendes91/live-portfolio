@@ -1,37 +1,106 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState, useCallback } from 'react';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { Analytics as VercelAnalytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import Script from 'next/script';
 import { hasAnalyticsConsent } from './CookieConsent';
 
+declare global {
+  interface Window {
+    gtag: (...args: unknown[]) => void;
+    dataLayer: unknown[];
+  }
+}
+
 interface AnalyticsProps {
   gaMeasurementId?: string;
 }
 
-const Analytics: React.FC<AnalyticsProps> = ({ gaMeasurementId }) => {
+// Inner component that uses useSearchParams (requires Suspense)
+const GoogleAnalyticsTracker: React.FC<{ gaMeasurementId: string }> = ({ gaMeasurementId }) => {
   const [hasConsent, setHasConsent] = useState(false);
+  const [gtagLoaded, setGtagLoaded] = useState(false);
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
-    // Initial check
     setHasConsent(hasAnalyticsConsent());
 
-    // Listen for consent changes
     const handleConsentChange = () => {
       setHasConsent(hasAnalyticsConsent());
     };
 
     window.addEventListener('cookie-consent-changed', handleConsentChange);
-    // Also listen for storage events (cross-tab)
-    window.addEventListener('storage', (e) => {
+    const handleStorage = (e: StorageEvent) => {
       if (e.key === 'cookie-consent-v1') {
         handleConsentChange();
       }
-    });
+    };
+    window.addEventListener('storage', handleStorage);
 
     return () => {
       window.removeEventListener('cookie-consent-changed', handleConsentChange);
+      window.removeEventListener('storage', handleStorage);
+    };
+  }, []);
+
+  const handleGtagLoad = useCallback(() => {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag() {
+      window.dataLayer.push(arguments);
+    };
+    window.gtag('js', new Date());
+    window.gtag('config', gaMeasurementId, {
+      page_path: window.location.pathname,
+    });
+    setGtagLoaded(true);
+  }, [gaMeasurementId]);
+
+  // Track route changes for SPA navigation
+  useEffect(() => {
+    if (!gtagLoaded || !hasConsent) return;
+
+    const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : '');
+    window.gtag('event', 'page_view', {
+      page_path: url,
+      page_title: document.title,
+    });
+  }, [pathname, searchParams, gtagLoaded, hasConsent]);
+
+  if (!hasConsent) return null;
+
+  return (
+    <Script
+      src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+      strategy="afterInteractive"
+      onLoad={handleGtagLoad}
+    />
+  );
+};
+
+const Analytics: React.FC<AnalyticsProps> = ({ gaMeasurementId }) => {
+  const [hasConsent, setHasConsent] = useState(false);
+
+  useEffect(() => {
+    setHasConsent(hasAnalyticsConsent());
+
+    const handleConsentChange = () => {
+      setHasConsent(hasAnalyticsConsent());
+    };
+
+    window.addEventListener('cookie-consent-changed', handleConsentChange);
+    const handleStorage = (e: StorageEvent) => {
+      if (e.key === 'cookie-consent-v1') {
+        handleConsentChange();
+      }
+    };
+    window.addEventListener('storage', handleStorage);
+
+    return () => {
+      window.removeEventListener('cookie-consent-changed', handleConsentChange);
+      window.removeEventListener('storage', handleStorage);
     };
   }, []);
 
@@ -47,25 +116,11 @@ const Analytics: React.FC<AnalyticsProps> = ({ gaMeasurementId }) => {
         </>
       )}
 
-      {/* Google Analytics 4 - ONLY loads after explicit consent */}
-      {hasConsent && gaMeasurementId && (
-        <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
-            strategy="afterInteractive"
-          />
-          <Script id="google-analytics" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${gaMeasurementId}', {
-                page_path: window.location.pathname,
-                cookie_flags: 'SameSite=None;Secure'
-              });
-            `}
-          </Script>
-        </>
+      {/* Google Analytics 4 - wrapped in Suspense for useSearchParams */}
+      {gaMeasurementId && (
+        <Suspense fallback={null}>
+          <GoogleAnalyticsTracker gaMeasurementId={gaMeasurementId} />
+        </Suspense>
       )}
     </>
   );
