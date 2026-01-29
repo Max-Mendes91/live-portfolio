@@ -163,7 +163,7 @@ const Navbar: React.FC<NavbarProps> = ({ locale, dictionary }) => {
               priority
             />
             <Image
-              src="/navbar-logo.png"
+              src="/navbar-logo.webp"
               alt={dictionary?.logoAlt ?? 'Max Mendes - Web Developer'}
               width={266}
               height={53}

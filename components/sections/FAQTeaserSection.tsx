@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, memo, useCallback } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus } from 'lucide-react';
@@ -21,32 +21,32 @@ interface FAQItemProps {
   onClick: () => void;
 }
 
-const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onClick }) => {
+// Accordion animation variants - moved outside component to prevent recreation
+const accordionVariants = {
+  initial: { height: 0, opacity: 0 },
+  desktop: {
+    height: 'auto' as const,
+    opacity: 1,
+    transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] as const }
+  },
+  mobile: {
+    height: 'auto' as const,
+    opacity: 1,
+    transition: { duration: 0.2, ease: 'linear' as const }
+  },
+  reduced: {
+    height: 'auto' as const,
+    opacity: 1,
+    transition: { duration: 0 }
+  }
+};
+
+const FAQItem = memo<FAQItemProps>(({ question, answer, isOpen, onClick }) => {
   const isDesktop = useIsDesktop();
   const prefersReducedMotion = usePrefersReducedMotion();
 
   // Determine animation variant based on user preferences
   const variant = getResponsiveVariant(prefersReducedMotion, isDesktop);
-
-  // Accordion animation variants - height-based reveal (Safari-compatible)
-  const accordionVariants = {
-    initial: { height: 0, opacity: 0 },
-    desktop: {
-      height: 'auto' as const,
-      opacity: 1,
-      transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] as const }
-    },
-    mobile: {
-      height: 'auto' as const,
-      opacity: 1,
-      transition: { duration: 0.2, ease: 'linear' as const }
-    },
-    reduced: {
-      height: 'auto' as const,
-      opacity: 1,
-      transition: { duration: 0 }
-    }
-  };
 
   return (
     <motion.div
@@ -90,11 +90,17 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, isOpen, onClick }) 
       </AnimatePresence>
     </motion.div>
   );
-};
+});
+FAQItem.displayName = 'FAQItem';
 
 const FAQTeaserSection: React.FC<FAQTeaserSectionProps> = ({ dictionary }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   const prefersReducedMotion = usePrefersReducedMotion();
+
+  // Memoized toggle handler to prevent FAQItem re-renders
+  const handleToggle = useCallback((index: number) => {
+    setOpenIndex(prev => prev === index ? null : index);
+  }, []);
 
   // Fallback content for backward compatibility
   const content = {
@@ -172,7 +178,7 @@ const FAQTeaserSection: React.FC<FAQTeaserSectionProps> = ({ dictionary }) => {
                 question={faq.question}
                 answer={faq.answer}
                 isOpen={openIndex === index}
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                onClick={() => handleToggle(index)}
               />
             ))}
           </motion.div>

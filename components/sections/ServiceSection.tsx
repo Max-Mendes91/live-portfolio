@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useRef, memo } from 'react';
+import { motion, useInView } from 'framer-motion';
 import Link from 'next/link';
 import { useIsDesktop } from '@/hooks/useMediaQuery';
 import {
@@ -96,7 +96,7 @@ interface FeatureCardProps {
   showCodeSnippet?: boolean;
 }
 
-const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, linkText, linkHref, className, showCodeSnippet }) => {
+const FeatureCard = memo<FeatureCardProps>(({ icon, title, description, linkText, linkHref, className, showCodeSnippet }) => {
   // Split description to insert link
   const parts = description.split(linkText);
 
@@ -141,64 +141,49 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, lin
       )}
     </div>
   );
-};
+});
+FeatureCard.displayName = 'FeatureCard';
 
-// Floating icon configuration for service hero
+// Floating icon configuration for service hero - using CSS animations instead of scroll listeners
 interface FloatingIconConfig {
   Icon: React.FC<{ size?: number; className?: string }>;
   position: { x: number; y: number };
   size: number;
   rotation: number;
-  parallaxY: number;
+  delay: number; // Animation delay for staggered effect
 }
 
 const FLOATING_ICONS: FloatingIconConfig[] = [
-  // Left column (x: 102-105%) - shifted another +15%
-  { Icon: ReactIcon, position: { x: 102, y: 5 }, size: 55, rotation: -8, parallaxY: 35 },
-  { Icon: TailwindIcon, position: { x: 105, y: 38 }, size: 42, rotation: 6, parallaxY: 28 },
-  { Icon: GitIcon, position: { x: 102, y: 70 }, size: 38, rotation: -5, parallaxY: 22 },
-  // Middle column (x: 118-121%) - off-screen
-  { Icon: NextjsIcon, position: { x: 118, y: 12 }, size: 50, rotation: 10, parallaxY: 32 },
-  { Icon: TypeScriptIcon, position: { x: 121, y: 48 }, size: 45, rotation: -6, parallaxY: 25 },
-  { Icon: PostgresqlIcon, position: { x: 118, y: 82 }, size: 35, rotation: 8, parallaxY: 30 },
-  // Right column (x: 134-136%) - off-screen
-  { Icon: DockerIcon, position: { x: 134, y: 22 }, size: 40, rotation: 5, parallaxY: 28 },
-  { Icon: VercelIcon, position: { x: 132, y: 58 }, size: 36, rotation: -8, parallaxY: 20 },
+  // Left column (x: 102-105%)
+  { Icon: ReactIcon, position: { x: 102, y: 5 }, size: 55, rotation: -8, delay: 0 },
+  { Icon: TailwindIcon, position: { x: 105, y: 38 }, size: 42, rotation: 6, delay: 0.1 },
+  { Icon: GitIcon, position: { x: 102, y: 70 }, size: 38, rotation: -5, delay: 0.2 },
+  // Middle column (x: 118-121%)
+  { Icon: NextjsIcon, position: { x: 118, y: 12 }, size: 50, rotation: 10, delay: 0.15 },
+  { Icon: TypeScriptIcon, position: { x: 121, y: 48 }, size: 45, rotation: -6, delay: 0.25 },
+  { Icon: PostgresqlIcon, position: { x: 118, y: 82 }, size: 35, rotation: 8, delay: 0.3 },
+  // Right column (x: 134-136%)
+  { Icon: DockerIcon, position: { x: 134, y: 22 }, size: 40, rotation: 5, delay: 0.2 },
+  { Icon: VercelIcon, position: { x: 132, y: 58 }, size: 36, rotation: -8, delay: 0.35 },
 ];
 
-// Individual floating icon with scroll-based animation
-const FloatingServiceIcon: React.FC<{
+// Individual floating icon - CSS animation only, no scroll listener
+const FloatingServiceIcon = memo<{
   config: FloatingIconConfig;
-  containerRef: React.RefObject<HTMLDivElement | null>;
-}> = ({ config, containerRef }) => {
-  const { Icon, position, size, rotation, parallaxY } = config;
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ['start end', 'end start'],
-  });
-
-  // Fade in when section enters viewport, fade out when scrolling past hero
-  // 0.3 = section top reaches ~70% of viewport (entering)
-  // 0.5 = section middle (hero ends, cards start)
-  const opacity = useTransform(
-    scrollYProgress,
-    [0.25, 0.35, 0.45, 0.55],
-    [0, 1, 1, 0]
-  );
-
-  // Parallax vertical movement
-  const y = useTransform(scrollYProgress, [0, 1], [0, parallaxY]);
+  isInView: boolean;
+}>(({ config, isInView }) => {
+  const { Icon, position, size, rotation, delay } = config;
 
   return (
     <motion.div
       className="absolute pointer-events-none hidden lg:block"
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
       style={{
         left: `${position.x}%`,
         top: `${position.y}%`,
         rotate: rotation,
-        opacity,
-        y,
       }}
     >
       <div className="text-text-primary drop-shadow-[0_0_30px_rgba(96,165,250,0.3)]">
@@ -206,14 +191,16 @@ const FloatingServiceIcon: React.FC<{
       </div>
     </motion.div>
   );
-};
+});
+FloatingServiceIcon.displayName = 'FloatingServiceIcon';
 
-const MarqueeRow: React.FC<{ items: string[]; direction: 'left' | 'right' }> = ({ items, direction }) => {
+// Marquee with viewport pause - only animates when visible
+const MarqueeRow = memo<{ items: string[]; direction: 'left' | 'right'; isInView: boolean }>(({ items, direction, isInView }) => {
   const duplicatedItems = [...items, ...items, ...items, ...items, ...items, ...items, ...items, ...items];
   return (
     <div className="flex overflow-hidden select-none w-full [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
       <motion.div
-        animate={{ x: direction === 'left' ? ["0%", "-50%"] : ["-50%", "0%"] }}
+        animate={isInView ? { x: direction === 'left' ? ["0%", "-50%"] : ["-50%", "0%"] } : undefined}
         transition={{ repeat: Infinity, ease: "linear", duration: 25 }}
         className="flex gap-2 sm:gap-3 md:gap-4 py-1.5 sm:py-2"
       >
@@ -229,12 +216,19 @@ const MarqueeRow: React.FC<{ items: string[]; direction: 'left' | 'right' }> = (
       </motion.div>
     </div>
   );
-};
+});
+MarqueeRow.displayName = 'MarqueeRow';
 
 const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
   const { hero, pills, primaryButton, secondaryButton, cards, marquee1, marquee2 } = dictionary;
   const sectionRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const marqueeRef = useRef<HTMLDivElement>(null);
   const isDesktop = useIsDesktop();
+
+  // Viewport detection for floating icons and marquee - pauses animations when off-screen
+  const heroInView = useInView(heroRef, { margin: '100px 0px', once: false });
+  const marqueeInView = useInView(marqueeRef, { margin: '50px 0px', once: false });
 
   // Get icon component from string name
   const getIcon = (iconName: string) => {
@@ -251,13 +245,13 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
         <div className="px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-24 space-y-10 sm:space-y-12 md:space-y-16">
 
           {/* Block A: Service Hero */}
-          <div className="max-w-4xl relative">
-            {/* Floating Tech Icons - Desktop only for performance */}
+          <div ref={heroRef} className="max-w-4xl relative">
+            {/* Floating Tech Icons - Desktop only, CSS animations instead of scroll listeners */}
             {isDesktop && FLOATING_ICONS.map((config, index) => (
               <FloatingServiceIcon
                 key={index}
                 config={config}
-                containerRef={sectionRef}
+                isInView={heroInView}
               />
             ))}
             <motion.div
@@ -363,10 +357,10 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
             )}
           </div>
 
-          {/* Block C: Dual Infinite Marquee with Side Fades */}
-          <div className="relative space-y-3 sm:space-y-4 md:space-y-6 pt-6 sm:pt-8 md:pt-12">
-            <MarqueeRow items={marquee1} direction="left" />
-            <MarqueeRow items={marquee2} direction="right" />
+          {/* Block C: Dual Infinite Marquee with Side Fades - pauses when off-screen */}
+          <div ref={marqueeRef} className="relative space-y-3 sm:space-y-4 md:space-y-6 pt-6 sm:pt-8 md:pt-12">
+            <MarqueeRow items={marquee1} direction="left" isInView={marqueeInView} />
+            <MarqueeRow items={marquee2} direction="right" isInView={marqueeInView} />
           </div>
 
         </div>
