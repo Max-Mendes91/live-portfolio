@@ -16,3 +16,6 @@ export {
   useIsShortHeight,
   usePrefersReducedMotion,
 } from './useMediaQuery';
+
+// Scroll-triggered CSS animations
+export { useScrollAnimation, useScrollAnimationGroup } from './useScrollAnimation';

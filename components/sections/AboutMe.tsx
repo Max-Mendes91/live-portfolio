@@ -3,15 +3,17 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { AboutDict } from '@/types/i18n';
+import { useScrollAnimationGroup } from '@/hooks/useScrollAnimation';
 
 interface AboutMeProps {
   dictionary?: AboutDict;
 }
 
 const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
+  const containerRef = useScrollAnimationGroup();
+
   // Fallback content for backward compatibility
   const content = {
     headline: dictionary?.headline ?? "Hi, I'm Max Mendes",
@@ -30,15 +32,10 @@ const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
 
   return (
     <section id="about" className="pt-8 sm:pt-10 pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 md:px-12 bg-background overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+      <div ref={containerRef} className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-start">
           {/* Left Column: Bio & Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
+          <div className="animate-on-scroll fade-in-left">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light tracking-tighter mb-3 sm:mb-4 text-white">
               {content.headline}
             </h2>
@@ -81,7 +78,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
                 </span>
               ))}
             </div>
-          </motion.div>
+          </div>
 
           {/* Right Column: Image — plain div so it paints from server HTML
                without waiting for JS hydration (critical for LCP) */}

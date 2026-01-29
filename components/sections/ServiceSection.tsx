@@ -254,11 +254,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
                 isInView={heroInView}
               />
             ))}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
+            <div className={`transition-all duration-700 ease-out ${heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
               <div className="mb-4 sm:mb-5 md:mb-6">
                 <PulseBadge text={hero.badge} />
               </div>
@@ -286,7 +282,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
                 <CornerGlowButton href="/en/services">{primaryButton}</CornerGlowButton>
                 <CornerGlowButton href="/en/projects">{secondaryButton}</CornerGlowButton>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* Block B: Bento Grid Layout */}

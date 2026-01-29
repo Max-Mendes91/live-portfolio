@@ -2,16 +2,18 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { ArrowDownCircle, ArrowUpRight } from 'lucide-react';
 import { WorkGridDict } from '@/types/i18n';
 import { cn } from '@/lib/utils';
+import { useScrollAnimationGroup } from '@/hooks/useScrollAnimation';
 
 interface WorkGridProps {
   dictionary?: WorkGridDict;
 }
 
 const WorkGrid: React.FC<WorkGridProps> = ({ dictionary }) => {
+  const containerRef = useScrollAnimationGroup();
+
   const content = {
     title: dictionary?.title ?? 'Recent Works',
     viewProject: dictionary?.viewProject ?? 'View Project',
@@ -24,30 +26,22 @@ const WorkGrid: React.FC<WorkGridProps> = ({ dictionary }) => {
 
   return (
     <section id="works" className="py-24 px-6 md:px-12 bg-background overflow-hidden">
-      <div className="max-w-6xl mx-auto">
+      <div ref={containerRef} className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex items-center gap-3 mb-12"
-        >
+        <div className="animate-on-scroll fade-in-up flex items-center gap-3 mb-12">
           <h2 className="text-2xl font-medium tracking-tight text-text-primary">
             {content.title}
           </h2>
           <ArrowDownCircle className="w-5 h-5 text-text-muted" />
-        </motion.div>
+        </div>
 
         {/* Project Cards Grid - 2 columns on desktop, 1 on mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 stagger-children">
           {content.projects.map((project, index) => (
-            <motion.article
+            <article
               key={project.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.15, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              viewport={{ once: true }}
-              className="group relative"
+              className="animate-on-scroll fade-in-up group relative"
+              style={{ '--delay': `${index * 150}ms` } as React.CSSProperties}
             >
               <div
                 className={cn(
@@ -108,7 +102,7 @@ const WorkGrid: React.FC<WorkGridProps> = ({ dictionary }) => {
                   </Link>
                 )}
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
       </div>
