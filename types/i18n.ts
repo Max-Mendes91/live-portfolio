@@ -173,6 +173,11 @@ export interface FooterDict {
   subheadline: string;
   cta: string;
   seoText: string;
+  // Legal page links
+  legal?: {
+    privacy: string;
+    terms: string;
+  };
   // Navigation links
   sections: {
     quickLinks: string;
@@ -202,6 +207,77 @@ export interface FooterDict {
     copyright: string;
     tagline: string;
     serving: string;
+  };
+}
+
+// Cookie consent banner dictionary
+export interface CookieConsentDict {
+  message: string;
+  accept: string;
+  reject: string;
+}
+
+// Privacy policy section structure
+export interface PrivacyPolicySection {
+  title: string;
+  content: string;
+  items?: string[];
+  additionalContent?: string;
+  authority?: {
+    name: string;
+    address: string;
+    website: string;
+  };
+}
+
+// Privacy policy dictionary
+export interface PrivacyPolicyDict {
+  title: string;
+  lastUpdated: string;
+  sections: {
+    controller: PrivacyPolicySection;
+    dataCollected: PrivacyPolicySection;
+    purpose: PrivacyPolicySection;
+    legalBasis: PrivacyPolicySection;
+    thirdParties: PrivacyPolicySection;
+    internationalTransfers: PrivacyPolicySection;
+    retention: PrivacyPolicySection;
+    rights: PrivacyPolicySection;
+    cookies: PrivacyPolicySection;
+    complaint: PrivacyPolicySection;
+    automatedDecisions: PrivacyPolicySection;
+    children: PrivacyPolicySection;
+    updates: PrivacyPolicySection;
+    contact: PrivacyPolicySection;
+  };
+}
+
+// Terms & conditions section structure
+export interface TermsSection {
+  title: string;
+  content: string;
+  items?: string[];
+  additionalContent?: string;
+}
+
+// Terms & conditions dictionary
+export interface TermsConditionsDict {
+  title: string;
+  lastUpdated: string;
+  sections: {
+    acceptance: TermsSection;
+    services: TermsSection;
+    userObligations: TermsSection;
+    intellectualProperty: TermsSection;
+    limitationLiability: TermsSection;
+    disclaimer: TermsSection;
+    governingLaw: TermsSection;
+    disputeResolution: TermsSection;
+    termination: TermsSection;
+    contactInfo: TermsSection;
+    changes: TermsSection;
+    severability: TermsSection;
+    entireAgreement: TermsSection;
   };
 }
 
@@ -551,4 +627,8 @@ export interface Dictionary {
   projectsPage?: ProjectsPageDict;
   servicesPage?: ServicesPageDict;
   servicePages?: ServicePagesDict;
+  // Legal & compliance
+  cookieConsent?: CookieConsentDict;
+  privacyPolicy?: PrivacyPolicyDict;
+  termsConditions?: TermsConditionsDict;
 }

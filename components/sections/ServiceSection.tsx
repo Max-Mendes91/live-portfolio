@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useRef, memo } from 'react';
-import { motion, useInView } from 'framer-motion';
+import React, { memo } from 'react';
 import Link from 'next/link';
 import { useIsDesktop } from '@/hooks/useMediaQuery';
+import { useScrollAnimationGroup } from '@/hooks/useScrollAnimation';
 import {
   Code2,
   Cloud,
@@ -102,11 +102,11 @@ const FeatureCard = memo<FeatureCardProps>(({ icon, title, description, linkText
 
   return (
     <div
-      className={`p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl bg-surface border border-border hover:border-border-hover transition-all duration-500 group flex flex-col ${className || ''}`}
+      className={`p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl bg-surface border border-border hover:border-border-hover transition-[border-color] duration-500 group flex flex-col ${className || ''}`}
     >
       <div>
         <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-          <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg sm:rounded-xl bg-white/5 flex items-center justify-center text-text-muted group-hover:text-text-primary group-hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-500">
+          <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-lg sm:rounded-xl bg-white/5 flex items-center justify-center text-text-muted group-hover:text-text-primary transition-[color] duration-500">
             {icon}
           </div>
           <h3 className="text-base sm:text-lg font-normal tracking-tight text-text-primary">
@@ -122,7 +122,7 @@ const FeatureCard = memo<FeatureCardProps>(({ icon, title, description, linkText
               {parts[0]}
               <Link
                 href={linkHref}
-                className="text-text-primary underline underline-offset-2 hover:text-white transition-colors"
+                className="text-text-primary underline underline-offset-2 hover:text-white transition-[color] duration-200"
               >
                 {linkText}
               </Link>
@@ -144,76 +144,68 @@ const FeatureCard = memo<FeatureCardProps>(({ icon, title, description, linkText
 });
 FeatureCard.displayName = 'FeatureCard';
 
-// Floating icon configuration for service hero - using CSS animations instead of scroll listeners
+// Floating icon configuration for service hero
 interface FloatingIconConfig {
   Icon: React.FC<{ size?: number; className?: string }>;
   position: { x: number; y: number };
   size: number;
   rotation: number;
-  delay: number; // Animation delay for staggered effect
+  delay: number;
 }
 
 const FLOATING_ICONS: FloatingIconConfig[] = [
-  // Left column (x: 102-105%)
   { Icon: ReactIcon, position: { x: 102, y: 5 }, size: 55, rotation: -8, delay: 0 },
   { Icon: TailwindIcon, position: { x: 105, y: 38 }, size: 42, rotation: 6, delay: 0.1 },
   { Icon: GitIcon, position: { x: 102, y: 70 }, size: 38, rotation: -5, delay: 0.2 },
-  // Middle column (x: 118-121%)
   { Icon: NextjsIcon, position: { x: 118, y: 12 }, size: 50, rotation: 10, delay: 0.15 },
   { Icon: TypeScriptIcon, position: { x: 121, y: 48 }, size: 45, rotation: -6, delay: 0.25 },
   { Icon: PostgresqlIcon, position: { x: 118, y: 82 }, size: 35, rotation: 8, delay: 0.3 },
-  // Right column (x: 134-136%)
   { Icon: DockerIcon, position: { x: 134, y: 22 }, size: 40, rotation: 5, delay: 0.2 },
   { Icon: VercelIcon, position: { x: 132, y: 58 }, size: 36, rotation: -8, delay: 0.35 },
 ];
 
-// Individual floating icon - CSS animation only, no scroll listener
-const FloatingServiceIcon = memo<{
-  config: FloatingIconConfig;
-  isInView: boolean;
-}>(({ config, isInView }) => {
-  const { Icon, position, size, rotation, delay } = config;
+// Floating icon - no animation needed for decorative elements
+const FloatingServiceIcon = memo<{ config: FloatingIconConfig }>(({ config }) => {
+  const { Icon, position, size, rotation } = config;
 
   return (
-    <motion.div
+    <div
       className="absolute pointer-events-none hidden lg:block"
-      initial={{ opacity: 0, y: 20 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-      transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
       style={{
         left: `${position.x}%`,
         top: `${position.y}%`,
-        rotate: rotation,
+        transform: `rotate(${rotation}deg)`,
       }}
     >
       <div className="text-text-primary drop-shadow-[0_0_30px_rgba(96,165,250,0.3)]">
         <Icon size={size} />
       </div>
-    </motion.div>
+    </div>
   );
 });
 FloatingServiceIcon.displayName = 'FloatingServiceIcon';
 
-// Marquee with viewport pause - only animates when visible
-const MarqueeRow = memo<{ items: string[]; direction: 'left' | 'right'; isInView: boolean }>(({ items, direction, isInView }) => {
-  const duplicatedItems = [...items, ...items, ...items, ...items, ...items, ...items, ...items, ...items];
+// CSS-only marquee - uses CSS animation with play-state
+const MarqueeRow = memo<{ items: string[]; direction: 'left' | 'right' }>(({ items, direction }) => {
+  const duplicatedItems = [...items, ...items, ...items, ...items];
+
   return (
     <div className="flex overflow-hidden select-none w-full [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
-      <motion.div
-        animate={isInView ? { x: direction === 'left' ? ["0%", "-50%"] : ["-50%", "0%"] } : undefined}
-        transition={{ repeat: Infinity, ease: "linear", duration: 25 }}
-        className="flex gap-2 sm:gap-3 md:gap-4 py-1.5 sm:py-2"
+      <div
+        className={`flex gap-2 sm:gap-3 md:gap-4 py-1.5 sm:py-2 ${
+          direction === 'left' ? 'animate-marquee-left' : 'animate-marquee-right'
+        }`}
       >
         {duplicatedItems.map((item, idx) => (
           <div
             key={idx}
-            className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-2.5 rounded-full bg-white/5 border border-border whitespace-nowrap text-[9px] sm:text-[10px] font-medium uppercase tracking-wider sm:tracking-widest text-text-muted hover:text-text-primary hover:bg-white/10 transition-all cursor-default"
+            className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-2.5 rounded-full bg-white/5 border border-border whitespace-nowrap text-[9px] sm:text-[10px] font-medium uppercase tracking-wider sm:tracking-widest text-text-muted hover:text-text-primary hover:bg-white/10 transition-[color,background-color] duration-200 cursor-default"
           >
             <div className="w-1 h-1 rounded-full bg-text-muted" />
             {item}
           </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 });
@@ -221,14 +213,8 @@ MarqueeRow.displayName = 'MarqueeRow';
 
 const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
   const { hero, pills, primaryButton, secondaryButton, cards, marquee1, marquee2 } = dictionary;
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const heroRef = useRef<HTMLDivElement>(null);
-  const marqueeRef = useRef<HTMLDivElement>(null);
+  const containerRef = useScrollAnimationGroup();
   const isDesktop = useIsDesktop();
-
-  // Viewport detection for floating icons and marquee - pauses animations when off-screen
-  const heroInView = useInView(heroRef, { margin: '100px 0px', once: false });
-  const marqueeInView = useInView(marqueeRef, { margin: '50px 0px', once: false });
 
   // Get icon component from string name
   const getIcon = (iconName: string) => {
@@ -237,28 +223,20 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
   };
 
   return (
-    <section ref={sectionRef} className="relative w-full bg-background pt-12 sm:pt-16 md:pt-20">
+    <section className="relative w-full bg-background pt-12 sm:pt-16 md:pt-20">
       {/* The "Panel" Line & Container */}
-      <div className="max-w-[90rem] mx-auto border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] md:rounded-t-[3rem] bg-background relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)]">
+      <div ref={containerRef} className="max-w-[90rem] mx-auto border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] md:rounded-t-[3rem] bg-background relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)]">
 
         {/* Content Container */}
         <div className="px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-24 space-y-10 sm:space-y-12 md:space-y-16">
 
           {/* Block A: Service Hero */}
-          <div ref={heroRef} className="max-w-4xl relative">
-            {/* Floating Tech Icons - Desktop only, CSS animations instead of scroll listeners */}
+          <div className="max-w-4xl relative">
+            {/* Floating Tech Icons - Desktop only */}
             {isDesktop && FLOATING_ICONS.map((config, index) => (
-              <FloatingServiceIcon
-                key={index}
-                config={config}
-                isInView={heroInView}
-              />
+              <FloatingServiceIcon key={index} config={config} />
             ))}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
+            <div className="animate-on-scroll fade-in-up">
               <div className="mb-4 sm:mb-5 md:mb-6">
                 <PulseBadge text={hero.badge} />
               </div>
@@ -286,14 +264,13 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
                 <CornerGlowButton href="/en/services">{primaryButton}</CornerGlowButton>
                 <CornerGlowButton href="/en/projects">{secondaryButton}</CornerGlowButton>
               </div>
-            </motion.div>
+            </div>
           </div>
 
           {/* Block B: Bento Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
-            {/* Row 1: Wide card (2 cols) + Regular card (1 col) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 stagger-children">
             {cards[0] && (
-              <div className="md:col-span-2 h-full">
+              <div className="md:col-span-2 h-full animate-on-scroll fade-in-up">
                 <FeatureCard
                   icon={getIcon(cards[0].icon)}
                   title={cards[0].title}
@@ -305,7 +282,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
               </div>
             )}
             {cards[1] && (
-              <div className="md:col-span-1 h-full">
+              <div className="md:col-span-1 h-full animate-on-scroll fade-in-up">
                 <FeatureCard
                   icon={getIcon(cards[1].icon)}
                   title={cards[1].title}
@@ -317,9 +294,8 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
               </div>
             )}
 
-            {/* Row 2-3: Tall card (2 rows) with code snippet + 2 stacked cards */}
             {cards[2] && (
-              <div className="md:col-span-2 md:row-span-2 h-full">
+              <div className="md:col-span-2 md:row-span-2 h-full animate-on-scroll fade-in-up">
                 <FeatureCard
                   icon={getIcon(cards[2].icon)}
                   title={cards[2].title}
@@ -332,7 +308,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
               </div>
             )}
             {cards[3] && (
-              <div className="md:col-span-1 h-full">
+              <div className="md:col-span-1 h-full animate-on-scroll fade-in-up">
                 <FeatureCard
                   icon={getIcon(cards[3].icon)}
                   title={cards[3].title}
@@ -344,7 +320,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
               </div>
             )}
             {cards[4] && (
-              <div className="md:col-span-1 h-full">
+              <div className="md:col-span-1 h-full animate-on-scroll fade-in-up">
                 <FeatureCard
                   icon={getIcon(cards[4].icon)}
                   title={cards[4].title}
@@ -357,10 +333,10 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
             )}
           </div>
 
-          {/* Block C: Dual Infinite Marquee with Side Fades - pauses when off-screen */}
-          <div ref={marqueeRef} className="relative space-y-3 sm:space-y-4 md:space-y-6 pt-6 sm:pt-8 md:pt-12">
-            <MarqueeRow items={marquee1} direction="left" isInView={marqueeInView} />
-            <MarqueeRow items={marquee2} direction="right" isInView={marqueeInView} />
+          {/* Block C: Dual Infinite Marquee with Side Fades */}
+          <div className="relative space-y-3 sm:space-y-4 md:space-y-6 pt-6 sm:pt-8 md:pt-12">
+            <MarqueeRow items={marquee1} direction="left" />
+            <MarqueeRow items={marquee2} direction="right" />
           </div>
 
         </div>

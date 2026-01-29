@@ -1,12 +1,10 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Github, Linkedin, Instagram, ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react';
 import XIcon from '@/components/ui/XIcon';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
-import SmokeEffect from '@/components/effects/SmokeEffect';
 import { SITE_CONFIG } from '@/lib/seo/config';
 import { getLocalizedUrl } from '@/lib/i18n/routes';
 import { SupportedLocale, FooterDict } from '@/types/i18n';
@@ -15,9 +13,10 @@ interface FooterSectionProps {
   locale?: SupportedLocale;
   dictionary: FooterDict;
   hideCTA?: boolean;
+  useHeroGradient?: boolean; // Use purple/blue gradient like Hero (for homepage)
 }
 
-const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary, hideCTA = false }) => {
+const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary, hideCTA = false, useHeroGradient = false }) => {
   const content = dictionary;
 
   const contactUrl = getLocalizedUrl(locale, 'contact');
@@ -44,19 +43,36 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
 
   return (
     <footer className="relative h-screen w-full flex flex-col items-center justify-center px-2 sm:px-6 overflow-hidden bg-black">
-      {/* Cinematic Smoke Effect */}
-      <SmokeEffect intensity={0.5} />
-      {/* Additional Radial Glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,_rgba(120,120,120,0.12)_0%,_rgba(0,0,0,1)_70%)]" />
-      </div>
+      {/* Background - Hero gradient on homepage, mesh gradient on other pages */}
+      {useHeroGradient ? (
+        <>
+          {/* Brand blue gradient with top fade (inverse of Hero) */}
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundColor: 'hsla(217, 80%, 40%, 0.8)',
+              backgroundImage: 'radial-gradient(circle at 50% 100%, hsla(0, 0%, 0%, 1) 45%, transparent 100%)',
+              backgroundBlendMode: 'normal',
+            }}
+          />
+          {/* Top fade from black - seamless transition from previous section */}
+          <div
+            className="absolute inset-x-0 top-0 h-[60%] pointer-events-none"
+            style={{
+              background: 'linear-gradient(to bottom, #050505 0%, #050505 20%, rgba(5,5,5,0.9) 40%, rgba(5,5,5,0.5) 60%, transparent 100%)',
+            }}
+          />
+        </>
+      ) : (
+        <>
+          <div className="mesh-gradient-bg" />
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,_rgba(120,120,120,0.12)_0%,_rgba(0,0,0,1)_70%)]" />
+          </div>
+        </>
+      )}
 
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-        className="relative z-10 flex flex-col items-center text-center max-w-5xl"
-      >
+      <div className="relative z-10 flex flex-col items-center text-center max-w-5xl">
         {/* Available For Work Badge */}
         <div className="inline-flex items-center gap-1.5 sm:gap-2.5 px-3 sm:px-5 py-1.5 sm:py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-3 sm:mb-8 md:mb-10 short:mb-4">
           <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981]" />
@@ -88,7 +104,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
           {/* Quick Links */}
           <div className="flex flex-col items-center">
             <div className="text-center sm:text-left">
-              <h3 className="text-[8px] sm:text-[10px] font-medium uppercase tracking-[0.15em] sm:tracking-[0.2em] text-text-muted mb-2 sm:mb-4">
+              <h3 className="text-[8px] sm:text-[10px] font-medium uppercase tracking-[0.15em] sm:tracking-[0.2em] text-text-secondary mb-2 sm:mb-4">
                 {content.sections.quickLinks}
               </h3>
               <nav className="flex flex-col items-center sm:items-start">
@@ -108,7 +124,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
           {/* Services */}
           <div className="flex flex-col items-center">
             <div className="text-center sm:text-left">
-              <h3 className="text-[8px] sm:text-[10px] font-medium uppercase tracking-[0.15em] sm:tracking-[0.2em] text-text-muted mb-2 sm:mb-4">
+              <h3 className="text-[8px] sm:text-[10px] font-medium uppercase tracking-[0.15em] sm:tracking-[0.2em] text-text-secondary mb-2 sm:mb-4">
                 {content.sections.services}
               </h3>
               <nav className="flex flex-col items-center sm:items-start">
@@ -127,7 +143,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
 
           {/* Contact */}
           <div>
-            <h3 className="text-[8px] sm:text-[10px] font-medium uppercase tracking-[0.15em] sm:tracking-[0.2em] text-text-muted mb-2 sm:mb-4">
+            <h3 className="text-[8px] sm:text-[10px] font-medium uppercase tracking-[0.15em] sm:tracking-[0.2em] text-text-secondary mb-2 sm:mb-4">
               {content.sections.contact}
             </h3>
             <div className="flex flex-col text-[10px] sm:text-sm items-center">
@@ -166,23 +182,18 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
         </div>
 
         {/* Social Icons */}
-        <div className="mt-4 sm:mt-10 md:mt-12 short:mt-4 flex items-center gap-3 sm:gap-6 md:gap-8">
-          {socialLinks.map((social, index) => (
-            <React.Fragment key={social.label}>
-              <a
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.label}
-                className="group flex items-center gap-2 text-zinc-500 hover:text-white transition-colors min-h-[44px] min-w-[44px] justify-center"
-              >
-                <social.icon className="w-4 h-4 sm:w-5 sm:h-5" />
-                <span className="text-[10px] font-medium uppercase tracking-widest hidden md:block">{social.label}</span>
-              </a>
-              {index < socialLinks.length - 1 && (
-                <div className="hidden sm:block w-[1px] h-4 bg-white/10" />
-              )}
-            </React.Fragment>
+        <div className="mt-4 sm:mt-10 md:mt-12 short:mt-4 flex items-center gap-4 sm:gap-6">
+          {socialLinks.map((social) => (
+            <a
+              key={social.label}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={social.label}
+              className="text-zinc-500 hover:text-white transition-[color] duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center"
+            >
+              <social.icon className="w-5 h-5" />
+            </a>
           ))}
         </div>
 
@@ -190,7 +201,26 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
         <p className="mt-3 sm:mt-8 md:mt-12 text-[8px] sm:text-[10px] text-zinc-600 tracking-wide text-center max-w-lg px-2 sm:px-0 short:text-[8px]">
           {content.seoText}
         </p>
-      </motion.div>
+
+        {/* Legal Links */}
+        {content.legal && (
+          <div className="mt-3 sm:mt-6 flex items-center gap-3 sm:gap-4 text-xs text-zinc-600">
+            <Link
+              href={getLocalizedUrl(locale, 'privacy')}
+              className="hover:text-zinc-400 transition-colors"
+            >
+              {content.legal.privacy}
+            </Link>
+            <span className="text-zinc-700">•</span>
+            <Link
+              href={getLocalizedUrl(locale, 'terms')}
+              className="hover:text-zinc-400 transition-colors"
+            >
+              {content.legal.terms}
+            </Link>
+          </div>
+        )}
+      </div>
 
       {/* Copyright footer sub-bar */}
       <div className="absolute bottom-2 sm:bottom-6 md:bottom-10 short:bottom-2 w-full px-2 sm:px-8 md:px-12 flex flex-row justify-between items-center text-[7px] sm:text-[9px] font-medium tracking-[0.1em] sm:tracking-[0.2em] text-zinc-700 uppercase">

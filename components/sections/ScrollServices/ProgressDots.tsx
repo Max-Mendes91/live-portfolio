@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 interface ProgressDotsProps {
@@ -24,27 +23,20 @@ const ProgressDots: React.FC<ProgressDotsProps> = ({
       )}
     >
       {Array.from({ length: total }).map((_, index) => (
-        <motion.button
+        <button
           key={index}
           className={cn(
             'w-2.5 h-2.5 rounded-full',
             'border border-border',
             'cursor-pointer',
-            'transition-colors duration-300',
-            'focus:outline-none focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-background'
+            // CSS transitions for composited properties only
+            'transition-all duration-300 ease-out',
+            'focus:outline-none focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-background',
+            // Active state uses CSS classes instead of Framer Motion animate
+            index === activeIndex
+              ? 'bg-white scale-[1.4] shadow-[0_0_20px_rgba(255,255,255,0.6)]'
+              : 'bg-transparent scale-100 shadow-none'
           )}
-          animate={{
-            backgroundColor: index === activeIndex ? '#ffffff' : 'transparent',
-            scale: index === activeIndex ? 1.4 : 1,
-            boxShadow:
-              index === activeIndex
-                ? '0 0 20px rgba(255, 255, 255, 0.6)'
-                : '0 0 0 rgba(255, 255, 255, 0)',
-          }}
-          transition={{
-            duration: 0.3,
-            ease: [0.16, 1, 0.3, 1],
-          }}
           aria-label={`Go to service ${index + 1}`}
           aria-current={index === activeIndex ? 'step' : undefined}
         />

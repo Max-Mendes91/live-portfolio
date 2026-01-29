@@ -2,13 +2,12 @@
 
 import React, { useState, memo, useCallback } from 'react';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Plus } from 'lucide-react';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import PulseBadge from '@/components/ui/PulseBadge';
 import { FAQTeaserDict } from '@/types/i18n';
-import { useIsDesktop, usePrefersReducedMotion } from '@/hooks/useMediaQuery';
-import { getResponsiveVariant } from '@/lib/animation-variants';
+import { usePrefersReducedMotion } from '@/hooks/useMediaQuery';
+import { useScrollAnimationGroup } from '@/hooks/useScrollAnimation';
 
 interface FAQTeaserSectionProps {
   dictionary?: FAQTeaserDict;
@@ -21,81 +20,52 @@ interface FAQItemProps {
   onClick: () => void;
 }
 
-// Accordion animation variants - moved outside component to prevent recreation
-const accordionVariants = {
-  initial: { height: 0, opacity: 0 },
-  desktop: {
-    height: 'auto' as const,
-    opacity: 1,
-    transition: { duration: 0.3, ease: [0.16, 1, 0.3, 1] as const }
-  },
-  mobile: {
-    height: 'auto' as const,
-    opacity: 1,
-    transition: { duration: 0.2, ease: 'linear' as const }
-  },
-  reduced: {
-    height: 'auto' as const,
-    opacity: 1,
-    transition: { duration: 0 }
-  }
-};
-
+// CSS grid-based accordion - no height animation, fully composited
 const FAQItem = memo<FAQItemProps>(({ question, answer, isOpen, onClick }) => {
-  const isDesktop = useIsDesktop();
   const prefersReducedMotion = usePrefersReducedMotion();
 
-  // Determine animation variant based on user preferences
-  const variant = getResponsiveVariant(prefersReducedMotion, isDesktop);
-
   return (
-    <motion.div
-      initial={false}
+    <div
       onClick={onClick}
-      className={`mb-4 sm:mb-4 overflow-hidden rounded-xl border cursor-pointer transition-all duration-500 ${
+      className={`mb-4 sm:mb-4 rounded-xl border cursor-pointer transition-[border-color,background-color] duration-300 overflow-hidden ${
         isOpen ? 'bg-[#0F0F0F] border-white/20' : 'bg-[#0A0A0A] border-white/5 hover:border-white/10'
       }`}
     >
       <div className="w-full flex items-center justify-between p-5 sm:p-6 text-left focus:outline-none">
         <span className="text-base sm:text-lg font-normal tracking-tight text-white">{question}</span>
-        <motion.div
-          animate={{ rotate: isOpen ? 45 : 0 }}
-          transition={
-            prefersReducedMotion
-              ? { duration: 0 }
-              : { type: "spring", stiffness: 300, damping: 20 }
-          }
-          className={`flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full border transition-colors flex-shrink-0 ml-3 sm:ml-4 ${
-            isOpen ? 'bg-transparent border-white text-white' : 'bg-transparent border-white/10 text-zinc-500'
+        <div
+          className={`flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full border transition-[transform,border-color,color] flex-shrink-0 ml-3 sm:ml-4 ${
+            prefersReducedMotion ? '' : 'duration-300'
+          } ${
+            isOpen ? 'bg-transparent border-white text-white rotate-45' : 'bg-transparent border-white/10 text-zinc-500 rotate-0'
           }`}
         >
           <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-        </motion.div>
+        </div>
       </div>
 
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            variants={accordionVariants}
-            initial="initial"
-            animate={variant}
-            exit="initial"
-            style={{ overflow: 'hidden' }}
-          >
-            <div className="px-5 pb-5 sm:px-6 sm:pb-6 font-light tracking-tight text-zinc-400 text-xs sm:text-sm leading-relaxed max-w-[95%]">
-              {answer}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
+      {/* CSS grid trick for smooth height animation without reflow */}
+      <div
+        className={`grid transition-[grid-template-rows] ${
+          prefersReducedMotion ? 'duration-0' : 'duration-300'
+        } ease-out ${
+          isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+        }`}
+      >
+        <div className="overflow-hidden">
+          <div className="px-5 pb-5 sm:px-6 sm:pb-6 font-light tracking-tight text-zinc-400 text-xs sm:text-sm leading-relaxed max-w-[95%]">
+            {answer}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 });
 FAQItem.displayName = 'FAQItem';
 
 const FAQTeaserSection: React.FC<FAQTeaserSectionProps> = ({ dictionary }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
-  const prefersReducedMotion = usePrefersReducedMotion();
+  const containerRef = useScrollAnimationGroup();
 
   // Memoized toggle handler to prevent FAQItem re-renders
   const handleToggle = useCallback((index: number) => {
@@ -130,20 +100,11 @@ const FAQTeaserSection: React.FC<FAQTeaserSectionProps> = ({ dictionary }) => {
 
   return (
     <section className="relative w-full bg-[#050505] py-12 sm:py-16 md:py-20 lg:py-24">
-      <div className="max-w-[90rem] mx-auto px-4 sm:px-6 md:px-12">
+            <div ref={containerRef} className="max-w-[90rem] mx-auto px-4 sm:px-6 md:px-12">
         <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 xl:gap-24 items-start">
 
           {/* Left Column: Header Content */}
-          <motion.div
-            initial={{ opacity: 0, x: prefersReducedMotion ? 0 : -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{
-              duration: prefersReducedMotion ? 0.15 : 1,
-              ease: prefersReducedMotion ? 'linear' : [0.16, 1, 0.3, 1]
-            }}
-            className="lg:sticky lg:top-24"
-          >
+          <div className="animate-on-scroll fade-in-left">
             <div className="mb-5 sm:mb-6 md:mb-8">
               <PulseBadge text={content.badge} />
             </div>
@@ -159,19 +120,10 @@ const FAQTeaserSection: React.FC<FAQTeaserSectionProps> = ({ dictionary }) => {
             <Link href={content.cta.href}>
               <CornerGlowButton>{content.cta.label}</CornerGlowButton>
             </Link>
-          </motion.div>
+          </div>
 
           {/* Right Column: FAQ Accordion */}
-          <motion.div
-            initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{
-              duration: prefersReducedMotion ? 0.15 : 1,
-              delay: prefersReducedMotion ? 0 : 0.1,
-              ease: prefersReducedMotion ? 'linear' : [0.16, 1, 0.3, 1]
-            }}
-          >
+          <div className="animate-on-scroll fade-in-up" style={{ '--delay': '100ms' } as React.CSSProperties}>
             {content.items.map((faq, index) => (
               <FAQItem
                 key={index}
@@ -181,7 +133,7 @@ const FAQTeaserSection: React.FC<FAQTeaserSectionProps> = ({ dictionary }) => {
                 onClick={() => handleToggle(index)}
               />
             ))}
-          </motion.div>
+          </div>
 
         </div>
       </div>

@@ -178,6 +178,10 @@
     "subheadline": "Jeden programista full-stack w Polsce tworzący produkcyjne oprogramowanie webowe. Dostępny dla projektów na całym świecie.",
     "cta": "Rozpocznij Rozmowę",
     "seoText": "Bez Komitetów, Tylko Kod",
+    "legal": {
+      "privacy": "Polityka Prywatności",
+      "terms": "Regulamin"
+    },
     "sections": {
       "quickLinks": "Szybkie Linki",
       "services": "Usługi",
@@ -1131,6 +1135,197 @@
       "description": "Tworzę aplikacje SaaS, sklepy internetowe i aplikacje webowe w React i Next.js — bez WordPress. Porozmawiajmy o projekcie.",
       "primaryButton": "Bezpłatna Wycena",
       "secondaryButton": "Zobacz Usługi"
+    }
+  },
+  "cookieConsent": {
+    "message": "Ta strona używa plików cookies do celów analitycznych w celu poprawy Twojego doświadczenia. Żadne śledzenie nie odbywa się bez Twojej zgody.",
+    "accept": "Akceptuję cookies",
+    "reject": "Odrzuć"
+  },
+  "privacyPolicy": {
+    "title": "Polityka Prywatności",
+    "lastUpdated": "Styczeń 2026",
+    "sections": {
+      "controller": {
+        "title": "1. Administrator Danych",
+        "content": "Administratorem danych osobowych tej strony internetowej jest Max Mendes, programista freelancer z siedzibą w Częstochowie, Polska. W sprawach związanych z ochroną danych osobowych można kontaktować się z administratorem poprzez email lub telefon podany na stronie kontaktowej."
+      },
+      "dataCollected": {
+        "title": "2. Zbierane Dane",
+        "content": "Zbieramy następujące kategorie danych osobowych:",
+        "items": [
+          "Dane kontaktowe (imię, adres email) przesyłane przez formularz kontaktowy",
+          "Dane techniczne (adres IP, typ przeglądarki, informacje o urządzeniu) zbierane automatycznie",
+          "Dane o użytkowaniu (odwiedzane strony, czas spędzony, interakcje) poprzez cookies analityczne po uzyskaniu zgody",
+          "Zapisy korespondencji email"
+        ]
+      },
+      "purpose": {
+        "title": "3. Cel Przetwarzania",
+        "content": "Twoje dane osobowe są przetwarzane w następujących celach:",
+        "items": [
+          "Odpowiadanie na zapytania i komunikacja w sprawie potencjalnych projektów",
+          "Poprawa funkcjonalności strony i doświadczenia użytkownika",
+          "Analiza ruchu i wzorców użytkowania strony (za zgodą)",
+          "Wypełnianie obowiązków prawnych"
+        ]
+      },
+      "legalBasis": {
+        "title": "4. Podstawa Prawna Przetwarzania",
+        "content": "Przetwarzamy Twoje dane osobowe na następujących podstawach prawnych zgodnie z art. 6 RODO:",
+        "items": [
+          "Zgoda: Na cookies analityczne i komunikację marketingową",
+          "Prawnie uzasadniony interes: Na bezpieczeństwo strony, zapobieganie oszustwom i ulepszanie usług",
+          "Umowa: Na komunikację dotyczącą potencjalnych lub trwających projektów",
+          "Obowiązek prawny: Na przestrzeganie obowiązujących przepisów prawa"
+        ]
+      },
+      "thirdParties": {
+        "title": "5. Odbiorcy Danych",
+        "content": "Twoje dane mogą być udostępniane następującym zewnętrznym dostawcom usług, którzy pomagają w obsłudze tej strony:",
+        "items": [
+          "Vercel Inc. (hosting i analityka) — przetwarza dane techniczne w celu dostarczania strony",
+          "Google LLC (Google Analytics 4) — przetwarza dane o użytkowaniu do celów analitycznych po uzyskaniu zgody"
+        ],
+        "additionalContent": "Ci dostawcy działają jako podmioty przetwarzające dane i są związani umownymi zobowiązaniami do ochrony Twoich danych zgodnie z wymogami RODO."
+      },
+      "internationalTransfers": {
+        "title": "6. Międzynarodowe Przekazywanie Danych",
+        "content": "Niektórzy z naszych dostawców usług (Vercel, Google) mają siedzibę w Stanach Zjednoczonych. Przekazywanie danych do USA jest chronione odpowiednimi zabezpieczeniami, w tym Standardowymi Klauzulami Umownymi (SCC) oraz Ramami Ochrony Danych UE-USA tam, gdzie ma to zastosowanie. Te mechanizmy zapewniają odpowiedni poziom ochrony Twoich danych wymagany przez RODO."
+      },
+      "retention": {
+        "title": "7. Okres Przechowywania Danych",
+        "content": "Przechowujemy Twoje dane osobowe tylko tak długo, jak jest to niezbędne do realizacji celów, dla których zostały zebrane:",
+        "items": [
+          "Zgłoszenia przez formularz kontaktowy: 2 lata od ostatniej komunikacji",
+          "Dane analityczne: 14 miesięcy (domyślne ustawienie Google Analytics)",
+          "Korespondencja email: Czas trwania relacji biznesowej plus 3 lata",
+          "Logi techniczne: 90 dni dla celów bezpieczeństwa"
+        ]
+      },
+      "rights": {
+        "title": "8. Twoje Prawa",
+        "content": "Zgodnie z RODO przysługują Ci następujące prawa dotyczące Twoich danych osobowych:",
+        "items": [
+          "Prawo dostępu: Żądanie kopii swoich danych osobowych",
+          "Prawo do sprostowania: Żądanie poprawienia nieprawidłowych danych",
+          "Prawo do usunięcia: Żądanie usunięcia danych ('prawo do bycia zapomnianym')",
+          "Prawo do przenoszenia danych: Otrzymanie danych w ustrukturyzowanym, możliwym do odczytu maszynowego formacie",
+          "Prawo do sprzeciwu: Sprzeciw wobec przetwarzania opartego na prawnie uzasadnionym interesie",
+          "Prawo do cofnięcia zgody: Cofnięcie zgody na analitykę w dowolnym momencie",
+          "Prawo do ograniczenia: Żądanie ograniczonego przetwarzania danych"
+        ],
+        "additionalContent": "Aby skorzystać z któregokolwiek z tych praw, skontaktuj się z nami poprzez informacje podane na stronie kontaktowej. Odpowiemy na Twoje żądanie w ciągu 30 dni."
+      },
+      "cookies": {
+        "title": "9. Pliki Cookies",
+        "content": "Ta strona używa plików cookies w celu poprawy doświadczenia przeglądania. Cookies są podzielone na następujące kategorie:",
+        "items": [
+          "Cookies niezbędne: Wymagane do podstawowej funkcjonalności strony (zgoda nie jest wymagana)",
+          "Cookies analityczne: Używane do zrozumienia, jak odwiedzający korzystają ze strony (wymagają zgody)"
+        ],
+        "additionalContent": "Cookies analityczne są aktywowane dopiero po wyrażeniu wyraźnej zgody poprzez baner cookies. Możesz zmienić swoje preferencje cookies w dowolnym momencie, czyszcząc cookies przeglądarki i ponownie odwiedzając stronę."
+      },
+      "complaint": {
+        "title": "10. Prawo do Wniesienia Skargi",
+        "content": "Jeśli uważasz, że Twoje prawa dotyczące ochrony danych zostały naruszone, masz prawo wnieść skargę do polskiego organu nadzorczego:",
+        "authority": {
+          "name": "Urząd Ochrony Danych Osobowych (UODO)",
+          "address": "ul. Stawki 2, 00-193 Warszawa",
+          "website": "https://uodo.gov.pl"
+        },
+        "additionalContent": "Zachęcamy do skontaktowania się z nami w pierwszej kolejności w celu rozwiązania wszelkich wątpliwości przed złożeniem skargi do organu nadzorczego."
+      },
+      "automatedDecisions": {
+        "title": "11. Zautomatyzowane Podejmowanie Decyzji",
+        "content": "Ta strona nie wykorzystuje zautomatyzowanego podejmowania decyzji ani profilowania, które wywołuje skutki prawne lub w podobny sposób istotnie na Ciebie wpływa. Dane analityczne są wykorzystywane wyłącznie do zbiorczych informacji o wydajności strony."
+      },
+      "children": {
+        "title": "12. Prywatność Dzieci",
+        "content": "Ta strona nie jest skierowana do dzieci poniżej 16 roku życia. Nie zbieramy świadomie danych osobowych od dzieci. Jeśli uważasz, że nieumyślnie zebraliśmy dane od dziecka, skontaktuj się z nami niezwłocznie, abyśmy mogli usunąć te informacje."
+      },
+      "updates": {
+        "title": "13. Aktualizacje Polityki",
+        "content": "Niniejsza Polityka Prywatności może być okresowo aktualizowana w celu odzwierciedlenia zmian w naszych praktykach lub wymogach prawnych. Wszelkie istotne zmiany zostaną opublikowane na tej stronie ze zaktualizowaną datą rewizji. Zachęcamy do regularnego przeglądania tej polityki."
+      },
+      "contact": {
+        "title": "14. Dane Kontaktowe",
+        "content": "W przypadku jakichkolwiek pytań lub wątpliwości dotyczących niniejszej Polityki Prywatności lub Twoich danych osobowych, skontaktuj się z nami poprzez stronę kontaktową na tej witrynie lub przez email. Staramy się odpowiadać na wszystkie zapytania w ciągu 30 dni."
+      }
+    }
+  },
+  "termsConditions": {
+    "title": "Regulamin",
+    "lastUpdated": "Styczeń 2026",
+    "sections": {
+      "acceptance": {
+        "title": "1. Akceptacja Warunków",
+        "content": "Korzystając z tej strony internetowej (maxmendes.dev), potwierdzasz, że przeczytałeś, zrozumiałeś i zgadzasz się przestrzegać niniejszego Regulaminu. Jeśli nie zgadzasz się z jakąkolwiek częścią tych warunków, musisz natychmiast zaprzestać korzystania ze strony."
+      },
+      "services": {
+        "title": "2. Opis Usług",
+        "content": "Ta strona służy jako profesjonalne portfolio i punkt kontaktowy dla usług freelance web development. Oferowane usługi obejmują między innymi:",
+        "items": [
+          "Tworzenie aplikacji full-stack (React, Next.js, TypeScript)",
+          "Tworzenie aplikacji SaaS i webowych",
+          "Tworzenie sklepów internetowych i integracje e-commerce",
+          "Optymalizacja SEO i wydajności",
+          "Integracja AI i automatyzacja"
+        ],
+        "additionalContent": "Szczegółowe warunki projektu, zakres prac, harmonogramy i ceny są ustalane poprzez indywidualne umowy o świadczenie usług, odrębne od niniejszego Regulaminu."
+      },
+      "userObligations": {
+        "title": "3. Obowiązki Użytkownika",
+        "content": "Korzystając z tej strony, zgadzasz się:",
+        "items": [
+          "Podawać dokładne i prawdziwe informacje przy wypełnianiu formularza kontaktowego",
+          "Korzystać ze strony wyłącznie w celach zgodnych z prawem",
+          "Nie podejmować prób nieautoryzowanego dostępu do jakiejkolwiek części strony",
+          "Nie przesyłać złośliwego kodu, wirusów ani szkodliwych danych",
+          "Nie używać zautomatyzowanych systemów do zbierania danych ze strony",
+          "Szanować prawa własności intelektualnej właściciela strony"
+        ]
+      },
+      "intellectualProperty": {
+        "title": "4. Prawa Własności Intelektualnej",
+        "content": "Wszystkie treści na tej stronie, w tym między innymi teksty, grafiki, logo, obrazy, przykłady kodu i elementy projektu, są własnością Max Mendes, o ile nie zaznaczono inaczej. Treści te są chronione prawem autorskim i innymi przepisami dotyczącymi własności intelektualnej. Nie możesz reprodukować, rozpowszechniać, modyfikować ani tworzyć dzieł pochodnych z jakichkolwiek treści bez uprzedniej pisemnej zgody."
+      },
+      "limitationLiability": {
+        "title": "5. Ograniczenie Odpowiedzialności",
+        "content": "W maksymalnym zakresie dozwolonym przez obowiązujące prawo, Max Mendes nie ponosi odpowiedzialności za jakiekolwiek pośrednie, przypadkowe, specjalne, wynikowe lub karne szkody wynikające z korzystania z tej strony. Obejmuje to, między innymi, szkody z tytułu utraty zysków, danych lub innych wartości niematerialnych, nawet jeśli poinformowano o możliwości wystąpienia takich szkód. Strona jest udostępniana w stanie 'takim, jaki jest' i 'według dostępności'."
+      },
+      "disclaimer": {
+        "title": "6. Wyłączenie Gwarancji",
+        "content": "Ta strona jest udostępniana bez jakichkolwiek gwarancji, wyraźnych lub dorozumianych, w tym między innymi dorozumianych gwarancji przydatności handlowej, przydatności do określonego celu i nienaruszania praw. Chociaż podejmowane są uzasadnione starania w celu zapewnienia dokładności prezentowanych informacji, nie udziela się żadnej gwarancji co do kompletności, niezawodności lub przydatności do jakiegokolwiek celu."
+      },
+      "governingLaw": {
+        "title": "7. Prawo Właściwe",
+        "content": "Niniejszy Regulamin podlega prawu polskiemu oraz stosownym przepisom Unii Europejskiej i jest zgodnie z nimi interpretowany. Wszelkie spory wynikające z tych warunków podlegają wyłącznej jurysdykcji sądów polskich."
+      },
+      "disputeResolution": {
+        "title": "8. Rozwiązywanie Sporów",
+        "content": "W przypadku jakiegokolwiek sporu wynikającego z niniejszego Regulaminu, strony zgadzają się najpierw podjąć próbę rozwiązania sprawy poprzez negocjacje w dobrej wierze. Jeśli rozwiązanie nie zostanie osiągnięte w ciągu 30 dni, każda ze stron może dochodzić formalnych środków prawnych zgodnie z prawem właściwym określonym powyżej."
+      },
+      "termination": {
+        "title": "9. Zakończenie",
+        "content": "Zastrzegamy sobie prawo do zakończenia lub zawieszenia dostępu do tej strony w dowolnym momencie, bez wcześniejszego powiadomienia, za zachowanie, które naszym zdaniem narusza niniejszy Regulamin lub jest szkodliwe dla innych użytkowników, strony lub osób trzecich. Wszystkie postanowienia tych warunków, które ze względu na swój charakter powinny pozostać w mocy po zakończeniu, pozostają w mocy."
+      },
+      "contactInfo": {
+        "title": "10. Dane Kontaktowe",
+        "content": "W przypadku jakichkolwiek pytań dotyczących niniejszego Regulaminu, prosimy o kontakt poprzez stronę kontaktową na tej witrynie. Dołożymy uzasadnionych starań, aby odpowiedzieć na zapytania w odpowiednim czasie."
+      },
+      "changes": {
+        "title": "11. Zmiany Warunków",
+        "content": "Zastrzegamy sobie prawo do modyfikacji niniejszego Regulaminu w dowolnym momencie. Zmiany wchodzą w życie natychmiast po opublikowaniu na tej stronie. Dalsze korzystanie ze strony po wprowadzeniu jakichkolwiek modyfikacji oznacza akceptację zaktualizowanych warunków. Zachęcamy użytkowników do okresowego przeglądania tych warunków."
+      },
+      "severability": {
+        "title": "12. Rozdzielność Postanowień",
+        "content": "Jeśli jakiekolwiek postanowienie niniejszego Regulaminu zostanie uznane za niewykonalne lub nieważne przez właściwy sąd, postanowienie to zostanie ograniczone lub wyeliminowane w minimalnym niezbędnym zakresie, a pozostałe postanowienia pozostaną w pełnej mocy."
+      },
+      "entireAgreement": {
+        "title": "13. Całość Umowy",
+        "content": "Niniejszy Regulamin wraz z Polityką Prywatności stanowią całość umowy między Tobą a Max Mendes dotyczącej korzystania z tej strony. Wszelkie odrębne umowy o świadczenie usług projektowych uzupełniają, ale nie zastępują tych warunków w zakresie ogólnego korzystania ze strony."
+      }
     }
   }
 }
