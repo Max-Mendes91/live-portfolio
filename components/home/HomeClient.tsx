@@ -132,7 +132,7 @@ export default function HomeClient({ locale, dictionary, skipIntro = false }: Ho
 
       {/* Sticky Reveal Footer */}
       <div className="sticky bottom-0 z-0 h-screen w-full" style={{ visibility: showHero ? 'visible' : 'hidden' }}>
-        <FooterSection locale={locale} dictionary={dictionary.footer} />
+        <FooterSection locale={locale} dictionary={dictionary.footer} useHeroGradient />
       </div>
     </div>
   );

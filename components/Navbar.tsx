@@ -179,7 +179,7 @@ const Navbar: React.FC<NavbarProps> = ({ locale, dictionary }) => {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="relative group text-[10px] font-medium uppercase tracking-[0.3em] text-zinc-500 hover:text-white transition-colors pb-1"
+                  className="relative group text-[10px] font-medium uppercase tracking-[0.3em] text-zinc-400 hover:text-white transition-colors pb-1"
                 >
                   {item.label}
                   <span className="absolute bottom-0 left-0 h-[1px] w-0 bg-gradient-to-r from-transparent via-white to-transparent group-hover:w-full transition-all duration-500 ease-out" />
@@ -190,7 +190,7 @@ const Navbar: React.FC<NavbarProps> = ({ locale, dictionary }) => {
             {/* Language Switcher — desktop only */}
             <Link
               href={getAlternateHref()}
-              className="hidden md:inline-flex text-[10px] font-medium uppercase tracking-[0.3em] text-zinc-500 hover:text-white transition-colors px-3 py-1.5 border border-white/10 rounded-full hover:border-white/30"
+              className="hidden md:inline-flex text-[10px] font-medium uppercase tracking-[0.3em] text-zinc-400 hover:text-white transition-colors px-3 py-1.5 border border-white/10 rounded-full hover:border-white/30"
             >
               {alternateLabel}
             </Link>

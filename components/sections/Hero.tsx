@@ -4,7 +4,6 @@ import React, { useEffect, useRef, useState, useMemo } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { Trophy, FolderOpen, Globe, Languages, ChevronDown } from 'lucide-react';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
-import SmokeEffect from '@/components/effects/SmokeEffect';
 import { SITE_CONFIG } from '@/lib/seo/config';
 import { HeroDict } from '@/types/i18n';
 import { usePrefersReducedMotion, useIsSafari } from '@/hooks/useMediaQuery';
@@ -24,62 +23,27 @@ const iconMap = {
   languages: Languages,
 };
 
-const LiquidBackground: React.FC = () => {
-  const prefersReducedMotion = usePrefersReducedMotion();
-  const bgRef = useRef<HTMLDivElement>(null);
-  // Pause blur orb animations when Hero is off-screen (Safari GPU optimization)
-  const isInView = useInView(bgRef, { margin: '300px 0px' });
-  const shouldAnimate = !prefersReducedMotion && isInView;
-
+// Hero gradient background - purple/blue with dark radial overlay and bottom fade
+const HeroGradientBackground: React.FC = () => {
   return (
-    <div ref={bgRef} className="absolute inset-0 z-0 bg-background overflow-hidden">
-      {/* Cinematic Smoke Effect — has its own useInView internally */}
-      <SmokeEffect intensity={0.7} />
-
-      <div className="absolute inset-0 opacity-30">
-        {/* GPU-composited: only x, y, scale - no borderRadius */}
-        {/* Mobile: 60px blur, Desktop: 160px blur, Reduced Motion: Static */}
-        {shouldAnimate ? (
-          <motion.div
-            animate={{
-              x: [-120, 160, -30],
-              y: [120, -160, 60],
-              scale: [1, 1.3, 0.85, 1],
-            }}
-            transition={{
-              duration: 22,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            style={{ backfaceVisibility: 'hidden', willChange: 'transform', contain: 'layout paint' }}
-            className="absolute bottom-[-25%] left-[-15%] w-[1300px] h-[1000px] rounded-full bg-white/[0.06] blur-[60px] lg:blur-[160px] pointer-events-none"
-          />
-        ) : (
-          <div className="absolute bottom-[-25%] left-[-15%] w-[1300px] h-[1000px] rounded-full bg-white/[0.06] blur-[60px] lg:blur-[160px] pointer-events-none" />
-        )}
-
-        {/* Second blur orb - Mobile: 60px blur, Desktop: 180px blur */}
-        {shouldAnimate ? (
-          <motion.div
-            animate={{
-              x: [160, -120, 50],
-              y: [-160, 140, -40],
-              scale: [1.15, 0.9, 1.25, 1.15],
-            }}
-            transition={{
-              duration: 28,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            style={{ backfaceVisibility: 'hidden', willChange: 'transform', contain: 'layout paint' }}
-            className="absolute top-[-20%] right-[-15%] w-[1100px] h-[900px] rounded-full bg-zinc-400/[0.04] blur-[60px] lg:blur-[180px] pointer-events-none"
-          />
-        ) : (
-          <div className="absolute top-[-20%] right-[-15%] w-[1100px] h-[900px] rounded-full bg-zinc-400/[0.04] blur-[60px] lg:blur-[180px] pointer-events-none" />
-        )}
-      </div>
-
-      <div className="absolute inset-0 bg-gradient-to-tr from-background via-transparent to-background opacity-60" />
+    <div className="absolute inset-0 z-0 overflow-hidden">
+      {/* Brand blue base with dark radial from top */}
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundColor: 'hsla(217, 80%, 40%, 0.8)',
+          backgroundImage: 'radial-gradient(circle at 50% 0%, hsla(0, 0%, 0%, 1) 45%, transparent 100%)',
+          backgroundBlendMode: 'normal',
+        }}
+      />
+      {/* Bottom fade to black - seamless transition to next section */}
+      <div
+        className="absolute inset-x-0 bottom-0 h-[40%] pointer-events-none"
+        style={{
+          background: 'linear-gradient(to bottom, transparent 0%, #050505 100%)',
+        }}
+      />
+      {/* Subtle noise texture overlay */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
     </div>
   );
@@ -138,7 +102,7 @@ const Hero: React.FC<HeroProps> = ({ dictionary, isReady = true, locale = 'en' }
 
   return (
     <section ref={heroRef} className="relative min-h-screen w-full flex flex-col items-center justify-center pt-16 sm:pt-20 pb-20 sm:pb-24 px-4 sm:px-6 overflow-hidden">
-      <LiquidBackground />
+      <HeroGradientBackground />
 
       <motion.div
         style={isInView ? motionStyle : { opacity: 1, y: 0 }}
@@ -239,9 +203,8 @@ const Hero: React.FC<HeroProps> = ({ dictionary, isReady = true, locale = 'en' }
 
       <motion.div
         style={{ opacity }}
-        className="absolute bottom-6 sm:bottom-10 w-full max-w-[1400px] flex items-center justify-center px-4 sm:px-12 z-20"
+        className="absolute bottom-6 sm:bottom-10 w-full flex items-center justify-center px-4 z-20"
       >
-        <div className="hidden md:block flex-1 h-[1px] bg-white/[0.05] mr-12" />
         <div className="flex items-center">
           <span className="hidden sm:block text-[9px] sm:text-[10px] font-medium tracking-[0.2em] sm:tracking-[0.3em] text-zinc-500/60 uppercase whitespace-nowrap text-right mr-4 sm:mr-10">{content.scrollDown}</span>
 
@@ -272,7 +235,6 @@ const Hero: React.FC<HeroProps> = ({ dictionary, isReady = true, locale = 'en' }
           </div>
           <span className="hidden sm:block text-[9px] sm:text-[10px] font-medium tracking-[0.2em] sm:tracking-[0.3em] text-zinc-500/60 uppercase whitespace-nowrap text-left ml-4 sm:ml-10">{content.toSeeProjects}</span>
         </div>
-        <div className="hidden md:block flex-1 h-[1px] bg-white/[0.05] ml-12" />
       </motion.div>
     </section>
   );

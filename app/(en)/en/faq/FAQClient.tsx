@@ -2,11 +2,10 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Plus } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import FooterSection from '@/components/sections/FooterSection';
-import SmokeEffect from '@/components/effects/SmokeEffect';
 import { FloatingTechIcons } from '@/components/effects/FloatingTechIcons';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import PulseBadge from '@/components/ui/PulseBadge';
@@ -28,66 +27,54 @@ interface FAQItemProps {
   onClick: () => void;
 }
 
+// CSS grid-based accordion - no height animation, fully composited
 const FAQItem: React.FC<FAQItemProps> = ({ question, answer, linkText, linkHref, isOpen, onClick }) => {
-  const isDesktop = useIsDesktop();
   const prefersReducedMotion = usePrefersReducedMotion();
 
   return (
-    <motion.div
-      initial={false}
+    <div
       onClick={onClick}
-      className={`overflow-hidden rounded-lg sm:rounded-xl border cursor-pointer transition-all duration-500 ${
+      className={`rounded-lg sm:rounded-xl border cursor-pointer transition-colors duration-300 overflow-hidden ${
         isOpen ? 'bg-[#0F0F0F] border-white/20' : 'bg-[#0A0A0A] border-white/5 hover:border-white/10'
       }`}
     >
       <div className="w-full flex items-center justify-between p-4 sm:p-5 md:p-6 text-left focus:outline-none">
         <span className="text-sm sm:text-base md:text-lg font-normal tracking-tight text-white pr-3 sm:pr-4">{question}</span>
-        <motion.div
-          animate={{ rotate: isOpen ? 45 : 0 }}
-          transition={
-            prefersReducedMotion
-              ? { duration: 0 }
-              : { type: "spring", stiffness: 300, damping: 20 }
-          }
-          className={`flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full border transition-colors flex-shrink-0 ${
-            isOpen ? 'bg-transparent border-white text-white' : 'bg-transparent border-white/10 text-zinc-500'
+        <div
+          className={`flex items-center justify-center w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full border transition-all flex-shrink-0 ${
+            prefersReducedMotion ? '' : 'duration-300'
+          } ${
+            isOpen ? 'bg-transparent border-white text-white rotate-45' : 'bg-transparent border-white/10 text-zinc-500 rotate-0'
           }`}
         >
           <Plus className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4" />
-        </motion.div>
+        </div>
       </div>
 
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={
-              prefersReducedMotion
-                ? { duration: 0 }
-                : isDesktop
-                  ? { duration: 0.3, ease: [0.16, 1, 0.3, 1] as const }
-                  : { duration: 0.2, ease: 'linear' as const }
-            }
-            style={{ overflow: 'hidden' }}
-          >
-            <div className="px-4 sm:px-5 md:px-6 pb-4 sm:pb-5 md:pb-6 font-light tracking-tight text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed">
-              {answer}
-              {linkText && linkHref && (
-                <Link
-                  href={linkHref}
-                  onClick={(e) => e.stopPropagation()}
-                  className="block mt-2 sm:mt-3 text-white hover:text-zinc-300 transition-colors underline underline-offset-4 text-xs sm:text-sm md:text-base"
-                >
-                  {linkText} →
-                </Link>
-              )}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
+      {/* CSS grid trick for smooth height animation without reflow */}
+      <div
+        className={`grid transition-[grid-template-rows] ${
+          prefersReducedMotion ? 'duration-0' : 'duration-300'
+        } ease-out ${
+          isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+        }`}
+      >
+        <div className="overflow-hidden">
+          <div className="px-4 sm:px-5 md:px-6 pb-4 sm:pb-5 md:pb-6 font-light tracking-tight text-zinc-400 text-xs sm:text-sm md:text-base leading-relaxed">
+            {answer}
+            {linkText && linkHref && (
+              <Link
+                href={linkHref}
+                onClick={(e) => e.stopPropagation()}
+                className="block mt-2 sm:mt-3 text-white hover:text-zinc-300 transition-colors underline underline-offset-4 text-xs sm:text-sm md:text-base"
+              >
+                {linkText} →
+              </Link>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
@@ -170,8 +157,8 @@ const FAQClient: React.FC<FAQClientProps> = ({ locale, dictionary }) => {
               <BinderClip position="top-right" size="md" />
 
               <div className="border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] bg-background relative z-10 overflow-hidden pt-12 sm:pt-16 md:pt-20 lg:pt-32 pb-10 sm:pb-12 md:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-12">
-                {/* Smoke Effect Background */}
-                <SmokeEffect intensity={0.5} />
+                {/* Mesh Gradient Background */}
+                <div className="mesh-gradient-bg" />
 
                 <div className="relative z-10 text-center flex flex-col items-center">
                   <div className="mb-5 sm:mb-6 md:mb-8">

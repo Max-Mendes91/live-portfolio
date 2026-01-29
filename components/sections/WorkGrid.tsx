@@ -69,8 +69,8 @@ const WorkGrid: React.FC<WorkGridProps> = ({ dictionary }) => {
                   ))}
                 </div>
 
-                {/* Title */}
-                <h3 className="text-xl md:text-2xl font-semibold text-text-primary mb-3 leading-tight">
+                {/* Title - min-height ensures alignment across cards */}
+                <h3 className="text-xl md:text-2xl font-semibold text-text-primary mb-3 leading-tight md:min-h-[3.75rem]">
                   {project.title}
                 </h3>
 

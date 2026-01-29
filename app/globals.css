@@ -281,8 +281,25 @@ textarea:-webkit-autofill:active {
   }
 }
 
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .animate-marquee {
   animation: marquee 30s linear infinite;
+}
+
+.animate-marquee-left {
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-reverse 25s linear infinite;
 }
 
 @keyframes shimmer {
@@ -320,6 +337,11 @@ textarea:-webkit-autofill:active {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Immediate fade-in animation (not scroll-triggered) */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s var(--ease-smooth) forwards;
 }
 
 @keyframes fadeInLeft {
@@ -393,4 +415,126 @@ textarea:-webkit-autofill:active {
 /* Custom delay utility using CSS variables */
 .animate-on-scroll[style*="--delay"] {
   animation-delay: var(--delay, 0ms);
+}
+
+/* ============================================
+   MESH GRADIENT BACKGROUND
+   Pure CSS animated gradient - GPU composited
+   Original: mshr.app, colors adapted for portfolio
+   ============================================ */
+
+@property --s-start-0 { syntax: '<percentage>'; inherits: false; initial-value: 6%; }
+@property --s-end-0 { syntax: '<percentage>'; inherits: false; initial-value: 26%; }
+@property --x-0 { syntax: '<percentage>'; inherits: false; initial-value: 93%; }
+@property --y-0 { syntax: '<percentage>'; inherits: false; initial-value: 63%; }
+@property --s-start-1 { syntax: '<percentage>'; inherits: false; initial-value: 6%; }
+@property --s-end-1 { syntax: '<percentage>'; inherits: false; initial-value: 15%; }
+@property --x-1 { syntax: '<percentage>'; inherits: false; initial-value: 33%; }
+@property --y-1 { syntax: '<percentage>'; inherits: false; initial-value: -7%; }
+@property --s-start-2 { syntax: '<percentage>'; inherits: false; initial-value: 6%; }
+@property --s-end-2 { syntax: '<percentage>'; inherits: false; initial-value: 15%; }
+@property --x-2 { syntax: '<percentage>'; inherits: false; initial-value: 84%; }
+@property --y-2 { syntax: '<percentage>'; inherits: false; initial-value: 7%; }
+@property --s-start-3 { syntax: '<percentage>'; inherits: false; initial-value: 6%; }
+@property --s-end-3 { syntax: '<percentage>'; inherits: false; initial-value: 15%; }
+@property --x-3 { syntax: '<percentage>'; inherits: false; initial-value: 14%; }
+@property --y-3 { syntax: '<percentage>'; inherits: false; initial-value: 5%; }
+@property --s-start-4 { syntax: '<percentage>'; inherits: false; initial-value: 6%; }
+@property --s-end-4 { syntax: '<percentage>'; inherits: false; initial-value: 15%; }
+@property --x-4 { syntax: '<percentage>'; inherits: false; initial-value: 7%; }
+@property --y-4 { syntax: '<percentage>'; inherits: false; initial-value: 96%; }
+@property --s-start-5 { syntax: '<percentage>'; inherits: false; initial-value: 6%; }
+@property --s-end-5 { syntax: '<percentage>'; inherits: false; initial-value: 15%; }
+@property --x-5 { syntax: '<percentage>'; inherits: false; initial-value: 93%; }
+@property --y-5 { syntax: '<percentage>'; inherits: false; initial-value: 90%; }
+@property --s-start-6 { syntax: '<percentage>'; inherits: false; initial-value: 6%; }
+@property --s-end-6 { syntax: '<percentage>'; inherits: false; initial-value: 27%; }
+@property --x-6 { syntax: '<percentage>'; inherits: false; initial-value: 3%; }
+@property --y-6 { syntax: '<percentage>'; inherits: false; initial-value: 61%; }
+@property --s-start-7 { syntax: '<percentage>'; inherits: false; initial-value: 6%; }
+@property --s-end-7 { syntax: '<percentage>'; inherits: false; initial-value: 34%; }
+@property --x-7 { syntax: '<percentage>'; inherits: false; initial-value: 94%; }
+@property --y-7 { syntax: '<percentage>'; inherits: false; initial-value: 59%; }
+@property --s-start-8 { syntax: '<percentage>'; inherits: false; initial-value: 6%; }
+@property --s-end-8 { syntax: '<percentage>'; inherits: false; initial-value: 24%; }
+@property --x-8 { syntax: '<percentage>'; inherits: false; initial-value: 48%; }
+@property --y-8 { syntax: '<percentage>'; inherits: false; initial-value: 63%; }
+@property --s-start-9 { syntax: '<percentage>'; inherits: false; initial-value: 6%; }
+@property --s-end-9 { syntax: '<percentage>'; inherits: false; initial-value: 22%; }
+@property --x-9 { syntax: '<percentage>'; inherits: false; initial-value: 96%; }
+@property --y-9 { syntax: '<percentage>'; inherits: false; initial-value: 78%; }
+
+.mesh-gradient-bg {
+  position: absolute;
+  inset: 0;
+  background-color: #050505;
+  background-image:
+    /* Ice white - cool tint */
+    radial-gradient(circle at var(--x-0) var(--y-0), hsla(200,15%,95%,0.14) var(--s-start-0), transparent var(--s-end-0)),
+    /* Deep cool shadow */
+    radial-gradient(circle at var(--x-1) var(--y-1), hsla(210,10%,3%,0.7) var(--s-start-1), transparent var(--s-end-1)),
+    /* Logo blue accent */
+    radial-gradient(circle at var(--x-2) var(--y-2), hsla(217,80%,50%,0.12) var(--s-start-2), transparent var(--s-end-2)),
+    /* Bright ice */
+    radial-gradient(circle at var(--x-3) var(--y-3), hsla(195,12%,98%,0.15) var(--s-start-3), transparent var(--s-end-3)),
+    /* Cool shadow */
+    radial-gradient(circle at var(--x-4) var(--y-4), hsla(210,8%,5%,0.6) var(--s-start-4), transparent var(--s-end-4)),
+    /* Soft blue glow */
+    radial-gradient(circle at var(--x-5) var(--y-5), hsla(217,70%,55%,0.1) var(--s-start-5), transparent var(--s-end-5)),
+    /* Silver frost */
+    radial-gradient(circle at var(--x-6) var(--y-6), hsla(205,12%,85%,0.12) var(--s-start-6), transparent var(--s-end-6)),
+    /* Pure ice highlight */
+    radial-gradient(circle at var(--x-7) var(--y-7), hsla(190,8%,98%,0.14) var(--s-start-7), transparent var(--s-end-7)),
+    /* Blue accent secondary */
+    radial-gradient(circle at var(--x-8) var(--y-8), hsla(217,75%,48%,0.08) var(--s-start-8), transparent var(--s-end-8)),
+    /* Subtle ice */
+    radial-gradient(circle at var(--x-9) var(--y-9), hsla(195,10%,92%,0.1) var(--s-start-9), transparent var(--s-end-9));
+  background-blend-mode: normal;
+  will-change: transform, opacity;
+  contain: paint;
+  animation: meshGradientAnimate 20s linear infinite alternate-reverse;
+}
+
+@keyframes meshGradientAnimate {
+  0% {
+    --s-start-0: 6%; --s-end-0: 26%; --x-0: 93%; --y-0: 63%;
+    --s-start-1: 6%; --s-end-1: 15%; --x-1: 33%; --y-1: -7%;
+    --s-start-2: 6%; --s-end-2: 15%; --x-2: 84%; --y-2: 7%;
+    --s-start-3: 6%; --s-end-3: 15%; --x-3: 14%; --y-3: 5%;
+    --s-start-4: 6%; --s-end-4: 15%; --x-4: 7%; --y-4: 96%;
+    --s-start-5: 6%; --s-end-5: 15%; --x-5: 93%; --y-5: 90%;
+    --s-start-6: 6%; --s-end-6: 27%; --x-6: 3%; --y-6: 61%;
+    --s-start-7: 6%; --s-end-7: 34%; --x-7: 94%; --y-7: 59%;
+    --s-start-8: 6%; --s-end-8: 24%; --x-8: 48%; --y-8: 63%;
+    --s-start-9: 6%; --s-end-9: 22%; --x-9: 96%; --y-9: 78%;
+  }
+  50% {
+    --s-start-0: 8%; --s-end-0: 29%; --x-0: 2%; --y-0: 59%;
+    --s-start-1: 6%; --s-end-1: 28%; --x-1: 42%; --y-1: 10%;
+    --s-start-2: 6%; --s-end-2: 14%; --x-2: 75%; --y-2: 29%;
+    --s-start-3: 6%; --s-end-3: 21%; --x-3: 5%; --y-3: 16%;
+    --s-start-4: 6%; --s-end-4: 17%; --x-4: 36%; --y-4: 91%;
+    --s-start-5: 6%; --s-end-5: 17%; --x-5: 70%; --y-5: 91%;
+    --s-start-6: 7%; --s-end-6: 18%; --x-6: 54%; --y-6: 73%;
+    --s-start-7: 7%; --s-end-7: 34%; --x-7: 57%; --y-7: 76%;
+    --s-start-8: 7%; --s-end-8: 18%; --x-8: 11%; --y-8: 53%;
+    --s-start-9: 7%; --s-end-9: 15%; --x-9: 70%; --y-9: 70%;
+  }
+  100% {
+    --s-start-1: 6%; --s-end-1: 40%; --x-1: 76%; --y-1: -3%;
+    --s-start-2: 6%; --s-end-2: 19%; --x-2: 97%; --y-2: 18%;
+    --s-start-3: 6%; --s-end-3: 19%; --x-3: 42%; --y-3: 18%;
+    --s-start-4: 6%; --s-end-4: 19%; --x-4: 66%; --y-4: 95%;
+    --s-start-5: 6%; --s-end-5: 19%; --x-5: 46%; --y-5: 92%;
+    --s-start-6: 17%; --s-end-6: 33%; --x-6: 102%; --y-6: 16%;
+    --s-start-7: 7%; --s-end-7: 35%; --x-7: 22%; --y-7: 52%;
+    --s-start-9: 5%; --s-end-9: 14%; --x-9: 97%; --y-9: 51%;
+  }
+}
+
+/* Reduced motion: static gradient */
+@media (prefers-reduced-motion: reduce) {
+  .mesh-gradient-bg {
+    animation: none;
+  }
 }

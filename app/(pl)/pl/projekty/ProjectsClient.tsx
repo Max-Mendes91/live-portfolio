@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import FooterSection from '@/components/sections/FooterSection';
-import SmokeEffect from '@/components/effects/SmokeEffect';
 import { FloatingTechIcons } from '@/components/effects/FloatingTechIcons';
 import PulseBadge from '@/components/ui/PulseBadge';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
@@ -59,8 +58,8 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
               <BinderClip position="top-right" size="md" />
 
               <div className="border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] bg-background relative z-10 overflow-hidden pt-12 sm:pt-16 md:pt-20 lg:pt-32 pb-10 sm:pb-12 md:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-12">
-                {/* Smoke Effect Background */}
-                <SmokeEffect intensity={0.5} />
+                {/* Mesh Gradient Background */}
+                <div className="mesh-gradient-bg" />
 
                 <div className="relative z-10 text-center flex flex-col items-center">
                   <div className="mb-5 sm:mb-6 md:mb-8">
