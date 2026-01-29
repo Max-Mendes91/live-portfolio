@@ -51,8 +51,8 @@ const LiquidBackground: React.FC = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            style={{ backfaceVisibility: 'hidden' }}
-            className="absolute bottom-[-25%] left-[-15%] w-[1300px] h-[1000px] rounded-full bg-white/[0.06] blur-[60px] lg:blur-[160px] pointer-events-none will-change-transform"
+            style={{ backfaceVisibility: 'hidden', willChange: 'transform', contain: 'layout paint' }}
+            className="absolute bottom-[-25%] left-[-15%] w-[1300px] h-[1000px] rounded-full bg-white/[0.06] blur-[60px] lg:blur-[160px] pointer-events-none"
           />
         ) : (
           <div className="absolute bottom-[-25%] left-[-15%] w-[1300px] h-[1000px] rounded-full bg-white/[0.06] blur-[60px] lg:blur-[160px] pointer-events-none" />
@@ -71,8 +71,8 @@ const LiquidBackground: React.FC = () => {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            style={{ backfaceVisibility: 'hidden' }}
-            className="absolute top-[-20%] right-[-15%] w-[1100px] h-[900px] rounded-full bg-zinc-400/[0.04] blur-[60px] lg:blur-[180px] pointer-events-none will-change-transform"
+            style={{ backfaceVisibility: 'hidden', willChange: 'transform', contain: 'layout paint' }}
+            className="absolute top-[-20%] right-[-15%] w-[1100px] h-[900px] rounded-full bg-zinc-400/[0.04] blur-[60px] lg:blur-[180px] pointer-events-none"
           />
         ) : (
           <div className="absolute top-[-20%] right-[-15%] w-[1100px] h-[900px] rounded-full bg-zinc-400/[0.04] blur-[60px] lg:blur-[180px] pointer-events-none" />

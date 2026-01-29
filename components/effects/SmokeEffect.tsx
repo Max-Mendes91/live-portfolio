@@ -51,9 +51,9 @@ const SmokeEffect: React.FC<SmokeEffectProps> = ({
   // Desktop, in view, normal motion: Optimized 2-layer animated effect
   return (
     <div ref={containerRef} className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
-      {/* Layer 1: Primary smoke - reduced blur for better performance */}
+      {/* Layer 1: Primary smoke - GPU-composited with contain for isolation */}
       <motion.div
-        className="absolute rounded-full will-change-transform"
+        className="absolute rounded-full"
         style={{
           width: '600px',
           height: '450px',
@@ -61,6 +61,8 @@ const SmokeEffect: React.FC<SmokeEffectProps> = ({
           left: '-5%',
           filter: 'blur(70px)',
           backfaceVisibility: 'hidden',
+          willChange: 'transform',
+          contain: 'layout paint',
           background: `radial-gradient(ellipse at center, rgba(169,169,169,${0.1 * intensity}) 0%, rgba(255,255,255,${0.18 * intensity}) 40%, rgba(255,255,255,${0.08 * intensity}) 65%, transparent 85%)`,
         }}
         animate={{
@@ -75,9 +77,9 @@ const SmokeEffect: React.FC<SmokeEffectProps> = ({
         }}
       />
 
-      {/* Layer 2: Secondary smoke - counter movement */}
+      {/* Layer 2: Secondary smoke - GPU-composited with contain for isolation */}
       <motion.div
-        className="absolute rounded-full will-change-transform"
+        className="absolute rounded-full"
         style={{
           width: '550px',
           height: '400px',
@@ -85,6 +87,8 @@ const SmokeEffect: React.FC<SmokeEffectProps> = ({
           right: '-8%',
           filter: 'blur(60px)',
           backfaceVisibility: 'hidden',
+          willChange: 'transform',
+          contain: 'layout paint',
           background: `radial-gradient(ellipse at center, rgba(200,200,200,${0.08 * intensity}) 0%, rgba(255,255,255,${0.15 * intensity}) 45%, rgba(250,250,250,${0.06 * intensity}) 70%, transparent 85%)`,
         }}
         animate={{
