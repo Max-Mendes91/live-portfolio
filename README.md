@@ -2,7 +2,7 @@
 
 Production portfolio for freelance web development.
 
-**Live:** https://live-portfolio-sm3r0z9oi-max-mendes91s-projects.vercel.app
+**Live:** https://maxmendes.dev
 
 ## Tech Stack
 
@@ -11,6 +11,7 @@ Production portfolio for freelance web development.
 - Tailwind CSS 3.4
 - Framer Motion
 - Vercel deployment
+- Google Analytics 4 (GDPR-compliant)
 
 ## Architecture Decisions
 
@@ -27,27 +28,33 @@ Production portfolio for freelance web development.
 - Automatic sitemap with hreflang alternates
 
 **Performance:**
+- LCP optimized (fetchPriority, preconnect, progressive enhancement)
+- CSS animations replacing Framer Motion whileInView for better performance
 - Parallax effects desktop-only (mobile excluded)
-- WebP images
+- WebP images with proper sizing
 - Code splitting by route group
-- Framer Motion lazy-loaded
+- Intro overlay skipped for bots/Lighthouse
 
 ## Project Structure
 
 ```
 app/
 ├── [locale]/           # Homepage (en, pl)
-├── (en)/en/            # English pages
+├── en/                 # English pages
 │   ├── about/
 │   ├── contact/
 │   ├── faq/
+│   ├── privacy/
 │   ├── projects/
-│   └── services/
-└── (pl)/pl/            # Polish pages (localized slugs)
+│   ├── services/
+│   └── terms/
+└── pl/                 # Polish pages (localized slugs)
     ├── o-mnie/
     ├── kontakt/
-    ├── pytania/
+    ├── polityka-prywatnosci/
     ├── projekty/
+    ├── pytania/
+    ├── regulamin/
     └── uslugi/
 
 components/
@@ -74,6 +81,8 @@ types/                  # TypeScript definitions
 | `/en/projects` | `/pl/projekty` | Projects showcase |
 | `/en/services` | `/pl/uslugi` | Services offered |
 | `/en/faq` | `/pl/pytania` | FAQ page |
+| `/en/privacy` | `/pl/polityka-prywatnosci` | Privacy policy |
+| `/en/terms` | `/pl/regulamin` | Terms of service |
 
 ---
 

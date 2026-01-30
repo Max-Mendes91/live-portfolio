@@ -66,6 +66,5 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: [...baseRules, ...aiRules],
     sitemap: `${SITE_CONFIG.url}/sitemap.xml`,
-    host: SITE_CONFIG.url,
   };
 }
