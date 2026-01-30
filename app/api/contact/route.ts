@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import { SITE_CONFIG } from '@/lib/seo/config';
 import { renderContactEmail } from '@/components/emails/ContactFormEmail';
 import { renderConfirmationEmail, getConfirmationSubject } from '@/components/emails/ConfirmationEmail';
 
@@ -51,9 +50,12 @@ export async function POST(request: NextRequest) {
     }
 
     // Send email via Resend
+    // Using Gmail for sandbox mode - change to SITE_CONFIG.owner.email when domain is verified
+    const CONTACT_RECIPIENT = 'maxmendesnoah1991@gmail.com';
+
     const { data, error } = await resend.emails.send({
       from: 'Portfolio Contact <onboarding@resend.dev>', // Change to your domain later: contact@maxmendes.dev
-      to: SITE_CONFIG.owner.email,
+      to: CONTACT_RECIPIENT,
       replyTo: email.trim(),
       subject: `New Contact Form: ${name.trim()}`,
       html: renderContactEmail({
