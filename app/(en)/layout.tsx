@@ -35,6 +35,10 @@ export default async function EnglishRootLayout({
             href={getFullUrl(href)}
           />
         ))}
+        {/* Favicon - explicit for Google discovery */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         {/* Preconnect to external resources */}
         <link rel="preconnect" href="https://grainy-gradients.vercel.app" crossOrigin="anonymous" />
         {/* Geo targeting meta tags */}

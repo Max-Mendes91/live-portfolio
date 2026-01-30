@@ -107,7 +107,7 @@ export function generateBaseMetadata(locale: SupportedLocale = 'en'): Metadata {
     },
     icons: {
       icon: [
-        { url: '/favicon.ico', sizes: '48x48' },
+        { url: '/favicon.ico', sizes: '16x16 32x32 48x48 96x96 144x144' },
         { url: '/favicon.svg', type: 'image/svg+xml' },
       ],
       apple: '/apple-touch-icon.png',
