@@ -3,36 +3,36 @@
     "badge": "Full-Stack Development",
     "headline": "Freelance Developer for Hire",
     "subheadline": "Websites. E-commerce. Web Apps. SaaS.",
-    "description": "I'm Max, a full-stack developer based in Poland. I build websites, e-commerce stores, web apps, and SaaS products. I handle everything — from research and prototyping to deployment. UK and US clients welcome.",
+    "description": "Max Mendes — developer based in Poland, available for projects across Europe, UK, and US. From first conversation to live deployment, one person handles your entire project.",
     "ctaPrimary": "Book a Free Call",
     "ctaSecondary": "See Projects",
     "phoneLabel": "or call",
     "scrollDown": "Scroll down",
     "toSeeProjects": "for the proof",
     "trustSignals": [
-      { "label": "2+ Years Experience", "icon": "trophy" },
-      { "label": "UK/US Friendly Timezone", "icon": "globe" },
-      { "label": "Fluent English", "icon": "languages" }
+      { "label": "React & Next.js Specialist", "icon": "trophy" },
+      { "label": "EU Timezone — Overlaps UK & US", "icon": "globe" },
+      { "label": "Fluent EN / PT / ES · Polish Support", "icon": "languages" }
     ]
   },
   "about": {
-    "headline": "Why Work With Me?",
-    "subheadline": "I don't just code what you ask for—I help figure out what actually needs to be built first.",
-    "description": "Most developers jump straight into development. I spend time understanding the problem: what the site or app needs to achieve, who it's for, and how competitors approach it. Then I prototype, plan scope, and build something that actually solves the problem.",
-    "description2": "You work directly with me—not an agency team that hands off between designers, developers, and project managers. One person. Full ownership. From research through deployment. That means faster decisions, clearer communication, and code that reflects what you actually need.",
+    "headline": "Built Around How Your Business Works",
+    "subheadline": "Before any code gets written, I make sure we're solving the right problem.",
+    "description": "Every project starts with understanding: what success looks like for you, who your users are, what constraints matter. Then prototyping, scoping, and building something that fits your business — not a template you'll outgrow.",
+    "description2": "You get direct access throughout the project. Questions get answered in hours, not days. Decisions happen fast. And at the end, you own code that actually reflects what you needed.",
     "learnMoreText": "Learn More About Me",
     "learnMoreHref": "/en/about",
     "trustBadges": [
-      "500+ Hours Building Production Software",
-      "One Developer, Complete Ownership",
-      "Modern Architecture, Zero Technical Debt"
+      "500+ Hours on Production Software",
+      "Direct Access, Fast Decisions",
+      "Code You Own, Built to Scale"
     ]
   },
   "services": {
     "hero": {
       "badge": "What I Build",
-      "title": "Production web software. No templates. No WordPress.",
-      "subtitle": "I build production web apps with React and Next.js—not prototypes, not templates. One developer. Full stack. Real code."
+      "title": "Websites, SaaS, and E-Commerce — Built with React and Next.js",
+      "subtitle": "Custom software designed around your requirements. Every feature serves a purpose, and the codebase scales as you grow."
     },
     "pills": ["Web Development", "SaaS Apps", "E-Commerce", "SEO & Performance", "AI Integration"],
     "primaryButton": "See Services",
@@ -42,7 +42,7 @@
         "id": "ecommerce",
         "icon": "ShoppingCart",
         "title": "E-Commerce & Online Stores",
-        "description": "I build custom e-commerce platforms using React and Next.js with Stripe or PayPal payments, inventory control, and order management. Ideal for businesses that have outgrown Shopify or need full control over their store logic.",
+        "description": "Online stores with fast checkout, real inventory management, and payment processing that works across borders. Custom e-commerce platforms with full control over pricing, promotions, and customer experience.",
         "linkText": "e-commerce platforms",
         "linkHref": "/en/services/ecommerce-development"
       },
@@ -50,23 +50,23 @@
         "id": "saas",
         "icon": "Cloud",
         "title": "SaaS & Web Applications",
-        "description": "Custom web applications with authentication, dashboards, APIs, and real user workflows. Built for production from day one—handling data, permissions, payments, and integrations without duct-tape solutions or prototype shortcuts.",
-        "linkText": "web applications",
+        "description": "Web applications with user accounts, dashboards, permissions, and subscription billing. Architected to handle real users from launch — and structured so new features don't break existing ones.",
+        "linkText": "Web applications",
         "linkHref": "/en/services/saas-web-apps"
       },
       {
         "id": "web-development",
         "icon": "Code2",
         "title": "Full-Stack Web Development",
-        "description": "I build fast, modern business websites with React, Next.js, and TypeScript. No page builders, no templates—just clean code that loads quickly, scales well, and is easy to maintain as your business grows.",
-        "linkText": "business websites",
+        "description": "Business websites that load fast, rank well, and stay easy to update. Clean architecture that grows with your business — not something you'll need to rebuild in two years.",
+        "linkText": "Business websites",
         "linkHref": "/en/services/web-development"
       },
       {
         "id": "seo",
         "icon": "Search",
         "title": "SEO & Performance Optimization",
-        "description": "Technical SEO optimization focused on speed, structure, and search visibility. I improve Core Web Vitals, fix rendering and indexing issues, and make sure your site is fast, crawlable, and built the way Google expects.",
+        "description": "Technical SEO focused on speed, structure, and search visibility. Core Web Vitals improvements, indexing fixes, and SEO optimization that Google rewards with better rankings.",
         "linkText": "SEO optimization",
         "linkHref": "/en/services/seo-performance-optimization"
       },
@@ -74,7 +74,7 @@
         "id": "ai",
         "icon": "Bot",
         "title": "AI Integration",
-        "description": "I integrate AI features into your product: email automation, document processing, intelligent search, custom workflows. Built with production-ready APIs (OpenAI, Anthropic, Google), not proof-of-concepts.",
+        "description": "AI features that solve real problems: automated email handling, document processing, intelligent search, workflow automation. Production-ready implementations using OpenAI, Anthropic, and Google APIs.",
         "linkText": "AI features",
         "linkHref": "/en/services/ai-integration"
       }
@@ -84,27 +84,27 @@
   },
   "process": {
     "badge": "Development Process",
-    "title": "How I Build Your Software",
-    "subtitle": "A proven workflow for building SaaS applications, e-commerce platforms, and AI-powered features that scale—not prototypes or WordPress templates.",
+    "title": "How Your Project Gets Built",
+    "subtitle": "A structured process from requirements to deployment. Clear milestones, regular updates, and a production-ready result.",
     "imageLabel": "Live Code",
     "steps": [
       {
         "number": "01",
         "title": "Requirements & Architecture",
         "subtitle": "Technical Discovery",
-        "description": "I analyze your business requirements, select the optimal React and Next.js stack, and design database architecture and API structure for scalability."
+        "description": "Understanding your business goals, defining technical requirements, and designing database and API structure for scalability."
       },
       {
         "number": "02",
         "title": "Development & Integration",
         "subtitle": "Build & Test",
-        "description": "I write production TypeScript code, implement features with real-time updates and authentication, test continuously, and integrate AI capabilities where needed."
+        "description": "Building features iteratively with continuous testing. Authentication, real-time updates, and third-party integrations implemented as needed."
       },
       {
         "number": "03",
         "title": "Production Deployment",
         "subtitle": "Deploy & Document",
-        "description": "I deploy to production infrastructure, optimize performance and SEO, provide complete documentation, and train your team on maintenance."
+        "description": "Deployment to production infrastructure, performance optimization, complete documentation, and team training on maintenance."
       }
     ],
     "ctas": [
@@ -144,7 +144,7 @@
     "items": [
       {
         "question": "What do you build?",
-        "answer": "Production web applications—SaaS platforms, custom e-commerce systems, and business websites—built with React, Next.js, and TypeScript. No WordPress or templates."
+        "answer": "SaaS platforms, custom e-commerce systems, and business websites. Every project is custom-built for your specific requirements — you own the code completely."
       },
       {
         "question": "How long does a typical project take?",
@@ -166,10 +166,10 @@
   },
   "footer": {
     "availableBadge": "Available For Work",
-    "headline": "Not an Agency. Not WordPress. Just Code.",
-    "subheadline": "One full-stack developer in Poland building production web software. Available for projects worldwide.",
+    "headline": "One Developer. Direct Access. Code That Ships.",
+    "subheadline": "Based in Poland, working in English, building for businesses that need modern web software. Available across Europe, UK, and US.",
     "cta": "Start a Conversation",
-    "seoText": "No Committees, Just Code",
+    "seoText": "Your Project, One Developer",
     "legal": {
       "privacy": "Privacy Policy",
       "terms": "Terms & Conditions"
