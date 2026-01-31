@@ -2,6 +2,7 @@
 
 import React, { useRef, useState, useLayoutEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/sections/Hero';
 import WorkGrid from '@/components/sections/WorkGrid';
@@ -23,26 +24,29 @@ interface HomeClientProps {
 
 export default function HomeClient({ locale, dictionary, skipIntro = false }: HomeClientProps) {
   const skipIntroRef = useRef(skipIntro);
-  // Don't show intro overlay until we've checked sessionStorage (prevents flash on locale switch)
-  const [shouldShowIntro, setShouldShowIntro] = useState(false);
+  // Start with overlay blocking everything until we check sessionStorage
+  const [overlayVisible, setOverlayVisible] = useState(!skipIntro);
+  const [showIntroContent, setShowIntroContent] = useState(false);
   const [introComplete, setIntroComplete] = useState(skipIntro);
   const [showHero, setShowHero] = useState(skipIntro);
+  const [isMobileIntro, setIsMobileIntro] = useState(false);
   const isSafari = useIsSafari();
 
-  // useLayoutEffect runs before browser paint — prevents flash of
-  // the intro overlay on revisits (sessionStorage skip path)
+  // useLayoutEffect runs before browser paint — prevents flash of navbar
   useLayoutEffect(() => {
     // Reset scroll — Safari restores scroll position on back-navigation
     window.scrollTo(0, 0);
 
     // Server detected bot/Lighthouse — intro already skipped via initial state
     if (skipIntroRef.current) {
+      setOverlayVisible(false);
       setShowHero(true);
       return;
     }
 
     // Local detection for synchronous timer setup (hook value isn't ready yet)
     const safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    const mobile = window.innerWidth < 640;
 
     let hasSeenIntro = false;
     try {
@@ -50,21 +54,24 @@ export default function HomeClient({ locale, dictionary, skipIntro = false }: Ho
     } catch { /* sessionStorage unavailable */ }
 
     if (hasSeenIntro) {
-      // Returning visitor - skip intro entirely, no flash
+      // Returning visitor - hide overlay immediately, no flash
       skipIntroRef.current = true;
+      setOverlayVisible(false);
       setIntroComplete(true);
       setShowHero(true);
       return;
     }
 
-    // First-time visitor - show intro animation
-    setShouldShowIntro(true);
+    // First-time visitor - show intro content (overlay already visible)
+    setShowIntroContent(true);
+    setIsMobileIntro(mobile);
 
-    // Safari: tighter timing (lighter fade animation)
+    // Mobile: fast logo splash (~800ms)
+    // Safari desktop: tighter timing (lighter fade animation)
     // Others: original timing (heavier slide-down animation)
-    const introDelay = safari ? 1200 : 1500;
+    const introDelay = mobile ? 800 : (safari ? 1200 : 1500);
     // Show hero BEFORE overlay starts exiting so content is ready behind it
-    const heroDelay = safari ? 1100 : 1400;
+    const heroDelay = mobile ? 700 : (safari ? 1100 : 1400);
 
     const timer = setTimeout(() => {
       setIntroComplete(true);
@@ -89,28 +96,51 @@ export default function HomeClient({ locale, dictionary, skipIntro = false }: Ho
       <HomePageJsonLd locale={locale} />
       <Navbar locale={locale} dictionary={dictionary.nav} />
 
-      {/* Intro Overlay — only rendered for first-time visitors after sessionStorage check
-          This prevents flash on locale switch for returning visitors */}
+      {/* Intro Overlay — starts visible to block navbar flash, then either:
+          - Hides immediately for returning visitors
+          - Shows intro content then animates out for first-time visitors */}
       <AnimatePresence>
-        {shouldShowIntro && !introComplete && (
+        {overlayVisible && !introComplete && (
           <motion.div
             initial={{ opacity: 1 }}
-            exit={isSafari ? { opacity: 0 } : { y: '100vh' }}
+            exit={isMobileIntro ? { opacity: 0 } : (isSafari ? { opacity: 0 } : { y: '100vh' })}
             transition={{
-              duration: skipIntroRef.current ? 0 : (isSafari ? 0.6 : 1),
-              ease: isSafari ? 'easeOut' : [0.16, 1, 0.3, 1],
+              duration: skipIntroRef.current ? 0 : (isMobileIntro ? 0.3 : (isSafari ? 0.6 : 1)),
+              ease: isMobileIntro ? 'easeOut' : (isSafari ? 'easeOut' : [0.16, 1, 0.3, 1]),
             }}
-            style={isSafari ? undefined : { willChange: 'transform, opacity' }}
+            style={isMobileIntro || isSafari ? undefined : { willChange: 'transform, opacity' }}
             className="intro-overlay fixed inset-0 z-[100] bg-background flex items-center justify-center overflow-hidden"
           >
-            <motion.div
-              initial={isSafari ? { opacity: 0 } : { opacity: 0, scale: 0.9 }}
-              animate={isSafari ? { opacity: 1 } : { opacity: 1, scale: 1 }}
-              transition={{ duration: isSafari ? 0.6 : 0.8, ease: 'easeOut' }}
-              className="w-full h-full"
-            >
-              <AboutMe dictionary={dictionary.about} />
-            </motion.div>
+            {showIntroContent && (
+              isMobileIntro ? (
+                /* Mobile: Simple logo splash */
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, ease: 'easeOut' }}
+                  className="flex flex-col items-center gap-4"
+                >
+                  <Image
+                    src="/navbar-logo.webp"
+                    alt="Max Mendes"
+                    width={200}
+                    height={40}
+                    priority
+                    className="opacity-90"
+                  />
+                </motion.div>
+              ) : (
+                /* Desktop: Full AboutMe component */
+                <motion.div
+                  initial={isSafari ? { opacity: 0 } : { opacity: 0, scale: 0.9 }}
+                  animate={isSafari ? { opacity: 1 } : { opacity: 1, scale: 1 }}
+                  transition={{ duration: isSafari ? 0.6 : 0.8, ease: 'easeOut' }}
+                  className="w-full h-full"
+                >
+                  <AboutMe dictionary={dictionary.about} />
+                </motion.div>
+              )
+            )}
           </motion.div>
         )}
       </AnimatePresence>

@@ -42,7 +42,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
   ];
 
   return (
-    <footer className="relative h-screen w-full flex flex-col items-center justify-center px-2 sm:px-6 overflow-hidden bg-black">
+    <footer className="relative h-screen w-full flex flex-col items-center justify-start pt-8 short:pt-4 sm:justify-center sm:pt-0 px-2 sm:px-6 overflow-hidden bg-black">
       {/* Background - Hero gradient on homepage, mesh gradient on other pages */}
       {useHeroGradient ? (
         <>
