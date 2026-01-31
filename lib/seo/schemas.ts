@@ -95,9 +95,23 @@ export function generateLocalBusinessSchema(locale: SupportedLocale = 'en'): Loc
   };
 }
 
+// Homepage schema data from dictionary
+export interface HomePageSchemaData {
+  seo: {
+    h1: string;
+  };
+  schema: {
+    description: string;
+  };
+}
+
 // Generate Website schema
-export function generateWebsiteSchema(): WebsiteSchema {
+export function generateWebsiteSchema(homePageData?: HomePageSchemaData): WebsiteSchema {
   const { owner } = SITE_CONFIG;
+
+  // Use dictionary data if provided, otherwise fall back to hardcoded values
+  const description = homePageData?.schema.description ??
+    'Professional web development portfolio and services by Max Mendes - Full Stack Developer specializing in React, Next.js, and modern web technologies.';
 
   return {
     '@context': 'https://schema.org',
@@ -105,8 +119,7 @@ export function generateWebsiteSchema(): WebsiteSchema {
     '@id': `${SITE_CONFIG.url}/#website`,
     name: SITE_CONFIG.name,
     url: SITE_CONFIG.url,
-    description:
-      'Professional web development portfolio and services by Max Mendes - Full Stack Developer specializing in React, Next.js, and modern web technologies.',
+    description,
     publisher: {
       '@type': 'Person',
       name: owner.name,
@@ -238,8 +251,8 @@ export function generateBreadcrumbSchema(
 }
 
 // Generate all schemas for homepage
-export function generateHomePageSchemas(locale: SupportedLocale = 'en') {
-  return [generatePersonSchema(), generateLocalBusinessSchema(locale), generateWebsiteSchema()];
+export function generateHomePageSchemas(locale: SupportedLocale = 'en', homePageData?: HomePageSchemaData) {
+  return [generatePersonSchema(), generateLocalBusinessSchema(locale), generateWebsiteSchema(homePageData)];
 }
 
 // Generate Service schema from dictionary ServiceLink data

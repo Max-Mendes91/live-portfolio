@@ -93,7 +93,7 @@ export default function HomeClient({ locale, dictionary, skipIntro = false }: Ho
 
   return (
     <div className="relative bg-background selection:bg-white/10" style={{ backfaceVisibility: 'hidden' }}>
-      <HomePageJsonLd locale={locale} />
+      <HomePageJsonLd locale={locale} homePageData={dictionary.homePage} />
       <Navbar locale={locale} dictionary={dictionary.nav} />
 
       {/* Intro Overlay — starts visible to block navbar flash, then either:

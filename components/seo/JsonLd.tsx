@@ -6,6 +6,7 @@ import {
   generateServicePageSchema,
   generateFAQSchema,
   generateBreadcrumbSchema,
+  HomePageSchemaData,
 } from '@/lib/seo/schemas';
 
 // Generic JSON-LD component that accepts any schema data
@@ -26,8 +27,8 @@ export function JsonLd<T extends object>({ data }: { data: T | T[] }) {
 }
 
 // Home page JSON-LD (Person + LocalBusiness + Website)
-export function HomePageJsonLd({ locale = 'en' }: { locale?: SupportedLocale }) {
-  const schemas = generateHomePageSchemas(locale);
+export function HomePageJsonLd({ locale = 'en', homePageData }: { locale?: SupportedLocale; homePageData?: HomePageSchemaData }) {
+  const schemas = generateHomePageSchemas(locale, homePageData);
   return <JsonLd data={schemas} />;
 }
 
