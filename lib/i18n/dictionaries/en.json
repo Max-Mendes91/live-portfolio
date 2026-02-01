@@ -1127,10 +1127,10 @@
     "title": "Selected Full-Stack Projects",
     "subtitle": "Production web applications built with Next.js and React. Real products, real users, and systems designed to run reliably beyond launch.",
     "cta": {
-      "title": "Need a developer, not an agency?",
-      "description": "I build custom SaaS, e-commerce, and full-stack web applications with React and Next.js. Let's discuss your project.",
-      "primaryButton": "Get Free Quote",
-      "secondaryButton": "View Services"
+      "title": "Your project could be next",
+      "description": "Same process, same quality — tailored to your business.",
+      "primaryButton": "Start a Conversation",
+      "secondaryButton": "See How I Work"
     }
   },
   "cookieConsent": {
