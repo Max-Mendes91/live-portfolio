@@ -90,7 +90,7 @@ const WorkGrid: React.FC<WorkGridProps> = ({ dictionary }) => {
 
                 {/* Description */}
                 <p className="text-text-secondary text-xs md:text-sm leading-relaxed min-h-[60px] md:min-h-[80px]">
-                  {project.description}
+                  {project.shortDescription}
                 </p>
 
                 {/* Metric */}

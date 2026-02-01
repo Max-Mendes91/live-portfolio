@@ -307,6 +307,7 @@
       {
         "id": "flowmate",
         "title": "FlowMate — Platforma AI do Zarządzania Emailami",
+        "shortDescription": "Samodzielnie zbudowany SaaS. Generowanie treści AI, wielokanałowy email, 300+ godzin kodu — działa na produkcji.",
         "description": "Produkcyjna platforma SaaS w Next.js i React do zarządzania dużymi wolumenami e-maili i komunikacji. Architektura full-stack z bezpieczną autoryzacją, przetwarzaniem asynchronicznym i integracjami AI, obsługująca realne obciążenia na skalę.",
         "metric": "Uruchomiony styczeń 2026 · 300+ godzin rozwoju · Integracja AI z wieloma kanałami",
         "href": "/pl/projekty",
@@ -321,6 +322,7 @@
         "id": "markmind",
         "title": "MarkMind V2 — Rozwój Rozszerzenia Chrome",
         "role": "Rola Współtwórcy",
+        "shortDescription": "Rozwijam funkcje AI dla rozszerzenia Chrome z 400+ aktywnymi użytkownikami.",
         "description": "Współpracuję z zespołem MarkMind przy tworzeniu wersji V2 tego menedżera zakładek opartego na AI. Biorę udział w rozwoju funkcji i integracji AI dla rozszerzenia Chrome obsługującego 401+ aktywnych użytkowników w produkcji.",
         "metric": "401+ Użytkowników · V2 w Rozwoju",
         "href": "/pl/projekty",
@@ -334,6 +336,7 @@
       {
         "id": "portfolio",
         "title": "maxmendes.dev — Dwujęzyczne Portfolio Programisty",
+        "shortDescription": "Dwujęzyczne. Szybkie. Zoptymalizowane pod SEO. Właśnie na nie patrzysz.",
         "description": "Strona portfolio w Next.js 15. Dwujęzyczna PL/EN z lokalizowanymi ścieżkami URL, strukturalnymi danymi JSON-LD, tagami hreflang i optymalizacją Core Web Vitals. Strona, na której właśnie jesteś.",
         "metric": "Dwujęzyczne · Lokalizowane URL · SEO",
         "href": "/pl/projekty",

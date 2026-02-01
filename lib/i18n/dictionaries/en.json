@@ -299,6 +299,7 @@
       {
         "id": "flowmate",
         "title": "FlowMate — AI Email Management Platform",
+        "shortDescription": "Solo-built SaaS. AI content generation, multi-channel email, 300+ hours of code — now live.",
         "description": "Production SaaS platform built with Next.js and React for high-volume email and messaging management. Full-stack architecture with secure authentication, async processing, and AI integrations handling real workloads at scale.",
         "metric": "Launched January 2026 · 300+ dev hours · Multi-channel AI integration",
         "href": "/en/projects",
@@ -313,6 +314,7 @@
         "id": "markmind",
         "title": "MarkMind V2 — Chrome Extension Development",
         "role": "Contributor Role",
+        "shortDescription": "Contributing AI features to a Chrome extension with 400+ active users.",
         "description": "Working with the MarkMind team to develop V2 of this AI-powered bookmark manager. Contributing to feature development and AI integration for a Chrome extension that serves 401+ active users in production.",
         "metric": "401+ Users · V2 in Development",
         "href": "/en/projects",
@@ -326,6 +328,7 @@
       {
         "id": "portfolio",
         "title": "maxmendes.dev — Bilingual Developer Portfolio",
+        "shortDescription": "Bilingual. Fast. SEO-optimized. You're looking at it.",
         "description": "Full-stack portfolio site built with Next.js 15. Bilingual EN/PL with localized URL routing, JSON-LD structured data, hreflang tags, and Core Web Vitals optimization. The site you're on right now.",
         "metric": "Bilingual · Localized URLs · SEO-Optimized",
         "href": "/en/projects",
