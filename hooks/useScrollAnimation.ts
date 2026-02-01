@@ -108,5 +108,3 @@ export function useScrollAnimationGroup(
 
   return containerRef;
 }
-
-export default useScrollAnimation;

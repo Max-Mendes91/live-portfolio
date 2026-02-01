@@ -105,5 +105,3 @@ export function useIsSafari(): boolean {
 
   return isSafari;
 }
-
-export default useMediaQuery;

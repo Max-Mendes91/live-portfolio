@@ -190,5 +190,3 @@ export function useSimpleParallax({
     isInView,
   };
 }
-
-export default useParallax;

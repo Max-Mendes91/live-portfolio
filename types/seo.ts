@@ -31,47 +31,6 @@ export interface SiteConfig {
   owner: SiteOwner;
 }
 
-export interface PageMeta {
-  title: string;
-  description: string;
-  keywords?: string[];
-  canonical?: string;
-  ogImage?: string;
-  noIndex?: boolean;
-}
-
-export interface LocalizedContent {
-  en: string;
-  pl: string;
-}
-
-export interface SEOService {
-  id: string;
-  slug: LocalizedContent;
-  title: LocalizedContent;
-  description: LocalizedContent;
-  features: {
-    en: string[];
-    pl: string[];
-  };
-  keywords: {
-    en: string[];
-    pl: string[];
-  };
-}
-
-export interface FAQItem {
-  question: LocalizedContent;
-  answer: LocalizedContent;
-}
-
-export interface ProcessStep {
-  id: string;
-  number: string;
-  title: LocalizedContent;
-  description: LocalizedContent;
-}
-
 // JSON-LD Schema Types
 export interface PersonSchema {
   '@context': 'https://schema.org';

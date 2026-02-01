@@ -7,7 +7,9 @@
     "dev:network": "next dev --turbo -H 0.0.0.0",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "knip": "knip",
+    "knip:fix": "knip --fix"
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",

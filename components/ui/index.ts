@@ -52,4 +52,3 @@ export { default as BinderClip } from './BinderClip';
 export { default as PulseBadge } from './PulseBadge';
 export { default as GlowButton } from './GlowButton';
 export { default as CornerGlowButton } from './CornerGlowButton';
-export { default as Marquee } from './Marquee';
