@@ -12,7 +12,7 @@ import PulseBadge from '@/components/ui/PulseBadge';
 import { Display, Heading, Text, BinderClip } from '@/components/ui';
 import { Dictionary, SupportedLocale } from '@/types/i18n';
 import { SITE_CONFIG } from '@/lib/seo/config';
-import { useIsDesktop, usePrefersReducedMotion } from '@/hooks/useMediaQuery';
+import { useIsDesktop, usePrefersReducedMotion, useIsMobile } from '@/hooks/useMediaQuery';
 
 interface AboutClientProps {
   locale: SupportedLocale;
@@ -77,8 +77,11 @@ function linkifyBio(text: string): React.ReactNode {
 const AboutClient: React.FC<AboutClientProps> = ({ locale, dictionary }) => {
   const { aboutPage, nav, footer } = dictionary;
   const isDesktop = useIsDesktop();
+  const isMobile = useIsMobile();
   const prefersReducedMotion = usePrefersReducedMotion();
   const shouldUseViewportTrigger = isDesktop && !prefersReducedMotion;
+  // On mobile, skip heavy animations - use simple fade or no animation
+  const skipHeavyAnimations = isMobile || prefersReducedMotion;
 
   if (!aboutPage) return null;
 
@@ -95,14 +98,14 @@ const AboutClient: React.FC<AboutClientProps> = ({ locale, dictionary }) => {
       {/* Hero Section */}
       <section className="relative pt-24 sm:pt-32 md:pt-40 lg:pt-48 pb-4 overflow-hidden">
         <motion.div
-          initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 200, scale: prefersReducedMotion ? 1 : 0.98 }}
+          initial={{ opacity: skipHeavyAnimations ? 1 : 0, y: skipHeavyAnimations ? 0 : 200, scale: skipHeavyAnimations ? 1 : 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{
-            duration: prefersReducedMotion ? 0.15 : 1.6,
+            duration: skipHeavyAnimations ? 0.15 : 1.6,
             ease: [0.22, 1, 0.36, 1],
-            ...(!prefersReducedMotion ? { y: { type: "spring", damping: 25, stiffness: 80, mass: 1.2 } } : {}),
+            ...(!skipHeavyAnimations ? { y: { type: "spring", damping: 25, stiffness: 80, mass: 1.2 } } : {}),
           }}
-          style={{ willChange: 'transform, opacity' }}
+          style={skipHeavyAnimations ? undefined : { willChange: 'transform, opacity' }}
           className="relative max-w-4xl mx-auto border-t border-white/10 rounded-t-[1.5rem] sm:rounded-t-[2rem] pt-12 sm:pt-16 md:pt-20 lg:pt-32 pb-10 sm:pb-12 md:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-12 overflow-hidden"
         >
           {/* Mesh Gradient Background */}

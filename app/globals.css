@@ -414,6 +414,135 @@ textarea:-webkit-autofill:active {
 }
 
 /* ============================================
+   HERO MOBILE CSS ANIMATIONS
+   Pure CSS entrance animations for mobile performance
+   Replaces Framer Motion on mobile to reduce JS bundle
+   ============================================ */
+
+/* Hero entrance animations - CSS only, no JS required */
+/* IMPORTANT: These animations do NOT hide content - they start visible for LCP */
+@keyframes heroFadeIn {
+  from {
+    opacity: 0.95;
+    transform: scale(0.995);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes heroSlideUp {
+  from {
+    opacity: 0.95;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroPulse {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+/* Hero animations - CSS-first approach for better LCP */
+/* Content is VISIBLE by default, animations enhance but don't hide */
+
+/* Badge + Headline group - visible immediately */
+.hero-animate-badge {
+  animation: heroFadeIn 0.5s var(--ease-smooth) forwards;
+}
+
+/* Subheadline + Description + CTAs - visible immediately, slight slide up */
+.hero-animate-content {
+  animation: heroSlideUp 0.5s var(--ease-smooth) 0.1s both;
+}
+
+/* Trust signals - visible immediately */
+.hero-animate-trust {
+  animation: heroFadeIn 0.4s var(--ease-smooth) 0.2s both;
+}
+
+/* Scroll indicator pulse */
+.hero-scroll-indicator {
+  animation: heroPulse 1.5s ease-in-out infinite;
+}
+
+/* Disable parallax on mobile - static positioning */
+.hero-parallax-disabled {
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+/* Ensure Hero H1 is visible for LCP - critical for performance */
+.hero-headline-visible {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* CRITICAL: Force ALL content visible on mobile via CSS */
+/* This overrides Framer Motion inline styles - prioritizes LCP over animations */
+@media (max-width: 1023px) {
+  /* Force ALL elements to be visible - nuclear option for mobile performance */
+  /* This ensures LCP element (hero text) is visible immediately */
+  [style*="opacity"],
+  [style*="transform"],
+  [style*="visibility"] {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+
+  /* Except for intentionally hidden elements */
+  .intro-overlay,
+  [aria-hidden="true"] {
+    /* Allow these to control their own visibility */
+  }
+
+  /* Hero content must be visible for LCP */
+  .hero-content-wrapper,
+  .hero-headline-visible,
+  main section,
+  main section > div,
+  main h1,
+  main h2,
+  main p {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+  }
+
+  /* Disable sticky footer reveal on mobile - causes overlap issues */
+  .sticky.bottom-0.z-0 {
+    position: relative !important;
+    height: auto !important;
+  }
+
+  /* Remove footer reveal spacer on mobile */
+  .h-\[20vh\] {
+    height: 0 !important;
+  }
+}
+
+/* Reduced motion: instant visibility, no animations */
+@media (prefers-reduced-motion: reduce) {
+  .hero-animate-badge,
+  .hero-animate-content,
+  .hero-animate-trust {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-scroll-indicator {
+    animation: none;
+  }
+}
+
+/* ============================================
    MESH GRADIENT BACKGROUND
    Pure CSS animated gradient - GPU composited
    Original: mshr.app, colors adapted for portfolio

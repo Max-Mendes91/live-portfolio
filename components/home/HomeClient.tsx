@@ -24,58 +24,64 @@ interface HomeClientProps {
 
 export default function HomeClient({ locale, dictionary, skipIntro = false }: HomeClientProps) {
   const skipIntroRef = useRef(skipIntro);
-  // Don't show intro overlay until we've checked sessionStorage (prevents flash on returning visit)
+  // Track if we've determined what to show (prevents content flash before decision)
+  const [isReady, setIsReady] = useState(skipIntro);
+  // Show intro for first-time visitors
   const [shouldShowIntro, setShouldShowIntro] = useState(false);
   const [introComplete, setIntroComplete] = useState(skipIntro);
-  const [showHero, setShowHero] = useState(skipIntro);
+  // Controls hero animations - true = start animations
+  const [heroReady, setHeroReady] = useState(skipIntro);
   const [isMobileIntro, setIsMobileIntro] = useState(false);
   const isSafari = useIsSafari();
 
-  // useLayoutEffect runs before browser paint — prevents flash of navbar
+  // useLayoutEffect runs before browser paint — prevents flash
   useLayoutEffect(() => {
     // Reset scroll — Safari restores scroll position on back-navigation
     window.scrollTo(0, 0);
 
-    // Server detected bot/Lighthouse — intro already skipped via initial state
+    // Server detected bot/Lighthouse — intro already skipped
     if (skipIntroRef.current) {
-      setShowHero(true);
+      setIsReady(true);
+      setHeroReady(true);
       return;
     }
 
-    // Local detection for synchronous timer setup (hook value isn't ready yet)
+    // Local detection for synchronous timer setup
     const safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-    const mobile = window.innerWidth < 640;
+    const mobile = window.innerWidth < 1024; // Skip intro on mobile/tablet for performance
 
     let hasSeenIntro = false;
     try {
       hasSeenIntro = sessionStorage.getItem('hasSeenIntro') === 'true';
     } catch { /* sessionStorage unavailable */ }
 
-    if (hasSeenIntro) {
-      // Returning visitor - skip intro entirely, no flash
+    // Skip intro on mobile for better LCP performance
+    if (hasSeenIntro || mobile) {
       skipIntroRef.current = true;
       setIntroComplete(true);
-      setShowHero(true);
+      setHeroReady(true);
+      setIsReady(true);
+      if (!hasSeenIntro) {
+        try { sessionStorage.setItem('hasSeenIntro', 'true'); } catch {}
+      }
       return;
     }
 
-    // First-time visitor - show intro animation
+    // Desktop first-time visitor - show intro animation
     setShouldShowIntro(true);
-    setIsMobileIntro(mobile);
+    setIsMobileIntro(false); // Only desktop gets intro now
+    setIsReady(true);
 
-    // Mobile: fast logo splash (~800ms)
-    // Safari desktop: tighter timing (lighter fade animation)
-    // Others: original timing (heavier slide-down animation)
-    const introDelay = mobile ? 800 : (safari ? 1200 : 1500);
-    // Show hero BEFORE overlay starts exiting so content is ready behind it
-    const heroDelay = mobile ? 700 : (safari ? 1100 : 1400);
+    // Desktop timing
+    const introDelay = safari ? 1200 : 1500;
+    const heroDelay = safari ? 1100 : 1400;
 
     const timer = setTimeout(() => {
       setIntroComplete(true);
     }, introDelay);
 
     const heroTimer = setTimeout(() => {
-      setShowHero(true);
+      setHeroReady(true);
       try { sessionStorage.setItem('hasSeenIntro', 'true'); } catch {}
     }, heroDelay);
 
@@ -91,12 +97,20 @@ export default function HomeClient({ locale, dictionary, skipIntro = false }: Ho
   return (
     <div className="relative bg-background selection:bg-white/10" style={{ backfaceVisibility: 'hidden' }}>
       <HomePageJsonLd locale={locale} homePageData={dictionary.homePage} />
-      <Navbar locale={locale} dictionary={dictionary.nav} />
 
-      {/* Intro Overlay — only rendered for first-time visitors after sessionStorage check
-          This prevents flash on returning visits or locale switch */}
+      {/* Black screen until we determine what to show (desktop only) */}
+      {!isReady && (
+        <div className="fixed inset-0 z-[100] bg-background lg:block hidden" />
+      )}
+
+      {/* Navbar - hidden during intro on desktop only */}
+      <div className={introComplete ? '' : 'lg:invisible'}>
+        <Navbar locale={locale} dictionary={dictionary.nav} />
+      </div>
+
+      {/* Intro Overlay — only rendered for first-time visitors */}
       <AnimatePresence>
-        {shouldShowIntro && !introComplete && (
+        {isReady && shouldShowIntro && !introComplete && (
           <motion.div
             initial={{ opacity: 1 }}
             exit={isMobileIntro ? { opacity: 0 } : (isSafari ? { opacity: 0 } : { y: '100vh' })}
@@ -108,13 +122,8 @@ export default function HomeClient({ locale, dictionary, skipIntro = false }: Ho
             className="intro-overlay fixed inset-0 z-[100] bg-background flex items-center justify-center overflow-hidden"
           >
             {isMobileIntro ? (
-              /* Mobile: Simple logo splash */
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, ease: 'easeOut' }}
-                className="flex flex-col items-center gap-4"
-              >
+              /* Mobile: Logo visible immediately, then overlay fades out */
+              <div className="flex flex-col items-center gap-4">
                 <Image
                   src="/navbar-logo.webp"
                   alt="Max Mendes"
@@ -123,28 +132,24 @@ export default function HomeClient({ locale, dictionary, skipIntro = false }: Ho
                   priority
                   className="opacity-90"
                 />
-              </motion.div>
+              </div>
             ) : (
-              /* Desktop: Full AboutMe component */
-              <motion.div
-                initial={isSafari ? { opacity: 0 } : { opacity: 0, scale: 0.9 }}
-                animate={isSafari ? { opacity: 1 } : { opacity: 1, scale: 1 }}
-                transition={{ duration: isSafari ? 0.6 : 0.8, ease: 'easeOut' }}
-                className="w-full h-full"
-              >
-                <AboutMe dictionary={dictionary.about} />
-              </motion.div>
+              /* Desktop: Full AboutMe component with intro animation */
+              <div className="w-full h-full">
+                <AboutMe dictionary={dictionary.about} isIntro />
+              </div>
             )}
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Main Content Stack — visibility hides until intro finishes,
-           Hero handles its own entrance animation via isReady */}
+      {/* Main Content Stack — hidden during intro on desktop only */}
       <div
-        className={`relative z-10 bg-background shadow-[0_50px_100px_rgba(0,0,0,0.5)]${!showHero ? ' invisible' : ''}`}
+        className={`relative z-10 bg-background shadow-[0_50px_100px_rgba(0,0,0,0.5)] ${
+          (isReady && (introComplete || !shouldShowIntro)) ? '' : 'lg:invisible'
+        }`}
       >
-        <Hero dictionary={dictionary.hero} isReady={showHero} locale={locale} />
+        <Hero dictionary={dictionary.hero} isReady={heroReady} locale={locale} />
         <AboutMe dictionary={dictionary.about} />
         <WorkGrid dictionary={dictionary.workGrid} />
         <ServiceSection dictionary={dictionary.services} />
@@ -154,8 +159,12 @@ export default function HomeClient({ locale, dictionary, skipIntro = false }: Ho
         <div className="h-[20vh]" />
       </div>
 
-      {/* Sticky Reveal Footer */}
-      <div className="sticky bottom-0 z-0 h-screen w-full" style={{ visibility: showHero ? 'visible' : 'hidden' }}>
+      {/* Sticky Reveal Footer - hidden during intro on desktop only */}
+      <div
+        className={`sticky bottom-0 z-0 h-screen w-full ${
+          (isReady && (introComplete || !shouldShowIntro)) ? '' : 'lg:invisible'
+        }`}
+      >
         <FooterSection locale={locale} dictionary={dictionary.footer} useHeroGradient />
       </div>
     </div>

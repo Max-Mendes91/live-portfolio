@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { AboutDict } from '@/types/i18n';
 import { useScrollAnimationGroup } from '@/hooks/useScrollAnimation';
@@ -38,9 +39,10 @@ const ABOUT_FLOATING_ICONS: FloatingIconConfig[] = [
 
 interface AboutMeProps {
   dictionary?: AboutDict;
+  isIntro?: boolean; // True when rendered in intro overlay
 }
 
-const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
+const AboutMe: React.FC<AboutMeProps> = ({ dictionary, isIntro = false }) => {
   const containerRef = useScrollAnimationGroup();
 
   // Fallback content for backward compatibility
@@ -64,72 +66,147 @@ const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
       <div ref={containerRef} className="max-w-7xl mx-auto pt-10 sm:pt-14 md:pt-20 pb-16 sm:pb-20 md:pb-24 px-4 sm:px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-start">
           {/* Left Column: Bio & Info */}
-          <div className="animate-on-scroll fade-in-left">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light tracking-tighter mb-3 sm:mb-4 text-text-primary">
-              {content.headline}
-            </h2>
-
-            <p className="text-text-muted text-sm sm:text-base md:text-lg mb-5 sm:mb-6 md:mb-8">
-              {content.subheadline}
-            </p>
-
-            <p className="text-text-secondary text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-lg mb-4 sm:mb-6">
-              {content.description}
-            </p>
-
-            {content.description2 && (
-              <p className="text-text-secondary text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-lg mb-6 sm:mb-8">
-                {content.description2}
-              </p>
-            )}
-
-            {/* Learn More Link - Internal link for SEO */}
-            <Link
-              href={content.learnMoreHref}
-              className="inline-flex items-center gap-2 text-text-primary hover:text-text-secondary transition-colors mb-6 sm:mb-8 md:mb-10 group text-sm sm:text-base"
+          {isIntro ? (
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{
+                duration: 1.2,
+                ease: [0.16, 1, 0.3, 1],
+                delay: 0.2,
+              }}
             >
-              <span className="underline underline-offset-4 decoration-white/30 group-hover:decoration-white/60">
-                {content.learnMoreText}
-              </span>
-              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light tracking-tighter mb-3 sm:mb-4 text-text-primary">
+                {content.headline}
+              </h2>
 
-            <div className="h-[1px] bg-white/10 w-full mb-6 sm:mb-8 md:mb-10" />
+              <p className="text-text-muted text-sm sm:text-base md:text-lg mb-5 sm:mb-6 md:mb-8">
+                {content.subheadline}
+              </p>
 
-            {/* Trust Badges */}
-            <div className="flex flex-wrap gap-2 sm:gap-3">
-              {content.trustBadges.map((badge) => (
-                <span
-                  key={badge}
-                  className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-surface border border-border-subtle text-[9px] sm:text-[10px] font-medium uppercase tracking-wider sm:tracking-widest text-text-secondary hover:border-border transition-colors cursor-default"
-                >
-                  {badge}
+              <p className="text-text-secondary text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-lg mb-4 sm:mb-6">
+                {content.description}
+              </p>
+
+              {content.description2 && (
+                <p className="text-text-secondary text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-lg mb-6 sm:mb-8">
+                  {content.description2}
+                </p>
+              )}
+
+              <Link
+                href={content.learnMoreHref}
+                className="inline-flex items-center gap-2 text-text-primary hover:text-text-secondary transition-colors mb-6 sm:mb-8 md:mb-10 group text-sm sm:text-base"
+              >
+                <span className="underline underline-offset-4 decoration-white/30 group-hover:decoration-white/60">
+                  {content.learnMoreText}
                 </span>
-              ))}
+                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+
+              <div className="h-[1px] bg-white/10 w-full mb-6 sm:mb-8 md:mb-10" />
+
+              <div className="flex flex-wrap gap-2 sm:gap-3">
+                {content.trustBadges.map((badge) => (
+                  <span
+                    key={badge}
+                    className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-surface border border-border-subtle text-[9px] sm:text-[10px] font-medium uppercase tracking-wider sm:tracking-widest text-text-secondary hover:border-border transition-colors cursor-default"
+                  >
+                    {badge}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ) : (
+            <div className="animate-on-scroll fade-in-left">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light tracking-tighter mb-3 sm:mb-4 text-text-primary">
+                {content.headline}
+              </h2>
+
+              <p className="text-text-muted text-sm sm:text-base md:text-lg mb-5 sm:mb-6 md:mb-8">
+                {content.subheadline}
+              </p>
+
+              <p className="text-text-secondary text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-lg mb-4 sm:mb-6">
+                {content.description}
+              </p>
+
+              {content.description2 && (
+                <p className="text-text-secondary text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-lg mb-6 sm:mb-8">
+                  {content.description2}
+                </p>
+              )}
+
+              <Link
+                href={content.learnMoreHref}
+                className="inline-flex items-center gap-2 text-text-primary hover:text-text-secondary transition-colors mb-6 sm:mb-8 md:mb-10 group text-sm sm:text-base"
+              >
+                <span className="underline underline-offset-4 decoration-white/30 group-hover:decoration-white/60">
+                  {content.learnMoreText}
+                </span>
+                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+
+              <div className="h-[1px] bg-white/10 w-full mb-6 sm:mb-8 md:mb-10" />
+
+              <div className="flex flex-wrap gap-2 sm:gap-3">
+                {content.trustBadges.map((badge) => (
+                  <span
+                    key={badge}
+                    className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-surface border border-border-subtle text-[9px] sm:text-[10px] font-medium uppercase tracking-wider sm:tracking-widest text-text-secondary hover:border-border transition-colors cursor-default"
+                  >
+                    {badge}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Right Column: Image + Floating Icons */}
           <div className="flex flex-col gap-6 lg:gap-8">
-            {/* Image — plain div so it paints from server HTML
-                 without waiting for JS hydration (critical for LCP) */}
-            <div className="group relative aspect-[4/5] xl:aspect-square overflow-hidden rounded-2xl sm:rounded-3xl">
-              <Image
-                src="/images/aboutme.webp"
-                alt="Max Mendes - Full Stack Web Developer based in Poland, specializing in React and Next.js development"
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1023px) 90vw, 45vw"
-                quality={75}
-                priority
-                fetchPriority="high"
-                style={{ objectFit: 'cover', objectPosition: 'top' }}
-                className="grayscale"
-              />
-              {/* Hover overlay - opacity transition instead of filter (GPU-composited) */}
-              <div className="absolute inset-0 bg-black/10 opacity-100 group-hover:opacity-0 transition-opacity duration-700 pointer-events-none" />
-              {/* Subtle glow behind the image */}
-              <div className="absolute -inset-4 bg-white/5 blur-3xl -z-10 rounded-full" />
-            </div>
+            {/* Image — with intro animation when in splash overlay */}
+            {isIntro ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{
+                  duration: 1.2,
+                  ease: [0.16, 1, 0.3, 1],
+                  delay: 0.1,
+                }}
+                className="group relative aspect-[4/5] xl:aspect-square overflow-hidden rounded-2xl sm:rounded-3xl"
+              >
+                <Image
+                  src="/images/aboutme.webp"
+                  alt="Max Mendes - Full Stack Web Developer based in Poland, specializing in React and Next.js development"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1023px) 90vw, 45vw"
+                  quality={75}
+                  priority
+                  fetchPriority="high"
+                  style={{ objectFit: 'cover', objectPosition: 'top' }}
+                  className="grayscale"
+                />
+                <div className="absolute inset-0 bg-black/10 opacity-100 group-hover:opacity-0 transition-opacity duration-700 pointer-events-none" />
+                <div className="absolute -inset-4 bg-white/5 blur-3xl -z-10 rounded-full" />
+              </motion.div>
+            ) : (
+              <div className="group relative aspect-[4/5] xl:aspect-square overflow-hidden rounded-2xl sm:rounded-3xl">
+                <Image
+                  src="/images/aboutme.webp"
+                  alt="Max Mendes - Full Stack Web Developer based in Poland, specializing in React and Next.js development"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1023px) 90vw, 45vw"
+                  quality={75}
+                  priority
+                  fetchPriority="high"
+                  style={{ objectFit: 'cover', objectPosition: 'top' }}
+                  className="grayscale"
+                />
+                <div className="absolute inset-0 bg-black/10 opacity-100 group-hover:opacity-0 transition-opacity duration-700 pointer-events-none" />
+                <div className="absolute -inset-4 bg-white/5 blur-3xl -z-10 rounded-full" />
+              </div>
+            )}
 
             {/* Floating Icons - Desktop/Laptop only (lg: 1024px+) */}
             <div className="hidden lg:block relative h-52 xl:h-60">

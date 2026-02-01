@@ -12,7 +12,7 @@ import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import { BinderClip } from '@/components/ui';
 import { SupportedLocale } from '@/types/seo';
 import { Dictionary } from '@/types/i18n';
-import { useIsDesktop, usePrefersReducedMotion } from '@/hooks/useMediaQuery';
+import { useIsDesktop, usePrefersReducedMotion, useIsMobile } from '@/hooks/useMediaQuery';
 
 interface ProjectsClientProps {
   locale: SupportedLocale;
@@ -25,8 +25,10 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
 }) => {
   const { projectsPage, workGrid, nav, footer } = dictionary;
   const isDesktop = useIsDesktop();
+  const isMobile = useIsMobile();
   const prefersReducedMotion = usePrefersReducedMotion();
   const shouldUseViewportTrigger = isDesktop && !prefersReducedMotion;
+  const skipHeavyAnimations = isMobile || prefersReducedMotion;
 
   if (!projectsPage || !workGrid) return null;
 
@@ -44,14 +46,14 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
           {/* Hero Section */}
           <section className="relative pt-24 sm:pt-32 md:pt-40 lg:pt-48 pb-4 overflow-hidden">
             <motion.div
-              initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 200, scale: prefersReducedMotion ? 1 : 0.98 }}
+              initial={{ opacity: skipHeavyAnimations ? 1 : 0, y: skipHeavyAnimations ? 0 : 200, scale: skipHeavyAnimations ? 1 : 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{
-                duration: prefersReducedMotion ? 0.15 : 1.6,
+                duration: skipHeavyAnimations ? 0.15 : 1.6,
                 ease: [0.22, 1, 0.36, 1],
-                ...(!prefersReducedMotion ? { y: { type: 'spring', damping: 25, stiffness: 80, mass: 1.2 } } : {}),
+                ...(!skipHeavyAnimations ? { y: { type: 'spring', damping: 25, stiffness: 80, mass: 1.2 } } : {}),
               }}
-              style={{ willChange: 'transform, opacity' }}
+              style={skipHeavyAnimations ? undefined : { willChange: 'transform, opacity' }}
               className="relative max-w-4xl mx-auto"
             >
               {/* Binder Clips */}

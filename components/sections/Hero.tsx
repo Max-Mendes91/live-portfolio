@@ -6,7 +6,7 @@ import { Trophy, FolderOpen, Globe, Languages, ChevronDown } from 'lucide-react'
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import { SITE_CONFIG } from '@/lib/seo/config';
 import { HeroDict } from '@/types/i18n';
-import { usePrefersReducedMotion, useIsSafari } from '@/hooks/useMediaQuery';
+import { usePrefersReducedMotion, useIsSafari, useIsMobile, useIsDesktop } from '@/hooks/useMediaQuery';
 import { SupportedLocale } from '@/types/seo';
 
 interface HeroProps {
@@ -55,21 +55,27 @@ const Hero: React.FC<HeroProps> = ({ dictionary, isReady = true, locale = 'en' }
   const [wheelY, setWheelY] = useState(0);
   const prefersReducedMotion = usePrefersReducedMotion();
   const isSafari = useIsSafari();
-  // Safari: lighter animations to avoid jank during intro overlay crossfade
-  const lite = isSafari || prefersReducedMotion;
+  const isMobile = useIsMobile();
 
-  // Only track scroll when hero is in view - prevents unnecessary re-renders
+  // Safari or mobile: lighter animations
+  // Mobile uses CSS animations, desktop uses Framer Motion
+  const lite = isSafari || prefersReducedMotion || isMobile;
+
+  // Only track scroll on desktop (lg: 1024px+) - mobile/tablet uses CSS, no parallax
+  const isDesktop = useIsDesktop();
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, 600], [1, 0]);
   const yContent = useTransform(scrollY, [0, 600], [0, 100]);
 
-  // Memoize static motion values when hero is out of view
+  // Static values for mobile/tablet - no scroll parallax
+  // This ensures content is always visible regardless of scroll position
   const motionStyle = useMemo(() => {
-    if (prefersReducedMotion) {
+    // Always use static values on mobile, tablet, or reduced motion
+    if (prefersReducedMotion || isMobile || !isDesktop) {
       return { opacity: 1, y: 0 };
     }
     return { opacity, y: yContent };
-  }, [prefersReducedMotion, opacity, yContent]);
+  }, [prefersReducedMotion, isMobile, isDesktop, opacity, yContent]);
 
   // Fallback values for backward compatibility
   const content = {
@@ -90,36 +96,122 @@ const Hero: React.FC<HeroProps> = ({ dictionary, isReady = true, locale = 'en' }
   };
 
   useEffect(() => {
-    // Don't run wheel animation for users who prefer reduced motion
-    if (prefersReducedMotion) return;
+    // Don't run wheel animation for users who prefer reduced motion or on mobile
+    if (prefersReducedMotion || isMobile) return;
 
     const interval = setInterval(() => {
       setWheelY(5);
       setTimeout(() => setWheelY(0), 1000);
     }, 4500);
     return () => clearInterval(interval);
-  }, [prefersReducedMotion]);
+  }, [prefersReducedMotion, isMobile]);
 
+  // Mobile: Pure CSS animations (no Framer Motion)
+  // This renders immediately without waiting for JS hydration
+  if (isMobile) {
+    return (
+      <section ref={heroRef} className="relative min-h-screen w-full flex flex-col items-center justify-center pt-16 sm:pt-20 pb-20 sm:pb-24 px-4 sm:px-6 overflow-hidden">
+        <HeroGradientBackground />
+
+        <div className="relative z-10 text-center max-w-7xl flex flex-col items-center hero-parallax-disabled">
+          <div className="flex flex-col items-center">
+            {/* Badge + H1 — CSS fade in */}
+            <div className="flex flex-col items-center hero-animate-badge">
+              {/* The Pill Gradient Fade */}
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border-l border-t border-b border-white/20 border-r-transparent bg-gradient-to-r from-white/10 via-white/5 to-transparent backdrop-blur-sm mb-4 w-fit">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]"></span>
+                </span>
+                <span className="text-[9px] font-medium tracking-[0.2em] text-white uppercase opacity-80">
+                  {content.badge}
+                </span>
+              </div>
+
+              {/* Headline */}
+              <h1 className="text-3xl font-light tracking-tighter leading-[1.1] pb-1 mb-3 select-none text-text-primary max-w-[1200px]">
+                {content.headline}
+              </h1>
+            </div>
+
+            {/* Subheadline, description, CTAs — CSS slide up */}
+            <div className="flex flex-col items-center hero-animate-content">
+              <h2 className="text-base font-light tracking-tight text-text-secondary mb-4">
+                {content.subheadline}
+              </h2>
+
+              <p className="font-light tracking-tight text-text-secondary text-xs max-w-2xl mx-auto mb-6 leading-relaxed opacity-90 px-2">
+                {content.description}
+              </p>
+
+              <div className="flex flex-col items-center gap-2 mb-5">
+                <div className="flex flex-col items-center justify-center gap-3 relative">
+                  <CornerGlowButton href={locale === 'pl' ? '/pl/kontakt' : '/en/contact'}>{content.ctaPrimary}</CornerGlowButton>
+                  <CornerGlowButton href={locale === 'pl' ? '/pl/projekty' : '/en/projects'}>{content.ctaSecondary}</CornerGlowButton>
+                </div>
+                <p className="text-xs text-text-muted">
+                  {content.phoneLabel}{' '}
+                  <a
+                    href={`tel:${SITE_CONFIG.owner.phone.replace(/\s/g, '')}`}
+                    className="text-text-secondary hover:text-text-primary transition-colors"
+                  >
+                    {SITE_CONFIG.owner.phone}
+                  </a>
+                </p>
+              </div>
+            </div>
+
+            {/* Trust Signals — CSS fade in last */}
+            <div className="flex flex-wrap items-center justify-center gap-2 px-2 hero-animate-trust">
+              {content.trustSignals.map((signal) => {
+                const IconComponent = iconMap[signal.icon as keyof typeof iconMap];
+                return (
+                  <div
+                    key={signal.label}
+                    className="flex items-center gap-1.5 px-2 py-1 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm"
+                  >
+                    {IconComponent && <IconComponent className="w-3 h-3 text-text-muted" />}
+                    <span className="text-[9px] font-medium tracking-wide text-text-secondary">
+                      {signal.label}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll indicator with CSS pulse animation */}
+        <div className="absolute bottom-6 w-full flex items-center justify-center px-4 z-20">
+          <div className="flex items-center hero-scroll-indicator">
+            <ChevronDown className="w-6 h-6 text-text-muted" />
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Desktop: Full Framer Motion animations with scroll parallax
   return (
     <section ref={heroRef} className="relative min-h-screen w-full flex flex-col items-center justify-center pt-16 sm:pt-20 pb-20 sm:pb-24 px-4 sm:px-6 overflow-hidden">
       <HeroGradientBackground />
 
       <motion.div
-        style={isInView ? motionStyle : { opacity: 1, y: 0 }}
-        className="relative z-10 text-center max-w-7xl flex flex-col items-center"
+        style={isDesktop && isInView ? motionStyle : undefined}
+        className="relative z-10 text-center max-w-7xl flex flex-col items-center hero-content-wrapper"
       >
         <div className="flex flex-col items-center">
-          {/* Top group: Badge + H1 — fade in (no y-offset to avoid overflow:hidden clipping) */}
+          {/* Top group: Badge + H1 — drops down from top on full desktop, simple fade on Safari */}
           <motion.div
-            initial={{ opacity: 0, scale: lite ? 1 : 0.97 }}
-            animate={isReady ? { opacity: 1, scale: 1 } : undefined}
+            initial={{ opacity: 0, scale: lite ? 1 : 0.95, y: lite ? 0 : -80 }}
+            animate={isReady ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: lite ? 1 : 0.95, y: lite ? 0 : -80 }}
             transition={{
-              duration: lite ? 0.4 : 1.2,
+              duration: lite ? 0.4 : 1.4,
               ease: lite ? 'easeOut' : [0.16, 1, 0.3, 1]
             }}
-            className="flex flex-col items-center"
+            className="flex flex-col items-center hero-animate-badge"
           >
-            {/* Redline 3: The Pill Gradient Fade */}
+            {/* The Pill Gradient Fade */}
             <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border-l border-t border-b border-white/20 border-r-transparent bg-gradient-to-r from-white/10 via-white/5 to-transparent backdrop-blur-sm mb-4 sm:mb-6 w-fit">
               <span className="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
@@ -130,22 +222,22 @@ const Hero: React.FC<HeroProps> = ({ dictionary, isReady = true, locale = 'en' }
               </span>
             </div>
 
-            {/* Lighter Typography with Tight Tracking */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[90px] font-light tracking-tighter leading-[1.1] pb-1 sm:pb-2 mb-3 sm:mb-4 select-none text-text-primary max-w-[1200px]">
+            {/* Lighter Typography with Tight Tracking - hero-headline-visible ensures LCP */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[90px] font-light tracking-tighter leading-[1.1] pb-1 sm:pb-2 mb-3 sm:mb-4 select-none text-text-primary max-w-[1200px] hero-headline-visible">
               {content.headline}
             </h1>
           </motion.div>
 
-          {/* Bottom group: Subheadline, description, CTAs — slide up from below */}
+          {/* Bottom group: Subheadline, description, CTAs — slide up animation */}
           <motion.div
-            initial={{ opacity: 0, y: lite ? 0 : 30 }}
-            animate={isReady ? { opacity: 1, y: 0 } : undefined}
+            initial={{ opacity: 0, y: 40 }}
+            animate={isReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
             transition={{
               duration: lite ? 0.4 : 1.2,
               delay: lite ? 0.05 : 0.15,
               ease: lite ? 'easeOut' : [0.16, 1, 0.3, 1]
             }}
-            className="flex flex-col items-center"
+            className="flex flex-col items-center hero-animate-content"
           >
             <h2 className="text-base sm:text-lg md:text-xl font-light tracking-tight text-text-secondary mb-4 sm:mb-6">
               {content.subheadline}
@@ -172,16 +264,16 @@ const Hero: React.FC<HeroProps> = ({ dictionary, isReady = true, locale = 'en' }
             </div>
           </motion.div>
 
-          {/* Trust Signals — fade in last */}
+          {/* Trust Signals — fade in animation */}
           <motion.div
-            initial={{ opacity: 0, y: lite ? 0 : 15 }}
-            animate={isReady ? { opacity: 1, y: 0 } : undefined}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{
               duration: lite ? 0.3 : 0.8,
               delay: lite ? 0.15 : 0.6,
               ease: lite ? 'easeOut' : [0.16, 1, 0.3, 1]
             }}
-            className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-2 sm:px-0"
+            className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-2 sm:px-0 hero-animate-trust"
           >
             {content.trustSignals.map((signal) => {
               const IconComponent = iconMap[signal.icon as keyof typeof iconMap];
@@ -207,19 +299,6 @@ const Hero: React.FC<HeroProps> = ({ dictionary, isReady = true, locale = 'en' }
       >
         <div className="flex items-center">
           <span className="hidden sm:block text-[9px] sm:text-[10px] font-medium tracking-[0.2em] sm:tracking-[0.3em] text-text-muted uppercase whitespace-nowrap text-right mr-4 sm:mr-10">{content.scrollDown}</span>
-
-          {/* Mobile: Chevron arrow */}
-          <motion.div
-            animate={{ y: prefersReducedMotion ? 0 : [0, 6, 0] }}
-            transition={
-              prefersReducedMotion
-                ? { duration: 0 }
-                : { duration: 1.5, repeat: Infinity, ease: "easeInOut" }
-            }
-            className="sm:hidden"
-          >
-            <ChevronDown className="w-6 h-6 text-text-muted" />
-          </motion.div>
 
           {/* Desktop: Mouse scroll wheel */}
           <div className="hidden sm:flex w-5 h-8 rounded-full border border-white/20 justify-center p-1.5 backdrop-blur-[2px]">
