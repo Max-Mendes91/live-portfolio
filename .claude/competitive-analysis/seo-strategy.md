@@ -2,28 +2,17 @@
 
 > **Goal:** Rank on page 1 for target keywords within 6-7 months of domain launch
 > **Markets:** Częstochowa (local) > Śląsk > Poland > EU > UK/US
-> **Domain:** TBD (not yet chosen)
+> **Domain:** maxmendes.dev (live since Jan 2026)
 
 ---
 
-## Phase 0: Pre-Launch (Before Domain Goes Live)
+## Phase 0: Pre-Launch ✅ COMPLETED
 
-### Domain Selection Recommendations
-Choose a domain that:
-1. Contains a keyword OR is brandable
-2. Is `.dev`, `.com`, `.pl`, or `.eu`
-3. Is short and memorable
-
-**Options to consider:**
-| Domain | Pros | Cons |
-|--------|------|------|
-| `maxmendes.dev` | Personal brand, developer signal | No keywords |
-| `mendesdev.pl` | Local + dev signal | Less international |
-| `webdev-czestochowa.pl` | Exact match keyword | Less brandable |
-| `mendes.dev` | Short, memorable | May be taken |
-| `maxmendes.com` | International | Generic TLD |
-
-**Recommendation:** Personal brand domain (maxmendes.dev or similar) + strong on-page SEO is better long-term than keyword domain.
+### Domain Selection
+**Chosen:** `maxmendes.dev`
+- Personal brand + developer signal (.dev TLD)
+- International appeal
+- Strong on-page SEO compensates for no keywords in domain
 
 ---
 
@@ -45,13 +34,13 @@ Choose a domain that:
 - [x] Viewport configuration
 
 #### To Add:
-- [ ] Google Search Console verification
-- [ ] Google Analytics 4 setup
+- [x] Google Search Console verification
+- [x] Google Analytics 4 setup (with GDPR-compliant cookie consent)
 - [ ] Google Business Profile creation
 - [ ] Bing Webmaster Tools
-- [ ] Core Web Vitals optimization
-- [ ] Image optimization (WebP, lazy loading)
-- [ ] Add favicon and apple-touch-icon
+- [x] Core Web Vitals optimization (Lighthouse 90+)
+- [x] Image optimization (WebP, lazy loading)
+- [x] Add favicon and apple-touch-icon
 
 ### Content Requirements
 
@@ -269,13 +258,13 @@ Based on competitor research:
 
 ## Monthly Action Checklist
 
-### Month 1
-- [ ] Choose and register domain
-- [ ] Deploy website
-- [ ] Submit to Google Search Console
+### Month 1 ✅ (Jan 2026)
+- [x] Choose and register domain (maxmendes.dev)
+- [x] Deploy website (Vercel)
+- [x] Submit to Google Search Console
 - [ ] Create Google Business Profile
-- [ ] Set up Google Analytics 4
-- [ ] Create social media profiles
+- [x] Set up Google Analytics 4
+- [x] Create social media profiles (GitHub, LinkedIn, Twitter, Instagram)
 - [ ] Register on 5 directories
 - [ ] Write 2 blog posts
 
@@ -374,4 +363,5 @@ Based on competitor research:
 ---
 
 *Strategy created: January 2026*
+*Last updated: February 2026*
 *Review and update: Monthly*

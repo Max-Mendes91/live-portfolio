@@ -1,5 +1,7 @@
 # Device Breakpoints Reference
 
+> **Last updated:** 2026-02-01
+
 This document tracks target device dimensions for responsive testing.
 
 ## Mobile Devices (Portrait)

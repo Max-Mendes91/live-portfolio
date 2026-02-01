@@ -1,7 +1,7 @@
 # Development Roadmap
 
 > Portfolio website for Max Mendes - Full-Stack Developer
-> Last updated: 2026-01-30
+> Last updated: 2026-02-01
 
 ---
 
@@ -52,7 +52,7 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for full details.
 
 ### 1.2 Assets
 - [ ] Professional photo for About section
-- [ ] Project screenshots/mockups (4-6 projects)
+- [x] Project screenshots/mockups (Flowmate, Markmind added)
 - [x] Favicon and OG images (optimized for Google discovery)
 - [ ] Logo/wordmark
 - [ ] PWA icons (icon-192x192.png, icon-512x512.png) - **needed for Lighthouse**
@@ -99,10 +99,10 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for full details.
 
 ### 2.3 Contact Page
 - [x] `/en/contact` + `/pl/kontakt` - Contact pages (structure done)
-- [ ] Contact form component
-- [ ] Form validation
-- [ ] Email integration (Resend/SendGrid)
-- [ ] Success/error states
+- [x] Contact form component
+- [x] Form validation
+- [x] Email integration (Resend - Gmail sandbox mode)
+- [x] Success/error states
 
 ### 2.4 About Page (SEO & Content Complete)
 - [x] `/en/about` + `/pl/o-mnie` - About pages (structure done)
@@ -129,9 +129,9 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for full details.
 ## Phase 3: Features & Integrations
 
 ### 3.1 Contact Form
-- [ ] Form component with validation
-- [ ] Backend API route `/api/contact`
-- [ ] Email service integration
+- [x] Form component with validation
+- [x] Backend API route `/api/contact`
+- [x] Email service integration (Resend)
 - [ ] Spam protection (honeypot/reCAPTCHA)
 - [ ] Auto-reply email
 
@@ -265,3 +265,10 @@ git push origin main  # Auto-deploys via Vercel
   - Hero animation hydration issue resolved
   - Intro overlay flash on revisit fixed
   - Intro animation shows only once per session
+
+### Jan 31 - Feb 1, 2026
+- **SEO**: Updated skill documentation to reflect dictionary-based keywords pattern
+- **Projects**: Added project images and portfolio entry for Flowmate/Markmind
+- **Projects**: Added shortDescription field for homepage project hooks
+- **Code Quality**: Added knip config, removed dead code
+- **Bug Fix**: Fixed intro flash prevention for returning visitors on desktop

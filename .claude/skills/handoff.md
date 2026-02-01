@@ -1,5 +1,6 @@
 # Handoff Skill
 
+> **Last updated:** 2026-02-01
 > **CRITICAL:** When user asks for a "handoff" or to "create handoff", follow this structure exactly.
 
 ## When to Use

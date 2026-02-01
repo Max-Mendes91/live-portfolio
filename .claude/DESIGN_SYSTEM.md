@@ -1,5 +1,7 @@
 # Design System
 
+> **Last updated:** 2026-02-01
+
 This document defines the design system for Max Mendes Portfolio. All components and pages should follow these guidelines for visual consistency.
 
 ## Quick Reference

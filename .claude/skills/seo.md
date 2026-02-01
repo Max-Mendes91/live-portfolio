@@ -1,5 +1,7 @@
 # SEO Management Skill
 
+> **Last updated:** 2026-02-01
+
 This skill helps manage SEO for the Max Mendes portfolio website targeting Poland (Częstochowa, Śląskie) and international markets (UK, US, EU).
 
 ## Quick Reference
