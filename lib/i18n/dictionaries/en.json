@@ -306,7 +306,8 @@
         "cta": "View Project",
         "externalCta": "Visit Live Site",
         "tags": ["SaaS", "AI", "Full-Stack"],
-        "tech": ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "OpenAI", "Stripe"]
+        "tech": ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "OpenAI", "Stripe"],
+        "image": "/projects/flowmate-landing.webp"
       },
       {
         "id": "markmind",
@@ -319,7 +320,21 @@
         "cta": "View Project",
         "externalCta": "View Live Extension",
         "tags": ["Chrome Extension", "AI", "Productivity"],
-        "tech": ["React", "TypeScript", "Chrome APIs", "AI Integration"]
+        "tech": ["React", "TypeScript", "Chrome APIs", "AI Integration"],
+        "image": "/projects/markmind-landing.webp"
+      },
+      {
+        "id": "portfolio",
+        "title": "maxmendes.dev — Bilingual Developer Portfolio",
+        "description": "Full-stack portfolio site built with Next.js 15. Bilingual EN/PL with localized URL routing, JSON-LD structured data, hreflang tags, and Core Web Vitals optimization. The site you're on right now.",
+        "metric": "Bilingual · Localized URLs · SEO-Optimized",
+        "href": "/en/projects",
+        "externalUrl": "https://maxmendes.dev",
+        "cta": "View Project",
+        "externalCta": "You're Here",
+        "tags": ["Portfolio", "i18n", "SEO"],
+        "tech": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+        "image": "/projects/Portfolio-landing.webp"
       }
     ]
   },
