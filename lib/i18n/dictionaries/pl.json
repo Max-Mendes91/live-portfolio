@@ -307,6 +307,7 @@
       {
         "id": "flowmate",
         "title": "FlowMate — Platforma AI do Zarządzania Emailami",
+        "shortDescription": "Samodzielnie zbudowany SaaS. Generowanie treści AI, wielokanałowy email, 300+ godzin kodu — działa na produkcji.",
         "description": "Produkcyjna platforma SaaS w Next.js i React do zarządzania dużymi wolumenami e-maili i komunikacji. Architektura full-stack z bezpieczną autoryzacją, przetwarzaniem asynchronicznym i integracjami AI, obsługująca realne obciążenia na skalę.",
         "metric": "Uruchomiony styczeń 2026 · 300+ godzin rozwoju · Integracja AI z wieloma kanałami",
         "href": "/pl/projekty",
@@ -314,12 +315,14 @@
         "cta": "Zobacz Projekt",
         "externalCta": "Odwiedź Stronę",
         "tags": ["SaaS", "AI", "Full-Stack"],
-        "tech": ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "OpenAI", "Stripe"]
+        "tech": ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "OpenAI", "Stripe"],
+        "image": "/projects/flowmate-landing.webp"
       },
       {
         "id": "markmind",
         "title": "MarkMind V2 — Rozwój Rozszerzenia Chrome",
         "role": "Rola Współtwórcy",
+        "shortDescription": "Rozwijam funkcje AI dla rozszerzenia Chrome z 400+ aktywnymi użytkownikami.",
         "description": "Współpracuję z zespołem MarkMind przy tworzeniu wersji V2 tego menedżera zakładek opartego na AI. Biorę udział w rozwoju funkcji i integracji AI dla rozszerzenia Chrome obsługującego 401+ aktywnych użytkowników w produkcji.",
         "metric": "401+ Użytkowników · V2 w Rozwoju",
         "href": "/pl/projekty",
@@ -327,7 +330,22 @@
         "cta": "Zobacz Projekt",
         "externalCta": "Zobacz Rozszerzenie",
         "tags": ["Rozszerzenie Chrome", "AI", "Produktywność"],
-        "tech": ["React", "TypeScript", "Chrome APIs", "Integracja AI"]
+        "tech": ["React", "TypeScript", "Chrome APIs", "Integracja AI"],
+        "image": "/projects/markmind-landing.webp"
+      },
+      {
+        "id": "portfolio",
+        "title": "maxmendes.dev — Dwujęzyczne Portfolio Programisty",
+        "shortDescription": "Dwujęzyczne. Szybkie. Zoptymalizowane pod SEO. Właśnie na nie patrzysz.",
+        "description": "Strona portfolio w Next.js 15. Dwujęzyczna PL/EN z lokalizowanymi ścieżkami URL, strukturalnymi danymi JSON-LD, tagami hreflang i optymalizacją Core Web Vitals. Strona, na której właśnie jesteś.",
+        "metric": "Dwujęzyczne · Lokalizowane URL · SEO",
+        "href": "/pl/projekty",
+        "externalUrl": "https://maxmendes.dev",
+        "cta": "Zobacz Projekt",
+        "externalCta": "Jesteś Tutaj",
+        "tags": ["Portfolio", "i18n", "SEO"],
+        "tech": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+        "image": "/projects/Portfolio-landing.webp"
       }
     ]
   },
@@ -1131,10 +1149,10 @@
     "title": "Wybrane Projekty Full-Stack",
     "subtitle": "Produkcyjne aplikacje webowe w React i Next.js. Prawdziwe projekty, realni użytkownicy i systemy gotowe do działania po wdrożeniu.",
     "cta": {
-      "title": "Potrzebujesz programisty, nie agencji?",
-      "description": "Tworzę aplikacje SaaS, sklepy internetowe i aplikacje webowe w React i Next.js — bez WordPress. Porozmawiajmy o projekcie.",
-      "primaryButton": "Bezpłatna Wycena",
-      "secondaryButton": "Zobacz Usługi"
+      "title": "Twój projekt może być następny",
+      "description": "Ten sam proces, ta sama jakość — dostosowane do Twojego biznesu.",
+      "primaryButton": "Rozpocznij Rozmowę",
+      "secondaryButton": "Zobacz Jak Pracuję"
     }
   },
   "cookieConsent": {

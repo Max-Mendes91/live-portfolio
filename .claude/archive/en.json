@@ -1,7 +1,7 @@
 {
   "hero": {
     "badge": "Full-Stack Development",
-    "headline": "Freelance Web Developer for Hire",
+    "headline": "Freelance Developer for Hire",
     "subheadline": "Websites. E-commerce. Web Apps. SaaS.",
     "description": "Max Mendes — developer based in Poland, available for projects across Europe, UK, and US. From first conversation to live deployment, one person handles your entire project.",
     "ctaPrimary": "Book a Free Call",
@@ -10,9 +10,9 @@
     "scrollDown": "Scroll down",
     "toSeeProjects": "for the proof",
     "trustSignals": [
-      { "label": "React & Next.js Specialist", "icon": "trophy" },
+      { "label": "2+ Years Experience", "icon": "trophy" },
       { "label": "EU Timezone — Overlaps UK & US", "icon": "globe" },
-      { "label": "Fluent EN / PT / ES · Polish Support", "icon": "languages" }
+      { "label": "Fluent EN / PT / ES", "icon": "languages" }
     ]
   },
   "about": {
@@ -42,7 +42,7 @@
         "id": "ecommerce",
         "icon": "ShoppingCart",
         "title": "E-Commerce & Online Stores",
-        "description": "Online stores with fast checkout, real inventory management, and payment processing that works across borders. Custom e-commerce platforms with full control over pricing, promotions, and customer experience.",
+        "description": "Online stores with fast checkout, real inventory management, and payment processing that works across borders. Full control over pricing rules, promotions, and customer experience — no platform limitations.",
         "linkText": "e-commerce platforms",
         "linkHref": "/en/services/ecommerce-development"
       },
@@ -51,7 +51,7 @@
         "icon": "Cloud",
         "title": "SaaS & Web Applications",
         "description": "Web applications with user accounts, dashboards, permissions, and subscription billing. Architected to handle real users from launch — and structured so new features don't break existing ones.",
-        "linkText": "Web applications",
+        "linkText": "web applications",
         "linkHref": "/en/services/saas-web-apps"
       },
       {
@@ -59,14 +59,14 @@
         "icon": "Code2",
         "title": "Full-Stack Web Development",
         "description": "Business websites that load fast, rank well, and stay easy to update. Clean architecture that grows with your business — not something you'll need to rebuild in two years.",
-        "linkText": "Business websites",
+        "linkText": "business websites",
         "linkHref": "/en/services/web-development"
       },
       {
         "id": "seo",
         "icon": "Search",
         "title": "SEO & Performance Optimization",
-        "description": "Technical SEO focused on speed, structure, and search visibility. Core Web Vitals improvements, indexing fixes, and SEO optimization that Google rewards with better rankings.",
+        "description": "Technical SEO focused on speed, structure, and search visibility. Core Web Vitals improvements, indexing fixes, and architecture that Google rewards with better rankings.",
         "linkText": "SEO optimization",
         "linkHref": "/en/services/seo-performance-optimization"
       },
@@ -166,7 +166,7 @@
   },
   "footer": {
     "availableBadge": "Available For Work",
-    "headline": "One Developer. Direct Access. Code That Ships.",
+    "headline": "One Developer. Direct Access. Real Results.",
     "subheadline": "Based in Poland, working in English, building for businesses that need modern web software. Available across Europe, UK, and US.",
     "cta": "Start a Conversation",
     "seoText": "Your Project, One Developer",
@@ -299,7 +299,6 @@
       {
         "id": "flowmate",
         "title": "FlowMate — AI Email Management Platform",
-        "shortDescription": "Solo-built SaaS. AI content generation, multi-channel email, 300+ hours of code — now live.",
         "description": "Production SaaS platform built with Next.js and React for high-volume email and messaging management. Full-stack architecture with secure authentication, async processing, and AI integrations handling real workloads at scale.",
         "metric": "Launched January 2026 · 300+ dev hours · Multi-channel AI integration",
         "href": "/en/projects",
@@ -307,14 +306,12 @@
         "cta": "View Project",
         "externalCta": "Visit Live Site",
         "tags": ["SaaS", "AI", "Full-Stack"],
-        "tech": ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "OpenAI", "Stripe"],
-        "image": "/projects/flowmate-landing.webp"
+        "tech": ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "OpenAI", "Stripe"]
       },
       {
         "id": "markmind",
         "title": "MarkMind V2 — Chrome Extension Development",
         "role": "Contributor Role",
-        "shortDescription": "Contributing AI features to a Chrome extension with 400+ active users.",
         "description": "Working with the MarkMind team to develop V2 of this AI-powered bookmark manager. Contributing to feature development and AI integration for a Chrome extension that serves 401+ active users in production.",
         "metric": "401+ Users · V2 in Development",
         "href": "/en/projects",
@@ -322,22 +319,7 @@
         "cta": "View Project",
         "externalCta": "View Live Extension",
         "tags": ["Chrome Extension", "AI", "Productivity"],
-        "tech": ["React", "TypeScript", "Chrome APIs", "AI Integration"],
-        "image": "/projects/markmind-landing.webp"
-      },
-      {
-        "id": "portfolio",
-        "title": "maxmendes.dev — Bilingual Developer Portfolio",
-        "shortDescription": "Bilingual. Fast. SEO-optimized. You're looking at it.",
-        "description": "Full-stack portfolio site built with Next.js 15. Bilingual EN/PL with localized URL routing, JSON-LD structured data, hreflang tags, and Core Web Vitals optimization. The site you're on right now.",
-        "metric": "Bilingual · Localized URLs · SEO-Optimized",
-        "href": "/en/projects",
-        "externalUrl": "https://maxmendes.dev",
-        "cta": "View Project",
-        "externalCta": "You're Here",
-        "tags": ["Portfolio", "i18n", "SEO"],
-        "tech": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-        "image": "/projects/Portfolio-landing.webp"
+        "tech": ["React", "TypeScript", "Chrome APIs", "AI Integration"]
       }
     ]
   },
@@ -353,7 +335,7 @@
       "title": "Freelance Web Developer - Full-Stack React & Next.js | Max Mendes",
       "metaDescription": "Freelance full-stack developer for hire. Websites, e-commerce, web apps, SaaS. React, Next.js, Node.js. Poland-based, UK/US friendly. Free consultation.",
       "keywords": ["freelance web developer", "hire web developer", "full-stack developer poland", "react developer for hire", "nextjs developer", "web developer czestochowa", "ecommerce developer", "saas developer"],
-      "h1": "Freelance Web Developer for Hire",
+      "h1": "Freelance Developer for Hire",
       "ogTitle": "Freelance Web Developer - Full-Stack React & Next.js | Max Mendes"
     },
     "schema": {
@@ -385,8 +367,8 @@
     "heading": "About Max Mendes",
     "location": "Częstochowa, Poland",
     "bio": [
-      "I'm Max, a full-stack web developer based in Częstochowa, Poland. I build modern business websites, e-commerce stores, and AI-powered web applications — with a focus on clean, maintainable code, strong performance, and real-world usability.",
-      "My role is technical: I write code and turn ideas into working products. I implement interfaces using proven UI patterns and component libraries like shadcn/ui and Tailwind CSS, with a strong focus on speed, SEO optimization, and scalability. I also integrate AI capabilities using OpenAI and Anthropic APIs—tools I've used in production to build features like smart content generation, automated workflows, and intelligent data processing. Design and branding are outside my scope — I focus entirely on development.",
+      "I'm Max, a full-stack web developer based in Częstochowa, Poland. I build modern business websites, e-commerce stores, and AI-powered web applications for companies that need more than a basic template. My work focuses on clean, maintainable code, strong performance, and real-world usability.",
+      "I'm not a designer or a branding specialist. I don't create logos or visual identities from scratch. My role is technical: I write code and turn ideas into working products. I implement interfaces using proven UI patterns and component libraries like shadcn/ui and Tailwind CSS, with a strong focus on speed, SEO optimization, and scalability. I also integrate AI capabilities using OpenAI and Anthropic APIs—tools I've used in production to build features like smart content generation, automated workflows, and intelligent data processing.",
       "My process is structured and practical. I start with research—understanding the business goal, competitors, and technical requirements. Then I create low-fidelity prototypes in Figma to map user flows and features. After that, I build production-ready code using React and Next.js, handle deployment, optimization, and iteration based on feedback.",
       "My biggest project, FlowMate, is an AI-powered email management platform that handles multi-platform broadcasting and smart content generation. It took 300+ hours to build and taught me how to architect production SaaS applications with authentication, payments, AI integration, and real user data at scale.",
       "I'm available for Polish businesses that need modern business websites or e-commerce stores, as well as UK and US companies looking for a full-stack developer. I'm fluent in English and work comfortably across time zones."
@@ -419,7 +401,7 @@
           "role": "Freelance Full-Stack Developer",
           "company": "Self-Employed",
           "period": "2024 – Present",
-          "description": "Based in Częstochowa, Poland, I moved into freelance development after a year of self-study in React, Next.js, and TypeScript. I build production web products—websites, SaaS, e-commerce—focusing on code quality and long-term maintainability. FlowMate (my first full SaaS, 300+ hours) set how I approach client work: own the entire stack, ship real products."
+          "description": "Based in Częstochowa, Poland, I moved into freelance development after a year of self-study in React, Next.js, and TypeScript. I build production web products—websites, SaaS, e-commerce—with code, not templates. FlowMate (my first full SaaS, 300+ hours) set how I approach client work: own the entire stack, ship real products."
         },
         {
           "role": "IT Analyst",
@@ -452,8 +434,8 @@
       "linkedin": "LinkedIn"
     },
     "cta": {
-      "title": "That's how I work.",
-      "description": "If your project needs this approach, let's build it.",
+      "title": "Now you know enough to decide.",
+      "description": "If working together makes sense for your project, reach out. If not, that's fine—I'd rather work with the right clients than all clients.",
       "button": "Let's Talk"
     }
   },
@@ -462,7 +444,7 @@
       "badge": "Product Mindset",
       "title": "Every project starts with thinking",
       "subtitle": "One person, end-to-end responsibility",
-      "description": "Before anything is built, I focus on structure, constraints, and what actually needs to work. Direct communication, fast feedback, and products built with intent — not feature bloat. This works for Polish businesses and international teams who value clarity over bureaucracy."
+      "description": "Before anything is built, I focus on structure, constraints, and what actually needs to work. No handoffs, no account managers, no guessing between departments. You get clear decisions, fast feedback, and products built with intent—not feature bloat. This works for Polish businesses and international teams who value clarity over bureaucracy."
     },
     "services": [
       {
@@ -584,13 +566,13 @@
         "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
       },
       "content": {
-        "subtitle": "Custom web applications built with React and Next.js. Production code designed around your business requirements, built to scale as you grow.",
+        "subtitle": "Custom web applications built with React and Next.js. Production code designed for your business requirements, not template limitations.",
         "sections": [
           {
             "title": "What This Service Is",
             "paragraphs": [
               "Full-stack web development means building both what users see (frontend) and the systems running behind the scenes (backend). You get one cohesive application where interface, data, and logic work together seamlessly.",
-              "Custom applications are built around your specific requirements. Your business doesn't adapt to the software — the software is designed for your exact workflows, data structures, and growth plans."
+              "Unlike WordPress or website builders, custom applications are built around your specific requirements. Your business doesn't adapt to a template—the software is designed for your exact workflows, data structures, and growth plans."
             ]
           },
           {
@@ -613,7 +595,7 @@
           {
             "title": "How I Work",
             "paragraphs": [
-              "You work directly with me — no layers between you and the person writing your code. I handle requirements, architecture, development, and deployment. Code is production-ready from day one, built to extend as your needs evolve.",
+              "You work directly with me—no agency layers or project handoffs. I handle requirements, architecture, development, and deployment. Code is production-ready from day one, not prototypes that need rebuilding later.",
               "Applications deploy to modern infrastructure (Vercel, AWS) with CDN distribution for performance. I'm based in Częstochowa, Poland, and available for projects across Poland and internationally."
             ],
             "links": [
@@ -676,7 +658,7 @@
           {
             "title": "Who This Is For and Use Cases",
             "paragraphs": [
-              "This service is for SaaS founders building an MVP designed to scale into a real product. It also fits businesses launching subscription platforms or internal SaaS tools that replace spreadsheets or manual workflows. Common use cases include productivity tools, B2B platforms, analytics dashboards, and subscription-based services.",
+              "This service is for SaaS founders building an MVP that is meant to become a real product, not a disposable prototype. It also fits businesses launching subscription platforms or internal SaaS tools that replace spreadsheets or manual workflows. Common use cases include productivity tools, B2B platforms, analytics dashboards, and subscription-based services.",
               "FlowMate—the SaaS platform I built for email management—handles multi-provider authentication, async processing (background tasks that don't slow down the UI), AI integrations, and Stripe subscriptions at production scale. It demonstrates how these systems work together in a real product."
             ],
             "links": [
@@ -686,7 +668,7 @@
           {
             "title": "How It's Delivered",
             "paragraphs": [
-              "You work directly with one developer who handles the full stack. The focus is production-ready code from day one, so the platform can grow without major rewrites after validation. TypeScript is used across the stack to reduce runtime errors and support long-term scalability. Applications are deployed on modern infrastructure such as Vercel, Supabase, or AWS, depending on requirements. The goal is a SaaS platform ready for real users and steady growth.",
+              "You work directly with one developer, without agency handoffs or junior teams. The focus is production-ready code from day one, so the platform does not need rebuilding after validation. TypeScript is used across the stack to reduce runtime errors and support long-term scalability. Applications are deployed on modern infrastructure such as Vercel, Supabase, or AWS, depending on requirements. The goal is a SaaS platform ready for real users and steady growth.",
               "Based in Częstochowa, Poland. Available for SaaS projects across Poland and internationally."
             ],
             "links": [
@@ -730,12 +712,12 @@
         "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
       },
       "content": {
-        "subtitle": "Custom online stores built with React for speed and conversions. Designed around your catalog and business logic, with full control over every detail.",
+        "subtitle": "Custom online stores built with React for speed and conversions. Designed around your catalog and business logic—not template compromises.",
         "sections": [
           {
             "title": "What Custom E-Commerce Development Means",
             "paragraphs": [
-              "Custom e-commerce development means your online store is built specifically for how your business operates. Standard platforms work well at the start, but many businesses outgrow them when pricing rules become complex, inventory logic is non-standard, or integrations are required.",
+              "Custom e-commerce development means your online store is built specifically for how your business operates, instead of adapting your processes to a Shopify or WooCommerce template. Templates work well at the start, but many businesses outgrow them when pricing rules become complex, inventory logic is non-standard, or integrations are required.",
               "A custom online store allows full control over performance, SEO, and business logic. With React and Next.js, product pages load faster and meet Core Web Vitals standards—factors that directly affect conversion rates and search visibility."
             ]
           },
@@ -983,17 +965,17 @@
         "items": [
           {
             "question": "What services do you provide?",
-            "answer": "I build production web applications: business websites, SaaS platforms, custom e-commerce systems, and AI-powered features. Everything is built with React, Next.js, and TypeScript — production-ready from day one, built to scale.",
+            "answer": "I build production web applications: business websites, SaaS platforms, custom e-commerce systems, and AI-powered features. Everything is built with React, Next.js, and TypeScript—production-ready from day one, not demos or prototypes.",
             "linkText": "View service details",
             "linkHref": "/en/services"
           },
           {
             "question": "What don't you build?",
-            "answer": "I focus exclusively on custom software development — websites, web apps, and SaaS built with React and Next.js. Design, branding, and marketing are outside my scope. If you need those services, I can recommend specialists."
+            "answer": "I don't build WordPress sites, page-builder websites, or design-only projects. I also don't offer branding, visual identity, or marketing services. My work is software development—writing real code that scales."
           },
           {
             "question": "Do you work solo or with a team?",
-            "answer": "I work as a solo full-stack developer and handle the entire build myself. You work directly with the person writing your code — one point of contact from start to finish."
+            "answer": "I work as a solo full-stack developer and handle the entire build myself. No handoffs, no project managers, no communication gaps. You work directly with the person writing your code."
           },
           {
             "question": "Can you handle both Polish and international clients?",
@@ -1145,10 +1127,10 @@
     "title": "Selected Full-Stack Projects",
     "subtitle": "Production web applications built with Next.js and React. Real products, real users, and systems designed to run reliably beyond launch.",
     "cta": {
-      "title": "Your project could be next",
-      "description": "Same process, same quality — tailored to your business.",
-      "primaryButton": "Start a Conversation",
-      "secondaryButton": "See How I Work"
+      "title": "Need a developer, not an agency?",
+      "description": "I build custom SaaS, e-commerce, and full-stack web applications with React and Next.js. Let's discuss your project.",
+      "primaryButton": "Get Free Quote",
+      "secondaryButton": "View Services"
     }
   },
   "cookieConsent": {

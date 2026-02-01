@@ -24,9 +24,8 @@ interface HomeClientProps {
 
 export default function HomeClient({ locale, dictionary, skipIntro = false }: HomeClientProps) {
   const skipIntroRef = useRef(skipIntro);
-  // Start with overlay blocking everything until we check sessionStorage
-  const [overlayVisible, setOverlayVisible] = useState(!skipIntro);
-  const [showIntroContent, setShowIntroContent] = useState(false);
+  // Don't show intro overlay until we've checked sessionStorage (prevents flash on returning visit)
+  const [shouldShowIntro, setShouldShowIntro] = useState(false);
   const [introComplete, setIntroComplete] = useState(skipIntro);
   const [showHero, setShowHero] = useState(skipIntro);
   const [isMobileIntro, setIsMobileIntro] = useState(false);
@@ -39,7 +38,6 @@ export default function HomeClient({ locale, dictionary, skipIntro = false }: Ho
 
     // Server detected bot/Lighthouse — intro already skipped via initial state
     if (skipIntroRef.current) {
-      setOverlayVisible(false);
       setShowHero(true);
       return;
     }
@@ -54,16 +52,15 @@ export default function HomeClient({ locale, dictionary, skipIntro = false }: Ho
     } catch { /* sessionStorage unavailable */ }
 
     if (hasSeenIntro) {
-      // Returning visitor - hide overlay immediately, no flash
+      // Returning visitor - skip intro entirely, no flash
       skipIntroRef.current = true;
-      setOverlayVisible(false);
       setIntroComplete(true);
       setShowHero(true);
       return;
     }
 
-    // First-time visitor - show intro content (overlay already visible)
-    setShowIntroContent(true);
+    // First-time visitor - show intro animation
+    setShouldShowIntro(true);
     setIsMobileIntro(mobile);
 
     // Mobile: fast logo splash (~800ms)
@@ -96,50 +93,47 @@ export default function HomeClient({ locale, dictionary, skipIntro = false }: Ho
       <HomePageJsonLd locale={locale} homePageData={dictionary.homePage} />
       <Navbar locale={locale} dictionary={dictionary.nav} />
 
-      {/* Intro Overlay — starts visible to block navbar flash, then either:
-          - Hides immediately for returning visitors
-          - Shows intro content then animates out for first-time visitors */}
+      {/* Intro Overlay — only rendered for first-time visitors after sessionStorage check
+          This prevents flash on returning visits or locale switch */}
       <AnimatePresence>
-        {overlayVisible && !introComplete && (
+        {shouldShowIntro && !introComplete && (
           <motion.div
             initial={{ opacity: 1 }}
             exit={isMobileIntro ? { opacity: 0 } : (isSafari ? { opacity: 0 } : { y: '100vh' })}
             transition={{
-              duration: skipIntroRef.current ? 0 : (isMobileIntro ? 0.3 : (isSafari ? 0.6 : 1)),
+              duration: isMobileIntro ? 0.3 : (isSafari ? 0.6 : 1),
               ease: isMobileIntro ? 'easeOut' : (isSafari ? 'easeOut' : [0.16, 1, 0.3, 1]),
             }}
             style={isMobileIntro || isSafari ? undefined : { willChange: 'transform, opacity' }}
             className="intro-overlay fixed inset-0 z-[100] bg-background flex items-center justify-center overflow-hidden"
           >
-            {showIntroContent && (
-              isMobileIntro ? (
-                /* Mobile: Simple logo splash */
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, ease: 'easeOut' }}
-                  className="flex flex-col items-center gap-4"
-                >
-                  <Image
-                    src="/navbar-logo.webp"
-                    alt="Max Mendes"
-                    width={200}
-                    height={40}
-                    priority
-                    className="opacity-90"
-                  />
-                </motion.div>
-              ) : (
-                /* Desktop: Full AboutMe component */
-                <motion.div
-                  initial={isSafari ? { opacity: 0 } : { opacity: 0, scale: 0.9 }}
-                  animate={isSafari ? { opacity: 1 } : { opacity: 1, scale: 1 }}
-                  transition={{ duration: isSafari ? 0.6 : 0.8, ease: 'easeOut' }}
-                  className="w-full h-full"
-                >
-                  <AboutMe dictionary={dictionary.about} />
-                </motion.div>
-              )
+            {isMobileIntro ? (
+              /* Mobile: Simple logo splash */
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
+                className="flex flex-col items-center gap-4"
+              >
+                <Image
+                  src="/navbar-logo.webp"
+                  alt="Max Mendes"
+                  width={200}
+                  height={40}
+                  priority
+                  className="opacity-90"
+                />
+              </motion.div>
+            ) : (
+              /* Desktop: Full AboutMe component */
+              <motion.div
+                initial={isSafari ? { opacity: 0 } : { opacity: 0, scale: 0.9 }}
+                animate={isSafari ? { opacity: 1 } : { opacity: 1, scale: 1 }}
+                transition={{ duration: isSafari ? 0.6 : 0.8, ease: 'easeOut' }}
+                className="w-full h-full"
+              >
+                <AboutMe dictionary={dictionary.about} />
+              </motion.div>
             )}
           </motion.div>
         )}

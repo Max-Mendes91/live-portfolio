@@ -388,6 +388,7 @@ export interface ProjectsDict {
 export interface WorkGridProjectDict {
   id: string;
   title: string;
+  shortDescription: string;
   description: string;
   metric: string;
   href: string;

@@ -58,10 +58,6 @@ html {
   overscroll-behavior-y: none;
 }
 
-/* Note: Intro overlay flash on locale switch is a known issue.
-   CSS-based solutions conflict with Framer Motion animations.
-   The flash is brief and acceptable for now. */
-
 body {
   font-family: var(--font-outfit), sans-serif;
   background-color: var(--color-background);
