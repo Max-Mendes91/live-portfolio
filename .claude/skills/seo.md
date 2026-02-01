@@ -251,17 +251,19 @@ Check current SEO implementation status.
 - Report missing or incomplete SEO elements
 
 ### 2. Add Keywords
-Add new keywords to the keyword database.
+Add new keywords to page SEO in dictionaries.
 
 ```
-/seo keywords add <language> <category> "<keyword>"
+/seo keywords add <language> <page> "<keyword>"
 ```
 
 **Languages:** `en`, `pl`
-**Categories:** `core`, `service`, `location`, `intent`, `synonym`
+**Pages:** `home`, `about`, `contact`, `projects`, `services`, or specific service page IDs
+
+> **Note:** Keywords are stored in `lib/i18n/dictionaries/{lang}.json` under each page's `seo.keywords` array. The keyword reference list below is for guidance.
 
 **Actions:**
-- Update `lib/seo/keywords.ts` with new keyword
+- Add keyword to the relevant dictionary (`en.json` or `pl.json`) in `seo.keywords` array
 - Suggest content updates to include keyword naturally
 - Check for keyword stuffing risks
 
@@ -528,7 +530,6 @@ Update sitemap entries.
 | File | Purpose |
 |------|---------|
 | `lib/seo/config.ts` | Site configuration, trust signals |
-| `lib/seo/keywords.ts` | Keyword database (EN/PL) |
 | `lib/seo/schemas.ts` | JSON-LD generators |
 | `lib/seo/metadata.ts` | Metadata generators |
 | `components/seo/JsonLd.tsx` | Schema injection |
@@ -609,8 +610,8 @@ Claude: Analyzes current SEO and reports missing elements
 
 ### Add New Keyword
 ```
-User: /seo keywords add pl location "strony internetowe Gdańsk"
-Claude: Adds keyword to Polish location keywords in lib/seo/keywords.ts
+User: /seo keywords add pl home "strony internetowe Gdańsk"
+Claude: Adds keyword to Polish homepage seo.keywords in lib/i18n/dictionaries/pl.json
 ```
 
 ### Generate Service Page Meta
