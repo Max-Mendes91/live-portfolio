@@ -76,11 +76,11 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
         {/* Available For Work Badge */}
         <div className="inline-flex items-center gap-1.5 sm:gap-2.5 px-3 sm:px-5 py-1.5 sm:py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-3 sm:mb-8 md:mb-10 short:mb-4">
           <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981]" />
-          <span className="text-[8px] sm:text-[10px] uppercase font-medium tracking-[0.15em] sm:tracking-[0.2em] text-white/80">{content.availableBadge}</span>
+          <span className="text-[8px] sm:text-[10px] uppercase font-medium tracking-[0.15em] sm:tracking-[0.2em] text-text-secondary">{content.availableBadge}</span>
         </div>
 
         {/* H1 - Main Headline */}
-        <h2 className="text-xl sm:text-4xl md:text-6xl short:text-4xl font-light tracking-tighter leading-tight text-white mb-2 sm:mb-6 short:mb-3 px-1">
+        <h2 className="text-xl sm:text-4xl md:text-6xl short:text-4xl font-light tracking-tighter leading-tight text-text-primary mb-2 sm:mb-6 short:mb-3 px-1">
           {content.headline}
         </h2>
 
@@ -190,7 +190,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.label}
-              className="text-zinc-500 hover:text-white transition-[color] duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center"
+              className="text-text-muted hover:text-text-primary transition-[color] duration-200 min-h-[44px] min-w-[44px] flex items-center justify-center"
             >
               <social.icon className="w-5 h-5" />
             </a>
@@ -198,23 +198,23 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
         </div>
 
         {/* Location keywords for SEO */}
-        <p className="mt-3 sm:mt-8 md:mt-12 text-[8px] sm:text-[10px] text-zinc-600 tracking-wide text-center max-w-lg px-2 sm:px-0 short:text-[8px]">
+        <p className="mt-3 sm:mt-8 md:mt-12 text-[8px] sm:text-[10px] text-text-muted tracking-wide text-center max-w-lg px-2 sm:px-0 short:text-[8px]">
           {content.seoText}
         </p>
 
         {/* Legal Links */}
         {content.legal && (
-          <div className="mt-3 sm:mt-6 flex items-center gap-3 sm:gap-4 text-xs text-zinc-600">
+          <div className="mt-3 sm:mt-6 flex items-center gap-3 sm:gap-4 text-xs text-text-muted">
             <Link
               href={getLocalizedUrl(locale, 'privacy')}
-              className="hover:text-zinc-400 transition-colors"
+              className="hover:text-text-secondary transition-colors"
             >
               {content.legal.privacy}
             </Link>
-            <span className="text-zinc-700">•</span>
+            <span className="text-text-muted">•</span>
             <Link
               href={getLocalizedUrl(locale, 'terms')}
-              className="hover:text-zinc-400 transition-colors"
+              className="hover:text-text-secondary transition-colors"
             >
               {content.legal.terms}
             </Link>
@@ -223,7 +223,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
       </div>
 
       {/* Copyright footer sub-bar */}
-      <div className="absolute bottom-2 sm:bottom-6 md:bottom-10 short:bottom-2 w-full px-2 sm:px-8 md:px-12 flex flex-row justify-between items-center text-[7px] sm:text-[9px] font-medium tracking-[0.1em] sm:tracking-[0.2em] text-zinc-700 uppercase">
+      <div className="absolute bottom-2 sm:bottom-6 md:bottom-10 short:bottom-2 w-full px-2 sm:px-8 md:px-12 flex flex-row justify-between items-center text-[7px] sm:text-[9px] font-medium tracking-[0.1em] sm:tracking-[0.2em] text-text-muted uppercase">
         <span>© {new Date().getFullYear()} {SITE_CONFIG.name}</span>
         <span>{content.contact.location}</span>
       </div>

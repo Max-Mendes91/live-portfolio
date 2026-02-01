@@ -26,10 +26,10 @@ const ProcessCard: React.FC<ProcessCardProps> = ({ icon, number, title, subtitle
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    className="relative bg-[#0A0A0A] border border-white/5 rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 transition-colors hover:border-white/10 group overflow-hidden"
+    className="relative bg-surface border border-border-subtle rounded-xl sm:rounded-2xl p-5 sm:p-6 md:p-8 transition-colors hover:border-border group overflow-hidden"
   >
     <div className="flex justify-between items-start mb-4 sm:mb-5 md:mb-6">
-      <div className="text-zinc-500 group-hover:text-white transition-colors duration-500 group-hover:scale-110 transform origin-left">
+      <div className="text-text-muted group-hover:text-text-primary transition-colors duration-500 group-hover:scale-110 transform origin-left">
         {icon}
       </div>
 
@@ -38,7 +38,7 @@ const ProcessCard: React.FC<ProcessCardProps> = ({ icon, number, title, subtitle
         relative flex items-center justify-center
         w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10
         rounded-full
-        bg-[#1A1A1A]
+        bg-surface
         border-t border-t-white/30
         border-l border-l-white/5 border-r border-r-white/5
         border-b border-b-transparent
@@ -46,7 +46,7 @@ const ProcessCard: React.FC<ProcessCardProps> = ({ icon, number, title, subtitle
         transition-all duration-500
         group-hover:border-t-white/60
       ">
-        <span className="text-[10px] sm:text-[11px] font-mono text-zinc-400 group-hover:text-white transition-colors">
+        <span className="text-[10px] sm:text-[11px] font-mono text-text-secondary group-hover:text-text-primary transition-colors">
           {number}
         </span>
 
@@ -55,17 +55,17 @@ const ProcessCard: React.FC<ProcessCardProps> = ({ icon, number, title, subtitle
       </div>
     </div>
 
-    <p className="text-[10px] sm:text-xs font-medium uppercase tracking-wider sm:tracking-widest text-zinc-500 mb-1.5 sm:mb-2">
+    <p className="text-[10px] sm:text-xs font-medium uppercase tracking-wider sm:tracking-widest text-text-muted mb-1.5 sm:mb-2">
       {subtitle}
     </p>
 
-    <h3 className="text-lg sm:text-xl font-normal tracking-tight text-white mb-3 sm:mb-4">
+    <h3 className="text-lg sm:text-xl font-normal tracking-tight text-text-primary mb-3 sm:mb-4">
       {title}
     </h3>
 
     <div className="w-10 sm:w-12 h-[1px] bg-white/10 group-hover:w-full transition-all duration-700 ease-in-out mb-3 sm:mb-4" />
 
-    <p className="font-light tracking-tight text-zinc-400 text-xs sm:text-sm leading-relaxed max-w-[95%] sm:max-w-[90%]">
+    <p className="font-light tracking-tight text-text-secondary text-xs sm:text-sm leading-relaxed max-w-[95%] sm:max-w-[90%]">
       {description}
     </p>
   </motion.div>
@@ -90,9 +90,9 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ dictionary }) => {
   };
 
   return (
-    <section className="relative w-full bg-[#050505] pt-12 sm:pt-16 md:pt-20">
+    <section className="relative w-full bg-background pt-12 sm:pt-16 md:pt-20">
       {/* The "Panel" Line & Container */}
-      <div className="max-w-[90rem] mx-auto border-t border-white/10 rounded-t-[1.5rem] sm:rounded-t-[2rem] md:rounded-t-[3rem] bg-[#050505] relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)]">
+      <div className="max-w-[90rem] mx-auto border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] md:rounded-t-[3rem] bg-background relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)]">
 
         {/* Content Container */}
         <div className="px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-24">
@@ -117,7 +117,7 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ dictionary }) => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
               <div className="absolute bottom-6 left-6 sm:bottom-8 sm:left-8 md:bottom-12 md:left-12">
-                <p className="text-[9px] sm:text-[10px] font-medium uppercase tracking-[0.2em] sm:tracking-[0.3em] text-white/40">{content.imageLabel}</p>
+                <p className="text-[9px] sm:text-[10px] font-medium uppercase tracking-[0.2em] sm:tracking-[0.3em] text-text-muted">{content.imageLabel}</p>
               </div>
             </motion.div>
 
@@ -133,11 +133,11 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ dictionary }) => {
                   <PulseBadge text={content.badge} />
                 </div>
 
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-normal tracking-tighter leading-tight text-white mb-4 sm:mb-5 md:mb-6">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-normal tracking-tighter leading-tight text-text-primary mb-4 sm:mb-5 md:mb-6">
                   {content.title}
                 </h2>
 
-                <p className="font-light tracking-tight text-zinc-400 text-sm sm:text-base md:text-lg max-w-lg mb-6 sm:mb-8 md:mb-12 leading-relaxed opacity-80">
+                <p className="font-light tracking-tight text-text-secondary text-sm sm:text-base md:text-lg max-w-lg mb-6 sm:mb-8 md:mb-12 leading-relaxed opacity-80">
                   {content.subtitle}
                 </p>
 

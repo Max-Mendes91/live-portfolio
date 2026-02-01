@@ -389,7 +389,7 @@
       "My role is technical: I write code and turn ideas into working products. I implement interfaces using proven UI patterns and component libraries like shadcn/ui and Tailwind CSS, with a strong focus on speed, SEO optimization, and scalability. I also integrate AI capabilities using OpenAI and Anthropic APIs—tools I've used in production to build features like smart content generation, automated workflows, and intelligent data processing. Design and branding are outside my scope — I focus entirely on development.",
       "My process is structured and practical. I start with research—understanding the business goal, competitors, and technical requirements. Then I create low-fidelity prototypes in Figma to map user flows and features. After that, I build production-ready code using React and Next.js, handle deployment, optimization, and iteration based on feedback.",
       "My biggest project, FlowMate, is an AI-powered email management platform that handles multi-platform broadcasting and smart content generation. It took 300+ hours to build and taught me how to architect production SaaS applications with authentication, payments, AI integration, and real user data at scale.",
-      "I'm available for Polish businesses that need modern business websites or e-commerce stores, as well as UK and US companies looking for a full-stack developer. I'm fluent in English and work comfortably across time zones."
+      "I'm available for Polish businesses that need modern websites or online stores, as well as UK and US companies looking for a full-stack developer. I'm fluent in English and work comfortably across time zones."
     ],
     "skills": {
       "title": "Tech Stack",
@@ -1071,7 +1071,9 @@
         "items": [
           {
             "question": "How much do AI features cost in practice?",
-            "answer": "AI integration has two parts: one-time development cost and ongoing API usage costs. Development covers designing, integrating, and testing the AI feature, while API costs depend on how often users trigger AI actions. I explain both upfront so there are no surprises later."
+            "answer": "AI integration has two parts: one-time development cost and ongoing API usage costs. Development covers designing, integrating, and testing the AI feature, while API costs depend on how often users trigger AI actions. I explain both upfront so there are no surprises later.",
+            "linkText": "View AI integration service",
+            "linkHref": "/en/services/ai-integration"
           },
           {
             "question": "How are AI costs kept predictable and under control?",

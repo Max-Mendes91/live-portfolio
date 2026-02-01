@@ -65,20 +65,20 @@ const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-start">
           {/* Left Column: Bio & Info */}
           <div className="animate-on-scroll fade-in-left">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light tracking-tighter mb-3 sm:mb-4 text-white">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light tracking-tighter mb-3 sm:mb-4 text-text-primary">
               {content.headline}
             </h2>
 
-            <p className="text-zinc-500 text-sm sm:text-base md:text-lg mb-5 sm:mb-6 md:mb-8">
+            <p className="text-text-muted text-sm sm:text-base md:text-lg mb-5 sm:mb-6 md:mb-8">
               {content.subheadline}
             </p>
 
-            <p className="text-zinc-400 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-lg mb-4 sm:mb-6">
+            <p className="text-text-secondary text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-lg mb-4 sm:mb-6">
               {content.description}
             </p>
 
             {content.description2 && (
-              <p className="text-zinc-400 text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-lg mb-6 sm:mb-8">
+              <p className="text-text-secondary text-sm sm:text-base md:text-lg font-light leading-relaxed max-w-lg mb-6 sm:mb-8">
                 {content.description2}
               </p>
             )}
@@ -86,7 +86,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
             {/* Learn More Link - Internal link for SEO */}
             <Link
               href={content.learnMoreHref}
-              className="inline-flex items-center gap-2 text-white hover:text-zinc-300 transition-colors mb-6 sm:mb-8 md:mb-10 group text-sm sm:text-base"
+              className="inline-flex items-center gap-2 text-text-primary hover:text-text-secondary transition-colors mb-6 sm:mb-8 md:mb-10 group text-sm sm:text-base"
             >
               <span className="underline underline-offset-4 decoration-white/30 group-hover:decoration-white/60">
                 {content.learnMoreText}
@@ -101,7 +101,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
               {content.trustBadges.map((badge) => (
                 <span
                   key={badge}
-                  className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-zinc-900/50 border border-white/5 text-[9px] sm:text-[10px] font-medium uppercase tracking-wider sm:tracking-widest text-zinc-300 hover:bg-zinc-800 transition-colors cursor-default"
+                  className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg bg-surface border border-border-subtle text-[9px] sm:text-[10px] font-medium uppercase tracking-wider sm:tracking-widest text-text-secondary hover:border-border transition-colors cursor-default"
                 >
                   {badge}
                 </span>
@@ -138,7 +138,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ dictionary }) => {
                 return (
                   <div
                     key={index}
-                    className="absolute text-white/40 hover:text-white/60 transition-colors duration-500"
+                    className="absolute text-text-muted hover:text-text-secondary transition-colors duration-500"
                     style={{
                       left: `${position.x}%`,
                       top: `${position.y}%`,
