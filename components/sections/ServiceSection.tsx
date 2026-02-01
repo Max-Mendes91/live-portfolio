@@ -42,7 +42,7 @@ interface ServiceSectionProps {
 // Code snippet with syntax highlighting
 const CodeSnippet: React.FC = () => {
   return (
-    <div className="w-full rounded-lg sm:rounded-xl bg-[#0a0a0a] border-l-2 border-emerald-500/50 p-3 sm:p-4 font-mono text-[10px] sm:text-xs leading-relaxed overflow-hidden">
+    <div className="w-full rounded-lg sm:rounded-xl bg-surface border-l-2 border-emerald-500/50 p-3 sm:p-4 font-mono text-[10px] sm:text-xs leading-relaxed overflow-hidden">
       <div className="flex items-center gap-2 mb-2 sm:mb-3 text-text-secondary">
         <div className="flex gap-1 sm:gap-1.5">
           <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-white/10" />

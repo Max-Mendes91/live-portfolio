@@ -1,38 +1,38 @@
 {
   "hero": {
     "badge": "Full-Stack Development",
-    "headline": "Nowoczesne Aplikacje Webowe",
+    "headline": "Programista Freelancer Częstochowa",
     "subheadline": "React & Next.js. Pełny Proces. Częstochowa & Śląskie.",
-    "description": "Jestem Max, programista full-stack z Częstochowy. Buduję strony biznesowe, sklepy internetowe i aplikacje webowe w React, Next.js i TypeScript. Obsługuję cały proces — od researchu i prototypu po wdrożenie. Otwarty na projekty z Częstochowy, Katowic, Krakowa i całej Polski.",
+    "description": "Max Mendes — programista z Częstochowy, dostępny dla projektów z Polski, UK i USA. Jako jedna osoba odpowiadam za cały projekt - od pierwszej rozmowy po wdrożenie produkcyjne.",
     "ctaPrimary": "Bezpłatna Konsultacja",
     "ctaSecondary": "Zobacz Projekty",
     "phoneLabel": "lub zadzwoń",
     "scrollDown": "Przewiń w dół",
     "toSeeProjects": "po dowody",
     "trustSignals": [
-      { "label": "2+ lata doświadczenia", "icon": "trophy" },
-      { "label": "Klienci z UK/US", "icon": "globe" },
-      { "label": "Płynny angielski", "icon": "languages" }
+      { "label": "Specjalista React & Next.js", "icon": "trophy" },
+      { "label": "Strefa EU — pokrywa UK i US", "icon": "globe" },
+      { "label": "Płynny EN / PT / ES · Wsparcie PL", "icon": "languages" }
     ]
   },
   "about": {
-    "headline": "Dlaczego Warto Ze Mną Pracować?",
-    "subheadline": "Nie buduję stron na WordPressie. Piszę prawdziwy kod w React i Next.js—to oznacza szybsze strony, lepsze SEO i możliwość rozwoju bez wymuszania migracji za rok czy dwa.",
-    "description": "Pracujesz bezpośrednio ze mną, nie z agencją gdzie projekt przechodzi przez kilka osób. Jeden developer. Pełna odpowiedzialność. Najpierw rozumiem problem biznesowy i analizuję konkurencję. Potem planuję strukturę. Dopiero wtedy piszę kod. Efekt: aplikacje i strony, które rozwiązują realne problemy i można je rozwijać.",
-    "description2": "Zbudowałem wszystko—od landing page'y po platformę SaaS (FlowMate) z autoryzacją, płatnościami i dashboardami (300+ godzin). Otwarty na współpracę z firmami w Częstochowie, na Śląsku i w całej Polsce.",
+    "headline": "Dopasowane do Twojego Biznesu",
+    "subheadline": "Zanim powstanie jakikolwiek kod, upewniam się, że rozwiązujemy właściwy problem.",
+    "description": "Każdy projekt zaczyna się od zrozumienia: czym jest sukces dla Ciebie, kim są użytkownicy, jakie ograniczenia mają znaczenie. Potem prototypowanie, planowanie zakresu i budowa czegoś, co pasuje do Twojego biznesu — nie szablonu, z którego wyrośniesz.",
+    "description2": "Masz bezpośredni dostęp przez cały projekt. Odpowiadam na pytania w ciągu paru godzin, nie dni. Decyzje zapadają szybko. A na końcu dostajesz kod, który rzeczywiście odpowiada Twoim potrzebom.",
     "learnMoreText": "Dowiedz się więcej o mnie",
     "learnMoreHref": "/pl/o-mnie",
     "trustBadges": [
-      "500+ godzin w produkcyjnym kodzie",
-      "Jeden deweloper, pełna własność projektu",
-      "Bez WordPress, tylko nowoczesny kod"
+      "500+ godzin na produkcyjnym oprogramowaniu",
+      "Bezpośredni dostęp, szybkie decyzje",
+      "Kod na własność, gotowy do skalowania"
     ]
   },
   "services": {
     "hero": {
       "badge": "Co Tworzę",
-      "title": "Produkcyjne oprogramowanie webowe. Bez szablonów. Bez WordPress.",
-      "subtitle": "Tworzę produkcyjne aplikacje webowe w React i Next.js—nie prototypy, nie szablony. Jeden programista. Full stack. Prawdziwy kod."
+      "title": "Strony, SaaS i E-Commerce — w React i Next.js",
+      "subtitle": "Oprogramowanie projektowane wokół Twoich wymagań. Każda funkcja ma swój cel, a kod rośnie razem z firmą."
     },
     "pills": ["Tworzenie Stron", "Aplikacje SaaS", "E-Commerce", "SEO i Wydajność", "Integracja AI"],
     "primaryButton": "Zobacz Usługi",
@@ -42,7 +42,7 @@
         "id": "ecommerce",
         "icon": "ShoppingCart",
         "title": "Sklepy Internetowe i E-Commerce",
-        "description": "Buduję dedykowane platformy e-commerce w React i Next.js z płatnościami Przelewy24, PayU lub Stripe, kontrolą magazynu i zarządzaniem zamówieniami. Idealne dla firm, które przerosły Shopify lub potrzebują pełnej kontroli nad logiką sklepu.",
+        "description": "Buduję platformy e-commerce oraz sklepy internetowe z szybkim checkoutem, rzeczywistym zarządzaniem magazynem i płatnościami działającymi na rynku polskim i międzynarodowym. Pełna kontrola nad cenami, promocjami i doświadczeniem klienta.",
         "linkText": "platformy e-commerce",
         "linkHref": "/pl/uslugi/sklepy-internetowe"
       },
@@ -50,7 +50,7 @@
         "id": "saas",
         "icon": "Cloud",
         "title": "Aplikacje SaaS i Webowe",
-        "description": "Dedykowane aplikacje webowe z uwierzytelnianiem, dashboardami, API i prawdziwymi przepływami użytkowników. Budowane dla produkcji od pierwszego dnia—obsługa danych, uprawnień, płatności i integracji bez prowizorycznych rozwiązań.",
+        "description": "Buduję aplikacje webowe z kontami użytkowników, dashboardami, uprawnieniami i rozliczaniem subskrypcji. Architektura gotowa na realnych użytkowników od startu — i zbudowana tak, że nowe funkcje nie niszczą istniejących.",
         "linkText": "aplikacje webowe",
         "linkHref": "/pl/uslugi/aplikacje-webowe"
       },
@@ -58,7 +58,7 @@
         "id": "web-development",
         "icon": "Code2",
         "title": "Tworzenie Stron Internetowych",
-        "description": "Tworzę szybkie, nowoczesne strony firmowe w React, Next.js i TypeScript. Bez kreatorów stron, bez szablonów—tylko czysty kod, który szybko się ładuje, dobrze skaluje i jest łatwy w utrzymaniu wraz z rozwojem Twojej firmy.",
+        "description": "Tworzę strony firmowe, które ładują się szybko, dobrze się pozycjonują i są łatwe w utrzymaniu. Czysta architektura, która rośnie z firmą — nie coś, co trzeba będzie przepisać za dwa lata.",
         "linkText": "strony firmowe",
         "linkHref": "/pl/uslugi/tworzenie-stron"
       },
@@ -66,7 +66,7 @@
         "id": "seo",
         "icon": "Search",
         "title": "SEO i Optymalizacja Wydajności",
-        "description": "Techniczne pozycjonowanie SEO skoncentrowane na szybkości, strukturze i widoczności w wyszukiwarkach. Poprawiam Core Web Vitals, naprawiam problemy z renderowaniem i indeksowaniem, zapewniam że strona jest szybka i zbudowana zgodnie z oczekiwaniami Google.",
+        "description": "Techniczne pozycjonowanie SEO skupione na szybkości, strukturze i widoczności w wyszukiwarkach. Poprawa Core Web Vitals, naprawy indeksowania i optymalizacja, którą Google nagradza lepszymi wynikami.",
         "linkText": "pozycjonowanie SEO",
         "linkHref": "/pl/uslugi/pozycjonowanie"
       },
@@ -74,7 +74,7 @@
         "id": "ai",
         "icon": "Bot",
         "title": "Integracja AI",
-        "description": "Dodaję funkcje AI do Twojego produktu: automatyzacja emaili, przetwarzanie dokumentów, inteligentne wyszukiwanie, własne procesy. Oparte na produkcyjnych API (OpenAI, Anthropic, Google), nie demka ani prototypy.",
+        "description": "Dodaję funkcje AI rozwiązujące realne problemy: automatyzacja emaili, przetwarzanie dokumentów, inteligentne wyszukiwanie, automatyzacja procesów. Produkcyjne implementacje oparte na OpenAI, Anthropic i Google APIs.",
         "linkText": "funkcje AI",
         "linkHref": "/pl/uslugi/integracja-ai"
       }
@@ -84,27 +84,27 @@
   },
   "process": {
     "badge": "Proces Tworzenia",
-    "title": "Jak Buduję Twoje Oprogramowanie",
-    "subtitle": "Sprawdzony proces tworzenia sklepów internetowych, systemów webowych i funkcji AI które rosną z Twoim biznesem—bez szablonów i WordPress.",
+    "title": "Jak Powstaje Twój Projekt",
+    "subtitle": "Uporządkowany proces od wymagań po wdrożenie. Jasne etapy, regularne aktualizacje i produkcyjny rezultat.",
     "imageLabel": "Kod w Akcji",
     "steps": [
       {
         "number": "01",
         "title": "Wymagania i Architektura",
         "subtitle": "Analiza Techniczna",
-        "description": "Analizuję wymagania biznesowe, wybieram nowoczesne technologie webowe, projektuję strukturę bazy danych i API dla skalowalności."
+        "description": "Zrozumienie celów biznesowych, zdefiniowanie wymagań technicznych, zaprojektowanie struktury bazy danych i API pod skalowalność."
       },
       {
         "number": "02",
         "title": "Programowanie i Integracja",
         "subtitle": "Rozwój i Testowanie",
-        "description": "Piszę kod produkcyjny, implementuję funkcje z autoryzacją i aktualizacjami w czasie rzeczywistym, testuję na bieżąco i integruję funkcje AI gdzie potrzeba."
+        "description": "Budowa funkcji iteracyjnie z ciągłym testowaniem. Autoryzacja, aktualizacje w czasie rzeczywistym i integracje zewnętrzne implementowane według potrzeb."
       },
       {
         "number": "03",
         "title": "Uruchomienie Produkcyjne",
         "subtitle": "Wdrożenie i Dokumentacja",
-        "description": "Wdrażam na środowisko produkcyjne, optymalizuję wydajność i SEO, dostarczam kompletną dokumentację i szkolę Twój zespół z utrzymania systemu."
+        "description": "Wdrożenie na infrastrukturę produkcyjną, optymalizacja wydajności i SEO, kompletna dokumentacja i szkolenie zespołu z utrzymania systemu."
       }
     ],
     "ctas": [
@@ -152,7 +152,7 @@
     "items": [
       {
         "question": "Co budujesz?",
-        "answer": "Produkcyjne aplikacje webowe—platformy SaaS, niestandardowe systemy e-commerce i strony biznesowe—zbudowane w React, Next.js i TypeScript. Bez WordPress ani szablonów."
+        "answer": "Platformy SaaS, dedykowane systemy e-commerce i strony biznesowe. Każdy projekt stworzony pod konkretne wymagania — kod na własność."
       },
       {
         "question": "Jak długo trwa realizacja projektu?",
@@ -174,10 +174,10 @@
   },
   "footer": {
     "availableBadge": "Dostępny do współpracy",
-    "headline": "Nie agencja. Nie WordPress. Tylko kod.",
-    "subheadline": "Jeden programista full-stack w Polsce tworzący produkcyjne oprogramowanie webowe. Dostępny dla projektów na całym świecie.",
+    "headline": "Jeden Developer. Bezpośredni Dostęp. Realne Rezultaty.",
+    "subheadline": "Z Polski, pracując po angielsku, budując dla firm potrzebujących nowoczesnego oprogramowania. Dostępny w Europie, UK i USA.",
     "cta": "Rozpocznij Rozmowę",
-    "seoText": "Bez Komitetów, Tylko Kod",
+    "seoText": "Twój Projekt, Jeden Developer",
     "legal": {
       "privacy": "Polityka Prywatności",
       "terms": "Regulamin"
@@ -224,11 +224,11 @@
     "logoAlt": "Max Mendes - Freelance Programista Webowy"
   },
   "common": {
-    "learnMore": "Dowiedz sie wiecej",
+    "learnMore": "Dowiedz się więcej",
     "getStarted": "Rozpocznij",
     "viewAll": "Zobacz wszystko",
-    "readMore": "Czytaj wiecej",
-    "backToHome": "Powrot do strony glownej"
+    "readMore": "Czytaj więcej",
+    "backToHome": "Powrót do strony głównej"
   },
   "contact": {
     "badge": "Kontakt",
@@ -358,11 +358,11 @@
       "pl": "/pl"
     },
     "seo": {
-      "title": "Tworzenie Stron Internetowych Częstochowa | Max Mendes",
+      "title": "Programista Freelancer Częstochowa | Max Mendes",
       "metaDescription": "Tworzenie stron internetowych i aplikacji webowych. Programista full-stack Polska. Strony, sklepy, SaaS. Częstochowa, Śląsk. Bezpłatna konsultacja. Tel: 502 742 941",
       "keywords": ["tworzenie stron internetowych", "programista częstochowa", "full-stack developer polska", "strony www częstochowa", "aplikacje webowe", "sklepy internetowe śląsk", "programista react", "nextjs developer polska"],
-      "h1": "Freelance Developer do Wynajęcia",
-      "ogTitle": "Tworzenie Stron Internetowych Częstochowa | Max Mendes"
+      "h1": "Programista Freelancer Częstochowa",
+      "ogTitle": "Programista Freelancer Częstochowa | Max Mendes"
     },
     "schema": {
       "type": "WebSite",
@@ -393,9 +393,9 @@
     "heading": "Programista Full-Stack Częstochowa",
     "location": "Częstochowa, Polska",
     "bio": [
-      "Nazywam się Max i jestem programistą full-stack z Częstochowy. Buduję nowoczesne strony internetowe, sklepy online i aplikacje webowe z integracją AI dla firm, które potrzebują czegoś więcej niż kolejny szablon WordPress.",
-      "Na lokalnym rynku prawie wszystkie agencje używają WordPressa. To szybkie na start, ale po roku pojawiają się problemy: wolne ładowanie, słabe SEO, niemożliwa rozbudowa bez migracji. Ja buduję w React i Next.js. Efekt: strony szybsze, lepiej pozycjonujące się w Google i gotowe na rozwój bez przepisywania wszystkiego od podstaw.",
-      "Nie jestem grafikiem ani specjalistą od brandingu. Nie tworzę logo ani identyfikacji wizualnych. Moja rola to kod: przekształcam pomysły w działające produkty. Implementuję interfejsy używając sprawdzonych bibliotek komponentów (shadcn/ui, Tailwind CSS) z naciskiem na wydajność, SEO i skalowalność. Integruję również funkcje AI wykorzystując API OpenAI i Anthropic—narzędzia, których używałem w produkcji do tworzenia inteligentnej generacji treści, automatyzacji procesów i przetwarzania danych.",
+      "Nazywam się Max i jestem programistą full-stack z Częstochowy. Buduję nowoczesne strony internetowe, sklepy online i aplikacje webowe z integracją AI — z naciskiem na czysty, utrzymywalny kod, wydajność i realne użycie.",
+      "Buduję w React i Next.js — nowoczesnym stacku, który daje szybsze strony, lepsze pozycjonowanie w Google i możliwość rozwoju bez przepisywania kodu od podstaw. To technologie używane przez duże firmy (Netflix, Airbnb, TikTok), teraz dostępne dla lokalnych firm z Częstochowy i Śląska.",
+      "Moja rola to kod: przekształcam pomysły w działające produkty. Implementuję interfejsy używając sprawdzonych bibliotek komponentów (shadcn/ui, Tailwind CSS) z naciskiem na wydajność, SEO i skalowalność. Integruję również funkcje AI wykorzystując API OpenAI i Anthropic — narzędzia, których używałem w produkcji do inteligentnej generacji treści, automatyzacji procesów i przetwarzania danych. Grafika i branding są poza moim zakresem — skupiam się wyłącznie na programowaniu.",
       "Mój proces: najpierw rozumiem cel biznesowy, analizuję konkurencję i planuję wymagania techniczne. Potem robię proste prototypy w Figma żeby uporządkować przepływ użytkownika. Dopiero wtedy piszę kod, optymalizuję pod SEO, wdrażam i iteruję na podstawie feedbacku.",
       "Buduję również własne projekty, co pozwala mi testować nowe technologie przed wdrożeniem u klientów.",
       "Jestem dostępny dla firm z Częstochowy i Śląska, które potrzebują nowoczesnych stron internetowych lub sklepów online, a także dla zagranicznych klientów szukających full-stack developera z Polski. Mówię płynnie po angielsku i bez problemu pracuję asynchronicznie w różnych strefach czasowych."
@@ -461,8 +461,8 @@
       "linkedin": "LinkedIn"
     },
     "cta": {
-      "title": "Teraz wiesz wystarczająco, żeby zdecydować.",
-      "description": "Jeśli współpraca ma sens dla Twojego projektu, odezwij się. Jeśli nie—w porządku. Wolę pracować z odpowiednimi klientami niż ze wszystkimi.",
+      "title": "Tak pracuję.",
+      "description": "Jeśli Twój projekt potrzebuje takiego podejścia, zbudujmy go.",
       "button": "Porozmawiajmy"
     }
   },
@@ -471,7 +471,7 @@
       "badge": "Podejście Produktowe",
       "title": "Każdy projekt zaczyna się od myślenia",
       "subtitle": "Jedna osoba, pełna odpowiedzialność",
-      "description": "Zanim cokolwiek powstanie, koncentruję się na strukturze, ograniczeniach i tym, co naprawdę musi działać. Bez przekazywania między działami, bez account managerów, bez zgadywania. Otrzymujesz jasne decyzje, szybki feedback i produkty budowane z intencją—nie przeładowane funkcjami."
+      "description": "Zanim cokolwiek powstanie, koncentruję się na strukturze, ograniczeniach i tym, co naprawdę musi działać. Bezpośrednia komunikacja, szybki feedback i produkty budowane z intencją — nie przeładowane funkcjami."
     },
     "services": [
       {
@@ -482,7 +482,7 @@
         "iconCenter2": "Server",
         "badge": "Programowanie",
         "title": "Tworzenie Stron Internetowych",
-        "description": "Kod napisany od zera, nie WordPress ani gotowe szablony. Strony biznesowe powinny być szybkie, stabilne i gotowe na rozwój. Projekty traktuję jak produkty—z czystą strukturą i myśleniem długoterminowym. Wszystko działa na nowoczesnym stacku: React, Next.js i TypeScript.",
+        "description": "Strony biznesowe powinny być szybkie, stabilne i gotowe na rozwój. Projekty traktuję jak produkty — z czystą strukturą i myśleniem długoterminowym. Wszystko działa na nowoczesnym stacku: React, Next.js i TypeScript.",
         "features": [
           "Strona firmowa lub rozwiązanie webowe od podstaw",
           "Czysta, utrzymywalna baza kodu",
@@ -593,13 +593,13 @@
         "areaServed": ["Częstochowa", "Śląskie", "Polska"]
       },
       "content": {
-        "subtitle": "Dedykowane aplikacje webowe w React i Next.js. Kod produkcyjny dostosowany do wymagań Twojej firmy, nie ograniczeń szablonów.",
+        "subtitle": "Dedykowane aplikacje webowe w React i Next.js. Kod produkcyjny zaprojektowany wokół wymagań Twojej firmy, gotowy do skalowania.",
         "sections": [
           {
             "title": "Czym Jest Ta Usługa",
             "paragraphs": [
               "Tworzenie aplikacji full-stack oznacza budowanie zarówno tego, co użytkownicy widzą (frontend), jak i systemów działających w tle (backend). Otrzymujesz spójną aplikację, w której interfejs, dane i logika działają razem bez szwów.",
-              "W przeciwieństwie do WordPress czy kreatorów stron, dedykowane aplikacje są budowane wokół Twoich konkretnych wymagań. Twoja firma nie dostosowuje się do szablonu—oprogramowanie jest projektowane pod Twoje dokładne procesy, struktury danych i plany rozwoju."
+              "Dedykowane aplikacje są budowane wokół Twoich konkretnych wymagań. Firma nie dostosowuje się do szablonu — oprogramowanie jest projektowane pod dokładne procesy, struktury danych i plany rozwoju."
             ]
           },
           {
@@ -739,7 +739,7 @@
         "areaServed": ["Częstochowa", "Śląskie", "Polska"]
       },
       "content": {
-        "subtitle": "Niestandardowe sklepy internetowe tworzone w React — szybkie, wydajne i nastawione na konwersję. Projektowane pod Twój katalog i logikę biznesową, bez kompromisów narzuconych przez szablony WooCommerce.",
+        "subtitle": "Dedykowane sklepy internetowe w React — szybkie, wydajne i nastawione na konwersję. Projektowane pod Twój katalog i logikę biznesową, z pełną kontrolą nad każdym detalem.",
         "sections": [
           {
             "title": "Czym jest niestandardowy sklep internetowy",
@@ -987,17 +987,17 @@
         "items": [
           {
             "question": "Jakie usługi świadczysz?",
-            "answer": "Buduję produkcyjne aplikacje webowe: strony biznesowe, platformy SaaS, niestandardowe sklepy internetowe i funkcje oparte na AI. Wszystko w React, Next.js i TypeScript—gotowe do użycia od pierwszego dnia, nie prototypy ani demka.",
+            "answer": "Buduję produkcyjne aplikacje webowe: strony biznesowe, platformy SaaS, niestandardowe sklepy internetowe i funkcje oparte na AI. Wszystko w React, Next.js i TypeScript — gotowe do użycia od pierwszego dnia, zbudowane pod skalowanie.",
             "linkText": "Zobacz szczegóły usług",
             "linkHref": "/pl/uslugi"
           },
           {
             "question": "Czego nie budujesz?",
-            "answer": "Nie tworzę stron WordPress, witryn z page builderów ani projektów tylko-design. Nie oferuję również brandingu, identyfikacji wizualnej czy usług marketingowych. Moja praca to rozwój oprogramowania—pisanie prawdziwego kodu, który się skaluje."
+            "answer": "Skupiam się wyłącznie na dedykowanym oprogramowaniu — strony, aplikacje webowe i SaaS budowane w React i Next.js. Design, branding i marketing są poza moim zakresem. Jeśli potrzebujesz tych usług, mogę polecić specjalistów."
           },
           {
             "question": "Pracujesz sam czy z zespołem?",
-            "answer": "Pracuję jako samodzielny full-stack developer i sam obsługuję cały projekt. Bez przekazywania między osobami, bez project managerów, bez luk w komunikacji. Pracujesz bezpośrednio z osobą, która pisze Twój kod."
+            "answer": "Pracuję jako samodzielny full-stack developer i sam obsługuję cały projekt. Pracujesz bezpośrednio z osobą, która pisze Twój kod."
           },
           {
             "question": "Obsługujesz zarówno polskich jak i międzynarodowych klientów?",
@@ -1075,7 +1075,9 @@
         "items": [
           {
             "question": "Ile w praktyce kosztują funkcje AI?",
-            "answer": "Koszt integracji AI składa się z dwóch części: jednorazowego kosztu wdrożenia oraz bieżących kosztów API. Wdrożenie obejmuje zaprojektowanie, integrację i testy, a koszty API zależą od faktycznego użycia przez użytkowników. Oba elementy są omawiane z góry, tak aby nie było żadnych niespodzianek."
+            "answer": "Koszt integracji AI składa się z dwóch części: jednorazowego kosztu wdrożenia oraz bieżących kosztów API. Wdrożenie obejmuje zaprojektowanie, integrację i testy, a koszty API zależą od faktycznego użycia przez użytkowników. Oba elementy są omawiane z góry, tak aby nie było żadnych niespodzianek.",
+            "linkText": "Zobacz usługę integracji AI",
+            "linkHref": "/pl/uslugi/integracja-ai"
           },
           {
             "question": "Jak utrzymywane są koszty AI pod kontrolą i w przewidywalnym zakresie?",

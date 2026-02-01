@@ -28,16 +28,16 @@ const FAQItem = memo<FAQItemProps>(({ question, answer, isOpen, onClick }) => {
     <div
       onClick={onClick}
       className={`mb-4 sm:mb-4 rounded-xl border cursor-pointer transition-[border-color,background-color] duration-300 overflow-hidden ${
-        isOpen ? 'bg-[#0F0F0F] border-white/20' : 'bg-[#0A0A0A] border-white/5 hover:border-white/10'
+        isOpen ? 'bg-surface border-border' : 'bg-surface border-border-subtle hover:border-border'
       }`}
     >
       <div className="w-full flex items-center justify-between p-5 sm:p-6 text-left focus:outline-none">
-        <span className="text-base sm:text-lg font-normal tracking-tight text-white">{question}</span>
+        <span className="text-base sm:text-lg font-normal tracking-tight text-text-primary">{question}</span>
         <div
           className={`flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full border transition-[transform,border-color,color] flex-shrink-0 ml-3 sm:ml-4 ${
             prefersReducedMotion ? '' : 'duration-300'
           } ${
-            isOpen ? 'bg-transparent border-white text-white rotate-45' : 'bg-transparent border-white/10 text-zinc-500 rotate-0'
+            isOpen ? 'bg-transparent border-text-primary text-text-primary rotate-45' : 'bg-transparent border-border text-text-muted rotate-0'
           }`}
         >
           <Plus className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -53,7 +53,7 @@ const FAQItem = memo<FAQItemProps>(({ question, answer, isOpen, onClick }) => {
         }`}
       >
         <div className="overflow-hidden">
-          <div className="px-5 pb-5 sm:px-6 sm:pb-6 font-light tracking-tight text-zinc-400 text-xs sm:text-sm leading-relaxed max-w-[95%]">
+          <div className="px-5 pb-5 sm:px-6 sm:pb-6 font-light tracking-tight text-text-secondary text-xs sm:text-sm leading-relaxed max-w-[95%]">
             {answer}
           </div>
         </div>
@@ -99,7 +99,7 @@ const FAQTeaserSection: React.FC<FAQTeaserSectionProps> = ({ dictionary }) => {
   };
 
   return (
-    <section className="relative w-full bg-[#050505] py-12 sm:py-16 md:py-20 lg:py-24">
+    <section className="relative w-full bg-background py-12 sm:py-16 md:py-20 lg:py-24">
             <div ref={containerRef} className="max-w-[90rem] mx-auto px-4 sm:px-6 md:px-12">
         <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-16 xl:gap-24 items-start">
 
@@ -109,11 +109,11 @@ const FAQTeaserSection: React.FC<FAQTeaserSectionProps> = ({ dictionary }) => {
               <PulseBadge text={content.badge} />
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-normal tracking-tighter leading-tight text-white mb-3 sm:mb-4 md:mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-normal tracking-tighter leading-tight text-text-primary mb-3 sm:mb-4 md:mb-6">
               {content.title}
             </h2>
 
-            <p className="font-light tracking-tight text-zinc-400 text-sm sm:text-base md:text-lg max-w-md mb-5 sm:mb-8 md:mb-12 leading-relaxed opacity-80">
+            <p className="font-light tracking-tight text-text-secondary text-sm sm:text-base md:text-lg max-w-md mb-5 sm:mb-8 md:mb-12 leading-relaxed opacity-80">
               {content.subtitle}
             </p>
 

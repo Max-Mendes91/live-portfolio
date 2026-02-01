@@ -131,7 +131,7 @@ const Hero: React.FC<HeroProps> = ({ dictionary, isReady = true, locale = 'en' }
             </div>
 
             {/* Lighter Typography with Tight Tracking */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[90px] font-light tracking-tighter leading-[1.1] pb-1 sm:pb-2 mb-3 sm:mb-4 select-none text-white max-w-[1200px]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[90px] font-light tracking-tighter leading-[1.1] pb-1 sm:pb-2 mb-3 sm:mb-4 select-none text-text-primary max-w-[1200px]">
               {content.headline}
             </h1>
           </motion.div>
@@ -147,11 +147,11 @@ const Hero: React.FC<HeroProps> = ({ dictionary, isReady = true, locale = 'en' }
             }}
             className="flex flex-col items-center"
           >
-            <h2 className="text-base sm:text-lg md:text-xl font-light tracking-tight text-zinc-300 mb-4 sm:mb-6">
+            <h2 className="text-base sm:text-lg md:text-xl font-light tracking-tight text-text-secondary mb-4 sm:mb-6">
               {content.subheadline}
             </h2>
 
-            <p className="font-light tracking-tight text-zinc-400 text-xs sm:text-sm md:text-base max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed opacity-90 px-2 sm:px-0">
+            <p className="font-light tracking-tight text-text-secondary text-xs sm:text-sm md:text-base max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed opacity-90 px-2 sm:px-0">
               {content.description}
             </p>
 
@@ -160,11 +160,11 @@ const Hero: React.FC<HeroProps> = ({ dictionary, isReady = true, locale = 'en' }
                 <CornerGlowButton href={locale === 'pl' ? '/pl/kontakt' : '/en/contact'}>{content.ctaPrimary}</CornerGlowButton>
                 <CornerGlowButton href={locale === 'pl' ? '/pl/projekty' : '/en/projects'}>{content.ctaSecondary}</CornerGlowButton>
               </div>
-              <p className="text-xs sm:text-sm text-zinc-500">
+              <p className="text-xs sm:text-sm text-text-muted">
                 {content.phoneLabel}{' '}
                 <a
                   href={`tel:${SITE_CONFIG.owner.phone.replace(/\s/g, '')}`}
-                  className="text-zinc-400 hover:text-white transition-colors"
+                  className="text-text-secondary hover:text-text-primary transition-colors"
                 >
                   {SITE_CONFIG.owner.phone}
                 </a>
@@ -190,8 +190,8 @@ const Hero: React.FC<HeroProps> = ({ dictionary, isReady = true, locale = 'en' }
                   key={signal.label}
                   className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm"
                 >
-                  {IconComponent && <IconComponent className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white/60" />}
-                  <span className="text-[9px] sm:text-[10px] md:text-xs font-medium tracking-wide text-white/70">
+                  {IconComponent && <IconComponent className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-text-muted" />}
+                  <span className="text-[9px] sm:text-[10px] md:text-xs font-medium tracking-wide text-text-secondary">
                     {signal.label}
                   </span>
                 </div>
@@ -206,7 +206,7 @@ const Hero: React.FC<HeroProps> = ({ dictionary, isReady = true, locale = 'en' }
         className="absolute bottom-6 sm:bottom-10 w-full flex items-center justify-center px-4 z-20"
       >
         <div className="flex items-center">
-          <span className="hidden sm:block text-[9px] sm:text-[10px] font-medium tracking-[0.2em] sm:tracking-[0.3em] text-zinc-500/60 uppercase whitespace-nowrap text-right mr-4 sm:mr-10">{content.scrollDown}</span>
+          <span className="hidden sm:block text-[9px] sm:text-[10px] font-medium tracking-[0.2em] sm:tracking-[0.3em] text-text-muted uppercase whitespace-nowrap text-right mr-4 sm:mr-10">{content.scrollDown}</span>
 
           {/* Mobile: Chevron arrow */}
           <motion.div
@@ -218,7 +218,7 @@ const Hero: React.FC<HeroProps> = ({ dictionary, isReady = true, locale = 'en' }
             }
             className="sm:hidden"
           >
-            <ChevronDown className="w-6 h-6 text-white/40" />
+            <ChevronDown className="w-6 h-6 text-text-muted" />
           </motion.div>
 
           {/* Desktop: Mouse scroll wheel */}
@@ -233,7 +233,7 @@ const Hero: React.FC<HeroProps> = ({ dictionary, isReady = true, locale = 'en' }
               className="w-0.5 h-2.5 bg-white/80 rounded-full shadow-[0_0_8px_white]"
             />
           </div>
-          <span className="hidden sm:block text-[9px] sm:text-[10px] font-medium tracking-[0.2em] sm:tracking-[0.3em] text-zinc-500/60 uppercase whitespace-nowrap text-left ml-4 sm:ml-10">{content.toSeeProjects}</span>
+          <span className="hidden sm:block text-[9px] sm:text-[10px] font-medium tracking-[0.2em] sm:tracking-[0.3em] text-text-muted uppercase whitespace-nowrap text-left ml-4 sm:ml-10">{content.toSeeProjects}</span>
         </div>
       </motion.div>
     </section>

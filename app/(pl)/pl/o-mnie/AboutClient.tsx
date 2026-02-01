@@ -26,7 +26,8 @@ const linkPatterns: Record<string, string> = {
   'sklepy internetowe': '/pl/uslugi/sklepy-internetowe',
   'aplikacje webowe': '/pl/uslugi/aplikacje-webowe',
   'integracją AI': '/pl/uslugi/integracja-ai',
-  'słabe SEO': '/pl/uslugi/pozycjonowanie',
+  'funkcje AI': '/pl/uslugi/integracja-ai',
+  'pod SEO': '/pl/uslugi/pozycjonowanie',
   React: 'https://react.dev',
   'Next.js': 'https://nextjs.org',
 };

@@ -8,10 +8,9 @@ export default function manifest(): MetadataRoute.Manifest {
     description:
       'Professional web development services. React, Next.js, E-commerce, and SEO optimization.',
     start_url: '/',
-    display: 'standalone',
+    display: 'browser', // Changed from 'standalone' - no app behavior, normal website
     background_color: '#050505',
     theme_color: '#050505',
-    orientation: 'portrait-primary',
     categories: ['business', 'productivity'],
     lang: 'en',
     icons: [
@@ -19,13 +18,11 @@ export default function manifest(): MetadataRoute.Manifest {
         src: '/icon-192x192.png',
         sizes: '192x192',
         type: 'image/png',
-        purpose: 'maskable',
       },
       {
         src: '/icon-512x512.png',
         sizes: '512x512',
         type: 'image/png',
-        purpose: 'any',
       },
     ],
   };
