@@ -183,58 +183,86 @@ const aboutShapes: GeometricShapeConfig[] = [
 // ============================================
 // PROJECTS PAGE PRESET
 // Achievement-themed icons for portfolio showcase
-// Smaller page - fewer icons, optimized positioning
+// Icons in HERO only, then reappear in CTA section (after cards)
+// Cards section (20-65%) is kept clean - no icons overlapping
 // ============================================
 const projectsIcons: FloatingIconConfig[] = [
-  // === HERO SECTION (scroll 3-35%) ===
+  // === HERO SECTION (scroll 3-18%) - Fade out BEFORE cards start ===
   {
     id: 'rocket',
-    initialPosition: { x: 88, y: 12 },
-    movement: { x: -15, y: 60 },
+    initialPosition: { x: 88, y: 10 },
+    movement: { x: -12, y: 50 },
     parallaxSpeed: 0.35,
     size: 75,
     opacity: 0.5,
     fadeInAt: 0.03,
-    fadeOutAt: 0.35,
+    fadeOutAt: 0.16,
     rotation: -12,
     zIndex: 10,
   },
   {
     id: 'users',
-    initialPosition: { x: 5, y: 18 },
-    movement: { x: 12, y: 50 },
+    initialPosition: { x: 5, y: 15 },
+    movement: { x: 10, y: 45 },
     parallaxSpeed: 0.4,
     size: 70,
     opacity: 0.45,
-    fadeInAt: 0.05,
-    fadeOutAt: 0.38,
+    fadeInAt: 0.04,
+    fadeOutAt: 0.18,
     rotation: 8,
     zIndex: 9,
   },
-  // === PROJECTS GRID SECTION (scroll 30-65%) ===
+  // === GAP: 18-50% - Cards section, no icons ===
+  // === CTA PAIR 1 (scroll 50-62%) - First pair right after cards ===
   {
-    id: 'star',
-    initialPosition: { x: 90, y: 38 },
-    movement: { x: -12, y: 45 },
+    id: 'target',
+    initialPosition: { x: 5, y: 38 },
+    movement: { x: 4, y: 25 },
+    parallaxSpeed: 0.35,
+    size: 60,
+    opacity: 0.5,
+    fadeInAt: 0.50,
+    fadeOutAt: 0.62,
+    rotation: 6,
+    zIndex: 10,
+  },
+  {
+    id: 'lightbulb',
+    initialPosition: { x: 93, y: 40 },
+    movement: { x: -4, y: 22 },
     parallaxSpeed: 0.3,
-    size: 65,
+    size: 58,
+    opacity: 0.48,
+    fadeInAt: 0.52,
+    fadeOutAt: 0.64,
+    rotation: -8,
+    zIndex: 9,
+  },
+  // === GAP: 62-68% ===
+  // === CTA PAIR 2 (scroll 68-76%) - Second pair near CTA text ===
+  {
+    id: 'checkmark',
+    initialPosition: { x: 5, y: 55 },
+    movement: { x: 3, y: 15 },
+    parallaxSpeed: 0.3,
+    size: 55,
     opacity: 0.45,
-    fadeInAt: 0.28,
-    fadeOutAt: 0.60,
-    rotation: 15,
+    fadeInAt: 0.68,
+    fadeOutAt: 0.76,
+    rotation: -5,
     zIndex: 8,
   },
   {
-    id: 'target',
-    initialPosition: { x: 4, y: 48 },
-    movement: { x: 10, y: 40 },
+    id: 'star',
+    initialPosition: { x: 93, y: 57 },
+    movement: { x: -3, y: 12 },
     parallaxSpeed: 0.35,
-    size: 60,
+    size: 52,
     opacity: 0.42,
-    fadeInAt: 0.38,
-    fadeOutAt: 0.68,
-    rotation: -6,
-    zIndex: 11,
+    fadeInAt: 0.70,
+    fadeOutAt: 0.78,
+    rotation: 12,
+    zIndex: 8,
   },
 ];
 
