@@ -3,13 +3,13 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, FileText } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import FooterSection from '@/components/sections/FooterSection';
 import { FloatingTechIcons } from '@/components/effects/FloatingTechIcons';
 import PulseBadge from '@/components/ui/PulseBadge';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
-import { BinderClip } from '@/components/ui';
+import { BinderClip, Button } from '@/components/ui';
 import { SupportedLocale } from '@/types/seo';
 import { Dictionary } from '@/types/i18n';
 import { useIsDesktop, usePrefersReducedMotion, useIsMobile } from '@/hooks/useMediaQuery';
@@ -153,17 +153,29 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
                             ))}
                           </div>
 
-                          {featuredProject.externalUrl && (
-                            <a
-                              href={featuredProject.externalUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 border border-border text-sm font-medium text-text-primary hover:bg-white/15 hover:border-white/20 transition-all w-fit"
-                            >
-                              {featuredProject.externalCta || 'Visit Live Site'}
-                              <ExternalLink className="w-4 h-4" />
-                            </a>
-                          )}
+                          <div className="flex flex-wrap items-center gap-3">
+                            {featuredProject.caseStudyHref && (
+                              <Button
+                                variant="outline"
+                                size="sm"
+                                href={featuredProject.caseStudyHref}
+                                icon={<FileText className="w-4 h-4" />}
+                              >
+                                {featuredProject.caseStudyCta || 'Read Case Study'}
+                              </Button>
+                            )}
+                            {featuredProject.externalUrl && (
+                              <a
+                                href={featuredProject.externalUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
+                              >
+                                {featuredProject.externalCta || 'Visit Live Site'}
+                                <ExternalLink className="w-4 h-4" />
+                              </a>
+                            )}
+                          </div>
                         </div>
                       </div>
                     </div>

@@ -9,6 +9,8 @@ interface CornerGlowButtonProps {
   onClick?: () => void;
   href?: string;
   className?: string;
+  target?: '_blank' | '_self';
+  icon?: React.ReactNode;
 }
 
 const CornerGlowButton: React.FC<CornerGlowButtonProps> = ({
@@ -16,6 +18,8 @@ const CornerGlowButton: React.FC<CornerGlowButtonProps> = ({
   onClick,
   href,
   className = "",
+  target,
+  icon,
 }) => {
   const buttonClasses = `group relative inline-flex h-10 sm:h-11 md:h-12 items-center justify-center px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-3.5 text-[9px] sm:text-[10px] font-medium uppercase tracking-[0.15em] sm:tracking-[0.2em] md:tracking-[0.25em] text-white transition-all duration-300 hover:text-white/90 ${className}`;
 
@@ -36,11 +40,26 @@ const CornerGlowButton: React.FC<CornerGlowButtonProps> = ({
       {/* Button text */}
       <span className="relative z-10 flex items-center justify-center gap-2 whitespace-nowrap">
         {children}
+        {icon}
       </span>
     </>
   );
 
   if (href) {
+    // External link (opens in new tab)
+    if (target === '_blank') {
+      return (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={buttonClasses}
+        >
+          {content}
+        </a>
+      );
+    }
+    // Internal link
     return (
       <Link href={href} className={buttonClasses}>
         {content}

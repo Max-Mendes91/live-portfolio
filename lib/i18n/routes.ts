@@ -20,6 +20,8 @@ const ROUTE_SLUGS = {
     'services/ecommerce': 'services/ecommerce-development',
     'services/seo': 'services/seo-performance-optimization',
     'services/ai-integration': 'services/ai-integration',
+    // Case study sub-pages
+    'projects/flowmate': 'projects/flowmate',
   },
   pl: {
     home: '',
@@ -36,6 +38,8 @@ const ROUTE_SLUGS = {
     'services/ecommerce': 'uslugi/sklepy-internetowe',
     'services/seo': 'uslugi/pozycjonowanie',
     'services/ai-integration': 'uslugi/integracja-ai',
+    // Case study sub-pages (Polish slugs for SEO)
+    'projects/flowmate': 'projekty/flowmate',
   },
 } as const;
 

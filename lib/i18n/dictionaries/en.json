@@ -308,7 +308,9 @@
         "externalCta": "Visit Live Site",
         "tags": ["SaaS", "AI", "Full-Stack"],
         "tech": ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "OpenAI", "Stripe"],
-        "image": "/projects/flowmate-landing.webp"
+        "image": "/projects/flowmate-landing.webp",
+        "caseStudyHref": "/en/projects/flowmate",
+        "caseStudyCta": "Read Case Study"
       },
       {
         "id": "markmind",
@@ -1383,6 +1385,255 @@
       "entireAgreement": {
         "title": "13. Entire Agreement",
         "content": "These Terms & Conditions, together with the Privacy Policy, constitute the entire agreement between you and Max Mendes regarding use of this website. Any separate service agreements for project work shall supplement but not replace these terms for general website use."
+      }
+    }
+  },
+  "caseStudies": {
+    "flowmate": {
+      "id": "flowmate",
+      "label": "FlowMate Case Study",
+      "href": "/en/projects/flowmate",
+      "hrefLang": {
+        "en": "/en/projects/flowmate",
+        "pl": "/pl/projekty/flowmate"
+      },
+      "seo": {
+        "title": "FlowMate Case Study - AI Email SaaS Built in 6 Months | Max Mendes",
+        "metaDescription": "How I built FlowMate: a production AI email platform unifying Gmail, Outlook, Slack & Telegram. 300+ hours, 4 integrations, solo development. Full technical breakdown.",
+        "keywords": [
+          "saas case study",
+          "ai email platform",
+          "next.js saas",
+          "react saas development",
+          "email productivity app",
+          "multi-platform integration",
+          "solo developer saas",
+          "ai integration case study",
+          "stripe subscription saas",
+          "oauth multi-provider",
+          "full-stack development portfolio",
+          "production saas architecture"
+        ],
+        "h1": "FlowMate: From Email Chaos to AI-Powered Clarity",
+        "ogTitle": "FlowMate Case Study - AI Email SaaS Built in 6 Months | Max Mendes",
+        "ogDescription": "Solo-built SaaS unifying 4 communication platforms with AI assistance. Technical deep-dive into architecture, security, and lessons learned."
+      },
+      "schema": {
+        "type": "Article",
+        "articleType": "TechArticle",
+        "description": "Technical case study of FlowMate, an AI-powered email management SaaS platform built with Next.js, React, and multiple AI providers.",
+        "author": "Max Mendes",
+        "datePublished": "2026-01-15",
+        "keywords": ["SaaS Development", "AI Integration", "Email Management", "Next.js", "React", "Full-Stack Development"]
+      },
+      "content": {
+        "hero": {
+          "badge": "Case Study",
+          "title": "FlowMate: From Email Chaos to AI-Powered Clarity",
+          "subtitle": "How I built a production SaaS that turns 200 emails into 5 decisions",
+          "metrics": [
+            { "value": "300+", "label": "Development Hours" },
+            { "value": "4", "label": "Platforms Unified" },
+            { "value": "6", "label": "Months to Launch" },
+            { "value": "30min", "label": "Time to Learn" }
+          ],
+          "image": "/projects/flowmate-landing.webp",
+          "liveUrl": "https://www.flowmate.click/",
+          "liveUrlCta": "View Live Site",
+          "tags": ["SaaS", "AI Integration", "Full-Stack", "Multi-Platform"]
+        },
+        "sections": [
+          {
+            "id": "problem",
+            "title": "The Problem",
+            "content": [
+              "Working in IT support, I was drowning in email. Multiple inboxes demanding attention. Constant context-switching between Gmail, Slack, and Telegram. Customer service emails piling up faster than I could respond. Hours lost every day just managing communication instead of actually doing meaningful work.",
+              "The pain was real: jumping between 4+ platforms daily, writing the same types of responses repeatedly, missing important emails buried under newsletters, and no way to broadcast updates across all channels without copying and pasting the same message four times.",
+              "I didn't need another email client with a prettier interface. I needed something that would actually reduce the work — a unified hub where AI handles the boring parts so I could focus on decisions, not inbox management."
+            ]
+          },
+          {
+            "id": "solution",
+            "title": "The Solution",
+            "content": [
+              "FlowMate unifies Gmail, Outlook, Slack, and Telegram into a single intelligent hub. AI handles categorization, generates professional replies, summarizes long threads, and lets you broadcast to all platforms with one click.",
+              "The core idea: reduce 200 emails to 5 actual decisions. Let AI categorize what's urgent, what needs action, what's just FYI. Draft responses you can send or edit. Broadcast announcements everywhere without writing four different messages."
+            ],
+            "highlight": {
+              "quote": "Best feature is the broadcast — how easy it is to send to all platforms with different styles for each one automatically.",
+              "author": "Early User Feedback",
+              "source": "LinkedIn"
+            }
+          },
+          {
+            "id": "technical-challenges",
+            "title": "Technical Challenges",
+            "subsections": [
+              {
+                "title": "Security Was Non-Negotiable",
+                "content": [
+                  "Handling people's email means handling their most sensitive data. OAuth tokens, personal messages, business communications. One security breach and the product is dead.",
+                  "Every decision prioritized protection: AES-256-GCM encryption for all OAuth tokens with PBKDF2 key derivation. Row Level Security policies on every user table in the database. CSRF protection using 256-bit random state parameters. Rate limiting at 200 requests per minute per IP. Middleware-level bot blocking for 50+ known malicious crawlers. Constant-time comparisons to prevent timing attacks on authentication flows."
+                ]
+              },
+              {
+                "title": "Multi-Provider OAuth Complexity",
+                "content": [
+                  "Each platform has different OAuth flows, different scopes, different edge cases. Gmail requires validating that the authenticated account matches the user's email. Slack needs signed state parameters to work in incognito mode. Telegram uses phone-based authentication with 2FA support instead of standard OAuth.",
+                  "I built a unified token management system that handles all four providers with encrypted storage, automatic token refresh, and graceful degradation when individual services fail."
+                ]
+              },
+              {
+                "title": "State Management at Scale",
+                "content": [
+                  "FlowMate has 10 different views, 4 platforms syncing simultaneously, real-time updates, draft management, AI chat history, and user preferences — all needing to stay in sync without performance degradation.",
+                  "The solution combined several patterns: optimistic sync (save locally first, sync to database in background), IndexedDB paired with Supabase for offline-first architecture with cloud as source of truth, per-user storage keys for multi-tenant isolation, and circuit breakers with exponential backoff for graceful API failure handling."
+                ]
+              },
+              {
+                "title": "AI Cost Optimization",
+                "content": [
+                  "AI features are expensive at scale. Running every email through a large language model would bankrupt the project before it launched. I implemented a model fallback chain: Claude 3 Haiku first at $0.25 per million tokens, escalating to Claude 3.5 Haiku at $0.80 only when needed, with heuristic fallbacks for simple categorization tasks.",
+                  "The result: 99.5% reliability on natural language email queries while keeping costs sustainable for a subscription business."
+                ],
+                "link": {
+                  "text": "Learn more about AI integration services →",
+                  "href": "/en/services/ai-integration"
+                }
+              }
+            ]
+          },
+          {
+            "id": "build-process",
+            "title": "The Build",
+            "timeline": {
+              "start": "July 2025",
+              "end": "January 15, 2026",
+              "duration": "6 months",
+              "hours": "300+"
+            },
+            "content": [
+              "Solo development from architecture through deployment. Every decision — database schema, authentication flow, AI prompts, payment integration, error handling — made by one person with full context of the entire system.",
+              "This approach has tradeoffs. Slower than a team, but no communication overhead. Every part of the codebase fits together because one mind designed it. Technical debt is minimal because I had to live with every shortcut."
+            ],
+            "stackDecisions": [
+              {
+                "layer": "Framework",
+                "choice": "Next.js 15 + React 19",
+                "why": "Server-side rendering, API routes in one codebase, App Router for modern patterns"
+              },
+              {
+                "layer": "Database",
+                "choice": "Supabase (PostgreSQL)",
+                "why": "Row Level Security policies, real-time subscriptions, generous free tier for MVP"
+              },
+              {
+                "layer": "Authentication",
+                "choice": "Clerk",
+                "why": "Better social login experience than Supabase Auth, faster integration"
+              },
+              {
+                "layer": "AI Provider",
+                "choice": "OpenRouter",
+                "why": "Switch between Claude, Gemini, DeepSeek without code changes"
+              },
+              {
+                "layer": "Payments",
+                "choice": "Stripe",
+                "why": "Industry standard, reliable webhooks, good documentation"
+              },
+              {
+                "layer": "Hosting",
+                "choice": "Vercel",
+                "why": "Zero-config deploys, edge functions, built-in analytics"
+              }
+            ],
+            "link": {
+              "text": "See full-stack development services →",
+              "href": "/en/services/web-development"
+            }
+          },
+          {
+            "id": "scale",
+            "title": "What Got Built",
+            "metrics": [
+              { "value": "112", "label": "API Routes" },
+              { "value": "166", "label": "React Components" },
+              { "value": "23", "label": "Database Tables" },
+              { "value": "44", "label": "Migrations" },
+              { "value": "20", "label": "Custom Hooks" }
+            ],
+            "features": [
+              "Unified inbox for Gmail, Outlook, Slack, Telegram",
+              "AI categorization: Priority, Action Required, Newsletters, Social, FYI",
+              "Smart replies with professional tone matching",
+              "Natural language email search (99.5% accuracy)",
+              "Multi-turn AI chat with conversation memory",
+              "Broadcast system: compose once, send everywhere",
+              "Three-tier subscription with Stripe",
+              "Complete admin dashboard"
+            ]
+          },
+          {
+            "id": "results",
+            "title": "Results & Lessons",
+            "content": [
+              "User feedback validated the core thesis: Broadcast was the killer feature. The ability to compose once and send to Email, Slack, and Telegram — with AI generating platform-specific variations automatically — saved the most time. I invested heavily in making that flow feel effortless.",
+              "The strongest signal: users understand the entire app in about 30 minutes. No commands to memorize. No complex onboarding flow. Connect your accounts and start working. Simplicity was harder to build than complexity, but worth it."
+            ],
+            "lessonsLearned": [
+              {
+                "title": "Ship Smaller, Validate Faster",
+                "content": "Launched with 10 views and 4 integrations. Could have validated the core idea with Gmail + AI alone, then expanded based on real usage patterns."
+              },
+              {
+                "title": "Users Find What You Miss",
+                "content": "Built in isolation for months. Real users found bugs and UX friction points within days that I'd completely missed. Earlier feedback would have saved rework."
+              },
+              {
+                "title": "Features Aren't Value",
+                "content": "Spent time building features before nailing the messaging. The broadcast feature was valuable because it solved a clear problem — not because it was technically impressive."
+              }
+            ]
+          }
+        ],
+        "techStack": {
+          "title": "Technical Stack",
+          "categories": [
+            {
+              "name": "Frontend",
+              "items": ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Framer Motion", "Radix UI"]
+            },
+            {
+              "name": "Backend",
+              "items": ["Node.js", "Supabase (PostgreSQL)", "Vercel Edge Functions"]
+            },
+            {
+              "name": "AI & LLM",
+              "items": ["OpenRouter", "Claude 3 Haiku", "Vercel AI SDK"]
+            },
+            {
+              "name": "Integrations",
+              "items": ["Gmail API", "Microsoft Graph", "Slack API", "Telegram MTProto"]
+            },
+            {
+              "name": "Infrastructure",
+              "items": ["Vercel", "Stripe", "Clerk", "Sentry", "Resend"]
+            }
+          ]
+        },
+        "cta": {
+          "title": "Building a SaaS or Complex Web Application?",
+          "subtitle": "I bring the same architecture thinking, security focus, and attention to user experience to every project.",
+          "primaryButton": {
+            "text": "Start a Conversation",
+            "href": "/en/contact"
+          },
+          "secondaryButton": {
+            "text": "View All Projects",
+            "href": "/en/projects"
+          }
+        }
       }
     }
   }

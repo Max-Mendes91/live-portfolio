@@ -1,11 +1,13 @@
 import { SupportedLocale } from '@/types/seo';
-import { ServiceLink } from '@/types/i18n';
+import { ServiceLink, CaseStudyPageDict } from '@/types/i18n';
 import {
   generateHomePageSchemas,
   generateServiceSchema,
   generateServicePageSchema,
   generateFAQSchema,
   generateBreadcrumbSchema,
+  generateCaseStudySchema,
+  generateCaseStudyHowToSchema,
   HomePageSchemaData,
 } from '@/lib/seo/schemas';
 
@@ -67,4 +69,15 @@ export function AllServicesJsonLd({ locale = 'en' }: { locale?: SupportedLocale 
 export function ServicePageJsonLd({ serviceData }: { serviceData: ServiceLink }) {
   const schema = generateServicePageSchema(serviceData);
   return <JsonLd data={schema} />;
+}
+
+// Case study page JSON-LD (TechArticle + optional HowTo)
+export function CaseStudyPageJsonLd({ caseStudyData }: { caseStudyData: CaseStudyPageDict }) {
+  const articleSchema = generateCaseStudySchema(caseStudyData);
+  const howToSchema = generateCaseStudyHowToSchema(caseStudyData);
+
+  // Combine schemas, filtering out null values
+  const schemas = [articleSchema, howToSchema].filter(Boolean);
+
+  return <JsonLd data={schemas} />;
 }

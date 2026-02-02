@@ -3,9 +3,10 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowDownCircle, ArrowUpRight } from 'lucide-react';
+import { ArrowDownCircle, ArrowUpRight, FileText } from 'lucide-react';
 import { WorkGridDict } from '@/types/i18n';
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui';
 import { useScrollAnimationGroup } from '@/hooks/useScrollAnimation';
 
 interface WorkGridProps {
@@ -114,21 +115,38 @@ const WorkGrid: React.FC<WorkGridProps> = ({ dictionary }) => {
                   {featuredProject.metric}
                 </p>
 
-                {/* CTA */}
-                {featuredProject.href !== '#' && (
-                  <Link
-                    href={featuredProject.href}
-                    className={cn(
-                      'inline-flex items-center gap-1.5',
-                      'text-sm font-medium text-text-secondary',
-                      'hover:text-text-primary transition-colors duration-200',
-                      'group/link'
-                    )}
-                  >
-                    <span>{featuredProject.cta}</span>
-                    <ArrowUpRight className="w-4 h-4 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
-                  </Link>
-                )}
+                {/* CTAs */}
+                <div className="flex flex-wrap items-center gap-3 md:gap-4">
+                  {/* Case Study Button */}
+                  {featuredProject.caseStudyHref && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      href={featuredProject.caseStudyHref}
+                      icon={<FileText className="w-4 h-4" />}
+                    >
+                      {featuredProject.caseStudyCta || 'Read Case Study'}
+                    </Button>
+                  )}
+
+                  {/* External Link */}
+                  {featuredProject.externalUrl && (
+                    <a
+                      href={featuredProject.externalUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={cn(
+                        'inline-flex items-center gap-1.5',
+                        'text-sm font-medium text-text-secondary',
+                        'hover:text-text-primary transition-colors duration-200',
+                        'group/link'
+                      )}
+                    >
+                      <span>{featuredProject.externalCta || 'Visit Site'}</span>
+                      <ArrowUpRight className="w-4 h-4 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           </div>

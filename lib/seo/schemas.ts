@@ -7,7 +7,7 @@ import {
   BreadcrumbSchema,
   SupportedLocale,
 } from '@/types/seo';
-import { ServiceLink } from '@/types/i18n';
+import { ServiceLink, CaseStudyPageDict } from '@/types/i18n';
 import { SITE_CONFIG, GEO_COORDINATES, TARGET_MARKETS, SKILLS, getFullUrl } from './config';
 
 // Generate Person schema for Max Mendes
@@ -274,5 +274,94 @@ export function generateServicePageSchema(serviceData: ServiceLink): ServiceSche
       name: area,
     })),
     serviceType: schema.serviceType,
+  };
+}
+
+// Case Study / TechArticle Schema type
+export interface CaseStudySchema {
+  '@context': string;
+  '@type': string;
+  '@id'?: string;
+  headline: string;
+  description: string;
+  author: {
+    '@type': string;
+    name: string;
+    url: string;
+  };
+  publisher: {
+    '@type': string;
+    name: string;
+    url: string;
+  };
+  datePublished: string;
+  dateModified?: string;
+  mainEntityOfPage: string;
+  image?: string;
+  keywords: string[];
+  articleSection?: string;
+  wordCount?: number;
+  about?: Array<{
+    '@type': string;
+    name: string;
+  }>;
+}
+
+// Generate Case Study (TechArticle) schema from dictionary
+export function generateCaseStudySchema(caseStudyData: CaseStudyPageDict): CaseStudySchema {
+  const { id, schema, seo, href, content } = caseStudyData;
+  const canonicalUrl = getFullUrl(href);
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': schema.articleType || 'TechArticle',
+    '@id': `${SITE_CONFIG.url}/#case-study-${id}`,
+    headline: seo.h1,
+    description: schema.description,
+    author: {
+      '@type': 'Person',
+      name: schema.author,
+      url: SITE_CONFIG.url,
+    },
+    publisher: {
+      '@type': 'Person',
+      name: SITE_CONFIG.owner.name,
+      url: SITE_CONFIG.url,
+    },
+    datePublished: schema.datePublished,
+    dateModified: schema.dateModified || schema.datePublished,
+    mainEntityOfPage: canonicalUrl,
+    image: content.hero.image ? getFullUrl(content.hero.image) : undefined,
+    keywords: schema.keywords,
+    articleSection: 'Case Study',
+    about: content.techStack.categories.flatMap((cat) =>
+      cat.items.map((item) => ({
+        '@type': 'Thing',
+        name: item,
+      }))
+    ),
+  };
+}
+
+// Generate HowTo schema for the build process section (optional rich result)
+export function generateCaseStudyHowToSchema(caseStudyData: CaseStudyPageDict) {
+  const { seo, content, href } = caseStudyData;
+  const buildSection = content.sections.find((s) => s.id === 'build-process');
+
+  if (!buildSection?.stackDecisions) return null;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: `How to Build a ${content.hero.tags.join(', ')} Application`,
+    description: seo.metaDescription,
+    totalTime: buildSection.timeline?.duration ? `P${buildSection.timeline.duration.replace(' months', 'M').replace(' month', 'M')}` : undefined,
+    step: buildSection.stackDecisions.map((decision, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: `Choose ${decision.layer}`,
+      text: `${decision.choice}: ${decision.why}`,
+    })),
+    mainEntityOfPage: getFullUrl(href),
   };
 }
