@@ -1249,6 +1249,172 @@ const aiIntegrationIcons: FloatingIconConfig[] = [
 const aiIntegrationShapes: GeometricShapeConfig[] = [];
 
 // ============================================
+// CASE STUDY PAGE PRESET
+// Extended scroll coverage for long-form case study pages
+// Icons span from hero through all content sections to CTA
+// Fades out before footer reveal spacer (at ~85%)
+// ============================================
+const caseStudyIcons: FloatingIconConfig[] = [
+  // === HERO SECTION (scroll 3-12%) - Project overview ===
+  {
+    id: 'rocket',
+    initialPosition: { x: 89, y: 8 },
+    movement: { x: -15, y: 75 },
+    parallaxSpeed: 0.3,
+    size: 80,
+    opacity: 0.5,
+    fadeInAt: 0.03,
+    fadeOutAt: 0.12,
+    rotation: -10,
+    zIndex: 10,
+  },
+  {
+    id: 'lightbulb',
+    initialPosition: { x: 4, y: 14 },
+    movement: { x: 12, y: 60 },
+    parallaxSpeed: 0.35,
+    size: 70,
+    opacity: 0.45,
+    fadeInAt: 0.03,
+    fadeOutAt: 0.13,
+    rotation: 8,
+    zIndex: 9,
+  },
+  // === GAP: 13-18% ===
+  // === CONTENT SECTION 1 (scroll 18-28%) - Problem/Challenge ===
+  {
+    id: 'target',
+    initialPosition: { x: 90, y: 20 },
+    movement: { x: -18, y: 65 },
+    parallaxSpeed: 0.4,
+    size: 75,
+    opacity: 0.48,
+    fadeInAt: 0.18,
+    fadeOutAt: 0.28,
+    rotation: 6,
+    zIndex: 8,
+  },
+  {
+    id: 'search',
+    initialPosition: { x: 3, y: 26 },
+    movement: { x: 14, y: 50 },
+    parallaxSpeed: 0.45,
+    size: 68,
+    opacity: 0.45,
+    fadeInAt: 0.20,
+    fadeOutAt: 0.30,
+    rotation: -7,
+    zIndex: 12,
+  },
+  // === GAP: 30-35% ===
+  // === CONTENT SECTION 2 (scroll 35-45%) - Solution/Approach ===
+  {
+    id: 'layers',
+    initialPosition: { x: 88, y: 36 },
+    movement: { x: -15, y: 50 },
+    parallaxSpeed: 0.35,
+    size: 72,
+    opacity: 0.45,
+    fadeInAt: 0.35,
+    fadeOutAt: 0.45,
+    rotation: 10,
+    zIndex: 11,
+  },
+  {
+    id: 'workflow',
+    initialPosition: { x: 5, y: 42 },
+    movement: { x: 12, y: 42 },
+    parallaxSpeed: 0.4,
+    size: 65,
+    opacity: 0.42,
+    fadeInAt: 0.37,
+    fadeOutAt: 0.47,
+    rotation: -5,
+    zIndex: 10,
+  },
+  // === GAP: 47-52% ===
+  // === CONTENT SECTION 3 (scroll 52-62%) - Implementation/Technical ===
+  {
+    id: 'api',
+    initialPosition: { x: 90, y: 50 },
+    movement: { x: -12, y: 40 },
+    parallaxSpeed: 0.3,
+    size: 68,
+    opacity: 0.45,
+    fadeInAt: 0.52,
+    fadeOutAt: 0.62,
+    rotation: -8,
+    zIndex: 9,
+  },
+  {
+    id: 'server',
+    initialPosition: { x: 4, y: 56 },
+    movement: { x: 10, y: 35 },
+    parallaxSpeed: 0.35,
+    size: 62,
+    opacity: 0.42,
+    fadeInAt: 0.54,
+    fadeOutAt: 0.64,
+    rotation: 6,
+    zIndex: 8,
+  },
+  // === GAP: 64-68% ===
+  // === TECH STACK SECTION (scroll 68-76%) ===
+  {
+    id: 'react',
+    initialPosition: { x: 87, y: 64 },
+    movement: { x: -10, y: 30 },
+    parallaxSpeed: 0.3,
+    size: 65,
+    opacity: 0.42,
+    fadeInAt: 0.68,
+    fadeOutAt: 0.76,
+    rotation: 5,
+    zIndex: 11,
+  },
+  {
+    id: 'typescript',
+    initialPosition: { x: 6, y: 70 },
+    movement: { x: 8, y: 25 },
+    parallaxSpeed: 0.35,
+    size: 58,
+    opacity: 0.4,
+    fadeInAt: 0.70,
+    fadeOutAt: 0.78,
+    rotation: -6,
+    zIndex: 10,
+  },
+  // === GAP: 78-80% ===
+  // === CTA SECTION (scroll 80-86%) - Final icons before footer ===
+  {
+    id: 'checkmark',
+    initialPosition: { x: 88, y: 76 },
+    movement: { x: -8, y: 18 },
+    parallaxSpeed: 0.3,
+    size: 55,
+    opacity: 0.38,
+    fadeInAt: 0.80,
+    fadeOutAt: 0.86,
+    rotation: 4,
+    zIndex: 9,
+  },
+  {
+    id: 'star',
+    initialPosition: { x: 5, y: 80 },
+    movement: { x: 6, y: 15 },
+    parallaxSpeed: 0.3,
+    size: 52,
+    opacity: 0.36,
+    fadeInAt: 0.82,
+    fadeOutAt: 0.88,
+    rotation: -4,
+    zIndex: 8,
+  },
+];
+
+const caseStudyShapes: GeometricShapeConfig[] = [];
+
+// ============================================
 // PRESET REGISTRY
 // ============================================
 export const PRESETS: Record<PresetName, FloatingIconsPreset> = {
@@ -1353,6 +1519,17 @@ export const PRESETS: Record<PresetName, FloatingIconsPreset> = {
     name: 'ai-integration',
     icons: aiIntegrationIcons,
     shapes: aiIntegrationShapes,
+    // Mobile: Show first 4 icons for sequential reveal coverage
+    mobile: {
+      maxIcons: 4,
+      maxShapes: 0,
+      sizeMultiplier: 0.6,
+    },
+  },
+  'case-study': {
+    name: 'case-study',
+    icons: caseStudyIcons,
+    shapes: caseStudyShapes,
     // Mobile: Show first 4 icons for sequential reveal coverage
     mobile: {
       maxIcons: 4,

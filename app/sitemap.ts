@@ -89,6 +89,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
       changeFrequency: 'monthly',
     },
+    // Case Study: FlowMate
+    {
+      en: '/en/projects/flowmate',
+      pl: '/pl/projekty/flowmate',
+      priority: 0.8,
+      changeFrequency: 'monthly',
+    },
   ];
 
   // Generate sitemap entries with hreflang alternates

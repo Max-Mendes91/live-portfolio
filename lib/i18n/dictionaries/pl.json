@@ -308,7 +308,7 @@
         "id": "flowmate",
         "title": "FlowMate — Platforma AI do Zarządzania Emailami",
         "shortDescription": "Samodzielnie zbudowany SaaS. Generowanie treści AI, wielokanałowy email, 300+ godzin kodu — działa na produkcji.",
-        "description": "Produkcyjna platforma SaaS w Next.js i React do zarządzania dużymi wolumenami e-maili i komunikacji. Architektura full-stack z bezpieczną autoryzacją, przetwarzaniem asynchronicznym i integracjami AI, obsługująca realne obciążenia na skalę.",
+        "description": "Gotowa do działania platforma do zarządzania mailami i komunikacją na dużą skalę. Architektura full-stack z bezpieczną autoryzacją, przetwarzaniem asynchronicznym i integracjami AI, obsługująca realne obciążenia na skalę.",
         "metric": "Uruchomiony styczeń 2026 · 300+ godzin rozwoju · Integracja AI z wieloma kanałami",
         "href": "/pl/projekty",
         "externalUrl": "https://www.flowmate.click/",
@@ -316,7 +316,9 @@
         "externalCta": "Odwiedź Stronę",
         "tags": ["SaaS", "AI", "Full-Stack"],
         "tech": ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "OpenAI", "Stripe"],
-        "image": "/projects/flowmate-landing.webp"
+        "image": "/projects/flowmate-landing.webp",
+        "caseStudyHref": "/pl/projekty/flowmate",
+        "caseStudyCta": "Zobacz Realizację"
       },
       {
         "id": "markmind",
@@ -1387,6 +1389,255 @@
       "entireAgreement": {
         "title": "13. Całość Umowy",
         "content": "Niniejszy Regulamin wraz z Polityką Prywatności stanowią całość umowy między Tobą a Max Mendes dotyczącej korzystania z tej strony. Wszelkie odrębne umowy o świadczenie usług projektowych uzupełniają, ale nie zastępują tych warunków w zakresie ogólnego korzystania ze strony."
+      }
+    }
+  },
+  "caseStudies": {
+    "flowmate": {
+      "id": "flowmate",
+      "label": "Realizacja FlowMate",
+      "href": "/pl/projekty/flowmate",
+      "hrefLang": {
+        "en": "/en/projects/flowmate",
+        "pl": "/pl/projekty/flowmate"
+      },
+      "seo": {
+        "title": "FlowMate Case Study - SaaS z AI Zbudowany w 6 Miesięcy | Max Mendes",
+        "metaDescription": "Jak zbudowałem FlowMate: produkcyjną platformę email z AI łączącą Gmail, Outlook, Slack i Telegram. 300+ godzin, 4 integracje, solo development. Częstochowa.",
+        "keywords": [
+          "case study saas",
+          "platforma email ai",
+          "next.js saas",
+          "tworzenie aplikacji saas",
+          "aplikacja produktywności email",
+          "integracja wielu platform",
+          "programista saas częstochowa",
+          "case study integracja ai",
+          "saas stripe subskrypcje",
+          "oauth wielu dostawców",
+          "portfolio full-stack programista",
+          "architektura produkcyjnego saas"
+        ],
+        "h1": "FlowMate: Od Chaosu Email do Przejrzystości z AI",
+        "ogTitle": "FlowMate Case Study - SaaS z AI Zbudowany w 6 Miesięcy | Max Mendes",
+        "ogDescription": "SaaS zbudowany solo, łączący 4 platformy komunikacji z asystentem AI. Szczegółowy opis architektury, bezpieczeństwa i wyciągniętych wniosków."
+      },
+      "schema": {
+        "type": "Article",
+        "articleType": "TechArticle",
+        "description": "Techniczne case study FlowMate — platformy SaaS do zarządzania emailem z AI, zbudowanej w Next.js, React i z wieloma dostawcami AI.",
+        "author": "Max Mendes",
+        "datePublished": "2026-01-15",
+        "keywords": ["Tworzenie SaaS", "Integracja AI", "Zarządzanie Email", "Next.js", "React", "Full-Stack Development"]
+      },
+      "content": {
+        "hero": {
+          "badge": "Realizacja",
+          "title": "FlowMate: Od Chaosu Email do Przejrzystości z AI",
+          "subtitle": "Jak zbudowałem produkcyjny SaaS, który zamienia 200 emaili w 5 decyzji",
+          "metrics": [
+            { "value": "300+", "label": "Godzin Developmentu" },
+            { "value": "4", "label": "Połączone Platformy" },
+            { "value": "6", "label": "Miesięcy do Launchu" },
+            { "value": "30min", "label": "Czas Nauki" }
+          ],
+          "image": "/projects/flowmate-landing.webp",
+          "liveUrl": "https://www.flowmate.click/",
+          "liveUrlCta": "Zobacz Stronę",
+          "tags": ["SaaS", "Integracja AI", "Full-Stack", "Multi-Platform"]
+        },
+        "sections": [
+          {
+            "id": "problem",
+            "title": "Problem",
+            "content": [
+              "Pracując w IT support, tonąłem w emailach. Wiele skrzynek wymagających uwagi. Ciągłe przeskakiwanie między Gmailem, Slackiem i Telegramem. Emaile od klientów piętrzące się szybciej niż byłem w stanie odpowiadać. Godziny tracone każdego dnia na samo zarządzanie komunikacją zamiast wykonywania rzeczywistej pracy.",
+              "Ból był realny: skakanie między 4+ platformami dziennie, pisanie tych samych typów odpowiedzi w kółko, gubienie ważnych emaili zakopanych pod newsletterami i brak możliwości wysłania aktualizacji na wszystkie kanały bez kopiowania i wklejania tej samej wiadomości cztery razy.",
+              "Nie potrzebowałem kolejnej aplikacji do maili z ładniejszym wyglądem. Potrzebowałem czegoś, co naprawdę zaoszczędzi mi czas — jednego miejsca, gdzie AI zajmuje sie nudnymi rzeczami, a ja mogę skupić się na tym, co ważne, zamiast przegladac skrzynke."
+            ]
+          },
+          {
+            "id": "solution",
+            "title": "Rozwiązanie",
+            "content": [
+              "FlowMate łączy Gmail, Outlook, Slack i Telegram w jedno inteligentne centrum. AI zajmuje się kategoryzacją, generuje profesjonalne odpowiedzi, podsumowuje długie wątki i pozwala wysyłać broadcast na wszystkie platformy jednym kliknięciem.",
+              "Główna idea: zredukować 200 emaili do 5 faktycznych decyzji. Niech AI kategoryzuje co jest pilne, co wymaga działania, co jest tylko do wiadomości. Szkicuje odpowiedzi, które możesz wysłać lub edytować. Wysyła ogłoszenia wszędzie bez pisania czterech różnych wiadomości."
+            ],
+            "highlight": {
+              "quote": "Najlepsza funkcja to broadcast — jak łatwo można wysłać na wszystkie platformy z różnymi stylami dla każdej automatycznie.",
+              "author": "Feedback Wczesnego Użytkownika",
+              "source": "LinkedIn"
+            }
+          },
+          {
+            "id": "technical-challenges",
+            "title": "Wyzwania Techniczne",
+            "subsections": [
+              {
+                "title": "Bezpieczeństwo Było Priorytetem",
+                "content": [
+                  "Dostęp do maili użytkowników to dostęp do ich najbardziej wrażliwych danych. Tokeny OAuth, prywatne wiadomości, korespondencja firmowa. Jeden wyciek i po projekcie.",
+                  "Bezpieczeństwo było priorytetem na każdym kroku: szyfrowanie AES-256-GCM dla wszystkich tokenów OAuth z PBKDF2. Row Level Security na każdej tabeli w bazie danych. Ochrona CSRF z 256-bitowymi losowymi parametrami. Rate limiting — 200 requestów na minutę na IP. Blokowanie 50+ znanych botów na poziomie middleware. Zabezpieczenia przed atakami czasowymi przy logowaniu."
+                ]
+              },
+              {
+                "title": "Złożoność Multi-Provider OAuth",
+                "content": [
+                  "Każda platforma ma inne przepływy OAuth, inne zakresy, inne edge case'y. Gmail wymaga walidacji, że uwierzytelnione konto pasuje do emaila użytkownika. Slack potrzebuje podpisanych parametrów state, żeby działać w trybie incognito. Telegram używa uwierzytelniania przez telefon z obsługą 2FA zamiast standardowego OAuth.",
+                  "Zbudowałem jeden system zarządzania tokenami, który obsługuje wszystkich czterech dostawców z zaszyfrowanym przechowywaniem, automatycznym odświeżaniem i płynnym działaniem nawet gdy któryś z serwisów przestaje odpowiadać."
+                ]
+              },
+              {
+                "title": "Zarządzanie Stanem na Skalę",
+                "content": [
+                  "FlowMate ma 10 różnych widoków, 4 platformy synchronizujące się naraz, aktualizacje na żywo, zarządzanie szkicami, historię czatu z AI i ustawienia użytkownika — wszystko musi działać płynnie i być zsynchronizowane.",
+                  "Rozwiązanie opiera się na kilku wzorcach: optimistic sync (najpierw zapisz lokalnie, synchronizuj z bazą w tle), IndexedDB połączone z Supabase dla architektury offline-first, gdzie chmura jest źródłem prawdy, osobne klucze storage dla każdego użytkownika i circuit breakers z exponential backoff, żeby wszystko działało nawet przy awarii API."
+                ]
+              },
+              {
+                "title": "Optymalizacja Kosztów AI",
+                "content": [
+                  "Funkcje AI są drogie przy dużej skali. Przepuszczanie każdego maila przez duży model językowy doprowadzilby projekt do bankructwa jeszcze przed samym startem. Zaimplementowałem łańcuch fallback modeli: najpierw Claude 3 Haiku za $0.25 za milion tokenów, eskalacja do Claude 3.5 Haiku za $0.80 tylko gdy potrzeba, z heurystycznymi fallbackami dla prostych zadań kategoryzacji.",
+                  "Rezultat: 99.5% niezawodności na zapytaniach email w języku naturalnym przy utrzymaniu kosztów zrównoważonych dla biznesu subskrypcyjnego."
+                ],
+                "link": {
+                  "text": "Dowiedz się więcej o usługach integracji AI →",
+                  "href": "/pl/uslugi/integracja-ai"
+                }
+              }
+            ]
+          },
+          {
+            "id": "build-process",
+            "title": "Budowa",
+            "timeline": {
+              "start": "Lipiec 2025",
+              "end": "15 Stycznia 2026",
+              "duration": "6 miesięcy",
+              "hours": "300+"
+            },
+            "content": [
+              "Samodzielna praca od architektury po wdrożenie. Każda decyzja — schemat bazy danych, przepływ logowania, prompty AI, integracja płatności, obsługa błędów — podjęta przez jedną osobę z pełnym obrazem całego systemu.",
+              "To podejście ma swoje kompromisy. Wolniejsze niż praca w zespole, ale bez tracenia czasu na uzgadnianie. Każda część kodu pasuje do siebie, bo jedna osoba ją projektowała. Dług techniczny jest minimalny, bo musiałem żyć z każdym skrótem."
+            ],
+            "stackDecisions": [
+              {
+                "layer": "Framework",
+                "choice": "Next.js 15 + React 19",
+                "why": "Server-side rendering, API routes w jednym codebase, App Router dla nowoczesnych wzorców"
+              },
+              {
+                "layer": "Baza Danych",
+                "choice": "Supabase (PostgreSQL)",
+                "why": "Polityki Row Level Security, subskrypcje real-time, hojny darmowy tier dla MVP"
+              },
+              {
+                "layer": "Uwierzytelnianie",
+                "choice": "Clerk",
+                "why": "Lepsze doświadczenie social login niż Supabase Auth, szybsza integracja"
+              },
+              {
+                "layer": "Dostawca AI",
+                "choice": "OpenRouter",
+                "why": "Przełączanie między Claude, Gemini, DeepSeek bez zmian w kodzie"
+              },
+              {
+                "layer": "Płatności",
+                "choice": "Stripe",
+                "why": "Standard branżowy, niezawodne webhooki, dobra dokumentacja"
+              },
+              {
+                "layer": "Hosting",
+                "choice": "Vercel",
+                "why": "Deploy bez konfiguracji, edge functions, wbudowana analityka"
+              }
+            ],
+            "link": {
+              "text": "Zobacz usługi full-stack development →",
+              "href": "/pl/uslugi/tworzenie-stron"
+            }
+          },
+          {
+            "id": "scale",
+            "title": "Co Zostało Zbudowane",
+            "metrics": [
+              { "value": "112", "label": "Endpointów API" },
+              { "value": "166", "label": "Komponentów React" },
+              { "value": "23", "label": "Tabel w Bazie" },
+              { "value": "44", "label": "Migracji" },
+              { "value": "20", "label": "Custom Hooks" }
+            ],
+            "features": [
+              "Zunifikowana skrzynka dla Gmail, Outlook, Slack, Telegram",
+              "Kategoryzacja AI: Priorytet, Wymaga Działania, Newslettery, Social, FYI",
+              "Inteligentne odpowiedzi z dopasowaniem profesjonalnego tonu",
+              "Wyszukiwanie email w języku naturalnym (99.5% dokładności)",
+              "Wieloturowy czat AI z pamięcią rozmowy",
+              "System broadcast: napisz raz, wyślij wszędzie",
+              "Trzypoziomowa subskrypcja ze Stripe",
+              "Kompletny panel administracyjny"
+            ]
+          },
+          {
+            "id": "results",
+            "title": "Rezultaty i Wnioski",
+            "content": [
+              "Opinie użytkowników potwierdziły główną tezę: Broadcast okazał się najważniejszą funkcją. Możliwość napisania raz i wysłania na Email, Slack i Telegram — z AI generującym warianty specyficzne dla platformy automatycznie — oszczędzała najwięcej czasu. Zainwestowałem mocno w to, żeby ten przepływ był bezwysiłkowy.",
+              "Najsilniejszy sygnał: użytkownicy rozumieją całą aplikację w około 30 minut. Żadnych komend do zapamiętania. Żadnego skomplikowanego wdrażania. Podłącz swoje konta i zacznij pracować. Prostota była trudniejsza do zbudowania niż złożoność, ale warta wysiłku."
+            ],
+            "lessonsLearned": [
+              {
+                "title": "Wypuszczaj Mniej, Waliduj Szybciej",
+                "content": "Wystartowałem z 10 widokami i 4 integracjami. Mogłem zwalidować główną ideę samym Gmail + AI, a potem rozszerzać na podstawie rzeczywistych wzorców użycia."
+              },
+              {
+                "title": "Użytkownicy Znajdą Twoje Błędy",
+                "content": "Budowałem w izolacji przez miesiące. Prawdziwi użytkownicy w ciągu dni znaleźli błędy i problemy z interfejsem, które całkowicie przeoczyłem. Wcześniejsze opinie zaoszczędziłyby mi przeróbek."
+              },
+              {
+                "title": "Same Funkcje Nie Wystarczą",
+                "content": "Spędziłem czas budując funkcje przed dopracowaniem przekazu. Funkcja broadcast była wartościowa, bo rozwiązywała jasny problem — nie dlatego, że była technicznie imponująca."
+              }
+            ]
+          }
+        ],
+        "techStack": {
+          "title": "Stack Technologiczny",
+          "categories": [
+            {
+              "name": "Frontend",
+              "items": ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Framer Motion", "Radix UI"]
+            },
+            {
+              "name": "Backend",
+              "items": ["Node.js", "Supabase (PostgreSQL)", "Vercel Edge Functions"]
+            },
+            {
+              "name": "AI & LLM",
+              "items": ["OpenRouter", "Claude 3 Haiku", "Vercel AI SDK"]
+            },
+            {
+              "name": "Integracje",
+              "items": ["Gmail API", "Microsoft Graph", "Slack API", "Telegram MTProto"]
+            },
+            {
+              "name": "Infrastruktura",
+              "items": ["Vercel", "Stripe", "Clerk", "Sentry", "Resend"]
+            }
+          ]
+        },
+        "cta": {
+          "title": "Budujesz SaaS lub Złożoną Aplikację Webową?",
+          "subtitle": "Do każdego projektu wnoszę to samo podejście do architektury, nacisk na bezpieczeństwo i dbałość o doświadczenie użytkownika.",
+          "primaryButton": {
+            "text": "Rozpocznij Rozmowę",
+            "href": "/pl/kontakt"
+          },
+          "secondaryButton": {
+            "text": "Zobacz Wszystkie Projekty",
+            "href": "/pl/projekty"
+          }
+        }
       }
     }
   }

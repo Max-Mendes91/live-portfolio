@@ -398,6 +398,8 @@ export interface WorkGridProjectDict {
   tags: string[];
   image?: string;
   tech?: string[];
+  caseStudyHref?: string;
+  caseStudyCta?: string;
 }
 
 // Work grid section dictionary
@@ -578,6 +580,158 @@ export interface ProjectsPageDict {
   };
 }
 
+// ============================================
+// Case Study / Project Detail Page Interfaces
+// ============================================
+
+// SEO metadata for case study pages (extends base SEO pattern)
+export interface CaseStudySEO {
+  title: string;
+  metaDescription: string;
+  keywords: string[];
+  h1: string;
+  ogTitle: string;
+  ogDescription?: string;
+}
+
+// Schema.org markup for case study (TechArticle type)
+export interface CaseStudySchema {
+  type: string;
+  articleType?: string;
+  description: string;
+  author: string;
+  datePublished: string;
+  dateModified?: string;
+  keywords: string[];
+}
+
+// Metric item (e.g., "300+" hours, "4" platforms)
+export interface CaseStudyMetric {
+  value: string;
+  label: string;
+}
+
+// Hero section for case study
+export interface CaseStudyHero {
+  badge: string;
+  title: string;
+  subtitle: string;
+  metrics: CaseStudyMetric[];
+  image: string;
+  liveUrl?: string;
+  liveUrlCta?: string;
+  tags: string[];
+}
+
+// Highlight/quote within a section
+export interface CaseStudyHighlight {
+  quote: string;
+  author: string;
+  source?: string;
+}
+
+// Link within content
+export interface CaseStudyLink {
+  text: string;
+  href: string;
+}
+
+// Subsection within a main section (for technical challenges, etc.)
+export interface CaseStudySubsection {
+  title: string;
+  content: string[];
+  link?: CaseStudyLink;
+}
+
+// Stack decision item (framework choices)
+export interface CaseStudyStackDecision {
+  layer: string;
+  choice: string;
+  why: string;
+}
+
+// Timeline for build process
+export interface CaseStudyTimeline {
+  start: string;
+  end: string;
+  duration: string;
+  hours: string;
+}
+
+// Lesson learned item
+export interface CaseStudyLesson {
+  title: string;
+  content: string;
+}
+
+// Main content section (flexible structure for different section types)
+export interface CaseStudySection {
+  id: string;
+  title: string;
+  content?: string[];
+  highlight?: CaseStudyHighlight;
+  subsections?: CaseStudySubsection[];
+  timeline?: CaseStudyTimeline;
+  stackDecisions?: CaseStudyStackDecision[];
+  link?: CaseStudyLink;
+  metrics?: CaseStudyMetric[];
+  features?: string[];
+  lessonsLearned?: CaseStudyLesson[];
+}
+
+// Tech stack category
+export interface CaseStudyTechCategory {
+  name: string;
+  items: string[];
+}
+
+// Tech stack section
+export interface CaseStudyTechStack {
+  title: string;
+  categories: CaseStudyTechCategory[];
+}
+
+// CTA button
+export interface CaseStudyCTAButton {
+  text: string;
+  href: string;
+}
+
+// CTA section at bottom
+export interface CaseStudyCTA {
+  title: string;
+  subtitle: string;
+  primaryButton: CaseStudyCTAButton;
+  secondaryButton: CaseStudyCTAButton;
+}
+
+// Full case study content
+export interface CaseStudyContent {
+  hero: CaseStudyHero;
+  sections: CaseStudySection[];
+  techStack: CaseStudyTechStack;
+  cta: CaseStudyCTA;
+}
+
+// Complete case study page dictionary
+export interface CaseStudyPageDict {
+  id: string;
+  label: string;
+  href: string;
+  hrefLang: {
+    en: string;
+    pl: string;
+  };
+  seo: CaseStudySEO;
+  schema: CaseStudySchema;
+  content: CaseStudyContent;
+}
+
+// Case studies collection (keyed by slug)
+export interface CaseStudiesDict {
+  [key: string]: CaseStudyPageDict;
+}
+
 // SEO metadata for home page (same pattern as other pages)
 export interface HomePageSEO {
   title: string;
@@ -628,6 +782,8 @@ export interface Dictionary {
   projectsPage?: ProjectsPageDict;
   servicesPage?: ServicesPageDict;
   servicePages?: ServicePagesDict;
+  // Case studies / Project detail pages
+  caseStudies?: CaseStudiesDict;
   // Legal & compliance
   cookieConsent?: CookieConsentDict;
   privacyPolicy?: PrivacyPolicyDict;
