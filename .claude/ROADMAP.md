@@ -74,11 +74,11 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for full details.
 
 ### 2.1 Project Detail Pages
 - [x] `/en/projects` + `/pl/projekty` - Projects listing page (dictionary-based)
-- [ ] `/en/projects/[slug]` + `/pl/projekty/[slug]` - Individual project pages
-- [x] Project data structure in dictionaries (ProjectsPageDict, WorkGridProjectDict)
+- [x] `/en/projects/[slug]` + `/pl/projekty/[slug]` - Individual project pages (FlowMate case study)
+- [x] Project data structure in dictionaries (ProjectsPageDict, WorkGridProjectDict, CaseStudyPageDict)
 - [x] Real projects only: Flowmate, Markmind (removed placeholders)
 - [x] External URL support for projects
-- [ ] Case study template component
+- [x] Case study template component (CaseStudyClient)
 
 ### 2.2 Service Pages (SEO Infrastructure Complete)
 - [x] `/en/services` + `/pl/uslugi` - Service listing pages
@@ -272,3 +272,14 @@ git push origin main  # Auto-deploys via Vercel
 - **Projects**: Added shortDescription field for homepage project hooks
 - **Code Quality**: Added knip config, removed dead code
 - **Bug Fix**: Fixed intro flash prevention for returning visitors on desktop
+
+### Feb 2, 2026
+- **FlowMate Case Study**: Complete case study pages for EN/PL with:
+  - Dictionary-based content (CaseStudyPageDict)
+  - SEO metadata (title, description, keywords, h1)
+  - JSON-LD TechArticle + HowTo schemas
+  - generateStaticParams for static generation
+  - Breadcrumb navigation
+- **SEO Compliance Fix**: Optimized FlowMate titles (< 60 chars) and descriptions (150-160 chars)
+- **Cleanup**: Removed redundant `/pl/uslugi/[slug]` folder (was generating wrong English URLs)
+- **Audit**: Full page compliance audit - 24/28 pages compliant (4 legal pages missing JSON-LD)

@@ -1402,24 +1402,24 @@
         "pl": "/pl/projekty/flowmate"
       },
       "seo": {
-        "title": "FlowMate Case Study - SaaS z AI Zbudowany w 6 Miesięcy | Max Mendes",
-        "metaDescription": "Jak zbudowałem FlowMate: produkcyjną platformę email z AI łączącą Gmail, Outlook, Slack i Telegram. 300+ godzin, 4 integracje, solo development. Częstochowa.",
+        "title": "FlowMate - Realizacja SaaS z AI | Max Mendes",
+        "metaDescription": "Jak zbudowałem FlowMate: produkcyjną platformę email z AI łączącą Gmail, Outlook, Slack i Telegram. 300+ godzin, 4 integracje, solo. Programista Częstochowa.",
         "keywords": [
-          "case study saas",
+          "realizacja saas",
           "platforma email ai",
           "next.js saas",
           "tworzenie aplikacji saas",
           "aplikacja produktywności email",
           "integracja wielu platform",
           "programista saas częstochowa",
-          "case study integracja ai",
+          "realizacja integracja ai",
           "saas stripe subskrypcje",
           "oauth wielu dostawców",
           "portfolio full-stack programista",
           "architektura produkcyjnego saas"
         ],
-        "h1": "FlowMate: Od Chaosu Email do Przejrzystości z AI",
-        "ogTitle": "FlowMate Case Study - SaaS z AI Zbudowany w 6 Miesięcy | Max Mendes",
+        "h1": "FlowMate: SaaS z AI Zbudowany Solo w 6 Miesięcy",
+        "ogTitle": "FlowMate - Realizacja SaaS z AI | Max Mendes",
         "ogDescription": "SaaS zbudowany solo, łączący 4 platformy komunikacji z asystentem AI. Szczegółowy opis architektury, bezpieczeństwa i wyciągniętych wniosków."
       },
       "schema": {
@@ -1518,7 +1518,7 @@
             },
             "content": [
               "Samodzielna praca od architektury po wdrożenie. Każda decyzja — schemat bazy danych, przepływ logowania, prompty AI, integracja płatności, obsługa błędów — podjęta przez jedną osobę z pełnym obrazem całego systemu.",
-              "To podejście ma swoje kompromisy. Wolniejsze niż praca w zespole, ale bez tracenia czasu na uzgadnianie. Każda część kodu pasuje do siebie, bo jedna osoba ją projektowała. Dług techniczny jest minimalny, bo musiałem żyć z każdym skrótem."
+              "To podejście ma swoje kompromisy. Wolniejsze niż praca w zespole, ale bez tracenia czasu na ustalenia. Każda część kodu pasuje do siebie, bo projektowała ją jedna osoba. Dług techniczny jest minimalny — sam muszę potem z tym pracować."
             ],
             "stackDecisions": [
               {
@@ -1583,7 +1583,7 @@
             "title": "Rezultaty i Wnioski",
             "content": [
               "Opinie użytkowników potwierdziły główną tezę: Broadcast okazał się najważniejszą funkcją. Możliwość napisania raz i wysłania na Email, Slack i Telegram — z AI generującym warianty specyficzne dla platformy automatycznie — oszczędzała najwięcej czasu. Zainwestowałem mocno w to, żeby ten przepływ był bezwysiłkowy.",
-              "Najsilniejszy sygnał: użytkownicy rozumieją całą aplikację w około 30 minut. Żadnych komend do zapamiętania. Żadnego skomplikowanego wdrażania. Podłącz swoje konta i zacznij pracować. Prostota była trudniejsza do zbudowania niż złożoność, ale warta wysiłku."
+              "Najsilniejszy sygnał: użytkownicy rozumieją całą aplikację w około 30 minut. Żadnych komend do zapamiętania. Żadnego skomplikowanego wdrażania. Podłącz swoje konta i zacznij pracować. Zbudować coś prostego było trudniejsze niż coś skomplikowanego, ale opłaciło się."
             ],
             "lessonsLearned": [
               {
@@ -1592,11 +1592,11 @@
               },
               {
                 "title": "Użytkownicy Znajdą Twoje Błędy",
-                "content": "Budowałem w izolacji przez miesiące. Prawdziwi użytkownicy w ciągu dni znaleźli błędy i problemy z interfejsem, które całkowicie przeoczyłem. Wcześniejsze opinie zaoszczędziłyby mi przeróbek."
+                "content": "Przez miesiące budowałem wszystko sam. Prawdziwi użytkownicy w kilka dni znaleźli błędy i problemy, które kompletnie mi umknęły. Gdybym wcześniej pokazał komuś projekt, zaoszczędziłbym sobie przeróbek."
               },
               {
                 "title": "Same Funkcje Nie Wystarczą",
-                "content": "Spędziłem czas budując funkcje przed dopracowaniem przekazu. Funkcja broadcast była wartościowa, bo rozwiązywała jasny problem — nie dlatego, że była technicznie imponująca."
+                "content": "Najpierw budowałem funkcje, dopiero potem myślałem o przekazie. Broadcast okazał się najważniejszy nie dlatego, że był technicznie skomplikowany — tylko dlatego, że rozwiązywał konkretny problem."
               }
             ]
           }

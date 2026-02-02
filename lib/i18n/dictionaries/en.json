@@ -1398,8 +1398,8 @@
         "pl": "/pl/projekty/flowmate"
       },
       "seo": {
-        "title": "FlowMate Case Study - AI Email SaaS Built in 6 Months | Max Mendes",
-        "metaDescription": "How I built FlowMate: a production AI email platform unifying Gmail, Outlook, Slack & Telegram. 300+ hours, 4 integrations, solo development. Full technical breakdown.",
+        "title": "FlowMate - AI Email SaaS Case Study | Max Mendes",
+        "metaDescription": "How I built FlowMate: a production AI email platform unifying Gmail, Outlook, Slack & Telegram. 300+ hours, 4 integrations, solo. Technical deep-dive.",
         "keywords": [
           "saas case study",
           "ai email platform",
@@ -1414,8 +1414,8 @@
           "full-stack development portfolio",
           "production saas architecture"
         ],
-        "h1": "FlowMate: From Email Chaos to AI-Powered Clarity",
-        "ogTitle": "FlowMate Case Study - AI Email SaaS Built in 6 Months | Max Mendes",
+        "h1": "FlowMate: AI Email SaaS Built Solo in 6 Months",
+        "ogTitle": "FlowMate - AI Email SaaS Case Study | Max Mendes",
         "ogDescription": "Solo-built SaaS unifying 4 communication platforms with AI assistance. Technical deep-dive into architecture, security, and lessons learned."
       },
       "schema": {
