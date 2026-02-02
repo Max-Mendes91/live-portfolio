@@ -338,6 +338,48 @@
         "tags": ["Portfolio", "i18n", "SEO"],
         "tech": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
         "image": "/projects/Portfolio-landing.webp"
+      },
+      {
+        "id": "nail-salon",
+        "title": "Polished & Posh — Nail Salon Website",
+        "shortDescription": "Booking system, gallery, SEO — everything a beauty business needs to get clients online.",
+        "description": "Production-ready website for nail salons with integrated booking system, service listings, and image gallery. Built with accessibility in mind, optimized for local SEO, and designed to convert visitors into appointments.",
+        "metric": "Booking System · SEO Optimized · Mobile-First",
+        "href": "/en/projects",
+        "externalUrl": "https://nail-salon-omega.vercel.app/",
+        "cta": "View Project",
+        "externalCta": "Visit Live Site",
+        "tags": ["Business", "Booking", "Local SEO"],
+        "tech": ["React", "TypeScript", "Vite", "Tailwind CSS", "Radix UI", "EmailJS"],
+        "image": "/projects/nailsalon-landing.webp"
+      },
+      {
+        "id": "la-creme",
+        "title": "La Crème — French Restaurant Landing",
+        "shortDescription": "Elegant design, reservation system, mobile-first. Built to fill tables.",
+        "description": "Upscale restaurant landing page with integrated reservation form. Black and gold aesthetic with smooth animations, menu showcase, and contact integration. Designed to match the brand's premium positioning.",
+        "metric": "Reservation System · Premium Design · Responsive",
+        "href": "/en/projects",
+        "externalUrl": "https://la-creme-restaurant.vercel.app",
+        "cta": "View Project",
+        "externalCta": "Visit Live Site",
+        "tags": ["Restaurant", "Landing Page", "Design"],
+        "tech": ["React", "Vite", "Tailwind CSS"],
+        "image": "/projects/lacreme-landing.webp"
+      },
+      {
+        "id": "vet-clinic",
+        "title": "Animal Vet Clinic — Częstochowa",
+        "shortDescription": "Local veterinary clinic website with modern glass-morphism UI and full service listings.",
+        "description": "Professional website for a veterinary clinic in Częstochowa, Poland. Features service listings, contact information, and a modern glass-morphism design. Built with Angular and optimized for local search visibility.",
+        "metric": "Local Business · Glass-morphism UI · Schema.org SEO",
+        "href": "/en/projects",
+        "externalUrl": "https://animal-vetclinic.vercel.app",
+        "cta": "View Project",
+        "externalCta": "Visit Live Site",
+        "tags": ["Healthcare", "Local Business", "Angular"],
+        "tech": ["Angular", "TypeScript", "Tailwind CSS", "Vite"],
+        "image": "/projects/vetclinic-landing.webp"
       }
     ]
   },
@@ -645,11 +687,11 @@
         "pl": "/pl/uslugi/aplikacje-webowe"
       },
       "seo": {
-        "title": "SaaS Development - Subscription Platforms | Max Mendes",
-        "metaDescription": "SaaS development services. Build subscription platforms with React and Next.js. Production-ready architecture. Częstochowa, Poland. International projects.",
-        "keywords": ["saas development", "subscription platform", "web application development", "react saas", "nextjs saas", "saas developer poland", "multi-tenant saas"],
+        "title": "SaaS & Web Applications - Custom Platforms | Max Mendes",
+        "metaDescription": "SaaS and web application development services. Build custom platforms with React and Next.js. Production-ready architecture. Częstochowa, Poland. International projects.",
+        "keywords": ["saas development", "web applications", "custom platforms", "react saas", "nextjs saas", "saas developer poland", "subscription platforms"],
         "h1": "SaaS & Web Applications",
-        "ogTitle": "SaaS Development - Subscription Platforms | Max Mendes"
+        "ogTitle": "SaaS & Web Applications - Custom Platforms | Max Mendes"
       },
       "schema": {
         "serviceType": "Software Development Service",
@@ -1133,19 +1175,19 @@
       "pl": "/pl/projekty"
     },
     "seo": {
-      "title": "Web Development Portfolio - React Projects | Max Mendes",
-      "metaDescription": "Explore my web development projects: SaaS platforms, AI integrations, and production applications. 300+ hours on FlowMate. React, Next.js, TypeScript.",
-      "keywords": ["web development portfolio", "react projects", "nextjs portfolio", "saas development", "ai web apps", "full-stack projects", "freelance developer work"],
-      "h1": "Web Development Projects",
-      "ogTitle": "Web Development Portfolio - React Projects | Max Mendes"
+      "title": "What I Build - Web Developer Portfolio | Max Mendes",
+      "metaDescription": "Explore my web development projects: SaaS platforms, business websites, and production applications. From concept to deployment. React, Next.js, TypeScript.",
+      "keywords": ["web development portfolio", "react projects", "nextjs portfolio", "saas development", "business websites", "full-stack projects", "freelance developer work"],
+      "h1": "What I Build",
+      "ogTitle": "What I Build - Web Developer Portfolio | Max Mendes"
     },
     "schema": {
       "type": "CollectionPage",
-      "description": "A collection of web development projects by Max Mendes, including SaaS platforms, AI integrations, and production web applications."
+      "description": "A collection of web development projects by Max Mendes, including SaaS platforms, business websites, and production web applications."
     },
     "badge": "Portfolio",
-    "title": "Selected Full-Stack Projects",
-    "subtitle": "Production web applications built with Next.js and React. Real products, real users, and systems designed to run reliably beyond launch.",
+    "title": "What I Build",
+    "subtitle": "From business websites to SaaS platforms — built to convert.",
     "cta": {
       "title": "Your project could be next",
       "description": "Same process, same quality — tailored to your business.",

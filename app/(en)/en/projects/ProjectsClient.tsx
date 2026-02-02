@@ -33,6 +33,8 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
   if (!projectsPage || !workGrid) return null;
 
   const projects = workGrid.projects;
+  const featuredProject = projects[0];
+  const gridProjects = projects.slice(1);
 
   return (
     <div className="relative">
@@ -81,17 +83,95 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
             </motion.div>
           </section>
 
-          {/* Projects Grid Section */}
+          {/* Featured Project Section */}
           <section className="py-8 sm:py-12 md:py-16 lg:py-20">
             <div className="relative max-w-[90rem] mx-auto">
-              {/* Binder Clips */}
               <BinderClip position="top-left" size="md" />
               <BinderClip position="top-right" size="md" />
 
               <div className="border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] md:rounded-t-[3rem] bg-background relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)] pt-10 sm:pt-12 md:pt-16 lg:pt-24 pb-10 sm:pb-12 md:pb-16 lg:pb-24">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
-                    {projects.map((project, index) => (
+                  {/* Featured Project - Hero Treatment */}
+                  <motion.div
+                    initial={{ opacity: 0, y: shouldUseViewportTrigger ? 30 : 0 }}
+                    animate={shouldUseViewportTrigger ? undefined : { opacity: 1, y: 0 }}
+                    whileInView={shouldUseViewportTrigger ? { opacity: 1, y: 0 } : undefined}
+                    viewport={shouldUseViewportTrigger ? { once: true } : undefined}
+                    transition={{ duration: shouldUseViewportTrigger ? 0.6 : 0.2 }}
+                    style={{ willChange: shouldUseViewportTrigger ? 'transform, opacity' : 'opacity' }}
+                    className="group mb-8 md:mb-12"
+                  >
+                    <div className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-surface border border-border hover:border-white/20 transition-all p-5 md:p-8">
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 items-center">
+                        {/* Featured Image */}
+                        {featuredProject.image && (
+                          <div className="relative aspect-[16/10] rounded-lg overflow-hidden bg-surface order-1 lg:order-2">
+                            <Image
+                              src={featuredProject.image}
+                              alt={featuredProject.title}
+                              fill
+                              sizes="(max-width: 1024px) 100vw, 50vw"
+                              className="object-contain transition-transform duration-500 group-hover:scale-105"
+                              priority
+                            />
+                          </div>
+                        )}
+
+                        {/* Featured Content */}
+                        <div className="flex flex-col order-2 lg:order-1">
+                          <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
+                            {featuredProject.tags.map((tag) => (
+                              <span
+                                key={tag}
+                                className="px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-white/5 border border-border text-[9px] sm:text-[10px] text-text-muted uppercase tracking-wider"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+
+                          <h2 className="text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight text-text-primary mb-3 sm:mb-4">
+                            {featuredProject.title}
+                          </h2>
+
+                          <p className="text-text-secondary text-sm sm:text-base font-light leading-relaxed mb-4 sm:mb-5">
+                            {featuredProject.description}
+                          </p>
+
+                          <p className="text-text-muted text-xs sm:text-sm mb-4 sm:mb-5">
+                            {featuredProject.metric}
+                          </p>
+
+                          <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-5 sm:mb-6">
+                            {featuredProject.tech?.map((tech) => (
+                              <span
+                                key={tech}
+                                className="px-2 py-0.5 rounded bg-white/5 text-[9px] sm:text-[10px] text-text-muted"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+
+                          {featuredProject.externalUrl && (
+                            <a
+                              href={featuredProject.externalUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 border border-border text-sm font-medium text-text-primary hover:bg-white/15 hover:border-white/20 transition-all w-fit"
+                            >
+                              {featuredProject.externalCta || 'Visit Live Site'}
+                              <ExternalLink className="w-4 h-4" />
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Supporting Projects Grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 lg:gap-5">
+                    {gridProjects.map((project, index) => (
                       <motion.div
                         key={project.id}
                         initial={{ opacity: 0, y: shouldUseViewportTrigger ? 30 : 0 }}
@@ -102,63 +182,48 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
                         style={{ willChange: shouldUseViewportTrigger ? 'transform, opacity' : 'opacity' }}
                         className="group h-full"
                       >
-                        <div className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-surface border border-border hover:border-white/20 transition-all p-4 sm:p-5 md:p-6 h-full flex flex-col">
+                        <div className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-surface border border-border hover:border-white/20 transition-all p-4 sm:p-5 h-full flex flex-col">
                           {/* Project Image */}
                           {project.image && (
-                            <div className="relative aspect-[16/10] mb-4 sm:mb-5 rounded-lg overflow-hidden bg-surface">
+                            <div className="relative aspect-[16/10] mb-3 sm:mb-4 rounded-lg overflow-hidden bg-surface">
                               <Image
                                 src={project.image}
                                 alt={project.title}
                                 fill
-                                sizes="(max-width: 768px) 100vw, 33vw"
+                                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
                                 className="object-contain transition-transform duration-500 group-hover:scale-105"
                               />
                             </div>
                           )}
 
-                          <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
-                            {project.tags.map((tag) => (
+                          <div className="flex flex-wrap gap-1.5 mb-2 sm:mb-3">
+                            {project.tags.slice(0, 2).map((tag) => (
                               <span
                                 key={tag}
-                                className="px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-white/5 border border-border text-[9px] sm:text-[10px] text-text-muted uppercase tracking-wider"
+                                className="px-2 py-0.5 rounded-full bg-white/5 border border-border text-[9px] text-text-muted uppercase tracking-wider"
                               >
                                 {tag}
                               </span>
                             ))}
                           </div>
 
-                          <h3 className="text-xl sm:text-2xl font-normal tracking-tight text-text-primary mb-2 sm:mb-3">
+                          <h3 className="text-sm md:text-base font-normal tracking-tight text-text-primary mb-2 leading-tight line-clamp-2">
                             {project.title}
                           </h3>
 
-                          <p className="text-text-secondary text-xs sm:text-sm font-light leading-relaxed min-h-[72px] sm:min-h-[100px]">
-                            {project.description}
+                          <p className="text-text-secondary text-xs font-light leading-relaxed line-clamp-3 flex-grow">
+                            {project.shortDescription}
                           </p>
-
-                          <p className="text-text-muted text-[10px] sm:text-xs mt-3 sm:mt-4 min-h-[28px] sm:min-h-[32px]">
-                            {project.metric}
-                          </p>
-
-                          <div className="flex flex-wrap gap-1.5 sm:gap-2 mt-3 sm:mt-4 min-h-[44px] sm:min-h-[52px] content-start">
-                            {project.tech?.map((tech) => (
-                              <span
-                                key={tech}
-                                className="px-1.5 sm:px-2 py-0.5 rounded bg-white/5 text-[9px] sm:text-[10px] text-text-muted h-fit"
-                              >
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
 
                           {project.externalUrl && (
                             <a
                               href={project.externalUrl}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-text-secondary hover:text-text-primary transition-colors mt-auto pt-3 sm:pt-4"
+                              className="inline-flex items-center gap-1.5 text-xs text-text-secondary hover:text-text-primary transition-colors mt-auto pt-3"
                             >
                               {project.externalCta || 'Visit Live Site'}
-                              <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                              <ExternalLink className="w-3 h-3" />
                             </a>
                           )}
                         </div>

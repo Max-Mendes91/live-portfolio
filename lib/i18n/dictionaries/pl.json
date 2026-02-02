@@ -346,6 +346,48 @@
         "tags": ["Portfolio", "i18n", "SEO"],
         "tech": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
         "image": "/projects/Portfolio-landing.webp"
+      },
+      {
+        "id": "nail-salon",
+        "title": "Polished & Posh — Strona Salonu Kosmetycznego",
+        "shortDescription": "System rezerwacji, galeria, SEO — wszystko czego salon potrzebuje, by zdobywać klientów online.",
+        "description": "Gotowa strona dla salonów kosmetycznych z systemem rezerwacji, listą usług i galerią zdjęć. Zbudowana z myślą o dostępności, zoptymalizowana pod lokalne SEO i zaprojektowana, by zamieniać odwiedzających w klientów.",
+        "metric": "System Rezerwacji · SEO · Mobile-First",
+        "href": "/pl/projekty",
+        "externalUrl": "https://nail-salon-omega.vercel.app/",
+        "cta": "Zobacz Projekt",
+        "externalCta": "Odwiedź Stronę",
+        "tags": ["Biznes", "Rezerwacje", "Lokalne SEO"],
+        "tech": ["React", "TypeScript", "Vite", "Tailwind CSS", "Radix UI", "EmailJS"],
+        "image": "/projects/nailsalon-landing.webp"
+      },
+      {
+        "id": "la-creme",
+        "title": "La Crème — Strona Restauracji",
+        "shortDescription": "Elegancki design, system rezerwacji, mobile-first. Zbudowana by zapełniać stoliki.",
+        "description": "Ekskluzywna strona restauracji z formularzem rezerwacji. Czarno-złota estetyka z płynnymi animacjami, prezentacja menu i integracja kontaktowa. Zaprojektowana, by pasować do premium pozycjonowania marki.",
+        "metric": "System Rezerwacji · Premium Design · Responsywna",
+        "href": "/pl/projekty",
+        "externalUrl": "https://la-creme-restaurant.vercel.app",
+        "cta": "Zobacz Projekt",
+        "externalCta": "Odwiedź Stronę",
+        "tags": ["Restauracja", "Landing Page", "Design"],
+        "tech": ["React", "Vite", "Tailwind CSS"],
+        "image": "/projects/lacreme-landing.webp"
+      },
+      {
+        "id": "vet-clinic",
+        "title": "Przychodnia Weterynaryjna Animal — Częstochowa",
+        "shortDescription": "Strona lokalnej przychodni weterynaryjnej z nowoczesnym UI i pełną listą usług.",
+        "description": "Profesjonalna strona dla przychodni weterynaryjnej w Częstochowie. Zawiera listę usług, dane kontaktowe i nowoczesny design glass-morphism. Zbudowana w Angular i zoptymalizowana pod lokalne wyszukiwanie.",
+        "metric": "Lokalny Biznes · Glass-morphism UI · Schema.org SEO",
+        "href": "/pl/projekty",
+        "externalUrl": "https://animal-vetclinic.vercel.app",
+        "cta": "Zobacz Projekt",
+        "externalCta": "Odwiedź Stronę",
+        "tags": ["Zdrowie", "Lokalny Biznes", "Angular"],
+        "tech": ["Angular", "TypeScript", "Tailwind CSS", "Vite"],
+        "image": "/projects/vetclinic-landing.webp"
       }
     ]
   },
@@ -654,11 +696,11 @@
         "pl": "/pl/uslugi/aplikacje-webowe"
       },
       "seo": {
-        "title": "Aplikacje Webowe Częstochowa | Max Mendes",
+        "title": "Aplikacje SaaS i Webowe - Częstochowa | Max Mendes",
         "metaDescription": "Tworzenie aplikacji webowych i platform SaaS. Logowanie, dashboardy, płatności, subskrypcje. Programista z Częstochowy. Systemy dla firm z całej Polski.",
         "keywords": ["aplikacje webowe", "tworzenie aplikacji", "systemy dla firm", "aplikacje saas", "platformy internetowe", "oprogramowanie na zamówienie", "programista aplikacji"],
-        "h1": "SaaS i Aplikacje Webowe",
-        "ogTitle": "Aplikacje Webowe Częstochowa | Max Mendes"
+        "h1": "Aplikacje SaaS i Webowe",
+        "ogTitle": "Aplikacje SaaS i Webowe - Częstochowa | Max Mendes"
       },
       "schema": {
         "serviceType": "Tworzenie Aplikacji Webowych",
@@ -1137,19 +1179,19 @@
       "pl": "/pl/projekty"
     },
     "seo": {
-      "title": "Portfolio Programisty - Częstochowa | Max Mendes",
-      "metaDescription": "Zobacz moje projekty: platformy SaaS, integracje AI, aplikacje produkcyjne. 300+ godzin na FlowMate. React, Next.js, TypeScript. Częstochowa, Śląskie.",
-      "keywords": ["portfolio programisty", "projekty react", "portfolio nextjs", "tworzenie saas", "aplikacje ai", "projekty full-stack", "programista częstochowa"],
-      "h1": "Projekty Web Development",
-      "ogTitle": "Portfolio Programisty - Częstochowa | Max Mendes"
+      "title": "Co Buduję - Portfolio Programisty | Max Mendes",
+      "metaDescription": "Zobacz moje projekty: platformy SaaS, strony firmowe, aplikacje produkcyjne. Od koncepcji po wdrożenie. React, Next.js, TypeScript. Częstochowa, Śląskie.",
+      "keywords": ["portfolio programisty", "projekty react", "portfolio nextjs", "tworzenie saas", "strony firmowe", "projekty full-stack", "programista częstochowa"],
+      "h1": "Co Buduję",
+      "ogTitle": "Co Buduję - Portfolio Programisty | Max Mendes"
     },
     "schema": {
       "type": "CollectionPage",
-      "description": "Kolekcja projektów web development autorstwa Max Mendes, w tym platformy SaaS, integracje AI i produkcyjne aplikacje webowe."
+      "description": "Kolekcja projektów web development autorstwa Max Mendes, w tym platformy SaaS, strony firmowe i produkcyjne aplikacje webowe."
     },
     "badge": "Portfolio",
-    "title": "Wybrane Projekty Full-Stack",
-    "subtitle": "Produkcyjne aplikacje webowe w React i Next.js. Prawdziwe projekty, realni użytkownicy i systemy gotowe do działania po wdrożeniu.",
+    "title": "Co Buduję",
+    "subtitle": "Od stron firmowych po platformy SaaS — zbudowane, by konwertować.",
     "cta": {
       "title": "Twój projekt może być następny",
       "description": "Ten sam proces, ta sama jakość — dostosowane do Twojego biznesu.",
