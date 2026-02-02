@@ -91,7 +91,9 @@ export function middleware(request: NextRequest) {
 
   // Redirect root to locale-prefixed path
   const locale = getPreferredLocale(request);
-  const newUrl = new URL(`/${locale}${pathname}`, request.url);
+  // Avoid trailing slash when pathname is "/" (prevents redirect chain)
+  const targetPath = pathname === '/' ? `/${locale}` : `/${locale}${pathname}`;
+  const newUrl = new URL(targetPath, request.url);
 
   return NextResponse.redirect(newUrl);
 }
