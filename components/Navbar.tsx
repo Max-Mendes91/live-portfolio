@@ -13,9 +13,10 @@ import { getRouteFromPathname, getLocalizedUrl } from '@/lib/i18n/routes';
 interface NavbarProps {
   locale?: SupportedLocale;
   dictionary?: NavDict;
+  alternateHref?: string;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ locale, dictionary }) => {
+const Navbar: React.FC<NavbarProps> = ({ locale, dictionary, alternateHref: alternateHrefOverride }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const lastScrollY = useRef(0);
@@ -30,17 +31,19 @@ const Navbar: React.FC<NavbarProps> = ({ locale, dictionary }) => {
     about: dictionary?.about ?? (isPolish ? 'O mnie' : 'About'),
     services: dictionary?.services ?? (isPolish ? 'Usługi' : 'Services'),
     projects: dictionary?.projects ?? (isPolish ? 'Projekty' : 'Projects'),
+    blog: dictionary?.blog ?? (isPolish ? 'Artykuły' : 'Blog'),
     faq: dictionary?.faq ?? (isPolish ? 'Pytania' : 'FAQ'),
     contact: dictionary?.contact ?? (isPolish ? 'Kontakt' : 'Contact'),
   };
 
   // Navigation items with locale-specific slugs for SEO
-  // Order: About — Services — Projects — FAQ — Contact
+  // Order: About — Services — Projects — Blog — FAQ — Contact
   const navItems = isPolish
     ? [
         { label: labels.about, href: '/pl/o-mnie' },
         { label: labels.services, href: '/pl/uslugi' },
         { label: labels.projects, href: '/pl/projekty' },
+        { label: labels.blog, href: '/pl/artykuly' },
         { label: labels.faq, href: '/pl/pytania' },
         { label: labels.contact, href: '/pl/kontakt' },
       ]
@@ -48,6 +51,7 @@ const Navbar: React.FC<NavbarProps> = ({ locale, dictionary }) => {
         { label: labels.about, href: '/en/about' },
         { label: labels.services, href: '/en/services' },
         { label: labels.projects, href: '/en/projects' },
+        { label: labels.blog, href: '/en/blog' },
         { label: labels.faq, href: '/en/faq' },
         { label: labels.contact, href: '/en/contact' },
       ];
@@ -58,6 +62,7 @@ const Navbar: React.FC<NavbarProps> = ({ locale, dictionary }) => {
 
   // Get the equivalent page URL in the alternate language
   const getAlternateHref = (): string => {
+    if (alternateHrefOverride) return alternateHrefOverride;
     if (!pathname) return `/${alternateLang}`;
 
     const routeKey = getRouteFromPathname(pathname);

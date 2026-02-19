@@ -1415,6 +1415,162 @@ const caseStudyIcons: FloatingIconConfig[] = [
 const caseStudyShapes: GeometricShapeConfig[] = [];
 
 // ============================================
+// BLOG ARTICLE PAGE PRESET
+// AI/automation themed icons for blog posts about AI workflows
+// Sections: Hero → Article body (3 sections) → CTA
+// Icons: bot, sparkles, search, workflow, target, globe, send, lightbulb, rocket, users
+// ============================================
+const blogArticleIcons: FloatingIconConfig[] = [
+  // === HERO / INTRO (scroll 3-14%) - AI & automation concept ===
+  {
+    id: 'bot',
+    initialPosition: { x: 89, y: 8 },
+    movement: { x: -15, y: 75 },
+    parallaxSpeed: 0.3,
+    size: 82,
+    opacity: 0.5,
+    fadeInAt: 0.03,
+    fadeOutAt: 0.14,
+    rotation: -10,
+    zIndex: 10,
+  },
+  {
+    id: 'sparkles',
+    initialPosition: { x: 4, y: 14 },
+    movement: { x: 12, y: 60 },
+    parallaxSpeed: 0.35,
+    size: 70,
+    opacity: 0.45,
+    fadeInAt: 0.03,
+    fadeOutAt: 0.15,
+    rotation: 8,
+    zIndex: 9,
+  },
+  // === GAP: 15-20% ===
+  // === ARTICLE BODY 1 (scroll 20-32%) - Research & discovery ===
+  {
+    id: 'search',
+    initialPosition: { x: 90, y: 22 },
+    movement: { x: -18, y: 65 },
+    parallaxSpeed: 0.4,
+    size: 75,
+    opacity: 0.48,
+    fadeInAt: 0.20,
+    fadeOutAt: 0.32,
+    rotation: 6,
+    zIndex: 8,
+  },
+  {
+    id: 'target',
+    initialPosition: { x: 3, y: 28 },
+    movement: { x: 14, y: 50 },
+    parallaxSpeed: 0.45,
+    size: 68,
+    opacity: 0.45,
+    fadeInAt: 0.22,
+    fadeOutAt: 0.34,
+    rotation: -7,
+    zIndex: 12,
+  },
+  // === GAP: 34-40% ===
+  // === ARTICLE BODY 2 (scroll 40-52%) - Workflow & outreach ===
+  {
+    id: 'workflow',
+    initialPosition: { x: 88, y: 40 },
+    movement: { x: -15, y: 50 },
+    parallaxSpeed: 0.35,
+    size: 72,
+    opacity: 0.45,
+    fadeInAt: 0.40,
+    fadeOutAt: 0.52,
+    rotation: 10,
+    zIndex: 11,
+  },
+  {
+    id: 'send',
+    initialPosition: { x: 5, y: 46 },
+    movement: { x: 12, y: 42 },
+    parallaxSpeed: 0.4,
+    size: 65,
+    opacity: 0.42,
+    fadeInAt: 0.42,
+    fadeOutAt: 0.54,
+    rotation: -5,
+    zIndex: 10,
+  },
+  // === GAP: 54-60% ===
+  // === ARTICLE BODY 3 (scroll 60-72%) - Results & global reach ===
+  {
+    id: 'globe',
+    initialPosition: { x: 90, y: 58 },
+    movement: { x: -12, y: 35 },
+    parallaxSpeed: 0.3,
+    size: 68,
+    opacity: 0.45,
+    fadeInAt: 0.60,
+    fadeOutAt: 0.70,
+    rotation: -8,
+    zIndex: 9,
+  },
+  {
+    id: 'users',
+    initialPosition: { x: 4, y: 64 },
+    movement: { x: 10, y: 30 },
+    parallaxSpeed: 0.35,
+    size: 62,
+    opacity: 0.42,
+    fadeInAt: 0.62,
+    fadeOutAt: 0.72,
+    rotation: 6,
+    zIndex: 8,
+  },
+  // === GAP: 72-76% ===
+  // === CTA SECTION (scroll 76-82%) - Fade before footer ===
+  {
+    id: 'rocket',
+    initialPosition: { x: 87, y: 72 },
+    movement: { x: -8, y: 22 },
+    parallaxSpeed: 0.3,
+    size: 60,
+    opacity: 0.4,
+    fadeInAt: 0.74,
+    fadeOutAt: 0.80,
+    rotation: 5,
+    zIndex: 11,
+  },
+  {
+    id: 'lightbulb',
+    initialPosition: { x: 6, y: 76 },
+    movement: { x: 8, y: 18 },
+    parallaxSpeed: 0.35,
+    size: 55,
+    opacity: 0.38,
+    fadeInAt: 0.76,
+    fadeOutAt: 0.82,
+    rotation: -6,
+    zIndex: 10,
+  },
+];
+
+const blogArticleShapes: GeometricShapeConfig[] = [
+  {
+    type: 'circle',
+    position: { x: 88, y: 20 },
+    size: 160,
+    parallaxSpeed: 0.15,
+    opacity: 0.035,
+  },
+  {
+    type: 'square',
+    position: { x: 6, y: 55 },
+    size: 140,
+    parallaxSpeed: 0.2,
+    opacity: 0.03,
+    rotation: 20,
+  },
+];
+
+// ============================================
 // PRESET REGISTRY
 // ============================================
 export const PRESETS: Record<PresetName, FloatingIconsPreset> = {
@@ -1530,6 +1686,17 @@ export const PRESETS: Record<PresetName, FloatingIconsPreset> = {
     name: 'case-study',
     icons: caseStudyIcons,
     shapes: caseStudyShapes,
+    // Mobile: Show first 4 icons for sequential reveal coverage
+    mobile: {
+      maxIcons: 4,
+      maxShapes: 0,
+      sizeMultiplier: 0.6,
+    },
+  },
+  'blog-article': {
+    name: 'blog-article',
+    icons: blogArticleIcons,
+    shapes: blogArticleShapes,
     // Mobile: Show first 4 icons for sequential reveal coverage
     mobile: {
       maxIcons: 4,

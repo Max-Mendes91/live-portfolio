@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next';
 import { SITE_CONFIG } from '@/lib/seo/config';
+import { getBlogPosts } from '@/lib/blog';
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = SITE_CONFIG.url;
   const lastModified = new Date();
 
@@ -37,6 +38,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       en: '/en/projects',
       pl: '/pl/projekty',
+      priority: 0.8,
+      changeFrequency: 'weekly',
+    },
+    // Blog listing
+    {
+      en: '/en/blog',
+      pl: '/pl/artykuly',
       priority: 0.8,
       changeFrequency: 'weekly',
     },
@@ -132,6 +140,44 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     });
   });
+
+  // Add blog posts dynamically
+  const enPosts = await getBlogPosts('en');
+
+  for (const post of enPosts) {
+    const enPath = post.hrefLang.en;
+    const plPath = post.hrefLang.pl;
+
+    // English version
+    sitemapEntries.push({
+      url: `${baseUrl}${enPath}`,
+      lastModified: new Date(post.dateModified || post.datePublished),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+      alternates: {
+        languages: {
+          en: `${baseUrl}${enPath}`,
+          pl: `${baseUrl}${plPath}`,
+          'x-default': `${baseUrl}${enPath}`,
+        },
+      },
+    });
+
+    // Polish version
+    sitemapEntries.push({
+      url: `${baseUrl}${plPath}`,
+      lastModified: new Date(post.dateModified || post.datePublished),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+      alternates: {
+        languages: {
+          en: `${baseUrl}${enPath}`,
+          pl: `${baseUrl}${plPath}`,
+          'x-default': `${baseUrl}${enPath}`,
+        },
+      },
+    });
+  }
 
   return sitemapEntries;
 }

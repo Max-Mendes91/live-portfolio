@@ -193,6 +193,7 @@
       "services": "Usługi",
       "projects": "Projekty",
       "contact": "Kontakt",
+      "blog": "Artykuły",
       "faq": "Pytania"
     },
     "serviceLinks": [
@@ -219,6 +220,7 @@
     "about": "O mnie",
     "services": "Usługi",
     "projects": "Projekty",
+    "blog": "Artykuły",
     "faq": "Pytania",
     "contact": "Kontakt",
     "logoAlt": "Max Mendes - Freelance Programista Webowy"
@@ -1638,6 +1640,43 @@
             "href": "/pl/projekty"
           }
         }
+      }
+    }
+  },
+  "blogPage": {
+    "id": "blog",
+    "label": "Artykuły",
+    "href": "/pl/artykuly",
+    "hrefLang": {
+      "en": "/en/blog",
+      "pl": "/pl/artykuly"
+    },
+    "seo": {
+      "title": "Artykuły – Tworzenie Stron, AI i Automatyzacja | Max Mendes Częstochowa",
+      "metaDescription": "Artykuły o tworzeniu stron internetowych, automatyzacji AI i pracy freelancera. React, Next.js, SEO, agentic workflows. Częstochowa, Śląskie. +48 502 742 941",
+      "keywords": ["blog web developer", "automatyzacja AI", "tworzenie stron Częstochowa", "artykuły programistyczne", "Next.js poradniki", "pozycjonowanie SEO", "freelancer Polska"],
+      "h1": "Artykuły",
+      "ogTitle": "Artykuły – Tworzenie Stron i Automatyzacja AI | Max Mendes"
+    },
+    "schema": {
+      "type": "CollectionPage",
+      "description": "Artykuły i porady na temat tworzenia stron internetowych, automatyzacji AI i prowadzenia działalności freelancera w Częstochowie."
+    },
+    "ui": {
+      "badge": "Wiedza i Artykuły",
+      "title": "Artykuły",
+      "subtitle": "Moje spostrzeżenia na temat tworzenia stron, automatyzacji AI i prowadzenia freelance w Polsce.",
+      "readMore": "Czytaj artykuł",
+      "publishedOn": "Opublikowano",
+      "minuteRead": "min czytania",
+      "tagsLabel": "Tagi",
+      "noPosts": "Brak artykułów. Wróć wkrótce!",
+      "backToBlog": "Wróć do artykułów",
+      "cta": {
+        "title": "Masz pomysł na projekt?",
+        "description": "Porozmawiajmy o tym, jak mogę pomóc zrealizować Twój pomysł.",
+        "primaryButton": "Rozpocznij rozmowę",
+        "secondaryButton": "Zobacz usługi"
       }
     }
   }

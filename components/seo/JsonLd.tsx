@@ -1,5 +1,5 @@
 import { SupportedLocale } from '@/types/seo';
-import { ServiceLink, CaseStudyPageDict } from '@/types/i18n';
+import { ServiceLink, CaseStudyPageDict, BlogPageDict, BlogPostMeta } from '@/types/i18n';
 import {
   generateHomePageSchemas,
   generateServiceSchema,
@@ -8,6 +8,8 @@ import {
   generateBreadcrumbSchema,
   generateCaseStudySchema,
   generateCaseStudyHowToSchema,
+  generateBlogListingSchema,
+  generateBlogPostSchema,
   HomePageSchemaData,
 } from '@/lib/seo/schemas';
 
@@ -80,4 +82,30 @@ export function CaseStudyPageJsonLd({ caseStudyData }: { caseStudyData: CaseStud
   const schemas = [articleSchema, howToSchema].filter(Boolean);
 
   return <JsonLd data={schemas} />;
+}
+
+// Blog listing page JSON-LD (CollectionPage + ItemList)
+export function BlogListingJsonLd({
+  blogData,
+  posts,
+  locale = 'en',
+}: {
+  blogData: BlogPageDict;
+  posts: BlogPostMeta[];
+  locale?: SupportedLocale;
+}) {
+  const schemas = generateBlogListingSchema(blogData, posts, locale);
+  return <JsonLd data={schemas} />;
+}
+
+// Blog post page JSON-LD (BlogPosting)
+export function BlogPostJsonLd({
+  postMeta,
+  locale = 'en',
+}: {
+  postMeta: BlogPostMeta;
+  locale?: SupportedLocale;
+}) {
+  const schema = generateBlogPostSchema(postMeta, locale);
+  return <JsonLd data={schema} />;
 }

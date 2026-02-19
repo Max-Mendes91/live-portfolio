@@ -185,6 +185,7 @@
       "services": "Services",
       "projects": "Projects",
       "contact": "Contact",
+      "blog": "Blog",
       "faq": "FAQ"
     },
     "serviceLinks": [
@@ -211,6 +212,7 @@
     "about": "About",
     "services": "Services",
     "projects": "Projects",
+    "blog": "Blog",
     "faq": "FAQ",
     "contact": "Contact",
     "logoAlt": "Max Mendes - Freelance Web Developer"
@@ -1634,6 +1636,43 @@
             "href": "/en/projects"
           }
         }
+      }
+    }
+  },
+  "blogPage": {
+    "id": "blog",
+    "label": "Blog",
+    "href": "/en/blog",
+    "hrefLang": {
+      "en": "/en/blog",
+      "pl": "/pl/artykuly"
+    },
+    "seo": {
+      "title": "Blog – Web Development, AI & Automation | Max Mendes",
+      "metaDescription": "Articles on web development, AI automation, and freelance insights by Max Mendes. React, Next.js, SEO, and agentic workflows. +48 502 742 941",
+      "keywords": ["web development blog", "AI automation", "Next.js articles", "freelance developer blog", "React tutorials", "SEO tips", "agentic workflows"],
+      "h1": "Blog",
+      "ogTitle": "Blog – Web Development & AI Automation | Max Mendes"
+    },
+    "schema": {
+      "type": "CollectionPage",
+      "description": "Articles and insights on web development, AI automation, and freelance business by Max Mendes."
+    },
+    "ui": {
+      "badge": "Insights & Articles",
+      "title": "Blog",
+      "subtitle": "Thoughts on web development, AI automation, and building a freelance business from Poland.",
+      "readMore": "Read Article",
+      "publishedOn": "Published on",
+      "minuteRead": "min read",
+      "tagsLabel": "Tags",
+      "noPosts": "No articles yet. Check back soon!",
+      "backToBlog": "Back to Blog",
+      "cta": {
+        "title": "Have a Project in Mind?",
+        "description": "Let's discuss how I can help bring your idea to life.",
+        "primaryButton": "Start a Conversation",
+        "secondaryButton": "View Services"
       }
     }
   }
