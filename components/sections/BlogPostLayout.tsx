@@ -12,7 +12,7 @@ import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import { BinderClip } from '@/components/ui';
 import { SupportedLocale, BlogPostMeta } from '@/types/i18n';
 import { Dictionary } from '@/types/i18n';
-import { usePrefersReducedMotion, useIsMobile } from '@/hooks/useMediaQuery';
+import { useIsDesktop, usePrefersReducedMotion, useIsMobile } from '@/hooks/useMediaQuery';
 
 interface BlogPostLayoutProps {
   locale: SupportedLocale;
@@ -28,8 +28,10 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
   children,
 }) => {
   const { blogPage, nav, footer } = dictionary;
+  const isDesktop = useIsDesktop();
   const isMobile = useIsMobile();
   const prefersReducedMotion = usePrefersReducedMotion();
+  const shouldUseViewportTrigger = isDesktop && !prefersReducedMotion;
   const skipHeavyAnimations = isMobile || prefersReducedMotion;
 
   if (!blogPage) return null;
@@ -67,6 +69,7 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
                 duration: skipHeavyAnimations ? 0.15 : 0.8,
                 ease: [0.22, 1, 0.36, 1],
               }}
+              style={skipHeavyAnimations ? undefined : { willChange: 'transform, opacity' }}
               className="relative max-w-4xl mx-auto"
             >
               <BinderClip position="top-left" size="md" />
@@ -141,9 +144,12 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
 
               <div className="border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] bg-background relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)] pt-10 sm:pt-12 md:pt-16 lg:pt-20 pb-10 sm:pb-12 md:pb-16 px-4 sm:px-6 lg:px-12">
                 <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.4, delay: 0.2 }}
+                  initial={{ opacity: 0, y: shouldUseViewportTrigger ? 20 : 0 }}
+                  animate={shouldUseViewportTrigger ? undefined : { opacity: 1, y: 0 }}
+                  whileInView={shouldUseViewportTrigger ? { opacity: 1, y: 0 } : undefined}
+                  viewport={shouldUseViewportTrigger ? { once: true } : undefined}
+                  transition={{ duration: shouldUseViewportTrigger ? 0.8 : 0.2 }}
+                  style={{ willChange: shouldUseViewportTrigger ? 'transform, opacity' : 'opacity' }}
                   className="text-center"
                 >
                   <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal tracking-tighter text-text-primary mb-4 sm:mb-5 md:mb-6">
