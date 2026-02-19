@@ -1,0 +1,184 @@
+export const metadata = {
+  title: "System AI do Wyszukiwania Firm Bez Stron | Max Mendes",
+  slug: "automatyzacja-ai-wyszukiwanie-firm-bez-stron",
+  metaDescription: "System AI do identyfikacji polskich firm bez stron internetowych. Automatyzacja researchu, generowanie mockupów i spersonalizowany outreach. Częstochowa, Śląskie. +48 502 742 941",
+  keywords: ["automatyzacja AI", "pozyskiwanie klientów", "strony internetowe dla firm", "web developer Częstochowa", "OpenClaw", "lead generation Polska"],
+  ogTitle: "Jak zbudowałem system AI do identyfikowania polskich firm bez strony",
+  h1: "Jak zbudowałem system AI do identyfikowania polskich firm bez własnej strony internetowej",
+  author: "Max Mendes",
+  datePublished: "2026-02-01",
+  tags: ["AI", "Automatyzacja", "OpenClaw", "Lead Generation", "Web Development"],
+  image: "/images/blog/ai-automation-workflow.png",
+  excerpt: "Zaprojektowałem workflow automatyzujący identyfikację firm bez stron, ich analizę oraz przygotowanie dopasowanej propozycji – opartej na realnych danych.",
+  readingTime: "5 min czytania",
+  hrefLang: {
+    en: "/en/blog/ai-automation-finding-businesses-without-websites",
+    pl: "/pl/artykuly/automatyzacja-ai-wyszukiwanie-firm-bez-stron"
+  }
+}
+
+# Jak zbudowałem system AI do identyfikowania polskich firm bez własnej strony internetowej
+
+Jestem [programistą z Częstochowy](/pl/o-mnie). [Budowanie stron internetowych](/pl/uslugi/tworzenie-stron) nie jest dziś największym problemem. Trudniejsze jest znalezienie firm, które realnie ich potrzebują, ale jeszcze nie zdają sobie z tego sprawy.
+
+W Polsce wiele małych i średnich firm działa wyłącznie w oparciu o Facebooka, Instagrama, Booksy lub profil Google Business. Mają klientów, opinie i stabilny przychód. Nie mają jednak kontroli nad swoją obecnością w internecie ani trwałej pozycji w wynikach wyszukiwania.
+
+Zaprojektowałem workflow automatyzujący identyfikację takich firm, ich analizę oraz przygotowanie dopasowanej propozycji – opartej na realnych danych, a nie ogólnych deklaracjach.
+
+Poniżej opisuję, jak ten system działa w praktyce.
+
+---
+
+## Problem, który należało rozwiązać
+
+Klasyczny cold outreach oparty na pytaniu „czy potrzebujesz strony internetowej?" jest nieskuteczny. Większość właścicieli firm odpowiada przecząco, ponieważ już są „widoczni" na platformach.
+
+Widoczność na platformie nie oznacza jednak własności:
+
+- algorytmy mogą się zmienić,
+- platformy pobierają prowizje,
+- profile firm wyglądają identycznie jak konkurencja,
+- brak jest [długoterminowej wartości SEO](/pl/uslugi/pozycjonowanie).
+
+Celem było stworzenie systemu, który:
+
+- identyfikuje firmy z realnym popytem,
+- wykrywa brak własnej strony internetowej,
+- pokazuje konkretną wartość posiadania domeny i strony,
+- działa skalowalnie, bez utraty personalizacji.
+
+Ręczna analiza jednego prospektu zajmuje godziny. Została zautomatyzowana.
+
+---
+
+## Skąd pochodzą dane o firmach
+
+Nie korzystam z kupionych baz danych.
+
+System opiera się wyłącznie na publicznych źródłach:
+
+- **Google Business** – opinie, zdjęcia, godziny, usługi
+- **Booksy** – kluczowa platforma w Polsce dla usług lokalnych
+- **Facebook / Instagram** – aktywność, zaangażowanie, materiały wizualne
+- **Publiczne katalogi branżowe**
+
+Celem nie jest ilość. Celem jest kompletność i aktualność danych. Zbierane są m.in.:
+
+- zakres usług,
+- sygnały cenowe,
+- lokalizacja,
+- opinie,
+- materiały graficzne,
+- dostępne formy kontaktu.
+
+Te dane są wykorzystywane na każdym kolejnym etapie.
+
+---
+
+## Kwalifikacja: które firmy mają sens
+
+Nie każda firma jest dobrym kandydatem.
+
+Prospekt przechodzi dalej tylko wtedy, gdy spełnia określone kryteria:
+
+- aktywna obecność online (ostatnie posty, opinie, interakcje),
+- minimum dwa działające kanały kontaktu,
+- jasno określone usługi i godziny pracy,
+- materiały wizualne,
+- brak własnej, pozycjonowanej strony internetowej.
+
+Wielkość firmy nie ma znaczenia. Liczy się dowód popytu i stabilności.
+
+Jeżeli brakuje kluczowych danych, workflow zatrzymuje się. System nie zgaduje i nie generuje generycznych wiadomości.
+
+---
+
+## Workflow – ujęcie wysokopoziomowe
+
+OpenClaw pełni rolę środowiska wykonawczego działającego 24/7.
+
+Proces wygląda następująco:
+
+1. **Agent badawczy** zbiera dane i materiały firmy
+2. **Agent walidacyjny** sprawdza kompletność i spójność
+3. **Orkiestrator** zatwierdza lub odrzuca prospekt
+4. **Agent mockupu** generuje podgląd strony na podstawie realnych danych
+5. **Agent oferty** przygotowuje PDF w języku polskim
+6. **Agent outreachu** tworzy wersje wiadomości dla e-maila, Facebooka i Google
+
+Każdy etap zależy od poprawnego wyniku poprzedniego. Brak założeń, brak skrótów.
+
+---
+
+## Mockup strony – kluczowy element
+
+Mockup działa, ponieważ nie jest abstrakcyjny.
+
+Właściciel firmy widzi [stronę, którą mógłby posiadać](/pl/uslugi/tworzenie-stron):
+
+- swoje zdjęcia,
+- swoje usługi,
+- swoje opinie,
+- swoją lokalizację.
+
+To nie jest szablon. To wizualizacja jego własnej firmy jako strony internetowej, którą mógłby posiadać i rozwijać.
+
+Dane pochodzą dokładnie z tych samych źródeł, z których firma już korzysta (Booksy, social media, Google). Rozpoznawalność jest natychmiastowa.
+
+---
+
+## Struktura oferty
+
+Każda oferta ma stałą, sprawdzoną strukturę:
+
+1. **Dlaczego strona internetowa pomoże Twojemu biznesowi**
+2. **Co dokładnie oferujemy**
+3. **Szczegóły inwestycji i wsparcia**
+4. **Następne kroki**
+
+Bez haseł marketingowych. Treść jest informacyjna, konkretna i odnosi się do sytuacji danej firmy.
+
+---
+
+## Wnioski z działania systemu
+
+**Co zadziałało:**
+
+- znaczne skrócenie czasu analizy,
+- spójna jakość outreachu,
+- natychmiastowe pokazanie wartości,
+- wyższa jakość odpowiedzi od firm.
+
+**Co nie zadziałało:**
+
+- część firm nadal nie docenia wartości własnej strony,
+- nawet dobry mockup nie zastępuje edukacji,
+- automatyzacja bez rygorystycznych bramek jakości obniża wiarygodność.
+
+Najważniejszy wniosek: **lepiej mniej prospektów, ale dobrze przygotowanych.**
+
+---
+
+## Zaufanie i odpowiedzialność
+
+Workflow został zaprojektowany z myślą o realiach UE:
+
+- wyłącznie B2B,
+- niska skala, wysoka trafność,
+- kontakt z prywatnej domeny i realnych kont,
+- brak pozyskiwania danych prywatnych,
+- brak wprowadzających w błąd komunikatów.
+
+Odbiorca widzi konkretną osobę, realną stronę i treść odnoszącą się do jego firmy.
+
+---
+
+## Co dalej
+
+System jest stale iterowany. Poprawiana jest jakość mockupów, struktura ofert i proces kwalifikacji. Część rozmów przechodzi w [realne projekty](/pl/projekty).
+
+Jeśli Twoja firma potrzebuje strony, która realnie przynosi klientów — [napisz do mnie](/pl/kontakt).
+
+---
+
+*Pytania? [Skontaktuj się](/pl/kontakt) — odpowiadam w ciągu 24 godzin.*
