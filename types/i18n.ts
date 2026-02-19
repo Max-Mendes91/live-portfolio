@@ -189,6 +189,7 @@ export interface FooterDict {
     about: string;
     services: string;
     projects: string;
+    blog: string;
     contact: string;
     faq: string;
   };
@@ -287,6 +288,7 @@ export interface NavDict {
   about: string;
   services: string;
   projects: string;
+  blog: string;
   faq: string;
   contact: string;
   logoAlt: string;
@@ -761,6 +763,79 @@ export interface HomePageDict {
   schema: HomePageSchema;
 }
 
+// ============================================
+// Blog Page Interfaces
+// ============================================
+
+// SEO metadata for blog listing page
+export interface BlogPageSEO {
+  title: string;
+  metaDescription: string;
+  keywords: string[];
+  h1: string;
+  ogTitle: string;
+}
+
+// Schema.org markup for blog listing page
+export interface BlogPageSchema {
+  type: string;
+  description: string;
+}
+
+// UI labels for blog pages
+export interface BlogPageUI {
+  badge: string;
+  title: string;
+  subtitle: string;
+  readMore: string;
+  publishedOn: string;
+  minuteRead: string;
+  tagsLabel: string;
+  noPosts: string;
+  backToBlog: string;
+  cta: {
+    title: string;
+    description: string;
+    primaryButton: string;
+    secondaryButton: string;
+  };
+}
+
+// Complete blog page dictionary
+export interface BlogPageDict {
+  id: string;
+  label: string;
+  href: string;
+  hrefLang: {
+    en: string;
+    pl: string;
+  };
+  seo: BlogPageSEO;
+  schema: BlogPageSchema;
+  ui: BlogPageUI;
+}
+
+// Blog post metadata (exported from MDX files)
+export interface BlogPostMeta {
+  title: string;
+  slug: string;
+  metaDescription: string;
+  keywords: string[];
+  ogTitle: string;
+  h1: string;
+  author: string;
+  datePublished: string;
+  dateModified?: string;
+  tags: string[];
+  image?: string;
+  excerpt: string;
+  readingTime: string;
+  hrefLang: {
+    en: string;
+    pl: string;
+  };
+}
+
 // Full dictionary interface
 export interface Dictionary {
   hero: HeroDict;
@@ -784,6 +859,8 @@ export interface Dictionary {
   servicePages?: ServicePagesDict;
   // Case studies / Project detail pages
   caseStudies?: CaseStudiesDict;
+  // Blog
+  blogPage?: BlogPageDict;
   // Legal & compliance
   cookieConsent?: CookieConsentDict;
   privacyPolicy?: PrivacyPolicyDict;

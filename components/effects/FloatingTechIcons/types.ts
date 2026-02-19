@@ -136,7 +136,7 @@ export interface FloatingIconsPreset {
 }
 
 // Available preset names
-export type PresetName = 'about' | 'projects' | 'faq' | 'services' | 'contact' | 'web-development' | 'saas' | 'ecommerce' | 'seo' | 'ai-integration' | 'case-study';
+export type PresetName = 'about' | 'projects' | 'faq' | 'services' | 'contact' | 'web-development' | 'saas' | 'ecommerce' | 'seo' | 'ai-integration' | 'case-study' | 'blog-article';
 
 // Main component props
 export interface FloatingTechIconsProps {

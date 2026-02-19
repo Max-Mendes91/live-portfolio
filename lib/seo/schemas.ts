@@ -7,7 +7,7 @@ import {
   BreadcrumbSchema,
   SupportedLocale,
 } from '@/types/seo';
-import { ServiceLink, CaseStudyPageDict } from '@/types/i18n';
+import { ServiceLink, CaseStudyPageDict, BlogPageDict, BlogPostMeta } from '@/types/i18n';
 import { SITE_CONFIG, GEO_COORDINATES, TARGET_MARKETS, SKILLS, getFullUrl } from './config';
 
 // Generate Person schema for Max Mendes
@@ -363,5 +363,74 @@ export function generateCaseStudyHowToSchema(caseStudyData: CaseStudyPageDict) {
       text: `${decision.choice}: ${decision.why}`,
     })),
     mainEntityOfPage: getFullUrl(href),
+  };
+}
+
+// Blog listing schema (CollectionPage + ItemList)
+export function generateBlogListingSchema(
+  blogData: BlogPageDict,
+  posts: BlogPostMeta[],
+  locale: SupportedLocale = 'en'
+) {
+  const canonicalUrl = getFullUrl(blogData.href);
+
+  const collectionPage = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${SITE_CONFIG.url}/#blog-listing`,
+    name: blogData.seo.h1,
+    description: blogData.schema.description,
+    url: canonicalUrl,
+    isPartOf: {
+      '@type': 'WebSite',
+      '@id': `${SITE_CONFIG.url}/#website`,
+    },
+    inLanguage: locale === 'en' ? 'en' : 'pl',
+  };
+
+  const itemList = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: posts.map((post, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      url: getFullUrl(post.hrefLang[locale]),
+      name: post.title,
+    })),
+  };
+
+  return [collectionPage, itemList];
+}
+
+// Blog post schema (BlogPosting)
+export function generateBlogPostSchema(
+  postMeta: BlogPostMeta,
+  locale: SupportedLocale = 'en'
+) {
+  const canonicalUrl = getFullUrl(postMeta.hrefLang[locale]);
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    '@id': `${SITE_CONFIG.url}/#blog-post-${postMeta.slug}`,
+    headline: postMeta.h1,
+    description: postMeta.metaDescription,
+    author: {
+      '@type': 'Person',
+      name: postMeta.author,
+      url: SITE_CONFIG.url,
+    },
+    publisher: {
+      '@type': 'Person',
+      name: SITE_CONFIG.owner.name,
+      url: SITE_CONFIG.url,
+    },
+    datePublished: postMeta.datePublished,
+    dateModified: postMeta.dateModified || postMeta.datePublished,
+    mainEntityOfPage: canonicalUrl,
+    image: postMeta.image ? getFullUrl(postMeta.image) : undefined,
+    keywords: postMeta.keywords,
+    inLanguage: locale === 'en' ? 'en' : 'pl',
+    articleSection: 'Blog',
   };
 }

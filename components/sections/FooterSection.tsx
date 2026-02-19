@@ -27,6 +27,7 @@ const FooterSection: React.FC<FooterSectionProps> = ({ locale = 'en', dictionary
     { label: content.quickLinks.about, href: getLocalizedUrl(locale, 'about') },
     { label: content.quickLinks.services, href: getLocalizedUrl(locale, 'services') },
     { label: content.quickLinks.projects, href: getLocalizedUrl(locale, 'projects') },
+    { label: content.quickLinks.blog, href: getLocalizedUrl(locale, 'blog') },
     { label: content.quickLinks.contact, href: getLocalizedUrl(locale, 'contact') },
     { label: content.quickLinks.faq, href: getLocalizedUrl(locale, 'faq') },
   ];

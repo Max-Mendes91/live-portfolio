@@ -24,6 +24,9 @@ const LEGACY_REDIRECTS: Record<string, string> = {
   '/services/seo-optimization': '/en/services/seo',
   '/services/seo': '/en/services/seo',
   '/services/ecommerce': '/en/services/ecommerce',
+  // Blog legacy redirects
+  '/blog': '/en/blog',
+  '/pl/blog': '/pl/artykuly',
   // Redirect English slugs under /pl/ to Polish canonical URLs
   '/pl/about': '/pl/o-mnie',
   '/pl/services': '/pl/uslugi',
