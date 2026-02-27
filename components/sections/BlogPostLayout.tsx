@@ -76,8 +76,8 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
               <BinderClip position="top-right" size="md" />
 
               <div className="border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] bg-background relative z-10 overflow-hidden pt-8 sm:pt-12 md:pt-16 lg:pt-20 pb-10 sm:pb-12 md:pb-16 lg:pb-20 px-4 sm:px-6 lg:px-12">
-                {/* Mesh Gradient Background */}
-                <div className="mesh-gradient-bg" />
+                {/* Mesh Gradient Background - static on mobile for scroll performance */}
+                <div className={skipHeavyAnimations ? 'mesh-gradient-bg-static' : 'mesh-gradient-bg'} />
 
                 <div className="relative z-10 max-w-prose mx-auto">
                   {/* Back to Blog */}

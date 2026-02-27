@@ -663,3 +663,15 @@ textarea:-webkit-autofill:active {
     animation: none;
   }
 }
+
+/* Static version: subtle depth without animation (used on mobile blog articles) */
+.mesh-gradient-bg-static {
+  position: absolute;
+  inset: 0;
+  background-color: #050505;
+  background-image:
+    radial-gradient(circle at 93% 63%, hsla(200,15%,95%,0.10) 6%, transparent 26%),
+    radial-gradient(circle at 84% 7%, hsla(217,80%,50%,0.08) 6%, transparent 15%),
+    radial-gradient(circle at 3% 61%, hsla(205,12%,85%,0.08) 6%, transparent 27%);
+  background-blend-mode: normal;
+}
