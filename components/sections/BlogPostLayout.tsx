@@ -153,17 +153,17 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
                   className="text-center"
                 >
                   <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal tracking-tighter text-text-primary mb-4 sm:mb-5 md:mb-6">
-                    {ui.cta.title}
+                    {meta.cta?.title || ui.cta.title}
                   </h2>
                   <p className="text-text-secondary text-sm sm:text-base md:text-lg mb-6 sm:mb-8 md:mb-10 max-w-xl mx-auto font-light">
-                    {ui.cta.description}
+                    {meta.cta?.description || ui.cta.description}
                   </p>
                   <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
                     <CornerGlowButton href={contactPath}>
-                      {ui.cta.primaryButton}
+                      {meta.cta?.primaryButton || ui.cta.primaryButton}
                     </CornerGlowButton>
                     <CornerGlowButton href={servicesPath}>
-                      {ui.cta.secondaryButton}
+                      {meta.cta?.secondaryButton || ui.cta.secondaryButton}
                     </CornerGlowButton>
                   </div>
                 </motion.div>

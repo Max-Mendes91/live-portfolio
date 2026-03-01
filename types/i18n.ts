@@ -834,6 +834,12 @@ export interface BlogPostMeta {
     en: string;
     pl: string;
   };
+  cta?: {
+    title: string;
+    description: string;
+    primaryButton: string;
+    secondaryButton: string;
+  };
 }
 
 // Full dictionary interface
