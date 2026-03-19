@@ -104,13 +104,13 @@ const BlogListingClient: React.FC<BlogListingClientProps> = ({
               <BinderClip position="top-right" size="md" />
 
               <div className="border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] md:rounded-t-[3rem] bg-background relative z-10 overflow-hidden shadow-[0_-20px_50px_-12px_rgba(0,0,0,0.5)] pt-10 sm:pt-12 md:pt-16 lg:pt-24 pb-10 sm:pb-12 md:pb-16 lg:pb-24">
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-12">
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
                   {posts.length === 0 ? (
                     <p className="text-center text-text-muted text-sm sm:text-base">
                       {ui.noPosts}
                     </p>
                   ) : (
-                    <div className="flex flex-col gap-6 sm:gap-8">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
                       {posts.map((post, index) => (
                         <motion.article
                           key={post.slug}
@@ -120,66 +120,64 @@ const BlogListingClient: React.FC<BlogListingClientProps> = ({
                           viewport={shouldUseViewportTrigger ? { once: true } : undefined}
                           transition={{ duration: shouldUseViewportTrigger ? 0.6 : 0.2, delay: shouldUseViewportTrigger ? index * 0.1 : 0 }}
                           style={{ willChange: shouldUseViewportTrigger ? 'transform, opacity' : 'opacity' }}
-                          className="group"
+                          className="group h-full"
                         >
-                          <Link href={`${blogBasePath}/${post.slug}`}>
-                            <div className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-surface border border-border hover:border-white/20 transition-all p-5 sm:p-6 md:p-8">
-                              <div className="grid grid-cols-1 md:grid-cols-[1fr,auto] gap-5 md:gap-8 items-start">
-                                {/* Content */}
-                                <div className="flex flex-col">
-                                  {/* Tags */}
-                                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3">
-                                    {post.tags.slice(0, 4).map((tag) => (
-                                      <span
-                                        key={tag}
-                                        className="px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-white/5 border border-border text-[9px] sm:text-[10px] text-text-muted uppercase tracking-wider"
-                                      >
-                                        {tag}
-                                      </span>
-                                    ))}
-                                  </div>
+                          <Link href={`${blogBasePath}/${post.slug}`} className="h-full">
+                            <div className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-surface border border-border hover:border-white/20 transition-all h-full flex flex-col">
+                              {/* Image */}
+                              {post.image && (
+                                <div className="relative aspect-[16/10] overflow-hidden">
+                                  <Image
+                                    src={post.image}
+                                    alt={post.h1}
+                                    fill
+                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                  />
+                                </div>
+                              )}
 
-                                  {/* Title */}
-                                  <h2 className="text-lg sm:text-xl md:text-2xl font-normal tracking-tight text-text-primary mb-2 sm:mb-3 group-hover:text-white transition-colors leading-tight">
-                                    {post.h1}
-                                  </h2>
-
-                                  {/* Excerpt */}
-                                  <p className="text-text-secondary text-xs sm:text-sm font-light leading-relaxed mb-3 sm:mb-4 line-clamp-3">
-                                    {post.excerpt}
-                                  </p>
-
-                                  {/* Meta info */}
-                                  <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-text-muted text-[10px] sm:text-xs">
-                                    <span className="flex items-center gap-1 sm:gap-1.5">
-                                      <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-                                      {formatDate(post.datePublished)}
-                                    </span>
-                                    <span className="flex items-center gap-1 sm:gap-1.5">
-                                      <Clock className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-                                      {post.readingTime}
-                                    </span>
-                                  </div>
+                              {/* Content */}
+                              <div className="flex flex-col flex-grow p-4 sm:p-5">
+                                {/* Meta info */}
+                                <div className="flex items-center gap-3 text-text-muted text-[10px] sm:text-xs mb-2 sm:mb-3">
+                                  <span className="flex items-center gap-1">
+                                    <Calendar className="w-3 h-3" />
+                                    {formatDate(post.datePublished)}
+                                  </span>
+                                  <span className="flex items-center gap-1">
+                                    <Clock className="w-3 h-3" />
+                                    {post.readingTime}
+                                  </span>
                                 </div>
 
-                                {/* Image (if available) */}
-                                {post.image && (
-                                  <div className="relative aspect-[16/10] md:aspect-[3/2] md:w-48 lg:w-56 rounded-lg overflow-hidden bg-surface flex-shrink-0 order-first md:order-last">
-                                    <Image
-                                      src={post.image}
-                                      alt={post.h1}
-                                      fill
-                                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 192px, 224px"
-                                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                                    />
-                                  </div>
-                                )}
-                              </div>
+                                {/* Title */}
+                                <h2 className="text-base sm:text-lg font-semibold tracking-tight text-text-primary mb-2 group-hover:text-white transition-colors leading-tight line-clamp-2">
+                                  {post.h1}
+                                </h2>
 
-                              {/* Read More */}
-                              <div className="mt-4 sm:mt-5 flex items-center gap-2 text-xs sm:text-sm text-text-secondary group-hover:text-text-primary transition-colors">
-                                {ui.readMore}
-                                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-1" />
+                                {/* Excerpt */}
+                                <p className="text-text-secondary text-xs sm:text-sm font-light leading-relaxed mb-4 line-clamp-3 flex-grow">
+                                  {post.excerpt}
+                                </p>
+
+                                {/* Tags */}
+                                <div className="flex flex-wrap gap-1.5 mb-4">
+                                  {post.tags.slice(0, 3).map((tag) => (
+                                    <span
+                                      key={tag}
+                                      className="px-2 py-0.5 rounded-full bg-white/5 border border-border text-[8px] sm:text-[9px] text-text-muted uppercase tracking-wider"
+                                    >
+                                      {tag}
+                                    </span>
+                                  ))}
+                                </div>
+
+                                {/* Read Article */}
+                                <div className="flex items-center gap-2 text-xs sm:text-sm text-text-secondary group-hover:text-text-primary transition-colors mt-auto">
+                                  {ui.readMore}
+                                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:translate-x-1" />
+                                </div>
                               </div>
                             </div>
                           </Link>
