@@ -208,11 +208,11 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
                             </div>
                           )}
 
-                          <div className="flex flex-wrap gap-1.5 mb-2 sm:mb-3">
+                          <div className="flex flex-nowrap gap-1 mb-2 sm:mb-3 overflow-hidden">
                             {project.tags.slice(0, 2).map((tag) => (
                               <span
                                 key={tag}
-                                className="px-2 py-0.5 rounded-full bg-white/5 border border-border text-[9px] text-text-muted uppercase tracking-wider"
+                                className="px-1.5 py-0.5 rounded-full bg-white/5 border border-border text-[8px] text-text-muted uppercase tracking-wider whitespace-nowrap shrink-0"
                               >
                                 {tag}
                               </span>
@@ -223,21 +223,34 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
                             {project.title}
                           </h3>
 
-                          <p className="text-text-secondary text-xs font-light leading-relaxed line-clamp-3 flex-grow">
+                          <p className="text-text-secondary text-xs font-light leading-relaxed flex-grow">
                             {project.shortDescription}
                           </p>
 
-                          {project.externalUrl && (
-                            <a
-                              href={project.externalUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1.5 text-xs text-text-secondary hover:text-text-primary transition-colors mt-auto pt-3"
-                            >
-                              {project.externalCta || 'Visit Live Site'}
-                              <ExternalLink className="w-3 h-3" />
-                            </a>
-                          )}
+                          <div className="flex items-center gap-3 mt-auto pt-3">
+                            {project.externalUrl && (
+                              <a
+                                href={project.externalUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1 text-[11px] text-text-secondary hover:text-text-primary transition-colors whitespace-nowrap"
+                              >
+                                {project.externalCta || 'Visit Live Site'}
+                                <ExternalLink className="w-3 h-3 shrink-0" />
+                              </a>
+                            )}
+                            {project.secondaryUrl && (
+                              <a
+                                href={project.secondaryUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1 text-[11px] text-text-muted hover:text-text-secondary transition-colors whitespace-nowrap"
+                              >
+                                {project.secondaryCta || 'View More'}
+                                <ExternalLink className="w-3 h-3 shrink-0" />
+                              </a>
+                            )}
+                          </div>
                         </div>
                       </motion.div>
                     ))}
