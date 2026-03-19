@@ -1,0 +1,104 @@
+export const metadata = {
+  title: "Vibe Coding Is Eating Software Development | Max Mendes",
+  slug: "vibe-coding-eating-software-development",
+  metaDescription: "Vibe coding is reshaping software development in 2026. An honest take from a developer who uses AI-assisted coding daily but reviews every line before it ships.",
+  keywords: ["vibe coding 2026", "what is vibe coding", "vibe coding pros and cons", "AI-assisted development", "vibe coding security risks", "AI code generation", "vibe coding vs traditional coding"],
+  ogTitle: "Vibe Coding Is Eating Software Development - And Not Everyone Is Happy",
+  h1: "Vibe Coding Is Eating Software Development - And Not Everyone Is Happy",
+  author: "Max Mendes",
+  datePublished: "2026-03-19",
+  tags: ["AI", "Web Development", "Productivity", "Software Engineering"],
+  image: "/blog/vibe-coding-eating-software-development.webp",
+  excerpt: "Vibe coding went from a tweet to Collins Word of the Year in under 12 months. Here's my honest take on what it actually means for developers who build real things.",
+  readingTime: "7 min read",
+  hrefLang: {
+    en: "/en/blog/vibe-coding-eating-software-development",
+    pl: "/pl/artykuly/vibe-coding-zjada-tworzenie-oprogramowania"
+  },
+  cta: {
+    title: "Need a Developer Who Actually Reviews the Code?",
+    description: "I use AI to move fast and review everything before it ships. No vibe-coded spaghetti. No shortcuts on security. Just clean, production-ready code for your business.",
+    primaryButton: "Let's Talk",
+    secondaryButton: "See My Work"
+  }
+}
+
+# Vibe Coding Is Eating Software Development - And Not Everyone Is Happy
+
+[Andrej Karpathy](https://x.com/karpathy/status/1886192184808149383) coins a term on X in February 2025. The post gets 4.5 million views. By March, Merriam-Webster adds it as a slang entry. By November, [Collins Dictionary names it Word of the Year](https://www.collinsdictionary.com/woty). By January 2026, MIT Technology Review lists generative coding as a [2026 Breakthrough Technology](https://www.technologyreview.com/2026/01/12/1130027/generative-coding-ai-software-2026-breakthrough-technology/). By February 2026, Karpathy himself says the term is already "passe" and introduces "agentic engineering" as the next evolution.
+
+That is a fast arc for a concept that started as a casual post about accepting AI output without reading the diffs.
+
+Here is my take: vibe coding is real, it is useful, and the people most upset about it are largely upset for the wrong reasons.
+
+## What Vibe Coding Actually Is
+
+The original definition from Karpathy is blunt: you describe what you want, the AI generates code, and you "forget that the code even exists." You accept output without reviewing it, nudge it with follow-up prompts, and ship when it works.
+
+[Simon Willison](https://simonwillison.net/2025/Mar/6/vibe-coding/) drew a line that I think matters more than the hype. If you have reviewed, tested, and understood the code, that is not vibe coding. That is using an LLM as a typing assistant. The distinction is about accountability, not about whether AI touched the code.
+
+That is exactly how I work. I review every important piece. I test it. I understand the architecture before anything goes near production. When I built [FlowMate](/en/projects/flowmate), a production SaaS handling email management with AI integrations, every line of AI-assisted code went through manual review. The AI accelerated the typing. The engineering decisions were still mine.
+
+But plenty of people are using the Karpathy definition literally. Non-coders building apps. Founders shipping MVPs without a technical hire. Solo developers building internal tools faster than any team could. That is the part that is making senior engineers nervous.
+
+## The Numbers Tell a Complicated Story
+
+The [Stack Overflow 2025 Developer Survey](https://survey.stackoverflow.co/2025/) found that 84% of developers now use or plan to use AI coding tools, up from 76% in 2024 and 70% in 2023. Over half use them daily. GitHub Copilot alone has crossed 20 million users and writes roughly 46% of the average user's code.
+
+The big claims from tech leadership keep escalating. Satya Nadella said 30% of Microsoft's code is now AI-written. Dario Amodei at Anthropic claimed 70 to 90% of their code comes from Claude. At Y Combinator's Winter 2025 demo day, [Garry Tan revealed](https://techcrunch.com/2025/03/06/a-quarter-of-startups-in-ycs-current-cohort-have-codebases-that-are-almost-entirely-ai-generated/) that 25% of startups in the batch had codebases that were almost entirely AI-generated.
+
+But here is the part that gets less attention: positive sentiment toward AI coding tools actually dropped. The same Stack Overflow survey showed satisfaction fell from over 70% in previous years to just 60% in 2025. And 66% of developers reported frustration with "AI solutions that are almost right, but not quite."
+
+The adoption is real. The satisfaction is not keeping up.
+
+## The Criticism Is Partly Right
+
+The concerns are not imaginary, and the data backs them up.
+
+[GitClear analyzed 211 million lines of code](https://www.gitclear.com/ai_assistant_code_quality_2025_research) from 2020 to 2024 and found that code duplication grew 4x since AI tools became widely adopted. Refactoring collapsed from 25% of changed lines in 2021 to under 10% by 2024. For the first time in the history of their dataset, developers were pasting code more often than refactoring it.
+
+[CodeRabbit's research](https://www.coderabbit.ai/blog/state-of-ai-vs-human-code-generation-report) on 470 GitHub pull requests found that AI-generated code produces 1.7x more issues overall. Security vulnerabilities specifically were 2.74x higher. Readability problems were 3x more frequent.
+
+[Wiz scanned 5,600 vibe-coded applications](https://www.wiz.io/blog/common-security-risks-in-vibe-coded-apps) and found over 2,000 vulnerabilities, 400 exposed secrets, and 175 instances of exposed personal data. One in five vibe-coded apps had serious security or configuration errors. The pattern was always the same: client-side authentication, hardcoded API keys, unprotected database access.
+
+The [DORA 2025 report](https://dora.dev/research/2025/dora-report/) added nuance. AI boosts individual developer output (21% more tasks completed, 98% more pull requests merged), but organizational delivery metrics stayed flat. The report concluded that AI acts as a "multiplier." It strengthens teams that already have good practices and exposes teams that do not.
+
+Someone who vibe-coded a customer-facing app with no understanding of the security model has created a liability, not a product. And as more of these apps hit production, someone has to clean it up.
+
+## The Open Source Crisis
+
+One consequence that caught the industry off guard is what happened to open source maintainers.
+
+AI-generated pull requests started flooding popular repositories. Daniel Stenberg, the maintainer of curl, shut down his bug bounty program because fewer than 5% of AI-generated submissions were legitimate. Mitchell Hashimoto banned AI-generated code from the Ghostty project entirely. Steve Ruiz closed all external pull requests to tldraw.
+
+[GitHub started considering restrictions](https://www.infoworld.com/article/4127156/github-eyes-restrictions-on-pull-requests-to-rein-in-ai-based-code-deluge-on-maintainers.html) on pull requests to help maintainers manage the flood. The people who volunteer their time to maintain critical infrastructure were suddenly drowning in low-quality AI output from contributors who never read the codebase.
+
+This is not a theoretical concern. It is an active crisis for the people who keep the open source ecosystem running. And it is a direct result of vibe coding culture applied where it does not belong: in existing, complex systems that require deep understanding before you touch them.
+
+## The Criticism Is Also Missing the Point
+
+That said, the loudest complaints are often framed as "vibe coding is bad for software." But what I keep reading between the lines is something else: "people who don't know what I know are now building things."
+
+That is not a technical argument. That is a guild protecting its territory.
+
+I build [websites](/en/services/web-development) and automation systems for local Polish businesses. Small restaurants, nail salons, barbers. None of them need a team of senior engineers. They need a working website with a contact form and decent SEO. I use AI-assisted coding to build those faster and cheaper than I could otherwise. That is not a crisis. That is the market working.
+
+The crisis is real for companies that have vibe-coded their way into 50,000 lines of AI-generated spaghetti and now need to add a feature. The solution there is not "ban AI from development." It is "understand what you are building." The [dead internet problem](/en/blog/dead-internet-human-made-websites) applies here too: quality and authenticity still win, whether we are talking about content or code.
+
+## What Actually Matters in 2026
+
+I will take a stance here: the developers who are scared of vibe coding are the ones whose value was in knowing syntax and APIs. That was always a fragile position. The developers who are fine are the ones whose value is in knowing what to build, why to build it, and whether what got built is correct.
+
+Vibe coding raises the floor. Anyone can now produce working code for simple problems. That is genuinely good. The ceiling (understanding systems, making architectural decisions, spotting the security hole the AI missed) has not moved. If anything, it got more valuable, because someone has to supervise all these AI-generated applications.
+
+The Stanford Digital Economy Lab [found that](https://digitaleconomy.stanford.edu/wp-content/uploads/2025/11/CanariesintheCoalMine_Nov25.pdf) employment among software developers aged 22 to 25 fell nearly 20% between 2022 and 2025. But developers over 26 saw stable or growing employment. The entry-level "write code from tutorials" job is disappearing. The "understand systems and make decisions" job is not.
+
+I am using Claude through [AI integration](/en/services/ai-integration) on almost every project now. When I [built automation workflows](/en/blog/ai-automation-finding-businesses-without-websites) to find businesses without websites, AI handled the repetitive parts while I designed the system architecture. I prompt, I review, I modify. I do not fully give in to the vibes. But I also do not pretend I hand-write everything from scratch to preserve some purity that stopped mattering two years ago.
+
+## The Middle Position
+
+The developers who will struggle are not the ones who adopt AI coding. They are the ones who refuse it, and the ones who adopt it without judgment. The middle position, where you use the tools and stay responsible for the output, is where the actual work happens.
+
+Vibe coding is eating software development. Some of that is messy and some of it will cause problems. But the core shift, that describing what you want in plain language is now a valid way to build software, is here and it is not reversing.
+
+The question was never "should developers use AI?" It was always "how do you use it without creating a mess?" The answer is the same as it has always been in engineering: understand what you are building, test it, and take responsibility for the result.
