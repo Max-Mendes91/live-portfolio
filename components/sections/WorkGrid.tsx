@@ -129,12 +129,10 @@ const WorkGrid: React.FC<WorkGridProps> = ({ dictionary }) => {
                     </Button>
                   )}
 
-                  {/* External Link */}
-                  {featuredProject.externalUrl && (
-                    <a
-                      href={featuredProject.externalUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                  {/* View Project Link */}
+                  {featuredProject.href && featuredProject.href !== '#' && (
+                    <Link
+                      href={featuredProject.href}
                       className={cn(
                         'inline-flex items-center gap-1.5',
                         'text-sm font-medium text-text-secondary',
@@ -142,10 +140,11 @@ const WorkGrid: React.FC<WorkGridProps> = ({ dictionary }) => {
                         'group/link'
                       )}
                     >
-                      <span>{featuredProject.externalCta || 'Visit Site'}</span>
+                      <span>{featuredProject.cta || content.viewProject}</span>
                       <ArrowUpRight className="w-4 h-4 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform" />
-                    </a>
+                    </Link>
                   )}
+
                 </div>
               </div>
             </div>

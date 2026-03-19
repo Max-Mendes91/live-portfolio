@@ -402,6 +402,8 @@ export interface WorkGridProjectDict {
   tech?: string[];
   caseStudyHref?: string;
   caseStudyCta?: string;
+  secondaryUrl?: string;
+  secondaryCta?: string;
 }
 
 // Work grid section dictionary
