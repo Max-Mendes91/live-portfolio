@@ -337,7 +337,7 @@
         "secondaryCta": "Zobacz Rozszerzenie",
         "tags": ["Rozszerzenie Chrome", "AI", "Produktywność"],
         "tech": ["React", "TypeScript", "Chrome APIs", "Integracja AI"],
-        "image": "/projects/markmind-landing.webp"
+        "image": "/projects/markmind-v2-landing.webp"
       },
       {
         "id": "portfolio",

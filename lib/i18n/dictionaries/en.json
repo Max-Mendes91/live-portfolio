@@ -329,7 +329,7 @@
         "secondaryCta": "View Extension",
         "tags": ["Chrome Extension", "AI", "Productivity"],
         "tech": ["React", "TypeScript", "Chrome APIs", "AI Integration"],
-        "image": "/projects/markmind-landing.webp"
+        "image": "/projects/markmind-v2-landing.webp"
       },
       {
         "id": "portfolio",
