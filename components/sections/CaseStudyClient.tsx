@@ -256,7 +256,7 @@ const ContentSection: React.FC<ContentSectionProps> = ({ section, index, shouldA
                 &ldquo;{section.highlight.quote}&rdquo;
               </Text>
               <Text size="sm" color="muted">
-                — {section.highlight.author}
+                - {section.highlight.author}
                 {section.highlight.source && `, ${section.highlight.source}`}
               </Text>
             </motion.div>

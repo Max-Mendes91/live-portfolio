@@ -3,7 +3,7 @@
     "badge": "Full-Stack Development",
     "headline": "Programista Freelancer Częstochowa",
     "subheadline": "React & Next.js. Pełny Proces. Częstochowa & Śląskie.",
-    "description": "Max Mendes — programista z Częstochowy, dostępny dla projektów z Polski, UK i USA. Jako jedna osoba odpowiadam za cały projekt - od pierwszej rozmowy po wdrożenie produkcyjne.",
+    "description": "Max Mendes, programista z Częstochowy, dostępny dla projektów z Polski, UK i USA. Jako jedna osoba odpowiadam za cały projekt - od pierwszej rozmowy po wdrożenie produkcyjne.",
     "ctaPrimary": "Bezpłatna Konsultacja",
     "ctaSecondary": "Zobacz Projekty",
     "phoneLabel": "lub zadzwoń",
@@ -11,14 +11,14 @@
     "toSeeProjects": "po dowody",
     "trustSignals": [
       { "label": "Specjalista React & Next.js", "icon": "trophy" },
-      { "label": "Strefa EU — pokrywa UK i US", "icon": "globe" },
+      { "label": "Strefa EU: pokrywa UK i US", "icon": "globe" },
       { "label": "Płynny EN / PT / ES · Wsparcie PL", "icon": "languages" }
     ]
   },
   "about": {
     "headline": "Dopasowane do Twojego Biznesu",
     "subheadline": "Zanim powstanie jakikolwiek kod, upewniam się, że rozwiązujemy właściwy problem.",
-    "description": "Każdy projekt zaczyna się od zrozumienia: czym jest sukces dla Ciebie, kim są użytkownicy, jakie ograniczenia mają znaczenie. Potem prototypowanie, planowanie zakresu i budowa czegoś, co pasuje do Twojego biznesu — nie szablonu, z którego wyrośniesz.",
+    "description": "Każdy projekt zaczyna się od zrozumienia: czym jest sukces dla Ciebie, kim są użytkownicy, jakie ograniczenia mają znaczenie. Potem prototypowanie, planowanie zakresu i budowa czegoś, co pasuje do Twojego biznesu, nie szablonu, z którego wyrośniesz.",
     "description2": "Masz bezpośredni dostęp przez cały projekt. Odpowiadam na pytania w ciągu paru godzin, nie dni. Decyzje zapadają szybko. A na końcu dostajesz kod, który rzeczywiście odpowiada Twoim potrzebom.",
     "learnMoreText": "Dowiedz się więcej o mnie",
     "learnMoreHref": "/pl/o-mnie",
@@ -31,7 +31,7 @@
   "services": {
     "hero": {
       "badge": "Co Tworzę",
-      "title": "Strony, SaaS i E-Commerce — w React i Next.js",
+      "title": "Strony, SaaS i E-Commerce: React i Next.js",
       "subtitle": "Oprogramowanie projektowane wokół Twoich wymagań. Każda funkcja ma swój cel, a kod rośnie razem z firmą."
     },
     "pills": ["Tworzenie Stron", "Aplikacje SaaS", "E-Commerce", "SEO i Wydajność", "Integracja AI"],
@@ -50,7 +50,7 @@
         "id": "saas",
         "icon": "Cloud",
         "title": "Aplikacje SaaS i Webowe",
-        "description": "Buduję aplikacje webowe z kontami użytkowników, dashboardami, uprawnieniami i rozliczaniem subskrypcji. Architektura gotowa na realnych użytkowników od startu — i zbudowana tak, że nowe funkcje nie niszczą istniejących.",
+        "description": "Buduję aplikacje webowe z kontami użytkowników, dashboardami, uprawnieniami i rozliczaniem subskrypcji. Architektura gotowa na realnych użytkowników od startu i zbudowana tak, że nowe funkcje nie niszczą istniejących.",
         "linkText": "aplikacje webowe",
         "linkHref": "/pl/uslugi/aplikacje-webowe"
       },
@@ -58,7 +58,7 @@
         "id": "web-development",
         "icon": "Code2",
         "title": "Tworzenie Stron Internetowych",
-        "description": "Tworzę strony firmowe, które ładują się szybko, dobrze się pozycjonują i są łatwe w utrzymaniu. Czysta architektura, która rośnie z firmą — nie coś, co trzeba będzie przepisać za dwa lata.",
+        "description": "Tworzę strony firmowe, które ładują się szybko, dobrze się pozycjonują i są łatwe w utrzymaniu. Czysta architektura, która rośnie z firmą, nie coś, co trzeba będzie przepisać za dwa lata.",
         "linkText": "strony firmowe",
         "linkHref": "/pl/uslugi/tworzenie-stron"
       },
@@ -125,7 +125,7 @@
       },
       {
         "question": "Czy obsługujesz klientów spoza Częstochowy?",
-        "answer": "Tak! Mam siedzibę w Częstochowie, ale obsługuję klientów z całego województwa śląskiego — Katowice, Gliwice, Sosnowiec, Bielsko-Biała — oraz z całej Polski: Kraków, Warszawa, Wrocław, Poznań i inne miasta. Pracuję zdalnie, więc lokalizacja nie ma znaczenia."
+        "answer": "Tak! Mam siedzibę w Częstochowie, ale obsługuję klientów z całego województwa śląskiego (Katowice, Gliwice, Sosnowiec, Bielsko-Biała) oraz z całej Polski: Kraków, Warszawa, Wrocław, Poznań i inne miasta. Pracuję zdalnie, więc lokalizacja nie ma znaczenia."
       },
       {
         "question": "Czy pracujesz z klientami spoza Polski?",
@@ -152,7 +152,7 @@
     "items": [
       {
         "question": "Co budujesz?",
-        "answer": "Platformy SaaS, dedykowane systemy e-commerce i strony biznesowe. Każdy projekt stworzony pod konkretne wymagania — kod na własność."
+        "answer": "Platformy SaaS, dedykowane systemy e-commerce i strony biznesowe. Każdy projekt stworzony pod konkretne wymagania, kod na własność."
       },
       {
         "question": "Jak długo trwa realizacja projektu?",
@@ -308,8 +308,8 @@
     "projects": [
       {
         "id": "flowmate",
-        "title": "FlowMate — Platforma AI do Zarządzania Emailami",
-        "shortDescription": "Samodzielnie zbudowany SaaS. Generowanie treści AI, wielokanałowy email, 300+ godzin kodu — działa na produkcji.",
+        "title": "FlowMate: Platforma AI do Zarządzania Emailami",
+        "shortDescription": "Samodzielnie zbudowany SaaS. Generowanie treści AI, wielokanałowy email, 300+ godzin kodu. Działa na produkcji.",
         "description": "Gotowa do działania platforma do zarządzania mailami i komunikacją na dużą skalę. Architektura full-stack z bezpieczną autoryzacją, przetwarzaniem asynchronicznym i integracjami AI, obsługująca realne obciążenia na skalę.",
         "metric": "Uruchomiony styczeń 2026 · 300+ godzin rozwoju · Integracja AI z wieloma kanałami",
         "href": "/pl/projekty",
@@ -324,10 +324,10 @@
       },
       {
         "id": "markmind",
-        "title": "MarkMind V2 — Menedżer Zakładek AI",
+        "title": "MarkMind V2: Menedżer Zakładek AI",
         "role": "Rola Współtwórcy",
         "shortDescription": "Stworzyłem landing page V2 i rozwijam funkcje AI dla rozszerzenia Chrome z 700+ aktywnymi użytkownikami.",
-        "description": "Opracowałem landing page V2 oraz biorę udział w rozwoju funkcji i integracji AI dla MarkMind — menedżera zakładek opartego na AI, obsługującego 700+ aktywnych użytkowników w produkcji.",
+        "description": "Opracowałem landing page V2 oraz biorę udział w rozwoju funkcji i integracji AI dla MarkMind, menedżera zakładek opartego na AI, obsługującego 700+ aktywnych użytkowników w produkcji.",
         "metric": "700+ Użytkowników · V2 Live",
         "href": "/pl/projekty",
         "externalUrl": "https://www.markmind.xyz/",
@@ -341,7 +341,7 @@
       },
       {
         "id": "portfolio",
-        "title": "maxmendes.dev — Dwujęzyczne Portfolio Programisty",
+        "title": "maxmendes.dev: Dwujęzyczne Portfolio Programisty",
         "shortDescription": "Dwujęzyczne. Szybkie. Zoptymalizowane pod SEO. Właśnie na nie patrzysz.",
         "description": "Strona portfolio w Next.js 15. Dwujęzyczna PL/EN z lokalizowanymi ścieżkami URL, strukturalnymi danymi JSON-LD, tagami hreflang i optymalizacją Core Web Vitals. Strona, na której właśnie jesteś.",
         "metric": "Dwujęzyczne · Lokalizowane URL · SEO",
@@ -355,8 +355,8 @@
       },
       {
         "id": "nail-salon",
-        "title": "Polished & Posh — Strona Salonu Kosmetycznego",
-        "shortDescription": "System rezerwacji, galeria, SEO — wszystko czego salon potrzebuje, by zdobywać klientów online.",
+        "title": "Polished & Posh: Strona Salonu Kosmetycznego",
+        "shortDescription": "System rezerwacji, galeria, SEO: wszystko czego salon potrzebuje, by zdobywać klientów online.",
         "description": "Gotowa strona dla salonów kosmetycznych z systemem rezerwacji, listą usług i galerią zdjęć. Zbudowana z myślą o dostępności, zoptymalizowana pod lokalne SEO i zaprojektowana, by zamieniać odwiedzających w klientów.",
         "metric": "System Rezerwacji · SEO · Mobile-First",
         "href": "/pl/projekty",
@@ -369,7 +369,7 @@
       },
       {
         "id": "la-creme",
-        "title": "La Crème — Strona Restauracji",
+        "title": "La Crème: Strona Restauracji",
         "shortDescription": "Elegancki design, system rezerwacji, mobile-first. Zbudowana by zapełniać stoliki.",
         "description": "Ekskluzywna strona restauracji z formularzem rezerwacji. Czarno-złota estetyka z płynnymi animacjami, prezentacja menu i integracja kontaktowa. Zaprojektowana, by pasować do premium pozycjonowania marki.",
         "metric": "System Rezerwacji · Premium Design · Responsywna",
@@ -383,7 +383,7 @@
       },
       {
         "id": "vet-clinic",
-        "title": "Przychodnia Weterynaryjna Animal — Częstochowa",
+        "title": "Przychodnia Weterynaryjna Animal, Częstochowa",
         "shortDescription": "Strona lokalnej przychodni weterynaryjnej z nowoczesnym UI i pełną listą usług.",
         "description": "Profesjonalna strona dla przychodni weterynaryjnej w Częstochowie. Zawiera listę usług, dane kontaktowe i nowoczesny design glass-morphism. Zbudowana w Angular i zoptymalizowana pod lokalne wyszukiwanie.",
         "metric": "Lokalny Biznes · Glass-morphism UI · Schema.org SEO",
@@ -441,9 +441,9 @@
     "heading": "Programista Full-Stack Częstochowa",
     "location": "Częstochowa, Polska",
     "bio": [
-      "Nazywam się Max i jestem programistą full-stack z Częstochowy. Buduję nowoczesne strony internetowe, sklepy online i aplikacje webowe z integracją AI — z naciskiem na czysty, utrzymywalny kod, wydajność i realne użycie.",
-      "Buduję w React i Next.js — nowoczesnym stacku, który daje szybsze strony, lepsze pozycjonowanie w Google i możliwość rozwoju bez przepisywania kodu od podstaw. To technologie używane przez duże firmy (Netflix, Airbnb, TikTok), teraz dostępne dla lokalnych firm z Częstochowy i Śląska.",
-      "Moja rola to kod: przekształcam pomysły w działające produkty. Implementuję interfejsy używając sprawdzonych bibliotek komponentów (shadcn/ui, Tailwind CSS) z naciskiem na wydajność, SEO i skalowalność. Integruję również funkcje AI wykorzystując API OpenAI i Anthropic — narzędzia, których używałem w produkcji do inteligentnej generacji treści, automatyzacji procesów i przetwarzania danych. Grafika i branding są poza moim zakresem — skupiam się wyłącznie na programowaniu.",
+      "Nazywam się Max i jestem programistą full-stack z Częstochowy. Buduję nowoczesne strony internetowe, sklepy online i aplikacje webowe z integracją AI, z naciskiem na czysty, utrzymywalny kod, wydajność i realne użycie.",
+      "Buduję w React i Next.js, nowoczesnym stacku, który daje szybsze strony, lepsze pozycjonowanie w Google i możliwość rozwoju bez przepisywania kodu od podstaw. To technologie używane przez duże firmy (Netflix, Airbnb, TikTok), teraz dostępne dla lokalnych firm z Częstochowy i Śląska.",
+      "Moja rola to kod: przekształcam pomysły w działające produkty. Implementuję interfejsy używając sprawdzonych bibliotek komponentów (shadcn/ui, Tailwind CSS) z naciskiem na wydajność, SEO i skalowalność. Integruję również funkcje AI wykorzystując API OpenAI i Anthropic, narzędzia, których używałem w produkcji do inteligentnej generacji treści, automatyzacji procesów i przetwarzania danych. Grafika i branding są poza moim zakresem; skupiam się wyłącznie na programowaniu.",
       "Mój proces: najpierw rozumiem cel biznesowy, analizuję konkurencję i planuję wymagania techniczne. Potem robię proste prototypy w Figma żeby uporządkować przepływ użytkownika. Dopiero wtedy piszę kod, optymalizuję pod SEO, wdrażam i iteruję na podstawie feedbacku.",
       "Buduję również własne projekty, co pozwala mi testować nowe technologie przed wdrożeniem u klientów.",
       "Jestem dostępny dla firm z Częstochowy i Śląska, które potrzebują nowoczesnych stron internetowych lub sklepów online, a także dla zagranicznych klientów szukających full-stack developera z Polski. Mówię płynnie po angielsku i bez problemu pracuję asynchronicznie w różnych strefach czasowych."
@@ -476,19 +476,19 @@
           "role": "Freelancer – Programista Full-Stack",
           "company": "Własna działalność",
           "period": "2024 – Obecnie",
-          "description": "Działam lokalnie z Częstochowy, specjalizuję się w tworzeniu stron internetowych, sklepów online i aplikacji webowych w React i Next.js. Projektuję i buduję rozwiązania webowe od podstaw—od analizy wymagań po wdrożenie produkcyjne. Każdy projekt prowadzę samodzielnie, co oznacza pełną kontrolę nad kodem i terminami realizacji."
+          "description": "Działam lokalnie z Częstochowy, specjalizuję się w tworzeniu stron internetowych, sklepów online i aplikacji webowych w React i Next.js. Projektuję i buduję rozwiązania webowe od podstaw, od analizy wymagań po wdrożenie produkcyjne. Każdy projekt prowadzę samodzielnie, co oznacza pełną kontrolę nad kodem i terminami realizacji."
         },
         {
           "role": "Analityk IT",
           "company": "Kontrakt",
           "period": "2023 – Obecnie",
-          "description": "160 godzin miesięcznie analizuję systemy biznesowe i tłumaczę wymagania klientów na rozwiązania techniczne. Ta praca nauczyła mnie, jak przedsiębiorstwa naprawdę korzystają z oprogramowania—umiejętność, którą wykorzystuję przy projektowaniu aplikacji webowych i sklepów internetowych."
+          "description": "160 godzin miesięcznie analizuję systemy biznesowe i tłumaczę wymagania klientów na rozwiązania techniczne. Ta praca nauczyła mnie, jak przedsiębiorstwa naprawdę korzystają z oprogramowania. Tę umiejętność, którą wykorzystuję przy projektowaniu aplikacji webowych i sklepów internetowych."
         },
         {
           "role": "Specjalista Wsparcia Technicznego",
           "company": "Cognizant Technology Solutions",
           "period": "Styczeń 2021 – Grudzień 2022",
-          "description": "Dostarczałem wsparcie techniczne na wielu platformach i narzędziach korporacyjnych. Praca z systemami ticketowymi i środowiskami chmurowymi—wczesne doświadczenie z tym, jak oprogramowanie działa w produkcji."
+          "description": "Dostarczałem wsparcie techniczne na wielu platformach i narzędziach korporacyjnych. Praca z systemami ticketowymi i środowiskami chmurowymi to wczesne doświadczenie z tym, jak oprogramowanie działa w produkcji."
         },
         {
           "role": "Menedżer / Właściciel",
@@ -519,7 +519,7 @@
       "badge": "Podejście Produktowe",
       "title": "Każdy projekt zaczyna się od myślenia",
       "subtitle": "Jedna osoba, pełna odpowiedzialność",
-      "description": "Zanim cokolwiek powstanie, koncentruję się na strukturze, ograniczeniach i tym, co naprawdę musi działać. Bezpośrednia komunikacja, szybki feedback i produkty budowane z intencją — nie przeładowane funkcjami."
+      "description": "Zanim cokolwiek powstanie, koncentruję się na strukturze, ograniczeniach i tym, co naprawdę musi działać. Bezpośrednia komunikacja, szybki feedback i produkty budowane z intencją, nie przeładowane funkcjami."
     },
     "services": [
       {
@@ -530,7 +530,7 @@
         "iconCenter2": "Server",
         "badge": "Programowanie",
         "title": "Tworzenie Stron Internetowych",
-        "description": "Strony biznesowe powinny być szybkie, stabilne i gotowe na rozwój. Projekty traktuję jak produkty — z czystą strukturą i myśleniem długoterminowym. Wszystko działa na nowoczesnym stacku: React, Next.js i TypeScript.",
+        "description": "Strony biznesowe powinny być szybkie, stabilne i gotowe na rozwój. Projekty traktuję jak produkty, z czystą strukturą i myśleniem długoterminowym. Wszystko działa na nowoczesnym stacku: React, Next.js i TypeScript.",
         "features": [
           "Strona firmowa lub rozwiązanie webowe od podstaw",
           "Czysta, utrzymywalna baza kodu",
@@ -548,7 +548,7 @@
         "iconCenter2": "Lock",
         "badge": "Aplikacje",
         "title": "Aplikacje Webowe i SaaS",
-        "description": "Kiedy zwykła strona nie wystarczy, potrzebujesz oprogramowania. Konta użytkowników, dashboardy, uprawnienia, subskrypcje—te projekty wymagają jasnej logiki i miejsca na rozwój. Cel: system, który działa dziś i nie rozpadnie się przy dodawaniu funkcji.",
+        "description": "Kiedy zwykła strona nie wystarczy, potrzebujesz oprogramowania. Konta użytkowników, dashboardy, uprawnienia, subskrypcje. Te projekty wymagają jasnej logiki i miejsca na rozwój. Cel: system, który działa dziś i nie rozpadnie się przy dodawaniu funkcji.",
         "features": [
           "Aplikacja webowa lub platforma SaaS",
           "Autentykacja i kontrola dostępu",
@@ -566,7 +566,7 @@
         "iconCenter2": "Wallet",
         "badge": "E-commerce",
         "title": "Sklepy Internetowe",
-        "description": "Sklepy internetowe z integracją Subiekt GT, szybką kasą i prostym zarządzaniem. Czy to sklep na Shopify czy rozwiązanie dedykowane—nacisk na płynny checkout, przejrzystą strukturę produktów i sklep, który skaluje się ze sprzedażą.",
+        "description": "Sklepy internetowe z integracją Subiekt GT, szybką kasą i prostym zarządzaniem. Czy to sklep na Shopify czy rozwiązanie dedykowane, nacisk na płynny checkout, przejrzystą strukturę produktów i sklep, który skaluje się ze sprzedażą.",
         "features": [
           "Sklep internetowy (Shopify lub dedykowany)",
           "Integracja Subiekt GT i systemów księgowych",
@@ -602,7 +602,7 @@
         "iconCenter2": "Cpu",
         "badge": "AI",
         "title": "Integracja AI i Automatyzacja",
-        "description": "Inteligentne funkcje oparte na modelach językowych AI. Integruję AI tam, gdzie naprawdę pomaga—obsługa zapytań klientów, generowanie treści czy automatyzacja procesów, które marnują czas Twojego zespołu.",
+        "description": "Inteligentne funkcje oparte na modelach językowych AI. Integruję AI tam, gdzie naprawdę pomaga: obsługa zapytań klientów, generowanie treści czy automatyzacja procesów, które marnują czas Twojego zespołu.",
         "features": [
           "Chatboty AI do obsługi klienta, onboardingu lub narzędzi wewnętrznych",
           "Generowanie i podsumowywanie treści w aplikacji lub panelu admina",
@@ -647,13 +647,13 @@
             "title": "Czym Jest Ta Usługa",
             "paragraphs": [
               "Tworzenie aplikacji full-stack oznacza budowanie zarówno tego, co użytkownicy widzą (frontend), jak i systemów działających w tle (backend). Otrzymujesz spójną aplikację, w której interfejs, dane i logika działają razem bez szwów.",
-              "Dedykowane aplikacje są budowane wokół Twoich konkretnych wymagań. Firma nie dostosowuje się do szablonu — oprogramowanie jest projektowane pod dokładne procesy, struktury danych i plany rozwoju."
+              "Dedykowane aplikacje są budowane wokół Twoich konkretnych wymagań. Firma nie dostosowuje się do szablonu. Oprogramowanie jest projektowane pod dokładne procesy, struktury danych i plany rozwoju."
             ]
           },
           {
             "title": "Co Buduję",
             "paragraphs": [
-              "Buduję interfejsy użytkownika w React i Next.js, które są szybkie i responsywne. Użytkownicy otrzymują jakość aplikacji z natychmiastową nawigacją i aktualizacjami w czasie rzeczywistym, gdy są potrzebne. Backend obsługuje kluczową logikę biznesową—zarządzanie użytkownikami, przetwarzanie danych, transakcje i integracje z zewnętrznymi systemami—zbudowany na Node.js i PostgreSQL dla niezawodności.",
+              "Buduję interfejsy użytkownika w React i Next.js, które są szybkie i responsywne. Użytkownicy otrzymują jakość aplikacji z natychmiastową nawigacją i aktualizacjami w czasie rzeczywistym, gdy są potrzebne. Backend obsługuje kluczową logikę biznesową (zarządzanie użytkownikami, przetwarzanie danych, transakcje i integracje z zewnętrznymi systemami) zbudowany na Node.js i PostgreSQL dla niezawodności.",
               "Projekty mogą obejmować systemy uwierzytelniania, kontrolę dostępu opartą na rolach, integracje płatności (Przelewy24, PayU, Stripe), integracje API oraz funkcje czasu rzeczywistego jak dashboardy czy powiadomienia. Używam TypeScript w całym projekcie, aby wychwytywać błędy przed wdrożeniem i zapewnić długoterminową utrzymywalność."
             ]
           },
@@ -661,7 +661,7 @@
             "title": "Dla Kogo Jest Ta Usługa",
             "paragraphs": [
               "Ta usługa jest dla firm budujących aplikacje webowe wymagające dedykowanej logiki i obsługi danych. Platformy SaaS, systemy klienckie, systemy rezerwacyjne, wewnętrzne dashboardy i produkty oparte na subskrypcjach należą do tej kategorii.",
-              "Jeśli Twój projekt obejmuje użytkowników, uwierzytelnianie, przetwarzanie danych lub logikę biznesową wykraczającą poza proste strony treściowe, potrzebujesz rozwoju full-stack. FlowMate—platforma SaaS, którą zbudowałem do zarządzania emailami—demonstruje to podejście: uwierzytelnianie wielu dostawców, przetwarzanie asynchroniczne, integracje AI i infrastruktura produkcyjna obsługująca rzeczywiste obciążenia."
+              "Jeśli Twój projekt obejmuje użytkowników, uwierzytelnianie, przetwarzanie danych lub logikę biznesową wykraczającą poza proste strony treściowe, potrzebujesz rozwoju full-stack. FlowMate, platforma SaaS, którą zbudowałem do zarządzania emailami, demonstruje to podejście: uwierzytelnianie wielu dostawców, przetwarzanie asynchroniczne, integracje AI i infrastruktura produkcyjna obsługująca rzeczywiste obciążenia."
             ],
             "links": [
               { "text": "Zobacz stronę Projekty →", "href": "/pl/projekty" }
@@ -670,7 +670,7 @@
           {
             "title": "Jak Pracuję",
             "paragraphs": [
-              "Pracujesz bezpośrednio ze mną—bez pośredników agencyjnych czy przekazywania projektu. Obsługuję wymagania, architekturę, development i wdrożenie. Kod jest gotowy do wdrożenia od pierwszego dnia, nie prototypy wymagające przebudowy później.",
+              "Pracujesz bezpośrednio ze mną. Bez pośredników agencyjnych czy przekazywania projektu. Obsługuję wymagania, architekturę, development i wdrożenie. Kod jest gotowy do wdrożenia od pierwszego dnia, nie prototypy wymagające przebudowy później.",
               "Aplikacje są wdrażane na profesjonalnej infrastrukturze cloud z dystrybucją CDN dla wydajności. Jestem z Częstochowy i dostępny dla projektów z całej Polski oraz międzynarodowych."
             ],
             "links": [
@@ -680,8 +680,8 @@
         ],
         "techStackTitle": "Stack Techniczny",
         "techStack": [
-          { "title": "Frontend", "description": "React 19, Next.js 15, TypeScript, Tailwind CSS—szybki, przyjazny SEO, łatwy w utrzymaniu" },
-          { "title": "Backend", "description": "Node.js, PostgreSQL, Prisma ORM—skalowalna obsługa danych z bezpieczeństwem typów" },
+          { "title": "Frontend", "description": "React 19, Next.js 15, TypeScript, Tailwind CSS. Szybki, przyjazny SEO, łatwy w utrzymaniu" },
+          { "title": "Backend", "description": "Node.js, PostgreSQL, Prisma ORM. Skalowalna obsługa danych z bezpieczeństwem typów" },
           { "title": "Integracje", "description": "Przelewy24/PayU dla rynku polskiego, Stripe dla klientów międzynarodowych, uwierzytelnianie OAuth, usługi email, zewnętrzne API" },
           { "title": "Wdrożenie", "description": "Infrastruktura cloud z CDN, automatyczne wdrażanie CI/CD, monitoring produkcyjny" },
           { "title": "Narzędzia", "description": "Kontrola wersji Git, automatyczne testy, śledzenie błędów produkcyjnych" }
@@ -714,12 +714,12 @@
         "areaServed": ["Częstochowa", "Śląskie", "Polska"]
       },
       "content": {
-        "subtitle": "Profesjonalny SaaS development dla platform subskrypcyjnych tworzonych w React. Skalowalna architektura od pierwszego dnia — rozwiązania gotowe na rozwój, a nie prototypy do przepisywania.",
+        "subtitle": "Profesjonalny SaaS development dla platform subskrypcyjnych tworzonych w React. Skalowalna architektura od pierwszego dnia, rozwiązania gotowe na rozwój, a nie prototypy do przepisywania.",
         "sections": [
           {
             "title": "Czym jest SaaS Development",
             "paragraphs": [
-              "SaaS development to tworzenie oprogramowania subskrypcyjnego, z którego użytkownicy korzystają stale, a nie jednorazowo jak ze zwykłej strony internetowej. Tego typu platformy zarządzają kontami, uprawnieniami, danymi oraz cyklicznymi płatnościami dla wielu klientów jednocześnie. W praktyce oznacza to architekturę wielodostępową — obsługę wielu firm lub użytkowników z wyraźnie oddzielonymi danymi.",
+              "SaaS development to tworzenie oprogramowania subskrypcyjnego, z którego użytkownicy korzystają stale, a nie jednorazowo jak ze zwykłej strony internetowej. Tego typu platformy zarządzają kontami, uprawnieniami, danymi oraz cyklicznymi płatnościami dla wielu klientów jednocześnie. W praktyce oznacza to architekturę wielodostępową: obsługę wielu firm lub użytkowników z wyraźnie oddzielonymi danymi.",
               "W przeciwieństwie do klasycznych aplikacji webowych, SaaS musi obsługiwać onboarding, cykle rozliczeniowe, zmiany planów i długoterminowe utrzymanie. To fundament działania produktu, a nie tylko warstwa wizualna."
             ]
           },
@@ -734,7 +734,7 @@
             "title": "Dla Kogo i Przykładowe Zastosowania",
             "paragraphs": [
               "Ta usługa jest przeznaczona dla founderów SaaS budujących MVP, które ma stać się realnym produktem, a nie jednorazowym testem. Sprawdza się także dla firm w Polsce tworzących platformy subskrypcyjne lub wewnętrzne narzędzia SaaS zastępujące arkusze i ręczne procesy. Typowe zastosowania to narzędzia produktywności, platformy B2B, panele analityczne oraz usługi abonamentowe.",
-              "FlowMate — platforma SaaS, którą stworzyłem do zarządzania emailami — obsługuje wielodostępową architekturę, asynchroniczne przetwarzanie, integracje AI oraz subskrypcje Stripe w środowisku produkcyjnym."
+              "FlowMate, platforma SaaS, którą stworzyłem do zarządzania emailami, obsługuje wielodostępową architekturę, asynchroniczne przetwarzanie, integracje AI oraz subskrypcje Stripe w środowisku produkcyjnym."
             ],
             "links": [
               { "text": "Zobacz FlowMate w sekcji Projekty →", "href": "/pl/projekty" }
@@ -743,7 +743,7 @@
           {
             "title": "Jak Przebiega Realizacja",
             "paragraphs": [
-              "Pracujesz bezpośrednio z jednym developerem — bez przekazywania projektu między zespołami. Od początku tworzony jest kod gotowy do produkcji, bez potrzeby późniejszego przepisywania architektury. TypeScript zwiększa stabilność i ułatwia rozwój funkcji w dłuższej perspektywie. Aplikacje wdrażane są na profesjonalnej infrastrukturze cloud lub serwerach klienta, zależnie od potrzeb projektu. Celem jest SaaS przygotowany na realnych użytkowników i kontrolowany wzrost.",
+              "Pracujesz bezpośrednio z jednym developerem. Bez przekazywania projektu między zespołami. Od początku tworzony jest kod gotowy do produkcji, bez potrzeby późniejszego przepisywania architektury. TypeScript zwiększa stabilność i ułatwia rozwój funkcji w dłuższej perspektywie. Aplikacje wdrażane są na profesjonalnej infrastrukturze cloud lub serwerach klienta, zależnie od potrzeb projektu. Celem jest SaaS przygotowany na realnych użytkowników i kontrolowany wzrost.",
               "Projekty realizuję z Częstochowy dla firm z Polski i rynków międzynarodowych."
             ],
             "links": [
@@ -753,10 +753,10 @@
         ],
         "techStackTitle": "Stos Technologiczny",
         "techStack": [
-          { "title": "Frontend", "description": "React 19, Next.js 15, TypeScript — szybkie, SEO-przyjazne interfejsy SaaS z niezawodnością w miarę rozwoju" },
-          { "title": "Backend", "description": "Node.js, PostgreSQL (Supabase, Prisma) — skalowalne modele danych dla wielu klientów" },
-          { "title": "Uwierzytelnianie", "description": "Clerk lub NextAuth — bezpieczne zarządzanie użytkownikami z logowaniem społecznościowym i OAuth" },
-          { "title": "Płatności", "description": "Przelewy24/PayU dla rynku polskiego, Stripe dla klientów międzynarodowych — automatyzacja subskrypcji i rozliczeń" },
+          { "title": "Frontend", "description": "React 19, Next.js 15, TypeScript. Szybkie, SEO-przyjazne interfejsy SaaS z niezawodnością w miarę rozwoju" },
+          { "title": "Backend", "description": "Node.js, PostgreSQL (Supabase, Prisma). Skalowalne modele danych dla wielu klientów" },
+          { "title": "Uwierzytelnianie", "description": "Clerk lub NextAuth. Bezpieczne zarządzanie użytkownikami z logowaniem społecznościowym i OAuth" },
+          { "title": "Płatności", "description": "Przelewy24/PayU dla rynku polskiego, Stripe dla klientów międzynarodowych. Automatyzacja subskrypcji i rozliczeń" },
           { "title": "Real-time i Wdrożenie", "description": "WebSockets lub SSE. Wdrożenie na infrastrukturze cloud z zarządzanymi bazami danych" }
         ],
         "cta": {
@@ -787,18 +787,18 @@
         "areaServed": ["Częstochowa", "Śląskie", "Polska"]
       },
       "content": {
-        "subtitle": "Dedykowane sklepy internetowe w React — szybkie, wydajne i nastawione na konwersję. Projektowane pod Twój katalog i logikę biznesową, z pełną kontrolą nad każdym detalem.",
+        "subtitle": "Dedykowane sklepy internetowe w React: szybkie, wydajne i nastawione na konwersję. Projektowane pod Twój katalog i logikę biznesową, z pełną kontrolą nad każdym detalem.",
         "sections": [
           {
             "title": "Czym jest niestandardowy sklep internetowy",
             "paragraphs": [
-              "Tworzenie niestandardowego sklepu internetowego oznacza budowę rozwiązania dopasowanego do realnych potrzeb Twojej firmy, a nie do ograniczeń gotowych motywów WooCommerce. Szablony sprawdzają się na początku, ale wiele firm szybko je przerasta — gdy pojawia się niestandardowa polityka cenowa, złożona logika magazynowa lub potrzeba integracji z innymi systemami. Sklep oparty na React i Next.js daje pełną kontrolę nad wydajnością, SEO i sposobem działania sprzedaży. Szybkość ładowania oraz dobre wyniki Core Web Vitals mają bezpośredni wpływ na konwersję i widoczność w Google."
+              "Tworzenie niestandardowego sklepu internetowego oznacza budowę rozwiązania dopasowanego do realnych potrzeb Twojej firmy, a nie do ograniczeń gotowych motywów WooCommerce. Szablony sprawdzają się na początku, ale wiele firm szybko je przerasta, gdy pojawia się niestandardowa polityka cenowa, złożona logika magazynowa lub potrzeba integracji z innymi systemami. Sklep oparty na React i Next.js daje pełną kontrolę nad wydajnością, SEO i sposobem działania sprzedaży. Szybkość ładowania oraz dobre wyniki Core Web Vitals mają bezpośredni wpływ na konwersję i widoczność w Google."
             ]
           },
           {
             "title": "Co obejmuje ta usługa",
             "paragraphs": [
-              "Buduję sklepy internetowe obejmujące cały proces sprzedaży. Projekty mogą zawierać katalog produktów z zarządzaniem stanami magazynowymi, koszyk i dopasowany proces checkoutu, a także integrację płatności. Dla rynku polskiego obsługiwane są Przelewy24 i PayU, a dla klientów międzynarodowych — Stripe. System zamówień pozwala śledzić status realizacji i wysyłki, a konta klientów dają dostęp do historii zakupów. Wyszukiwarka i filtry ułatwiają szybkie znalezienie produktów, a panel administracyjny umożliwia sprawne zarządzanie ofertą i zamówieniami. Automatyczne maile (potwierdzenia, aktualizacje wysyłki) ograniczają ręczną obsługę."
+              "Buduję sklepy internetowe obejmujące cały proces sprzedaży. Projekty mogą zawierać katalog produktów z zarządzaniem stanami magazynowymi, koszyk i dopasowany proces checkoutu, a także integrację płatności. Dla rynku polskiego obsługiwane są Przelewy24 i PayU, a dla klientów międzynarodowych: Stripe. System zamówień pozwala śledzić status realizacji i wysyłki, a konta klientów dają dostęp do historii zakupów. Wyszukiwarka i filtry ułatwiają szybkie znalezienie produktów, a panel administracyjny umożliwia sprawne zarządzanie ofertą i zamówieniami. Automatyczne maile (potwierdzenia, aktualizacje wysyłki) ograniczają ręczną obsługę."
             ]
           },
           {
@@ -810,7 +810,7 @@
           {
             "title": "Wydajność i SEO jako fundament sprzedaży",
             "paragraphs": [
-              "Wydajność sklepu ma bezpośredni wpływ na sprzedaż. Szybkie strony produktowe poprawiają doświadczenie użytkownika i zwiększają konwersję. Każdy sklep jest optymalizowany pod SEO: odpowiednia struktura treści, metadane, dane strukturalne oraz renderowanie po stronie serwera, dzięki czemu produkty są dobrze indeksowane. Obrazy są optymalizowane i ładowane asynchronicznie, a całość projektowana w podejściu mobile-first — zgodnie z tym, jak dziś kupują klienci.",
+              "Wydajność sklepu ma bezpośredni wpływ na sprzedaż. Szybkie strony produktowe poprawiają doświadczenie użytkownika i zwiększają konwersję. Każdy sklep jest optymalizowany pod SEO: odpowiednia struktura treści, metadane, dane strukturalne oraz renderowanie po stronie serwera, dzięki czemu produkty są dobrze indeksowane. Obrazy są optymalizowane i ładowane asynchronicznie, a całość projektowana w podejściu mobile-first, zgodnie z tym, jak dziś kupują klienci.",
               "Z Częstochowy, dostępny dla projektów z Polski i zagranicy."
             ],
             "links": [
@@ -854,13 +854,13 @@
         "areaServed": ["Częstochowa", "Śląskie", "Polska"]
       },
       "content": {
-        "subtitle": "Optymalizacja wydajności i SEO skoncentrowana na realnych wynikach biznesowych. Szybsza strona to lepsze pozycje w Google, wyższa konwersja i większe przychody — nie tylko lepsze wyniki techniczne.",
+        "subtitle": "Optymalizacja wydajności i SEO skoncentrowana na realnych wynikach biznesowych. Szybsza strona to lepsze pozycje w Google, wyższa konwersja i większe przychody, nie tylko lepsze wyniki techniczne.",
         "sections": [
           {
             "title": "Dlaczego wydajność i SEO mają znaczenie dla biznesu",
             "paragraphs": [
               "Wydajność strony i SEO bezpośrednio wpływają na liczbę klientów oraz sprzedaż. Wolne strony tracą użytkowników, zanim ci zdążą wykonać jakąkolwiek akcję, a wyszukiwarki promują witryny szybkie i stabilne. Core Web Vitals (czyli kluczowe wskaźniki jakości strony) są oficjalnym czynnikiem rankingowym Google, dlatego szybkość i stabilność layoutu mają realny wpływ na widoczność w wynikach wyszukiwania.",
-              "Badania branżowe pokazują, że nawet 1 sekunda opóźnienia może obniżyć konwersję o około 7%. Dodatkowo Google stosuje mobile-first indexing, co oznacza, że wydajność wersji mobilnej ma kluczowe znaczenie. Celem optymalizacji jest więcej ruchu z Google, lepsze doświadczenie użytkownika i wyższe przychody — nie \u201Eładne wykresy\u201D bez przełożenia na biznes."
+              "Badania branżowe pokazują, że nawet 1 sekunda opóźnienia może obniżyć konwersję o około 7%. Dodatkowo Google stosuje mobile-first indexing, co oznacza, że wydajność wersji mobilnej ma kluczowe znaczenie. Celem optymalizacji jest więcej ruchu z Google, lepsze doświadczenie użytkownika i wyższe przychody, nie \u201Eładne wykresy\u201D bez przełożenia na biznes."
             ]
           },
           {
@@ -880,7 +880,7 @@
           {
             "title": "Dla kogo jest ta usługa",
             "paragraphs": [
-              "Ta usługa jest przeznaczona dla firm posiadających już stronę internetową — często opartą o WordPress — która działa wolno lub nie osiąga oczekiwanych pozycji w Google. Sprawdzi się dla biznesów, które chcą zwiększyć liczbę zapytań, sprzedaż online lub poprawić skuteczność kampanii marketingowych bez przebudowy całej strony od zera. Jeśli Twoja strona ma ruch, ale nie konwertuje, optymalizacja wydajności i SEO może przynieść najszybszy efekt."
+              "Ta usługa jest przeznaczona dla firm posiadających już stronę internetową (często opartą o WordPress), która działa wolno lub nie osiąga oczekiwanych pozycji w Google. Sprawdzi się dla biznesów, które chcą zwiększyć liczbę zapytań, sprzedaż online lub poprawić skuteczność kampanii marketingowych bez przebudowy całej strony od zera. Jeśli Twoja strona ma ruch, ale nie konwertuje, optymalizacja wydajności i SEO może przynieść najszybszy efekt."
             ]
           },
           {
@@ -900,7 +900,7 @@
           { "title": "SEO techniczne", "description": "Indeksowanie, dane strukturalne (Schema.org) i renderowanie treści dla wyszukiwarek." },
           { "title": "Obrazy", "description": "Kompresja, nowoczesne formaty (WebP, AVIF) i lazy loading redukują rozmiar bez utraty jakości." },
           { "title": "Cache i CDN", "description": "Mechanizmy cache i CDN skracają czas ładowania globalnie." },
-          { "title": "Pomiar", "description": "Lighthouse, PageSpeed Insights i Google Search Console—każda zmiana jest mierzona, aby techniczne usprawnienia przekładały się na realne wyniki biznesowe." }
+          { "title": "Pomiar", "description": "Lighthouse, PageSpeed Insights i Google Search Console. Każda zmiana jest mierzona, aby techniczne usprawnienia przekładały się na realne wyniki biznesowe." }
         ],
         "cta": {
           "title": "Gotowy Zoptymalizować Swoją Stronę?",
@@ -930,18 +930,18 @@
         "areaServed": ["Częstochowa", "Śląskie", "Polska"]
       },
       "content": {
-        "subtitle": "Inteligentne funkcje rozwiązujące realne problemy biznesowe. Automatyzacja, inteligentne wyszukiwanie i AI-powered procesy—praktyczne wdrożenie bez zbędnego hype'u.",
+        "subtitle": "Inteligentne funkcje rozwiązujące realne problemy biznesowe. Automatyzacja, inteligentne wyszukiwanie i AI-powered procesy, praktyczne wdrożenie bez zbędnego hype'u.",
         "sections": [
           {
             "title": "Co oznacza integracja AI dla biznesu",
             "paragraphs": [
-              "Integracja AI to dodawanie inteligentnych funkcji do istniejących produktów i procesów — nie rewolucja całej firmy. W praktyce AI pomaga automatyzować powtarzalne zadania, klasyfikować dane, poprawiać wyszukiwanie, generować streszczenia lub wspierać użytkowników lepszymi podpowiedziami. Różnica między użytecznym AI a \"AI dla AI\" polega na celu: zaczynamy od konkretnego problemu biznesowego, a nie od technologii. Efekt, którego szukamy, to oszczędność czasu, redukcja kosztów i lepsze doświadczenie użytkownika. To nie są magiczne rozwiązania ani zamiennik zespołu — AI jako narzędzie, nie zamiennik pracowników."
+              "Integracja AI to dodawanie inteligentnych funkcji do istniejących produktów i procesów, nie rewolucja całej firmy. W praktyce AI pomaga automatyzować powtarzalne zadania, klasyfikować dane, poprawiać wyszukiwanie, generować streszczenia lub wspierać użytkowników lepszymi podpowiedziami. Różnica między użytecznym AI a \"AI dla AI\" polega na celu: zaczynamy od konkretnego problemu biznesowego, a nie od technologii. Efekt, którego szukamy, to oszczędność czasu, redukcja kosztów i lepsze doświadczenie użytkownika. To nie są magiczne rozwiązania ani zamiennik zespołu. AI jako narzędzie, nie zamiennik pracowników."
             ]
           },
           {
-            "title": "Co obejmuje usługa — typowe funkcje AI",
+            "title": "Co obejmuje usługa: typowe funkcje AI",
             "paragraphs": [
-              "Zakres prac może obejmować: klasyfikację i kategoryzację tekstu, generowanie i streszczanie treści, inteligentne wyszukiwanie (dopasowanie semantyczne), rekomendacje i personalizację, rozpoznawanie i przetwarzanie obrazów, NLP dla zapytań użytkowników, automatyczne odpowiedzi i chatboty (tam, gdzie mają sens), a także analizę danych i wykrywanie wzorców. Każda funkcja jest projektowana pod konkretny rezultat, z myślą o stabilności i kontroli kosztów. Gdy prostsze reguły działają lepiej — rekomenduję je zamiast AI."
+              "Zakres prac może obejmować: klasyfikację i kategoryzację tekstu, generowanie i streszczanie treści, inteligentne wyszukiwanie (dopasowanie semantyczne), rekomendacje i personalizację, rozpoznawanie i przetwarzanie obrazów, NLP dla zapytań użytkowników, automatyczne odpowiedzi i chatboty (tam, gdzie mają sens), a także analizę danych i wykrywanie wzorców. Każda funkcja jest projektowana pod konkretny rezultat, z myślą o stabilności i kontroli kosztów. Gdy prostsze reguły działają lepiej, rekomenduję je zamiast AI."
             ]
           },
           {
@@ -958,7 +958,7 @@
             "title": "Dla kogo i typowe zastosowania",
             "paragraphs": [
               "Ta usługa jest dla firm z powtarzalną pracą manualną, produktów wymagających lepszego wyszukiwania lub rekomendacji, zespołów wsparcia szukających asysty AI (nie zastępstwa), platform treściowych (streszczenia/kategorie), e-commerce (personalizacja) oraz produktów SaaS dodających \"smart\" funkcje.",
-              "Przykłady: klasyfikacja dokumentów, routing zapytań klientów, moderacja treści, rekomendacje produktów—wdrażane z jasnymi limitami i mierzalnym wpływem.",
+              "Przykłady: klasyfikacja dokumentów, routing zapytań klientów, moderacja treści, rekomendacje produktów, wdrażane z jasnymi limitami i mierzalnym wpływem.",
               "Z Częstochowy, dostępny dla projektów z Polski i zagranicy."
             ],
             "links": [
@@ -968,7 +968,7 @@
           {
             "title": "Podejście i Założenia",
             "paragraphs": [
-              "Zaczynam od jednego, jasno zdefiniowanego przypadku użycia, a nie od \"AI wszędzie\". Najpierw krótki proof of concept, który sprawdza, czy AI faktycznie pomaga. Wdrażanie jest stopniowe, z bezpiecznymi fallbackami. Koszty mają znaczenie — wywołania API skalują się z użyciem. I co ważne: nie każdy problem potrzebuje AI. Czasem reguły są szybsze i tańsze. Uczciwie oceniam, czy AI realnie poprawi Twój produkt."
+              "Zaczynam od jednego, jasno zdefiniowanego przypadku użycia, a nie od \"AI wszędzie\". Najpierw krótki proof of concept, który sprawdza, czy AI faktycznie pomaga. Wdrażanie jest stopniowe, z bezpiecznymi fallbackami. Koszty mają znaczenie. Wywołania API skalują się z użyciem. I co ważne: nie każdy problem potrzebuje AI. Czasem reguły są szybsze i tańsze. Uczciwie oceniam, czy AI realnie poprawi Twój produkt."
             ]
           }
         ],
@@ -977,8 +977,8 @@
           { "title": "Dostawcy AI", "description": "W zależności od potrzeb używam: GPT (OpenAI), Claude (Anthropic) lub modeli niestandardowych." },
           { "title": "Backend", "description": "Przetwarzanie asynchroniczne z kolejkami i cache, aby nie blokować użytkowników i kontrolować koszty." },
           { "title": "Obsługa Błędów", "description": "Solidna obsługa błędów i fallbacki na wypadek niedostępności usług AI." },
-          { "title": "Frontend", "description": "Frontend w React — płynna obsługa funkcji AI." },
-          { "title": "Monitoring", "description": "Monitoring zużycia, skuteczności i kosztów—istotne, bo koszty API rosną z użyciem." }
+          { "title": "Frontend", "description": "Frontend w React. Płynna obsługa funkcji AI." },
+          { "title": "Monitoring", "description": "Monitoring zużycia, skuteczności i kosztów. Istotne, bo koszty API rosną z użyciem." }
         ],
         "cta": {
           "title": "Gotowy Dodać Funkcje AI?",
@@ -1035,13 +1035,13 @@
         "items": [
           {
             "question": "Jakie usługi świadczysz?",
-            "answer": "Buduję produkcyjne aplikacje webowe: strony biznesowe, platformy SaaS, niestandardowe sklepy internetowe i funkcje oparte na AI. Wszystko w React, Next.js i TypeScript — gotowe do użycia od pierwszego dnia, zbudowane pod skalowanie.",
+            "answer": "Buduję produkcyjne aplikacje webowe: strony biznesowe, platformy SaaS, niestandardowe sklepy internetowe i funkcje oparte na AI. Wszystko w React, Next.js i TypeScript, gotowe do użycia od pierwszego dnia, zbudowane pod skalowanie.",
             "linkText": "Zobacz szczegóły usług",
             "linkHref": "/pl/uslugi"
           },
           {
             "question": "Czego nie budujesz?",
-            "answer": "Skupiam się wyłącznie na dedykowanym oprogramowaniu — strony, aplikacje webowe i SaaS budowane w React i Next.js. Design, branding i marketing są poza moim zakresem. Jeśli potrzebujesz tych usług, mogę polecić specjalistów."
+            "answer": "Skupiam się wyłącznie na dedykowanym oprogramowaniu: strony, aplikacje webowe i SaaS budowane w React i Next.js. Design, branding i marketing są poza moim zakresem. Jeśli potrzebujesz tych usług, mogę polecić specjalistów."
           },
           {
             "question": "Pracujesz sam czy z zespołem?",
@@ -1072,7 +1072,7 @@
           },
           {
             "question": "Jak komunikujemy się podczas projektu?",
-            "answer": "Bezpośrednia komunikacja przez email, Slack lub telefon—jak wolisz. Cotygodniowe spotkania informują Cię o postępach, przeszkodach i kolejnych krokach. Bez niepotrzebnych zebrań czy raportów statusowych."
+            "answer": "Bezpośrednia komunikacja przez email, Slack lub telefon, jak wolisz. Cotygodniowe spotkania informują Cię o postępach, przeszkodach i kolejnych krokach. Bez niepotrzebnych zebrań czy raportów statusowych."
           }
         ]
       },
@@ -1110,7 +1110,7 @@
           },
           {
             "question": "Czy obsługujesz hosting i wdrożenie?",
-            "answer": "Tak. Obsługuję wdrożenie produkcyjne, konfigurację środowiska i optymalizację wydajności. Twoja aplikacja startuje stabilna, monitorowana i gotowa na prawdziwych użytkowników—nie tylko wypuszczona i zapomniana."
+            "answer": "Tak. Obsługuję wdrożenie produkcyjne, konfigurację środowiska i optymalizację wydajności. Twoja aplikacja startuje stabilna, monitorowana i gotowa na prawdziwych użytkowników, nie tylko wypuszczona i zapomniana."
           },
           {
             "question": "Jak zapewniasz bezpieczeństwo i wydajność mojej strony?",
@@ -1169,7 +1169,7 @@
     ],
     "cta": {
       "title": "Masz inne pytania?",
-      "description": "Napisz maila lub zadzwoń—porozmawiamy o Twoim projekcie bez zbędnych ceregieli.",
+      "description": "Napisz maila lub zadzwoń. Porozmawiamy o Twoim projekcie bez zbędnych ceregieli.",
       "primaryButton": {
         "label": "Skontaktuj się",
         "href": "/pl/kontakt"
@@ -1197,10 +1197,10 @@
     },
     "badge": "Portfolio",
     "title": "Co Buduję",
-    "subtitle": "Od stron firmowych po platformy SaaS — zbudowane, by konwertować.",
+    "subtitle": "Od stron firmowych po platformy SaaS, zbudowane, by konwertować.",
     "cta": {
       "title": "Twój projekt może być następny",
-      "description": "Ten sam proces, ta sama jakość — dostosowane do Twojego biznesu.",
+      "description": "Ten sam proces, ta sama jakość, dostosowane do Twojego biznesu.",
       "primaryButton": "Rozpocznij Rozmowę",
       "secondaryButton": "Zobacz Jak Pracuję"
     }
@@ -1252,8 +1252,8 @@
         "title": "5. Odbiorcy Danych",
         "content": "Twoje dane mogą być udostępniane następującym zewnętrznym dostawcom usług, którzy pomagają w obsłudze tej strony:",
         "items": [
-          "Vercel Inc. (hosting i analityka) — przetwarza dane techniczne w celu dostarczania strony",
-          "Google LLC (Google Analytics 4) — przetwarza dane o użytkowaniu do celów analitycznych po uzyskaniu zgody"
+          "Vercel Inc. (hosting i analityka): przetwarza dane techniczne w celu dostarczania strony",
+          "Google LLC (Google Analytics 4): przetwarza dane o użytkowaniu do celów analitycznych po uzyskaniu zgody"
         ],
         "additionalContent": "Ci dostawcy działają jako podmioty przetwarzające dane i są związani umownymi zobowiązaniami do ochrony Twoich danych zgodnie z wymogami RODO."
       },
@@ -1429,7 +1429,7 @@
       "schema": {
         "type": "Article",
         "articleType": "TechArticle",
-        "description": "Techniczne case study FlowMate — platformy SaaS do zarządzania emailem z AI, zbudowanej w Next.js, React i z wieloma dostawcami AI.",
+        "description": "Techniczne case study FlowMate, platformy SaaS do zarządzania emailem z AI, zbudowanej w Next.js, React i z wieloma dostawcami AI.",
         "author": "Max Mendes",
         "datePublished": "2026-01-15",
         "keywords": ["Tworzenie SaaS", "Integracja AI", "Zarządzanie Email", "Next.js", "React", "Full-Stack Development"]
@@ -1457,7 +1457,7 @@
             "content": [
               "Pracując w IT support, tonąłem w emailach. Wiele skrzynek wymagających uwagi. Ciągłe przeskakiwanie między Gmailem, Slackiem i Telegramem. Emaile od klientów piętrzące się szybciej niż byłem w stanie odpowiadać. Godziny tracone każdego dnia na samo zarządzanie komunikacją zamiast wykonywania rzeczywistej pracy.",
               "Ból był realny: skakanie między 4+ platformami dziennie, pisanie tych samych typów odpowiedzi w kółko, gubienie ważnych emaili zakopanych pod newsletterami i brak możliwości wysłania aktualizacji na wszystkie kanały bez kopiowania i wklejania tej samej wiadomości cztery razy.",
-              "Nie potrzebowałem kolejnej aplikacji do maili z ładniejszym wyglądem. Potrzebowałem czegoś, co naprawdę zaoszczędzi mi czas — jednego miejsca, gdzie AI zajmuje sie nudnymi rzeczami, a ja mogę skupić się na tym, co ważne, zamiast przegladac skrzynke."
+              "Nie potrzebowałem kolejnej aplikacji do maili z ładniejszym wyglądem. Potrzebowałem czegoś, co naprawdę zaoszczędzi mi czas. Jednego miejsca, gdzie AI zajmuje sie nudnymi rzeczami, a ja mogę skupić się na tym, co ważne, zamiast przegladac skrzynke."
             ]
           },
           {
@@ -1468,7 +1468,7 @@
               "Główna idea: zredukować 200 emaili do 5 faktycznych decyzji. Niech AI kategoryzuje co jest pilne, co wymaga działania, co jest tylko do wiadomości. Szkicuje odpowiedzi, które możesz wysłać lub edytować. Wysyła ogłoszenia wszędzie bez pisania czterech różnych wiadomości."
             ],
             "highlight": {
-              "quote": "Najlepsza funkcja to broadcast — jak łatwo można wysłać na wszystkie platformy z różnymi stylami dla każdej automatycznie.",
+              "quote": "Najlepsza funkcja to broadcast. Jak łatwo można wysłać na wszystkie platformy z różnymi stylami dla każdej automatycznie.",
               "author": "Feedback Wczesnego Użytkownika",
               "source": "LinkedIn"
             }
@@ -1481,7 +1481,7 @@
                 "title": "Bezpieczeństwo Było Priorytetem",
                 "content": [
                   "Dostęp do maili użytkowników to dostęp do ich najbardziej wrażliwych danych. Tokeny OAuth, prywatne wiadomości, korespondencja firmowa. Jeden wyciek i po projekcie.",
-                  "Bezpieczeństwo było priorytetem na każdym kroku: szyfrowanie AES-256-GCM dla wszystkich tokenów OAuth z PBKDF2. Row Level Security na każdej tabeli w bazie danych. Ochrona CSRF z 256-bitowymi losowymi parametrami. Rate limiting — 200 requestów na minutę na IP. Blokowanie 50+ znanych botów na poziomie middleware. Zabezpieczenia przed atakami czasowymi przy logowaniu."
+                  "Bezpieczeństwo było priorytetem na każdym kroku: szyfrowanie AES-256-GCM dla wszystkich tokenów OAuth z PBKDF2. Row Level Security na każdej tabeli w bazie danych. Ochrona CSRF z 256-bitowymi losowymi parametrami. Rate limiting: 200 requestów na minutę na IP. Blokowanie 50+ znanych botów na poziomie middleware. Zabezpieczenia przed atakami czasowymi przy logowaniu."
                 ]
               },
               {
@@ -1494,7 +1494,7 @@
               {
                 "title": "Zarządzanie Stanem na Skalę",
                 "content": [
-                  "FlowMate ma 10 różnych widoków, 4 platformy synchronizujące się naraz, aktualizacje na żywo, zarządzanie szkicami, historię czatu z AI i ustawienia użytkownika — wszystko musi działać płynnie i być zsynchronizowane.",
+                  "FlowMate ma 10 różnych widoków, 4 platformy synchronizujące się naraz, aktualizacje na żywo, zarządzanie szkicami, historię czatu z AI i ustawienia użytkownika, wszystko musi działać płynnie i być zsynchronizowane.",
                   "Rozwiązanie opiera się na kilku wzorcach: optimistic sync (najpierw zapisz lokalnie, synchronizuj z bazą w tle), IndexedDB połączone z Supabase dla architektury offline-first, gdzie chmura jest źródłem prawdy, osobne klucze storage dla każdego użytkownika i circuit breakers z exponential backoff, żeby wszystko działało nawet przy awarii API."
                 ]
               },
@@ -1521,8 +1521,8 @@
               "hours": "300+"
             },
             "content": [
-              "Samodzielna praca od architektury po wdrożenie. Każda decyzja — schemat bazy danych, przepływ logowania, prompty AI, integracja płatności, obsługa błędów — podjęta przez jedną osobę z pełnym obrazem całego systemu.",
-              "To podejście ma swoje kompromisy. Wolniejsze niż praca w zespole, ale bez tracenia czasu na ustalenia. Każda część kodu pasuje do siebie, bo projektowała ją jedna osoba. Dług techniczny jest minimalny — sam muszę potem z tym pracować."
+              "Samodzielna praca od architektury po wdrożenie. Każda decyzja (schemat bazy danych, przepływ logowania, prompty AI, integracja płatności, obsługa błędów) podjęta przez jedną osobę z pełnym obrazem całego systemu.",
+              "To podejście ma swoje kompromisy. Wolniejsze niż praca w zespole, ale bez tracenia czasu na ustalenia. Każda część kodu pasuje do siebie, bo projektowała ją jedna osoba. Dług techniczny jest minimalny, sam muszę potem z tym pracować."
             ],
             "stackDecisions": [
               {
@@ -1586,7 +1586,7 @@
             "id": "results",
             "title": "Rezultaty i Wnioski",
             "content": [
-              "Opinie użytkowników potwierdziły główną tezę: Broadcast okazał się najważniejszą funkcją. Możliwość napisania raz i wysłania na Email, Slack i Telegram — z AI generującym warianty specyficzne dla platformy automatycznie — oszczędzała najwięcej czasu. Zainwestowałem mocno w to, żeby ten przepływ był bezwysiłkowy.",
+              "Opinie użytkowników potwierdziły główną tezę: Broadcast okazał się najważniejszą funkcją. Możliwość napisania raz i wysłania na Email, Slack i Telegram, z AI generującym warianty specyficzne dla platformy automatycznie, oszczędzała najwięcej czasu. Zainwestowałem mocno w to, żeby ten przepływ był bezwysiłkowy.",
               "Najsilniejszy sygnał: użytkownicy rozumieją całą aplikację w około 30 minut. Żadnych komend do zapamiętania. Żadnego skomplikowanego wdrażania. Podłącz swoje konta i zacznij pracować. Zbudować coś prostego było trudniejsze niż coś skomplikowanego, ale opłaciło się."
             ],
             "lessonsLearned": [
@@ -1600,7 +1600,7 @@
               },
               {
                 "title": "Same Funkcje Nie Wystarczą",
-                "content": "Najpierw budowałem funkcje, dopiero potem myślałem o przekazie. Broadcast okazał się najważniejszy nie dlatego, że był technicznie skomplikowany — tylko dlatego, że rozwiązywał konkretny problem."
+                "content": "Najpierw budowałem funkcje, dopiero potem myślałem o przekazie. Broadcast okazał się najważniejszy nie dlatego, że był technicznie skomplikowany, tylko dlatego, że rozwiązywał konkretny problem."
               }
             ]
           }

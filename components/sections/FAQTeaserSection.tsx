@@ -80,7 +80,7 @@ const FAQTeaserSection: React.FC<FAQTeaserSectionProps> = ({ dictionary }) => {
     items: dictionary?.items ?? [
       {
         question: "What do you build?",
-        answer: "Production web applications—SaaS platforms, custom e-commerce systems, and business websites—built with React, Next.js, and TypeScript. No WordPress or templates."
+        answer: "Production web applications: SaaS platforms, custom e-commerce systems, and business websites, built with React, Next.js, and TypeScript. No WordPress or templates."
       },
       {
         question: "How long does a typical project take?",

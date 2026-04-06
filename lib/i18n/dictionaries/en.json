@@ -3,7 +3,7 @@
     "badge": "Full-Stack Development",
     "headline": "Freelance Web Developer for Hire",
     "subheadline": "Websites. E-commerce. Web Apps. SaaS.",
-    "description": "Max Mendes — developer based in Poland, available for projects across Europe, UK, and US. From first conversation to live deployment, one person handles your entire project.",
+    "description": "Max Mendes, developer based in Poland, available for projects across Europe, UK, and US. From first conversation to live deployment, one person handles your entire project.",
     "ctaPrimary": "Book a Free Call",
     "ctaSecondary": "See Projects",
     "phoneLabel": "or call",
@@ -11,14 +11,14 @@
     "toSeeProjects": "for the proof",
     "trustSignals": [
       { "label": "React & Next.js Specialist", "icon": "trophy" },
-      { "label": "EU Timezone — Overlaps UK & US", "icon": "globe" },
+      { "label": "EU Timezone, Overlaps UK & US", "icon": "globe" },
       { "label": "Fluent EN / PT / ES · Polish Support", "icon": "languages" }
     ]
   },
   "about": {
     "headline": "Built Around How Your Business Works",
     "subheadline": "Before any code gets written, I make sure we're solving the right problem.",
-    "description": "Every project starts with understanding: what success looks like for you, who your users are, what constraints matter. Then prototyping, scoping, and building something that fits your business — not a template you'll outgrow.",
+    "description": "Every project starts with understanding: what success looks like for you, who your users are, what constraints matter. Then prototyping, scoping, and building something that fits your business, not a template you'll outgrow.",
     "description2": "You get direct access throughout the project. Questions get answered in hours, not days. Decisions happen fast. And at the end, you own code that actually reflects what you needed.",
     "learnMoreText": "Learn More About Me",
     "learnMoreHref": "/en/about",
@@ -31,7 +31,7 @@
   "services": {
     "hero": {
       "badge": "What I Build",
-      "title": "Websites, SaaS, and E-Commerce — Built with React and Next.js",
+      "title": "Websites, SaaS, and E-Commerce: Built with React and Next.js",
       "subtitle": "Custom software designed around your requirements. Every feature serves a purpose, and the codebase scales as you grow."
     },
     "pills": ["Web Development", "SaaS Apps", "E-Commerce", "SEO & Performance", "AI Integration"],
@@ -50,7 +50,7 @@
         "id": "saas",
         "icon": "Cloud",
         "title": "SaaS & Web Applications",
-        "description": "Web applications with user accounts, dashboards, permissions, and subscription billing. Architected to handle real users from launch — and structured so new features don't break existing ones.",
+        "description": "Web applications with user accounts, dashboards, permissions, and subscription billing. Architected to handle real users from launch, and structured so new features don't break existing ones.",
         "linkText": "Web applications",
         "linkHref": "/en/services/saas-web-apps"
       },
@@ -58,7 +58,7 @@
         "id": "web-development",
         "icon": "Code2",
         "title": "Full-Stack Web Development",
-        "description": "Business websites that load fast, rank well, and stay easy to update. Clean architecture that grows with your business — not something you'll need to rebuild in two years.",
+        "description": "Business websites that load fast, rank well, and stay easy to update. Clean architecture that grows with your business, not something you'll need to rebuild in two years.",
         "linkText": "Business websites",
         "linkHref": "/en/services/web-development"
       },
@@ -144,7 +144,7 @@
     "items": [
       {
         "question": "What do you build?",
-        "answer": "SaaS platforms, custom e-commerce systems, and business websites. Every project is custom-built for your specific requirements — you own the code completely."
+        "answer": "SaaS platforms, custom e-commerce systems, and business websites. Every project is custom-built for your specific requirements. You own the code completely."
       },
       {
         "question": "How long does a typical project take?",
@@ -300,8 +300,8 @@
     "projects": [
       {
         "id": "flowmate",
-        "title": "FlowMate — AI Email Management Platform",
-        "shortDescription": "Solo-built SaaS. AI content generation, multi-channel email, 300+ hours of code — now live.",
+        "title": "FlowMate: AI Email Management Platform",
+        "shortDescription": "Solo-built SaaS. AI content generation, multi-channel email, 300+ hours of code, now live.",
         "description": "Production SaaS platform built with Next.js and React for high-volume email and messaging management. Full-stack architecture with secure authentication, async processing, and AI integrations handling real workloads at scale.",
         "metric": "Launched January 2026 · 300+ dev hours · Multi-channel AI integration",
         "href": "/en/projects",
@@ -316,10 +316,10 @@
       },
       {
         "id": "markmind",
-        "title": "MarkMind V2 — AI Bookmark Manager",
+        "title": "MarkMind V2: AI Bookmark Manager",
         "role": "Contributor Role",
         "shortDescription": "Built the V2 landing page and contributing AI features to a Chrome extension with 700+ active users.",
-        "description": "Developed the V2 landing page and contributing to feature development and AI integration for MarkMind — an AI-powered bookmark manager Chrome extension serving 700+ active users in production.",
+        "description": "Developed the V2 landing page and contributing to feature development and AI integration for MarkMind, an AI-powered bookmark manager Chrome extension serving 700+ active users in production.",
         "metric": "700+ Users · V2 Live",
         "href": "/en/projects",
         "externalUrl": "https://www.markmind.xyz/",
@@ -333,7 +333,7 @@
       },
       {
         "id": "portfolio",
-        "title": "maxmendes.dev — Bilingual Developer Portfolio",
+        "title": "maxmendes.dev: Bilingual Developer Portfolio",
         "shortDescription": "Bilingual. Fast. SEO-optimized. You're looking at it.",
         "description": "Full-stack portfolio site built with Next.js 15. Bilingual EN/PL with localized URL routing, JSON-LD structured data, hreflang tags, and Core Web Vitals optimization. The site you're on right now.",
         "metric": "Bilingual · Localized URLs · SEO-Optimized",
@@ -347,8 +347,8 @@
       },
       {
         "id": "nail-salon",
-        "title": "Polished & Posh — Nail Salon Website",
-        "shortDescription": "Booking system, gallery, SEO — everything a beauty business needs to get clients online.",
+        "title": "Polished & Posh: Nail Salon Website",
+        "shortDescription": "Booking system, gallery, SEO: everything a beauty business needs to get clients online.",
         "description": "Production-ready website for nail salons with integrated booking system, service listings, and image gallery. Built with accessibility in mind, optimized for local SEO, and designed to convert visitors into appointments.",
         "metric": "Booking System · SEO Optimized · Mobile-First",
         "href": "/en/projects",
@@ -361,7 +361,7 @@
       },
       {
         "id": "la-creme",
-        "title": "La Crème — French Restaurant Landing",
+        "title": "La Crème: French Restaurant Landing",
         "shortDescription": "Elegant design, reservation system, mobile-first. Built to fill tables.",
         "description": "Upscale restaurant landing page with integrated reservation form. Black and gold aesthetic with smooth animations, menu showcase, and contact integration. Designed to match the brand's premium positioning.",
         "metric": "Reservation System · Premium Design · Responsive",
@@ -375,7 +375,7 @@
       },
       {
         "id": "vet-clinic",
-        "title": "Animal Vet Clinic — Częstochowa",
+        "title": "Animal Vet Clinic: Częstochowa",
         "shortDescription": "Local veterinary clinic website with modern glass-morphism UI and full service listings.",
         "description": "Professional website for a veterinary clinic in Częstochowa, Poland. Features service listings, contact information, and a modern glass-morphism design. Built with Angular and optimized for local search visibility.",
         "metric": "Local Business · Glass-morphism UI · Schema.org SEO",
@@ -433,9 +433,9 @@
     "heading": "About Max Mendes",
     "location": "Częstochowa, Poland",
     "bio": [
-      "I'm Max, a full-stack web developer based in Częstochowa, Poland. I build modern business websites, e-commerce stores, and AI-powered web applications — with a focus on clean, maintainable code, strong performance, and real-world usability.",
-      "My role is technical: I write code and turn ideas into working products. I implement interfaces using proven UI patterns and component libraries like shadcn/ui and Tailwind CSS, with a strong focus on speed, SEO optimization, and scalability. I also integrate AI capabilities using OpenAI and Anthropic APIs—tools I've used in production to build features like smart content generation, automated workflows, and intelligent data processing. Design and branding are outside my scope — I focus entirely on development.",
-      "My process is structured and practical. I start with research—understanding the business goal, competitors, and technical requirements. Then I create low-fidelity prototypes in Figma to map user flows and features. After that, I build production-ready code using React and Next.js, handle deployment, optimization, and iteration based on feedback.",
+      "I'm Max, a full-stack web developer based in Częstochowa, Poland. I build modern business websites, e-commerce stores, and AI-powered web applications, with a focus on clean, maintainable code, strong performance, and real-world usability.",
+      "My role is technical: I write code and turn ideas into working products. I implement interfaces using proven UI patterns and component libraries like shadcn/ui and Tailwind CSS, with a strong focus on speed, SEO optimization, and scalability. I also integrate AI capabilities using OpenAI and Anthropic APIs, tools I've used in production to build features like smart content generation, automated workflows, and intelligent data processing. Design and branding are outside my scope. I focus entirely on development.",
+      "My process is structured and practical. I start with research: understanding the business goal, competitors, and technical requirements. Then I create low-fidelity prototypes in Figma to map user flows and features. After that, I build production-ready code using React and Next.js, handle deployment, optimization, and iteration based on feedback.",
       "My biggest project, FlowMate, is an AI-powered email management platform that handles multi-platform broadcasting and smart content generation. It took 300+ hours to build and taught me how to architect production SaaS applications with authentication, payments, AI integration, and real user data at scale.",
       "I'm available for Polish businesses that need modern websites or online stores, as well as UK and US companies looking for a full-stack developer. I'm fluent in English and work comfortably across time zones."
     ],
@@ -467,19 +467,19 @@
           "role": "Freelance Full-Stack Developer",
           "company": "Self-Employed",
           "period": "2024 – Present",
-          "description": "Based in Częstochowa, Poland, I moved into freelance development after a year of self-study in React, Next.js, and TypeScript. I build production web products—websites, SaaS, e-commerce—focusing on code quality and long-term maintainability. FlowMate (my first full SaaS, 300+ hours) set how I approach client work: own the entire stack, ship real products."
+          "description": "Based in Częstochowa, Poland, I moved into freelance development after a year of self-study in React, Next.js, and TypeScript. I build production web products (websites, SaaS, e-commerce) focusing on code quality and long-term maintainability. FlowMate (my first full SaaS, 300+ hours) set how I approach client work: own the entire stack, ship real products."
         },
         {
           "role": "IT Analyst",
           "company": "Contract",
           "period": "2023 – Present",
-          "description": "160 hours/month analyzing systems and translating business requirements into technical solutions. This role taught me how businesses actually use software—skills that directly feed my development work. It's a constant loop: understand constraints, build solutions that fit reality."
+          "description": "160 hours/month analyzing systems and translating business requirements into technical solutions. This role taught me how businesses actually use software, skills that directly feed my development work. It's a constant loop: understand constraints, build solutions that fit reality."
         },
         {
           "role": "Support Technician",
           "company": "Cognizant Technology Solutions",
           "period": "Jan 2021 – Dec 2022",
-          "description": "Delivered technical support across multiple platforms and enterprise tools. Worked with ticketing systems and cloud environments—early exposure to how software runs in production."
+          "description": "Delivered technical support across multiple platforms and enterprise tools. Worked with ticketing systems and cloud environments, early exposure to how software runs in production."
         },
         {
           "role": "Manager / Owner",
@@ -510,7 +510,7 @@
       "badge": "Product Mindset",
       "title": "Every project starts with thinking",
       "subtitle": "One person, end-to-end responsibility",
-      "description": "Before anything is built, I focus on structure, constraints, and what actually needs to work. Direct communication, fast feedback, and products built with intent — not feature bloat. This works for Polish businesses and international teams who value clarity over bureaucracy."
+      "description": "Before anything is built, I focus on structure, constraints, and what actually needs to work. Direct communication, fast feedback, and products built with intent, not feature bloat. This works for Polish businesses and international teams who value clarity over bureaucracy."
     },
     "services": [
       {
@@ -521,7 +521,7 @@
         "iconCenter2": "Server",
         "badge": "Development",
         "title": "Full-Stack Web Development",
-        "description": "Business websites should feel solid, fast, and easy to grow—not fragile or locked into shortcuts. Projects here are treated like real products, with clean structure and long-term use in mind. Everything runs on a modern stack using React, Next.js, and TypeScript, so performance and speed are built in from day one.",
+        "description": "Business websites should feel solid, fast, and easy to grow, not fragile or locked into shortcuts. Projects here are treated like real products, with clean structure and long-term use in mind. Everything runs on a modern stack using React, Next.js, and TypeScript, so performance and speed are built in from day one.",
         "features": [
           "Custom business website or web solution",
           "Clean, maintainable codebase",
@@ -539,7 +539,7 @@
         "iconCenter2": "Lock",
         "badge": "SaaS",
         "title": "SaaS & Web Applications",
-        "description": "When a website isn't enough, you're usually dealing with software. User accounts, dashboards, permissions, subscriptions—these projects need clear logic and room to evolve. The goal is a system that works today and doesn't fall apart when features are added later.",
+        "description": "When a website isn't enough, you're usually dealing with software. User accounts, dashboards, permissions, subscriptions. These projects need clear logic and room to evolve. The goal is a system that works today and doesn't fall apart when features are added later.",
         "features": [
           "Custom web app or SaaS platform",
           "User authentication and access control",
@@ -593,7 +593,7 @@
         "iconCenter2": "Cpu",
         "badge": "AI",
         "title": "AI Integration & Automation",
-        "description": "Smart features powered by AI language models. I integrate AI into your product where it actually helps—handling support questions, generating content, or automating workflows that waste your team's time.",
+        "description": "Smart features powered by AI language models. I integrate AI into your product where it actually helps: handling support questions, generating content, or automating workflows that waste your team's time.",
         "features": [
           "AI chatbots for customer support, onboarding, or internal tools",
           "Content generation and summarization inside your app or admin panel",
@@ -638,13 +638,13 @@
             "title": "What This Service Is",
             "paragraphs": [
               "Full-stack web development means building both what users see (frontend) and the systems running behind the scenes (backend). You get one cohesive application where interface, data, and logic work together seamlessly.",
-              "Custom applications are built around your specific requirements. Your business doesn't adapt to the software — the software is designed for your exact workflows, data structures, and growth plans."
+              "Custom applications are built around your specific requirements. Your business doesn't adapt to the software. The software is designed for your exact workflows, data structures, and growth plans."
             ]
           },
           {
             "title": "What I Build",
             "paragraphs": [
-              "I develop custom frontends using React and Next.js that deliver fast, responsive interfaces. Users get application-quality experiences with instant navigation and real-time updates when needed. The backend handles core business logic—user management, data processing, transactions, and third-party integrations—built with Node.js and PostgreSQL for reliability.",
+              "I develop custom frontends using React and Next.js that deliver fast, responsive interfaces. Users get application-quality experiences with instant navigation and real-time updates when needed. The backend handles core business logic (user management, data processing, transactions, and third-party integrations) built with Node.js and PostgreSQL for reliability.",
               "Projects can include authentication systems, role-based access control, payment processing with Stripe, API integrations, and real-time features like live dashboards or notifications. I use TypeScript throughout to catch errors before deployment and ensure long-term maintainability."
             ]
           },
@@ -652,7 +652,7 @@
             "title": "Who This Service Fits",
             "paragraphs": [
               "This service is for businesses building web applications that require custom logic and data handling. SaaS platforms, client portals, booking systems, internal dashboards, and subscription-based products all fall into this category.",
-              "If your project involves users, authentication, data processing, or business logic beyond simple content pages, you need full-stack development. FlowMate—the SaaS platform I built for email management—demonstrates this approach: multi-provider authentication, async processing, AI integrations, and production infrastructure handling real workloads."
+              "If your project involves users, authentication, data processing, or business logic beyond simple content pages, you need full-stack development. FlowMate, the SaaS platform I built for email management, demonstrates this approach: multi-provider authentication, async processing, AI integrations, and production infrastructure handling real workloads."
             ],
             "links": [
               { "text": "Check the Projects page →", "href": "/en/projects" }
@@ -661,7 +661,7 @@
           {
             "title": "How I Work",
             "paragraphs": [
-              "You work directly with me — no layers between you and the person writing your code. I handle requirements, architecture, development, and deployment. Code is production-ready from day one, built to extend as your needs evolve.",
+              "You work directly with me. No layers between you and the person writing your code. I handle requirements, architecture, development, and deployment. Code is production-ready from day one, built to extend as your needs evolve.",
               "Applications deploy to modern infrastructure (Vercel, AWS) with CDN distribution for performance. I'm based in Częstochowa, Poland, and available for projects across Poland and internationally."
             ],
             "links": [
@@ -671,8 +671,8 @@
         ],
         "techStackTitle": "Technical Stack",
         "techStack": [
-          { "title": "Frontend", "description": "React 19, Next.js 15, TypeScript, Tailwind CSS—fast, SEO-friendly, maintainable" },
-          { "title": "Backend", "description": "Node.js, PostgreSQL, Prisma ORM—scalable data handling with type safety" },
+          { "title": "Frontend", "description": "React 19, Next.js 15, TypeScript, Tailwind CSS. Fast, SEO-friendly, maintainable" },
+          { "title": "Backend", "description": "Node.js, PostgreSQL, Prisma ORM. Scalable data handling with type safety" },
           { "title": "Integrations", "description": "Stripe payments, OAuth authentication, email services, third-party APIs" },
           { "title": "Deployment", "description": "Vercel or AWS with CDN, automated CI/CD, monitoring" },
           { "title": "Tools", "description": "Git version control, automated testing, production-grade error tracking" }
@@ -705,12 +705,12 @@
         "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
       },
       "content": {
-        "subtitle": "Production SaaS development for subscription platforms built with React. Scalable architecture from day one—built for production and designed to grow with your users.",
+        "subtitle": "Production SaaS development for subscription platforms built with React. Scalable architecture from day one, built for production and designed to grow with your users.",
         "sections": [
           {
             "title": "What SaaS Development Means",
             "paragraphs": [
-              "SaaS development is about building subscription-based software that users rely on continuously, not a one-time website or a simple web app. A SaaS product manages accounts, permissions, data isolation, and recurring payments across many customers at once. This is known as multi-tenancy—your platform serves multiple businesses or users while keeping their data separate and secure.",
+              "SaaS development is about building subscription-based software that users rely on continuously, not a one-time website or a simple web app. A SaaS product manages accounts, permissions, data isolation, and recurring payments across many customers at once. This is known as multi-tenancy: your platform serves multiple businesses or users while keeping their data separate and secure.",
               "Unlike regular websites, SaaS products must handle onboarding, billing cycles, upgrades, cancellations, and long-term maintenance. These are business-critical systems, not just interfaces."
             ]
           },
@@ -725,7 +725,7 @@
             "title": "Who This Is For and Use Cases",
             "paragraphs": [
               "This service is for SaaS founders building an MVP designed to scale into a real product. It also fits businesses launching subscription platforms or internal SaaS tools that replace spreadsheets or manual workflows. Common use cases include productivity tools, B2B platforms, analytics dashboards, and subscription-based services.",
-              "FlowMate—the SaaS platform I built for email management—handles multi-provider authentication, async processing (background tasks that don't slow down the UI), AI integrations, and Stripe subscriptions at production scale. It demonstrates how these systems work together in a real product."
+              "FlowMate, the SaaS platform I built for email management, handles multi-provider authentication, async processing (background tasks that don't slow down the UI), AI integrations, and Stripe subscriptions at production scale. It demonstrates how these systems work together in a real product."
             ],
             "links": [
               { "text": "See FlowMate on the Projects page →", "href": "/en/projects" }
@@ -744,10 +744,10 @@
         ],
         "techStackTitle": "Technical Stack",
         "techStack": [
-          { "title": "Frontend", "description": "React 19, Next.js 15, TypeScript—fast, SEO-friendly SaaS frontends with reliability as features grow" },
-          { "title": "Backend", "description": "Node.js, PostgreSQL (Supabase, Prisma)—scalable, multi-tenant data models keeping customer data separate and secure" },
+          { "title": "Frontend", "description": "React 19, Next.js 15, TypeScript. Fast, SEO-friendly SaaS frontends with reliability as features grow" },
+          { "title": "Backend", "description": "Node.js, PostgreSQL (Supabase, Prisma). Scalable, multi-tenant data models keeping customer data separate and secure" },
           { "title": "Authentication", "description": "Clerk or NextAuth for secure user management with social logins and OAuth" },
-          { "title": "Payments", "description": "Stripe subscriptions and webhooks—automating the full billing lifecycle" },
+          { "title": "Payments", "description": "Stripe subscriptions and webhooks. Automating the full billing lifecycle" },
           { "title": "Real-time & Deployment", "description": "WebSockets or SSE when required. Vercel with managed databases for predictable performance and scaling" }
         ],
         "cta": {
@@ -784,7 +784,7 @@
             "title": "What Custom E-Commerce Development Means",
             "paragraphs": [
               "Custom e-commerce development means your online store is built specifically for how your business operates. Standard platforms work well at the start, but many businesses outgrow them when pricing rules become complex, inventory logic is non-standard, or integrations are required.",
-              "A custom online store allows full control over performance, SEO, and business logic. With React and Next.js, product pages load faster and meet Core Web Vitals standards—factors that directly affect conversion rates and search visibility."
+              "A custom online store allows full control over performance, SEO, and business logic. With React and Next.js, product pages load faster and meet Core Web Vitals standards, factors that directly affect conversion rates and search visibility."
             ]
           },
           {
@@ -817,7 +817,7 @@
         "techStackTitle": "Technical Stack",
         "techStack": [
           { "title": "Frontend", "description": "React 19, Next.js 15, and TypeScript power fast, SEO-friendly product pages where performance directly supports conversions." },
-          { "title": "Payments", "description": "Stripe for international sales, Przelewy24 or PayU for Polish market—flexible integration based on your target customers." },
+          { "title": "Payments", "description": "Stripe for international sales, Przelewy24 or PayU for Polish market. Flexible integration based on your target customers." },
           { "title": "Database", "description": "PostgreSQL with Supabase manages products, orders, and inventory with reliability and scale." },
           { "title": "Search", "description": "Algolia or custom search solutions for fast product discovery. Image optimization via Cloudinary or Next.js Image." },
           { "title": "Deployment", "description": "Vercel or AWS ensures global speed and stability with CDN distribution." }
@@ -850,13 +850,13 @@
         "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
       },
       "content": {
-        "subtitle": "Performance optimization and SEO focused on real business results. Faster page speed improves rankings, conversions, and revenue—not just technical scores.",
+        "subtitle": "Performance optimization and SEO focused on real business results. Faster page speed improves rankings, conversions, and revenue, not just technical scores.",
         "sections": [
           {
             "title": "Why performance and SEO matter for business",
             "paragraphs": [
               "Website performance and SEO are directly tied to business outcomes. Slow websites lose users before they convert, while search engines rank faster, more reliable pages higher. Google's Core Web Vitals are official ranking factors, which means page speed and stability affect how visible your site is in search results.",
-              "Even small delays matter—industry data shows that a one-second slowdown can reduce conversions by around 7%. With mobile-first indexing, Google primarily evaluates the mobile version of your site, making mobile performance critical. The goal of optimization is not technical perfection for its own sake, but more qualified traffic, better user engagement, and higher conversion rates."
+              "Even small delays matter. Industry data shows that a one-second slowdown can reduce conversions by around 7%. With mobile-first indexing, Google primarily evaluates the mobile version of your site, making mobile performance critical. The goal of optimization is not technical perfection for its own sake, but more qualified traffic, better user engagement, and higher conversion rates."
             ]
           },
           {
@@ -870,7 +870,7 @@
             "title": "What's included: Technical SEO improvements",
             "paragraphs": [
               "SEO optimization starts with a technical audit to identify crawlability and indexing issues that limit visibility. I address problems such as broken internal links, duplicate content signals, incorrect redirects, and poor URL structures.",
-              "Structured data (Schema.org) is implemented to improve eligibility for rich results and enhanced listings. Meta titles and descriptions are optimized for clarity, relevance, and click-through rate—not keyword stuffing. Server-side rendering and correct handling of JavaScript ensure search engines can fully index your content. The result is a technically sound foundation that supports long-term SEO growth."
+              "Structured data (Schema.org) is implemented to improve eligibility for rich results and enhanced listings. Meta titles and descriptions are optimized for clarity, relevance, and click-through rate, not keyword stuffing. Server-side rendering and correct handling of JavaScript ensure search engines can fully index your content. The result is a technically sound foundation that supports long-term SEO growth."
             ]
           },
           {
@@ -893,10 +893,10 @@
         "techStackTitle": "Technical Focus Areas",
         "techStack": [
           { "title": "Performance", "description": "Core Web Vitals, page speed, and stability using modern frontend practices with React, Next.js, and TypeScript." },
-          { "title": "Technical SEO", "description": "Crawlability, structured data, and rendering for search engines—ensuring Google can index your content correctly." },
+          { "title": "Technical SEO", "description": "Crawlability, structured data, and rendering for search engines. Ensuring Google can index your content correctly." },
           { "title": "Image Optimization", "description": "Compression, modern formats (WebP, AVIF), and lazy loading to reduce page weight without quality loss." },
           { "title": "Caching & CDN", "description": "Browser caching, server-side caching, and CDN delivery to reduce load times globally." },
-          { "title": "Measurement", "description": "Lighthouse, PageSpeed Insights, and real-user monitoring—every change is validated with metrics." }
+          { "title": "Measurement", "description": "Lighthouse, PageSpeed Insights, and real-user monitoring. Every change is validated with metrics." }
         ],
         "cta": {
           "title": "Ready to Optimize Your Website?",
@@ -926,24 +926,24 @@
         "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
       },
       "content": {
-        "subtitle": "Intelligent features that solve real business problems. Automation, smarter search, and AI-powered workflows built with practical implementation—no hype.",
+        "subtitle": "Intelligent features that solve real business problems. Automation, smarter search, and AI-powered workflows built with practical implementation, no hype.",
         "sections": [
           {
             "title": "What AI integration means for business",
             "paragraphs": [
-              "AI integration means adding focused, intelligent features to products you already run—not rebuilding everything or chasing trends. In practice, AI can help automate repetitive work, classify and route information, improve search relevance, generate summaries, or assist users with clearer responses. The difference between useful AI and \"AI for AI's sake\" is intent: each feature starts with a specific problem. The goal is to reduce manual effort, improve user experience, or unlock a capability that wasn't feasible before. This is not about replacing teams or promising perfect accuracy. It is about practical gains where machine learning genuinely adds value."
+              "AI integration means adding focused, intelligent features to products you already run, not rebuilding everything or chasing trends. In practice, AI can help automate repetitive work, classify and route information, improve search relevance, generate summaries, or assist users with clearer responses. The difference between useful AI and \"AI for AI's sake\" is intent: each feature starts with a specific problem. The goal is to reduce manual effort, improve user experience, or unlock a capability that wasn't feasible before. This is not about replacing teams or promising perfect accuracy. It is about practical gains where machine learning genuinely adds value."
             ]
           },
           {
             "title": "What's included: common AI features",
             "paragraphs": [
-              "Projects can include text classification and categorization, content generation and summarization, and intelligent search with semantic matching. Other frequent needs are recommendations and personalization, image recognition and processing, and natural language processing for user input. Automated responses and chatbots are used when appropriate—typically as assistance, not full automation. Data analysis and pattern recognition can surface trends or anomalies that are hard to detect with rules alone. Each feature is scoped to a clear outcome, measured against real usage, and designed to fail safely."
+              "Projects can include text classification and categorization, content generation and summarization, and intelligent search with semantic matching. Other frequent needs are recommendations and personalization, image recognition and processing, and natural language processing for user input. Automated responses and chatbots are used when appropriate, typically as assistance, not full automation. Data analysis and pattern recognition can surface trends or anomalies that are hard to detect with rules alone. Each feature is scoped to a clear outcome, measured against real usage, and designed to fail safely."
             ]
           },
           {
             "title": "Technical implementation and providers",
             "paragraphs": [
-              "I integrate with established AI providers such as OpenAI, Anthropic, and Google, as well as selected open-source models when appropriate. Work includes API integration, prompt design for consistent outputs, and cost management so usage stays predictable. Error handling and fallbacks are essential—AI is probabilistic and needs guardrails. Data privacy, security, and performance are considered from the start, including caching and asynchronous processing.",
+              "I integrate with established AI providers such as OpenAI, Anthropic, and Google, as well as selected open-source models when appropriate. Work includes API integration, prompt design for consistent outputs, and cost management so usage stays predictable. Error handling and fallbacks are essential. AI is probabilistic and needs guardrails. Data privacy, security, and performance are considered from the start, including caching and asynchronous processing.",
               "FlowMate uses AI integrations for email classification and smart response suggestions, handling real-world variability in email content."
             ],
             "links": [
@@ -954,7 +954,7 @@
             "title": "Who this is for and typical use cases",
             "paragraphs": [
               "This service fits businesses with repetitive manual tasks that AI can assist, products needing intelligent search or recommendations, and customer support teams that want AI help without replacing humans. Content platforms benefit from summarization and categorization; e-commerce can add personalization; SaaS products can introduce smart features that improve retention.",
-              "Common examples include document classification, inquiry routing, content moderation, and product recommendations—implemented with clear limits and measurable impact.",
+              "Common examples include document classification, inquiry routing, content moderation, and product recommendations, implemented with clear limits and measurable impact.",
               "Based in Częstochowa, Poland. Available for AI integration projects locally and internationally."
             ],
             "links": [
@@ -964,7 +964,7 @@
           {
             "title": "Approach and Considerations",
             "paragraphs": [
-              "I start with a narrow use case, not \"add AI everywhere.\" A small proof of concept validates whether AI actually improves the workflow. Implementation is gradual, with fallbacks when results are uncertain. Costs are tracked early—AI API calls scale with usage. If a rule-based solution is better, I recommend it. The key question is always the same: will this intelligent feature materially improve the product?"
+              "I start with a narrow use case, not \"add AI everywhere.\" A small proof of concept validates whether AI actually improves the workflow. Implementation is gradual, with fallbacks when results are uncertain. Costs are tracked early. AI API calls scale with usage. If a rule-based solution is better, I recommend it. The key question is always the same: will this intelligent feature materially improve the product?"
             ]
           }
         ],
@@ -972,9 +972,9 @@
         "techStack": [
           { "title": "AI Providers", "description": "Integration with GPT (OpenAI), Claude (Anthropic), and custom models when justified." },
           { "title": "Backend Logic", "description": "Asynchronous processing with queues and caching to control latency and cost." },
-          { "title": "Error Handling", "description": "Robust fallbacks when AI services are unavailable—AI is probabilistic and needs guardrails." },
+          { "title": "Error Handling", "description": "Robust fallbacks when AI services are unavailable. AI is probabilistic and needs guardrails." },
           { "title": "Frontend", "description": "React components present AI-powered features smoothly and transparently." },
-          { "title": "Monitoring", "description": "Track usage, success rates, and spend—important because AI API costs grow with adoption." }
+          { "title": "Monitoring", "description": "Track usage, success rates, and spend. Important because AI API costs grow with adoption." }
         ],
         "cta": {
           "title": "Ready to Add AI Features?",
@@ -1031,17 +1031,17 @@
         "items": [
           {
             "question": "What services do you provide?",
-            "answer": "I build production web applications: business websites, SaaS platforms, custom e-commerce systems, and AI-powered features. Everything is built with React, Next.js, and TypeScript — production-ready from day one, built to scale.",
+            "answer": "I build production web applications: business websites, SaaS platforms, custom e-commerce systems, and AI-powered features. Everything is built with React, Next.js, and TypeScript. Production-ready from day one, built to scale.",
             "linkText": "View service details",
             "linkHref": "/en/services"
           },
           {
             "question": "What don't you build?",
-            "answer": "I focus exclusively on custom software development — websites, web apps, and SaaS built with React and Next.js. Design, branding, and marketing are outside my scope. If you need those services, I can recommend specialists."
+            "answer": "I focus exclusively on custom software development: websites, web apps, and SaaS built with React and Next.js. Design, branding, and marketing are outside my scope. If you need those services, I can recommend specialists."
           },
           {
             "question": "Do you work solo or with a team?",
-            "answer": "I work as a solo full-stack developer and handle the entire build myself. You work directly with the person writing your code — one point of contact from start to finish."
+            "answer": "I work as a solo full-stack developer and handle the entire build myself. You work directly with the person writing your code, one point of contact from start to finish."
           },
           {
             "question": "Can you handle both Polish and international clients?",
@@ -1068,7 +1068,7 @@
           },
           {
             "question": "How do we communicate during the project?",
-            "answer": "Direct communication via email, Slack, or calls—whatever works for you. Weekly check-ins keep you updated on progress, blockers, and next steps. No unnecessary meetings or status reports."
+            "answer": "Direct communication via email, Slack, or calls, whatever works for you. Weekly check-ins keep you updated on progress, blockers, and next steps. No unnecessary meetings or status reports."
           }
         ]
       },
@@ -1106,7 +1106,7 @@
           },
           {
             "question": "Do you handle hosting and deployment?",
-            "answer": "Yes. I handle production deployment, environment configuration, and performance optimization. Your application launches stable, monitored, and ready for real users—not just pushed live and forgotten."
+            "answer": "Yes. I handle production deployment, environment configuration, and performance optimization. Your application launches stable, monitored, and ready for real users, not just pushed live and forgotten."
           },
           {
             "question": "How do you ensure my site is secure and performant?",
@@ -1165,7 +1165,7 @@
     ],
     "cta": {
       "title": "Didn't find your answer here?",
-      "description": "Drop me an email or give me a call—I'll give you a straight answer about your project, no sales pitch.",
+      "description": "Drop me an email or give me a call. I'll give you a straight answer about your project, no sales pitch.",
       "primaryButton": {
         "label": "Contact Me",
         "href": "/en/contact"
@@ -1193,10 +1193,10 @@
     },
     "badge": "Portfolio",
     "title": "What I Build",
-    "subtitle": "From business websites to SaaS platforms — built to convert.",
+    "subtitle": "From business websites to SaaS platforms, built to convert.",
     "cta": {
       "title": "Your project could be next",
-      "description": "Same process, same quality — tailored to your business.",
+      "description": "Same process, same quality, tailored to your business.",
       "primaryButton": "Start a Conversation",
       "secondaryButton": "See How I Work"
     }
@@ -1248,8 +1248,8 @@
         "title": "5. Third-Party Recipients",
         "content": "Your data may be shared with the following third-party service providers who assist in operating this website:",
         "items": [
-          "Vercel Inc. (hosting and analytics) — processes technical data for website delivery",
-          "Google LLC (Google Analytics 4) — processes usage data for analytics after consent"
+          "Vercel Inc. (hosting and analytics): processes technical data for website delivery",
+          "Google LLC (Google Analytics 4): processes usage data for analytics after consent"
         ],
         "additionalContent": "These providers act as data processors and are bound by contractual obligations to protect your data in accordance with GDPR requirements."
       },
@@ -1453,7 +1453,7 @@
             "content": [
               "Working in IT support, I was drowning in email. Multiple inboxes demanding attention. Constant context-switching between Gmail, Slack, and Telegram. Customer service emails piling up faster than I could respond. Hours lost every day just managing communication instead of actually doing meaningful work.",
               "The pain was real: jumping between 4+ platforms daily, writing the same types of responses repeatedly, missing important emails buried under newsletters, and no way to broadcast updates across all channels without copying and pasting the same message four times.",
-              "I didn't need another email client with a prettier interface. I needed something that would actually reduce the work — a unified hub where AI handles the boring parts so I could focus on decisions, not inbox management."
+              "I didn't need another email client with a prettier interface. I needed something that would actually reduce the work. A unified hub where AI handles the boring parts so I could focus on decisions, not inbox management."
             ]
           },
           {
@@ -1464,7 +1464,7 @@
               "The core idea: reduce 200 emails to 5 actual decisions. Let AI categorize what's urgent, what needs action, what's just FYI. Draft responses you can send or edit. Broadcast announcements everywhere without writing four different messages."
             ],
             "highlight": {
-              "quote": "Best feature is the broadcast — how easy it is to send to all platforms with different styles for each one automatically.",
+              "quote": "Best feature is the broadcast, how easy it is to send to all platforms with different styles for each one automatically.",
               "author": "Early User Feedback",
               "source": "LinkedIn"
             }
@@ -1490,7 +1490,7 @@
               {
                 "title": "State Management at Scale",
                 "content": [
-                  "FlowMate has 10 different views, 4 platforms syncing simultaneously, real-time updates, draft management, AI chat history, and user preferences — all needing to stay in sync without performance degradation.",
+                  "FlowMate has 10 different views, 4 platforms syncing simultaneously, real-time updates, draft management, AI chat history, and user preferences, all needing to stay in sync without performance degradation.",
                   "The solution combined several patterns: optimistic sync (save locally first, sync to database in background), IndexedDB paired with Supabase for offline-first architecture with cloud as source of truth, per-user storage keys for multi-tenant isolation, and circuit breakers with exponential backoff for graceful API failure handling."
                 ]
               },
@@ -1517,7 +1517,7 @@
               "hours": "300+"
             },
             "content": [
-              "Solo development from architecture through deployment. Every decision — database schema, authentication flow, AI prompts, payment integration, error handling — made by one person with full context of the entire system.",
+              "Solo development from architecture through deployment. Every decision (database schema, authentication flow, AI prompts, payment integration, error handling) made by one person with full context of the entire system.",
               "This approach has tradeoffs. Slower than a team, but no communication overhead. Every part of the codebase fits together because one mind designed it. Technical debt is minimal because I had to live with every shortcut."
             ],
             "stackDecisions": [
@@ -1582,7 +1582,7 @@
             "id": "results",
             "title": "Results & Lessons",
             "content": [
-              "User feedback validated the core thesis: Broadcast was the killer feature. The ability to compose once and send to Email, Slack, and Telegram — with AI generating platform-specific variations automatically — saved the most time. I invested heavily in making that flow feel effortless.",
+              "User feedback validated the core thesis: Broadcast was the killer feature. The ability to compose once and send to Email, Slack, and Telegram, with AI generating platform-specific variations automatically, saved the most time. I invested heavily in making that flow feel effortless.",
               "The strongest signal: users understand the entire app in about 30 minutes. No commands to memorize. No complex onboarding flow. Connect your accounts and start working. Simplicity was harder to build than complexity, but worth it."
             ],
             "lessonsLearned": [
@@ -1596,7 +1596,7 @@
               },
               {
                 "title": "Features Aren't Value",
-                "content": "Spent time building features before nailing the messaging. The broadcast feature was valuable because it solved a clear problem — not because it was technically impressive."
+                "content": "Spent time building features before nailing the messaging. The broadcast feature was valuable because it solved a clear problem, not because it was technically impressive."
               }
             ]
           }

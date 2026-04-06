@@ -67,7 +67,7 @@ const DEFAULT_SERVICES: ScrollServiceItem[] = [
     iconCenter2: 'Server',
     badge: 'Development',
     title: 'Full-Stack Web Development',
-    description: 'Business websites should feel solid, fast, and easy to grow—not fragile or locked into shortcuts. Projects here are treated like real products, with clean structure and long-term use in mind. Everything runs on a modern stack using React, Next.js, and TypeScript, so performance and speed are built in from day one.',
+    description: 'Business websites should feel solid, fast, and easy to grow, not fragile or locked into shortcuts. Projects here are treated like real products, with clean structure and long-term use in mind. Everything runs on a modern stack using React, Next.js, and TypeScript, so performance and speed are built in from day one.',
     features: [
       'Custom business website or web solution',
       'Clean, maintainable codebase',
@@ -85,7 +85,7 @@ const DEFAULT_SERVICES: ScrollServiceItem[] = [
     iconCenter2: 'Lock',
     badge: 'SaaS',
     title: 'SaaS & Web Applications',
-    description: 'When a website isn\'t enough, you\'re usually dealing with software. User accounts, dashboards, permissions, subscriptions—these projects need clear logic and room to evolve. The goal is a system that works today and doesn\'t fall apart when features are added later.',
+    description: 'When a website isn\'t enough, you\'re usually dealing with software. User accounts, dashboards, permissions, subscriptions: these projects need clear logic and room to evolve. The goal is a system that works today and doesn\'t fall apart when features are added later.',
     features: [
       'Custom web app or SaaS platform',
       'User authentication and access control',
