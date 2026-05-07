@@ -1,0 +1,62 @@
+export const metadata = {
+  title: "Bezpieczenstwo agentow AI ma slepy punkt | Max Mendes",
+  slug: "bezpieczenstwo-agentow-ai-slepy-punkt-runtime",
+  metaDescription: "Bezpieczenstwo agentow AI ma slepy punkt na runtime. Skany lapia prompty, ale czesto pomijaja zatrute odpowiedzi narzedzi. Czestochowa, Slaskie. +48 502 742 941",
+  keywords: ["bezpieczenstwo agentow AI", "MCP tool poisoning", "prompt injection agentow", "automatyzacja AI Czestochowa", "integracja AI Slaskie", "bezpieczenstwo MCP"],
+  ogTitle: "Bezpieczenstwo agentow AI ma slepy punkt na runtime",
+  h1: "Bezpieczenstwo agentow AI ma slepy punkt, i wiekszosc skanerow go nie widzi",
+  author: "Max Mendes",
+  datePublished: "2026-05-07",
+  tags: ["AI", "Bezpieczenstwo", "Automatyzacja", "Integracje"],
+  image: "/blog/mcp-usb-port-ai-tools.webp",
+  excerpt: "Najczestszy blad w bezpieczenstwie agentow AI nie dotyczy samego promptu. Chodzi o moment, w ktorym odpowiedz narzedzia staje sie instrukcja dla modelu.",
+  readingTime: "5 min czytania",
+  hrefLang: {
+    en: "/en/blog/ai-agent-security-runtime-blind-spot",
+    pl: "/pl/artykuly/bezpieczenstwo-agentow-ai-slepy-punkt-runtime"
+  },
+  cta: {
+    title: "Chcesz automatyzacje AI bez zgadywania w bezpieczenstwie?",
+    description: "Buduje systemy AI, ktore lacza sie z prawdziwymi narzedziami i maja sensowne guardraile nie tylko na demo. Jesli chcesz to wdrozyc w firmie w Polsce, pomoge.",
+    primaryButton: "Porozmawiajmy",
+    secondaryButton: "Zobacz moje projekty"
+  }
+}
+
+# Bezpieczenstwo agentow AI ma slepy punkt, i wiekszosc skanerow go nie widzi
+
+W tym tygodniu [OWASP opublikowal opis MCP Tool Poisoning](https://owasp.org/www-community/attacks/MCP_Tool_Poisoning), a Microsoft dorzucil tekst [Plug, Play, and Prey](https://techcommunity.microsoft.com/blog/microsoftdefendercloudblog/plug-play-and-prey-the-security-risks-of-the-model-context-protocol/4410829). Oba teksty pokazuja ten sam problem: **bezpieczenstwo agentow AI** to juz nie tylko zly prompt na wejsciu. Prawdziwy problem zaczyna sie wtedy, gdy narzedzie jest juz podlaczone i odsyla tekst z powrotem do modelu.
+
+To jest slepy punkt, ktory widze tez w swoich workflowach w OpenClaw. Wiekszosc skanerow dobrze sprawdza prompty, repo, uprawnienia i znane zaleznosci. Znacznie rzadziej sprawdzaja runtime trust gap, czyli moment, w ktorym odpowiedz narzedzia wyglada jak dane, ale zachowuje sie jak instrukcja.
+
+## Czego skanery bezpieczenstwa agentow AI dalej nie lapia
+
+Stary model myslenia jest prosty. Czy uzytkownik wyslal zlosliwy prompt? Czy agent polaczyl sie z podejrzanym serwerem? Czy definicja narzedzia ma za szerokie uprawnienia?
+
+To wszystko ma znaczenie. Tylko ze to juz nie wystarcza.
+
+Jesli zewnetrzne narzedzie zwraca wolny tekst do tego samego okna kontekstu, w ktorym siedza tez twoje narzedzia wewnetrzne, model nie widzi tego jako “same dane”. Widzi to jako kontekst. Dlatego nowy wpis OWASP jest taki wazny. Ryzykowny jest nie tylko opis narzedzia przy polaczeniu. Ryzykowna jest tez sciezka odpowiedzi w runtime.
+
+U mnie jeden agent potrafi czytac pliki, odpalac skrypty, aktualizowac GitHub, sprawdzac strony i laczyc sie z uslugami zewnetrznymi. To daje moc. To tez tworzy problem. Skaner moze mi powiedziec, ze nazwa serwera MCP wyglada normalnie, a uprawnienia sa sensowne. Nadal moze nie powiedziec nic o tym, co stanie sie, gdy ten serwer zwroci zatruta odpowiedz, ktora popchnie agenta do odczytu pliku, zapisu albo wycieku danych.
+
+[OWASP AI Agent Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html) jest blizej prawdziwego problemu niz wiekszosc marketingowych opisow. Traktuje dane zewnetrzne jako niezaufane, wspomina o memory poisoning i cisnie least privilege. To jest dobry kierunek. Nadal jednak wiele narzedzi pomija fakt, ze output narzedzia w runtime sam w sobie jest powierzchnia ataku.
+
+## Kto tu wygrywa, a kto przegrywa
+
+Wygrywaja zespoly, ktore maja approval gates, twarde ograniczenia po stronie serwera i ustrukturyzowane odpowiedzi. Wygrywaja tez ci, ktorzy oddzielaja narzedzia uprzywilejowane od niezaufanych narzedzi zewnetrznych. Gdy kazda wrazliwa akcja wymaga potwierdzenia poza kontekstem modelu, promien razenia robi sie mniejszy.
+
+Przegrywaja ci, ktorzy robia demo-version bezpieczenstwa agentow. Przejrzany prompt, jeden skaner, kilka zatwierdzonych konektorow, i temat uznany za zamkniety. Potem jedno zewnetrzne narzedzie oddaje tekst, ktory brzmi jak dane, ale model czyta go jak plan.
+
+## Moje zdanie
+
+Uwazam, ze rynek za bardzo skupia sie na skanowaniu przed startem, a za malo inwestuje w egzekwowanie zasad w runtime.
+
+Gdybym dzis audytowal system agentowy, mniej obchodziloby mnie to, czy katalog konektorow wyglada czysto, a bardziej cztery nudne pytania. Czy zewnetrzne narzedzia moga zwracac dowolny tekst? Czy narzedzia uprzywilejowane sa odseparowane? Czy akcje destrukcyjne sa blokowane po stronie serwera? Czy wszystko wrazliwe wymaga jawnego potwierdzenia poza LLM?
+
+To brzmi mniej sexy niz “skanujemy twoje prompty”. Jest po prostu blizej prawdziwego problemu.
+
+Warto teraz obserwowac, czy produkty od bezpieczenstwa agentow zaczna dzialac jak proxy runtime, a nie tylko statyczne skanery. Wlasnie tam ten rynek zrobi sie powazny. Do tego czasu mam jedna prosta rekomendacje: wypisz wszystkie zewnetrzne narzedzia, z ktorych korzysta twoj agent, i sprawdz, czy ktorekolwiek z nich moze wsadzic wolny tekst do tego samego kontekstu co email, filesystem albo akcje zapisu. Jesli tak, prawdopodobnie masz wieksze ryzyko niz pokazuje skaner.
+
+Jesli budujesz [integracje AI](/pl/uslugi/integracja-ai) albo [automatyzacje dla realnych firm](/pl/uslugi/tworzenie-stron), to jest problem na teraz, nie na pozniej. Pisalem juz o tym, dlaczego [MCP stal sie portem USB dla narzedzi AI](/pl/artykuly/mcp-port-usb-dla-narzedzi-ai). Teraz wazniejsze pytanie brzmi: ktorym z tych narzedzi naprawde ufasz w runtime.
+
+Bede pisal dalej, jak to sie rozwinie.

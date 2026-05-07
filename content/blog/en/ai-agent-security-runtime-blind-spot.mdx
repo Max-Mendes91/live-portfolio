@@ -1,0 +1,62 @@
+export const metadata = {
+  title: "AI Agent Security Runtime Blind Spot | Max Mendes",
+  slug: "ai-agent-security-runtime-blind-spot",
+  metaDescription: "AI agent security has a runtime blind spot. I found most scanners catch prompts, not poisoned tool responses. OpenClaw lessons. +48 502 742 941",
+  keywords: ["AI agent security", "MCP tool poisoning", "runtime trust gap", "prompt injection in agents", "AI agent security scanners", "MCP security risks"],
+  ogTitle: "AI Agent Security Has a Runtime Blind Spot",
+  h1: "AI Agent Security Has a Runtime Blind Spot, and Most Scanners Still Miss It",
+  author: "Max Mendes",
+  datePublished: "2026-05-07",
+  tags: ["AI", "Security", "MCP", "Automation"],
+  image: "/blog/mcp-usb-port-ai-tools.webp",
+  excerpt: "I keep seeing the same mistake in agent security. Teams scan prompts and tool definitions, but ignore the runtime channel where tool output turns into model instructions.",
+  readingTime: "5 min read",
+  hrefLang: {
+    en: "/en/blog/ai-agent-security-runtime-blind-spot",
+    pl: "/pl/artykuly/bezpieczenstwo-agentow-ai-slepy-punkt-runtime"
+  },
+  cta: {
+    title: "Need AI Automation Without the Security Guesswork?",
+    description: "I build AI systems that connect to real tools, with guardrails that hold up after the demo. If you want automation for your business in Poland, I can help.",
+    primaryButton: "Let's Talk",
+    secondaryButton: "See My AI Work"
+  }
+}
+
+# AI Agent Security Has a Runtime Blind Spot, and Most Scanners Still Miss It
+
+This week [OWASP published MCP Tool Poisoning](https://owasp.org/www-community/attacks/MCP_Tool_Poisoning), and Microsoft followed with [Plug, Play, and Prey](https://techcommunity.microsoft.com/blog/microsoftdefendercloudblog/plug-play-and-prey-the-security-risks-of-the-model-context-protocol/4410829). Both posts describe the same shift: **AI agent security** is no longer just about bad prompts at the edge. The real problem is what happens after a tool is already connected and starts feeding text back into the model.
+
+That is the blind spot I keep worrying about in my own OpenClaw workflows. Most scanners I see today are good at checking prompts, repos, permissions, or known package issues. Much fewer reason about the runtime trust gap, the moment a tool response looks like harmless data but behaves like an instruction.
+
+## What AI Agent Security Scanners Still Miss
+
+The classic mental model is still input first. Did the user send a malicious prompt? Did the agent connect to a suspicious server? Is the tool definition too broad?
+
+Those checks matter. They are just not enough anymore.
+
+If an external tool returns free text into the same context window as your internal tools, the model does not experience that as “just data.” It experiences it as context. That is exactly why the new OWASP write-up matters. The risky channel is not only the tool definition at connect time. It is the response path at runtime.
+
+In my setup, one agent can read files, call scripts, update GitHub, check websites, and use external services. That is useful. It is also where things get uncomfortable. A scanner can tell me the MCP server name looks fine and the permissions look reasonable. It still may not tell me what happens if that server returns a poisoned response that nudges the agent toward a file read, a write action, or a data leak.
+
+The [OWASP AI Agent Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html) gets closer to the real issue than most vendor pages do. It treats external data as untrusted, calls out memory poisoning, and pushes least privilege. That is the right direction. What many product pages still miss is that runtime tool output is itself an attack surface.
+
+## Who Wins and Who Loses
+
+Teams with approval gates, strict server-side permissions, and structured outputs win here. Teams that isolate privileged tools from untrusted external tools also win. The moment you force sensitive actions through confirmation outside the model context, the blast radius gets smaller.
+
+The losers are the teams doing the demo version of agent security. They review the prompt, add a scanner, approve a few connectors, and assume the system is safe. Then one external tool returns text that says the right thing in the wrong format, and the model treats it as a plan instead of a payload.
+
+## My Take
+
+I think the market is still over-indexed on preflight checks and under-invested in runtime enforcement.
+
+If I were reviewing an agent system today, I would care less about whether the connector catalog looks clean and more about four boring questions. Can external tools return arbitrary text? Are privileged tools isolated? Are destructive actions enforced server-side? Does anything sensitive require explicit approval outside the LLM?
+
+That is not as marketable as “we scan your prompts.” It is a lot closer to the real problem.
+
+The next thing to watch is whether agent security products start acting like runtime proxies instead of static scanners. That is where this category gets serious. Until then, my one concrete recommendation is simple: list every external tool your agent can call, then check whether any of them can feed free text into the same context as email, filesystem, or write actions. If the answer is yes, you probably have more exposure than your scanner says.
+
+If you are building [AI integration](/en/services/ai-integration) or [automation systems for real businesses](/en/services/web-development), this matters now, not later. I already wrote about why [MCP became the USB port for AI tools](/en/blog/mcp-usb-port-for-ai-tools). The next phase is deciding which of those tools deserve trust at runtime.
+
+I will write more as this evolves.
