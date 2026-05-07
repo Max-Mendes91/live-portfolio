@@ -1,0 +1,115 @@
+export const metadata = {
+  title: "Bezpieczenstwo agentow AI: slepy punkt na runtime | Max Mendes",
+  slug: "bezpieczenstwo-agentow-ai-slepy-punkt-runtime",
+  metaDescription: "Bezpieczenstwo agentow AI ma slepy punkt na runtime: skanery sprawdzaja prompty i definicje, ale pomijaja moment, gdy odpowiedz narzedzia staje sie instrukcja.",
+  keywords: ["bezpieczenstwo agentow AI", "co to jest MCP", "podatnosci MCP", "tool poisoning MCP", "prompt injection co to", "AI Act obowiazki firm 2026", "audyt bezpieczenstwa AI", "wdrozenie AI w firmie Czestochowa", "automatyzacja AI Slaskie", "RODO a sztuczna inteligencja"],
+  ogTitle: "Bezpieczenstwo agentow AI ma slepy punkt na runtime",
+  h1: "Bezpieczenstwo agentow AI ma slepy punkt, i wiekszosc skanerow go nie widzi",
+  author: "Max Mendes",
+  datePublished: "2026-05-07",
+  tags: ["AI", "Bezpieczenstwo", "Automatyzacja", "Integracje"],
+  image: "/blog/ai-agent-security-runtime-blind-spot.webp",
+  excerpt: "Skanery lapia zle prompty i podejrzane definicje narzedzi. Nadal pomijaja moment, w ktorym odpowiedz narzedzia po cichu staje sie instrukcja dla modelu. To jest ta luka, w ktorej dzieje sie dzis wiekszosc problemow z agentami.",
+  readingTime: "8 min czytania",
+  hrefLang: {
+    en: "/en/blog/ai-agent-security-runtime-blind-spot",
+    pl: "/pl/artykuly/bezpieczenstwo-agentow-ai-slepy-punkt-runtime"
+  },
+  cta: {
+    title: "Wdrazasz AI w firmie? Zrobmy to bezpiecznie.",
+    description: "Pomagam firmom z Czestochowy i Slaskiego wdrazac agentow AI z mysla o RODO i AI Act. Audyt, integracja, monitoring. Bez shadow MCP i bez niespodzianek 2 sierpnia 2026.",
+    primaryButton: "Umow bezplatna konsultacje",
+    secondaryButton: "Zobacz moje uslugi AI"
+  }
+}
+
+# Bezpieczenstwo agentow AI ma slepy punkt, i wiekszosc skanerow go nie widzi
+
+> **Co sie wydarzylo:** [OWASP wpisal MCP Tool Poisoning](https://owasp.org/www-community/attacks/MCP_Tool_Poisoning) jako osobna klase atakow, a Microsoft Defender opisal to samo zjawisko w [Plug, Play, and Prey](https://techcommunity.microsoft.com/blog/microsoftdefendercloudblog/plug-play-and-prey-the-security-risks-of-the-model-context-protocol/4410829). Polski Sekurak juz wczesniej publikowal [serie podatnosci na MCP prowadzacych do wycieku danych z modelu](https://sekurak.pl/odkryto-szereg-nowych-podatnosci-na-protokol-integracji-narzedzi-ai-model-context-protocol-wszystkie-moga-doprowadzic-do-wycieku-danych-z-modelu-llm/).
+> **Dlaczego to wazne:** Wiekszosc skanerow agentow AI sprawdza prompty, repo i definicje narzedzi. Zaden z nich nie zauwaza odpowiedzi narzedzia, ktora zachowuje sie jak instrukcja.
+> **Moja opinia:** Jesli twoj agent moze wywolywac narzedzia zewnetrzne i pisac do czegokolwiek wrazliwego, prawdopodobnie jestes jedna zatruta odpowiedzia od problemu, ktorego skaner nie zobaczy.
+
+Dwa tygodnie temu pisalem o tym, [dlaczego MCP stal sie portem USB dla narzedzi AI](/pl/artykuly/mcp-port-usb-dla-narzedzi-ai). Standard polaczen zadzialal. Problem teraz to, co plynie kablem. Rejestry takie jak Smithery wymieniaja juz ponad 7000 publicznych serwerow MCP. Kazdy z nich moze przekazac modelowi wolny tekst. Kazdy siedzi w tym samym oknie kontekstu co twoj filesystem, twoja skrzynka i twoje akcje zapisu.
+
+To wlasnie jest luka zaufania w runtime. OWASP nazywa to wprost: "Odpowiedzi narzedzi trafiaja prosto do kontekstu LLM bez rownowaznej kontroli." Ten artykul jest o tym, dlaczego to jedno zdanie jest dzis najwazniejszym zdaniem w bezpieczenstwie agentow, i co z tym faktycznie zrobic.
+
+## MCP w trzy zdania: dlaczego to nowy lancuch dostaw dla AI
+
+Model Context Protocol jest dla narzedzi AI tym, czym USB jest dla peryferiow. Jeden standard, dowolny serwer, dowolny klient. To dlatego ekosystem tak szybko sie rozrosl. Sekurak opisuje juz ponad [137 000 problemow w ekosystemie serwerow MCP](https://devstockacademy.pl/blog/bezpieczenstwo-i-jakosc/bezpieczenstwo-mcp-serwerow-137-000-problemow-w-ekosystemie-ai-agentow/).
+
+Tylko ze MCP nie jest juz tylko sposobem podlaczania narzedzi. Stal sie nowym lancuchem dostaw dla AI. CVE-2025-6514 w pakiecie `mcp-remote` mial krytyczna ocene 9.6 i siedzial w zaleznosci pobranej ponad 437 000 razy. Sekurak opisal tez [powazne luki w serwerze MCP od Anthropic prowadzace do RCE](https://sekurak.pl/powazne-luki-bezpieczenstwa-w-serwerze-mcp-od-anthropic-prowadza-do-rce/) oraz [PromptJacking we wtyczkach MCP](https://sekurak.pl/wtyczki-mcp-rownie-problematyczne-co-przegladarki-ze-zintegrowanym-ai-podatnosc-promptjacking/). To nie jest jeden incydent. To wzorzec.
+
+## Slepy punkt skanera w prostych slowach
+
+Wiekszosc narzedzi do bezpieczenstwa agentow zaprojektowano pod stary ksztalt problemu. Skanuj prompt. Skanuj katalog konektorow. Skanuj graf zaleznosci. Gotowe.
+
+Ten model zaklada, ze ryzyko siedzi na wejsciu. Tak juz nie jest.
+
+**Co skaner sprawdza dzisiaj:**
+
+- Tresc promptow i szablony
+- Definicje i uprawnienia narzedzi
+- Znane CVE w pakietach
+- Nazwa serwera i reputacja
+
+**Co pomija w runtime:**
+
+- Output narzedzia wracajacy do kontekstu
+- Sciezka odpowiedzi po nawiazaniu polaczenia
+- Wolny tekst udajacy dane strukturalne
+- Model traktujacy te dane jak plan dzialania
+
+Jesli zewnetrzne narzedzie zwraca wolny tekst do tego samego okna kontekstu co twoje narzedzia uprzywilejowane, model nie odklada tego do "dane". Odklada do "kontekst". Grzecznie wygladajaca odpowiedz moze poprosic agenta o przeczytanie pliku, zapisanie commita albo wyslanie tokenu, a agent nie ma natywnego pojecia o granicach zaufania miedzy narzedziami.
+
+Inwariant Labs pokazal to w skali produkcyjnej. Ich [tool poisoning notification](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks) pokazal zlosliwe serwery MCP ukrywajace instrukcje w opisach narzedzi, niewidoczne dla uzytkownika, widoczne dla modelu. Potem [exploit na GitHub MCP](https://invariantlabs.ai/blog/mcp-github-vulnerability) poszedl dalej: jeden spreparowany GitHub Issue przejmowal agenta i wyciekaal zawartosc prywatnego repozytorium do publicznego PR. Bez prompt injection od uzytkownika. Bez zlosliwego pakietu. Po prostu odpowiedz narzedzia, ktora zadzialala za dobrze.
+
+## Kto tu wygrywa, a kto przegrywa
+
+Wygrywaja zespoly, ktore izoluja narzedzia uprzywilejowane od niezaufanych narzedzi zewnetrznych. Wygrywaja te, ktore wymuszaja akcje destrukcyjne przez bramki zatwierdzania po stronie serwera. Wygrywaja te, ktore wymuszaja schemat odpowiedzi zamiast wolnego tekstu. Kazdy, kto traktuje kazda zewnetrzna odpowiedz jako niezaufany tekst, wygrywa.
+
+Przegrywaja zespoly, ktore robia demo-version bezpieczenstwa agentow. Sprawdzaja system prompt. Odpalaja skaner na liscie konektorow. Klikaja przez trzy approvals. Uznaja temat za zamkniety. Potem narzedzie zwraca linijke, ktora brzmi jak prosba, model czyta ja jak plan, i kolejny wpis w audit logu to cos, czego nikt nie zatwierdzil.
+
+Jesli budujesz [automatyzacje dla realnych firm](/pl/uslugi/tworzenie-stron), to dokladnie tutaj jest twoja odpowiedzialnosc. Nie przy laczeniu serwera. Nie w prompcie. W odpowiedzi, ktora przyszla o trzeciej w nocy, gdy agent robil swoja runde.
+
+## Cztery pytania wazniejsze niz twoj skaner
+
+Gdybym jutro audytowal system agentowy, mniej obchodziloby mnie to, czy katalog konektorow wyglada czysto, a bardziej cztery nudne pytania.
+
+1. **Wolny tekst w uprzywilejowanym kontekscie.** Czy ktorekolwiek zewnetrzne narzedzie moze zwrocic dowolny wolny tekst do tego samego okna kontekstu co narzedzia uprzywilejowane?
+2. **Izolacja narzedzi.** Czy narzedzia uprzywilejowane (zapis plikow, GitHub, email, platnosci) sa odseparowane od niezaufanych narzedzi zewnetrznych?
+3. **Egzekucja po stronie serwera.** Czy akcje destrukcyjne lub nieodwracalne sa wymuszane po stronie serwera, a nie tylko bramkowane promptem?
+4. **Zatwierdzenie poza LLM.** Czy cokolwiek wrazliwego wymaga jawnego zatwierdzenia *poza* petla modelu?
+
+Jesli na cokolwiek odpowiedz brzmi "nie wiem", to jest twoja realna ekspozycja. Skaner ci jej nie pokaze. [OWASP AI Agent Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/AI_Agent_Security_Cheat_Sheet.html) trafia w ten sam ksztalt: traktuj dane zewnetrzne jako niezaufane, ciskaj least privilege, pilnuj memory poisoning. Nowa [specyfikacja MCP](https://modelcontextprotocol.io/specification/2025-11-25) idzie dalej: opisy narzedzi i ich wejscia MUSZA byc traktowane jako niezaufane, host musi wymagac jawnej zgody. Specyfikacja to mowi. Wiekszosc implementacji nadal tego nie egzekwuje.
+
+## Co to oznacza dla polskich firm: AI Act, RODO i shadow MCP w Slaskie
+
+To jest moment, w ktorym polski rynek powinien sie obudzic. Wedlug GUS tylko 8.7% polskich firm uzywalo AI w 2025 roku, a [tylko 7% MSP deklaruje gotowosc na AI](https://crn.pl/aktualnosci/tylko-7-proc-polskich-msp-deklaruje-gotowosc-na-ai-barometr-ai). To znaczy, ze duza fala wdrozen agentow w MSP w Slaskiem dopiero przed nami, i odbedzie sie w dwa lata, w ktorych powyzsze podatnosci dopiero wychodza.
+
+A teraz wazne: 2 sierpnia 2026 wchodza pelne obowiazki AI Act dla systemow wysokiego ryzyka. Audyty, dokumentacja, nadzor czlowieka, kary do 35 mln EUR lub 7% globalnego obrotu. Agent AI, ktory ma dostep do danych klientow, faktur albo komunikacji, czesto kwalifikuje sie wyzej niz wlasciciel firmy myslal w momencie wdrozenia. Sekurak juz w styczniu opisal [10 realnych zagrozen AI na 2026 rok](https://sekurak.pl/mroczna-strona-ai-10-realnych-zagrozen-na-2026-rok/), i wiekszosc z nich dotyczy wlasnie agentow z dostepem do realnych systemow.
+
+Dorzucmy RODO. Agent, ktory czyta i pisze dane osobowe, podlega zasadzie ograniczenia celu i minimalizacji danych. Shadow MCP, czyli serwery podlaczone bez wiedzy IT, lamia te zasady niemal z definicji. Patoarchitekci szczegolowo tlumacza ksztalt MCP w [odcinku 163](https://patoarchitekci.io/163/), warto poslac to zespolowi przed pierwszym wdrozeniem. Realny pattern: self-hosted LLM (Ollama + n8n) z lokalnym serwerem MCP daje wam zgodnosc z RODO za darmo. Public SaaS MCP nie daje.
+
+## Wzorzec, ktory widze u siebie i u klientow
+
+U mnie jeden agent potrafi czytac pliki, odpalac skrypty, aktualizowac GitHub, sprawdzac strony i laczyc sie z uslugami zewnetrznymi. To siedem luzno polaczonych narzedzi w jednym oknie kontekstu. To tez dokladnie ten ksztalt, ktory opisuje "lethal trifecta" Simona Willisona: prywatne dane, niezaufana tresc i kanal wyjscia. Kazdy uzyteczny agent ma wszystkie trzy. Moj ma. Twoj prawdopodobnie tez.
+
+Narzedzie, ktore obdarzam najmniejszym zaufaniem, to to, ktore ostatnio cos zrobilo na otwartym internecie. To nie jest stala odpowiedz. To sie zmienia. Sens jest taki, ze poziom zaufania agenta powinien spadac w momencie, gdy zewnetrzny tekst wchodzi do jego kontekstu, a wiekszosc setupow robi dokladnie odwrotnie. Traktuje tozsamosc narzedzia jak odznake zaufania na cala sesje.
+
+Kiedy budowalem [FlowMate, SaaS, ktory zrobilem solo](/pl/projekty/flowmate), traktowalem kazda odpowiedz zewnetrznego API jak niezaufany tekst. Sparsuj. Ogranicz. Nigdy nie pozwol, zeby stala sie instrukcja bez sprawdzenia. Ten sam odruch dziala dla outputu narzedzi MCP, tylko z wiekszymi konsekwencjami, bo powierzchnia jest wieksza, a parserem jest model.
+
+## Co zrobie w poniedzialek rano: checklist dla MSP
+
+Jesli prowadzisz agenta na produkcji w Polsce i jeszcze tego nie zrobiles, zacznij tu. Zadne z tych krokow nie wymaga vendora.
+
+1. **Wypisz kazde zewnetrzne narzedzie**, do ktorego agent ma dostep. Zaznacz, ktore z nich moga zwrocic wolny tekst. Ta lista to twoja powierzchnia ataku.
+2. **Narysuj graf uprawnien.** Ktore narzedzia moga pisac? Ktore widza dane wrazliwe? Kazda para, w ktorej narzedzie z wolnym tekstem siedzi w tym samym kontekscie co narzedzie zapisu, to ryzyko do naprawy dzisiaj.
+3. **Wymus akcje destrukcyjne przez ACL po stronie serwera**, nie przez prompt. Model moze prosic. Serwer decyduje.
+4. **Ogranicz output schematami.** Narzedzie, ktore zwraca JSON z zadeklarowanymi polami, nie przemyci akapitu z prosba, zeby agent przeczytal `~/.ssh`.
+5. **Loguj kazde wywolanie narzedzia z pelnym wejsciem i wyjsciem**, i przegladaj log raz w tygodniu pod katem czegokolwiek, co wyglada jak instrukcja w odpowiedzi.
+
+Wiekszosc moich [wdrozen integracji AI](/pl/uslugi/integracja-ai) zaczyna sie wlasnie od pierwszego punktu. Sama inwentaryzacja zwykle pokazuje dwa albo trzy narzedzia, ktore nigdy nie powinny dzielic kontekstu z czymkolwiek uprzywilejowanym.
+
+Nastepna rzecz, na ktora warto patrzec, to czy produkty od bezpieczenstwa agentow zaczna dzialac jak proxy runtime, a nie jak statyczne skanery. Do tego czasu jedyna uczciwa odpowiedz jest strukturalna: zmniejsz zasieg szkod, oddziel poziomy zaufania i przestan udawac, ze czysty skan rowna sie bezpieczny system.
+
+Jesli prowadzisz agenta na produkcji i nie wiesz, gdzie sa luki w runtime, [napisz do mnie i opisz setup](/pl/kontakt). Powiem ci, co bym sprawdzil. Bede pisal dalej, jak to sie rozwija.
