@@ -434,7 +434,7 @@
     "heading": "About Max Mendes",
     "location": "Częstochowa, Poland",
     "bio": [
-      "I'm Max, a frontend developer based in Częstochowa, Poland. I came into development through a year of focused self-study and have been building real products since 2024. I build modern business websites, e-commerce stores, and AI-powered web applications, with a focus on clean, maintainable code, strong performance, and real-world usability.",
+      "I'm Max, a frontend developer based in Częstochowa, Poland. I came into development through a year of focused self-study and have been building real products since 2025. I build modern business websites, e-commerce stores, and AI-powered web applications, with a focus on clean, maintainable code, strong performance, and real-world usability.",
       "My role is technical: I write code and turn ideas into working products. I implement interfaces using proven UI patterns and component libraries like shadcn/ui and Tailwind CSS, with a strong focus on speed, SEO optimization, and scalability. I also integrate AI capabilities using OpenAI and Anthropic APIs, tools I've used in production to build features like smart content generation, automated workflows, and intelligent data processing. Design and branding are outside my scope. I focus entirely on development.",
       "My process is structured and practical. I start with research: understanding the business goal, competitors, and technical requirements. Then I create low-fidelity prototypes in Figma to map user flows and features. After that, I build production-ready code using React and Next.js, handle deployment, optimization, and iteration based on feedback.",
       "My biggest project, FlowMate, is an AI-powered email management platform that handles multi-platform broadcasting and smart content generation. It took 300+ hours to build and taught me how to architect production SaaS applications with authentication, payments, AI integration, and real user data at scale.",
@@ -467,7 +467,7 @@
         {
           "role": "Freelance Frontend Developer",
           "company": "Self-Employed",
-          "period": "2024 – Present",
+          "period": "2025 – Present",
           "description": "Based in Częstochowa, Poland, I moved into freelance development after a year of self-study in React, Next.js, and TypeScript. I build production web products (websites, SaaS, e-commerce) focusing on code quality and long-term maintainability. FlowMate (my first full SaaS, 300+ hours) set how I approach client work: own the entire stack, ship real products."
         },
         {

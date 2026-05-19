@@ -442,7 +442,7 @@
     "heading": "Programista Frontend Częstochowa",
     "location": "Częstochowa, Polska",
     "bio": [
-      "Nazywam się Max i jestem programistą frontend z Częstochowy. Do programowania doszedłem przez rok intensywnej samodzielnej nauki i od 2024 roku buduję prawdziwe produkty. Buduję nowoczesne strony internetowe, sklepy online i aplikacje webowe z integracją AI, z naciskiem na czysty, utrzymywalny kod, wydajność i realne użycie.",
+      "Nazywam się Max i jestem programistą frontend z Częstochowy. Do programowania doszedłem przez rok intensywnej samodzielnej nauki i od 2025 roku buduję prawdziwe produkty. Buduję nowoczesne strony internetowe, sklepy online i aplikacje webowe z integracją AI, z naciskiem na czysty, utrzymywalny kod, wydajność i realne użycie.",
       "Buduję w React i Next.js, nowoczesnym stacku, który daje szybsze strony, lepsze pozycjonowanie w Google i możliwość rozwoju bez przepisywania kodu od podstaw. To technologie używane przez duże firmy (Netflix, Airbnb, TikTok), teraz dostępne dla lokalnych firm z Częstochowy i Śląska.",
       "Moja rola to kod: przekształcam pomysły w działające produkty. Implementuję interfejsy używając sprawdzonych bibliotek komponentów (shadcn/ui, Tailwind CSS) z naciskiem na wydajność, SEO i skalowalność. Integruję również funkcje AI wykorzystując API OpenAI i Anthropic, narzędzia, których używałem w produkcji do inteligentnej generacji treści, automatyzacji procesów i przetwarzania danych. Grafika i branding są poza moim zakresem; skupiam się wyłącznie na programowaniu.",
       "Mój proces: najpierw rozumiem cel biznesowy, analizuję konkurencję i planuję wymagania techniczne. Potem robię proste prototypy w Figma żeby uporządkować przepływ użytkownika. Dopiero wtedy piszę kod, optymalizuję pod SEO, wdrażam i iteruję na podstawie feedbacku.",
@@ -476,7 +476,7 @@
         {
           "role": "Freelancer – Programista Frontend",
           "company": "Własna działalność",
-          "period": "2024 – Obecnie",
+          "period": "2025 – Obecnie",
           "description": "Z Częstochowy, przeszedłem do freelancingu po roku samodzielnej nauki React, Next.js i TypeScript. Buduję produkcyjne produkty webowe (strony, SaaS, sklepy) z naciskiem na jakość kodu i długoterminową utrzymywalność. FlowMate (mój pierwszy pełny SaaS, 300+ godzin) ukształtował moje podejście do pracy: prowadzę cały projekt samodzielnie i dowożę prawdziwe produkty."
         },
         {
