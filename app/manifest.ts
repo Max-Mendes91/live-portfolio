@@ -3,7 +3,7 @@ import { SITE_CONFIG } from '@/lib/seo/config';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: `${SITE_CONFIG.name} - Full Stack Web Developer`,
+    name: `${SITE_CONFIG.name} - Frontend Developer`,
     short_name: SITE_CONFIG.name,
     description:
       'Professional web development services. React, Next.js, E-commerce, and SEO optimization.',

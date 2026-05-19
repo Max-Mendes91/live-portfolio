@@ -60,9 +60,9 @@ function generatePersonSchema(href: string) {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Max Mendes',
-    jobTitle: 'Full-Stack Web Developer',
+    jobTitle: 'Frontend Developer',
     description:
-      'Full-stack web developer based in Poland specializing in React, Next.js, and TypeScript',
+      'Frontend developer based in Poland specializing in React, Next.js, and TypeScript',
     url: getFullUrl(href),
     image: getFullUrl('/images/aboutme.webp'),
     email: SITE_CONFIG.owner.email,

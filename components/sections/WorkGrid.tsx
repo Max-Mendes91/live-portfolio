@@ -71,6 +71,18 @@ const WorkGrid: React.FC<WorkGridProps> = ({ dictionary }) => {
               <div className="flex flex-col order-2 lg:order-1">
                 {/* Tags */}
                 <div className="flex flex-wrap gap-1.5 md:gap-2 mb-3 md:mb-4">
+                  {featuredProject.status && (
+                    <span
+                      className={cn(
+                        'inline-flex items-center h-5 md:h-6 px-2 md:px-3',
+                        'text-[9px] md:text-[10px] font-medium uppercase tracking-wider',
+                        'bg-amber-400/10 border border-amber-400/30 rounded',
+                        'text-amber-400'
+                      )}
+                    >
+                      {featuredProject.status}
+                    </span>
+                  )}
                   {featuredProject.tags.map((tag) => (
                     <span
                       key={tag}
@@ -184,6 +196,18 @@ const WorkGrid: React.FC<WorkGridProps> = ({ dictionary }) => {
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-1.5 mb-2 md:mb-3">
+                    {project.status && (
+                      <span
+                        className={cn(
+                          'inline-flex items-center h-5 px-2',
+                          'text-[9px] font-medium uppercase tracking-wider',
+                          'bg-amber-400/10 border border-amber-400/30 rounded',
+                          'text-amber-400'
+                        )}
+                      >
+                        {project.status}
+                      </span>
+                    )}
                     {project.tags.slice(0, 2).map((tag) => (
                       <span
                         key={tag}
