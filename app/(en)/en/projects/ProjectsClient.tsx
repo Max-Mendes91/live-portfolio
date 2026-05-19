@@ -120,6 +120,11 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
                         {/* Featured Content */}
                         <div className="flex flex-col order-2 lg:order-1">
                           <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
+                            {featuredProject.status && (
+                              <span className="px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-amber-400/10 border border-amber-400/30 text-[9px] sm:text-[10px] text-amber-400 uppercase tracking-wider">
+                                {featuredProject.status}
+                              </span>
+                            )}
                             {featuredProject.tags.map((tag) => (
                               <span
                                 key={tag}
@@ -209,6 +214,11 @@ const ProjectsClient: React.FC<ProjectsClientProps> = ({
                           )}
 
                           <div className="flex flex-nowrap gap-1 mb-2 sm:mb-3 overflow-hidden">
+                            {project.status && (
+                              <span className="px-1.5 py-0.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-[8px] text-amber-400 uppercase tracking-wider whitespace-nowrap shrink-0">
+                                {project.status}
+                              </span>
+                            )}
                             {project.tags.slice(0, 2).map((tag) => (
                               <span
                                 key={tag}

@@ -79,17 +79,17 @@ const Hero: React.FC<HeroProps> = ({ dictionary, isReady = true, locale = 'en' }
 
   // Fallback values for backward compatibility
   const content = {
-    badge: dictionary?.badge ?? 'Full-Stack Development',
+    badge: dictionary?.badge ?? 'Frontend Development',
     headline: dictionary?.headline ?? 'Freelance Developer for Hire',
     subheadline: dictionary?.subheadline ?? 'Websites. E-commerce. Web Apps. SaaS.',
-    description: dictionary?.description ?? "I'm Max, a full-stack developer based in Poland. I build websites, e-commerce stores, web apps, and SaaS products. I handle everything, from research and prototyping to deployment. UK and US clients welcome.",
+    description: dictionary?.description ?? "I'm Max, a frontend developer based in Poland. I build websites, e-commerce stores, web apps, and SaaS products. I handle everything, from research and prototyping to deployment. UK and US clients welcome.",
     ctaPrimary: dictionary?.ctaPrimary ?? 'Book a Free Call',
     ctaSecondary: dictionary?.ctaSecondary ?? 'See Projects',
     phoneLabel: dictionary?.phoneLabel ?? 'or call',
     scrollDown: dictionary?.scrollDown ?? 'Scroll down',
     toSeeProjects: dictionary?.toSeeProjects ?? 'to see projects',
     trustSignals: dictionary?.trustSignals ?? [
-      { label: '2+ Years Experience', icon: 'trophy' },
+      { label: 'Self-Taught Developer', icon: 'trophy' },
       { label: 'UK/US Friendly Timezone', icon: 'globe' },
       { label: 'Fluent English', icon: 'languages' },
     ],

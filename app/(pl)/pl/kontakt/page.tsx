@@ -61,12 +61,12 @@ function generateContactPageSchema() {
     '@type': 'ContactPage',
     name: 'Kontakt - Max Mendes',
     description:
-      'Strona kontaktowa Max Mendes - programista full-stack z Częstochowy obsługujący klientów z Polski i Europy.',
+      'Strona kontaktowa Max Mendes - programista frontend z Częstochowy obsługujący klientów z Polski i Europy.',
     url: getFullUrl('/pl/kontakt'),
     mainEntity: {
       '@type': 'Person',
       name: 'Max Mendes',
-      jobTitle: 'Full-Stack Web Developer',
+      jobTitle: 'Programista Frontend',
       email: owner.email,
       telephone: owner.phone,
       address: {

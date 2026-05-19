@@ -397,6 +397,8 @@ export interface WorkGridProjectDict {
   externalUrl?: string;
   cta: string;
   externalCta?: string;
+  /** Optional lifecycle label, e.g. "Paused" / "Wstrzymany". Renders a status pill. */
+  status?: string;
   tags: string[];
   image?: string;
   tech?: string[];
@@ -624,6 +626,8 @@ export interface CaseStudyHero {
   image: string;
   liveUrl?: string;
   liveUrlCta?: string;
+  /** Optional honest disclaimer shown in the hero, e.g. project paused. */
+  notice?: string;
   tags: string[];
 }
 

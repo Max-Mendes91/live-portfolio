@@ -35,7 +35,7 @@ export function generatePersonSchema(): PersonSchema {
       owner.social.x,
       owner.social.instagram,
     ].filter(Boolean) as string[],
-    jobTitle: 'Full Stack Web Developer',
+    jobTitle: 'Frontend Developer',
     worksFor: {
       '@type': 'Organization',
       name: owner.name,
@@ -111,7 +111,7 @@ export function generateWebsiteSchema(homePageData?: HomePageSchemaData): Websit
 
   // Use dictionary data if provided, otherwise fall back to hardcoded values
   const description = homePageData?.schema.description ??
-    'Professional web development portfolio and services by Max Mendes - Full Stack Developer specializing in React, Next.js, and modern web technologies.';
+    'Professional web development portfolio and services by Max Mendes - Frontend Developer specializing in React, Next.js, and modern web technologies.';
 
   return {
     '@context': 'https://schema.org',
