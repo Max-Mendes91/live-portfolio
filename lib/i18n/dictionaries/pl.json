@@ -1,6 +1,6 @@
 {
   "hero": {
-    "badge": "Full-Stack Development",
+    "badge": "Frontend Development",
     "headline": "Programista Freelancer Częstochowa",
     "subheadline": "React & Next.js. Pełny Proces. Częstochowa & Śląskie.",
     "description": "Max Mendes, programista z Częstochowy, dostępny dla projektów z Polski, UK i USA. Jako jedna osoba odpowiadam za cały projekt - od pierwszej rozmowy po wdrożenie produkcyjne.",
@@ -207,7 +207,7 @@
       "name": "Max Mendes",
       "location": "Częstochowa, Polska",
       "available": "Dostępny do pracy",
-      "phone": "502 742 941"
+      "phone": "725 534 018"
     },
     "bottom": {
       "copyright": "Max Mendes",
@@ -276,14 +276,14 @@
     },
     "seo": {
       "title": "Kontakt - Programista Częstochowa | Max Mendes",
-      "metaDescription": "Kontakt do Max Mendes - tworzenie stron internetowych Częstochowa. Programista React i Next.js. Tel: 502 742 941. Odpowiedź w ciągu 24 godzin.",
+      "metaDescription": "Kontakt do Max Mendes - tworzenie stron internetowych Częstochowa. Programista React i Next.js. Tel: 725 534 018. Odpowiedź w ciągu 24 godzin.",
       "keywords": ["kontakt programista", "programista częstochowa kontakt", "wycena strony internetowej", "kontakt web developer", "programista śląskie", "bezpłatna wycena"],
       "h1": "Skontaktuj Się",
       "ogTitle": "Kontakt - Programista Częstochowa | Max Mendes"
     },
     "schema": {
       "type": "ContactPage",
-      "description": "Strona kontaktowa Max Mendes - programista full-stack z Częstochowy obsługujący klientów z Polski i Europy.",
+      "description": "Strona kontaktowa Max Mendes - programista frontend z Częstochowy obsługujący klientów z Polski i Europy.",
       "areaServed": ["Częstochowa", "Śląskie", "Polska"]
     }
   },
@@ -309,13 +309,14 @@
       {
         "id": "flowmate",
         "title": "FlowMate: Platforma AI do Zarządzania Emailami",
-        "shortDescription": "Samodzielnie zbudowany SaaS. Generowanie treści AI, wielokanałowy email, 300+ godzin kodu. Działa na produkcji.",
-        "description": "Gotowa do działania platforma do zarządzania mailami i komunikacją na dużą skalę. Architektura full-stack z bezpieczną autoryzacją, przetwarzaniem asynchronicznym i integracjami AI, obsługująca realne obciążenia na skalę.",
-        "metric": "Uruchomiony styczeń 2026 · 300+ godzin rozwoju · Integracja AI z wieloma kanałami",
+        "shortDescription": "SaaS zaprojektowany i napisany przeze mnie od zera, by nauczyć się architektury produkcyjnej. Strona startowa działa; sam produkt jest wstrzymany.",
+        "description": "SaaS, który zbudowałem samodzielnie od początku do końca, by nauczyć się architektury produkcyjnej: bezpieczna autoryzacja, przetwarzanie asynchroniczne i integracje AI (Gmail, Outlook, Slack, Telegram). Produkt jest obecnie wstrzymany; strona startowa działa jako demo.",
+        "metric": "300+ godzin pracy · 6 miesięcy solo · Wstrzymany (strona działa)",
         "href": "/pl/projekty",
         "externalUrl": "https://www.flowmate.click/",
         "cta": "Zobacz Projekt",
-        "externalCta": "Odwiedź Stronę",
+        "externalCta": "Zobacz Stronę",
+        "status": "Wstrzymany",
         "tags": ["SaaS", "AI", "Full-Stack"],
         "tech": ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "OpenAI", "Stripe"],
         "image": "/projects/flowmate-landing.webp",
@@ -407,14 +408,14 @@
     },
     "seo": {
       "title": "Programista Freelancer Częstochowa | Max Mendes",
-      "metaDescription": "Tworzenie stron internetowych i aplikacji webowych. Programista full-stack Polska. Strony, sklepy, SaaS. Częstochowa, Śląsk. Bezpłatna konsultacja. Tel: 502 742 941",
-      "keywords": ["tworzenie stron internetowych", "programista częstochowa", "full-stack developer polska", "strony www częstochowa", "aplikacje webowe", "sklepy internetowe śląsk", "programista react", "nextjs developer polska"],
+      "metaDescription": "Tworzenie stron internetowych i aplikacji webowych. Programista frontend Polska. Strony, sklepy, SaaS. Częstochowa, Śląsk. Bezpłatna konsultacja. Tel: 725 534 018",
+      "keywords": ["tworzenie stron internetowych", "programista częstochowa", "frontend developer polska", "strony www częstochowa", "aplikacje webowe", "sklepy internetowe śląsk", "programista react", "nextjs developer polska"],
       "h1": "Programista Freelancer Częstochowa",
       "ogTitle": "Programista Freelancer Częstochowa | Max Mendes"
     },
     "schema": {
       "type": "WebSite",
-      "description": "Profesjonalne tworzenie stron internetowych i aplikacji webowych przez Max Mendes - Programista Full-Stack specjalizujący się w React, Next.js i nowoczesnych technologiach webowych.",
+      "description": "Profesjonalne tworzenie stron internetowych i aplikacji webowych przez Max Mendes - Programista Frontend specjalizujący się w React, Next.js i nowoczesnych technologiach webowych.",
       "areaServed": ["Częstochowa", "Śląskie", "Polska", "Unia Europejska"]
     }
   },
@@ -427,26 +428,26 @@
       "pl": "/pl/o-mnie"
     },
     "seo": {
-      "title": "O Mnie - Programista Full-Stack | Max Mendes",
-      "metaDescription": "Programista full-stack z Częstochowy. Buduję strony i aplikacje w React & Next.js ✓ 300+ godzin pracy nad SaaS ✓ Nie WordPress ✓ Bezpłatna konsultacja",
-      "keywords": ["programista częstochowa", "programista full-stack", "tworzenie stron częstochowa", "react developer polska", "programista śląskie", "freelancer polska"],
-      "h1": "Programista Full-Stack Częstochowa",
-      "ogTitle": "O Mnie - Programista Full-Stack | Max Mendes"
+      "title": "O Mnie - Programista Frontend | Max Mendes",
+      "metaDescription": "Programista frontend z Częstochowy. Buduję strony i aplikacje w React & Next.js ✓ 300+ godzin pracy nad SaaS ✓ Nie WordPress ✓ Bezpłatna konsultacja",
+      "keywords": ["programista częstochowa", "programista frontend", "tworzenie stron częstochowa", "react developer polska", "programista śląskie", "freelancer polska"],
+      "h1": "Programista Frontend Częstochowa",
+      "ogTitle": "O Mnie - Programista Frontend | Max Mendes"
     },
     "schema": {
       "type": "ProfilePage",
-      "description": "Programista full-stack z Częstochowy specjalizujący się w React, Next.js i TypeScript. Tworzenie stron, sklepów i aplikacji webowych.",
+      "description": "Programista frontend z Częstochowy specjalizujący się w React, Next.js i TypeScript. Tworzenie stron, sklepów i aplikacji webowych.",
       "areaServed": ["Częstochowa", "Śląskie", "Polska"]
     },
-    "heading": "Programista Full-Stack Częstochowa",
+    "heading": "Programista Frontend Częstochowa",
     "location": "Częstochowa, Polska",
     "bio": [
-      "Nazywam się Max i jestem programistą full-stack z Częstochowy. Buduję nowoczesne strony internetowe, sklepy online i aplikacje webowe z integracją AI, z naciskiem na czysty, utrzymywalny kod, wydajność i realne użycie.",
+      "Nazywam się Max i jestem programistą frontend z Częstochowy. Do programowania doszedłem przez rok intensywnej samodzielnej nauki i od 2024 roku buduję prawdziwe produkty. Buduję nowoczesne strony internetowe, sklepy online i aplikacje webowe z integracją AI, z naciskiem na czysty, utrzymywalny kod, wydajność i realne użycie.",
       "Buduję w React i Next.js, nowoczesnym stacku, który daje szybsze strony, lepsze pozycjonowanie w Google i możliwość rozwoju bez przepisywania kodu od podstaw. To technologie używane przez duże firmy (Netflix, Airbnb, TikTok), teraz dostępne dla lokalnych firm z Częstochowy i Śląska.",
       "Moja rola to kod: przekształcam pomysły w działające produkty. Implementuję interfejsy używając sprawdzonych bibliotek komponentów (shadcn/ui, Tailwind CSS) z naciskiem na wydajność, SEO i skalowalność. Integruję również funkcje AI wykorzystując API OpenAI i Anthropic, narzędzia, których używałem w produkcji do inteligentnej generacji treści, automatyzacji procesów i przetwarzania danych. Grafika i branding są poza moim zakresem; skupiam się wyłącznie na programowaniu.",
       "Mój proces: najpierw rozumiem cel biznesowy, analizuję konkurencję i planuję wymagania techniczne. Potem robię proste prototypy w Figma żeby uporządkować przepływ użytkownika. Dopiero wtedy piszę kod, optymalizuję pod SEO, wdrażam i iteruję na podstawie feedbacku.",
       "Buduję również własne projekty, co pozwala mi testować nowe technologie przed wdrożeniem u klientów.",
-      "Jestem dostępny dla firm z Częstochowy i Śląska, które potrzebują nowoczesnych stron internetowych lub sklepów online, a także dla zagranicznych klientów szukających full-stack developera z Polski. Mówię płynnie po angielsku i bez problemu pracuję asynchronicznie w różnych strefach czasowych."
+      "Jestem dostępny dla firm z Częstochowy i Śląska, które potrzebują nowoczesnych stron internetowych lub sklepów online, a także dla zagranicznych klientów szukających programisty frontend z Polski. Mówię płynnie po angielsku i bez problemu pracuję asynchronicznie w różnych strefach czasowych."
     ],
     "skills": {
       "title": "Technologie",
@@ -473,10 +474,10 @@
       "title": "Doświadczenie",
       "items": [
         {
-          "role": "Freelancer – Programista Full-Stack",
+          "role": "Freelancer – Programista Frontend",
           "company": "Własna działalność",
           "period": "2024 – Obecnie",
-          "description": "Działam lokalnie z Częstochowy, specjalizuję się w tworzeniu stron internetowych, sklepów online i aplikacji webowych w React i Next.js. Projektuję i buduję rozwiązania webowe od podstaw, od analizy wymagań po wdrożenie produkcyjne. Każdy projekt prowadzę samodzielnie, co oznacza pełną kontrolę nad kodem i terminami realizacji."
+          "description": "Z Częstochowy, przeszedłem do freelancingu po roku samodzielnej nauki React, Next.js i TypeScript. Buduję produkcyjne produkty webowe (strony, SaaS, sklepy) z naciskiem na jakość kodu i długoterminową utrzymywalność. FlowMate (mój pierwszy pełny SaaS, 300+ godzin) ukształtował moje podejście do pracy: prowadzę cały projekt samodzielnie i dowożę prawdziwe produkty."
         },
         {
           "role": "Analityk IT",
@@ -1419,7 +1420,7 @@
           "realizacja integracja ai",
           "saas stripe subskrypcje",
           "oauth wielu dostawców",
-          "portfolio full-stack programista",
+          "portfolio programisty react",
           "architektura produkcyjnego saas"
         ],
         "h1": "FlowMate: SaaS z AI Zbudowany Solo w 6 Miesięcy",
@@ -1447,7 +1448,8 @@
           ],
           "image": "/projects/flowmate-landing.webp",
           "liveUrl": "https://www.flowmate.click/",
-          "liveUrlCta": "Zobacz Stronę",
+          "liveUrlCta": "Zobacz Stronę Startową",
+          "notice": "Osobisty projekt edukacyjny. Produkt jest wstrzymany; strona startowa nadal działa jako demo.",
           "tags": ["SaaS", "Integracja AI", "Full-Stack", "Multi-Platform"]
         },
         "sections": [
@@ -1655,7 +1657,7 @@
     },
     "seo": {
       "title": "Artykuły – Tworzenie Stron, AI i Automatyzacja | Max Mendes Częstochowa",
-      "metaDescription": "Artykuły o tworzeniu stron internetowych, automatyzacji AI i pracy freelancera. React, Next.js, SEO, agentic workflows. Częstochowa, Śląskie. +48 502 742 941",
+      "metaDescription": "Artykuły o tworzeniu stron internetowych, automatyzacji AI i pracy freelancera. React, Next.js, SEO, agentic workflows. Częstochowa, Śląskie. +48 725 534 018",
       "keywords": ["blog web developer", "automatyzacja AI", "tworzenie stron Częstochowa", "artykuły programistyczne", "Next.js poradniki", "pozycjonowanie SEO", "freelancer Polska"],
       "h1": "Artykuły",
       "ogTitle": "Artykuły – Tworzenie Stron i Automatyzacja AI | Max Mendes"

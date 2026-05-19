@@ -1,6 +1,6 @@
 {
   "hero": {
-    "badge": "Full-Stack Development",
+    "badge": "Frontend Development",
     "headline": "Freelance Web Developer for Hire",
     "subheadline": "Websites. E-commerce. Web Apps. SaaS.",
     "description": "Max Mendes, developer based in Poland, available for projects across Europe, UK, and US. From first conversation to live deployment, one person handles your entire project.",
@@ -199,7 +199,7 @@
       "name": "Max Mendes",
       "location": "Częstochowa, Poland",
       "available": "Available for work",
-      "phone": "+48 502 742 941"
+      "phone": "+48 725 534 018"
     },
     "bottom": {
       "copyright": "Max Mendes",
@@ -268,14 +268,14 @@
     },
     "seo": {
       "title": "Contact - Web Developer Poland | Max Mendes",
-      "metaDescription": "Contact Max Mendes for web development projects. React & Next.js developer in Częstochowa, Poland. Call: +48 502 742 941. Response within 24 hours.",
+      "metaDescription": "Contact Max Mendes for web development projects. React & Next.js developer in Częstochowa, Poland. Call: +48 725 534 018. Response within 24 hours.",
       "keywords": ["contact web developer", "hire developer poland", "freelance developer contact", "web development quote", "developer czestochowa", "react developer hire"],
       "h1": "Get in Touch",
       "ogTitle": "Contact - Web Developer Poland | Max Mendes"
     },
     "schema": {
       "type": "ContactPage",
-      "description": "Contact page for Max Mendes - full-stack web developer based in Poland serving UK, US & EU clients.",
+      "description": "Contact page for Max Mendes - frontend web developer based in Poland serving UK, US & EU clients.",
       "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
     }
   },
@@ -301,13 +301,14 @@
       {
         "id": "flowmate",
         "title": "FlowMate: AI Email Management Platform",
-        "shortDescription": "Solo-built SaaS. AI content generation, multi-channel email, 300+ hours of code, now live.",
-        "description": "Production SaaS platform built with Next.js and React for high-volume email and messaging management. Full-stack architecture with secure authentication, async processing, and AI integrations handling real workloads at scale.",
-        "metric": "Launched January 2026 · 300+ dev hours · Multi-channel AI integration",
+        "shortDescription": "A SaaS I designed and coded solo, end to end, to learn production architecture. Landing page is live; the product is paused.",
+        "description": "A SaaS I built solo, end to end, to learn production architecture: secure authentication, async processing, and AI integrations across Gmail, Outlook, Slack and Telegram. The product is now paused; the landing page stays live as a demo.",
+        "metric": "300+ dev hours · 6 months solo · Paused (landing page live)",
         "href": "/en/projects",
         "externalUrl": "https://www.flowmate.click/",
         "cta": "View Project",
-        "externalCta": "Visit Live Site",
+        "externalCta": "View Landing Page",
+        "status": "Paused",
         "tags": ["SaaS", "AI", "Full-Stack"],
         "tech": ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "OpenAI", "Stripe"],
         "image": "/projects/flowmate-landing.webp",
@@ -398,15 +399,15 @@
       "pl": "/pl"
     },
     "seo": {
-      "title": "Freelance Web Developer - Full-Stack React & Next.js | Max Mendes",
-      "metaDescription": "Freelance full-stack developer for hire. Websites, e-commerce, web apps, SaaS. React, Next.js, Node.js. Poland-based, UK/US friendly. Free consultation.",
-      "keywords": ["freelance web developer", "hire web developer", "full-stack developer poland", "react developer for hire", "nextjs developer", "web developer czestochowa", "ecommerce developer", "saas developer"],
+      "title": "Freelance Web Developer - React & Next.js | Max Mendes",
+      "metaDescription": "Freelance frontend developer for hire. Websites, e-commerce, web apps, SaaS. React, Next.js, TypeScript. Poland-based, UK/US friendly. Free consultation.",
+      "keywords": ["freelance web developer", "hire web developer", "frontend developer poland", "react developer for hire", "nextjs developer", "web developer czestochowa", "ecommerce developer", "saas developer"],
       "h1": "Freelance Web Developer for Hire",
-      "ogTitle": "Freelance Web Developer - Full-Stack React & Next.js | Max Mendes"
+      "ogTitle": "Freelance Web Developer - React & Next.js | Max Mendes"
     },
     "schema": {
       "type": "WebSite",
-      "description": "Professional web development portfolio and services by Max Mendes - Full Stack Developer specializing in React, Next.js, and modern web technologies.",
+      "description": "Professional web development portfolio and services by Max Mendes - Frontend Developer specializing in React, Next.js, and modern web technologies.",
       "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
     }
   },
@@ -419,25 +420,25 @@
       "pl": "/pl/o-mnie"
     },
     "seo": {
-      "title": "Full-Stack Developer Poland - React & Next.js | Max Mendes",
-      "metaDescription": "Full-stack web developer in Częstochowa, Poland. I build websites, e-commerce, and web apps with React & Next.js. 300+ hours on production SaaS projects.",
-      "keywords": ["about max mendes", "full-stack developer poland", "react developer poland", "nextjs developer", "web developer częstochowa", "freelance developer europe"],
+      "title": "Frontend Developer Poland - React & Next.js | Max Mendes",
+      "metaDescription": "Frontend developer in Częstochowa, Poland. I build websites, e-commerce, and web apps with React & Next.js. 300+ hours on a production SaaS project.",
+      "keywords": ["about max mendes", "frontend developer poland", "react developer poland", "nextjs developer", "web developer częstochowa", "freelance developer europe"],
       "h1": "About Max Mendes",
-      "ogTitle": "Full-Stack Developer Poland - React & Next.js | Max Mendes"
+      "ogTitle": "Frontend Developer Poland - React & Next.js | Max Mendes"
     },
     "schema": {
       "type": "ProfilePage",
-      "description": "Full-stack web developer based in Poland specializing in React, Next.js, and TypeScript. Building websites, e-commerce, and web applications.",
+      "description": "Frontend developer based in Poland specializing in React, Next.js, and TypeScript. Building websites, e-commerce, and web applications.",
       "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
     },
     "heading": "About Max Mendes",
     "location": "Częstochowa, Poland",
     "bio": [
-      "I'm Max, a full-stack web developer based in Częstochowa, Poland. I build modern business websites, e-commerce stores, and AI-powered web applications, with a focus on clean, maintainable code, strong performance, and real-world usability.",
+      "I'm Max, a frontend developer based in Częstochowa, Poland. I came into development through a year of focused self-study and have been building real products since 2024. I build modern business websites, e-commerce stores, and AI-powered web applications, with a focus on clean, maintainable code, strong performance, and real-world usability.",
       "My role is technical: I write code and turn ideas into working products. I implement interfaces using proven UI patterns and component libraries like shadcn/ui and Tailwind CSS, with a strong focus on speed, SEO optimization, and scalability. I also integrate AI capabilities using OpenAI and Anthropic APIs, tools I've used in production to build features like smart content generation, automated workflows, and intelligent data processing. Design and branding are outside my scope. I focus entirely on development.",
       "My process is structured and practical. I start with research: understanding the business goal, competitors, and technical requirements. Then I create low-fidelity prototypes in Figma to map user flows and features. After that, I build production-ready code using React and Next.js, handle deployment, optimization, and iteration based on feedback.",
       "My biggest project, FlowMate, is an AI-powered email management platform that handles multi-platform broadcasting and smart content generation. It took 300+ hours to build and taught me how to architect production SaaS applications with authentication, payments, AI integration, and real user data at scale.",
-      "I'm available for Polish businesses that need modern websites or online stores, as well as UK and US companies looking for a full-stack developer. I'm fluent in English and work comfortably across time zones."
+      "I'm available for Polish businesses that need modern websites or online stores, as well as UK and US companies looking for a frontend developer. I'm fluent in English and work comfortably across time zones."
     ],
     "skills": {
       "title": "Tech Stack",
@@ -464,7 +465,7 @@
       "title": "Experience",
       "items": [
         {
-          "role": "Freelance Full-Stack Developer",
+          "role": "Freelance Frontend Developer",
           "company": "Self-Employed",
           "period": "2024 – Present",
           "description": "Based in Częstochowa, Poland, I moved into freelance development after a year of self-study in React, Next.js, and TypeScript. I build production web products (websites, SaaS, e-commerce) focusing on code quality and long-term maintainability. FlowMate (my first full SaaS, 300+ hours) set how I approach client work: own the entire stack, ship real products."
@@ -1415,7 +1416,7 @@
           "ai integration case study",
           "stripe subscription saas",
           "oauth multi-provider",
-          "full-stack development portfolio",
+          "react developer portfolio",
           "production saas architecture"
         ],
         "h1": "FlowMate: AI Email SaaS Built Solo in 6 Months",
@@ -1443,7 +1444,8 @@
           ],
           "image": "/projects/flowmate-landing.webp",
           "liveUrl": "https://www.flowmate.click/",
-          "liveUrlCta": "View Live Site",
+          "liveUrlCta": "View Landing Page",
+          "notice": "Personal learning project. The product is paused; the landing page remains live as a demo.",
           "tags": ["SaaS", "AI Integration", "Full-Stack", "Multi-Platform"]
         },
         "sections": [
@@ -1651,7 +1653,7 @@
     },
     "seo": {
       "title": "Blog – Web Development, AI & Automation | Max Mendes",
-      "metaDescription": "Articles on web development, AI automation, and freelance insights by Max Mendes. React, Next.js, SEO, and agentic workflows. +48 502 742 941",
+      "metaDescription": "Articles on web development, AI automation, and freelance insights by Max Mendes. React, Next.js, SEO, and agentic workflows. +48 725 534 018",
       "keywords": ["web development blog", "AI automation", "Next.js articles", "freelance developer blog", "React tutorials", "SEO tips", "agentic workflows"],
       "h1": "Blog",
       "ogTitle": "Blog – Web Development & AI Automation | Max Mendes"

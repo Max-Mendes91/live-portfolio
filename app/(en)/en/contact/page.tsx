@@ -61,12 +61,12 @@ function generateContactPageSchema() {
     '@type': 'ContactPage',
     name: 'Contact - Max Mendes',
     description:
-      'Contact page for Max Mendes - full-stack web developer based in Poland serving UK, US & EU clients.',
+      'Contact page for Max Mendes - frontend web developer based in Poland serving UK, US & EU clients.',
     url: getFullUrl('/en/contact'),
     mainEntity: {
       '@type': 'Person',
       name: 'Max Mendes',
-      jobTitle: 'Full-Stack Web Developer',
+      jobTitle: 'Frontend Developer',
       email: owner.email,
       telephone: owner.phone,
       address: {

@@ -48,7 +48,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ dictionary, isIntro = false }) => {
   // Fallback content for backward compatibility
   const content = {
     headline: dictionary?.headline ?? "Hi, I'm Max Mendes",
-    subheadline: dictionary?.subheadline ?? 'Full Stack Web Developer based in Częstochowa, Poland',
+    subheadline: dictionary?.subheadline ?? 'Frontend Developer based in Częstochowa, Poland',
     description: dictionary?.description ?? "With expertise in React, Next.js, Node.js, and TypeScript, I help businesses establish a powerful online presence. Whether you need a custom website, e-commerce store, or SEO optimization - I deliver solutions that drive results.",
     description2: dictionary?.description2 ?? "",
     learnMoreText: dictionary?.learnMoreText ?? 'Learn More About Me',
@@ -178,7 +178,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ dictionary, isIntro = false }) => {
               >
                 <Image
                   src="/images/aboutme.webp"
-                  alt="Max Mendes - Full Stack Web Developer based in Poland, specializing in React and Next.js development"
+                  alt="Max Mendes - Frontend Developer based in Poland, specializing in React and Next.js development"
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1023px) 90vw, 45vw"
                   quality={75}
@@ -194,7 +194,7 @@ const AboutMe: React.FC<AboutMeProps> = ({ dictionary, isIntro = false }) => {
               <div className="group relative aspect-[4/5] xl:aspect-square overflow-hidden rounded-2xl sm:rounded-3xl">
                 <Image
                   src="/images/aboutme.webp"
-                  alt="Max Mendes - Full Stack Web Developer based in Poland, specializing in React and Next.js development"
+                  alt="Max Mendes - Frontend Developer based in Poland, specializing in React and Next.js development"
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1023px) 90vw, 45vw"
                   quality={75}

@@ -9,7 +9,7 @@ export const SITE_CONFIG: SiteConfig = {
     name: 'Max Mendes',
     legalName: 'Max Mendes',
     email: 'contact@maxmendes.dev',
-    phone: '+48 502 742 941',
+    phone: '+48 725 534 018',
     address: {
       street: 'Slaska 30/8',
       city: 'Czestochowa',
@@ -62,12 +62,12 @@ export const HREFLANG_CONFIG = [
 // Trust signals for hero/about sections (from SEO strategy - friend's advice)
 export const TRUST_SIGNALS = {
   en: [
-    { label: '2+ Years Experience', icon: 'trophy' },
+    { label: 'Self-Taught Developer', icon: 'trophy' },
     { label: 'UK/US Friendly Timezone', icon: 'globe' },
     { label: 'Fluent English', icon: 'languages' },
   ],
   pl: [
-    { label: '2+ lata doświadczenia', icon: 'trophy' },
+    { label: 'Programista Samouk', icon: 'trophy' },
     { label: 'Klienci z UK/US', icon: 'globe' },
     { label: 'Płynny angielski', icon: 'languages' },
   ],
@@ -76,13 +76,13 @@ export const TRUST_SIGNALS = {
 // Unique Selling Points - what makes you different (from SEO strategy)
 export const USP_BADGES = {
   en: [
-    'Full-Stack Developer',
+    'Frontend Developer',
     'React & Next.js Specialist',
     'Based in Poland, EU',
     'Remote-First',
   ],
   pl: [
-    'Programista Full-Stack',
+    'Programista Frontend',
     'Specjalista React & Next.js',
     'Polska, UE',
     'Praca zdalna',

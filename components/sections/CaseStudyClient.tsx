@@ -156,6 +156,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({ content, seo, shouldAnimate, 
             ))}
           </div>
 
+          {/* Honest project status notice */}
+          {hero.notice && (
+            <div className="flex justify-center mb-6">
+              <p className="text-center text-sm text-amber-400/90 max-w-2xl px-4 py-2 rounded-lg bg-amber-400/5 border border-amber-400/20">
+                {hero.notice}
+              </p>
+            </div>
+          )}
+
           {/* Live URL Button */}
           {hero.liveUrl && (
             <div className="flex justify-center">
