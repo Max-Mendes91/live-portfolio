@@ -1672,6 +1672,9 @@
       "tagsLabel": "Tags",
       "noPosts": "No articles yet. Check back soon!",
       "backToBlog": "Back to Blog",
+      "tableOfContents": "On this page",
+      "faqTitle": "Frequently asked questions",
+      "alsoPublishedOn": "Also published on",
       "cta": {
         "title": "Have a Project in Mind?",
         "description": "Let's discuss how I can help bring your idea to life.",

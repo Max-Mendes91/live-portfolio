@@ -66,6 +66,11 @@ const nextConfig = {
   },
 };
 
-const withMDX = createMDX({});
+// String form keeps loader options serializable for the webpack dev cache.
+const withMDX = createMDX({
+  options: {
+    remarkPlugins: [['remark-gfm']],
+  },
+});
 
 export default withMDX(nextConfig);

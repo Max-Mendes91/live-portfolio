@@ -799,6 +799,9 @@ export interface BlogPageUI {
   tagsLabel: string;
   noPosts: string;
   backToBlog: string;
+  tableOfContents?: string;
+  faqTitle?: string;
+  alsoPublishedOn?: string;
   cta: {
     title: string;
     description: string;
@@ -845,6 +848,11 @@ export interface BlogPostMeta {
     description: string;
     primaryButton: string;
     secondaryButton: string;
+  };
+  faq?: Array<{ question: string; answer: string }>;
+  crossPosts?: {
+    devto?: string;
+    medium?: string;
   };
 }
 

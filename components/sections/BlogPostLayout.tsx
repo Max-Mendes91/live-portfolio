@@ -10,14 +10,18 @@ import FooterSection from '@/components/sections/FooterSection';
 import { FloatingTechIcons } from '@/components/effects/FloatingTechIcons';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import { BinderClip } from '@/components/ui';
+import BlogTableOfContents from '@/components/sections/BlogTableOfContents';
+import BlogFAQ from '@/components/sections/BlogFAQ';
 import { SupportedLocale, BlogPostMeta } from '@/types/i18n';
 import { Dictionary } from '@/types/i18n';
+import { BlogHeading } from '@/lib/blog';
 import { useIsDesktop, usePrefersReducedMotion, useIsMobile } from '@/hooks/useMediaQuery';
 
 interface BlogPostLayoutProps {
   locale: SupportedLocale;
   dictionary: Dictionary;
   meta: BlogPostMeta;
+  headings?: BlogHeading[];
   children: React.ReactNode;
 }
 
@@ -25,6 +29,7 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
   locale,
   dictionary,
   meta,
+  headings = [],
   children,
 }) => {
   const { blogPage, nav, footer } = dictionary;
@@ -127,10 +132,50 @@ const BlogPostLayout: React.FC<BlogPostLayoutProps> = ({
                     </div>
                   )}
 
+                  {/* Inline "On this page" index */}
+                  <BlogTableOfContents
+                    headings={headings}
+                    label={ui.tableOfContents || 'On this page'}
+                  />
+
                   {/* MDX Content */}
                   <article className="prose-blog">
                     {children}
                   </article>
+
+                  {/* FAQ accordion (matches portfolio FAQ style), driven by meta.faq */}
+                  {meta.faq && meta.faq.length > 0 && (
+                    <BlogFAQ faqs={meta.faq} title={ui.faqTitle || 'Frequently asked questions'} />
+                  )}
+
+                  {/* Cross-post note */}
+                  {(meta.crossPosts?.devto || meta.crossPosts?.medium) && (
+                    <p className="mt-10 sm:mt-12 pt-6 border-t border-border-subtle text-xs sm:text-sm text-text-muted">
+                      {ui.alsoPublishedOn || 'Also published on'}{' '}
+                      {meta.crossPosts?.devto && (
+                        <a
+                          href={meta.crossPosts.devto}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-text-secondary underline underline-offset-4 decoration-white/30 hover:text-text-primary hover:decoration-white/60 transition-colors"
+                        >
+                          Dev.to
+                        </a>
+                      )}
+                      {meta.crossPosts?.devto && meta.crossPosts?.medium && ' & '}
+                      {meta.crossPosts?.medium && (
+                        <a
+                          href={meta.crossPosts.medium}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-text-secondary underline underline-offset-4 decoration-white/30 hover:text-text-primary hover:decoration-white/60 transition-colors"
+                        >
+                          Medium
+                        </a>
+                      )}
+                      .
+                    </p>
+                  )}
                 </div>
               </div>
             </motion.div>

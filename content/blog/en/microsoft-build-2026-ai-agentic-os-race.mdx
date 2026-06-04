@@ -1,68 +1,114 @@
 export const metadata = {
-  title: "Microsoft Build 2026 AI and the Agentic OS Race | Max Mendes",
+  title: "Microsoft Build 2026: Windows as an AI Agent Runtime | Max Mendes",
   slug: "microsoft-build-2026-ai-agentic-os-race",
-  metaDescription: "Microsoft Build 2026 AI showed the real shift: operating systems becoming agent runtimes, not chatbot shells. Max Mendes, +48 502 742 941.",
-  keywords: ["Microsoft Build 2026 AI", "agentic OS", "Windows AI agents", "Microsoft Execution Containers", "Project Solara", "AI automation systems"],
-  ogTitle: "Microsoft Build 2026 proves the agentic OS race is on",
-  h1: "Microsoft Build 2026 Proves the Agentic OS Race Is On",
+  metaDescription: "Microsoft Build 2026 reframed Windows as a runtime for AI agents: MXC sandboxes, seven MAI models, Surface RTX Spark, and Project Solara. A developer's read.",
+  keywords: ["Microsoft Build 2026", "what is an agentic operating system", "agentic OS", "Windows AI agents", "AI agent runtime", "how Microsoft secures AI agents", "Microsoft Execution Containers", "MXC AI sandbox", "Project Solara", "Surface RTX Spark"],
+  ogTitle: "Microsoft Build 2026: Windows Wants to Be the AI Agent Runtime",
+  h1: "Microsoft Build 2026: Windows Wants to Be the Operating System for AI Agents",
   author: "Max Mendes",
   datePublished: "2026-06-04",
+  dateModified: "2026-06-04",
   tags: ["AI", "Microsoft", "Windows", "Automation"],
   image: "/blog/microsoft-build-2026-agentic-os.webp",
-  excerpt: "Microsoft did not just announce more AI features at Build 2026. It showed that the next platform fight is about who owns the runtime, guardrails, and local compute for agents.",
-  readingTime: "4 min read",
+  excerpt: "Microsoft Build 2026 was not really about better Copilot. It was about turning the operating system into a controlled runtime for AI agents, with a security sandbox, local models, and new hardware to match.",
+  readingTime: "8 min read",
   hrefLang: {
     en: "/en/blog/microsoft-build-2026-ai-agentic-os-race",
-    pl: "/pl/artykuly/microsoft-build-2026-ai-era-agentowego-windows"
+    pl: "/pl/artykuly/microsoft-build-2026-windows-dla-agentow-ai"
   },
   cta: {
     title: "Need AI workflows that survive outside the demo?",
     description: "I build web apps, internal tools, and AI automations with guardrails, real integrations, and boring operational reliability.",
     primaryButton: "Start a project",
     secondaryButton: "See my AI work"
-  }
+  },
+  crossPosts: {
+    devto: "https://dev.to/maxmendes91/microsoft-build-2026-windows-wants-to-be-the-operating-system-for-ai-agents-59kl"
+  },
+  faq: [
+    {
+      question: "What does Microsoft mean by an agentic operating system?",
+      answer: "It means the OS stops being a passive host for apps and becomes a managed runtime that launches AI agents, enforces what they can touch, and watches them while they run. At [Build 2026](https://news.microsoft.com/build-2026/) Microsoft framed Windows as that execution layer, not just Windows with a chatbot bolted on."
+    },
+    {
+      question: "What is Microsoft Execution Containers (MXC) and how does it secure AI agents?",
+      answer: "MXC is an [OS-level sandbox](https://blogs.windows.com/windowsdeveloper/2026/06/02/windows-platform-security-for-ai-agents/) for AI agents on Windows and WSL. It isolates an agent, limits the files, tools, and network it can reach, and logs its actions. It is the same [runtime blind spot in AI agent security](/en/blog/ai-agent-security-runtime-blind-spot) I have written about, now handled at the operating system level."
+    },
+    {
+      question: "Is Project Solara built on Windows?",
+      answer: "No, and this trips up a lot of recaps. [Project Solara](https://commandline.microsoft.com/project-solara-build-2026/) is Microsoft's platform for agent-first devices, but it runs on MDEP, an enterprise Android base, not on Windows. Windows is the developer and runtime story (MXC, RTX Spark, local models); Solara is a separate device bet."
+    },
+    {
+      question: "What is the Surface RTX Spark Dev Box and who is it for?",
+      answer: "It is an [NVIDIA-powered mini PC](https://www.tomshardware.com/desktops/mini-pcs/microsoft-debuts-surface-rtx-spark-dev-box-nvidia-powered-mini-pc-helps-devs-get-ready-for-an-agentic-windows) Microsoft showed for local AI work, with up to roughly one petaflop of AI compute and 128 GB of unified memory. It is aimed at developers who want to run and test agents and local models on-device instead of paying for cloud GPUs on every iteration."
+    },
+    {
+      question: "Do you need Windows to build production AI agents in 2026?",
+      answer: "No. The patterns Microsoft is selling (isolation, policy, observability) are platform-independent and you can build them on macOS, Linux, or cloud today. Build 2026 just made them first-class on Windows. When I ship [AI automation](/en/services/ai-integration) for clients I care about the guardrails, not the logo on the box."
+    },
+    {
+      question: "What does Build 2026 change for a small business buying AI automation?",
+      answer: "The bar moved from can it answer to can it run safely and repeatedly. Vendors will lean on MXC-style sandboxing as a trust signal. If you are commissioning AI work, ask how the agent is contained and logged, not just which model it uses. If that conversation is useful, [get in touch](/en/contact)."
+    }
+  ]
 }
 
-# Microsoft Build 2026 Proves the Agentic OS Race Is On
+# Microsoft Build 2026: Windows Wants to Be the Operating System for AI Agents
 
-[Microsoft Build 2026](https://news.microsoft.com/build-2026/) was supposed to be another big AI event. It was, but not in the way most recap posts are framing it. The real story in Microsoft Build 2026 AI news is not better chat. It is that operating systems are becoming agent runtimes.
+**TL;DR:** Microsoft Build 2026 was not a Copilot upgrade event. The real announcement was structural: Windows is being rebuilt as a controlled runtime for AI agents. The pieces that matter are MXC (an OS-level security sandbox for agents), seven new in-house MAI models plus on-device Aion models, the Surface RTX Spark Dev Box for local compute, and Project Solara for agent-first devices. The model is no longer the product. The execution layer around it is.
 
-I spend a lot of my week building agent workflows, research pipelines, and automation systems. From that angle, the interesting part of Build was not another Copilot surface. It was Microsoft trying to define the layer underneath, containment, identity, local compute, and long-running execution.
+I spend most of my week building agent workflows, research pipelines, and automation that has to keep running after the demo is over. So when I read the [Microsoft Build 2026](https://news.microsoft.com/build-2026/) announcements, I skipped the keynote highlight reel and went straight to one question: what is Microsoft doing about the parts that actually break in production? The answer turned out to be the whole story.
 
-## What most coverage is missing
+## What Microsoft actually shipped at Build 2026
 
-Most roundups focused on the shiny parts, [Project Solara](https://blogs.windows.com/windowsdeveloper/2026/06/02/build-2026-furthering-windows-as-the-trusted-platform-for-development/), Autopilots, new MAI models, and the Surface RTX Spark hardware. Fair enough, those are easy headlines.
+Strip away the stage lighting and Build 2026 was a coordinated bet on agents needing a real home. Here is what was announced, and why each piece matters if you build things rather than tweet about them.
 
-What they mostly missed is the pattern connecting them. Microsoft is stitching together three things that usually live in separate conversations: agent interfaces, security boundaries, and local hardware. That matters more than any single demo.
+| Announcement | What it is | Why it matters for agents |
+|---|---|---|
+| Microsoft Execution Containers (MXC) | An OS-level, policy-driven sandbox for agents on Windows and WSL | Containment, identity, and logging become a system service instead of something every team reinvents |
+| Seven new MAI models | Microsoft's own model family (reasoning, code, image, voice, transcription) | Less dependence on a single external provider, more control over cost and routing |
+| Aion 1.0 Instruct and Plan | On-device small language models for Windows 11 | Agents can do real work locally, without a round trip to the cloud for every step |
+| Surface RTX Spark Dev Box | NVIDIA-powered mini PC, up to ~1 petaflop, 128 GB unified memory | Local hardware to actually run and test agents and models on-device |
+| Project Solara | A platform for agent-first devices (on MDEP, an Android base) | A glimpse of hardware where agents, not apps, are the primary interface |
 
-When I run automation in production, the hard part is never getting the model to answer. The hard part is deciding what it can touch, how long it can run, what happens when it fails, and how much of the workflow should stay local. That is why [Microsoft Execution Containers](https://blogs.windows.com/windowsdeveloper/2026/06/02/windows-platform-security-for-ai-agents/) stood out more to me than the flashier announcements.
+Sources: the [Windows developer platform recap](https://blogs.windows.com/windowsdeveloper/2026/06/02/build-2026-furthering-windows-as-the-trusted-platform-for-development/), [CNBC on the new MAI models](https://www.cnbc.com/2026/06/02/microsoft-unveils-new-ai-models-lessen-reliance-on-openai-lower-costs.html), and [Tom's Hardware on the RTX Spark Dev Box](https://www.tomshardware.com/desktops/mini-pcs/microsoft-debuts-surface-rtx-spark-dev-box-nvidia-powered-mini-pc-helps-devs-get-ready-for-an-agentic-windows).
 
-## What Microsoft Build 2026 AI actually revealed
+Look at that list as a set, not a pile. Runtime, models, local compute, and a device vision. That combination is the point.
 
-Microsoft is making a bet that the next valuable platform is not just Windows plus AI features. It is Windows as a managed environment for agents.
+## What does Microsoft mean by an "agentic OS"?
 
-That is a bigger shift than it sounds. For years, the OS mostly disappeared behind browser tabs, cloud dashboards, and APIs. Agents reverse that a bit. If software is going to read files, call tools, watch inboxes, trigger workflows, and keep running while you do other work, then the operating system matters again.
+For most of the last decade the operating system disappeared. It hid behind browser tabs, cloud dashboards, and APIs. Nobody cared whether their SaaS ran on Windows or Linux because the OS was just a launcher for Chrome.
 
-You need policy. You need isolation. You need observability. You need a clean story for local versus cloud execution. Microsoft showed all of that in one place. [Project Solara](https://aka.ms/ProjectSolara) gives the vision piece. MXC gives the trust boundary. RTX Spark and the new on-device models give the local compute story.
+Agents quietly reverse that. The moment software starts reading your files, calling tools, watching an inbox, and running for twenty minutes while you do something else, the question of where it runs and what it is allowed to do comes straight back. You need policy. You need isolation. You need a record of what happened. You need a clean line between what runs locally and what goes to the cloud.
 
-That combination is why I think this was an “agentic OS” event, not just an AI keynote.
+That is what Microsoft means by an agentic OS: the system stops being a passive host and becomes the thing that launches agents, fences them in, and watches them. Build 2026 was the first time I saw all four of those needs answered in one place by one vendor.
 
-## Who wins, who loses
+## Why agent security became the real headline
 
-Developers building real agent systems win if these primitives become usable fast. Enterprises with huge Windows fleets also win, because they want agents with guardrails, not agent chaos.
+The announcement I keep coming back to is [MXC, the OS-level sandbox for AI agents](https://blogs.windows.com/windowsdeveloper/2026/06/02/windows-platform-security-for-ai-agents/). Microsoft's own framing is blunt: agents are no longer just answering questions, they are taking actions across systems with increasing autonomy. MXC is described as a cross-platform, policy-driven execution layer for agents on Windows and WSL, and it launched with serious partners already wired in, including OpenAI, NVIDIA, GitHub Copilot CLI, Claude Code, Manus, and Hermes. [VentureBeat covered it](https://venturebeat.com/security/microsoft-launches-mxc-an-os-level-sandbox-for-ai-agents-with-openai-and-nvidia-already-on-board) as an OS-level sandbox, which is exactly the right description.
 
-The losers are the thin wrapper products that only add a chat box and call themselves agent platforms. If the OS, hardware, and security layers become first-class, then a lot of that surface-level SaaS gets squeezed.
+This matters because the hard part of automation was never getting the model to respond. The hard part is deciding what it can touch, how long it can run, what happens when it fails, and how you prove afterward what it did. I wrote a whole piece on this, [the runtime blind spot in AI agent security](/en/blog/ai-agent-security-runtime-blind-spot), and MXC is Microsoft trying to close that gap at the operating system level instead of leaving every developer to bolt on their own guardrails.
 
-I also think this raises the bar for anyone building [AI integrations](/en/services/ai-integration) or [SaaS web apps](/en/services/saas-web-apps). The question is no longer “can you call a model?” It is “can you run a workflow safely, repeatedly, and with enough control that a business will trust it?”
+There is a connection to the plumbing too. Agents are only useful when they can reach tools and data, which is what protocols like [MCP](/en/blog/mcp-usb-port-for-ai-tools) standardize. Give agents a clean way to connect, and the very next question is how you stop them connecting to the wrong thing. MXC is the answer to that second question.
 
-## My take
+## Is Project Solara just Windows with AI?
 
-I like this direction because it is closer to the real problems I keep hitting. The demos are still demos, and I am always suspicious when big companies pretend the hard parts are solved. But this time I think Microsoft pointed at the right hard parts.
+Short answer: no, and this is where a lot of the coverage gets sloppy. [Project Solara](https://commandline.microsoft.com/project-solara-build-2026/) is Microsoft's vision for agent-first devices, where agents rather than apps are the primary surface. Steven Bathiche's framing is that the next platform shift is from apps to agents, and Solara is the hardware concept built around that idea.
 
-If Microsoft Build 2026 AI means anything, it is that the next battle is for the execution layer around agents, not just the model slot inside them. That is a much more important race.
+But Solara does not run on Windows. It runs on MDEP, an enterprise Android base. [GeekWire's breakdown](https://www.geekwire.com/2026/inside-microsofts-project-solara-a-new-platform-for-devices-that-run-ai-agents-instead-of-apps/) is worth reading because it makes the split clear. Windows is the developer and runtime story, MXC plus RTX Spark plus local models. Solara is a separate device bet. If you collapse the two into "Windows is now an agent phone," you misread what Microsoft is doing. They are hedging across two platforms, not betting everything on one.
 
-What I will watch next is whether developers actually get tools that feel practical, not ceremonial. Good primitives beat keynote theatre every time.
+## Who wins and who gets squeezed
 
-I’ll write more as this evolves.
+Developers building real agent systems win, but only if these primitives become usable quickly instead of staying behind preview waitlists. Enterprises sitting on huge Windows fleets win too, because what they want is agents with brakes, not agent chaos spreading across managed machines.
 
-*Sources: [Microsoft Build 2026](https://news.microsoft.com/build-2026/), [Build 2026: Furthering Windows as the trusted platform for development](https://blogs.windows.com/windowsdeveloper/2026/06/02/build-2026-furthering-windows-as-the-trusted-platform-for-development/), [Windows platform security for AI agents](https://blogs.windows.com/windowsdeveloper/2026/06/02/windows-platform-security-for-ai-agents/).*
+The squeeze lands on thin wrapper products. If sandboxing, identity, and observability become first-class parts of the operating system, then a SaaS whose entire value was "we put a chat box in front of an API" has a much weaker story. The defensible work moves up a level, to whoever can run a workflow safely, repeatedly, and with enough control that a business will actually trust it.
+
+## What this means if you actually ship AI for a business
+
+The bar moved. For two years the implicit question behind every AI pitch was "can you call a model?" That question is now boring, because everyone can. The real question is "can you run this safely, repeatedly, and with enough control that I would put my company's data near it?"
+
+That is the exact shift I build around. When I deliver [AI integration](/en/services/ai-integration) or a [SaaS web app](/en/services/saas-web-apps), the model is maybe ten percent of the job. The rest is the unglamorous part Build 2026 finally put on stage: what the agent can access, how it is contained, what happens on failure, and what you can prove afterward. It is the same discipline I used building [FlowMate](/en/projects/flowmate), a now-paused app for AI email handling, where every action had to be predictable, not just clever.
+
+So my honest read on Build 2026 is positive, with one caveat. Microsoft pointed at the right hard problems for once, instead of pretending the hard parts are solved. Now the question is whether developers get tools that feel practical rather than ceremonial. Good primitives beat keynote theatre every time, and this is the first agent event in a while where the primitives looked like the main act.
+
+*Sources: [Microsoft Build 2026](https://news.microsoft.com/build-2026/), [Furthering Windows as the trusted platform for development](https://blogs.windows.com/windowsdeveloper/2026/06/02/build-2026-furthering-windows-as-the-trusted-platform-for-development/), [Windows platform security for AI agents](https://blogs.windows.com/windowsdeveloper/2026/06/02/windows-platform-security-for-ai-agents/), [Project Solara on Command Line](https://commandline.microsoft.com/project-solara-build-2026/), [VentureBeat on MXC](https://venturebeat.com/security/microsoft-launches-mxc-an-os-level-sandbox-for-ai-agents-with-openai-and-nvidia-already-on-board), [CNBC on the MAI models](https://www.cnbc.com/2026/06/02/microsoft-unveils-new-ai-models-lessen-reliance-on-openai-lower-costs.html).*

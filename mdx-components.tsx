@@ -1,5 +1,6 @@
 import type { MDXComponents } from 'mdx/types';
 import Link from 'next/link';
+import { slugify, nodeToText } from '@/lib/slug';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -8,13 +9,13 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </h1>
     ),
-    h2: ({ children }) => (
-      <h2 className="text-xl sm:text-2xl md:text-3xl font-normal tracking-tight text-text-primary mt-10 sm:mt-12 mb-4 sm:mb-5">
+    h2: ({ children, id }) => (
+      <h2 id={id || slugify(nodeToText(children))} className="scroll-mt-28 text-xl sm:text-2xl md:text-3xl font-normal tracking-tight text-text-primary mt-10 sm:mt-12 mb-4 sm:mb-5">
         {children}
       </h2>
     ),
-    h3: ({ children }) => (
-      <h3 className="text-lg sm:text-xl font-normal tracking-tight text-text-primary mt-8 mb-3">
+    h3: ({ children, id }) => (
+      <h3 id={id || slugify(nodeToText(children))} className="scroll-mt-28 text-lg sm:text-xl font-normal tracking-tight text-text-primary mt-8 mb-3">
         {children}
       </h3>
     ),
@@ -79,6 +80,31 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     img: ({ src, alt }) => (
       // eslint-disable-next-line @next/next/no-img-element
       <img src={src} alt={alt || ''} className="rounded-xl border border-border my-6 sm:my-8 w-full" />
+    ),
+    table: ({ children }) => (
+      <div className="not-prose my-6 sm:my-8 overflow-x-auto rounded-xl border border-border bg-[#0A0A0A]/60">
+        <table className="w-full table-fixed text-left text-[11px] leading-snug sm:text-sm sm:leading-normal border-collapse">
+          {children}
+        </table>
+      </div>
+    ),
+    thead: ({ children }) => (
+      <thead className="bg-white/[0.07] text-text-primary">{children}</thead>
+    ),
+    tbody: ({ children }) => (
+      <tbody className="[&>tr:nth-child(even)]:bg-white/[0.02] [&>tr:last-child>td]:border-0">
+        {children}
+      </tbody>
+    ),
+    th: ({ children }) => (
+      <th className="px-2 sm:px-4 py-2 sm:py-3 font-medium border-b border-border align-top break-words hyphens-auto">
+        {children}
+      </th>
+    ),
+    td: ({ children }) => (
+      <td className="px-2 sm:px-4 py-2 sm:py-3 text-text-secondary font-light border-b border-border-subtle align-top break-words hyphens-auto">
+        {children}
+      </td>
     ),
     ...components,
   };
