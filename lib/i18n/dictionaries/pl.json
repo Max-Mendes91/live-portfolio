@@ -1676,6 +1676,9 @@
       "tagsLabel": "Tagi",
       "noPosts": "Brak artykułów. Wróć wkrótce!",
       "backToBlog": "Wróć do artykułów",
+      "tableOfContents": "Na tej stronie",
+      "faqTitle": "Najczęstsze pytania",
+      "alsoPublishedOn": "Opublikowano także na",
       "cta": {
         "title": "Masz pomysł na projekt?",
         "description": "Porozmawiajmy o tym, jak mogę pomóc zrealizować Twój pomysł.",

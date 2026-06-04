@@ -2,8 +2,9 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getDictionary } from '@/lib/i18n/config';
 import { generateBlogPostMetadata } from '@/lib/seo/metadata';
-import { BlogPostJsonLd, BreadcrumbJsonLd } from '@/components/seo/JsonLd';
-import { getBlogPostSlugs, getBlogPost } from '@/lib/blog';
+import { BlogPostJsonLd, BreadcrumbJsonLd, FAQJsonLd } from '@/components/seo/JsonLd';
+import { getBlogPostSlugs, getBlogPost, getBlogPostHeadings } from '@/lib/blog';
+import { slugify } from '@/lib/slug';
 import BlogPostLayout from '@/components/sections/BlogPostLayout';
 
 interface PageProps {
@@ -36,6 +37,11 @@ export default async function BlogPostPage({ params }: PageProps) {
   }
 
   const { meta, Content } = post;
+  const headings = getBlogPostHeadings('en', slug);
+  const faqTitle = dictionary.blogPage?.ui.faqTitle;
+  if (meta.faq && meta.faq.length > 0 && faqTitle) {
+    headings.push({ id: slugify(faqTitle), text: faqTitle });
+  }
 
   const breadcrumbItems = [
     { name: 'Home', url: '/en' },
@@ -47,7 +53,8 @@ export default async function BlogPostPage({ params }: PageProps) {
     <>
       <BlogPostJsonLd postMeta={meta} locale="en" />
       <BreadcrumbJsonLd items={breadcrumbItems} />
-      <BlogPostLayout locale="en" dictionary={dictionary} meta={meta}>
+      {meta.faq && meta.faq.length > 0 && <FAQJsonLd faqs={meta.faq} />}
+      <BlogPostLayout locale="en" dictionary={dictionary} meta={meta} headings={headings}>
         <Content />
       </BlogPostLayout>
     </>
