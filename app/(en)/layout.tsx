@@ -2,7 +2,6 @@ import type { Viewport } from 'next';
 import { Outfit } from 'next/font/google';
 import '../globals.css';
 import { viewport as viewportConfig } from '@/lib/seo/metadata';
-import { HREFLANG_CONFIG, getFullUrl } from '@/lib/seo/config';
 import { getDictionary } from '@/lib/i18n/config';
 import CookieConsent from '@/components/CookieConsent';
 import Analytics from '@/components/Analytics';
@@ -26,15 +25,6 @@ export default async function EnglishRootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* hreflang tags for multi-regional targeting */}
-        {HREFLANG_CONFIG.map(({ hreflang, href }) => (
-          <link
-            key={hreflang}
-            rel="alternate"
-            hrefLang={hreflang}
-            href={getFullUrl(href)}
-          />
-        ))}
         {/* Favicon - explicit for Google discovery */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
