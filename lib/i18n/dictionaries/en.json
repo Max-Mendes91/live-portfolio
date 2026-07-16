@@ -316,6 +316,35 @@
         "caseStudyCta": "Read Case Study"
       },
       {
+        "id": "besteats",
+        "title": "BestEats: Food Ranking App for Portugal",
+        "role": "Contributor Role",
+        "shortDescription": "Live in Portugal. One best dish per restaurant, decided by votes, not manipulated stars.",
+        "description": "Food ranking platform for Portugal where users pick one best dish per restaurant from a curated catalog. No reviews, just votes. I contribute code and the AI-generated food illustrations under senior code review, working with Bun, TanStack Start and Elysia.",
+        "metric": "Live in Production · Portugal · Senior Code Review",
+        "href": "/en/projects",
+        "externalUrl": "https://besteats.pt/",
+        "cta": "View Project",
+        "externalCta": "Visit Live Site",
+        "tags": ["Food Tech", "Community", "Full-Stack"],
+        "tech": ["Bun", "React 19", "TanStack Start", "Elysia", "PostgreSQL", "Better-Auth"],
+        "image": "/projects/besteats-landing.webp"
+      },
+      {
+        "id": "fennaro",
+        "title": "Fennaro: Dog Playmate Matching App",
+        "shortDescription": "Solo-built mobile app matching big-breed dogs with compatible playmates nearby.",
+        "description": "Mobile app helping owners of big and working-breed dogs find size-, temperament- and energy-matched playmates nearby. Built solo end to end: Expo app, Hono/oRPC API, PostGIS geo-matching, moderation dashboard, push notifications and GDPR flows. Trilingual EN/PL/PT-PT.",
+        "metric": "Built Solo · Trilingual · Expo + PostGIS",
+        "href": "/en/projects",
+        "externalUrl": "https://fennaro.com",
+        "cta": "View Project",
+        "externalCta": "Visit Live Site",
+        "tags": ["Mobile App", "Full-Stack", "Geo"],
+        "tech": ["Expo", "React Native", "Hono", "oRPC", "Neon PostGIS", "Drizzle", "Better Auth"],
+        "image": "/projects/fennaro-landing.webp"
+      },
+      {
         "id": "markmind",
         "title": "MarkMind V2: AI Bookmark Manager",
         "role": "Contributor Role",
