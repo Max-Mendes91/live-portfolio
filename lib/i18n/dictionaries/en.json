@@ -327,7 +327,7 @@
         "cta": "View Project",
         "externalCta": "Visit Live Site",
         "tags": ["Food Tech", "Community", "Full-Stack"],
-        "tech": ["Bun", "React 19", "TanStack Start", "Elysia", "PostgreSQL", "Better-Auth"],
+        "tech": ["Bun", "React 19", "TanStack Start", "Elysia", "PostgreSQL", "Better Auth"],
         "image": "/projects/besteats-landing.webp"
       },
       {
