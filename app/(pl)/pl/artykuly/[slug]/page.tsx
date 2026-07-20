@@ -12,7 +12,7 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const slugs = getBlogPostSlugs('pl');
+  const slugs = await getBlogPostSlugs('pl');
   return slugs.map((slug) => ({ slug }));
 }
 
@@ -37,7 +37,7 @@ export default async function ArtykulPostPage({ params }: PageProps) {
   }
 
   const { meta, Content } = post;
-  const headings = getBlogPostHeadings('pl', slug);
+  const headings = await getBlogPostHeadings('pl', slug);
   const faqTitle = dictionary.blogPage?.ui.faqTitle;
   if (meta.faq && meta.faq.length > 0 && faqTitle) {
     headings.push({ id: slugify(faqTitle), text: faqTitle });

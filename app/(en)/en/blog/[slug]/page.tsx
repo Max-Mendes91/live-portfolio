@@ -12,7 +12,7 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  const slugs = getBlogPostSlugs('en');
+  const slugs = await getBlogPostSlugs('en');
   return slugs.map((slug) => ({ slug }));
 }
 
@@ -37,7 +37,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   }
 
   const { meta, Content } = post;
-  const headings = getBlogPostHeadings('en', slug);
+  const headings = await getBlogPostHeadings('en', slug);
   const faqTitle = dictionary.blogPage?.ui.faqTitle;
   if (meta.faq && meta.faq.length > 0 && faqTitle) {
     headings.push({ id: slugify(faqTitle), text: faqTitle });
