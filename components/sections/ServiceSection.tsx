@@ -15,6 +15,8 @@ import {
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import PulseBadge from '@/components/ui/PulseBadge';
 import { ServicesDict } from '@/types/i18n';
+import { SupportedLocale } from '@/types/seo';
+import { getLocalizedUrl } from '@/lib/i18n/routes';
 import {
   ReactIcon,
   TypeScriptIcon,
@@ -37,6 +39,7 @@ const ICONS: Record<string, LucideIcon> = {
 
 interface ServiceSectionProps {
   dictionary: ServicesDict;
+  locale?: SupportedLocale;
 }
 
 // Code snippet with syntax highlighting
@@ -211,7 +214,7 @@ const MarqueeRow = memo<{ items: string[]; direction: 'left' | 'right' }>(({ ite
 });
 MarqueeRow.displayName = 'MarqueeRow';
 
-const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
+const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary, locale = 'en' }) => {
   const { hero, pills, primaryButton, secondaryButton, cards, marquee1, marquee2 } = dictionary;
   const containerRef = useScrollAnimationGroup();
   const isDesktop = useIsDesktop();
@@ -261,8 +264,10 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ dictionary }) => {
               </div>
 
               <div className="flex flex-row items-start gap-2 sm:gap-3 md:gap-4">
-                <CornerGlowButton href="/en/services">{primaryButton}</CornerGlowButton>
-                <CornerGlowButton href="/en/projects">{secondaryButton}</CornerGlowButton>
+                {/* Locale-aware: the PL homepage must link to /pl/uslugi and
+                    /pl/projekty, not leak its link equity to the EN pages */}
+                <CornerGlowButton href={getLocalizedUrl(locale, 'services')}>{primaryButton}</CornerGlowButton>
+                <CornerGlowButton href={getLocalizedUrl(locale, 'projects')}>{secondaryButton}</CornerGlowButton>
               </div>
             </div>
           </div>

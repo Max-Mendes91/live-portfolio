@@ -152,7 +152,7 @@ export default function HomeClient({ locale, dictionary, skipIntro = false }: Ho
         <Hero dictionary={dictionary.hero} isReady={heroReady} locale={locale} />
         <AboutMe dictionary={dictionary.about} />
         <WorkGrid dictionary={dictionary.workGrid} />
-        <ServiceSection dictionary={dictionary.services} />
+        <ServiceSection dictionary={dictionary.services} locale={locale} />
         <ProcessSection dictionary={dictionary.process} />
         <FAQTeaserSection dictionary={dictionary.faqTeaser} />
         {/* Spacer for footer reveal - creates scroll space so footer can be fully revealed */}
