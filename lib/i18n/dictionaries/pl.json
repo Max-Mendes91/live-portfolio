@@ -307,21 +307,22 @@
     "viewProject": "Zobacz Projekt",
     "projects": [
       {
-        "id": "flowmate",
-        "title": "FlowMate: Platforma AI do Zarządzania Emailami",
-        "shortDescription": "SaaS zaprojektowany i napisany przeze mnie od zera, by nauczyć się architektury produkcyjnej. Strona startowa działa; sam produkt jest wstrzymany.",
-        "description": "SaaS, który zbudowałem samodzielnie od początku do końca, by nauczyć się architektury produkcyjnej: bezpieczna autoryzacja, przetwarzanie asynchroniczne i integracje AI (Gmail, Outlook, Slack, Telegram). Produkt jest obecnie wstrzymany; strona startowa działa jako demo.",
-        "metric": "300+ godzin pracy · 6 miesięcy solo · Wstrzymany (strona działa)",
+        "id": "fennaro",
+        "title": "Fennaro: Aplikacja do Dobierania Psich Kompanów",
+        "shortDescription": "Zbudowana solo aplikacja, która pomaga właścicielom dużych psów znaleźć w okolicy spokojne, dopasowane spacery. Działa jako instalowalna aplikacja PWA.",
+        "description": "Aplikacja do dobierania psów, którą zbudowałem solo od początku do końca, dla właścicieli dużych i pracujących ras, którym trudno znaleźć spokojne, dopasowane spacery. Pokazuje każdego psa w okolicy i szereguje go według kompatybilności w parze, zamiast twardo odfiltrowywać kogokolwiek, i nigdy nie przechowuje dokładnego adresu domowego. PWA na Expo, API Hono/oRPC, dopasowanie geograficzne Neon PostGIS, Better Auth, panel moderacji i pełne procesy RODO. Dwujęzyczny start w Polsce.",
+        "metric": "Zbudowana Solo · Instalowalna PWA · Start w Polsce",
         "href": "/pl/projekty",
-        "externalUrl": "https://www.flowmate.click/",
+        "externalUrl": "https://fennaro.com/pl/",
         "cta": "Zobacz Projekt",
         "externalCta": "Zobacz Stronę",
-        "status": "Wstrzymany",
-        "tags": ["SaaS", "AI", "Full-Stack"],
-        "tech": ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "OpenAI", "Stripe"],
-        "image": "/projects/flowmate-landing.webp",
-        "caseStudyHref": "/pl/projekty/flowmate",
-        "caseStudyCta": "Zobacz Realizację"
+        "secondaryUrl": "https://app.fennaro.com/",
+        "secondaryCta": "Wypróbuj Aplikację",
+        "tags": ["Aplikacja Mobilna", "Full-Stack", "Geo"],
+        "tech": ["Next.js", "Expo PWA", "Hono", "oRPC", "Neon PostGIS", "Drizzle", "Better Auth"],
+        "image": "/projects/fennaro-landing.webp",
+        "caseStudyHref": "/pl/artykuly/najtrudniejsze-w-aplikacji-dla-psow-to-nie-kod",
+        "caseStudyCta": "Przeczytaj Historię"
       },
       {
         "id": "besteats",
@@ -339,20 +340,6 @@
         "image": "/projects/besteats-landing.webp"
       },
       {
-        "id": "fennaro",
-        "title": "Fennaro: Aplikacja do Dobierania Psich Kompanów",
-        "shortDescription": "Zbudowana solo aplikacja mobilna łącząca psy dużych ras z pasującymi kompanami w okolicy.",
-        "description": "Aplikacja mobilna pomagająca właścicielom psów dużych i pracujących ras znaleźć w okolicy kompanów dopasowanych rozmiarem, temperamentem i energią. Zbudowana solo od początku do końca: aplikacja Expo, API Hono/oRPC, dopasowanie geograficzne PostGIS, panel moderacji, powiadomienia push i procesy RODO. Trójjęzyczna EN/PL/PT-PT.",
-        "metric": "Zbudowana Solo · Trójjęzyczna · Expo + PostGIS",
-        "href": "/pl/projekty",
-        "externalUrl": "https://fennaro.com",
-        "cta": "Zobacz Projekt",
-        "externalCta": "Zobacz Stronę",
-        "tags": ["Aplikacja Mobilna", "Full-Stack", "Geo"],
-        "tech": ["Expo", "React Native", "Hono", "oRPC", "Neon PostGIS", "Drizzle", "Better Auth"],
-        "image": "/projects/fennaro-landing.webp"
-      },
-      {
         "id": "markmind",
         "title": "MarkMind V2: Menedżer Zakładek AI",
         "role": "Rola Współtwórcy",
@@ -368,6 +355,23 @@
         "tags": ["Rozszerzenie Chrome", "AI", "Produktywność"],
         "tech": ["React", "TypeScript", "Chrome APIs", "Integracja AI"],
         "image": "/projects/markmind-v2-landing.webp"
+      },
+      {
+        "id": "flowmate",
+        "title": "FlowMate: Platforma AI do Zarządzania Emailami",
+        "shortDescription": "SaaS zaprojektowany i napisany przeze mnie od zera, by nauczyć się architektury produkcyjnej. Strona startowa działa; sam produkt jest wstrzymany.",
+        "description": "SaaS, który zbudowałem samodzielnie od początku do końca, by nauczyć się architektury produkcyjnej: bezpieczna autoryzacja, przetwarzanie asynchroniczne i integracje AI (Gmail, Outlook, Slack, Telegram). Produkt jest obecnie wstrzymany; strona startowa działa jako demo.",
+        "metric": "300+ godzin pracy · 6 miesięcy solo · Wstrzymany (strona działa)",
+        "href": "/pl/projekty",
+        "externalUrl": "https://www.flowmate.click/",
+        "cta": "Zobacz Projekt",
+        "externalCta": "Zobacz Stronę",
+        "status": "Wstrzymany",
+        "tags": ["SaaS", "AI", "Full-Stack"],
+        "tech": ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "OpenAI", "Stripe"],
+        "image": "/projects/flowmate-landing.webp",
+        "caseStudyHref": "/pl/projekty/flowmate",
+        "caseStudyCta": "Zobacz Realizację"
       },
       {
         "id": "portfolio",

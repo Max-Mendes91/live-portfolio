@@ -1,0 +1,135 @@
+export const metadata = {
+  title: "Najtrudniejsze w aplikacji dla psów nie było kodowanie | Max Mendes",
+  slug: "najtrudniejsze-w-aplikacji-dla-psow-to-nie-kod",
+  metaDescription: "Zbudowałem solo Fennaro, aplikację kojarzącą psy dużych ras. Najtrudniejszy nie był kod. Były to kompatybilność w parze, prywatność lokalizacji i start produktu sieciowego.",
+  keywords: ["budowa aplikacji dla psów", "case study aplikacji", "kompatybilność psów", "prywatność lokalizacji", "PWA case study", "socjalizacja dużych psów", "produkt sieciowy start", "programista solo"],
+  ogTitle: "Najtrudniejsze w aplikacji dla psów nie było kodowanie",
+  h1: "Najtrudniejsze w aplikacji dla psów nie było kodowanie",
+  author: "Max Mendes",
+  datePublished: "2026-07-20",
+  dateModified: "2026-07-20",
+  tags: ["Case Study", "Full-Stack", "Produkt"],
+  image: "/blog/fennaro-hero.webp",
+  excerpt: "Zbudowałem solo, od początku do końca, aplikację kojarzącą psy dużych ras. Myślałem, że najtrudniejszy będzie algorytm dopasowania. Prawdziwe problemy dotyczyły ludzi, prywatności i gęstości, a największą naprawą było usunięcie kodu, który już napisałem.",
+  readingTime: "9 min czytania",
+  hrefLang: {
+    en: "/en/blog/hard-part-building-dog-matching-app",
+    pl: "/pl/artykuly/najtrudniejsze-w-aplikacji-dla-psow-to-nie-kod"
+  },
+  cta: {
+    title: "Masz pomysł na produkt, który trzeba zbudować od początku do końca?",
+    description: "Projektuję i wdrażam produkty full-stack solo, od bazy danych po start. Jeśli masz coś realnego do zbudowania, porozmawiajmy.",
+    primaryButton: "Zacznij projekt",
+    secondaryButton: "Zobacz moje realizacje"
+  },
+  faq: [
+    {
+      question: "Czym jest Fennaro?",
+      answer: "Fennaro to aplikacja, która pomaga właścicielom dużych i pracujących ras znaleźć w okolicy spokojne, dopasowane spacery. Pokazuje psy wokół Ciebie, szereguje je według tego, jak pasują do Twojego, i pozwala dwóm właścicielom umówić się na cichym miejscu. Zobacz [Fennaro](https://fennaro.com/pl/)."
+    },
+    {
+      question: "Dlaczego kompatybilność w parze zamiast filtrowania?",
+      answer: "Bo pies nie jest globalnie „towarzyski” ani „reaktywny”. To zależy, kogo spotka. Spokojny olbrzym i rozbrykany szczeniak mogą do siebie nie pasować, choć oba psy są cudowne. Kompatybilność istnieje tylko między dwoma konkretnymi psami, więc liczę ją dla każdej pary osobno i nigdy nie zapisuję jej jako stałej etykiety w profilu."
+    },
+    {
+      question: "Jak aplikacja chroni prywatność lokalizacji?",
+      answer: "Fennaro nigdy nie zapisuje dokładnego adresu domowego. Zapisuje punkt przesunięty o kilkaset metrów w losowym, ale powtarzalnym kierunku, więc wyciek bazy nie zdradzi, gdzie ktoś mieszka, a całe dopasowanie działa na tych rozmytych punktach. Odległości pokazuję zaokrąglone do kilometra."
+    },
+    {
+      question: "Fennaro to aplikacja natywna czy PWA?",
+      answer: "To instalowalna [aplikacja progresywna (PWA)](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps). Na iPhonie dodajesz ją do ekranu głównego z Safari, na Androidzie przeglądarka proponuje instalację, a na laptopie działa wprost w przeglądarce. Dzięki temu wystartowałem na wszystkich urządzeniach naraz, bez czekania na sklep z aplikacjami."
+    },
+    {
+      question: "Dlaczego start produktu sieciowego jest tak trudny?",
+      answer: "Bo działa tylko wtedy, gdy blisko siebie dołączy naraz wystarczająco dużo osób. Jeden użytkownik w pustym mieście nie widzi nikogo i odchodzi. To czyni start problemem gęstości, a nie marketingu, dlatego Fennaro rusza miasto po mieście, a nie wszędzie naraz."
+    },
+    {
+      question: "Zbudowałeś Fennaro sam?",
+      answer: "Tak. Zaprojektowałem i zbudowałem to solo, od początku do końca: baza danych, API, aplikacja, panel moderacji, model prywatności i start. Ten artykuł to szczera wersja tego, czego mnie to naprawdę nauczyło."
+    }
+  ]
+}
+
+# Najtrudniejsze w aplikacji dla psów nie było kodowanie
+
+**W skrócie:** Zbudowałem solo, od początku do końca, [Fennaro](https://fennaro.com/pl/), aplikację kojarzącą psy dużych i pracujących ras. Zakładałem, że najtrudniejszy będzie algorytm dopasowania albo mapy. Nie był. Prawdziwe problemy były ludzkie: właściciele bywają w zaprzeczeniu co do własnych psów, dokładna lokalizacja jest niebezpieczna do przechowywania, sklepy z aplikacjami stają na drodze startu, a produkt sieciowy jest bezwartościowy bez gęstości. Największą pojedynczą naprawą było usunięcie kodu kompatybilności, który już wdrożyłem.
+
+Spędziłem w tym roku kilka miesięcy, budując aplikację kojarzącą psy. Wchodząc w to, myślałem, że wyzwanie będzie techniczne. Zapytania geograficzne, wynik kompatybilności, czat na żywo, moderacja. Jestem programistą, więc oczywiście ująłem to jako problem kodu.
+
+Kod był tą łatwą częścią. Postgres z PostGIS ogarnia geografię. Drizzle ogarnia schemat. Hono i oRPC dają typowane API. Nic z tego nie spędzało mi snu z powiek. Sen odbierało mi to, co ten kod tak naprawdę reprezentował: jak psy naprawdę się dogadują, jak zapewnić ludziom bezpieczeństwo i jak doprowadzić dwie obce sobie osoby z psami do tego samego parku o tej samej porze. To jest szczera wersja tego, czego mnie to nauczyło.
+
+## Prawdziwym problemem byli ludzie, nie psy
+
+Pomysł brzmi prosto. Skojarz psy, umów spacer. Ale problem, który naprawdę rozwiązuję, jest na stronie Fennaro w jednym zdaniu: to dla psów, przed którymi ludzie przechodzą na drugą stronę ulicy.
+
+Właściciele dużych ras, Cane Corso, rottweilera, owczarka belgijskiego, żyją z konkretnym rodzajem odrzucenia. Ich pies może być spokojny i przyjazny, a i tak jest traktowany jak zagrożenie. Właściciele małych psów biorą swojego na ręce i odchodzą. W Polsce to nie jest tylko sprawa społeczna, to sprawa prawna. [Przepisy dotyczące ras uznawanych za agresywne](https://en.wikipedia.org/wiki/Breed-specific_legislation) nakładają dodatkowe pozwolenia i obowiązek kagańca na niektóre rasy, niezależnie od temperamentu konkretnego psa. Więc duży, łagodny pies zostaje sam, a jego właścicielowi kończą się miejsca na zwykły, spokojny spacer.
+
+To jest ten prawdziwy problem. Nie „nie ma na to aplikacji”. Chodzi o to, że ci właściciele zostali po cichu wypchnięci z psiego życia towarzyskiego, a aplikacja ma sens tylko wtedy, gdy to odwraca, zamiast powtarzać.
+
+I tu mnie zaskoczyło. Kiedy wgryzłem się w problem, najtrudniej było zaprojektować nie dla tych odrzucanych, tylko dla tych w zaprzeczeniu. Wielu właścicieli szczerze wierzy, że ich reaktywny pies jest „po prostu wesoły” i poradzi sobie w chaotycznym psim parku. Gdybym zbudował produkt, który wierzy w to, co właściciele mówią o własnych psach, ustawiałbym złe spotkania i ktoś zostałby ugryziony. Produkt nie mógł być ankietą z happy endem. Musiał być wobec psów szczery w sposób, w jaki ich właściciele czasem nie są.
+
+To przestawiło całość. Przestałem nazywać spotkania „zabawą”, a zacząłem nazywać je tym, czym powinny być: spokojnymi spacerami. Nie wolna amerykanka na łące. Dwoje właścicieli umawia się na ciche miejsce, żeby się przywitać. Zmiana słowa była mała. Zmiana produktu za nią, już nie.
+
+## Lekcja 1: Kompatybilność jest w parze, więc usunąłem własne filtry
+
+Moja pierwsza wersja robiła oczywistą rzecz inżynierską. Zbudowałem twarde filtry. Rozmiary musiały być w zakresie jednego kroku. Poziomy energii musiały być blisko. Pewne temperamenty miały zakaz spotkań z innymi: reaktywny pies nigdy nie powinien zobaczyć lękliwego. Jeśli dwa psy nie przechodziły reguły, nigdy się nie widziały. Czysto, bezpiecznie, gotowe.
+
+To było błędne, a spacer z prawdziwymi właścicielami psów uświadomił mi to od razu. Ich spostrzeżenie mieściło się w jednym zdaniu i rozbiło mój projekt: pies nie jest globalnie „towarzyski”. To zależy w całości od drugiego psa. Ten sam spokojny olbrzym, który przeraża nerwowego teriera, jest idealnym, stabilnym kompanem dla innego dużego psa. „Towarzyski” to nie cecha, którą da się zapisać w profilu. Ona istnieje tylko między dwoma konkretnymi psami.
+
+To właśnie znaczy kompatybilność w parze i jest odwrotnością filtra. Moje twarde reguły ukrywały dobre dopasowania, żeby zapobiec złym, a w małym mieście, gdzie dużych psów może być w sumie sześć, ukrywanie dopasowań jest zabójcze. Pusty ekran to martwy produkt.
+
+Więc usunąłem filtry. Nie złagodziłem, usunąłem. Ekran pokazuje teraz każdego psa w zasięgu i szereguje je, zamiast ukrywać. Pod spodem kompatybilność jest liczona od zera do dziesięciu dla każdej konkretnej pary, na bieżąco: rozmiar, energia, styl zabawy i wspólne cechy temperamentu. Ten wynik sortuje listę i zamienia się w prostą etykietę: świetne dopasowanie, dobre dopasowanie albo warto sprawdzić. Tam, gdzie jest realny powód do ostrożności, duża różnica rozmiaru, flaga ryzyka, aplikacja nie usuwa psa po cichu. Pokazuje małe, szczere ostrzeżenie, które właściciel musi potwierdzić, zanim w ogóle polubi.
+
+Lekcja, która została: moim odruchem jako programisty było zakodować bezpieczeństwo jako wykluczenie. Właściwą odpowiedzią było zakodować je jako informację i zostawić decyzję dwojgu ludziom. Usunięcie tego kodu filtrowania było najlepszą decyzją w całym projekcie, a wciąż był to kod, z którego byłem dumny, gdy go pisałem.
+
+## Lekcja 2: Prywatność lokalizacji bez przechowywania adresu
+
+Aplikacja „psy w okolicy” jest narzędziem do nękania, jeśli zbudujesz ją nieuważnie. Cały produkt zależy od lokalizacji, a użytkownikami są w dużej części kobiety spacerujące z dużymi psami, często same, w parkach. Gdyby moja baza kiedykolwiek wyciekła i zawierała dokładne współrzędne, wręczyłbym komuś mapę pod cudze drzwi. To było nie do przyjęcia, więc zasada, którą ustawiłem, była prosta i bezwzględna: nigdy nie przechowuj dokładnej lokalizacji. Nawet zaszyfrowanej. Po prostu nigdy jej nie miej.
+
+Naiwne rozwiązania nie wytrzymują. Zaokrąglanie współrzędnych zdradza róg siatki, w którym siedzisz. Przechowywanie prawdziwego punktu i pokazywanie tylko przybliżonego wciąż oznacza, że prawdziwy punkt czeka w bazie na wyciek. Potrzebowałem, żeby sama zapisana wartość była bezpieczna.
+
+To, na czym stanąłem, to deterministyczne rozmycie z sekretnym ziarnem, bliższe duchem [geohashowaniu](https://en.wikipedia.org/wiki/Geohash) niż zaokrąglaniu. Kiedy użytkownik ustawia swoją okolicę, biorę jego prawdziwy punkt i przesuwam go o losowe przesunięcie wewnątrz koła o promieniu około 500 metrów. Kierunek i odległość tego przesunięcia pochodzą z HMAC z kluczem złożonym z sekretu serwera i zgrubnej komórki siatki o boku około kilometra. Jedyna lokalizacja, jaką kiedykolwiek zapisuję do bazy, to ten przesunięty punkt.
+
+Wynikają z tego dwie właściwości i obie mają znaczenie:
+
+- Zrzut bazy jest bezużyteczny do znalezienia kogokolwiek. Bez sekretu serwera nie odwrócisz przesunięcia, więc wyciekły punkt to losowe miejsce kilkaset metrów od domu, a nie dom.
+- Nie da się tego uśrednić. Ponieważ przesunięcie jest deterministyczne dla danego użytkownika w danej komórce, wielokrotne odpytywanie aplikacji zawsze zwraca ten sam rozmyty punkt. Nie ma szumu do próbkowania i skasowania.
+
+Jest też ładny detal bezpieczeństwa. Kiedy ktoś przekracza granicę komórki, powiedzmy przeprowadza się, żeby uciec przed kimś, dostaje zupełnie nowe, niepowiązane przesunięcie. Starej rozmytej lokalizacji nie da się połączyć z nową. Każde zapytanie dopasowania, w tym odległość do osoby, która szuka, działa wyłącznie na tych rozmytych punktach, a odległości pokazuję zaokrąglone do kilometra, z dolną granicą jednego kilometra. Nikt nigdy nie widzi „220 metrów stąd”.
+
+Szczery przypis: to celowo obniża dokładność i się na to godzę. Produkt, który szanuje lokalizację, musi być trochę mniej dokładny niż taki, którego to nie obchodzi.
+
+## Lekcja 3: Wdrożyłem PWA, bo wąskim gardłem był sklep z aplikacjami
+
+Planowałem wypuścić normalną aplikację na Androida. Potem uderzyłem w realia zasad zamkniętych testów Google Play: potrzebujesz grupy testerów, która przez dwa tygodnie ciągle korzysta z aplikacji, zanim w ogóle wolno Ci ją opublikować. Dla produktu przed startem, bez użytkowników, to problem jajka i kury. Nie mogłem zdobyć testerów, bo nie było czego zainstalować, i nie mogłem opublikować tego do zainstalowania, bo nie miałem testerów.
+
+Więc aplikacja wychodzi jako instalowalna [aplikacja progresywna (PWA)](https://web.dev/learn/pwa/). Ten sam build działa na iPhonie dodanym do ekranu głównego z Safari, na Androidzie, który proponuje instalację, i wprost w przeglądarce na laptopie. Jedno zdanie na stronie robi teraz sporo cichej roboty: działa w Twojej przeglądarce, na telefonie albo na komputerze. To zdanie istnieje, bo PWA uczyniło je prawdą.
+
+To nie był skrót, stworzył własną robotę. Napisałem service workera ręcznie i podjąłem jedną świadomą decyzję: buforuje powłokę aplikacji do działania offline i nie buforuje ani jednej odpowiedzi z API. Na współdzielonym albo pożyczonym telefonie nie chciałem, żeby czyjeś wiadomości albo dopasowania zostawały w pamięci po zamknięciu karty. Strona marketingowa i aplikacja żyją też na osobnych domenach, [fennaro.com](https://fennaro.com/pl/) i app.fennaro.com, więc publiczne, indeksowane strony i zalogowany produkt nigdy nie dzielą źródła ani nie przeciekają do siebie.
+
+Wniosek: zasady platformy są częścią Twojej architektury, czy Ci się to podoba, czy nie. Bramka sklepu z aplikacjami nie tylko mnie opóźniła, zmieniła to, co zbudowałem, a zmiana wyszła na dobre.
+
+## Lekcja 4: Produkt sieciowy jest martwy bez gęstości
+
+To lekcja, którą zrozumiałem ostatnią i odczułem najmocniej. Fennaro to lokalny produkt sieciowy. Cała jego wartość to inne prawdziwe psy blisko Ciebie, teraz. To znaczy, że nie startuje jak zwykła aplikacja.
+
+Zwykła aplikacja działa dla pierwszego użytkownika. Notatnik jest użyteczny przy jednej osobie. Fennaro przy jednej osobie jest bezużyteczne. Pierwszy właściciel w mieście otwiera je, widzi pustą mapę i odchodzi, a to była dokładnie ta osoba, którą musiałem zatrzymać. Każdy wczesny użytkownik jest jednocześnie moim klientem i moją podażą, a jeśli dwie strony tego nie są w tej samej okolicy o tej samej porze, nic się nie dzieje.
+
+To całkowicie przestawia start. To nie problem marketingu, to problem gęstości. Rozrzucenie się cienko po całym kraju gwarantowałoby puste ekrany wszędzie. Więc plan jest odwrotny: zacząć miasto po mieście, zebrać w jednym miejscu tylu właścicieli dużych psów, żeby mapa nie była pusta, a potem ruszyć do następnego. Nawet promień dopasowania musi elastycznie zależeć od tego, ile psów naprawdę jest w pobliżu.
+
+Gęstość zmusiła mnie też do zmierzenia się z oczywistym zarzutem: czemu nie zwykła grupa na Facebooku? Grupy istnieją. Są też ścianą postów, bez sposobu, by wiedzieć, czy dwa psy do siebie pasują, bez prywatności miejsca zamieszkania i bez struktury spotkania. Odpowiedź nie mogła brzmieć „bo moje to aplikacja”. Musiała być tym, czego grupa naprawdę nie potrafi: skojarzyć dwa konkretne psy, chronić Twoją lokalizację i zamienić dopasowanie w spokojny, zaplanowany spacer. Gdyby produkt nie bił wyraźnie darmowej grupy na Facebooku, nie miałby powodu istnieć.
+
+## Co powiedziałbym programiście, który to zaczyna
+
+Jeśli jesteś programistą, który ma zbudować coś dla prawdziwych ludzi, a nie demo, oto, co chciałbym zrozumieć wcześniej.
+
+- Najtrudniejszy prawie nigdy nie jest kod. To zrozumienie ludzi, którym kod służy, a oni nie opiszą swojego problemu trafnie. Właściciele dużych psów nie prosili o algorytm dopasowania. Prosili, w gruncie rzeczy, żeby przestać być traktowanymi jak zagrożenie.
+- Bądź gotów usunąć swoją najlepszą robotę. Moja najbardziej dumna wczesna funkcja, filtr kompatybilności, była tym, co najbardziej przeszkadzało. Odkochanie się we własnym kodzie na czas to umiejętność.
+- Ustal rzeczy nienegocjowalne, zanim napiszesz linijkę. „Nigdy nie przechowuj dokładnej lokalizacji” ukształtowało cały model danych. Doklejenie prywatności później byłoby niemożliwe.
+- Platforma jest częścią Twojej architektury. Zasady sklepu, możliwości przeglądarki i to, gdzie żyją Twoje domeny, to ograniczenia projektowe, a nie papierologia.
+
+Fennaro startuje teraz w Polsce, duże rasy szczególnie mile widziane, bo to właśnie ci właściciele potrzebowali tego najbardziej. Jeśli chcesz zobaczyć, strona główna to [Fennaro](https://fennaro.com/pl/), a prawdziwą aplikację otworzysz na [app.fennaro.com](https://app.fennaro.com/). Działa w przeglądarce, bez instalacji.
+
+Wciąż kocham inżynierię. Ale ten projekt uczynił lekcję namacalną w sposób, którego żaden tutorial nie potrafi: zapłacono mi nie za kod, który napisałem, lecz za to, że w końcu zrozumiałem problem na tyle dobrze, by wiedzieć, który kod wyrzucić. Tak samo próbuję podchodzić do każdego [produktu, który buduję](/pl/uslugi/aplikacje-webowe), a jeśli masz coś realnego, co trzeba zbudować od początku do końca, [porozmawiajmy](/pl/kontakt).
+
+*Źródła: [Breed-specific legislation, Wikipedia](https://en.wikipedia.org/wiki/Breed-specific_legislation), [Progressive web apps, MDN](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps), [Learn PWA, web.dev](https://web.dev/learn/pwa/), [Geohash, Wikipedia](https://en.wikipedia.org/wiki/Geohash).*

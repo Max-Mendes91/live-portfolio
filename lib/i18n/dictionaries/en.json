@@ -299,21 +299,22 @@
     "viewProject": "View Project",
     "projects": [
       {
-        "id": "flowmate",
-        "title": "FlowMate: AI Email Management Platform",
-        "shortDescription": "A SaaS I designed and coded solo, end to end, to learn production architecture. Landing page is live; the product is paused.",
-        "description": "A SaaS I built solo, end to end, to learn production architecture: secure authentication, async processing, and AI integrations across Gmail, Outlook, Slack and Telegram. The product is now paused; the landing page stays live as a demo.",
-        "metric": "300+ dev hours · 6 months solo · Paused (landing page live)",
+        "id": "fennaro",
+        "title": "Fennaro: Dog Playmate Matching App",
+        "shortDescription": "Solo-built app that helps big-breed dog owners find calm, compatible walks nearby. Live as an installable PWA.",
+        "description": "A dog-matching app I built solo, end to end, for owners of big and working breeds who struggle to find calm, compatible walks. It shows every nearby dog and ranks them by pairwise compatibility instead of hard-filtering anyone out, and it never stores an exact home address. Expo PWA, Hono/oRPC API, Neon PostGIS geo-matching, Better Auth, a moderation dashboard and full GDPR flows. Bilingual launch in Poland.",
+        "metric": "Built Solo · Installable PWA · Poland Launch",
         "href": "/en/projects",
-        "externalUrl": "https://www.flowmate.click/",
+        "externalUrl": "https://fennaro.com/en/",
         "cta": "View Project",
-        "externalCta": "View Landing Page",
-        "status": "Paused",
-        "tags": ["SaaS", "AI", "Full-Stack"],
-        "tech": ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "OpenAI", "Stripe"],
-        "image": "/projects/flowmate-landing.webp",
-        "caseStudyHref": "/en/projects/flowmate",
-        "caseStudyCta": "Read Case Study"
+        "externalCta": "Visit Live Site",
+        "secondaryUrl": "https://app.fennaro.com/",
+        "secondaryCta": "Try the App",
+        "tags": ["Mobile App", "Full-Stack", "Geo"],
+        "tech": ["Next.js", "Expo PWA", "Hono", "oRPC", "Neon PostGIS", "Drizzle", "Better Auth"],
+        "image": "/projects/fennaro-landing.webp",
+        "caseStudyHref": "/en/blog/hard-part-building-dog-matching-app",
+        "caseStudyCta": "Read the Build Story"
       },
       {
         "id": "besteats",
@@ -331,20 +332,6 @@
         "image": "/projects/besteats-landing.webp"
       },
       {
-        "id": "fennaro",
-        "title": "Fennaro: Dog Playmate Matching App",
-        "shortDescription": "Solo-built mobile app matching big-breed dogs with compatible playmates nearby.",
-        "description": "Mobile app helping owners of big and working-breed dogs find size-, temperament- and energy-matched playmates nearby. Built solo end to end: Expo app, Hono/oRPC API, PostGIS geo-matching, moderation dashboard, push notifications and GDPR flows. Trilingual EN/PL/PT-PT.",
-        "metric": "Built Solo · Trilingual · Expo + PostGIS",
-        "href": "/en/projects",
-        "externalUrl": "https://fennaro.com",
-        "cta": "View Project",
-        "externalCta": "Visit Live Site",
-        "tags": ["Mobile App", "Full-Stack", "Geo"],
-        "tech": ["Expo", "React Native", "Hono", "oRPC", "Neon PostGIS", "Drizzle", "Better Auth"],
-        "image": "/projects/fennaro-landing.webp"
-      },
-      {
         "id": "markmind",
         "title": "MarkMind V2: AI Bookmark Manager",
         "role": "Contributor Role",
@@ -360,6 +347,23 @@
         "tags": ["Chrome Extension", "AI", "Productivity"],
         "tech": ["React", "TypeScript", "Chrome APIs", "AI Integration"],
         "image": "/projects/markmind-v2-landing.webp"
+      },
+      {
+        "id": "flowmate",
+        "title": "FlowMate: AI Email Management Platform",
+        "shortDescription": "A SaaS I designed and coded solo, end to end, to learn production architecture. Landing page is live; the product is paused.",
+        "description": "A SaaS I built solo, end to end, to learn production architecture: secure authentication, async processing, and AI integrations across Gmail, Outlook, Slack and Telegram. The product is now paused; the landing page stays live as a demo.",
+        "metric": "300+ dev hours · 6 months solo · Paused (landing page live)",
+        "href": "/en/projects",
+        "externalUrl": "https://www.flowmate.click/",
+        "cta": "View Project",
+        "externalCta": "View Landing Page",
+        "status": "Paused",
+        "tags": ["SaaS", "AI", "Full-Stack"],
+        "tech": ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "OpenAI", "Stripe"],
+        "image": "/projects/flowmate-landing.webp",
+        "caseStudyHref": "/en/projects/flowmate",
+        "caseStudyCta": "Read Case Study"
       },
       {
         "id": "portfolio",
