@@ -145,6 +145,9 @@ export interface ServicePageContent {
   sections: ServicePageContentSection[];
   techStackTitle: string;
   techStack: ServicePageTechItem[];
+  /** Optional per-service FAQ; also emitted as FAQPage JSON-LD. */
+  faqTitle?: string;
+  faq?: Array<{ question: string; answer: string }>;
   cta: {
     title: string;
     subtitle: string;

@@ -10,9 +10,18 @@
     "scrollDown": "Przewiń w dół",
     "toSeeProjects": "po dowody",
     "trustSignals": [
-      { "label": "Specjalista React & Next.js", "icon": "trophy" },
-      { "label": "Strefa EU: pokrywa UK i US", "icon": "globe" },
-      { "label": "Płynny EN / PT / ES · Wsparcie PL", "icon": "languages" }
+      {
+        "label": "Specjalista React & Next.js",
+        "icon": "trophy"
+      },
+      {
+        "label": "Strefa EU: pokrywa UK i US",
+        "icon": "globe"
+      },
+      {
+        "label": "Płynny EN / PT / ES · Wsparcie PL",
+        "icon": "languages"
+      }
     ]
   },
   "about": {
@@ -34,7 +43,13 @@
       "title": "Strony, SaaS i E-Commerce: React i Next.js",
       "subtitle": "Oprogramowanie projektowane wokół Twoich wymagań. Każda funkcja ma swój cel, a kod rośnie razem z firmą."
     },
-    "pills": ["Tworzenie Stron", "Aplikacje SaaS", "E-Commerce", "SEO i Wydajność", "Integracja AI"],
+    "pills": [
+      "Tworzenie Stron",
+      "Aplikacje SaaS",
+      "E-Commerce",
+      "SEO i Wydajność",
+      "Integracja AI"
+    ],
     "primaryButton": "Zobacz Usługi",
     "secondaryButton": "Zobacz Projekty",
     "cards": [
@@ -79,8 +94,22 @@
         "linkHref": "/pl/uslugi/integracja-ai"
       }
     ],
-    "marquee1": ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
-    "marquee2": ["Przelewy24", "OpenAI", "Claude API", "Vercel", "AWS", "SEO"]
+    "marquee1": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Tailwind CSS"
+    ],
+    "marquee2": [
+      "Przelewy24",
+      "OpenAI",
+      "Claude API",
+      "Vercel",
+      "AWS",
+      "SEO"
+    ]
   },
   "process": {
     "badge": "Proces Tworzenia",
@@ -108,8 +137,14 @@
       }
     ],
     "ctas": [
-      { "label": "Zobacz Usługi", "href": "/pl/uslugi" },
-      { "label": "Zobacz Projekty", "href": "/pl/projekty" }
+      {
+        "label": "Zobacz Usługi",
+        "href": "/pl/uslugi"
+      },
+      {
+        "label": "Zobacz Projekty",
+        "href": "/pl/projekty"
+      }
     ]
   },
   "faq": {
@@ -197,11 +232,26 @@
       "faq": "Pytania"
     },
     "serviceLinks": [
-      { "label": "Tworzenie Stron Internetowych", "href": "/pl/uslugi/tworzenie-stron" },
-      { "label": "Aplikacje Webowe i SaaS", "href": "/pl/uslugi/aplikacje-webowe" },
-      { "label": "Sklepy Internetowe", "href": "/pl/uslugi/sklepy-internetowe" },
-      { "label": "Pozycjonowanie SEO", "href": "/pl/uslugi/pozycjonowanie" },
-      { "label": "Integracja AI", "href": "/pl/uslugi/integracja-ai" }
+      {
+        "label": "Tworzenie stron internetowych",
+        "href": "/pl/uslugi/tworzenie-stron"
+      },
+      {
+        "label": "Aplikacje webowe dla firm",
+        "href": "/pl/uslugi/aplikacje-webowe"
+      },
+      {
+        "label": "Sklepy internetowe na zamówienie",
+        "href": "/pl/uslugi/sklepy-internetowe"
+      },
+      {
+        "label": "Pozycjonowanie techniczne",
+        "href": "/pl/uslugi/pozycjonowanie"
+      },
+      {
+        "label": "Integracja AI dla firm",
+        "href": "/pl/uslugi/integracja-ai"
+      }
     ],
     "contact": {
       "name": "Max Mendes",
@@ -277,14 +327,25 @@
     "seo": {
       "title": "Kontakt - Programista Częstochowa | Max Mendes",
       "metaDescription": "Kontakt do Max Mendes - tworzenie stron internetowych Częstochowa. Programista React i Next.js. Tel: 725 534 018. Odpowiedź w ciągu 24 godzin.",
-      "keywords": ["kontakt programista", "programista częstochowa kontakt", "wycena strony internetowej", "kontakt web developer", "programista śląskie", "bezpłatna wycena"],
+      "keywords": [
+        "kontakt programista",
+        "programista częstochowa kontakt",
+        "wycena strony internetowej",
+        "kontakt web developer",
+        "programista śląskie",
+        "bezpłatna wycena"
+      ],
       "h1": "Skontaktuj Się",
       "ogTitle": "Kontakt - Programista Częstochowa | Max Mendes"
     },
     "schema": {
       "type": "ContactPage",
       "description": "Strona kontaktowa Max Mendes - programista frontend z Częstochowy obsługujący klientów z Polski i Europy.",
-      "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+      "areaServed": [
+        "Częstochowa",
+        "Śląskie",
+        "Polska"
+      ]
     }
   },
   "projects": {
@@ -318,8 +379,20 @@
         "externalCta": "Odwiedź Fennaro",
         "secondaryUrl": "https://app.fennaro.com/",
         "secondaryCta": "Wypróbuj Aplikację",
-        "tags": ["Aplikacja Mobilna", "Full-Stack", "Geo"],
-        "tech": ["Next.js", "Expo PWA", "Hono", "oRPC", "Neon PostGIS", "Drizzle", "Better Auth"],
+        "tags": [
+          "Aplikacja Mobilna",
+          "Full-Stack",
+          "Geo"
+        ],
+        "tech": [
+          "Next.js",
+          "Expo PWA",
+          "Hono",
+          "oRPC",
+          "Neon PostGIS",
+          "Drizzle",
+          "Better Auth"
+        ],
         "image": "/projects/fennaro-landing.webp",
         "caseStudyHref": "/pl/artykuly/najtrudniejsze-w-aplikacji-dla-psow-to-nie-kod",
         "caseStudyCta": "Przeczytaj Historię"
@@ -335,8 +408,19 @@
         "externalUrl": "https://besteats.pt/",
         "cta": "Zobacz Projekt",
         "externalCta": "Zobacz Stronę",
-        "tags": ["Food Tech", "Społeczność", "Full-Stack"],
-        "tech": ["Bun", "React 19", "TanStack Start", "Elysia", "PostgreSQL", "Better Auth"],
+        "tags": [
+          "Food Tech",
+          "Społeczność",
+          "Full-Stack"
+        ],
+        "tech": [
+          "Bun",
+          "React 19",
+          "TanStack Start",
+          "Elysia",
+          "PostgreSQL",
+          "Better Auth"
+        ],
         "image": "/projects/besteats-landing.webp"
       },
       {
@@ -352,8 +436,17 @@
         "externalCta": "Zobacz Stronę",
         "secondaryUrl": "https://chromewebstore.google.com/detail/markmind/bdobgdkpeffdbonfpokgkbncgnbnjnoo",
         "secondaryCta": "Zobacz Rozszerzenie",
-        "tags": ["Rozszerzenie Chrome", "AI", "Produktywność"],
-        "tech": ["React", "TypeScript", "Chrome APIs", "Integracja AI"],
+        "tags": [
+          "Rozszerzenie Chrome",
+          "AI",
+          "Produktywność"
+        ],
+        "tech": [
+          "React",
+          "TypeScript",
+          "Chrome APIs",
+          "Integracja AI"
+        ],
         "image": "/projects/markmind-v2-landing.webp"
       },
       {
@@ -367,8 +460,20 @@
         "cta": "Zobacz Projekt",
         "externalCta": "Zobacz Stronę",
         "status": "Wstrzymany",
-        "tags": ["SaaS", "AI", "Full-Stack"],
-        "tech": ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "OpenAI", "Stripe"],
+        "tags": [
+          "SaaS",
+          "AI",
+          "Full-Stack"
+        ],
+        "tech": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Node.js",
+          "PostgreSQL",
+          "OpenAI",
+          "Stripe"
+        ],
         "image": "/projects/flowmate-landing.webp",
         "caseStudyHref": "/pl/projekty/flowmate",
         "caseStudyCta": "Zobacz Realizację"
@@ -383,8 +488,18 @@
         "externalUrl": "https://maxmendes.dev",
         "cta": "Zobacz Projekt",
         "externalCta": "Jesteś Tutaj",
-        "tags": ["Portfolio", "i18n", "SEO"],
-        "tech": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+        "tags": [
+          "Portfolio",
+          "i18n",
+          "SEO"
+        ],
+        "tech": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "Framer Motion"
+        ],
         "image": "/projects/Portfolio-landing.webp"
       },
       {
@@ -397,8 +512,19 @@
         "externalUrl": "https://nail-salon-omega.vercel.app/",
         "cta": "Zobacz Projekt",
         "externalCta": "Odwiedź Stronę",
-        "tags": ["Biznes", "Rezerwacje", "Lokalne SEO"],
-        "tech": ["React", "TypeScript", "Vite", "Tailwind CSS", "Radix UI", "EmailJS"],
+        "tags": [
+          "Biznes",
+          "Rezerwacje",
+          "Lokalne SEO"
+        ],
+        "tech": [
+          "React",
+          "TypeScript",
+          "Vite",
+          "Tailwind CSS",
+          "Radix UI",
+          "EmailJS"
+        ],
         "image": "/projects/nailsalon-landing.webp"
       },
       {
@@ -411,8 +537,16 @@
         "externalUrl": "https://la-creme-restaurant.vercel.app",
         "cta": "Zobacz Projekt",
         "externalCta": "Odwiedź Stronę",
-        "tags": ["Restauracja", "Landing Page", "Design"],
-        "tech": ["React", "Vite", "Tailwind CSS"],
+        "tags": [
+          "Restauracja",
+          "Landing Page",
+          "Design"
+        ],
+        "tech": [
+          "React",
+          "Vite",
+          "Tailwind CSS"
+        ],
         "image": "/projects/lacreme-landing.webp"
       },
       {
@@ -425,8 +559,17 @@
         "externalUrl": "https://animal-vetclinic.vercel.app",
         "cta": "Zobacz Projekt",
         "externalCta": "Odwiedź Stronę",
-        "tags": ["Zdrowie", "Lokalny Biznes", "Angular"],
-        "tech": ["Angular", "TypeScript", "Tailwind CSS", "Vite"],
+        "tags": [
+          "Zdrowie",
+          "Lokalny Biznes",
+          "Angular"
+        ],
+        "tech": [
+          "Angular",
+          "TypeScript",
+          "Tailwind CSS",
+          "Vite"
+        ],
         "image": "/projects/vetclinic-landing.webp"
       }
     ]
@@ -442,14 +585,28 @@
     "seo": {
       "title": "Programista Freelancer Częstochowa | Max Mendes",
       "metaDescription": "Tworzenie stron internetowych i aplikacji webowych. Programista frontend Polska. Strony, sklepy, SaaS. Częstochowa, Śląsk. Bezpłatna konsultacja. Tel: 725 534 018",
-      "keywords": ["tworzenie stron internetowych", "programista częstochowa", "frontend developer polska", "strony www częstochowa", "aplikacje webowe", "sklepy internetowe śląsk", "programista react", "nextjs developer polska"],
+      "keywords": [
+        "tworzenie stron internetowych",
+        "programista częstochowa",
+        "frontend developer polska",
+        "strony www częstochowa",
+        "aplikacje webowe",
+        "sklepy internetowe śląsk",
+        "programista react",
+        "nextjs developer polska"
+      ],
       "h1": "Programista Freelancer Częstochowa",
       "ogTitle": "Programista Freelancer Częstochowa | Max Mendes"
     },
     "schema": {
       "type": "WebSite",
       "description": "Profesjonalne tworzenie stron internetowych i aplikacji webowych przez Max Mendes - Programista Frontend specjalizujący się w React, Next.js i nowoczesnych technologiach webowych.",
-      "areaServed": ["Częstochowa", "Śląskie", "Polska", "Unia Europejska"]
+      "areaServed": [
+        "Częstochowa",
+        "Śląskie",
+        "Polska",
+        "Unia Europejska"
+      ]
     }
   },
   "aboutPage": {
@@ -463,14 +620,25 @@
     "seo": {
       "title": "O Mnie - Programista Frontend | Max Mendes",
       "metaDescription": "Programista frontend z Częstochowy. Buduję strony i aplikacje w React & Next.js ✓ 300+ godzin pracy nad SaaS ✓ Nie WordPress ✓ Bezpłatna konsultacja",
-      "keywords": ["programista częstochowa", "programista frontend", "tworzenie stron częstochowa", "react developer polska", "programista śląskie", "freelancer polska"],
+      "keywords": [
+        "programista częstochowa",
+        "programista frontend",
+        "tworzenie stron częstochowa",
+        "react developer polska",
+        "programista śląskie",
+        "freelancer polska"
+      ],
       "h1": "Programista Frontend Częstochowa",
       "ogTitle": "O Mnie - Programista Frontend | Max Mendes"
     },
     "schema": {
       "type": "ProfilePage",
       "description": "Programista frontend z Częstochowy specjalizujący się w React, Next.js i TypeScript. Tworzenie stron, sklepów i aplikacji webowych.",
-      "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+      "areaServed": [
+        "Częstochowa",
+        "Śląskie",
+        "Polska"
+      ]
     },
     "heading": "Programista Frontend Częstochowa",
     "location": "Częstochowa, Polska",
@@ -487,19 +655,38 @@
       "categories": [
         {
           "name": "Frontend",
-          "items": ["React", "Next.js", "TypeScript", "Tailwind CSS"]
+          "items": [
+            "React",
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS"
+          ]
         },
         {
           "name": "Backend",
-          "items": ["Node.js", "PostgreSQL", "Prisma", "Supabase"]
+          "items": [
+            "Node.js",
+            "PostgreSQL",
+            "Prisma",
+            "Supabase"
+          ]
         },
         {
           "name": "AI i API",
-          "items": ["OpenAI API", "Integracja LLM", "REST APIs"]
+          "items": [
+            "OpenAI API",
+            "Integracja LLM",
+            "REST APIs"
+          ]
         },
         {
           "name": "Narzędzia",
-          "items": ["Git", "Vercel", "Figma", "VS Code"]
+          "items": [
+            "Git",
+            "Vercel",
+            "Figma",
+            "VS Code"
+          ]
         }
       ]
     },
@@ -553,7 +740,7 @@
       "badge": "Podejście Produktowe",
       "title": "Każdy projekt zaczyna się od myślenia",
       "subtitle": "Jedna osoba, pełna odpowiedzialność",
-      "description": "Zanim cokolwiek powstanie, koncentruję się na strukturze, ograniczeniach i tym, co naprawdę musi działać. Bezpośrednia komunikacja, szybki feedback i produkty budowane z intencją, nie przeładowane funkcjami."
+      "description": "Buduję strony internetowe, aplikacje webowe i sklepy pisane od zera, bez WordPressa i gotowych szablonów. Do tego pozycjonowanie techniczne i wdrożenia AI. Pracuję z Częstochowy, zdalnie dla firm z całej Polski i zagranicy. Każdą usługę wyceniam konkretnie w ciągu 24 godzin, a na podstronach usług znajdziesz ceny i odpowiedzi na pytania, które klienci naprawdę zadają."
     },
     "services": [
       {
@@ -656,369 +843,743 @@
   "servicePages": {
     "web-development": {
       "id": "web-development",
-      "label": "Tworzenie Aplikacji Full-Stack",
+      "label": "Tworzenie Stron Internetowych",
       "href": "/pl/uslugi/tworzenie-stron",
       "hrefLang": {
         "en": "/en/services/web-development",
         "pl": "/pl/uslugi/tworzenie-stron"
       },
       "seo": {
-        "title": "Tworzenie Aplikacji Full-Stack Częstochowa | Max Mendes",
-        "metaDescription": "Tworzenie aplikacji webowych full-stack Częstochowa. Dedykowane rozwiązania w React i Next.js dla Twojej firmy. Bez WordPress. Projekty dla Polski i zagranicy.",
-        "keywords": ["tworzenie aplikacji full-stack", "dedykowane aplikacje webowe", "programista react częstochowa", "nextjs development", "systemy webowe", "programista częstochowa", "aplikacje webowe śląskie"],
-        "h1": "Tworzenie Aplikacji Full-Stack",
-        "ogTitle": "Tworzenie Aplikacji Full-Stack Częstochowa | Max Mendes"
+        "title": "Tworzenie Stron Internetowych Częstochowa | Max Mendes",
+        "metaDescription": "Tworzenie stron internetowych w Częstochowie: kod w React i Next.js, nie WordPress. Strony firmowe od 3 000 zł, gotowe w 1-2 tygodnie. Wycena po 1 rozmowie.",
+        "keywords": [
+          "tworzenie stron internetowych",
+          "strony internetowe częstochowa",
+          "strona firmowa react",
+          "ile kosztuje strona internetowa dla firmy",
+          "tworzenie stron śląskie",
+          "strona internetowa bez wordpress",
+          "strony www dla firm",
+          "programista stron internetowych częstochowa"
+        ],
+        "h1": "Tworzenie Stron Internetowych dla Firm",
+        "ogTitle": "Tworzenie Stron Internetowych Częstochowa | Max Mendes"
       },
       "schema": {
         "serviceType": "Tworzenie Aplikacji Full-Stack",
         "description": "Dedykowane aplikacje webowe full-stack w React, Next.js, Node.js i PostgreSQL. Frontend i backend dostosowany do wymagań biznesowych.",
-        "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+        "areaServed": [
+          "Częstochowa",
+          "Śląskie",
+          "Polska"
+        ]
       },
       "content": {
-        "subtitle": "Dedykowane aplikacje webowe w React i Next.js. Kod produkcyjny zaprojektowany wokół wymagań Twojej firmy, gotowy do skalowania.",
+        "subtitle": "Strony internetowe dla firm pisane od zera w React i Next.js. Bez WordPressa, bez wtyczek, bez abonamentu. Szybka strona, która ładuje się w mniej niż sekundę i jest gotowa pod Google od pierwszego dnia.",
         "sections": [
           {
-            "title": "Czym Jest Ta Usługa",
+            "title": "Ile kosztuje strona internetowa dla firmy",
             "paragraphs": [
-              "Tworzenie aplikacji full-stack oznacza budowanie zarówno tego, co użytkownicy widzą (frontend), jak i systemów działających w tle (backend). Otrzymujesz spójną aplikację, w której interfejs, dane i logika działają razem bez szwów.",
-              "Dedykowane aplikacje są budowane wokół Twoich konkretnych wymagań. Firma nie dostosowuje się do szablonu. Oprogramowanie jest projektowane pod dokładne procesy, struktury danych i plany rozwoju."
-            ]
-          },
-          {
-            "title": "Co Buduję",
-            "paragraphs": [
-              "Buduję interfejsy użytkownika w React i Next.js, które są szybkie i responsywne. Użytkownicy otrzymują jakość aplikacji z natychmiastową nawigacją i aktualizacjami w czasie rzeczywistym, gdy są potrzebne. Backend obsługuje kluczową logikę biznesową (zarządzanie użytkownikami, przetwarzanie danych, transakcje i integracje z zewnętrznymi systemami) zbudowany na Node.js i PostgreSQL dla niezawodności.",
-              "Projekty mogą obejmować systemy uwierzytelniania, kontrolę dostępu opartą na rolach, integracje płatności (Przelewy24, PayU, Stripe), integracje API oraz funkcje czasu rzeczywistego jak dashboardy czy powiadomienia. Używam TypeScript w całym projekcie, aby wychwytywać błędy przed wdrożeniem i zapewnić długoterminową utrzymywalność."
-            ]
-          },
-          {
-            "title": "Dla Kogo Jest Ta Usługa",
-            "paragraphs": [
-              "Ta usługa jest dla firm budujących aplikacje webowe wymagające dedykowanej logiki i obsługi danych. Platformy SaaS, systemy klienckie, systemy rezerwacyjne, wewnętrzne dashboardy i produkty oparte na subskrypcjach należą do tej kategorii.",
-              "Jeśli Twój projekt obejmuje użytkowników, uwierzytelnianie, przetwarzanie danych lub logikę biznesową wykraczającą poza proste strony treściowe, potrzebujesz rozwoju full-stack. FlowMate, platforma SaaS, którą zbudowałem do zarządzania emailami, demonstruje to podejście: uwierzytelnianie wielu dostawców, przetwarzanie asynchroniczne, integracje AI i infrastruktura produkcyjna obsługująca rzeczywiste obciążenia."
+              "Konkretnie: prosta strona firmowa (5-7 podstron, formularz kontaktowy, wersja mobilna) kosztuje u mnie zwykle od 3 000 do 6 000 zł. Strona rozbudowana, z większą liczbą podstron, dwoma językami albo systemem rezerwacji, to przedział 8 000-15 000 zł. Dokładną cenę podaję po jednej rozmowie, następnego dnia roboczego, i ta cena nie rośnie w trakcie projektu.",
+              "Na cenę wpływają trzy rzeczy: liczba podstron, funkcje (formularze, rezerwacje, mapy, wielojęzyczność) oraz to, czy masz gotowe treści i zdjęcia. Cały rozkład kosztów, razem z kosztami utrzymania, opisałem w osobnym artykule o cenach stron w Polsce."
             ],
             "links": [
-              { "text": "Zobacz stronę Projekty →", "href": "/pl/projekty" }
+              {
+                "text": "Ile naprawdę kosztuje strona internetowa? Pełny rozkład cen →",
+                "href": "/pl/artykuly/koszt-strony-internetowej-dla-malej-firmy"
+              }
             ]
           },
           {
-            "title": "Jak Pracuję",
+            "title": "Co dokładnie dostajesz",
             "paragraphs": [
-              "Pracujesz bezpośrednio ze mną. Bez pośredników agencyjnych czy przekazywania projektu. Obsługuję wymagania, architekturę, development i wdrożenie. Kod jest gotowy do wdrożenia od pierwszego dnia, nie prototypy wymagające przebudowy później.",
-              "Aplikacje są wdrażane na profesjonalnej infrastrukturze cloud z dystrybucją CDN dla wydajności. Jestem z Częstochowy i dostępny dla projektów z całej Polski oraz międzynarodowych."
+              "Dostajesz stronę zaprojektowaną i napisaną od zera pod Twoją firmę: projekt graficzny dopasowany do marki, kod w React i Next.js, pełną responsywność na telefonach i tabletach, formularz kontaktowy z powiadomieniami na e-mail oraz podpiętą analitykę, żebyś widział, skąd przychodzą klienci.",
+              "W cenie jest też to, czego większość ofert nie wymienia: poprawne meta tagi i dane strukturalne pod Google, mapa strony, czas ładowania poniżej sekundy i wdrożenie na hosting. Strona jest gotowa do pozycjonowania od dnia startu, a pozycjonowanie nie jest czymś \"do dorobienia później\"."
+            ]
+          },
+          {
+            "title": "Dlaczego nie WordPress",
+            "paragraphs": [
+              "Na WordPressie działa ogromna część polskich stron firmowych i wielu z nich to wystarcza. Problem zaczyna się z czasem: kilkanaście wtyczek do aktualizowania, motyw premium z opłatą roczną, wolne ładowanie na telefonie i włamania przez nieaktualne wtyczki. Właściciel płaci za \"utrzymanie\", choć strona się nie zmienia.",
+              "Strona pisana od zera nie ma wtyczek, więc nie ma czego aktualizować ani przez co się włamać. Ładuje się szybciej, bo nie dźwiga kodu, którego nie używa. I nie ma żadnego abonamentu: płacisz raz za wykonanie, potem tylko za domenę i hosting. Uczciwie: jeśli Twój zespół codziennie publikuje treści i musi je edytować samodzielnie, porozmawiajmy, bo wtedy podłączam prosty system edycji tylko tam, gdzie jest potrzebny."
             ],
             "links": [
-              { "text": "Zobacz stronę Pytania →", "href": "/pl/pytania" }
+              {
+                "text": "Dlaczego lekkie strony HTML znowu wygrywają →",
+                "href": "/pl/artykuly/strony-html-first-znowu-wygrywaja"
+              }
+            ]
+          },
+          {
+            "title": "Jak pracuję i ile to trwa",
+            "paragraphs": [
+              "Proces jest prosty. Najpierw rozmowa o tym, co strona ma robić dla firmy: pozyskiwać telefony, rezerwacje, zapytania ofertowe. Dzień później dostajesz wycenę z konkretną ceną i harmonogramem. Potem projekt graficzny do akceptacji, kod, Twoje poprawki i wdrożenie.",
+              "Prosta strona firmowa jest gotowa w 1-2 tygodnie. Rozbudowana, wielojęzyczna, w 3-4 tygodnie. Najczęstsze opóźnienie w projektach to czekanie na treści i zdjęcia od klienta, więc jeśli ich nie masz, pomagam je przygotować."
+            ]
+          },
+          {
+            "title": "Strony internetowe dla firm z Częstochowy i województwa śląskiego",
+            "paragraphs": [
+              "Pracuję z Częstochowy i znam lokalny rynek: konkurencję w branżach usługowych, to, jak klienci szukają firm \"w pobliżu\", i co trzeba zrobić, żeby strona pojawiała się w tych wynikach. Dla lokalnych firm buduję strony z myślą o zapytaniach typu \"usługa + miasto\", z danymi lokalnego biznesu w kodzie strony.",
+              "Zbudowałem m.in. stronę przychodni weterynaryjnej w Częstochowie, salonu kosmetycznego i restauracji. Pracuję też zdalnie z firmami z całej Polski i z zagranicy, po polsku i po angielsku."
+            ],
+            "links": [
+              {
+                "text": "Zobacz zrealizowane strony →",
+                "href": "/pl/projekty"
+              }
             ]
           }
         ],
         "techStackTitle": "Stack Techniczny",
         "techStack": [
-          { "title": "Frontend", "description": "React 19, Next.js 15, TypeScript, Tailwind CSS. Szybki, przyjazny SEO, łatwy w utrzymaniu" },
-          { "title": "Backend", "description": "Node.js, PostgreSQL, Prisma ORM. Skalowalna obsługa danych z bezpieczeństwem typów" },
-          { "title": "Integracje", "description": "Przelewy24/PayU dla rynku polskiego, Stripe dla klientów międzynarodowych, uwierzytelnianie OAuth, usługi email, zewnętrzne API" },
-          { "title": "Wdrożenie", "description": "Infrastruktura cloud z CDN, automatyczne wdrażanie CI/CD, monitoring produkcyjny" },
-          { "title": "Narzędzia", "description": "Kontrola wersji Git, automatyczne testy, śledzenie błędów produkcyjnych" }
+          {
+            "title": "Frontend",
+            "description": "React 19, Next.js 15, TypeScript, Tailwind CSS. Szybki, przyjazny SEO, łatwy w utrzymaniu"
+          },
+          {
+            "title": "Backend",
+            "description": "Node.js, PostgreSQL, Prisma ORM. Skalowalna obsługa danych z bezpieczeństwem typów"
+          },
+          {
+            "title": "Integracje",
+            "description": "Przelewy24/PayU dla rynku polskiego, Stripe dla klientów międzynarodowych, uwierzytelnianie OAuth, usługi email, zewnętrzne API"
+          },
+          {
+            "title": "Wdrożenie",
+            "description": "Infrastruktura cloud z CDN, automatyczne wdrażanie CI/CD, monitoring produkcyjny"
+          },
+          {
+            "title": "Narzędzia",
+            "description": "Kontrola wersji Git, automatyczne testy, śledzenie błędów produkcyjnych"
+          }
         ],
         "cta": {
-          "title": "Zbudujmy Twoją Aplikację",
-          "subtitle": "Opisz swój projekt, a odpowiem w ciągu 24 godzin z pytaniami o zakres, harmonogram i podejście.",
-          "button": "Rozpocznij Projekt"
-        }
+          "title": "Porozmawiajmy o Twojej stronie",
+          "subtitle": "Napisz, czym zajmuje się Twoja firma i czego potrzebujesz. W ciągu 24 godzin dostaniesz konkretną cenę i harmonogram, bez spotkań sprzedażowych.",
+          "button": "Bezpłatna Wycena"
+        },
+        "faqTitle": "Najczęstsze pytania o strony internetowe",
+        "faq": [
+          {
+            "question": "Ile kosztuje strona internetowa dla firmy?",
+            "answer": "Prosta strona firmowa pisana od zera to u mnie 3 000-6 000 zł, rozbudowana 8 000-15 000 zł. Cena zależy od liczby podstron, funkcji i tego, czy masz gotowe treści. Pełny rozkład kosztów opisałem w [artykule o cenach stron](/pl/artykuly/koszt-strony-internetowej-dla-malej-firmy)."
+          },
+          {
+            "question": "Ile trwa zrobienie strony internetowej dla firmy?",
+            "answer": "Prosta strona firmowa: 1-2 tygodnie od akceptacji projektu graficznego. Strona rozbudowana lub dwujęzyczna: 3-4 tygodnie. W praktyce najwięcej czasu zajmuje nie kod, tylko treści i zdjęcia po stronie klienta, dlatego pomagam je przygotować, żeby projekt nie stanął."
+          },
+          {
+            "question": "WordPress czy strona pisana od zera, co lepsze dla firmy?",
+            "answer": "Dla większości firm usługowych lepsza jest strona pisana od zera: szybsza, bezpieczniejsza i bez opłat za wtyczki czy motywy. WordPress ma sens, gdy zespół codziennie samodzielnie publikuje dużo treści. Porównanie obu podejść opisałem w [artykule o stronach HTML-first](/pl/artykuly/strony-html-first-znowu-wygrywaja)."
+          },
+          {
+            "question": "Ile kosztuje utrzymanie strony internetowej rocznie?",
+            "answer": "Przy stronie pisanej od zera: zwykle 100-500 zł rocznie, na co składają się domena (60-120 zł) i hosting. Nie ma opłat za wtyczki premium, motywy ani \"pakiety opieki\". Dla porównania, utrzymanie strony na WordPressie z opłatami za wtyczki i motyw potrafi kosztować kilkaset złotych rocznie więcej."
+          },
+          {
+            "question": "Czy strona na WordPressie jest bezpieczna?",
+            "answer": "Może być, ale wymaga ciągłej pracy: większość włamań na strony firmowe idzie przez nieaktualne wtyczki i motywy. Strona pisana od zera nie ma wtyczek, więc ta droga ataku po prostu nie istnieje. Do tego dochodzą nagłówki bezpieczeństwa i HTTPS skonfigurowane od startu."
+          },
+          {
+            "question": "Czy mogę samodzielnie edytować treść na stronie bez programisty?",
+            "answer": "Tak, jeśli tego realnie potrzebujesz. Do sekcji, które często się zmieniają (aktualności, cennik, menu), podłączam prosty panel edycji treści. Reszta strony zostaje szybkim kodem bez zbędnych systemów. Dzięki temu masz kontrolę nad treścią bez dźwigania całego CMS-a."
+          },
+          {
+            "question": "Ile podstron powinna mieć strona firmowa?",
+            "answer": "Zwykle 5-7: strona główna, osobna podstrona dla każdej kluczowej usługi, o firmie i kontakt. Osobne podstrony usług są ważne dla Google, bo każda z nich może odpowiadać na inne zapytanie klienta, np. \"usługa + Częstochowa\". Jedna zbiorcza strona \"oferta\" pozycjonuje się gorzej."
+          },
+          {
+            "question": "Czy strona internetowa będzie dobrze widoczna w Google?",
+            "answer": "Ode mnie dostajesz stronę technicznie gotową pod Google: szybką, z poprawnymi meta tagami, danymi strukturalnymi i mapą strony. Widoczność buduje się potem treścią i czasem. Jeśli strona już istnieje i nie ma jej w Google, sprawdź [pozycjonowanie techniczne](/pl/uslugi/pozycjonowanie)."
+          }
+        ]
       }
     },
     "saas-web-apps": {
       "id": "saas-web-apps",
-      "label": "Aplikacje Webowe i SaaS",
+      "label": "Aplikacje Webowe dla Firm",
       "href": "/pl/uslugi/aplikacje-webowe",
       "hrefLang": {
         "en": "/en/services/saas-web-apps",
         "pl": "/pl/uslugi/aplikacje-webowe"
       },
       "seo": {
-        "title": "Aplikacje SaaS i Webowe - Częstochowa | Max Mendes",
-        "metaDescription": "Tworzenie aplikacji webowych i platform SaaS. Logowanie, dashboardy, płatności, subskrypcje. Programista z Częstochowy. Systemy dla firm z całej Polski.",
-        "keywords": ["aplikacje webowe", "tworzenie aplikacji", "systemy dla firm", "aplikacje saas", "platformy internetowe", "oprogramowanie na zamówienie", "programista aplikacji"],
-        "h1": "Aplikacje SaaS i Webowe",
-        "ogTitle": "Aplikacje SaaS i Webowe - Częstochowa | Max Mendes"
+        "title": "Aplikacje Webowe dla Firm | Systemy SaaS | Max Mendes",
+        "metaDescription": "Aplikacje webowe i platformy SaaS na zamówienie: logowanie, dashboardy, płatności, subskrypcje. Dedykowane oprogramowanie dla firm. Wycena z podziałem na etapy.",
+        "keywords": [
+          "aplikacje webowe dla firm",
+          "tworzenie aplikacji webowych",
+          "oprogramowanie na zamówienie",
+          "systemy saas dla firm",
+          "ile kosztuje aplikacja webowa",
+          "dedykowane oprogramowanie",
+          "aplikacja webowa czy strona internetowa",
+          "software house częstochowa"
+        ],
+        "h1": "Aplikacje Webowe dla Firm",
+        "ogTitle": "Aplikacje Webowe dla Firm | Systemy SaaS | Max Mendes"
       },
       "schema": {
         "serviceType": "Tworzenie Aplikacji Webowych",
         "description": "Profesjonalny SaaS development dla platform subskrypcyjnych. Skalowalna architektura z autoryzacją, płatnościami i wielodostępowymi modelami danych.",
-        "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+        "areaServed": [
+          "Częstochowa",
+          "Śląskie",
+          "Polska"
+        ]
       },
       "content": {
-        "subtitle": "Profesjonalny SaaS development dla platform subskrypcyjnych tworzonych w React. Skalowalna architektura od pierwszego dnia, rozwiązania gotowe na rozwój, a nie prototypy do przepisywania.",
+        "subtitle": "Dedykowane aplikacje webowe i platformy SaaS: konta użytkowników, panele, płatności, integracje. Oprogramowanie zbudowane wokół Twoich procesów, nie odwrotnie.",
         "sections": [
           {
-            "title": "Czym jest SaaS Development",
+            "title": "Aplikacja webowa czy strona internetowa, czym się różnią",
             "paragraphs": [
-              "SaaS development to tworzenie oprogramowania subskrypcyjnego, z którego użytkownicy korzystają stale, a nie jednorazowo jak ze zwykłej strony internetowej. Tego typu platformy zarządzają kontami, uprawnieniami, danymi oraz cyklicznymi płatnościami dla wielu klientów jednocześnie. W praktyce oznacza to architekturę wielodostępową: obsługę wielu firm lub użytkowników z wyraźnie oddzielonymi danymi.",
-              "W przeciwieństwie do klasycznych aplikacji webowych, SaaS musi obsługiwać onboarding, cykle rozliczeniowe, zmiany planów i długoterminowe utrzymanie. To fundament działania produktu, a nie tylko warstwa wizualna."
-            ]
-          },
-          {
-            "title": "Co Obejmuje Ta Usługa",
-            "paragraphs": [
-              "Buduję platformy SaaS obejmujące pełny cykl życia produktu. Projekty mogą zawierać bezpieczną autoryzację użytkowników (email/hasło, OAuth, logowanie społecznościowe), zarządzanie subskrypcjami i płatnościami (Przelewy24, PayU, Stripe) oraz strukturę bazy danych przygotowaną pod obsługę wielu klientów. Panele administracyjne umożliwiają kontrolę użytkowników, planów i wykorzystania bez ręcznej obsługi.",
-              "Wdrażane są również powiadomienia email oraz procesy onboardingowe, które prowadzą użytkownika od rejestracji do aktywnej subskrypcji. API umożliwia integracje z zewnętrznymi systemami lub przyszłe rozszerzenia produktu."
-            ]
-          },
-          {
-            "title": "Dla Kogo i Przykładowe Zastosowania",
-            "paragraphs": [
-              "Ta usługa jest przeznaczona dla founderów SaaS budujących MVP, które ma stać się realnym produktem, a nie jednorazowym testem. Sprawdza się także dla firm w Polsce tworzących platformy subskrypcyjne lub wewnętrzne narzędzia SaaS zastępujące arkusze i ręczne procesy. Typowe zastosowania to narzędzia produktywności, platformy B2B, panele analityczne oraz usługi abonamentowe.",
-              "FlowMate, platforma SaaS, którą stworzyłem do zarządzania emailami, obsługuje wielodostępową architekturę, asynchroniczne przetwarzanie, integracje AI oraz subskrypcje Stripe w środowisku produkcyjnym."
+              "Strona internetowa pokazuje informacje: ofertę, kontakt, cennik. Aplikacja webowa wykonuje pracę: użytkownicy logują się, wprowadzają dane, system je przetwarza, nalicza, raportuje i pilnuje uprawnień. Jeśli w Twoim pomyśle pojawiają się konta użytkowników, panel, płatności cykliczne albo logika biznesowa, to jest aplikacja, nie strona.",
+              "To rozróżnienie ma praktyczne skutki: inna architektura, inny czas realizacji i inny budżet. Dlatego prowadzę te usługi osobno. Jeśli potrzebujesz strony firmowej, zobacz tworzenie stron internetowych. Ta podstrona jest o systemach."
             ],
             "links": [
-              { "text": "Zobacz FlowMate w sekcji Projekty →", "href": "/pl/projekty" }
+              {
+                "text": "Potrzebujesz zwykłej strony firmowej? Zobacz tworzenie stron →",
+                "href": "/pl/uslugi/tworzenie-stron"
+              }
             ]
           },
           {
-            "title": "Jak Przebiega Realizacja",
+            "title": "Ile kosztuje aplikacja webowa",
             "paragraphs": [
-              "Pracujesz bezpośrednio z jednym developerem. Bez przekazywania projektu między zespołami. Od początku tworzony jest kod gotowy do produkcji, bez potrzeby późniejszego przepisywania architektury. TypeScript zwiększa stabilność i ułatwia rozwój funkcji w dłuższej perspektywie. Aplikacje wdrażane są na profesjonalnej infrastrukturze cloud lub serwerach klienta, zależnie od potrzeb projektu. Celem jest SaaS przygotowany na realnych użytkowników i kontrolowany wzrost.",
-              "Projekty realizuję z Częstochowy dla firm z Polski i rynków międzynarodowych."
+              "Krótko: to zależy od zakresu, ale podam widełki. MVP, czyli pierwsza działająca wersja z kluczową funkcją, logowaniem i prostym panelem, zaczyna się u mnie od około 15 000 zł. Rozbudowane systemy z płatnościami, rolami użytkowników i integracjami to zwykle 25 000 zł i więcej. Po rozmowie o zakresie dostajesz wycenę z podziałem na etapy, więc widzisz, za co płacisz.",
+              "Na koszt najmocniej wpływają konkretne elementy: uwierzytelnianie i role, płatności (zwłaszcza subskrypcje), integracje z zewnętrznymi systemami oraz panele raportowe. Dobrą strategią jest zacząć od MVP i rozbudowywać na podstawie reakcji prawdziwych użytkowników, zamiast budować wszystko naraz."
+            ]
+          },
+          {
+            "title": "Co buduję: konta, panele, płatności, subskrypcje",
+            "paragraphs": [
+              "Buduję kompletne systemy: rejestrację i logowanie (także przez Google), role i uprawnienia, dashboardy z danymi na żywo, płatności jednorazowe i cykliczne przez Przelewy24, PayU lub Stripe, powiadomienia e-mail i push oraz integracje przez API z systemami, których już używasz.",
+              "Całość piszę w TypeScript, z testami, na sprawdzonym stacku: React i Next.js na froncie, Node.js i PostgreSQL na zapleczu. To nie jest eksperyment, tylko technologie, na których działają największe aplikacje webowe na świecie, a jednocześnie na tyle standardowe, że każdy kolejny programista może przejąć projekt."
+            ]
+          },
+          {
+            "title": "Dowód: aplikacje, które zbudowałem",
+            "paragraphs": [
+              "Fennaro: aplikacja do dobierania psich kompanów, którą zbudowałem solo od zera. Konta, dopasowanie geograficzne na PostGIS, czat, moderacja, zgodność z RODO i instalowalna aplikacja PWA. Działa produkcyjnie w Polsce. FlowMate: platforma SaaS do zarządzania e-mailami, na której nauczyłem się architektury produkcyjnej: bezpieczna autoryzacja, przetwarzanie asynchroniczne, integracje AI.",
+              "Do tego BestEats, działająca w Portugalii platforma rankingowa, gdzie rozwijam kod pod code review bardziej doświadczonych programistów. Piszę o tych projektach otwarcie, razem z błędami i wnioskami, bo to lepszy dowód kompetencji niż lista technologii."
             ],
             "links": [
-              { "text": "Pytania o proces lub wycenę SaaS? Sprawdź FAQ →", "href": "/pl/pytania" }
+              {
+                "text": "Jak zbudowałem Fennaro: pełna historia →",
+                "href": "/pl/artykuly/najtrudniejsze-w-aplikacji-dla-psow-to-nie-kod"
+              },
+              {
+                "text": "Zobacz wszystkie projekty →",
+                "href": "/pl/projekty"
+              }
+            ]
+          },
+          {
+            "title": "Jak przebiega realizacja i ile trwa",
+            "paragraphs": [
+              "Zaczynamy od rozmowy o problemie, nie o funkcjach: co system ma załatwić, kto będzie z niego korzystał, co jest niezbędne w wersji pierwszej. Na tej podstawie dostajesz zakres MVP z wyceną. Typowe MVP buduję w 4-8 tygodni, z cotygodniową informacją o postępach, na którą możesz reagować.",
+              "Po starcie nie zostajesz z tym sam: kod jest udokumentowany, wdrożony na infrastrukturze, którą kontrolujesz, i przygotowany do rozbudowy. Rozwijamy system etapami, na podstawie tego, jak faktycznie używają go ludzie."
             ]
           }
         ],
         "techStackTitle": "Stos Technologiczny",
         "techStack": [
-          { "title": "Frontend", "description": "React 19, Next.js 15, TypeScript. Szybkie, SEO-przyjazne interfejsy SaaS z niezawodnością w miarę rozwoju" },
-          { "title": "Backend", "description": "Node.js, PostgreSQL (Supabase, Prisma). Skalowalne modele danych dla wielu klientów" },
-          { "title": "Uwierzytelnianie", "description": "Clerk lub NextAuth. Bezpieczne zarządzanie użytkownikami z logowaniem społecznościowym i OAuth" },
-          { "title": "Płatności", "description": "Przelewy24/PayU dla rynku polskiego, Stripe dla klientów międzynarodowych. Automatyzacja subskrypcji i rozliczeń" },
-          { "title": "Real-time i Wdrożenie", "description": "WebSockets lub SSE. Wdrożenie na infrastrukturze cloud z zarządzanymi bazami danych" }
+          {
+            "title": "Frontend",
+            "description": "React 19, Next.js 15, TypeScript. Szybkie, SEO-przyjazne interfejsy SaaS z niezawodnością w miarę rozwoju"
+          },
+          {
+            "title": "Backend",
+            "description": "Node.js, PostgreSQL (Supabase, Prisma). Skalowalne modele danych dla wielu klientów"
+          },
+          {
+            "title": "Uwierzytelnianie",
+            "description": "Clerk lub NextAuth. Bezpieczne zarządzanie użytkownikami z logowaniem społecznościowym i OAuth"
+          },
+          {
+            "title": "Płatności",
+            "description": "Przelewy24/PayU dla rynku polskiego, Stripe dla klientów międzynarodowych. Automatyzacja subskrypcji i rozliczeń"
+          },
+          {
+            "title": "Real-time i Wdrożenie",
+            "description": "WebSockets lub SSE. Wdrożenie na infrastrukturze cloud z zarządzanymi bazami danych"
+          }
         ],
         "cta": {
-          "title": "Gotowy Zbudować Swoją Platformę SaaS?",
-          "subtitle": "Opisz swój projekt, a odpowiem w ciągu 24 godzin z pytaniami o architekturę, harmonogram i podejście techniczne.",
-          "button": "Rozpocznij Projekt"
-        }
+          "title": "Masz pomysł na aplikację?",
+          "subtitle": "Opisz problem, który system ma rozwiązać. W ciągu 24 godzin dostaniesz moją ocenę zakresu MVP, widełki cenowe i pytania, które pomogą doprecyzować zakres.",
+          "button": "Opisz swój projekt"
+        },
+        "faqTitle": "Najczęstsze pytania o aplikacje webowe",
+        "faq": [
+          {
+            "question": "Ile kosztuje aplikacja webowa dla firmy?",
+            "answer": "MVP z kluczową funkcją, logowaniem i panelem zaczyna się od około 15 000 zł. Systemy z płatnościami, rolami i integracjami to zwykle 25 000 zł i więcej. Dokładna cena zależy od zakresu, dlatego wycenę dostajesz po rozmowie, z podziałem na etapy i z jasno opisanym zakresem każdego etapu."
+          },
+          {
+            "question": "Czym różni się aplikacja webowa od zwykłej strony internetowej?",
+            "answer": "Strona pokazuje informacje, aplikacja wykonuje pracę: użytkownicy się logują, wprowadzają dane, system je przetwarza i pilnuje uprawnień. Jeśli projekt zakłada konta, panel albo płatności, to aplikacja. Jeśli chodzi o wizytówkę firmy z ofertą, wystarczy [strona internetowa](/pl/uslugi/tworzenie-stron)."
+          },
+          {
+            "question": "Ile trwa stworzenie aplikacji webowej dla firmy?",
+            "answer": "MVP, czyli pierwsza działająca wersja, to u mnie zwykle 4-8 tygodni. Pełny system rośnie potem etapami. Kluczem jest dobre cięcie zakresu: budujemy najpierw to, co weryfikuje pomysł u prawdziwych użytkowników, a rozbudowujemy na podstawie ich zachowania, nie przypuszczeń."
+          },
+          {
+            "question": "Czy warto zlecić stworzenie aplikacji jednemu programiście zamiast agencji?",
+            "answer": "Przy MVP i systemach małej i średniej skali: tak, i zwykle wyraźnie taniej, bo nie płacisz za project managera ani narzut agencji. Masz bezpośredni kontakt z osobą, która pisze kod. Dla jasności: przy bardzo dużych systemach zespół ma sens, i mówię to wprost na etapie wyceny."
+          },
+          {
+            "question": "Ile kosztuje MVP aplikacji dla startupu?",
+            "answer": "Od około 15 000 zł, w zależności od tego, ile funkcji naprawdę musi być w pierwszej wersji. Najczęstszy błąd startupów to budowanie od razu pełnego produktu. MVP ma zweryfikować, czy ktoś chce używać rdzenia pomysłu, i dopiero to uzasadnia dalsze wydatki."
+          },
+          {
+            "question": "Jak wybrać wykonawcę aplikacji webowej?",
+            "answer": "Sprawdź przede wszystkim: działające produkty (nie mockupy), czy wykonawca pisze otwarcie o swoich decyzjach technicznych i błędach, oraz czy kod będzie Twój, na Twojej infrastrukturze. Moje projekty, w tym [historię budowy Fennaro](/pl/artykuly/najtrudniejsze-w-aplikacji-dla-psow-to-nie-kod), opisuję publicznie właśnie po to."
+          },
+          {
+            "question": "Czy aplikacja webowa może obsługiwać płatności cykliczne i subskrypcje?",
+            "answer": "Tak. Wdrażam płatności jednorazowe i cykliczne przez Przelewy24, PayU lub Stripe, razem z fakturami, obsługą nieudanych płatności i panelem, w którym użytkownik sam zarządza subskrypcją. To standardowy element platform SaaS i jeden z głównych powodów, dla których buduje się je na zamówienie."
+          },
+          {
+            "question": "Ile kosztuje utrzymanie aplikacji webowej po wdrożeniu?",
+            "answer": "Infrastruktura dla MVP to zwykle 100-400 zł miesięcznie (hosting, baza danych, wysyłka e-maili). Rozwój i poprawki rozliczam za konkretne zlecenia, nie abonamentem. Dostajesz też monitoring błędów, więc o problemach wiem, zanim zgłoszą je użytkownicy."
+          }
+        ]
       }
     },
     "ecommerce-development": {
       "id": "ecommerce-development",
-      "label": "Sklepy Internetowe",
+      "label": "Sklepy Internetowe na Zamówienie",
       "href": "/pl/uslugi/sklepy-internetowe",
       "hrefLang": {
         "en": "/en/services/ecommerce-development",
         "pl": "/pl/uslugi/sklepy-internetowe"
       },
       "seo": {
-        "title": "Sklepy Internetowe Częstochowa | Max Mendes",
-        "metaDescription": "Sklepy internetowe z integracją Subiekt GT i szybką kasą. Shopify lub dedykowane. Programista z Częstochowy. Sklepy dla firm ze Śląskiego i całej Polski.",
-        "keywords": ["sklepy internetowe", "sklep online częstochowa", "integracja subiekt gt", "tworzenie sklepów", "sklep shopify", "sklep dedykowany", "e-commerce śląskie"],
-        "h1": "Tworzenie Sklepów Internetowych",
-        "ogTitle": "Sklepy Internetowe Częstochowa | Max Mendes"
+        "title": "Sklepy Internetowe na Zamówienie Częstochowa | Max Mendes",
+        "metaDescription": "Dedykowany sklep internetowy w React, nie WooCommerce ani Shopify. Integracja z Subiektem GT, szybki checkout, polskie płatności. Zero prowizji od sprzedaży.",
+        "keywords": [
+          "sklepy internetowe",
+          "sklep internetowy na zamówienie",
+          "dedykowany sklep internetowy",
+          "ile kosztuje sklep internetowy",
+          "integracja subiekt gt sklep internetowy",
+          "sklep internetowy bez woocommerce",
+          "shopify czy dedykowany sklep",
+          "e-commerce śląskie"
+        ],
+        "h1": "Sklepy Internetowe na Zamówienie",
+        "ogTitle": "Sklepy Internetowe na Zamówienie Częstochowa | Max Mendes"
       },
       "schema": {
         "serviceType": "Tworzenie Sklepów Internetowych",
         "description": "Sklepy internetowe z integracją bramek płatności i systemów magazynowych. Rozwiązania dedykowane bez ograniczeń szablonów.",
-        "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+        "areaServed": [
+          "Częstochowa",
+          "Śląskie",
+          "Polska"
+        ]
       },
       "content": {
-        "subtitle": "Dedykowane sklepy internetowe w React: szybkie, wydajne i nastawione na konwersję. Projektowane pod Twój katalog i logikę biznesową, z pełną kontrolą nad każdym detalem.",
+        "subtitle": "Dedykowane sklepy internetowe pisane w React: szybki checkout, polskie płatności, integracja z magazynem. Bez prowizji od sprzedaży i bez limitów platformy.",
         "sections": [
           {
-            "title": "Czym jest niestandardowy sklep internetowy",
+            "title": "Sklep dedykowany czy abonament: co się bardziej opłaca",
             "paragraphs": [
-              "Tworzenie niestandardowego sklepu internetowego oznacza budowę rozwiązania dopasowanego do realnych potrzeb Twojej firmy, a nie do ograniczeń gotowych motywów WooCommerce. Szablony sprawdzają się na początku, ale wiele firm szybko je przerasta, gdy pojawia się niestandardowa polityka cenowa, złożona logika magazynowa lub potrzeba integracji z innymi systemami. Sklep oparty na React i Next.js daje pełną kontrolę nad wydajnością, SEO i sposobem działania sprzedaży. Szybkość ładowania oraz dobre wyniki Core Web Vitals mają bezpośredni wpływ na konwersję i widoczność w Google."
+              "Sklep na platformie abonamentowej (Shoper, Shopify) to koszt od kilkuset złotych miesięcznie, plus prowizje i wtyczki. Sklep dedykowany, pisany od zera, to u mnie inwestycja od około 15 000 zł, ale bez abonamentu za platformę, bez prowizji od sprzedaży i bez opłat za każdą dodatkową funkcję.",
+              "Rachunek robi się ciekawy przy większej sprzedaży: sklep płacący platformie i wtyczkom kilkaset złotych miesięcznie plus prowizje wydaje w trzy lata więcej, niż kosztuje sklep dedykowany, który należy do Ciebie. Dokładną wycenę dostajesz po rozmowie o katalogu, integracjach i procesie zamówień."
             ]
           },
           {
-            "title": "Co obejmuje ta usługa",
+            "title": "Shoper, WooCommerce czy sklep dedykowany",
             "paragraphs": [
-              "Buduję sklepy internetowe obejmujące cały proces sprzedaży. Projekty mogą zawierać katalog produktów z zarządzaniem stanami magazynowymi, koszyk i dopasowany proces checkoutu, a także integrację płatności. Dla rynku polskiego obsługiwane są Przelewy24 i PayU, a dla klientów międzynarodowych: Stripe. System zamówień pozwala śledzić status realizacji i wysyłki, a konta klientów dają dostęp do historii zakupów. Wyszukiwarka i filtry ułatwiają szybkie znalezienie produktów, a panel administracyjny umożliwia sprawne zarządzanie ofertą i zamówieniami. Automatyczne maile (potwierdzenia, aktualizacje wysyłki) ograniczają ręczną obsługę."
+              "Wprost: jeśli dopiero testujesz sprzedaż online i masz mały katalog, platforma abonamentowa może być dobrym startem. Sklep dedykowany ma sens, gdy spełniasz przynajmniej jeden z tych warunków: potrzebujesz integracji z systemem magazynowym (np. Subiekt GT), prowizje i abonamenty zaczynają boleć, sklep na WooCommerce zwalnia mimo kolejnych optymalizacji, albo proces zakupowy ma być inny niż szablonowy.",
+              "WooCommerce z pozoru jest darmowy, ale to wtyczka do WordPressa i dziedziczy wszystkie jego problemy: wtyczka na płatności, wtyczka na faktury, wtyczka na kuriera, i każda z nich to koszt, aktualizacje i kolejne spowolnienie. Sklep dedykowany ma te funkcje wbudowane w kod, bez warstwy pośredników."
             ]
           },
           {
-            "title": "Dla kogo i przykładowe zastosowania",
+            "title": "Integracja z Subiektem GT i polskimi płatnościami",
             "paragraphs": [
-              "Ta usługa jest przeznaczona dla firm, które nie chcą lub nie mogą działać w ramach standardowego WooCommerce. Sprawdza się w modelach B2B z indywidualnymi cenami lub rabatami ilościowymi, przy integracjach z systemami księgowymi, ERP lub magazynowymi, a także przy produktach konfigurowalnych i rozbudowanych wariantach. To również dobre rozwiązanie dla sklepów działających międzynarodowo (wielowalutowość, wiele języków) lub szukających realnej alternatywy dla WooCommerce."
+              "Dla polskich sklepów kluczowa jest integracja z tym, co już działa w firmie. Buduję synchronizację z systemami magazynowo-księgowymi, w tym z Subiektem GT: stany magazynowe, ceny i zamówienia przepływają automatycznie, bez ręcznego przepisywania.",
+              "Płatności: Przelewy24 lub PayU z BLIK-iem, bo tak płacą polscy klienci, plus Stripe dla sprzedaży zagranicznej. Do tego integracje kurierskie z generowaniem etykiet i automatyczne faktury. Cały proces od koszyka do wysyłki dzieje się w jednym systemie."
             ]
           },
           {
-            "title": "Wydajność i SEO jako fundament sprzedaży",
+            "title": "Co dostajesz w dedykowanym sklepie",
             "paragraphs": [
-              "Wydajność sklepu ma bezpośredni wpływ na sprzedaż. Szybkie strony produktowe poprawiają doświadczenie użytkownika i zwiększają konwersję. Każdy sklep jest optymalizowany pod SEO: odpowiednia struktura treści, metadane, dane strukturalne oraz renderowanie po stronie serwera, dzięki czemu produkty są dobrze indeksowane. Obrazy są optymalizowane i ładowane asynchronicznie, a całość projektowana w podejściu mobile-first, zgodnie z tym, jak dziś kupują klienci.",
-              "Z Częstochowy, dostępny dla projektów z Polski i zagranicy."
+              "Witrynę sklepu w React, która ładuje się natychmiast i działa płynnie na telefonie, bo tam dzieje się większość zakupów. Checkout zoptymalizowany pod jak najmniej kliknięć, bo każdy dodatkowy krok to porzucone koszyki. Panel administracyjny dopasowany do Twojego procesu: produkty, zamówienia, klienci, rabaty.",
+              "Od strony Google: każda karta produktu ma dane strukturalne (cena, dostępność, oceny), więc może pokazywać się w wynikach z ceną i gwiazdkami. Szybkość i techniczne SEO są wbudowane od startu, co przy sklepach bezpośrednio przekłada się na sprzedaż z ruchu organicznego."
+            ]
+          },
+          {
+            "title": "Jak przebiega budowa sklepu i ile trwa",
+            "paragraphs": [
+              "Zaczynamy od procesu, nie od wyglądu: jak wygląda Twój katalog, skąd przychodzą stany magazynowe, jak pakujesz i wysyłasz, co ma się dziać po zamówieniu. Potem projekt witryny, budowa, migracja produktów i testowe zamówienia przed startem.",
+              "Typowy sklep dedykowany buduję w 4-8 tygodni, zależnie od integracji. Po starcie sklep jest Twój: kod, dane i infrastruktura należą do Ciebie, a ja zostaję do dyspozycji przy rozwoju."
             ],
             "links": [
-              { "text": "Pytania o zakres, czas realizacji lub koszty? Sprawdź FAQ →", "href": "/pl/pytania" }
+              {
+                "text": "Zobacz zrealizowane projekty →",
+                "href": "/pl/projekty"
+              }
             ]
           }
         ],
         "techStackTitle": "Stos Technologiczny",
         "techStack": [
-          { "title": "Frontend", "description": "React 19, Next.js 15 i TypeScript zapewniają szybkie, przyjazne SEO strony produktowe, które realnie wspierają konwersję." },
-          { "title": "Płatności", "description": "Przelewy24 i PayU dla rynku polskiego oraz Stripe dla sprzedaży zagranicznej." },
-          { "title": "Baza danych", "description": "PostgreSQL z Supabase odpowiada za produkty, zamówienia i stany magazynowe." },
-          { "title": "Wyszukiwanie", "description": "Algolia lub rozwiązanie dedykowane umożliwia szybkie odnajdywanie produktów. Obrazy są optymalizowane pod wydajność." },
-          { "title": "Wdrożenie", "description": "Całość działa na profesjonalnej infrastrukturze cloud z szybkim hostingiem i dystrybucją CDN." }
+          {
+            "title": "Frontend",
+            "description": "React 19, Next.js 15 i TypeScript zapewniają szybkie, przyjazne SEO strony produktowe, które realnie wspierają konwersję."
+          },
+          {
+            "title": "Płatności",
+            "description": "Przelewy24 i PayU dla rynku polskiego oraz Stripe dla sprzedaży zagranicznej."
+          },
+          {
+            "title": "Baza danych",
+            "description": "PostgreSQL z Supabase odpowiada za produkty, zamówienia i stany magazynowe."
+          },
+          {
+            "title": "Wyszukiwanie",
+            "description": "Algolia lub rozwiązanie dedykowane umożliwia szybkie odnajdywanie produktów. Obrazy są optymalizowane pod wydajność."
+          },
+          {
+            "title": "Wdrożenie",
+            "description": "Całość działa na profesjonalnej infrastrukturze cloud z szybkim hostingiem i dystrybucją CDN."
+          }
         ],
         "cta": {
-          "title": "Gotowy Zbudować Swój Sklep Internetowy?",
-          "subtitle": "Opisz swój katalog, integracje i wymagania biznesowe. Odpowiem w ciągu 24 godzin z pytaniami o podejście techniczne i harmonogram.",
-          "button": "Rozpocznij Projekt"
-        }
+          "title": "Porozmawiajmy o Twoim sklepie",
+          "subtitle": "Opisz katalog, obecny system magazynowy i to, co dziś najbardziej przeszkadza w sprzedaży. W ciągu 24 godzin dostaniesz ocenę, czy sklep dedykowany ma u Ciebie sens, i widełki cenowe.",
+          "button": "Bezpłatna wycena sklepu"
+        },
+        "faqTitle": "Najczęstsze pytania o sklepy internetowe",
+        "faq": [
+          {
+            "question": "Ile kosztuje sklep internetowy?",
+            "answer": "Sklep na platformie abonamentowej: od kilkuset złotych miesięcznie plus prowizje. Sklep dedykowany, pisany od zera: od około 15 000 zł jednorazowo, bez abonamentu i prowizji. Który model się opłaca, zależy od skali sprzedaży i potrzebnych integracji, i to liczę z Tobą na etapie wyceny."
+          },
+          {
+            "question": "Ile trwa zrobienie sklepu internetowego?",
+            "answer": "Sklep dedykowany buduję zwykle w 4-8 tygodni. Najwięcej czasu zajmują integracje (magazyn, płatności, kurierzy) i migracja katalogu produktów. Sklep na platformie wystartuje szybciej, ale ogranicza Cię potem szablon, prowizje i limity funkcji."
+          },
+          {
+            "question": "Shopify czy dedykowany sklep internetowy, co wybrać?",
+            "answer": "Shopify: szybki start, ale abonament w dolarach, prowizje i ograniczenia szablonu. Sklep dedykowany: większa inwestycja na starcie, ale zero prowizji, pełna kontrola nad procesem zakupowym i integracjami, i sklep jest Twoją własnością. Przy rosnącej sprzedaży dedykowany często zwraca się w 2-3 lata."
+          },
+          {
+            "question": "Ile kosztuje utrzymanie sklepu internetowego miesięcznie?",
+            "answer": "Sklep dedykowany: zwykle 150-400 zł miesięcznie na hosting, bazę danych i wysyłkę e-maili, bez opłat za platformę i wtyczki. Prowizje płacisz tylko operatorowi płatności (ok. 1-2%), nie platformie sklepowej. Rozwój i zmiany rozliczam za konkretne zlecenia."
+          },
+          {
+            "question": "Jak działa integracja sklepu internetowego z Subiektem GT?",
+            "answer": "Sklep synchronizuje się z Subiektem automatycznie: stany magazynowe i ceny płyną z Subiekta do sklepu, a zamówienia ze sklepu wracają do Subiekta. Koniec z ręcznym przepisywaniem i sprzedawaniem towaru, którego nie ma. To jedna z najczęstszych integracji, o które pytają polskie firmy handlowe."
+          },
+          {
+            "question": "Sklep na WooCommerce czy dedykowany, co lepsze?",
+            "answer": "WooCommerce jest \"darmowy\" tak jak WordPress: w praktyce płacisz za wtyczki, motyw i naprawianie konfliktów po aktualizacjach, a sklep zwalnia z każdą kolejną wtyczką. Sklep dedykowany ma płatności, faktury i kurierów wbudowane w kod. Przy poważnej sprzedaży różnica w szybkości i kosztach utrzymania jest wyraźna."
+          },
+          {
+            "question": "Przy ilu produktach opłaca się sklep dedykowany?",
+            "answer": "To nie tyle kwestia liczby produktów, ile skali sprzedaży i integracji. Sklep z 50 produktami i integracją z Subiektem może potrzebować dedykowanego rozwiązania bardziej niż sklep z 5 000 produktów bez integracji. Graniczny sygnał: gdy miesięczne opłaty i prowizje przekraczają kilkaset złotych."
+          },
+          {
+            "question": "Jakie metody płatności powinien mieć sklep internetowy w Polsce?",
+            "answer": "Minimum to BLIK i szybkie przelewy przez Przelewy24 lub PayU, bo tak płaci zdecydowana większość polskich klientów. Do tego karta i, przy sprzedaży za granicę, Stripe. Wdrażam też płatności odroczone i raty, jeśli profil sklepu tego wymaga."
+          }
+        ]
       }
     },
     "seo-performance-optimization": {
       "id": "seo-performance-optimization",
-      "label": "SEO & Optymalizacja Wydajności",
+      "label": "Pozycjonowanie Techniczne",
       "href": "/pl/uslugi/pozycjonowanie",
       "hrefLang": {
         "en": "/en/services/seo-performance-optimization",
         "pl": "/pl/uslugi/pozycjonowanie"
       },
       "seo": {
-        "title": "SEO & Optymalizacja Wydajności Częstochowa | Max Mendes",
-        "metaDescription": "Optymalizacja SEO i wydajności stron. Core Web Vitals, szybkość ładowania, pozycje w Google. Nie WordPress, prawdziwy kod. Częstochowa, Śląskie, Polska.",
-        "keywords": ["pozycjonowanie stron", "seo techniczne", "audyt seo częstochowa", "optymalizacja strony", "core web vitals", "pozycjonowanie śląskie", "seo programista"],
-        "h1": "SEO & Optymalizacja Wydajności",
-        "ogTitle": "SEO & Optymalizacja Wydajności Częstochowa | Max Mendes"
+        "title": "Pozycjonowanie Techniczne SEO Częstochowa | Max Mendes",
+        "metaDescription": "Pozycjonowanie techniczne i optymalizacja Core Web Vitals, nie link building. Audyt SEO z listą poprawek od 1 500 zł. Szybsza strona, lepsze pozycje w Google.",
+        "keywords": [
+          "pozycjonowanie techniczne",
+          "audyt seo częstochowa",
+          "optymalizacja core web vitals",
+          "ile kosztuje audyt seo",
+          "dlaczego strona długo się ładuje",
+          "strona niewidoczna w google",
+          "poprawa pozycji w google",
+          "pozycjonowanie stron częstochowa"
+        ],
+        "h1": "Pozycjonowanie Techniczne i Optymalizacja Wydajności",
+        "ogTitle": "Pozycjonowanie Techniczne SEO Częstochowa | Max Mendes"
       },
       "schema": {
         "serviceType": "Pozycjonowanie Stron Internetowych",
         "description": "Optymalizacja wydajności i SEO skoncentrowana na realnych wynikach biznesowych. Szybsza strona to lepsze pozycje w Google i wyższa konwersja.",
-        "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+        "areaServed": [
+          "Częstochowa",
+          "Śląskie",
+          "Polska"
+        ]
       },
       "content": {
-        "subtitle": "Optymalizacja wydajności i SEO skoncentrowana na realnych wynikach biznesowych. Szybsza strona to lepsze pozycje w Google, wyższa konwersja i większe przychody, nie tylko lepsze wyniki techniczne.",
+        "subtitle": "Techniczna strona pozycjonowania: kod, szybkość, indeksowanie. Naprawiam to, przez co Google nie chce pokazywać Twojej strony, bez abonamentów i obietnic \"pierwszej pozycji\".",
         "sections": [
           {
-            "title": "Dlaczego wydajność i SEO mają znaczenie dla biznesu",
+            "title": "Dlaczego Twoja strona nie jest widoczna w Google",
             "paragraphs": [
-              "Wydajność strony i SEO bezpośrednio wpływają na liczbę klientów oraz sprzedaż. Wolne strony tracą użytkowników, zanim ci zdążą wykonać jakąkolwiek akcję, a wyszukiwarki promują witryny szybkie i stabilne. Core Web Vitals (czyli kluczowe wskaźniki jakości strony) są oficjalnym czynnikiem rankingowym Google, dlatego szybkość i stabilność layoutu mają realny wpływ na widoczność w wynikach wyszukiwania.",
-              "Badania branżowe pokazują, że nawet 1 sekunda opóźnienia może obniżyć konwersję o około 7%. Dodatkowo Google stosuje mobile-first indexing, co oznacza, że wydajność wersji mobilnej ma kluczowe znaczenie. Celem optymalizacji jest więcej ruchu z Google, lepsze doświadczenie użytkownika i wyższe przychody, nie \u201Eładne wykresy\u201D bez przełożenia na biznes."
+              "Najczęstsze powody są techniczne: strona ładuje się za wolno (zwłaszcza na telefonie), Google nie może jej poprawnie odczytać, podstrony konkurują ze sobą zduplikowaną treścią, brakuje danych strukturalnych albo mapa strony wysyła sprzeczne sygnały. Żaden abonament na \"pozycjonowanie\" tego nie naprawi, bo to są błędy w kodzie, nie w marketingu.",
+              "Szybki test na start: wpisz w Google \"site:twojadomena.pl\". Jeśli nie widzisz swoich podstron, Google ich nie zaindeksował i klienci nie mają szans ich znaleźć. To dokładnie ta klasa problemów, którą diagnozuję i naprawiam."
             ]
           },
           {
-            "title": "Co obejmuje usługa: optymalizacja wydajności",
+            "title": "Czym jest pozycjonowanie techniczne (i czym nie jest)",
             "paragraphs": [
-              "Skupiam się na realnej poprawie szybkości i stabilności strony widzianej przez użytkowników. Obejmuje to optymalizację Core Web Vitals: LCP (Largest Contentful Paint), FID/INP (reakcja na interakcję) oraz CLS (stabilność układu).",
-              "Przyspieszanie strony realizowane jest poprzez kompresję i optymalizację obrazów, lazy loading, redukcję nadmiarowego JavaScript oraz code splitting. Optymalizowane są również CSS i zasoby statyczne. Wdrażane są mechanizmy cache oraz CDN w celu skrócenia czasu odpowiedzi serwera. Sprawdzane są zapytania do bazy danych, aby wyeliminować wąskie gardła. Każdy projekt zawiera pomiary przed i po z użyciem Lighthouse i PageSpeed Insights, dzięki czemu efekty są mierzalne."
+              "Pozycjonowanie techniczne to praca w kodzie strony: szybkość ładowania, poprawne meta tagi, dane strukturalne, mapa strony, wersje językowe, przekierowania i wszystko, co decyduje o tym, czy Google rozumie i premiuje Twoją stronę. To fundament, bez którego wydatki na treści i reklamy pracują na pół gwizdka.",
+              "Czym ta usługa nie jest: nie sprzedaję linków, artykułów sponsorowanych ani miesięcznego abonamentu z raportem. Robię audyt, wdrażam poprawki w kodzie i pokazuję efekt w danych z Google Search Console. Jeśli Twoja strona potrzebuje głównie treści i linków, powiem to wprost zamiast brać pieniądze za technikę, której nie potrzebuje."
             ]
           },
           {
-            "title": "Co obejmuje usługa: techniczne SEO",
+            "title": "Ile kosztuje audyt SEO i optymalizacja",
             "paragraphs": [
-              "Optymalizacja SEO zaczyna się od audytu technicznego: indeksowanie, crawlability i struktura strony. Usuwam problemy ograniczające widoczność, takie jak błędne przekierowania, duplikacja treści, błędy linkowania wewnętrznego czy nieprawidłowe adresy URL.",
-              "Wdrażane są dane strukturalne Schema.org, które zwiększają szanse na rich snippets w wynikach wyszukiwania. Meta title i description są optymalizowane pod czytelność i CTR, a nie pod sztuczne upychanie słów kluczowych. Poprawne renderowanie po stronie serwera zapewnia, że treści są w pełni dostępne dla robotów Google. Efektem jest solidna baza techniczna pod długofalowe SEO."
+              "Audyt techniczny z konkretną listą poprawek ułożoną od najważniejszych: od 1 500 zł, w zależności od wielkości strony. Dostajesz dokument, który rozumie właściciel firmy, nie tylko programista: co jest zepsute, ile Cię to kosztuje i co naprawić najpierw. Ten audyt możesz wdrożyć z dowolnym wykonawcą, nie ma przymusu dalszej współpracy ze mną.",
+              "Wdrożenie poprawek wyceniam po audycie, bo dopiero on pokazuje zakres. Typowy pakiet (audyt plus wdrożenie kluczowych poprawek) mieści się zwykle w przedziale 3 000-8 000 zł. To koszt jednorazowy, nie abonament."
             ]
           },
           {
-            "title": "Dla kogo jest ta usługa",
+            "title": "Core Web Vitals: szybkość strony to pozycje i klienci",
             "paragraphs": [
-              "Ta usługa jest przeznaczona dla firm posiadających już stronę internetową (często opartą o WordPress), która działa wolno lub nie osiąga oczekiwanych pozycji w Google. Sprawdzi się dla biznesów, które chcą zwiększyć liczbę zapytań, sprzedaż online lub poprawić skuteczność kampanii marketingowych bez przebudowy całej strony od zera. Jeśli Twoja strona ma ruch, ale nie konwertuje, optymalizacja wydajności i SEO może przynieść najszybszy efekt."
-            ]
-          },
-          {
-            "title": "Jak wygląda realizacja",
-            "paragraphs": [
-              "Pracujesz bezpośrednio z jednym developerem, bez pośredników i gotowych checklist. Zakres działań jest dopasowany do Twojej strony i celów biznesowych. Zmiany są wdrażane ostrożnie i weryfikowane na podstawie danych.",
-              "Z Częstochowy, dostępny dla projektów z Polski i zagranicy."
+              "Google mierzy realne doświadczenie użytkowników Twojej strony trzema wskaźnikami Core Web Vitals: jak szybko pojawia się główna treść, jak szybko strona reaguje na kliknięcia i czy elementy nie skaczą podczas ładowania. Te pomiary wpływają na pozycje, a jeszcze mocniej na klientów: wolna strona traci ich, zanim cokolwiek przeczytają.",
+              "Optymalizuję to, co faktycznie podnosi wyniki: obrazy, fonty, kod JavaScript, kolejność ładowania, cache. Efekt sprawdzamy w tych samych narzędziach, których używa Google, więc nie ma dyskusji o \"odczuciach\", tylko liczby przed i po."
             ],
             "links": [
-              { "text": "Pytania o zakres, proces lub koszty? Sprawdź FAQ →", "href": "/pl/pytania" }
+              {
+                "text": "Dlaczego lekkie, szybkie strony wygrywają →",
+                "href": "/pl/artykuly/strony-html-first-znowu-wygrywaja"
+              }
+            ]
+          },
+          {
+            "title": "Jak wygląda współpraca",
+            "paragraphs": [
+              "Wysyłasz adres strony i krótko opisujesz problem: spadki ruchu, brak zapytań, wolne ładowanie. Jeszcze tego samego lub następnego dnia dostajesz wstępną ocenę i wycenę audytu. Audyt trwa kilka dni, wdrożenie poprawek zależnie od zakresu.",
+              "Efekty pokazuję w Google Search Console i pomiarach szybkości: co było, co jest, co się zmieniło. Uczciwe zastrzeżenie: pozycje w Google budują się tygodniami, nie z dnia na dzień, i nikt rozsądny nie zagwarantuje Ci \"pierwszego miejsca\". Mogę zagwarantować, że technicznie strona przestanie przeszkadzać sama sobie."
             ]
           }
         ],
         "techStackTitle": "Obszary Techniczne Optymalizacji",
         "techStack": [
-          { "title": "Wydajność", "description": "Core Web Vitals, szybkość strony i stabilność interfejsu z wykorzystaniem React, Next.js i TypeScript." },
-          { "title": "SEO techniczne", "description": "Indeksowanie, dane strukturalne (Schema.org) i renderowanie treści dla wyszukiwarek." },
-          { "title": "Obrazy", "description": "Kompresja, nowoczesne formaty (WebP, AVIF) i lazy loading redukują rozmiar bez utraty jakości." },
-          { "title": "Cache i CDN", "description": "Mechanizmy cache i CDN skracają czas ładowania globalnie." },
-          { "title": "Pomiar", "description": "Lighthouse, PageSpeed Insights i Google Search Console. Każda zmiana jest mierzona, aby techniczne usprawnienia przekładały się na realne wyniki biznesowe." }
+          {
+            "title": "Wydajność",
+            "description": "Core Web Vitals, szybkość strony i stabilność interfejsu z wykorzystaniem React, Next.js i TypeScript."
+          },
+          {
+            "title": "SEO techniczne",
+            "description": "Indeksowanie, dane strukturalne (Schema.org) i renderowanie treści dla wyszukiwarek."
+          },
+          {
+            "title": "Obrazy",
+            "description": "Kompresja, nowoczesne formaty (WebP, AVIF) i lazy loading redukują rozmiar bez utraty jakości."
+          },
+          {
+            "title": "Cache i CDN",
+            "description": "Mechanizmy cache i CDN skracają czas ładowania globalnie."
+          },
+          {
+            "title": "Pomiar",
+            "description": "Lighthouse, PageSpeed Insights i Google Search Console. Każda zmiana jest mierzona, aby techniczne usprawnienia przekładały się na realne wyniki biznesowe."
+          }
         ],
         "cta": {
-          "title": "Gotowy Zoptymalizować Swoją Stronę?",
-          "subtitle": "Opisz aktualne problemy z wydajnością oraz cele biznesowe. Odpowiem w ciągu 24 godzin z wstępną oceną i propozycją działań optymalizacyjnych.",
-          "button": "Rozpocznij Projekt"
-        }
+          "title": "Wyślij adres swojej strony",
+          "subtitle": "Napisz, co Cię martwi: brak zapytań, spadki, wolne ładowanie. W ciągu 24 godzin dostaniesz wstępną ocenę techniczną i wycenę audytu, bez zobowiązań.",
+          "button": "Bezpłatna wstępna ocena"
+        },
+        "faqTitle": "Najczęstsze pytania o pozycjonowanie techniczne",
+        "faq": [
+          {
+            "question": "Czy pozycjonowanie opłaca się małej firmie?",
+            "answer": "Tak, ale w odpowiedniej kolejności. Zanim zapłacisz za treści czy linki, strona musi być technicznie sprawna: szybka, indeksowalna, zrozumiała dla Google. Bez tego każda złotówka na marketing pracuje słabiej. Dla lokalnej firmy dobrze zrobiona technika plus wizytówka Google to często większość efektu."
+          },
+          {
+            "question": "Ile trwa pozycjonowanie i kiedy widać pierwsze efekty?",
+            "answer": "Poprawki techniczne wdrażam w dni lub tygodnie, ale Google potrzebuje czasu, żeby je zauważyć: pierwsze zmiany widać zwykle po 2-6 tygodniach, pełniejszy efekt po 3-6 miesiącach. Każdy, kto obiecuje pozycje w tydzień, mija się z prawdą. Postęp śledzimy w Google Search Console na liczbach, nie odczuciach."
+          },
+          {
+            "question": "Dlaczego moja strona długo się ładuje?",
+            "answer": "Najczęściej: za ciężkie obrazy, nadmiar wtyczek i skryptów (typowe dla WordPressa), tani hosting i kod ładujący wszystko naraz. Na telefonie problemy nasilają się przez słabsze łącze. Audyt pokazuje, które z tych przyczyn dotyczą Twojej strony i co da największą poprawę najmniejszym kosztem."
+          },
+          {
+            "question": "Dlaczego strona nie jest widoczna w Google mimo pozycjonowania?",
+            "answer": "Sprawdź najpierw, czy w ogóle jest w indeksie: wpisz w Google \"site:twojadomena.pl\". Jeśli podstron brakuje, problem jest techniczny: blokady w robots.txt, błędne canonicale, duplikaty albo strona, której Google nie umie odczytać. To trzeba naprawić w kodzie, żaden abonament SEO tego nie obejdzie."
+          },
+          {
+            "question": "Ile kosztuje audyt SEO strony?",
+            "answer": "U mnie od 1 500 zł, zależnie od wielkości strony. Dostajesz listę problemów ułożoną od najważniejszych, z instrukcją napraw, zrozumiałą dla właściciela firmy. Audyt jest niezależny: możesz wdrożyć go ze mną albo z dowolnym innym wykonawcą. Wdrożenie wyceniam osobno, po poznaniu zakresu."
+          },
+          {
+            "question": "Co to są Core Web Vitals i czemu mają znaczenie?",
+            "answer": "To trzy pomiary Google z realnych wizyt na Twojej stronie: szybkość pojawienia się treści, szybkość reakcji na kliknięcia i stabilność układu podczas ładowania. Wpływają na pozycje w wynikach i na to, czy użytkownik zostanie. Poprawa tych wskaźników to jeden z najpewniejszych zwrotów z technicznego SEO."
+          },
+          {
+            "question": "Jak sprawdzić, czy moja strona jest zaindeksowana w Google?",
+            "answer": "Wpisz w Google \"site:twojadomena.pl\". Zobaczysz listę podstron, które Google zna. Jeśli brakuje kluczowych stron usługowych, masz problem z indeksowaniem, i to problem techniczny, który da się zdiagnozować. Głębszy obraz daje bezpłatne narzędzie Google Search Console, które konfiguruję klientom w ramach audytu."
+          },
+          {
+            "question": "Czym różni się SEO techniczne od pozycjonowania z linkami i treścią?",
+            "answer": "SEO techniczne to fundament w kodzie: szybkość, indeksowanie, struktura. Treści i linki budują na tym fundamencie autorytet. Agencje abonamentowe sprzedają głównie to drugie, często bez sprawdzenia fundamentu. Ja robię fundament, a jeśli Twoja strona potrzebuje głównie treści, mówię to wprost."
+          }
+        ]
       }
     },
     "ai-integration": {
       "id": "ai-integration",
-      "label": "Integracja AI i Automatyzacja",
+      "label": "Integracja AI dla Firm",
       "href": "/pl/uslugi/integracja-ai",
       "hrefLang": {
         "en": "/en/services/ai-integration",
         "pl": "/pl/uslugi/integracja-ai"
       },
       "seo": {
-        "title": "Integracja AI - Inteligentne Funkcje | Max Mendes",
-        "metaDescription": "Usługi integracji AI dla praktycznych rozwiązań biznesowych. Automatyzacja, inteligentne wyszukiwanie, machine learning. OpenAI, Claude, GPT. Częstochowa, Polska.",
-        "keywords": ["integracja ai", "chatboty ai", "automatyzacja ai", "openai api", "sztuczna inteligencja", "chatgpt integracja", "ai dla firm", "machine learning częstochowa"],
-        "h1": "Integracja AI",
-        "ogTitle": "Integracja AI - Inteligentne Funkcje | Max Mendes"
+        "title": "Integracja AI dla Firm | Automatyzacja | Max Mendes",
+        "metaDescription": "Integracja AI dla firm: chatboty z wiedzą firmy, automatyzacja procesów, inteligentne wyszukiwanie. Wdrożenia na OpenAI i Anthropic od 5 000 zł.",
+        "keywords": [
+          "integracja ai dla firm",
+          "wdrożenie ai w firmie",
+          "chatbot ai dla firmy",
+          "automatyzacja ai",
+          "ile kosztuje wdrożenie ai",
+          "czy warto wdrożyć ai w małej firmie",
+          "openai api integracja",
+          "czy chatgpt jest bezpieczny dla danych firmowych"
+        ],
+        "h1": "Integracja AI dla Firm",
+        "ogTitle": "Integracja AI dla Firm | Automatyzacja | Max Mendes"
       },
       "schema": {
         "serviceType": "Integracja Sztucznej Inteligencji",
         "description": "Funkcje AI dla aplikacji webowych: chatboty, generowanie treści, automatyzacja procesów. Integracja OpenAI i Anthropic API.",
-        "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+        "areaServed": [
+          "Częstochowa",
+          "Śląskie",
+          "Polska"
+        ]
       },
       "content": {
-        "subtitle": "Inteligentne funkcje rozwiązujące realne problemy biznesowe. Automatyzacja, inteligentne wyszukiwanie i AI-powered procesy, praktyczne wdrożenie bez zbędnego hype'u.",
+        "subtitle": "Praktyczne wdrożenia AI: chatboty znające Twoją firmę, automatyzacja powtarzalnych procesów, inteligentne wyszukiwanie. Zaczynam od problemu, nie od technologii.",
         "sections": [
           {
-            "title": "Co oznacza integracja AI dla biznesu",
+            "title": "Co AI może realnie zrobić w Twojej firmie",
             "paragraphs": [
-              "Integracja AI to dodawanie inteligentnych funkcji do istniejących produktów i procesów, nie rewolucja całej firmy. W praktyce AI pomaga automatyzować powtarzalne zadania, klasyfikować dane, poprawiać wyszukiwanie, generować streszczenia lub wspierać użytkowników lepszymi podpowiedziami. Różnica między użytecznym AI a \"AI dla AI\" polega na celu: zaczynamy od konkretnego problemu biznesowego, a nie od technologii. Efekt, którego szukamy, to oszczędność czasu, redukcja kosztów i lepsze doświadczenie użytkownika. To nie są magiczne rozwiązania ani zamiennik zespołu. AI jako narzędzie, nie zamiennik pracowników."
+              "Konkretne zastosowania, które wdrażam: chatbot odpowiadający klientom na podstawie Twojej rzeczywistej oferty i dokumentów (nie ogólników z internetu), automatyczne przetwarzanie dokumentów i e-maili (odczyt, kategoryzacja, wyciąganie danych do systemu), inteligentne wyszukiwanie w firmowej bazie wiedzy oraz automatyczne opisy produktów dla sklepów.",
+              "Równie ważne jest to, czego nie obiecuję: AI nie zastąpi całego działu i nie w każdej firmie w ogóle ma sens. Jeśli po rozmowie okaże się, że problem lepiej rozwiązuje zwykła automatyzacja albo lepszy proces, mówię to wprost. Wdrożenie AI, które się nie zwraca, to porażka niezależnie od technologii."
             ]
           },
           {
-            "title": "Co obejmuje usługa: typowe funkcje AI",
+            "title": "Ile kosztuje wdrożenie AI w firmie",
             "paragraphs": [
-              "Zakres prac może obejmować: klasyfikację i kategoryzację tekstu, generowanie i streszczanie treści, inteligentne wyszukiwanie (dopasowanie semantyczne), rekomendacje i personalizację, rozpoznawanie i przetwarzanie obrazów, NLP dla zapytań użytkowników, automatyczne odpowiedzi i chatboty (tam, gdzie mają sens), a także analizę danych i wykrywanie wzorców. Każda funkcja jest projektowana pod konkretny rezultat, z myślą o stabilności i kontroli kosztów. Gdy prostsze reguły działają lepiej, rekomenduję je zamiast AI."
+              "Proste wdrożenie, np. chatbot oparty na dokumentach firmy albo automatyzacja jednego procesu, zaczyna się u mnie od około 5 000 zł. Rozbudowane integracje, wpięte w istniejące systemy, z panelem i kontrolą jakości odpowiedzi, to zwykle 10 000-25 000 zł. Wycenę z podziałem na etapy dostajesz po rozmowie o procesie, który chcesz usprawnić.",
+              "Do tego dochodzi koszt użycia API, płacony bezpośrednio dostawcy (OpenAI, Anthropic): przy typowej skali małej firmy to zwykle kilkadziesiąt do kilkuset złotych miesięcznie. Pokazuję te koszty przed startem i ustawiam limity wydatków, żeby rachunek Cię nie zaskoczył."
             ]
           },
           {
-            "title": "Implementacja techniczna i dostawcy",
+            "title": "Bezpieczeństwo danych: API to nie ChatGPT",
             "paragraphs": [
-              "Integruję sprawdzonych dostawców, takich jak OpenAI (GPT), Anthropic (Claude) oraz rozwiązania od Google, a w uzasadnionych przypadkach także modele open-source. Zakres obejmuje integrację API, projektowanie promptów dla powtarzalnych wyników, zarządzanie kosztami, obsługę błędów i bezpieczne fallbacki (AI bywa niedoskonałe). Dbam o prywatność danych, bezpieczeństwo i wydajność (cache, przetwarzanie asynchroniczne).",
-              "FlowMate wykorzystuje AI do klasyfikacji e-maili i sugestii odpowiedzi, radząc sobie z realną zmiennością treści."
+              "Najczęstsza obawa polskich firm: \"czy nasze dane będą trenować cudzy model?\". Kluczowe rozróżnienie: co innego darmowy ChatGPT, w który pracownicy wklejają dane, a co innego komercyjne API. Dane wysyłane przez API OpenAI i Anthropic nie są używane do trenowania modeli, co obaj dostawcy zapisują w warunkach usług dla firm.",
+              "Wdrożenia projektuję zgodnie z RODO: minimalizacja danych (model dostaje tylko to, co niezbędne), możliwość przetwarzania w regionie UE, logi tego, co system wysyła, i jasna umowa powierzenia, jeśli jest potrzebna. To są konkretne decyzje architektoniczne, nie deklaracje marketingowe."
+            ]
+          },
+          {
+            "title": "Jak wdrażam AI: od problemu, nie od technologii",
+            "paragraphs": [
+              "Zaczynam od pytania, gdzie firma traci czas lub klientów: powtarzalne odpowiedzi na te same pytania, ręczne przepisywanie danych, dokumenty czekające na przetworzenie. Potem buduję pilota: małe, mierzalne wdrożenie na jednym procesie. Jeśli liczby się bronią (oszczędzony czas, szybsze odpowiedzi), rozbudowujemy. Jeśli nie, kończymy na tanim pilocie zamiast brnąć dalej.",
+              "AI wdrażam nie tylko u klientów, ale i u siebie: automatyzacje AI w moich projektach opisuję publicznie na blogu, razem z kosztami i ograniczeniami. Rozwijam też funkcje AI w MarkMind, menedżerze zakładek z 700+ użytkownikami."
             ],
             "links": [
-              { "text": "Zobacz implementację AI w FlowMate na stronie Projekty →", "href": "/pl/projekty" }
+              {
+                "text": "Jak zautomatyzowałem wyszukiwanie firm bez stron przez AI →",
+                "href": "/pl/artykuly/automatyzacja-ai-wyszukiwanie-firm-bez-stron"
+              },
+              {
+                "text": "Zobacz projekty z AI →",
+                "href": "/pl/projekty"
+              }
             ]
           },
           {
-            "title": "Dla kogo i typowe zastosowania",
+            "title": "Dla kogo jest ta usługa",
             "paragraphs": [
-              "Ta usługa jest dla firm z powtarzalną pracą manualną, produktów wymagających lepszego wyszukiwania lub rekomendacji, zespołów wsparcia szukających asysty AI (nie zastępstwa), platform treściowych (streszczenia/kategorie), e-commerce (personalizacja) oraz produktów SaaS dodających \"smart\" funkcje.",
-              "Przykłady: klasyfikacja dokumentów, routing zapytań klientów, moderacja treści, rekomendacje produktów, wdrażane z jasnymi limitami i mierzalnym wpływem.",
-              "Z Częstochowy, dostępny dla projektów z Polski i zagranicy."
-            ],
-            "links": [
-              { "text": "Pytania o koszty lub proces integracji AI? Sprawdź FAQ →", "href": "/pl/pytania" }
-            ]
-          },
-          {
-            "title": "Podejście i Założenia",
-            "paragraphs": [
-              "Zaczynam od jednego, jasno zdefiniowanego przypadku użycia, a nie od \"AI wszędzie\". Najpierw krótki proof of concept, który sprawdza, czy AI faktycznie pomaga. Wdrażanie jest stopniowe, z bezpiecznymi fallbackami. Koszty mają znaczenie. Wywołania API skalują się z użyciem. I co ważne: nie każdy problem potrzebuje AI. Czasem reguły są szybsze i tańsze. Uczciwie oceniam, czy AI realnie poprawi Twój produkt."
+              "Dla małych i średnich firm bez własnego działu IT, które słyszą zewsząd o AI i chcą wiedzieć, co z tego naprawdę ma sens u nich. Nie musisz wiedzieć, czym różni się GPT od Claude'a: przychodzisz z procesem, który marnuje czas, a ja dobieram narzędzie, wdrażam je i uczę zespół z niego korzystać.",
+              "Jestem z Częstochowy, ale większość wdrożeń robię zdalnie, po polsku albo po angielsku. Pierwszą konsultację robię bezpłatnie: opisujesz proces, ja mówię, czy AI ma tam sens i ile by kosztowało."
             ]
           }
         ],
         "techStackTitle": "Stos Technologiczny",
         "techStack": [
-          { "title": "Dostawcy AI", "description": "W zależności od potrzeb używam: GPT (OpenAI), Claude (Anthropic) lub modeli niestandardowych." },
-          { "title": "Backend", "description": "Przetwarzanie asynchroniczne z kolejkami i cache, aby nie blokować użytkowników i kontrolować koszty." },
-          { "title": "Obsługa Błędów", "description": "Solidna obsługa błędów i fallbacki na wypadek niedostępności usług AI." },
-          { "title": "Frontend", "description": "Frontend w React. Płynna obsługa funkcji AI." },
-          { "title": "Monitoring", "description": "Monitoring zużycia, skuteczności i kosztów. Istotne, bo koszty API rosną z użyciem." }
+          {
+            "title": "Dostawcy AI",
+            "description": "W zależności od potrzeb używam: GPT (OpenAI), Claude (Anthropic) lub modeli niestandardowych."
+          },
+          {
+            "title": "Backend",
+            "description": "Przetwarzanie asynchroniczne z kolejkami i cache, aby nie blokować użytkowników i kontrolować koszty."
+          },
+          {
+            "title": "Obsługa Błędów",
+            "description": "Solidna obsługa błędów i fallbacki na wypadek niedostępności usług AI."
+          },
+          {
+            "title": "Frontend",
+            "description": "Frontend w React. Płynna obsługa funkcji AI."
+          },
+          {
+            "title": "Monitoring",
+            "description": "Monitoring zużycia, skuteczności i kosztów. Istotne, bo koszty API rosną z użyciem."
+          }
         ],
         "cta": {
-          "title": "Gotowy Dodać Funkcje AI?",
-          "subtitle": "Opisz problem, który chcesz rozwiązać, i miejsce, gdzie AI może pomóc. Odpowiem w ciągu 24 godzin z rzetelną oceną, czy AI to właściwe rozwiązanie w Twoim przypadku.",
-          "button": "Rozpocznij Projekt"
-        }
+          "title": "Opisz proces, który zżera Ci czas",
+          "subtitle": "Napisz, co w firmie jest powtarzalne i ręczne, a dostaniesz konkretną odpowiedź: czy AI ma tam sens i ile to kosztuje.",
+          "button": "Bezpłatna konsultacja AI"
+        },
+        "faqTitle": "Najczęstsze pytania o wdrożenia AI",
+        "faq": [
+          {
+            "question": "Ile kosztuje wdrożenie AI w firmie?",
+            "answer": "Proste wdrożenie (chatbot z wiedzą firmy, automatyzacja jednego procesu): od około 5 000 zł. Rozbudowane integracje z istniejącymi systemami: zwykle 10 000-25 000 zł. Do tego koszt API płacony dostawcy, przy małej firmie zwykle kilkadziesiąt do kilkuset złotych miesięcznie, z ustawionymi limitami."
+          },
+          {
+            "question": "Ile kosztuje chatbot AI dla firmy?",
+            "answer": "Chatbot odpowiadający na podstawie Twojej oferty i dokumentów to wdrożenie od około 5 000 zł, plus koszty API zależne od liczby rozmów. Ważne: dobrze zrobiony chatbot odpowiada na podstawie Twoich materiałów i przyznaje, gdy czegoś nie wie, zamiast zmyślać. Tylko takie wdrożenia robię."
+          },
+          {
+            "question": "Czy warto wdrożyć AI w małej firmie?",
+            "answer": "Warto tam, gdzie da się to policzyć: powtarzalne pytania klientów, ręczne przepisywanie danych, dokumenty do przetworzenia. Nie warto \"dla bycia nowoczesnym\". Dlatego zaczynam od bezpłatnej rozmowy o procesie: czasem odpowiedź brzmi, że AI u Ciebie jeszcze nie ma sensu, i to też usłyszysz."
+          },
+          {
+            "question": "Jak wdrożyć AI w małej firmie bez dużego budżetu?",
+            "answer": "Zacznij od pilota na jednym procesie, który mierzalnie marnuje czas: np. automatyczna kategoryzacja zapytań z formularza albo chatbot na najczęstsze pytania. Taki pilot to tygodnie, nie miesiące, i od razu widać, czy oszczędza czas. Dopiero potem rozbudowa. Budowanie \"platformy AI\" na start to przepalanie budżetu."
+          },
+          {
+            "question": "Czy ChatGPT jest bezpieczny dla danych firmowych?",
+            "answer": "Darmowy ChatGPT, w który pracownicy wklejają dane klientów: ryzykowny i zwykle niezgodny z RODO. Komercyjne API OpenAI i Anthropic: inna klasa usługi, dane nie trenują modeli. We wdrożeniach dokładam minimalizację danych, logi i przetwarzanie w UE tam, gdzie to możliwe. Różnica jest architektoniczna, nie kosmetyczna."
+          },
+          {
+            "question": "Co się dzieje z moimi danymi przy korzystaniu z API OpenAI lub Anthropic?",
+            "answer": "Dane przesłane przez komercyjne API nie są używane do trenowania modeli i podlegają umownym warunkom usług dla firm, w tym ograniczonej retencji. W moich wdrożeniach model dostaje tylko niezbędne minimum danych, a system loguje, co zostało wysłane, więc masz pełną kontrolę i materiał do audytu."
+          },
+          {
+            "question": "Jakie procesy w firmie najlepiej nadają się do automatyzacji AI?",
+            "answer": "Najlepiej te powtarzalne i tekstowe: odpowiadanie na podobne zapytania klientów, kategoryzacja i podsumowywanie e-maili, wyciąganie danych z dokumentów i faktur, opisy produktów, wyszukiwanie w firmowej wiedzy. Sygnał rozpoznawczy: jeśli pracownik robi to samo schematycznie godzinami, to dobry kandydat."
+          },
+          {
+            "question": "Ile trwa wdrożenie prostego chatbota AI?",
+            "answer": "Pilot chatbota opartego na dokumentach i ofercie firmy buduję zwykle w 2-4 tygodnie, razem z panelem do podglądu rozmów i poprawiania odpowiedzi. Potem tydzień-dwa testów z prawdziwymi pytaniami klientów przed pełnym startem. Rozbudowane integracje z systemami firmy odpowiednio wydłużają harmonogram."
+          }
+        ]
       }
     },
     "services-overview": {
@@ -1032,14 +1593,26 @@
       "seo": {
         "title": "Usługi Web Development Częstochowa | Max Mendes",
         "metaDescription": "Profesjonalne usługi tworzenia stron internetowych, sklepów e-commerce i aplikacji webowych. React, Next.js, TypeScript. Częstochowa, Śląskie i cała Polska.",
-        "keywords": ["usługi web development", "tworzenie stron częstochowa", "programista częstochowa", "strony internetowe śląskie", "aplikacje webowe", "sklepy internetowe", "freelancer polska"],
+        "keywords": [
+          "usługi web development",
+          "tworzenie stron częstochowa",
+          "programista częstochowa",
+          "strony internetowe śląskie",
+          "aplikacje webowe",
+          "sklepy internetowe",
+          "freelancer polska"
+        ],
         "h1": "Usługi Web Development",
         "ogTitle": "Usługi Web Development Częstochowa | Max Mendes"
       },
       "schema": {
         "serviceType": "Usługi Web Development",
         "description": "Profesjonalne usługi tworzenia stron internetowych, sklepów e-commerce, platform SaaS i aplikacji webowych w React, Next.js i TypeScript.",
-        "areaServed": ["Częstochowa", "Śląskie", "Polska"]
+        "areaServed": [
+          "Częstochowa",
+          "Śląskie",
+          "Polska"
+        ]
       }
     }
   },
@@ -1054,7 +1627,16 @@
     "seo": {
       "title": "Pytania o Tworzenie Stron - Proces, Cennik & AI | Max Mendes",
       "metaDescription": "FAQ o tworzeniu stron internetowych: proces, cennik, technologie i integracja AI. Odpowiedzi o React, Next.js, SaaS, e-commerce i kosztach AI. Częstochowa, Polska.",
-      "keywords": ["faq tworzenie stron", "pytania programista częstochowa", "cennik stron internetowych", "ile kosztuje strona", "programista częstochowa", "tworzenie stron śląskie", "integracja ai faq", "koszty ai"],
+      "keywords": [
+        "faq tworzenie stron",
+        "pytania programista częstochowa",
+        "cennik stron internetowych",
+        "ile kosztuje strona",
+        "programista częstochowa",
+        "tworzenie stron śląskie",
+        "integracja ai faq",
+        "koszty ai"
+      ],
       "h1": "Pytania o Tworzenie Stron Internetowych",
       "ogTitle": "Pytania o Tworzenie Stron - Proces, Cennik & AI | Max Mendes"
     },
@@ -1221,7 +1803,15 @@
     "seo": {
       "title": "Co Buduję - Portfolio Programisty | Max Mendes",
       "metaDescription": "Zobacz moje projekty: platformy SaaS, strony firmowe, aplikacje produkcyjne. Od koncepcji po wdrożenie. React, Next.js, TypeScript. Częstochowa, Śląskie.",
-      "keywords": ["portfolio programisty", "projekty react", "portfolio nextjs", "tworzenie saas", "strony firmowe", "projekty full-stack", "programista częstochowa"],
+      "keywords": [
+        "portfolio programisty",
+        "projekty react",
+        "portfolio nextjs",
+        "tworzenie saas",
+        "strony firmowe",
+        "projekty full-stack",
+        "programista częstochowa"
+      ],
       "h1": "Co Buduję",
       "ogTitle": "Co Buduję - Portfolio Programisty | Max Mendes"
     },
@@ -1466,7 +2056,14 @@
         "description": "Techniczne case study FlowMate, platformy SaaS do zarządzania emailem z AI, zbudowanej w Next.js, React i z wieloma dostawcami AI.",
         "author": "Max Mendes",
         "datePublished": "2026-01-15",
-        "keywords": ["Tworzenie SaaS", "Integracja AI", "Zarządzanie Email", "Next.js", "React", "Full-Stack Development"]
+        "keywords": [
+          "Tworzenie SaaS",
+          "Integracja AI",
+          "Zarządzanie Email",
+          "Next.js",
+          "React",
+          "Full-Stack Development"
+        ]
       },
       "content": {
         "hero": {
@@ -1474,16 +2071,33 @@
           "title": "FlowMate: Od Chaosu Email do Przejrzystości z AI",
           "subtitle": "Jak zbudowałem produkcyjny SaaS, który zamienia 200 emaili w 5 decyzji",
           "metrics": [
-            { "value": "300+", "label": "Godzin Developmentu" },
-            { "value": "4", "label": "Połączone Platformy" },
-            { "value": "6", "label": "Miesięcy do Launchu" },
-            { "value": "30min", "label": "Czas Nauki" }
+            {
+              "value": "300+",
+              "label": "Godzin Developmentu"
+            },
+            {
+              "value": "4",
+              "label": "Połączone Platformy"
+            },
+            {
+              "value": "6",
+              "label": "Miesięcy do Launchu"
+            },
+            {
+              "value": "30min",
+              "label": "Czas Nauki"
+            }
           ],
           "image": "/projects/flowmate-landing.webp",
           "liveUrl": "https://www.flowmate.click/",
           "liveUrlCta": "Zobacz Stronę Startową",
           "notice": "Osobisty projekt edukacyjny. Produkt jest wstrzymany; strona startowa nadal działa jako demo.",
-          "tags": ["SaaS", "Integracja AI", "Full-Stack", "Multi-Platform"]
+          "tags": [
+            "SaaS",
+            "Integracja AI",
+            "Full-Stack",
+            "Multi-Platform"
+          ]
         },
         "sections": [
           {
@@ -1600,11 +2214,26 @@
             "id": "scale",
             "title": "Co Zostało Zbudowane",
             "metrics": [
-              { "value": "112", "label": "Endpointów API" },
-              { "value": "166", "label": "Komponentów React" },
-              { "value": "23", "label": "Tabel w Bazie" },
-              { "value": "44", "label": "Migracji" },
-              { "value": "20", "label": "Custom Hooks" }
+              {
+                "value": "112",
+                "label": "Endpointów API"
+              },
+              {
+                "value": "166",
+                "label": "Komponentów React"
+              },
+              {
+                "value": "23",
+                "label": "Tabel w Bazie"
+              },
+              {
+                "value": "44",
+                "label": "Migracji"
+              },
+              {
+                "value": "20",
+                "label": "Custom Hooks"
+              }
             ],
             "features": [
               "Zunifikowana skrzynka dla Gmail, Outlook, Slack, Telegram",
@@ -1645,23 +2274,49 @@
           "categories": [
             {
               "name": "Frontend",
-              "items": ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Framer Motion", "Radix UI"]
+              "items": [
+                "Next.js 15",
+                "React 19",
+                "TypeScript",
+                "Tailwind CSS",
+                "Framer Motion",
+                "Radix UI"
+              ]
             },
             {
               "name": "Backend",
-              "items": ["Node.js", "Supabase (PostgreSQL)", "Vercel Edge Functions"]
+              "items": [
+                "Node.js",
+                "Supabase (PostgreSQL)",
+                "Vercel Edge Functions"
+              ]
             },
             {
               "name": "AI & LLM",
-              "items": ["OpenRouter", "Claude 3 Haiku", "Vercel AI SDK"]
+              "items": [
+                "OpenRouter",
+                "Claude 3 Haiku",
+                "Vercel AI SDK"
+              ]
             },
             {
               "name": "Integracje",
-              "items": ["Gmail API", "Microsoft Graph", "Slack API", "Telegram MTProto"]
+              "items": [
+                "Gmail API",
+                "Microsoft Graph",
+                "Slack API",
+                "Telegram MTProto"
+              ]
             },
             {
               "name": "Infrastruktura",
-              "items": ["Vercel", "Stripe", "Clerk", "Sentry", "Resend"]
+              "items": [
+                "Vercel",
+                "Stripe",
+                "Clerk",
+                "Sentry",
+                "Resend"
+              ]
             }
           ]
         },
@@ -1691,7 +2346,15 @@
     "seo": {
       "title": "Artykuły – Tworzenie Stron, AI i Automatyzacja | Max Mendes Częstochowa",
       "metaDescription": "Artykuły o tworzeniu stron internetowych, automatyzacji AI i pracy freelancera. React, Next.js, SEO, agentic workflows. Częstochowa, Śląskie. +48 725 534 018",
-      "keywords": ["blog web developer", "automatyzacja AI", "tworzenie stron Częstochowa", "artykuły programistyczne", "Next.js poradniki", "pozycjonowanie SEO", "freelancer Polska"],
+      "keywords": [
+        "blog web developer",
+        "automatyzacja AI",
+        "tworzenie stron Częstochowa",
+        "artykuły programistyczne",
+        "Next.js poradniki",
+        "pozycjonowanie SEO",
+        "freelancer Polska"
+      ],
       "h1": "Artykuły",
       "ogTitle": "Artykuły – Tworzenie Stron i Automatyzacja AI | Max Mendes"
     },
