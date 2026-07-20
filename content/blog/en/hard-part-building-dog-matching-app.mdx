@@ -12,6 +12,12 @@ export const metadata = {
   image: "/blog/fennaro-hero.webp",
   excerpt: "I built a dog-matching app for big-breed owners, solo, end to end. I expected the matching algorithm to be the hard part. The real problems were people, privacy, and density, and the biggest fix was deleting code I had already written.",
   readingTime: "9 min read",
+  about: {
+    type: "SoftwareApplication",
+    name: "Fennaro",
+    url: "https://fennaro.com/en/",
+    applicationCategory: "LifestyleApplication"
+  },
   hrefLang: {
     en: "/en/blog/hard-part-building-dog-matching-app",
     pl: "/pl/artykuly/najtrudniejsze-w-aplikacji-dla-psow-to-nie-kod"
@@ -92,7 +98,7 @@ What I landed on is deterministic, secret-seeded fuzzing, closer in spirit to [g
 
 Two properties fall out of that, and both matter:
 
-- A database dump is useless for finding anyone. Without the server secret you cannot reverse the offset, so the leaked point is a random spot a few hundred metres from a home, not the home.
+- A database dump does not expose anyone's exact home coordinates. Without the server secret you cannot reverse the offset, so what leaks is only an intentionally shifted point a few hundred metres from a home, not the home itself.
 - You cannot average it away. Because the offset is deterministic for a given user in a given cell, probing the app repeatedly always returns the same fuzzed point. There is no jitter to sample and cancel out.
 
 There is a nice safety detail too. When someone crosses a cell boundary, say they move house to get away from someone, they get a completely fresh, unlinkable offset. The old fuzzed location cannot be tied to the new one. Every match query, including the distance to the person doing the search, runs on these fuzzed points only, and distances are shown rounded to the nearest kilometre with a one kilometre floor. Nobody ever sees "220 metres away".

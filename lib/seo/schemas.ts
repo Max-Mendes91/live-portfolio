@@ -432,5 +432,15 @@ export function generateBlogPostSchema(
     keywords: postMeta.keywords,
     inLanguage: locale === 'en' ? 'en' : 'pl',
     articleSection: 'Blog',
+    about: postMeta.about
+      ? {
+          '@type': postMeta.about.type,
+          name: postMeta.about.name,
+          url: postMeta.about.url,
+          ...(postMeta.about.applicationCategory
+            ? { applicationCategory: postMeta.about.applicationCategory }
+            : {}),
+        }
+      : undefined,
   };
 }

@@ -4,7 +4,11 @@ import { getBlogPosts } from '@/lib/blog';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = SITE_CONFIG.url;
-  const lastModified = new Date();
+  // Stable date for static pages. Do NOT use `new Date()` here: a fresh
+  // timestamp on every deploy makes <lastmod> churn, which teaches Google the
+  // freshness signal is untrustworthy and suppresses recrawl. Bump this only
+  // when the static pages' content actually changes.
+  const lastModified = new Date('2026-07-20');
 
   // Define pages with their localized paths and hreflang alternates
   const pages: Array<{
@@ -141,17 +145,29 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     });
   });
 
-  // Add blog posts dynamically
-  const enPosts = await getBlogPosts('en');
+  // Add blog posts dynamically. Enumerate BOTH locales and dedupe by the EN
+  // canonical path so a PL-only article (no EN twin) is still discoverable.
+  const [enPosts, plPosts] = await Promise.all([
+    getBlogPosts('en'),
+    getBlogPosts('pl'),
+  ]);
+  const postsByEn = new Map<string, { en: string; pl: string; lastmod: string }>();
+  for (const post of [...enPosts, ...plPosts]) {
+    postsByEn.set(post.hrefLang.en, {
+      en: post.hrefLang.en,
+      pl: post.hrefLang.pl,
+      lastmod: post.dateModified || post.datePublished,
+    });
+  }
 
-  for (const post of enPosts) {
-    const enPath = post.hrefLang.en;
-    const plPath = post.hrefLang.pl;
+  for (const post of postsByEn.values()) {
+    const enPath = post.en;
+    const plPath = post.pl;
 
     // English version
     sitemapEntries.push({
       url: `${baseUrl}${enPath}`,
-      lastModified: new Date(post.dateModified || post.datePublished),
+      lastModified: new Date(post.lastmod),
       changeFrequency: 'monthly',
       priority: 0.7,
       alternates: {
@@ -166,7 +182,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Polish version
     sitemapEntries.push({
       url: `${baseUrl}${plPath}`,
-      lastModified: new Date(post.dateModified || post.datePublished),
+      lastModified: new Date(post.lastmod),
       changeFrequency: 'monthly',
       priority: 0.7,
       alternates: {

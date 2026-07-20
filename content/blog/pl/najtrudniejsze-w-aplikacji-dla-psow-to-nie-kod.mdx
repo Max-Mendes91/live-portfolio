@@ -12,6 +12,12 @@ export const metadata = {
   image: "/blog/fennaro-hero.webp",
   excerpt: "Zbudowałem solo, od początku do końca, aplikację kojarzącą psy dużych ras. Myślałem, że najtrudniejszy będzie algorytm dopasowania. Prawdziwe problemy dotyczyły ludzi, prywatności i gęstości, a największą naprawą było usunięcie kodu, który już napisałem.",
   readingTime: "9 min czytania",
+  about: {
+    type: "SoftwareApplication",
+    name: "Fennaro",
+    url: "https://fennaro.com/pl/",
+    applicationCategory: "LifestyleApplication"
+  },
   hrefLang: {
     en: "/en/blog/hard-part-building-dog-matching-app",
     pl: "/pl/artykuly/najtrudniejsze-w-aplikacji-dla-psow-to-nie-kod"
@@ -92,7 +98,7 @@ To, na czym stanąłem, to deterministyczne rozmycie z sekretnym ziarnem, bliżs
 
 Wynikają z tego dwie właściwości i obie mają znaczenie:
 
-- Zrzut bazy jest bezużyteczny do znalezienia kogokolwiek. Bez sekretu serwera nie odwrócisz przesunięcia, więc wyciekły punkt to losowe miejsce kilkaset metrów od domu, a nie dom.
+- Zrzut bazy nie ujawnia niczyich dokładnych współrzędnych domu. Bez sekretu serwera nie odwrócisz przesunięcia, więc wycieka tylko celowo przesunięty punkt kilkaset metrów od domu, a nie sam dom.
 - Nie da się tego uśrednić. Ponieważ przesunięcie jest deterministyczne dla danego użytkownika w danej komórce, wielokrotne odpytywanie aplikacji zawsze zwraca ten sam rozmyty punkt. Nie ma szumu do próbkowania i skasowania.
 
 Jest też ładny detal bezpieczeństwa. Kiedy ktoś przekracza granicę komórki, powiedzmy przeprowadza się, żeby uciec przed kimś, dostaje zupełnie nowe, niepowiązane przesunięcie. Starej rozmytej lokalizacji nie da się połączyć z nową. Każde zapytanie dopasowania, w tym odległość do osoby, która szuka, działa wyłącznie na tych rozmytych punktach, a odległości pokazuję zaokrąglone do kilometra, z dolną granicą jednego kilometra. Nikt nigdy nie widzi „220 metrów stąd”.
