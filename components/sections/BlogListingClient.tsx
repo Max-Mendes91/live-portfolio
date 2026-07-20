@@ -124,11 +124,11 @@ const BlogListingClient: React.FC<BlogListingClientProps> = ({
                         >
                           <Link href={`${blogBasePath}/${post.slug}`} className="h-full">
                             <div className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-surface border border-border hover:border-white/20 transition-all h-full flex flex-col">
-                              {/* Image */}
-                              {post.image && (
+                              {/* Image (listing cover falls back to the article hero) */}
+                              {(post.listImage || post.image) && (
                                 <div className="relative aspect-[16/10] overflow-hidden">
                                   <Image
-                                    src={post.image}
+                                    src={post.listImage || post.image!}
                                     alt={post.h1}
                                     fill
                                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
