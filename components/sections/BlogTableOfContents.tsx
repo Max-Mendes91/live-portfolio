@@ -1,9 +1,8 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { BlogHeading } from '@/lib/blog';
-import { useIsMobile } from '@/hooks/useMediaQuery';
 
 interface BlogTableOfContentsProps {
   headings: BlogHeading[];
@@ -12,20 +11,14 @@ interface BlogTableOfContentsProps {
 
 /**
  * Inline "On this page" index. Sits at the top of the article column, so it
- * never clips against the card's overflow. Open on desktop, collapsed on
- * mobile where a long list would just push the article down.
+ * never clips against the card's overflow. Collapsed by default on every
+ * article (desktop and mobile); the reader opens it when they want it.
  */
 const BlogTableOfContents: React.FC<BlogTableOfContentsProps> = ({
   headings,
   label,
 }) => {
-  const isMobile = useIsMobile();
-  const [open, setOpen] = useState(true);
-
-  // Collapse on mobile after mount (keeps SSR markup stable, avoids a flash).
-  useEffect(() => {
-    setOpen(!isMobile);
-  }, [isMobile]);
+  const [open, setOpen] = useState(false);
 
   if (headings.length < 2) return null;
 
