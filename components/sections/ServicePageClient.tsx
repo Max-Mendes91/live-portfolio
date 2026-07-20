@@ -6,6 +6,8 @@ import { motion } from 'framer-motion';
 
 import Navbar from '@/components/Navbar';
 import FooterSection from '@/components/sections/FooterSection';
+import BlogFAQ from '@/components/sections/BlogFAQ';
+import { FAQJsonLd } from '@/components/seo/JsonLd';
 import { FloatingTechIcons } from '@/components/effects/FloatingTechIcons';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import { Display, Heading, Text, BinderClip } from '@/components/ui';
@@ -193,6 +195,23 @@ const ServicePageClient: React.FC<ServicePageClientProps> = ({ locale, dictionar
               </div>
             </div>
           </section>
+
+          {/* FAQ Section (accordion + FAQPage schema), driven by content.faq */}
+          {content.faq && content.faq.length > 0 && (
+            <section className="py-8 sm:py-10 md:py-12 lg:py-20">
+              <div className="relative max-w-4xl mx-auto">
+                <BinderClip position="top-left" size="md" />
+                <BinderClip position="top-right" size="md" />
+                <div className="border-t border-border rounded-t-[1.5rem] sm:rounded-t-[2rem] pt-2 sm:pt-4 md:pt-6 px-4 sm:px-6 lg:px-12">
+                  <FAQJsonLd faqs={content.faq} />
+                  <BlogFAQ
+                    faqs={content.faq}
+                    title={content.faqTitle || (locale === 'pl' ? 'Najczęstsze pytania' : 'Frequently asked questions')}
+                  />
+                </div>
+              </div>
+            </section>
+          )}
 
           {/* CTA Section */}
           <section className="py-8 sm:py-10 md:py-12 lg:py-20">
