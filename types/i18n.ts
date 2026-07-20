@@ -840,6 +840,8 @@ export interface BlogPostMeta {
   dateModified?: string;
   tags: string[];
   image?: string;
+  /** Optional separate cover for the blog listing grid; falls back to image. */
+  listImage?: string;
   excerpt: string;
   readingTime: string;
   hrefLang: {

@@ -51,6 +51,7 @@ interface ContentfulEntryFields {
   dateModified?: string;
   tags?: string[];
   image?: string;
+  listImage?: string;
   excerpt?: string;
   readingTime?: string;
   hrefLangEn?: string;
@@ -75,6 +76,7 @@ function toMeta(fields: ContentfulEntryFields): BlogPostMeta {
     dateModified: fields.dateModified ? fields.dateModified.slice(0, 10) : undefined,
     tags: fields.tags || [],
     image: fields.image,
+    listImage: fields.listImage,
     excerpt: fields.excerpt || '',
     readingTime: fields.readingTime || '',
     hrefLang: {
