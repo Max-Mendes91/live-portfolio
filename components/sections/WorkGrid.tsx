@@ -157,6 +157,24 @@ const WorkGrid: React.FC<WorkGridProps> = ({ dictionary }) => {
                     </Link>
                   )}
 
+                  {/* Live Site Link (external, crawlable/dofollow) */}
+                  {featuredProject.externalUrl && (
+                    <a
+                      href={featuredProject.externalUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={cn(
+                        'inline-flex items-center gap-1.5',
+                        'text-sm font-medium text-text-secondary',
+                        'hover:text-text-primary transition-colors duration-200',
+                        'group/ext'
+                      )}
+                    >
+                      <span>{featuredProject.externalCta || 'Visit Live Site'}</span>
+                      <ArrowUpRight className="w-4 h-4 group-hover/ext:translate-x-0.5 group-hover/ext:-translate-y-0.5 transition-transform" />
+                    </a>
+                  )}
+
                 </div>
               </div>
             </div>

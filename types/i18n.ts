@@ -854,6 +854,13 @@ export interface BlogPostMeta {
     devto?: string;
     medium?: string;
   };
+  /** Optional primary entity the article is about (drives BlogPosting `about`). */
+  about?: {
+    type: 'SoftwareApplication' | 'Organization' | 'Product';
+    name: string;
+    url: string;
+    applicationCategory?: string;
+  };
 }
 
 // Full dictionary interface
