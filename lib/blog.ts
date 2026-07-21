@@ -1,5 +1,3 @@
-import fs from 'fs';
-import path from 'path';
 import React from 'react';
 import { evaluate } from '@mdx-js/mdx';
 import * as jsxRuntime from 'react/jsx-runtime';
@@ -12,17 +10,17 @@ import { slugify } from '@/lib/slug';
 import { useMDXComponents as getMDXComponents } from '@/mdx-components';
 
 /**
- * Blog data layer.
+ * Blog data layer. Contentful is the single source of truth (content type
+ * `blogPost`, one entry per locale+slug, body stored as markdown/MDX text).
  *
- * Source of truth is Contentful (content type `blogPost`, one entry per
- * locale+slug, body stored as markdown/MDX text). The legacy filesystem MDX
- * under content/blog/ remains as an automatic fallback so a Contentful outage
- * or missing env vars can never break the build. Rendering goes through the
- * same mdx-components mapping and remark-gfm as the old webpack MDX pipeline,
- * so the emitted HTML (headings, ids, tables, links) is identical.
+ * There is deliberately NO fallback: the legacy filesystem MDX was removed
+ * after the migration was verified byte-identical in production. If Contentful
+ * is unreachable or misconfigured, the build MUST fail loudly here; a silent
+ * fallback would ship an empty blog and quietly de-index every article.
+ *
+ * Rendering goes through the same mdx-components mapping and remark-gfm as the
+ * old webpack MDX pipeline, so the emitted HTML stays identical.
  */
-
-const CONTENT_DIR = path.join(process.cwd(), 'content', 'blog');
 
 const SPACE = process.env.CONTENTFUL_SPACE_ID;
 const TOKEN = process.env.CONTENTFUL_DELIVERY_TOKEN;
@@ -91,37 +89,45 @@ function toMeta(fields: ContentfulEntryFields): BlogPostMeta {
 }
 
 // One fetch per locale per build, shared across all pages.
-const contentfulCache = new Map<SupportedLocale, Promise<BlogPostRecord[] | null>>();
+const contentfulCache = new Map<SupportedLocale, Promise<BlogPostRecord[]>>();
 
-async function fetchContentfulPosts(
-  locale: SupportedLocale
-): Promise<BlogPostRecord[] | null> {
-  if (!SPACE || !TOKEN) return null;
+async function fetchContentfulPosts(locale: SupportedLocale): Promise<BlogPostRecord[]> {
+  if (!SPACE || !TOKEN) {
+    throw new Error(
+      'Contentful is not configured (CONTENTFUL_SPACE_ID / CONTENTFUL_DELIVERY_TOKEN missing). ' +
+        'The blog has no filesystem fallback; set the env vars to build.'
+    );
+  }
 
   const url =
     `https://cdn.contentful.com/spaces/${SPACE}/environments/${ENVIRONMENT}/entries` +
     `?content_type=blogPost&fields.locale=${locale}&limit=200`;
 
-  try {
-    const res = await fetch(url, {
-      headers: { Authorization: `Bearer ${TOKEN}` },
-      // Rebuilds pick up new content; ISR-style revalidation for dynamic renders.
-      next: { revalidate: 3600 },
-    });
-    if (!res.ok) return null;
-    const data = await res.json();
-    const items = (data.items || []) as Array<{ fields: ContentfulEntryFields }>;
-    if (items.length === 0) return null;
-    return items.map((item) => ({ meta: toMeta(item.fields), body: item.fields.body }));
-  } catch {
-    return null;
+  const res = await fetch(url, {
+    headers: { Authorization: `Bearer ${TOKEN}` },
+    // Rebuilds pick up new content; ISR-style revalidation for dynamic renders.
+    next: { revalidate: 3600 },
+  });
+  if (!res.ok) {
+    throw new Error(`Contentful fetch failed for locale "${locale}": HTTP ${res.status}`);
   }
+  const data = await res.json();
+  const items = (data.items || []) as Array<{ fields: ContentfulEntryFields }>;
+  if (items.length === 0) {
+    throw new Error(
+      `Contentful returned 0 blogPost entries for locale "${locale}". ` +
+        'Refusing to build an empty blog; check the space/environment.'
+    );
+  }
+  return items.map((item) => ({ meta: toMeta(item.fields), body: item.fields.body }));
 }
 
-function getContentfulPosts(locale: SupportedLocale): Promise<BlogPostRecord[] | null> {
+function getContentfulPosts(locale: SupportedLocale): Promise<BlogPostRecord[]> {
   let cached = contentfulCache.get(locale);
   if (!cached) {
     cached = fetchContentfulPosts(locale);
+    // Do not cache rejections: a transient failure should be retryable.
+    cached.catch(() => contentfulCache.delete(locale));
     contentfulCache.set(locale, cached);
   }
   return cached;
@@ -145,7 +151,7 @@ function extractHeadings(raw: string): BlogHeading[] {
 }
 
 /**
- * Compile a markdown/MDX body with the same pipeline as the webpack loader
+ * Compile a markdown/MDX body with the same pipeline as the old webpack loader
  * (remark-gfm + the project's own React runtime) and bind the shared
  * mdx-components mapping, so the emitted HTML is identical to the old files.
  */
@@ -160,45 +166,9 @@ async function renderBody(body: string): Promise<React.ComponentType> {
   return BlogPostBody;
 }
 
-// ---------------------------------------------------------------------------
-// Filesystem fallback (legacy MDX pipeline)
-// ---------------------------------------------------------------------------
-
-function fsSlugs(locale: SupportedLocale): string[] {
-  const dir = path.join(CONTENT_DIR, locale);
-  if (!fs.existsSync(dir)) return [];
-  return fs
-    .readdirSync(dir)
-    .filter((file) => file.endsWith('.mdx'))
-    .map((file) => file.replace(/\.mdx$/, ''));
-}
-
-async function fsPost(
-  locale: SupportedLocale,
-  slug: string
-): Promise<{ meta: BlogPostMeta; Content: React.ComponentType } | null> {
-  try {
-    const mod = await import(`@/content/blog/${locale}/${slug}.mdx`);
-    return { meta: mod.metadata as BlogPostMeta, Content: mod.default };
-  } catch {
-    return null;
-  }
-}
-
-function fsHeadings(locale: SupportedLocale, slug: string): BlogHeading[] {
-  const file = path.join(CONTENT_DIR, locale, `${slug}.mdx`);
-  if (!fs.existsSync(file)) return [];
-  return extractHeadings(fs.readFileSync(file, 'utf8'));
-}
-
-// ---------------------------------------------------------------------------
-// Public API (Contentful first, filesystem fallback)
-// ---------------------------------------------------------------------------
-
 export async function getBlogPostSlugs(locale: SupportedLocale): Promise<string[]> {
   const posts = await getContentfulPosts(locale);
-  if (posts) return posts.map((p) => p.meta.slug);
-  return fsSlugs(locale);
+  return posts.map((p) => p.meta.slug);
 }
 
 export async function getBlogPost(
@@ -206,12 +176,9 @@ export async function getBlogPost(
   slug: string
 ): Promise<{ meta: BlogPostMeta; Content: React.ComponentType } | null> {
   const posts = await getContentfulPosts(locale);
-  if (posts) {
-    const post = posts.find((p) => p.meta.slug === slug);
-    if (!post) return null;
-    return { meta: post.meta, Content: await renderBody(post.body) };
-  }
-  return fsPost(locale, slug);
+  const post = posts.find((p) => p.meta.slug === slug);
+  if (!post) return null;
+  return { meta: post.meta, Content: await renderBody(post.body) };
 }
 
 export async function getBlogPostHeadings(
@@ -219,25 +186,15 @@ export async function getBlogPostHeadings(
   slug: string
 ): Promise<BlogHeading[]> {
   const posts = await getContentfulPosts(locale);
-  if (posts) {
-    const post = posts.find((p) => p.meta.slug === slug);
-    return post ? extractHeadings(post.body) : [];
-  }
-  return fsHeadings(locale, slug);
+  const post = posts.find((p) => p.meta.slug === slug);
+  return post ? extractHeadings(post.body) : [];
 }
 
 export async function getBlogPosts(locale: SupportedLocale): Promise<BlogPostMeta[]> {
-  const contentful = await getContentfulPosts(locale);
-  const metas = contentful
-    ? contentful.map((p) => p.meta)
-    : (
-        await Promise.all(fsSlugs(locale).map((slug) => fsPost(locale, slug)))
-      )
-        .filter((p): p is NonNullable<typeof p> => p !== null)
-        .map((p) => p.meta);
-
-  // Sort by datePublished descending
-  return metas.sort(
-    (a, b) => new Date(b.datePublished).getTime() - new Date(a.datePublished).getTime()
-  );
+  const posts = await getContentfulPosts(locale);
+  return posts
+    .map((p) => p.meta)
+    .sort(
+      (a, b) => new Date(b.datePublished).getTime() - new Date(a.datePublished).getTime()
+    );
 }
