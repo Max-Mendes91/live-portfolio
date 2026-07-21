@@ -8,7 +8,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // timestamp on every deploy makes <lastmod> churn, which teaches Google the
   // freshness signal is untrustworthy and suppresses recrawl. Bump this only
   // when the static pages' content actually changes.
-  const lastModified = new Date('2026-07-20');
+  const lastModified = new Date('2026-07-21');
 
   // Define pages with their localized paths and hreflang alternates
   const pages: Array<{
