@@ -1688,6 +1688,26 @@
           {
             "question": "Can you handle both Polish and international clients?",
             "answer": "Yes. I work with companies in Poland and international clients in the UK and US. Communication is in English or Polish, and Polish content is reviewed with my wife to ensure natural language and accuracy."
+          },
+          {
+            "question": "How do I know a web developer is legitimate before I pay a deposit?",
+            "answer": "Ask for addresses of live sites, not screenshots, and open them on your phone: speed and polish are hard to fake. Check whether the developer writes publicly about their work over time, because a long paper trail is the opposite of a scam profile. Confirm in writing who will own the domain and code. And notice whether they ask questions about your business or just send a price. I built my public portfolio and blog precisely so clients can run these checks before we ever talk."
+          },
+          {
+            "question": "Can one developer really build an entire web app on their own?",
+            "answer": "Yes, and I can point at proof rather than promise: Fennaro, a dog-matching app with accounts, geolocation matching, chat, moderation and GDPR compliance, built by me end to end and live in production. Modern tooling makes a senior solo developer genuinely capable of shipping complete products. The honest limit is scale: very large systems need teams, and I say so in the quote when a project crosses that line."
+          },
+          {
+            "question": "What is the difference between a web developer and a web designer?",
+            "answer": "A designer decides how the site looks and feels; a developer makes it work: fast loading, working forms, clean code Google can read. A lot of disappointing websites had only one of the two. I cover both sides for typical business projects, which means one person accountable for the final result instead of a designer and a developer pointing at each other when something breaks."
+          },
+          {
+            "question": "Do you sign an NDA before discussing my project?",
+            "answer": "Yes, if you need one signed before sharing details, that is standard practice for product ideas and I have no problem with it. Honest context: for a typical business website an NDA is rarely necessary since nothing secret changes hands. Either way, your project details never appear in my portfolio, posts or case studies without your explicit agreement."
+          },
+          {
+            "question": "What happens if you get sick or become unavailable during my project?",
+            "answer": "A fair question to ask any solo developer. My answers: your code lives in a repository you can access from week one, so work never disappears with me. I build in standard technologies (React, Next.js, TypeScript) that any developer on the market can pick up without reverse-engineering. And if a longer absence ever happens, the timeline moves openly instead of the project going quiet."
           }
         ]
       },
@@ -1711,6 +1731,30 @@
           {
             "question": "How do we communicate during the project?",
             "answer": "Direct communication via email, Slack, or calls, whatever works for you. Weekly check-ins keep you updated on progress, blockers, and next steps. No unnecessary meetings or status reports."
+          },
+          {
+            "question": "How long does it take to get a quote or proposal?",
+            "answer": "One working day for most projects, occasionally two for complex systems. You describe the project, I come back with a fixed price and a real timeline, not a vague range designed to start a negotiation. The quote is free and carries no obligation. If anything is unclear, I ask before quoting instead of padding the number to cover my own uncertainty."
+          },
+          {
+            "question": "What information do you need from me before we start?",
+            "answer": "Less than you might fear: what your business does, who the site or app is for, what should happen when someone lands on it, and any examples you like or hate. That usually fits in one conversation. Content (text, photos, offers) is the piece clients underestimate, so I flag everything needed in week one and help produce whatever does not exist yet."
+          },
+          {
+            "question": "How many rounds of revisions are included?",
+            "answer": "The contract states it plainly: typically two to three revision rounds at the design stage and one to two after implementation. Just as important is the definition: a revision adjusts what we agreed, while a new page or feature is new scope, priced before I build it. That distinction, in writing, is what keeps projects friendly. Unlimited-revisions promises usually hide either padding in the price or a fight at the end."
+          },
+          {
+            "question": "What if I want to change the scope after we have started?",
+            "answer": "It happens in most projects and it is fine. Small adjustments fold into the agreed revision rounds. Bigger additions get their own quote before any work starts, so you decide with the price in front of you. What never happens: silent extras appearing on the final invoice. Scope changes are a conversation, not a surprise."
+          },
+          {
+            "question": "Do you work with clients in different time zones?",
+            "answer": "Constantly: I am in Poland (CET), which overlaps the full UK and EU working day and the US East Coast morning. In practice you get answers within hours, not days, and most collaboration is asynchronous anyway: short written updates you can read whenever suits you, with calls only when they genuinely move things forward."
+          },
+          {
+            "question": "What does the final handover look like?",
+            "answer": "We walk through the finished site together: every page, form, mobile view and speed check. You receive all access credentials (domain, hosting, analytics), the code repository, written confirmation of the rights transfer, and a short walkthrough of how to manage the basics. Only after your sign-off does the project go live. Early wobbles in the first weeks get fixed under warranty without a debate about whose fault they are."
           }
         ]
       },
@@ -1732,6 +1776,22 @@
           {
             "question": "Can I pay in installments?",
             "answer": "Yes, for larger projects. Payments are split into clear milestones tied to delivered work, so you're paying for real progress."
+          },
+          {
+            "question": "Is it cheaper to pay hourly or fixed price for a website project?",
+            "answer": "Fixed price protects you better, and it is how I work. On hourly billing the overrun risk is yours: every delay costs you money. On a fixed quote the risk is mine, which gives me every incentive to work efficiently and scope carefully upfront. Hourly makes sense only for small unpredictable fixes on existing projects, and when that is the honest answer, I say so."
+          },
+          {
+            "question": "What happens to my deposit if I need to cancel the project?",
+            "answer": "If you cancel before I have started, you get it back: I do not keep money for work that never happened. If work is underway, we settle for the completed stage and you keep everything produced so far, including the code. The exact terms sit in the contract before you sign, so there is never an argument about it later."
+          },
+          {
+            "question": "Do I need a contract for a website project?",
+            "answer": "Yes, always, even for small projects, and be wary of anyone who prefers not to have one. The contract is what makes the deliverables, price, timeline and ownership enforceable instead of implied. Mine is short and readable: scope, fixed price, schedule, revision rounds, rights transfer, access handover. Ten minutes of reading that prevents the classic horror stories."
+          },
+          {
+            "question": "What should be included in a web development contract?",
+            "answer": "Minimum: exact scope (pages, features, languages), fixed price with a payment schedule, a realistic deadline, the number of revision rounds, transfer of code and design rights to you on payment, and the list of credentials you receive. A useful test for any developer: ask for these clauses and watch the reaction. Mine are standard, and that is verifiable before you commit."
           }
         ]
       },
@@ -1753,6 +1813,26 @@
           {
             "question": "How do you ensure my site is secure and performant?",
             "answer": "I follow modern security practices for authentication and data handling. Server-side rendering, optimized images, and proper caching are built in by default. Core Web Vitals and load times are treated as requirements, not extras."
+          },
+          {
+            "question": "Can you take over and continue a project built by another developer?",
+            "answer": "Yes, regularly, but always starting with a code review, because inherited projects range from \"just finish it\" to \"cheaper to rebuild than rescue\". After the review you get a straight assessment with both paths priced. One requirement: access to the code and hosting. If your previous developer will not hand it over, that is an ownership problem to solve first, and I will help you name it plainly."
+          },
+          {
+            "question": "Is my website GDPR compliant? What do I actually need?",
+            "answer": "For a typical business site: a privacy policy, consent on forms, correctly configured analytics, and a cookie banner where one is genuinely required (not everywhere). These are legal obligations for anyone serving EU or UK visitors, and I build them into the code rather than bolting on plugins. Caveat: I am a developer, not a lawyer, so unusual data processing deserves a legal review on top."
+          },
+          {
+            "question": "What does \"production-ready\" actually mean?",
+            "answer": "It means the thing survives contact with reality: errors are handled instead of crashing, data is validated, backups and monitoring exist, security headers are set, and the site keeps working when traffic arrives or an API hiccups. A demo shows a feature working once on the developer's machine. Production-ready means it works for strangers, at scale, unattended. That gap is where a lot of cheap builds quietly fail."
+          },
+          {
+            "question": "Will my website work well on mobile devices?",
+            "answer": "It is built for mobile first, then scaled up, because over half of real traffic is phones and Google evaluates the mobile version of your site as the primary one. Every project I ship is tested across real device sizes for readability, tap targets and speed on slower connections. If your current site needs pinch-zooming to read, you are losing customers daily, measurably."
+          },
+          {
+            "question": "Does my website need an SSL certificate?",
+            "answer": "Yes, without exception: browsers mark sites without SSL as \"not secure\", visitors bounce, and Google demotes them. The padlock encrypts everything between the visitor and your site. On modern hosting SSL is free and renews automatically, and it is configured from day one on everything I build. If someone quotes SSL as a paid extra, treat it as a red flag about the rest of the offer."
           }
         ]
       },
@@ -1780,6 +1860,18 @@
           {
             "question": "Which AI provider should I use: OpenAI, Anthropic, or something else?",
             "answer": "The best provider depends on the task, cost profile, and reliability requirements. Some models are better at structured classification, others at longer reasoning or safer outputs. I usually test providers on your specific use case and choose based on results, not brand names."
+          },
+          {
+            "question": "How do I know if my business is actually ready for AI?",
+            "answer": "Look for one signal: repetitive text work that eats hours. Answering the same customer questions, retyping data from documents, sorting enquiries. If that exists, a small pilot can prove value in weeks. If it does not, you are probably not ready, and no tool will change that. Readiness is about having a measurable process to improve, not about company size or budget."
+          },
+          {
+            "question": "Do I need to tell my customers they are talking to an AI chatbot?",
+            "answer": "Increasingly yes: disclosure requirements are appearing across jurisdictions (several US states already have them, and the EU AI Act pushes the same way), and beyond the law it is simply good practice, because users who discover a hidden bot lose trust in the brand. The bots I build identify themselves and hand off to a human cleanly. Transparency costs nothing and protects you legally and reputationally."
+          },
+          {
+            "question": "Who is liable if my AI chatbot gives a customer wrong information?",
+            "answer": "You are: courts have already held companies responsible for their chatbots' promises (the Air Canada case is the famous precedent, where a tribunal ordered the airline to honor its bot's invented refund policy). That is exactly why I build bots that answer only from your approved documents, admit when they do not know, and log every conversation, so the risk is engineered down instead of ignored."
           }
         ]
       },
@@ -1801,6 +1893,30 @@
           {
             "question": "What if I need new features later?",
             "answer": "New features can be added as separate projects or as part of a maintenance agreement. Clean code means extending functionality is usually straightforward and predictable."
+          },
+          {
+            "question": "What happens if my website goes down after launch?",
+            "answer": "First, my builds have monitoring, so I usually know before you do. Second, the most common cause of a \"dead\" site is mundane: an expired domain or hosting payment, worth checking your inbox first. Statically rendered sites without plugins have very few ways to fall over, which is a real advantage of building without them. If something does break in what I built, fixing it is on me, not billed to you."
+          },
+          {
+            "question": "How often should my website be updated after launch?",
+            "answer": "Separate two things. Content: whenever your offer changes, and Google likes signs of life. Technical updates: a custom-coded site needs almost none, because there are no plugins demanding weekly patches, which is a structural advantage over WordPress. A sensible rhythm is a content review every few months and a design refresh every couple of years as the brand evolves."
+          },
+          {
+            "question": "What is included in a monthly maintenance plan?",
+            "answer": "Here is the honest answer: for the sites I build, you mostly do not need one, and I do not sell subscriptions. There are no plugins to update, hosting and domain cost a fixed small amount yearly, and monitoring is included. When you want changes or new features, you pay for that specific work. Compare that with maintenance retainers that mostly bill you for updating the plugins the builder chose to depend on."
+          },
+          {
+            "question": "Will my site need a redesign eventually, and how soon?",
+            "answer": "Design ages: most business sites feel dated after three to five years, sometimes sooner in fast-moving industries. What should not age is the foundation: with clean code, a redesign is a reskin of working machinery instead of a rebuild from zero. That is a deliberate reason to avoid platform lock-in now, because it halves the cost of every future refresh."
+          },
+          {
+            "question": "Do you keep backups of my site in case something goes wrong?",
+            "answer": "Yes, structurally: the code lives in version control with full history, so any previous state can be restored in minutes and deployments can be rolled back with one command. Managed content has its own service-side backups. This beats the classic backup-plugin approach, where the safety net is itself a plugin that can fail."
+          },
+          {
+            "question": "What happens if my site gets hacked after launch?",
+            "answer": "The realistic answer for my builds: the attack surface is tiny, because the classic entry point (outdated plugins and themes) does not exist, and security headers plus HTTPS are configured from day one. If something did happen, the site can be redeployed clean from version control in minutes, which is the fastest recovery path there is. Prevention through architecture beats cleanup services every time."
           }
         ]
       }
