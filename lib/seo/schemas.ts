@@ -17,6 +17,7 @@ export function generatePersonSchema(): PersonSchema {
   return {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    '@id': `${SITE_CONFIG.url}/#person`,
     name: owner.name,
     url: SITE_CONFIG.url,
     email: owner.email,
@@ -286,11 +287,13 @@ export interface CaseStudySchema {
   description: string;
   author: {
     '@type': string;
+    '@id'?: string;
     name: string;
     url: string;
   };
   publisher: {
     '@type': string;
+    '@id'?: string;
     name: string;
     url: string;
   };
@@ -320,11 +323,13 @@ export function generateCaseStudySchema(caseStudyData: CaseStudyPageDict): CaseS
     description: schema.description,
     author: {
       '@type': 'Person',
+      '@id': `${SITE_CONFIG.url}/#person`,
       name: schema.author,
       url: SITE_CONFIG.url,
     },
     publisher: {
       '@type': 'Person',
+      '@id': `${SITE_CONFIG.url}/#person`,
       name: SITE_CONFIG.owner.name,
       url: SITE_CONFIG.url,
     },
@@ -415,13 +420,17 @@ export function generateBlogPostSchema(
     '@id': `${SITE_CONFIG.url}/#blog-post-${postMeta.slug}`,
     headline: postMeta.h1,
     description: postMeta.metaDescription,
+    // @id ties the author to the site-wide Person entity (#person) so Google
+    // reconciles every article with the same knowledge-graph node.
     author: {
       '@type': 'Person',
+      '@id': `${SITE_CONFIG.url}/#person`,
       name: postMeta.author,
       url: SITE_CONFIG.url,
     },
     publisher: {
       '@type': 'Person',
+      '@id': `${SITE_CONFIG.url}/#person`,
       name: SITE_CONFIG.owner.name,
       url: SITE_CONFIG.url,
     },

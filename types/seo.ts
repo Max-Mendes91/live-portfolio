@@ -35,6 +35,7 @@ export interface SiteConfig {
 export interface PersonSchema {
   '@context': 'https://schema.org';
   '@type': 'Person';
+  '@id'?: string;
   name: string;
   url: string;
   email: string;

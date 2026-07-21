@@ -977,7 +977,7 @@
           },
           {
             "question": "How much do freelance web developers charge in Europe?",
-            "answer": "Public rate surveys (Arc, Index.dev) put European freelance rates at roughly €15-90 an hour depending on country and seniority, with Polish seniors typically well below UK and German rates for equivalent skill. I quote fixed project prices instead of hourly, so you know the total before work starts and overrun risk sits with me, not you."
+            "answer": "Public rate surveys ([Arc](https://arc.dev/freelance-developer-rates), [Index.dev](https://www.index.dev/blog/freelance-developer-rates)) put European freelance rates at roughly €15-90 an hour depending on country and seniority, with Polish seniors typically well below UK and German rates for equivalent skill. I quote fixed project prices instead of hourly, so you know the total before work starts and overrun risk sits with me, not you."
           },
           {
             "question": "What is included in the cost of a custom website?",
@@ -1337,7 +1337,7 @@
             "title": "Why performance and SEO matter for business",
             "paragraphs": [
               "Website performance and SEO are directly tied to business outcomes. Slow websites lose users before they convert, while search engines rank faster, more reliable pages higher. Google's Core Web Vitals are official ranking factors, which means page speed and stability affect how visible your site is in search results.",
-              "Even small delays matter. Independent studies from NitroPack and HubSpot put the cost at roughly 4% of conversions per extra second of load time, and mobile users are hit hardest. With mobile-first indexing, Google primarily evaluates the mobile version of your site, making mobile performance critical. The goal of optimization is not technical perfection for its own sake, but more qualified traffic, better user engagement, and higher conversion rates."
+              "Even small delays matter. Portent's research across 100+ million page views found sites loading in 1 second convert up to 3x better than sites loading in 5, and NitroPack measured 50% more visitors abandoning a 3-second page than a 2-second one. With mobile-first indexing, Google primarily evaluates the mobile version of your site, making mobile performance critical. The goal of optimization is not technical perfection for its own sake, but more qualified traffic, better user engagement, and higher conversion rates."
             ]
           },
           {
@@ -1435,7 +1435,7 @@
           },
           {
             "question": "Does page speed really affect conversion rate?",
-            "answer": "Yes, measurably: NitroPack and HubSpot studies show conversions dropping roughly 4% per extra second of load time, with mobile hit hardest. Speed also feeds Core Web Vitals, which Google uses in ranking. Faster site, better positions, and more of the visitors you already earn actually converting."
+            "answer": "Yes, measurably: [Portent's research](https://www.portent.com/blog/analytics/research-site-speed-hurting-everyones-revenue.htm) found sites loading in 1 second convert up to 3x better than sites loading in 5, and [NitroPack's data](https://nitropack.io/blog/post/how-page-speed-affects-conversion) shows 50% more visitors abandoning a 3-second page than a 2-second one, with mobile hit hardest. Speed also feeds Core Web Vitals, which Google uses in ranking. Faster site, better positions, and more of the visitors you already earn actually converting."
           },
           {
             "question": "What is included in a technical SEO audit?",
