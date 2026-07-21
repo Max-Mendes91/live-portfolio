@@ -54,7 +54,7 @@ export default async function CaseStudyPage({ params }: PageProps) {
     <>
       <CaseStudyPageJsonLd caseStudyData={caseStudyData} />
       <BreadcrumbJsonLd items={breadcrumbItems} />
-      <CaseStudyClient locale="en" caseStudyData={caseStudyData} />
+      <CaseStudyClient locale="en" dictionary={dictionary} caseStudyData={caseStudyData} />
     </>
   );
 }

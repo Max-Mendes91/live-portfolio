@@ -11,26 +11,22 @@ import FooterSection from '@/components/sections/FooterSection';
 import { FloatingTechIcons } from '@/components/effects/FloatingTechIcons';
 import CornerGlowButton from '@/components/ui/CornerGlowButton';
 import { Display, Heading, Text, Badge, BinderClip } from '@/components/ui';
-import { SupportedLocale, CaseStudyPageDict, CaseStudySection } from '@/types/i18n';
+import { SupportedLocale, CaseStudyPageDict, CaseStudySection, Dictionary } from '@/types/i18n';
 import { useIsDesktop, usePrefersReducedMotion } from '@/hooks/useMediaQuery';
-import { getDictionary } from '@/lib/i18n/config';
 
 interface CaseStudyClientProps {
   locale: SupportedLocale;
+  // Passed from the server component so the page server-renders fully.
+  // A client-side dictionary fetch here previously made the whole tree
+  // bail out to client rendering: crawlers received empty HTML.
+  dictionary: Dictionary;
   caseStudyData: CaseStudyPageDict;
 }
 
-const CaseStudyClient: React.FC<CaseStudyClientProps> = ({ locale, caseStudyData }) => {
-  const [dictionary, setDictionary] = React.useState<Awaited<ReturnType<typeof getDictionary>> | null>(null);
+const CaseStudyClient: React.FC<CaseStudyClientProps> = ({ locale, dictionary, caseStudyData }) => {
   const isDesktop = useIsDesktop();
   const prefersReducedMotion = usePrefersReducedMotion();
   const shouldAnimate = isDesktop && !prefersReducedMotion;
-
-  React.useEffect(() => {
-    getDictionary(locale).then(setDictionary);
-  }, [locale]);
-
-  if (!dictionary) return null;
 
   const { nav, footer } = dictionary;
   const { content, seo } = caseStudyData;
