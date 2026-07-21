@@ -10,9 +10,18 @@
     "scrollDown": "Scroll down",
     "toSeeProjects": "for the proof",
     "trustSignals": [
-      { "label": "React & Next.js Specialist", "icon": "trophy" },
-      { "label": "EU Timezone, Overlaps UK & US", "icon": "globe" },
-      { "label": "Fluent EN / PT / ES · Polish Support", "icon": "languages" }
+      {
+        "label": "React & Next.js Specialist",
+        "icon": "trophy"
+      },
+      {
+        "label": "EU Timezone, Overlaps UK & US",
+        "icon": "globe"
+      },
+      {
+        "label": "Fluent EN / PT / ES · Polish Support",
+        "icon": "languages"
+      }
     ]
   },
   "about": {
@@ -34,7 +43,13 @@
       "title": "Websites, SaaS, and E-Commerce: Built with React and Next.js",
       "subtitle": "Custom software designed around your requirements. Every feature serves a purpose, and the codebase scales as you grow."
     },
-    "pills": ["Web Development", "SaaS Apps", "E-Commerce", "SEO & Performance", "AI Integration"],
+    "pills": [
+      "Web Development",
+      "SaaS Apps",
+      "E-Commerce",
+      "SEO & Performance",
+      "AI Integration"
+    ],
     "primaryButton": "See Services",
     "secondaryButton": "View Projects",
     "cards": [
@@ -79,8 +94,22 @@
         "linkHref": "/en/services/ai-integration"
       }
     ],
-    "marquee1": ["React", "Next.js", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
-    "marquee2": ["Stripe", "OpenAI", "Claude API", "Vercel", "AWS", "SEO"]
+    "marquee1": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+      "Tailwind CSS"
+    ],
+    "marquee2": [
+      "Stripe",
+      "OpenAI",
+      "Claude API",
+      "Vercel",
+      "AWS",
+      "SEO"
+    ]
   },
   "process": {
     "badge": "Development Process",
@@ -108,8 +137,14 @@
       }
     ],
     "ctas": [
-      { "label": "View Services", "href": "/en/services" },
-      { "label": "See Projects", "href": "/en/projects" }
+      {
+        "label": "View Services",
+        "href": "/en/services"
+      },
+      {
+        "label": "See Projects",
+        "href": "/en/projects"
+      }
     ]
   },
   "faq": {
@@ -189,11 +224,26 @@
       "faq": "FAQ"
     },
     "serviceLinks": [
-      { "label": "Full-Stack Web Development", "href": "/en/services/web-development" },
-      { "label": "SaaS & Web Applications", "href": "/en/services/saas-web-apps" },
-      { "label": "E-Commerce Development", "href": "/en/services/ecommerce-development" },
-      { "label": "SEO & Performance", "href": "/en/services/seo-performance-optimization" },
-      { "label": "AI Integration", "href": "/en/services/ai-integration" }
+      {
+        "label": "Custom Website Development",
+        "href": "/en/services/web-development"
+      },
+      {
+        "label": "SaaS & Web App Development",
+        "href": "/en/services/saas-web-apps"
+      },
+      {
+        "label": "E-Commerce Development",
+        "href": "/en/services/ecommerce-development"
+      },
+      {
+        "label": "Technical SEO & Performance",
+        "href": "/en/services/seo-performance-optimization"
+      },
+      {
+        "label": "AI Integration",
+        "href": "/en/services/ai-integration"
+      }
     ],
     "contact": {
       "name": "Max Mendes",
@@ -269,14 +319,26 @@
     "seo": {
       "title": "Contact - Web Developer Poland | Max Mendes",
       "metaDescription": "Contact Max Mendes for web development projects. React & Next.js developer in Częstochowa, Poland. Call: +48 725 534 018. Response within 24 hours.",
-      "keywords": ["contact web developer", "hire developer poland", "freelance developer contact", "web development quote", "developer czestochowa", "react developer hire"],
+      "keywords": [
+        "contact web developer",
+        "hire developer poland",
+        "freelance developer contact",
+        "web development quote",
+        "developer czestochowa",
+        "react developer hire"
+      ],
       "h1": "Get in Touch",
       "ogTitle": "Contact - Web Developer Poland | Max Mendes"
     },
     "schema": {
       "type": "ContactPage",
       "description": "Contact page for Max Mendes - frontend web developer based in Poland serving UK, US & EU clients.",
-      "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+      "areaServed": [
+        "Poland",
+        "United Kingdom",
+        "United States",
+        "European Union"
+      ]
     }
   },
   "projects": {
@@ -310,8 +372,20 @@
         "externalCta": "Visit Fennaro",
         "secondaryUrl": "https://app.fennaro.com/",
         "secondaryCta": "Try the App",
-        "tags": ["Mobile App", "Full-Stack", "Geo"],
-        "tech": ["Next.js", "Expo PWA", "Hono", "oRPC", "Neon PostGIS", "Drizzle", "Better Auth"],
+        "tags": [
+          "Mobile App",
+          "Full-Stack",
+          "Geo"
+        ],
+        "tech": [
+          "Next.js",
+          "Expo PWA",
+          "Hono",
+          "oRPC",
+          "Neon PostGIS",
+          "Drizzle",
+          "Better Auth"
+        ],
         "image": "/projects/fennaro-landing.webp",
         "caseStudyHref": "/en/blog/hard-part-building-dog-matching-app",
         "caseStudyCta": "Read the Build Story"
@@ -327,8 +401,19 @@
         "externalUrl": "https://besteats.pt/",
         "cta": "View Project",
         "externalCta": "Visit Live Site",
-        "tags": ["Food Tech", "Community", "Full-Stack"],
-        "tech": ["Bun", "React 19", "TanStack Start", "Elysia", "PostgreSQL", "Better Auth"],
+        "tags": [
+          "Food Tech",
+          "Community",
+          "Full-Stack"
+        ],
+        "tech": [
+          "Bun",
+          "React 19",
+          "TanStack Start",
+          "Elysia",
+          "PostgreSQL",
+          "Better Auth"
+        ],
         "image": "/projects/besteats-landing.webp"
       },
       {
@@ -344,8 +429,17 @@
         "externalCta": "View Website",
         "secondaryUrl": "https://chromewebstore.google.com/detail/markmind/bdobgdkpeffdbonfpokgkbncgnbnjnoo",
         "secondaryCta": "View Extension",
-        "tags": ["Chrome Extension", "AI", "Productivity"],
-        "tech": ["React", "TypeScript", "Chrome APIs", "AI Integration"],
+        "tags": [
+          "Chrome Extension",
+          "AI",
+          "Productivity"
+        ],
+        "tech": [
+          "React",
+          "TypeScript",
+          "Chrome APIs",
+          "AI Integration"
+        ],
         "image": "/projects/markmind-v2-landing.webp"
       },
       {
@@ -359,8 +453,20 @@
         "cta": "View Project",
         "externalCta": "View Landing Page",
         "status": "Paused",
-        "tags": ["SaaS", "AI", "Full-Stack"],
-        "tech": ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL", "OpenAI", "Stripe"],
+        "tags": [
+          "SaaS",
+          "AI",
+          "Full-Stack"
+        ],
+        "tech": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Node.js",
+          "PostgreSQL",
+          "OpenAI",
+          "Stripe"
+        ],
         "image": "/projects/flowmate-landing.webp",
         "caseStudyHref": "/en/projects/flowmate",
         "caseStudyCta": "Read Case Study"
@@ -375,8 +481,18 @@
         "externalUrl": "https://maxmendes.dev",
         "cta": "View Project",
         "externalCta": "You're Here",
-        "tags": ["Portfolio", "i18n", "SEO"],
-        "tech": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+        "tags": [
+          "Portfolio",
+          "i18n",
+          "SEO"
+        ],
+        "tech": [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "Framer Motion"
+        ],
         "image": "/projects/Portfolio-landing.webp"
       },
       {
@@ -389,8 +505,19 @@
         "externalUrl": "https://nail-salon-omega.vercel.app/",
         "cta": "View Project",
         "externalCta": "Visit Live Site",
-        "tags": ["Business", "Booking", "Local SEO"],
-        "tech": ["React", "TypeScript", "Vite", "Tailwind CSS", "Radix UI", "EmailJS"],
+        "tags": [
+          "Business",
+          "Booking",
+          "Local SEO"
+        ],
+        "tech": [
+          "React",
+          "TypeScript",
+          "Vite",
+          "Tailwind CSS",
+          "Radix UI",
+          "EmailJS"
+        ],
         "image": "/projects/nailsalon-landing.webp"
       },
       {
@@ -403,8 +530,16 @@
         "externalUrl": "https://la-creme-restaurant.vercel.app",
         "cta": "View Project",
         "externalCta": "Visit Live Site",
-        "tags": ["Restaurant", "Landing Page", "Design"],
-        "tech": ["React", "Vite", "Tailwind CSS"],
+        "tags": [
+          "Restaurant",
+          "Landing Page",
+          "Design"
+        ],
+        "tech": [
+          "React",
+          "Vite",
+          "Tailwind CSS"
+        ],
         "image": "/projects/lacreme-landing.webp"
       },
       {
@@ -417,8 +552,17 @@
         "externalUrl": "https://animal-vetclinic.vercel.app",
         "cta": "View Project",
         "externalCta": "Visit Live Site",
-        "tags": ["Healthcare", "Local Business", "Angular"],
-        "tech": ["Angular", "TypeScript", "Tailwind CSS", "Vite"],
+        "tags": [
+          "Healthcare",
+          "Local Business",
+          "Angular"
+        ],
+        "tech": [
+          "Angular",
+          "TypeScript",
+          "Tailwind CSS",
+          "Vite"
+        ],
         "image": "/projects/vetclinic-landing.webp"
       }
     ]
@@ -434,14 +578,28 @@
     "seo": {
       "title": "Freelance Web Developer - React & Next.js | Max Mendes",
       "metaDescription": "Freelance frontend developer for hire. Websites, e-commerce, web apps, SaaS. React, Next.js, TypeScript. Poland-based, UK/US friendly. Free consultation.",
-      "keywords": ["freelance web developer", "hire web developer", "frontend developer poland", "react developer for hire", "nextjs developer", "web developer czestochowa", "ecommerce developer", "saas developer"],
+      "keywords": [
+        "freelance web developer",
+        "hire web developer",
+        "frontend developer poland",
+        "react developer for hire",
+        "nextjs developer",
+        "web developer czestochowa",
+        "ecommerce developer",
+        "saas developer"
+      ],
       "h1": "Freelance Web Developer for Hire",
       "ogTitle": "Freelance Web Developer - React & Next.js | Max Mendes"
     },
     "schema": {
       "type": "WebSite",
       "description": "Professional web development portfolio and services by Max Mendes - Frontend Developer specializing in React, Next.js, and modern web technologies.",
-      "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+      "areaServed": [
+        "Poland",
+        "United Kingdom",
+        "United States",
+        "European Union"
+      ]
     }
   },
   "aboutPage": {
@@ -455,14 +613,26 @@
     "seo": {
       "title": "Frontend Developer Poland - React & Next.js | Max Mendes",
       "metaDescription": "Frontend developer in Częstochowa, Poland. I build websites, e-commerce, and web apps with React & Next.js. 300+ hours on a production SaaS project.",
-      "keywords": ["about max mendes", "frontend developer poland", "react developer poland", "nextjs developer", "web developer częstochowa", "freelance developer europe"],
+      "keywords": [
+        "about max mendes",
+        "frontend developer poland",
+        "react developer poland",
+        "nextjs developer",
+        "web developer częstochowa",
+        "freelance developer europe"
+      ],
       "h1": "About Max Mendes",
       "ogTitle": "Frontend Developer Poland - React & Next.js | Max Mendes"
     },
     "schema": {
       "type": "ProfilePage",
       "description": "Frontend developer based in Poland specializing in React, Next.js, and TypeScript. Building websites, e-commerce, and web applications.",
-      "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+      "areaServed": [
+        "Poland",
+        "United Kingdom",
+        "United States",
+        "European Union"
+      ]
     },
     "heading": "About Max Mendes",
     "location": "Częstochowa, Poland",
@@ -478,19 +648,38 @@
       "categories": [
         {
           "name": "Frontend",
-          "items": ["React", "Next.js", "TypeScript", "Tailwind CSS"]
+          "items": [
+            "React",
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS"
+          ]
         },
         {
           "name": "Backend",
-          "items": ["Node.js", "PostgreSQL", "Prisma", "Supabase"]
+          "items": [
+            "Node.js",
+            "PostgreSQL",
+            "Prisma",
+            "Supabase"
+          ]
         },
         {
           "name": "AI & APIs",
-          "items": ["OpenAI API", "LLM Integration", "REST APIs"]
+          "items": [
+            "OpenAI API",
+            "LLM Integration",
+            "REST APIs"
+          ]
         },
         {
           "name": "Tools",
-          "items": ["Git", "Vercel", "Figma", "VS Code"]
+          "items": [
+            "Git",
+            "Vercel",
+            "Figma",
+            "VS Code"
+          ]
         }
       ]
     },
@@ -544,7 +733,7 @@
       "badge": "Product Mindset",
       "title": "Every project starts with thinking",
       "subtitle": "One person, end-to-end responsibility",
-      "description": "Before anything is built, I focus on structure, constraints, and what actually needs to work. Direct communication, fast feedback, and products built with intent, not feature bloat. This works for Polish businesses and international teams who value clarity over bureaucracy."
+      "description": "Custom websites, web applications and online stores coded from scratch, plus technical SEO and practical AI integration. I am one senior developer in Poland working directly with UK, US and EU clients: no agency overhead, fixed quotes within a day, and live shipped products you can inspect before you commit."
     },
     "services": [
       {
@@ -647,148 +836,320 @@
   "servicePages": {
     "web-development": {
       "id": "web-development",
-      "label": "Full-Stack Web Development",
+      "label": "Custom Website Development",
       "href": "/en/services/web-development",
       "hrefLang": {
         "en": "/en/services/web-development",
         "pl": "/pl/uslugi/tworzenie-stron"
       },
       "seo": {
-        "title": "Full-Stack Web Development - React & Next.js | Max Mendes",
-        "metaDescription": "Full-stack web development services. Custom React and Next.js applications built for your business. Based in Częstochowa, Poland. Available worldwide.",
-        "keywords": ["full-stack web development", "custom web applications", "react developer", "nextjs development", "web developer poland", "typescript developer", "częstochowa"],
-        "h1": "Full-Stack Web Development",
-        "ogTitle": "Full-Stack Web Development - React & Next.js | Max Mendes"
+        "title": "Custom Website Development | React & Next.js | Max Mendes",
+        "metaDescription": "Custom website development with React and Next.js. No WordPress, no page builders. Direct with a senior developer in Poland, serving UK, US and EU clients.",
+        "keywords": [
+          "custom website development",
+          "hire a web developer",
+          "react website development",
+          "custom coded website",
+          "freelance web developer europe",
+          "wordpress alternative",
+          "web developer poland",
+          "nextjs website development"
+        ],
+        "h1": "Custom Website Development",
+        "ogTitle": "Custom Website Development | React & Next.js | Max Mendes"
       },
       "schema": {
         "serviceType": "Full-Stack Web Development Service",
         "description": "Custom full-stack web applications built with React, Next.js, Node.js, and PostgreSQL. Frontend and backend development for business requirements.",
-        "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+        "areaServed": [
+          "Poland",
+          "United Kingdom",
+          "United States",
+          "European Union"
+        ]
       },
       "content": {
-        "subtitle": "Custom web applications built with React and Next.js. Production code designed around your business requirements, built to scale as you grow.",
+        "subtitle": "Business websites coded from scratch in React and Next.js. No WordPress, no page builders, no plugin bills. A fast site that loads in under a second and is ready for Google from day one.",
         "sections": [
           {
-            "title": "What This Service Is",
+            "title": "How much does a custom website cost",
             "paragraphs": [
-              "Full-stack web development means building both what users see (frontend) and the systems running behind the scenes (backend). You get one cohesive application where interface, data, and logic work together seamlessly.",
-              "Custom applications are built around your specific requirements. Your business doesn't adapt to the software. The software is designed for your exact workflows, data structures, and growth plans."
-            ]
-          },
-          {
-            "title": "What I Build",
-            "paragraphs": [
-              "I develop custom frontends using React and Next.js that deliver fast, responsive interfaces. Users get application-quality experiences with instant navigation and real-time updates when needed. The backend handles core business logic (user management, data processing, transactions, and third-party integrations) built with Node.js and PostgreSQL for reliability.",
-              "Projects can include authentication systems, role-based access control, payment processing with Stripe, API integrations, and real-time features like live dashboards or notifications. I use TypeScript throughout to catch errors before deployment and ensure long-term maintainability."
-            ]
-          },
-          {
-            "title": "Who This Service Fits",
-            "paragraphs": [
-              "This service is for businesses building web applications that require custom logic and data handling. SaaS platforms, client portals, booking systems, internal dashboards, and subscription-based products all fall into this category.",
-              "If your project involves users, authentication, data processing, or business logic beyond simple content pages, you need full-stack development. FlowMate, the SaaS platform I built for email management, demonstrates this approach: multi-provider authentication, async processing, AI integrations, and production infrastructure handling real workloads."
+              "Straight numbers, because most agencies make you book a call to hear them. A simple business website (5-7 pages, contact form, mobile-first) is $1,500-3,000 (approx. €1,400-2,800). A standard site with more pages, a second language or booking features runs $3,000-6,000 (€2,800-5,600). Larger builds with custom functionality sit at $6,000-12,000 (€5,600-11,000). You get an exact fixed quote after one conversation, and it does not grow mid-project.",
+              "Why the price is lower than a UK or US agency quote for the same work: I am one senior developer in Poland, not an office with project managers and account layers. You talk to the person writing the code. Same stack the agencies use, without their overhead."
             ],
             "links": [
-              { "text": "Check the Projects page →", "href": "/en/projects" }
+              {
+                "text": "Full breakdown: what a website really costs →",
+                "href": "/en/blog/website-cost-small-business-poland"
+              }
             ]
           },
           {
-            "title": "How I Work",
+            "title": "What you get",
             "paragraphs": [
-              "You work directly with me. No layers between you and the person writing your code. I handle requirements, architecture, development, and deployment. Code is production-ready from day one, built to extend as your needs evolve.",
-              "Applications deploy to modern infrastructure (Vercel, AWS) with CDN distribution for performance. I'm based in Częstochowa, Poland, and available for projects across Poland and internationally."
+              "A website designed and coded around your business: custom design matched to your brand, React and Next.js code, full responsiveness on phones and tablets, a contact form with email notifications, and analytics wired in so you can see where clients come from.",
+              "Also included, because it should never be an upsell: correct meta tags and structured data for Google, a sitemap, load time under a second, and deployment. The site is ready to rank from launch day, not \"SEO-ready for a future package\"."
+            ]
+          },
+          {
+            "title": "Why not WordPress or a page builder",
+            "paragraphs": [
+              "WordPress runs a huge share of business websites, and for some of them it is fine. The problems show up later: a dozen plugins to update, a premium theme with an annual fee, slow mobile loading, and break-ins through outdated plugins. You end up paying maintenance fees for a site that never changes.",
+              "A hand-coded site has no plugins, so there is nothing to update and nothing to break into. It loads faster because it ships no code it does not use. And there is no subscription: you pay once for the build, then only for the domain and hosting, typically $30-120 a year total. If your team publishes content daily and needs to edit it themselves, I wire a lightweight editor into exactly the sections that change, and nothing else."
             ],
             "links": [
-              { "text": "See the FAQ page →", "href": "/en/faq" }
+              {
+                "text": "Why HTML-first websites are winning again →",
+                "href": "/en/blog/html-first-websites-winning-again"
+              }
+            ]
+          },
+          {
+            "title": "Freelancer vs agency: what you are actually paying for",
+            "paragraphs": [
+              "An agency quote pays for the account manager, the project manager, the office and the margin, and then for the developer who does the work. Hiring the developer directly removes every layer except the one that builds your site. That is the whole trick, and it is why the same site costs 40-60% less.",
+              "The honest trade-off: one person has one calendar. I take a limited number of projects and tell you real timelines upfront instead of overbooking. For most business websites, one senior developer end to end beats a junior team with a manager in the middle."
+            ]
+          },
+          {
+            "title": "How I work and how long it takes",
+            "paragraphs": [
+              "The process is short. First a conversation about what the site needs to do for the business: calls, bookings, quote requests. You get a fixed quote and timeline the next working day. Then design for approval, code, your revisions, launch.",
+              "A simple business site takes 1-2 weeks from design approval. Bigger or multilingual builds take 3-4 weeks. The most common delay in any web project is waiting on content and photos, so if you do not have them, I help produce them."
+            ],
+            "links": [
+              {
+                "text": "See live client work →",
+                "href": "/en/projects"
+              }
             ]
           }
         ],
         "techStackTitle": "Technical Stack",
         "techStack": [
-          { "title": "Frontend", "description": "React 19, Next.js 15, TypeScript, Tailwind CSS. Fast, SEO-friendly, maintainable" },
-          { "title": "Backend", "description": "Node.js, PostgreSQL, Prisma ORM. Scalable data handling with type safety" },
-          { "title": "Integrations", "description": "Stripe payments, OAuth authentication, email services, third-party APIs" },
-          { "title": "Deployment", "description": "Vercel or AWS with CDN, automated CI/CD, monitoring" },
-          { "title": "Tools", "description": "Git version control, automated testing, production-grade error tracking" }
+          {
+            "title": "Frontend",
+            "description": "React 19, Next.js 15, TypeScript, Tailwind CSS. Fast, SEO-friendly, maintainable"
+          },
+          {
+            "title": "Backend",
+            "description": "Node.js, PostgreSQL, Prisma ORM. Scalable data handling with type safety"
+          },
+          {
+            "title": "Integrations",
+            "description": "Stripe payments, OAuth authentication, email services, third-party APIs"
+          },
+          {
+            "title": "Deployment",
+            "description": "Vercel or AWS with CDN, automated CI/CD, monitoring"
+          },
+          {
+            "title": "Tools",
+            "description": "Git version control, automated testing, production-grade error tracking"
+          }
         ],
         "cta": {
-          "title": "Ready to Build Your Application?",
-          "subtitle": "Tell me about your project and I'll respond within 24 hours with questions about scope, timeline, and approach.",
-          "button": "Start Your Project"
-        }
+          "title": "Tell me what your site needs to do",
+          "subtitle": "Describe your business and what the website should achieve. You get a fixed quote and a real timeline by the next working day, no sales calls.",
+          "button": "Get a fixed quote"
+        },
+        "faqTitle": "Custom website questions, answered",
+        "faq": [
+          {
+            "question": "How much does a custom website cost?",
+            "answer": "From me: $1,500-3,000 for a simple business site, $3,000-6,000 standard, $6,000-12,000 for complex builds (roughly €1,400-11,000). US and UK agencies quote 2-3x that for the same scope. The price depends on page count, features and whether your content is ready. See the [full cost breakdown](/en/blog/website-cost-small-business-poland)."
+          },
+          {
+            "question": "How much does a website cost for a small business?",
+            "answer": "Most small businesses need the simple tier: 5-7 pages, contact form, local SEO basics. That is $1,500-3,000 with me, coded from scratch. Ongoing costs stay near $30-120 a year (domain plus hosting) because there are no plugin licenses or maintenance retainers to keep paying."
+          },
+          {
+            "question": "Is it cheaper to hire a freelancer or an agency for a website?",
+            "answer": "A freelancer, usually by half or more, because you are not funding project managers and office overhead. The risk people worry about is reliability, which is why I work with fixed quotes, real timelines and a public portfolio of live sites you can click through before deciding."
+          },
+          {
+            "question": "How long does it take to build a website?",
+            "answer": "A simple business website: 1-2 weeks from approved design. Standard builds: 3-4 weeks. What actually stretches timelines is content: text, photos, offers. I flag everything I need in week one, and help write it if it does not exist yet."
+          },
+          {
+            "question": "Should I choose WordPress or a custom-coded website?",
+            "answer": "For most service businesses, custom-coded wins: faster, safer, and no plugin or theme fees. WordPress makes sense when a team publishes lots of content daily and must self-edit everything. I wrote up the comparison honestly in [the HTML-first article](/en/blog/html-first-websites-winning-again), including when I would not recommend custom."
+          },
+          {
+            "question": "How much do freelance web developers charge in Europe?",
+            "answer": "Public rate surveys (Arc, Index.dev) put European freelance rates at roughly €15-90 an hour depending on country and seniority, with Polish seniors typically well below UK and German rates for equivalent skill. I quote fixed project prices instead of hourly, so you know the total before work starts and overrun risk sits with me, not you."
+          },
+          {
+            "question": "What is included in the cost of a custom website?",
+            "answer": "Design, code, responsive layouts, contact forms, analytics, technical SEO (meta tags, structured data, sitemap), deployment and a handover walkthrough. Not included: domain and hosting (you own both, typically $30-120 a year) and content writing, which I can add if needed. No hidden retainers."
+          },
+          {
+            "question": "Is a custom-coded website faster than WordPress?",
+            "answer": "Almost always, and by a lot. A hand-coded site ships only the code it uses, while a typical WordPress build drags a theme and a dozen plugins into every page load. Speed shows up in Google rankings via [Core Web Vitals](/en/services/seo-performance-optimization) and in how many visitors stay."
+          },
+          {
+            "question": "How much does web development cost in Poland?",
+            "answer": "Poland-based development runs far below UK, German or US pricing for the same seniority, which is exactly why UK and EU companies hire here. You get the rate advantage without outsourcing roulette: I am one accountable developer with live projects you can inspect, working in your timezone."
+          }
+        ]
       }
     },
     "saas-web-apps": {
       "id": "saas-web-apps",
-      "label": "SaaS & Web Applications",
+      "label": "SaaS & Web App Development",
       "href": "/en/services/saas-web-apps",
       "hrefLang": {
         "en": "/en/services/saas-web-apps",
         "pl": "/pl/uslugi/aplikacje-webowe"
       },
       "seo": {
-        "title": "SaaS & Web Applications - Custom Platforms | Max Mendes",
-        "metaDescription": "SaaS and web application development services. Build custom platforms with React and Next.js. Production-ready architecture. Częstochowa, Poland. International projects.",
-        "keywords": ["saas development", "web applications", "custom platforms", "react saas", "nextjs saas", "saas developer poland", "subscription platforms"],
-        "h1": "SaaS & Web Applications",
-        "ogTitle": "SaaS & Web Applications - Custom Platforms | Max Mendes"
+        "title": "SaaS & Web App Development | MVP to Production | Max Mendes",
+        "metaDescription": "SaaS and custom web app development with React and Next.js. Production-ready MVPs from one senior developer. Poland-based, serving UK, US and EU founders.",
+        "keywords": [
+          "saas development",
+          "saas mvp development",
+          "custom web application development",
+          "hire a saas developer",
+          "web app developer",
+          "saas developer poland",
+          "mvp development cost",
+          "subscription platform development"
+        ],
+        "h1": "SaaS & Web App Development",
+        "ogTitle": "SaaS & Web App Development | MVP to Production | Max Mendes"
       },
       "schema": {
         "serviceType": "Software Development Service",
         "description": "Production SaaS development for subscription platforms. Scalable architecture with authentication, payments, and multi-tenant data models.",
-        "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+        "areaServed": [
+          "Poland",
+          "United Kingdom",
+          "United States",
+          "European Union"
+        ]
       },
       "content": {
-        "subtitle": "Production SaaS development for subscription platforms built with React. Scalable architecture from day one, built for production and designed to grow with your users.",
+        "subtitle": "Custom web applications and SaaS platforms: accounts, dashboards, payments, integrations. Software built around your process, shipped by one senior developer from MVP to production.",
         "sections": [
           {
-            "title": "What SaaS Development Means",
+            "title": "Website or web app: which one are you actually building",
             "paragraphs": [
-              "SaaS development is about building subscription-based software that users rely on continuously, not a one-time website or a simple web app. A SaaS product manages accounts, permissions, data isolation, and recurring payments across many customers at once. This is known as multi-tenancy: your platform serves multiple businesses or users while keeping their data separate and secure.",
-              "Unlike regular websites, SaaS products must handle onboarding, billing cycles, upgrades, cancellations, and long-term maintenance. These are business-critical systems, not just interfaces."
-            ]
-          },
-          {
-            "title": "What's Included in This Service",
-            "paragraphs": [
-              "I build SaaS platforms that cover the full product lifecycle. Projects can include secure user authentication with email/password, OAuth, and social logins; subscription management with Stripe; and database structures designed for multi-tenant data. Admin dashboards allow you to manage users, plans, and usage without manual work.",
-              "Email notifications and onboarding flows guide users through signup, activation, and billing events. APIs are built to support integrations with third-party services or future mobile and partner applications. Built to add features without rebuilding the foundation."
-            ]
-          },
-          {
-            "title": "Who This Is For and Use Cases",
-            "paragraphs": [
-              "This service is for SaaS founders building an MVP designed to scale into a real product. It also fits businesses launching subscription platforms or internal SaaS tools that replace spreadsheets or manual workflows. Common use cases include productivity tools, B2B platforms, analytics dashboards, and subscription-based services.",
-              "FlowMate, the SaaS platform I built for email management, handles multi-provider authentication, async processing (background tasks that don't slow down the UI), AI integrations, and Stripe subscriptions at production scale. It demonstrates how these systems work together in a real product."
+              "A website shows information: your offer, your contact details, your pricing. A web application does work: users log in, enter data, the system processes it, bills it, reports on it and enforces permissions. If your idea involves user accounts, a dashboard, recurring payments or business logic, you are building an application.",
+              "The distinction matters because it changes the architecture, the timeline and the budget. If what you need is a marketing site, see custom website development. This page is about software."
             ],
             "links": [
-              { "text": "See FlowMate on the Projects page →", "href": "/en/projects" }
+              {
+                "text": "Need a business website instead? →",
+                "href": "/en/services/web-development"
+              }
             ]
           },
           {
-            "title": "How It's Delivered",
+            "title": "How much does it cost to build a SaaS MVP",
             "paragraphs": [
-              "You work directly with one developer who handles the full stack. The focus is production-ready code from day one, so the platform can grow without major rewrites after validation. TypeScript is used across the stack to reduce runtime errors and support long-term scalability. Applications are deployed on modern infrastructure such as Vercel, Supabase, or AWS, depending on requirements. The goal is a SaaS platform ready for real users and steady growth.",
-              "Based in Częstochowa, Poland. Available for SaaS projects across Poland and internationally."
+              "Real ranges, not \"it depends\". An MVP with the core feature, authentication and a simple dashboard starts at $8,000-10,000 (approx. €7,400-9,300) with me. A standard MVP with payments, roles and an admin panel runs $10,000-25,000. Complex systems with heavy integrations go beyond that, and I say so before we start, not after. Agency-built MVPs are commonly quoted in six figures, which is exactly the overhead gap a senior solo developer removes.",
+              "What drives cost is specific: authentication and roles, payments (especially subscriptions), third-party integrations, and reporting dashboards. The winning strategy is almost always a tight MVP first, then building based on how real users behave instead of guesses."
+            ]
+          },
+          {
+            "title": "What I build",
+            "paragraphs": [
+              "Complete systems: registration and login (including Google sign-in), roles and permissions, live dashboards, one-off and recurring payments through Stripe, email and push notifications, and API integrations with the tools you already run.",
+              "Everything is TypeScript with tests, on a boring-on-purpose stack: React and Next.js on the front, Node.js and PostgreSQL behind. These are the technologies the biggest web products run on, and they are standard enough that any future developer can take the project over. No lock-in to me."
+            ]
+          },
+          {
+            "title": "Proof: products I have shipped",
+            "paragraphs": [
+              "Fennaro: a dog-matching app I built solo, end to end. Accounts, geographic matching on PostGIS, chat, moderation, GDPR compliance and an installable PWA, live in production. FlowMate: a SaaS email platform where I learned production architecture the hard way: secure auth, async processing, AI integrations. BestEats: a food-ranking platform live in Portugal, where I ship code under senior code review.",
+              "I write about these builds publicly, including the mistakes. If you want to know how I think before hiring me, read the Fennaro story: it covers the decisions no portfolio screenshot shows."
             ],
             "links": [
-              { "text": "Questions about SaaS development pricing or process? Check the FAQ →", "href": "/en/faq" }
+              {
+                "text": "How I built Fennaro: the full story →",
+                "href": "/en/blog/hard-part-building-dog-matching-app"
+              },
+              {
+                "text": "See all projects →",
+                "href": "/en/projects"
+              }
+            ]
+          },
+          {
+            "title": "How delivery works and how long it takes",
+            "paragraphs": [
+              "We start from the problem, not the feature list: what the system must accomplish, who uses it, what is genuinely essential in version one. You get an MVP scope with a fixed quote, split into stages so you always know what you are paying for. A typical MVP ships in 4-8 weeks with weekly progress updates you can react to.",
+              "After launch you are not stranded: the code is documented, deployed on infrastructure you own, and monitored, so I know about errors before your users report them. We grow the product in stages based on real usage."
             ]
           }
         ],
         "techStackTitle": "Technical Stack",
         "techStack": [
-          { "title": "Frontend", "description": "React 19, Next.js 15, TypeScript. Fast, SEO-friendly SaaS frontends with reliability as features grow" },
-          { "title": "Backend", "description": "Node.js, PostgreSQL (Supabase, Prisma). Scalable, multi-tenant data models keeping customer data separate and secure" },
-          { "title": "Authentication", "description": "Clerk or NextAuth for secure user management with social logins and OAuth" },
-          { "title": "Payments", "description": "Stripe subscriptions and webhooks. Automating the full billing lifecycle" },
-          { "title": "Real-time & Deployment", "description": "WebSockets or SSE when required. Vercel with managed databases for predictable performance and scaling" }
+          {
+            "title": "Frontend",
+            "description": "React 19, Next.js 15, TypeScript. Fast, SEO-friendly SaaS frontends with reliability as features grow"
+          },
+          {
+            "title": "Backend",
+            "description": "Node.js, PostgreSQL (Supabase, Prisma). Scalable, multi-tenant data models keeping customer data separate and secure"
+          },
+          {
+            "title": "Authentication",
+            "description": "Clerk or NextAuth for secure user management with social logins and OAuth"
+          },
+          {
+            "title": "Payments",
+            "description": "Stripe subscriptions and webhooks. Automating the full billing lifecycle"
+          },
+          {
+            "title": "Real-time & Deployment",
+            "description": "WebSockets or SSE when required. Vercel with managed databases for predictable performance and scaling"
+          }
         ],
         "cta": {
-          "title": "Ready to Build Your SaaS Platform?",
-          "subtitle": "Tell me about your project and I'll respond within 24 hours with questions about architecture, timeline, and technical approach.",
-          "button": "Start Your Project"
-        }
+          "title": "Have a product in mind?",
+          "subtitle": "Describe the problem your product should solve. I reply within a day with an honest MVP scope, a price band and the questions that sharpen the idea.",
+          "button": "Describe your product"
+        },
+        "faqTitle": "SaaS and web app questions, answered",
+        "faq": [
+          {
+            "question": "How much does it cost to build a SaaS MVP?",
+            "answer": "With me: from $8,000-10,000 for a core-feature MVP with auth and a dashboard, $10,000-25,000 with payments and roles (roughly €7,400-23,000). Agency cost surveys put the median agency-built MVP around $120,000, which is the overhead you are not paying when you hire the developer directly."
+          },
+          {
+            "question": "How much does it cost to build a SaaS app?",
+            "answer": "A full production SaaS beyond MVP stage typically lands at $25,000+ depending on integrations, compliance and scale needs. I quote in stages, so you fund the MVP first, verify real demand, and only then invest in the full build. Nobody should pay full-product money on a guess."
+          },
+          {
+            "question": "How long does it take to build a SaaS MVP?",
+            "answer": "A focused MVP ships in 4-8 weeks with me. Typical agency timelines run 8-16 weeks, and the difference is layers: no handoffs between designer, PM and developer. The biggest real-world delay is unclear requirements, which is why week one is scope work, not code."
+          },
+          {
+            "question": "Should I hire a freelancer or an agency to build my SaaS MVP?",
+            "answer": "For MVPs and small-to-mid systems, a senior freelancer is usually the better deal: direct communication and no agency overhead. For very large systems a team makes sense, and I say that in the quote instead of overselling. Judge any developer by shipped products, not slide decks. Mine are [public](/en/projects)."
+          },
+          {
+            "question": "What features does a SaaS MVP actually need?",
+            "answer": "The one core feature that proves your idea, plus login, a minimal dashboard and a way to pay you. That is usually it. Every extra feature before real users arrive is money spent on a guess. The point of an MVP is to make the next spending decision with evidence."
+          },
+          {
+            "question": "How much do freelance SaaS developers charge?",
+            "answer": "Marketplace listings (Upwork, Arc) show senior SaaS developers at $50-120 an hour, with Poland-based seniors at the lower half of that for equal skill. I price fixed per stage instead of hourly: you know the number before work starts, and scope creep is my risk to manage, not your invoice surprise."
+          },
+          {
+            "question": "What is a realistic SaaS timeline for a non-technical founder?",
+            "answer": "Plan for 4-8 weeks of build after about a week of scope definition, then 2-4 weeks of real-user feedback before deciding the next stage. The classic founder mistake is skipping the feedback window and ordering more features immediately. The system I hand over is built to be extended, so waiting costs nothing."
+          },
+          {
+            "question": "What is the difference between an MVP and a full SaaS product?",
+            "answer": "An MVP proves that people want the core of your idea; a full product earns money at scale. The MVP has one polished core flow; the full product adds roles, billing edge cases, admin tooling and integrations. Funding them as separate stages protects you from building the second one for users who never arrive."
+          },
+          {
+            "question": "How much does web app development cost in Poland?",
+            "answer": "Complex custom web applications from Polish teams are quoted at roughly $25,000-100,000+ in 2026, still well under Western European agency pricing. As a solo senior developer I sit below team pricing for MVP-scale work: $8,000-25,000 covers most first versions, with the same stack and standards."
+          }
+        ]
       }
     },
     "ecommerce-development": {
@@ -801,28 +1162,42 @@
       },
       "seo": {
         "title": "E-Commerce Development - Custom Online Stores | Max Mendes",
-        "metaDescription": "Custom e-commerce development with React and Next.js. Fast, conversion-focused online stores. No Shopify/WooCommerce limitations. Częstochowa, Poland.",
-        "keywords": ["ecommerce development", "custom online store", "react ecommerce", "nextjs ecommerce", "online store development", "ecommerce developer poland", "custom shopping cart"],
+        "metaDescription": "Custom e-commerce development with React and Next.js. Fast, conversion-focused stores beyond template limits. Poland-based, serving UK, US and EU merchants.",
+        "keywords": [
+          "ecommerce development",
+          "custom online store",
+          "react ecommerce",
+          "shopify alternative",
+          "headless ecommerce development",
+          "online store development",
+          "ecommerce developer poland",
+          "nextjs ecommerce"
+        ],
         "h1": "E-Commerce Development",
         "ogTitle": "E-Commerce Development - Custom Online Stores | Max Mendes"
       },
       "schema": {
         "serviceType": "E-Commerce Development Service",
         "description": "Custom e-commerce development with React and Next.js. Fast, conversion-focused online stores with payment integration and inventory management.",
-        "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+        "areaServed": [
+          "Poland",
+          "United Kingdom",
+          "United States",
+          "European Union"
+        ]
       },
       "content": {
         "subtitle": "Custom online stores built with React for speed and conversions. Designed around your catalog and business logic, with full control over every detail.",
         "sections": [
           {
-            "title": "What Custom E-Commerce Development Means",
+            "title": "When a template store stops being enough",
             "paragraphs": [
               "Custom e-commerce development means your online store is built specifically for how your business operates. Standard platforms work well at the start, but many businesses outgrow them when pricing rules become complex, inventory logic is non-standard, or integrations are required.",
               "A custom online store allows full control over performance, SEO, and business logic. With React and Next.js, product pages load faster and meet Core Web Vitals standards, factors that directly affect conversion rates and search visibility."
             ]
           },
           {
-            "title": "What's Included in This Service",
+            "title": "Everything the store ships with",
             "paragraphs": [
               "I build e-commerce platforms that cover the entire sales flow. Projects can include a structured product catalog with inventory management, a streamlined shopping cart, and a checkout process tailored to your users.",
               "Payment processing is integrated flexibly, supporting both international methods (Stripe) and Polish payment processors (Przelewy24, PayU). Order management features handle fulfillment status and customer communication. Customer accounts provide order history and saved details.",
@@ -830,37 +1205,96 @@
             ]
           },
           {
-            "title": "Who This Is For and Use Cases",
+            "title": "Is this you: signs you have outgrown your platform",
             "paragraphs": [
-              "This service is suited for businesses with requirements that exceed standard templates. Examples include B2B wholesale stores with custom pricing or volume discounts, companies needing integrations with accounting, ERP, or inventory systems, and stores offering configurable or highly variant products.",
-              "It also fits international businesses requiring multi-currency and multi-language support, or brands looking for a Shopify alternative when platform limitations start affecting growth. Typical use cases include B2B wholesale platforms, subscription boxes, and custom product builders."
+              "You know this moment if you are in it: the pricing rules your sales team actually uses cannot be expressed in the platform admin. The ERP sync works \"mostly\". Checkout needs one step the template will not allow. Every workaround is another app subscription, and the store gets slower with each one.",
+              "That is the customer this service exists for: B2B wholesale with custom pricing and volume discounts, stores that need real integrations with accounting or inventory systems, configurable products with many variants, and international selling with multi-currency. If none of that describes you yet, a platform is still the right answer, and I will say so."
             ]
           },
           {
-            "title": "Performance and SEO Focus",
+            "title": "Why speed is a sales feature, not a tech score",
             "paragraphs": [
-              "Performance is a core part of every build. Fast loading times improve user experience and directly impact conversion rates. Product pages are SEO-optimized with proper metadata and structured data, while server-side rendering ensures search engines can index content effectively.",
-              "Images are optimized and loaded lazily to reduce page weight. The entire store is designed mobile-first, reflecting how most customers browse and purchase today.",
-              "Based in Częstochowa, Poland. Available for e-commerce projects across Poland and internationally."
+              "Every extra second of load time measurably costs orders, and mobile shoppers are the least patient. A custom React storefront ships only the code it needs, so product pages stay fast even with a large catalog. Server-side rendering means Google indexes every product properly, and structured data makes listings eligible for price and rating snippets in search results.",
+              "This is the same production discipline I use on consumer platforms like BestEats, live in Portugal, where page speed and catalog UX decide whether people stay. The stack and standards carry over one-to-one to commerce."
             ],
             "links": [
-              { "text": "Questions about e-commerce development timelines or pricing? Check the FAQ →", "href": "/en/faq" }
+              {
+                "text": "See live production work →",
+                "href": "/en/projects"
+              }
+            ]
+          },
+          {
+            "title": "How much does a custom online store cost",
+            "paragraphs": [
+              "A custom store built from scratch starts around $8,000 (approx. €7,400) with me and scales with catalog complexity and integrations. Compare the running costs: platform stores pay subscription plus apps plus transaction fees forever, while a custom store pays only payment processing. For stores doing real volume, the custom build usually pays for itself within 2-3 years, and you own it outright.",
+              "The common trigger points for going custom: platform fees start to hurt, the checkout needs to work differently than the template allows, or you need integrations (inventory, ERP, custom pricing rules) the app store cannot deliver cleanly. If a platform still fits your stage, I will say so instead of selling you a build you do not need yet."
             ]
           }
         ],
         "techStackTitle": "Technical Stack",
         "techStack": [
-          { "title": "Frontend", "description": "React 19, Next.js 15, and TypeScript power fast, SEO-friendly product pages where performance directly supports conversions." },
-          { "title": "Payments", "description": "Stripe for international sales, Przelewy24 or PayU for Polish market. Flexible integration based on your target customers." },
-          { "title": "Database", "description": "PostgreSQL with Supabase manages products, orders, and inventory with reliability and scale." },
-          { "title": "Search", "description": "Algolia or custom search solutions for fast product discovery. Image optimization via Cloudinary or Next.js Image." },
-          { "title": "Deployment", "description": "Vercel or AWS ensures global speed and stability with CDN distribution." }
+          {
+            "title": "Frontend",
+            "description": "React 19, Next.js 15, and TypeScript power fast, SEO-friendly product pages where performance directly supports conversions."
+          },
+          {
+            "title": "Payments",
+            "description": "Stripe for international sales, Przelewy24 or PayU for Polish market. Flexible integration based on your target customers."
+          },
+          {
+            "title": "Database",
+            "description": "PostgreSQL with Supabase manages products, orders, and inventory with reliability and scale."
+          },
+          {
+            "title": "Search",
+            "description": "Algolia or custom search solutions for fast product discovery. Image optimization via Cloudinary or Next.js Image."
+          },
+          {
+            "title": "Deployment",
+            "description": "Vercel or AWS ensures global speed and stability with CDN distribution."
+          }
         ],
         "cta": {
-          "title": "Ready to Build Your Online Store?",
-          "subtitle": "Tell me about your catalog, integrations, and business requirements. I'll respond within 24 hours with questions about technical approach and timeline.",
-          "button": "Start Your Project"
-        }
+          "title": "Tell me what you sell",
+          "subtitle": "Describe your catalog, your current platform and what it blocks you from doing. You get an honest platform-vs-custom assessment and a price band by the next working day.",
+          "button": "Price my store"
+        },
+        "faqTitle": "Custom e-commerce questions, answered",
+        "faq": [
+          {
+            "question": "How much does a custom e-commerce website cost?",
+            "answer": "From me: starting around $8,000, scaling with catalog size and integrations (agencies quote $25,000-150,000+ for comparable builds). Unlike platform stores there is no monthly platform fee, no app subscriptions and no platform transaction cut: you pay payment processing only, and you own the store."
+          },
+          {
+            "question": "Shopify or custom e-commerce: which is better?",
+            "answer": "Shopify is a fine start: fast to launch, predictable monthly cost. Custom wins when fees bite at scale, when the checkout must differ from the template, or when integrations get hairy. The 2-3 year total cost usually favors custom for stores with real volume. I will tell you honestly which side you are on."
+          },
+          {
+            "question": "What is a good Shopify alternative for a custom store?",
+            "answer": "For merchants who have outgrown templates, the strongest alternative is a custom React storefront with a headless backend: full control of the buying flow, no platform fees, top speed scores. It is an investment rather than a subscription, which is exactly why it suits stores past the experiment stage."
+          },
+          {
+            "question": "How much does headless e-commerce cost?",
+            "answer": "Published 2026 ranges run $20,000-150,000+ from agencies. A solo senior build starts well under that, from around $8,000 for a focused store, because you are not paying a team-sized margin. The price driver is integrations: inventory systems, ERP, custom pricing logic, multi-currency."
+          },
+          {
+            "question": "Does page speed affect e-commerce conversion rates?",
+            "answer": "In e-commerce it is the difference between a sale and an abandoned cart: slow product pages bleed mobile buyers before they ever reach checkout. A custom React storefront stays fast because it carries no app bloat. For fixing speed on an existing store, see [technical SEO and performance](/en/services/seo-performance-optimization)."
+          },
+          {
+            "question": "How much does it cost to hire an e-commerce developer in Poland?",
+            "answer": "Poland-based e-commerce builds are quoted at $10,000-50,000+ for full custom stores, well below UK and US agency pricing for equivalent work. You get senior-level engineering at Central European rates, in a European timezone, with direct communication instead of an account-manager relay."
+          },
+          {
+            "question": "What is the best e-commerce platform for a small business?",
+            "answer": "If you are validating a product idea, start on a platform: cheap, fast, disposable. Move to custom when the numbers prove the business: real order volume, painful fees, integration needs. The worst outcome is paying custom-build money before you know anyone wants the products."
+          },
+          {
+            "question": "Why do businesses outgrow Shopify or WooCommerce?",
+            "answer": "Three patterns repeat: pricing or checkout logic the template cannot express, apps and plugins stacking up in cost and slowing the store down, and integrations with inventory or ERP systems that never quite work. When two of the three appear, it is time to price a [custom build](/en/contact)."
+          }
+        ]
       }
     },
     "seo-performance-optimization": {
@@ -873,70 +1307,145 @@
       },
       "seo": {
         "title": "SEO & Performance Optimization - Faster Sites | Max Mendes",
-        "metaDescription": "SEO and performance optimization services. Improve page speed, Core Web Vitals, and search rankings. Technical optimization for better conversions. Częstochowa, Poland.",
-        "keywords": ["technical seo", "seo optimization", "core web vitals", "page speed optimization", "seo audit", "website performance", "seo developer", "częstochowa"],
+        "metaDescription": "Technical SEO and Core Web Vitals optimization for slow, poorly-ranking sites. Measurable speed and ranking gains from a senior developer based in Poland.",
+        "keywords": [
+          "technical seo",
+          "technical seo audit",
+          "core web vitals optimization",
+          "page speed optimization",
+          "seo audit cost",
+          "website performance",
+          "seo developer poland"
+        ],
         "h1": "SEO & Performance Optimization",
         "ogTitle": "SEO & Performance Optimization - Faster Sites | Max Mendes"
       },
       "schema": {
         "serviceType": "SEO Service",
         "description": "Performance optimization and SEO focused on real business results. Faster page speed improves rankings, conversions, and revenue through Core Web Vitals optimization.",
-        "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+        "areaServed": [
+          "Poland",
+          "United Kingdom",
+          "United States",
+          "European Union"
+        ]
       },
       "content": {
-        "subtitle": "Performance optimization and SEO focused on real business results. Faster page speed improves rankings, conversions, and revenue, not just technical scores.",
+        "subtitle": "Your site is slow, or invisible in Google, and you want it fixed in the code instead of managed in a monthly report. That is exactly what this service does.",
         "sections": [
           {
             "title": "Why performance and SEO matter for business",
             "paragraphs": [
               "Website performance and SEO are directly tied to business outcomes. Slow websites lose users before they convert, while search engines rank faster, more reliable pages higher. Google's Core Web Vitals are official ranking factors, which means page speed and stability affect how visible your site is in search results.",
-              "Even small delays matter. Industry data shows that a one-second slowdown can reduce conversions by around 7%. With mobile-first indexing, Google primarily evaluates the mobile version of your site, making mobile performance critical. The goal of optimization is not technical perfection for its own sake, but more qualified traffic, better user engagement, and higher conversion rates."
+              "Even small delays matter. Independent studies from NitroPack and HubSpot put the cost at roughly 4% of conversions per extra second of load time, and mobile users are hit hardest. With mobile-first indexing, Google primarily evaluates the mobile version of your site, making mobile performance critical. The goal of optimization is not technical perfection for its own sake, but more qualified traffic, better user engagement, and higher conversion rates."
             ]
           },
           {
-            "title": "What's included: Performance optimization",
+            "title": "The speed work: what actually gets faster",
             "paragraphs": [
               "I focus on measurable improvements to how fast and stable your website feels to real users. This includes improving Core Web Vitals metrics such as LCP (Largest Contentful Paint), FID/INP (interaction responsiveness), and CLS (layout stability).",
               "Page speed is optimized through image compression, modern formats, lazy loading, and reducing unnecessary JavaScript. Code splitting and asset optimization ensure users load only what they need. Caching strategies and CDN usage reduce server response times, while database queries are reviewed to eliminate bottlenecks. Each project includes before-and-after measurements using tools like Lighthouse and real-user metrics, so improvements are clear and verifiable."
             ]
           },
           {
-            "title": "What's included: Technical SEO improvements",
+            "title": "The Google work: crawling, indexing, structured data",
             "paragraphs": [
               "SEO optimization starts with a technical audit to identify crawlability and indexing issues that limit visibility. I address problems such as broken internal links, duplicate content signals, incorrect redirects, and poor URL structures.",
               "Structured data (Schema.org) is implemented to improve eligibility for rich results and enhanced listings. Meta titles and descriptions are optimized for clarity, relevance, and click-through rate, not keyword stuffing. Server-side rendering and correct handling of JavaScript ensure search engines can fully index your content. The result is a technically sound foundation that supports long-term SEO growth."
             ]
           },
           {
-            "title": "Who this is for",
+            "title": "Is this your website?",
             "paragraphs": [
-              "This service fits businesses with slow-loading websites, sites with poor Google rankings despite good content, e-commerce stores with high bounce rates, and companies losing mobile traffic. It's also suited for websites built on WordPress or outdated platforms needing optimization, sites that failed Core Web Vitals assessment, and businesses wanting to improve conversion rates through speed improvements."
+              "The pattern I see most: the site looks fine, the content is decent, and it still gets no Google traffic. Sometimes it loads in five seconds on a phone. Sometimes half the pages were never indexed and nobody noticed. Sometimes a redesign quietly broke redirects a year ago and rankings never recovered. If any of that sounds familiar, this is the service that finds out which one is happening to you, with evidence.",
+              "You are looking at my proof right now: this portfolio runs the same stack and the same techniques, loads in well under a second on a normal connection, and every fix I sell is one I use on my own pages first."
+            ],
+            "links": [
+              {
+                "text": "How I build for speed: the HTML-first argument →",
+                "href": "/en/blog/html-first-websites-winning-again"
+              }
             ]
           },
           {
-            "title": "How the work is delivered",
+            "title": "Audit first, fixes second, numbers to prove it",
             "paragraphs": [
-              "Optimization work is handled directly by one developer, without agency layers. The process starts with a comprehensive audit covering both performance and SEO issues. I identify specific problems, prioritize fixes based on impact, implement optimizations, and validate results with measurable data. Changes are implemented carefully to avoid regressions.",
-              "Based in Częstochowa, Poland. Available for optimization projects across Poland and internationally."
+              "The process is deliberately boring: a full technical audit of performance and indexing, a prioritized fix list, implementation, and before-and-after validation in the same tools Google uses (Search Console, PageSpeed). No agency layers, no reselling: the person who audits your site is the person who fixes the code.",
+              "Fair warning on expectations: rankings move over weeks, not days, and anyone promising page one in seven days is not telling the truth. What I can show quickly is the technical delta: speed scores, indexing status, structured data validity."
             ],
-            "links": [
-              { "text": "Questions about the optimization process, timeline, or pricing? Check the FAQ →", "href": "/en/faq" }
+            "links": []
+          },
+          {
+            "title": "What a technical SEO audit costs",
+            "paragraphs": [
+              "A technical audit with a prioritized fix list starts at $600 (approx. €550) depending on site size. You get a document a business owner can read: what is broken, what it costs you, what to fix first. The audit stands alone, so you can implement it with any developer, not just me.",
+              "Implementation is quoted after the audit, because the audit is what reveals the scope. A typical audit-plus-key-fixes package lands between $1,500 and $4,000. One-time work, not a retainer: I do not sell monthly SEO subscriptions, link building or sponsored posts, and if your site mainly needs content rather than code, the audit says so plainly."
             ]
           }
         ],
         "techStackTitle": "Technical Focus Areas",
         "techStack": [
-          { "title": "Performance", "description": "Core Web Vitals, page speed, and stability using modern frontend practices with React, Next.js, and TypeScript." },
-          { "title": "Technical SEO", "description": "Crawlability, structured data, and rendering for search engines. Ensuring Google can index your content correctly." },
-          { "title": "Image Optimization", "description": "Compression, modern formats (WebP, AVIF), and lazy loading to reduce page weight without quality loss." },
-          { "title": "Caching & CDN", "description": "Browser caching, server-side caching, and CDN delivery to reduce load times globally." },
-          { "title": "Measurement", "description": "Lighthouse, PageSpeed Insights, and real-user monitoring. Every change is validated with metrics." }
+          {
+            "title": "Performance",
+            "description": "Core Web Vitals, page speed, and stability using modern frontend practices with React, Next.js, and TypeScript."
+          },
+          {
+            "title": "Technical SEO",
+            "description": "Crawlability, structured data, and rendering for search engines. Ensuring Google can index your content correctly."
+          },
+          {
+            "title": "Image Optimization",
+            "description": "Compression, modern formats (WebP, AVIF), and lazy loading to reduce page weight without quality loss."
+          },
+          {
+            "title": "Caching & CDN",
+            "description": "Browser caching, server-side caching, and CDN delivery to reduce load times globally."
+          },
+          {
+            "title": "Measurement",
+            "description": "Lighthouse, PageSpeed Insights, and real-user monitoring. Every change is validated with metrics."
+          }
         ],
         "cta": {
-          "title": "Ready to Optimize Your Website?",
-          "subtitle": "Tell me about your current performance issues and business goals. I'll respond within 24 hours with an initial assessment and optimization approach.",
-          "button": "Start Your Project"
-        }
+          "title": "Send me your website address",
+          "subtitle": "Tell me what worries you: no enquiries, a traffic drop, slow loading. You get an initial technical read and an audit quote by the next working day, no commitment.",
+          "button": "Get an initial assessment"
+        },
+        "faqTitle": "Technical SEO questions, answered",
+        "faq": [
+          {
+            "question": "How much does a technical SEO audit cost?",
+            "answer": "From me: from $600, scaling with site size, delivered as a prioritized fix list you can implement with anyone. Market pricing runs from a few hundred dollars for automated scans to $30,000 for enterprise audits. Mine is manual, code-level, and readable by a business owner, not just a developer."
+          },
+          {
+            "question": "How much does an SEO audit cost from a freelancer?",
+            "answer": "Published freelancer pricing runs $300-2,500 per audit or $50-150 hourly. I price fixed from $600 so the number is known upfront. The thing to check is what you get: a screenshot of an automated tool is not an audit. You should receive specific, prioritized fixes with the reasoning behind each."
+          },
+          {
+            "question": "Why is my website not ranking on Google?",
+            "answer": "The usual technical suspects: slow loading (especially mobile), pages Google cannot properly read, duplicate content competing with itself, and indexing errors. Quick self-check: search \"site:yourdomain.com\". If key pages are missing, Google has not indexed them, and that is a code problem no content plan will fix."
+          },
+          {
+            "question": "How much does Core Web Vitals optimization cost?",
+            "answer": "Agency service pages quote $5,000-50,000+. Realistic solo pricing for most business sites: the $1,500-4,000 audit-plus-fixes range, because the wins are usually concentrated in images, fonts, JavaScript weight and loading order. You see before-and-after numbers from the same tools Google uses."
+          },
+          {
+            "question": "How often should I get an SEO audit?",
+            "answer": "Most practitioners advise every 3-6 months for active sites, and always after a redesign, migration or platform change, which is where technical SEO usually breaks. If nothing changed on the site and traffic is stable, an annual check is honest advice, and cheaper than a subscription."
+          },
+          {
+            "question": "Does page speed really affect conversion rate?",
+            "answer": "Yes, measurably: NitroPack and HubSpot studies show conversions dropping roughly 4% per extra second of load time, with mobile hit hardest. Speed also feeds Core Web Vitals, which Google uses in ranking. Faster site, better positions, and more of the visitors you already earn actually converting."
+          },
+          {
+            "question": "What is included in a technical SEO audit?",
+            "answer": "Indexing status per page (and why anything is excluded), crawl and canonical issues, Core Web Vitals with the specific causes, structured data validation, hreflang for multilingual sites, and redirect health. Each finding comes prioritized by impact, so you fix what moves rankings first instead of everything at once."
+          },
+          {
+            "question": "Can a slow website hurt my Google rankings?",
+            "answer": "Yes. Core Web Vitals are an official ranking signal, and speed affects rankings indirectly too: slow pages get abandoned, and Google reads that behavior. The bigger cost is usually commercial, since visitors leave before the page finishes loading. Fixing speed pays twice: rankings and conversions."
+          }
+        ]
       }
     },
     "ai-integration": {
@@ -949,27 +1458,41 @@
       },
       "seo": {
         "title": "AI Integration - Intelligent Features | Max Mendes",
-        "metaDescription": "AI integration services for practical business solutions. Add intelligent features with OpenAI, Claude, and machine learning. Automation, search, recommendations. Częstochowa, Poland.",
-        "keywords": ["ai integration", "chatbot development", "openai integration", "llm implementation", "ai automation", "chatgpt api", "ai developer"],
+        "metaDescription": "Practical AI integration for existing products: chatbots, automation, OpenAI and Claude features. No hype. Poland-based, serving UK, US and EU clients.",
+        "keywords": [
+          "ai integration",
+          "ai chatbot development",
+          "openai integration",
+          "custom ai chatbot",
+          "ai automation for business",
+          "claude api integration",
+          "ai integration for small business",
+          "ai developer poland"
+        ],
         "h1": "AI Integration",
         "ogTitle": "AI Integration - Intelligent Features | Max Mendes"
       },
       "schema": {
         "serviceType": "AI Integration Service",
         "description": "AI-powered features for web applications including chatbots, content generation, and workflow automation using OpenAI and Anthropic APIs.",
-        "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+        "areaServed": [
+          "Poland",
+          "United Kingdom",
+          "United States",
+          "European Union"
+        ]
       },
       "content": {
-        "subtitle": "Intelligent features that solve real business problems. Automation, smarter search, and AI-powered workflows built with practical implementation, no hype.",
+        "subtitle": "Practical AI for products and processes you already run. If a feature cannot pay for itself, I tell you before you spend anything.",
         "sections": [
           {
-            "title": "What AI integration means for business",
+            "title": "What AI can actually do for you (and what it cannot)",
             "paragraphs": [
               "AI integration means adding focused, intelligent features to products you already run, not rebuilding everything or chasing trends. In practice, AI can help automate repetitive work, classify and route information, improve search relevance, generate summaries, or assist users with clearer responses. The difference between useful AI and \"AI for AI's sake\" is intent: each feature starts with a specific problem. The goal is to reduce manual effort, improve user experience, or unlock a capability that wasn't feasible before. This is not about replacing teams or promising perfect accuracy. It is about practical gains where machine learning genuinely adds value."
             ]
           },
           {
-            "title": "What's included: common AI features",
+            "title": "The features I build most often",
             "paragraphs": [
               "Projects can include text classification and categorization, content generation and summarization, and intelligent search with semantic matching. Other frequent needs are recommendations and personalization, image recognition and processing, and natural language processing for user input. Automated responses and chatbots are used when appropriate, typically as assistance, not full automation. Data analysis and pattern recognition can surface trends or anomalies that are hard to detect with rules alone. Each feature is scoped to a clear outcome, measured against real usage, and designed to fail safely."
             ]
@@ -978,43 +1501,105 @@
             "title": "Technical implementation and providers",
             "paragraphs": [
               "I integrate with established AI providers such as OpenAI, Anthropic, and Google, as well as selected open-source models when appropriate. Work includes API integration, prompt design for consistent outputs, and cost management so usage stays predictable. Error handling and fallbacks are essential. AI is probabilistic and needs guardrails. Data privacy, security, and performance are considered from the start, including caching and asynchronous processing.",
-              "FlowMate uses AI integrations for email classification and smart response suggestions, handling real-world variability in email content."
+              "In FlowMate, the SaaS platform I built end to end, I implemented AI integrations for email classification and smart response suggestions that had to handle the real-world messiness of actual inboxes. I also ship AI features in MarkMind, a bookmark manager with 700+ active users."
             ],
             "links": [
-              { "text": "See FlowMate's AI implementation on the Projects page →", "href": "/en/projects" }
+              {
+                "text": "See the AI work on the Projects page →",
+                "href": "/en/projects"
+              }
             ]
           },
           {
-            "title": "Who this is for and typical use cases",
+            "title": "Is this you: where AI earns its keep",
             "paragraphs": [
-              "This service fits businesses with repetitive manual tasks that AI can assist, products needing intelligent search or recommendations, and customer support teams that want AI help without replacing humans. Content platforms benefit from summarization and categorization; e-commerce can add personalization; SaaS products can introduce smart features that improve retention.",
-              "Common examples include document classification, inquiry routing, content moderation, and product recommendations, implemented with clear limits and measurable impact.",
-              "Based in Częstochowa, Poland. Available for AI integration projects locally and internationally."
+              "The businesses that get real returns from AI share a symptom: somebody spends hours doing formulaic text work. Answering the same customer questions. Copying data out of documents into a system. Sorting and routing enquiries. Tagging and summarizing content. If a task is repetitive and lives in text, it is a candidate, and we can usually measure the saved hours within weeks of a pilot.",
+              "Support teams that want AI drafting answers without replacing humans, product catalogs that need real search, and content operations drowning in categorization are the typical wins. Implemented narrowly, with clear limits, and measured."
             ],
             "links": [
-              { "text": "Questions about AI integration costs or process? Check the FAQ →", "href": "/en/faq" }
+              {
+                "text": "Questions about AI integration costs or process? Check the FAQ →",
+                "href": "/en/faq"
+              }
             ]
           },
           {
-            "title": "Approach and Considerations",
+            "title": "Start narrow, measure, then scale",
             "paragraphs": [
               "I start with a narrow use case, not \"add AI everywhere.\" A small proof of concept validates whether AI actually improves the workflow. Implementation is gradual, with fallbacks when results are uncertain. Costs are tracked early. AI API calls scale with usage. If a rule-based solution is better, I recommend it. The key question is always the same: will this intelligent feature materially improve the product?"
+            ]
+          },
+          {
+            "title": "What AI integration costs",
+            "paragraphs": [
+              "A focused integration, such as a chatbot answering from your actual documents or automating one process, starts at $3,000 (approx. €2,800). Deeper integrations wired into your existing systems, with an admin panel and answer-quality controls, typically run $8,000-20,000. You get a staged quote after one conversation about the process you want to improve.",
+              "On top of the build there is API usage, paid directly to the provider (OpenAI or Anthropic): for typical small-business volume that is $20-200 a month. I show these numbers before we start and set spending limits in the code, so the bill cannot surprise you."
             ]
           }
         ],
         "techStackTitle": "Technical Stack",
         "techStack": [
-          { "title": "AI Providers", "description": "Integration with GPT (OpenAI), Claude (Anthropic), and custom models when justified." },
-          { "title": "Backend Logic", "description": "Asynchronous processing with queues and caching to control latency and cost." },
-          { "title": "Error Handling", "description": "Robust fallbacks when AI services are unavailable. AI is probabilistic and needs guardrails." },
-          { "title": "Frontend", "description": "React components present AI-powered features smoothly and transparently." },
-          { "title": "Monitoring", "description": "Track usage, success rates, and spend. Important because AI API costs grow with adoption." }
+          {
+            "title": "AI Providers",
+            "description": "Integration with GPT (OpenAI), Claude (Anthropic), and custom models when justified."
+          },
+          {
+            "title": "Backend Logic",
+            "description": "Asynchronous processing with queues and caching to control latency and cost."
+          },
+          {
+            "title": "Error Handling",
+            "description": "Robust fallbacks when AI services are unavailable. AI is probabilistic and needs guardrails."
+          },
+          {
+            "title": "Frontend",
+            "description": "React components present AI-powered features smoothly and transparently."
+          },
+          {
+            "title": "Monitoring",
+            "description": "Track usage, success rates, and spend. Important because AI API costs grow with adoption."
+          }
         ],
         "cta": {
-          "title": "Ready to Add AI Features?",
-          "subtitle": "Tell me about the problem you're solving and where AI could help. I'll respond within 24 hours with an honest assessment of whether AI is the right solution.",
-          "button": "Start Your Project"
-        }
+          "title": "Describe the process that wastes your time",
+          "subtitle": "Tell me what your team does repetitively. You get a straight answer by the next working day: whether AI fits, what a pilot costs, and what it should save you.",
+          "button": "Get an honest AI assessment"
+        },
+        "faqTitle": "AI integration questions, answered",
+        "faq": [
+          {
+            "question": "How much does it cost to add an AI chatbot to a website?",
+            "answer": "Subscription chatbot tools run $5-500 a month and answer generically. A custom chatbot that answers from your documents and admits what it does not know starts at $3,000 with me, plus API usage (typically $20-200 monthly at small-business volume, with hard spending limits built in)."
+          },
+          {
+            "question": "Is AI integration worth it for a small business?",
+            "answer": "Worth it where the numbers work: repetitive customer questions, manual data entry, documents waiting to be processed. Not worth it for the sake of being modern. That is why the first conversation is free: sometimes the honest answer is that AI does not fit your case yet, and you will hear it."
+          },
+          {
+            "question": "How much does OpenAI API integration cost for a business?",
+            "answer": "Two costs: the build (from $3,000 for a focused integration) and usage paid to OpenAI. Real example scale: a support bot answering about 10,000 queries a month costs roughly $150 monthly in API fees on a current model. I set usage caps in code so costs stay predictable."
+          },
+          {
+            "question": "Should I use ChatGPT or Claude for my business?",
+            "answer": "It depends on the job: both have commercial APIs suitable for business integrations, with comparable data protections. I build provider-agnostic, pick the model per task on quality and cost, and can switch later without rebuilding, so you are choosing an architecture, not marrying a vendor."
+          },
+          {
+            "question": "Custom AI chatbot or an off-the-shelf tool: which is better?",
+            "answer": "Off-the-shelf is fine for generic FAQs and costs a subscription. Custom wins when the bot must know your actual products, policies and documents, integrate with your systems, and refuse to invent answers. The build costs more upfront and stops paying rent forever, which flips the math over time."
+          },
+          {
+            "question": "What can AI actually automate for a small business?",
+            "answer": "The repetitive text work: answering the same customer questions, categorizing and summarizing email, pulling data out of documents and invoices, writing product descriptions, searching internal knowledge. The tell: if an employee does something formulaic for hours, it is a good automation candidate."
+          },
+          {
+            "question": "Is it safe to give an AI chatbot access to my business data?",
+            "answer": "Done properly, yes. Commercial APIs from OpenAI and Anthropic state in their business terms that API data is not used for training. I add data minimization (the model sees only what it needs), logging of what was sent, and GDPR-conscious architecture. The consumer ChatGPT app is a different, riskier thing."
+          },
+          {
+            "question": "How much does a custom AI chatbot cost compared to a subscription tool?",
+            "answer": "A subscription tool: $5-500 monthly, forever, answering generically. A custom build: from $3,000 once, plus modest API usage, answering from your actual business knowledge. If the bot matters to revenue or support load, custom usually wins within the first year, and you own it."
+          }
+        ]
       }
     },
     "services-overview": {
@@ -1026,16 +1611,30 @@
         "pl": "/pl/uslugi"
       },
       "seo": {
-        "title": "Web Development Services - React & Next.js | Max Mendes",
-        "metaDescription": "Professional web development services including websites, e-commerce stores, and web applications. React, Next.js, TypeScript. Based in Poland, serving UK, US & Europe.",
-        "keywords": ["web development services", "freelance developer", "react developer", "nextjs developer", "web developer poland", "custom websites", "web applications"],
+        "title": "Web Development Services | React & SaaS | Max Mendes",
+        "metaDescription": "Web development services for UK, US and EU businesses: custom websites, SaaS platforms, e-commerce, technical SEO and AI integration from one senior developer.",
+        "keywords": [
+          "web development services",
+          "freelance web developer",
+          "hire a web developer poland",
+          "react developer",
+          "nextjs developer",
+          "custom websites and web apps",
+          "web development services poland",
+          "freelance developer for hire"
+        ],
         "h1": "Web Development Services",
-        "ogTitle": "Web Development Services - React & Next.js | Max Mendes"
+        "ogTitle": "Web Development Services | React & SaaS | Max Mendes"
       },
       "schema": {
         "serviceType": "Web Development Services",
         "description": "Professional web development services including custom websites, e-commerce stores, SaaS platforms, and web applications built with React, Next.js, and TypeScript.",
-        "areaServed": ["Poland", "United Kingdom", "United States", "European Union"]
+        "areaServed": [
+          "Poland",
+          "United Kingdom",
+          "United States",
+          "European Union"
+        ]
       }
     }
   },
@@ -1050,7 +1649,16 @@
     "seo": {
       "title": "Web Development FAQ - Process, Pricing & AI | Max Mendes",
       "metaDescription": "Web development FAQ covering process, pricing, technical stack, and AI integration. Direct answers about React, Next.js, SaaS, e-commerce, and AI costs. Częstochowa, Poland.",
-      "keywords": ["web development faq", "freelance developer questions", "web development pricing", "hire developer poland", "react developer questions", "nextjs developer faq", "ai integration faq", "ai costs"],
+      "keywords": [
+        "web development faq",
+        "freelance developer questions",
+        "web development pricing",
+        "hire developer poland",
+        "react developer questions",
+        "nextjs developer faq",
+        "ai integration faq",
+        "ai costs"
+      ],
       "h1": "Web Development Questions & Answers",
       "ogTitle": "Web Development FAQ - Process, Pricing & AI | Max Mendes"
     },
@@ -1217,7 +1825,15 @@
     "seo": {
       "title": "What I Build - Web Developer Portfolio | Max Mendes",
       "metaDescription": "Explore my web development projects: SaaS platforms, business websites, and production applications. From concept to deployment. React, Next.js, TypeScript.",
-      "keywords": ["web development portfolio", "react projects", "nextjs portfolio", "saas development", "business websites", "full-stack projects", "freelance developer work"],
+      "keywords": [
+        "web development portfolio",
+        "react projects",
+        "nextjs portfolio",
+        "saas development",
+        "business websites",
+        "full-stack projects",
+        "freelance developer work"
+      ],
       "h1": "What I Build",
       "ogTitle": "What I Build - Web Developer Portfolio | Max Mendes"
     },
@@ -1462,7 +2078,14 @@
         "description": "Technical case study of FlowMate, an AI-powered email management SaaS platform built with Next.js, React, and multiple AI providers.",
         "author": "Max Mendes",
         "datePublished": "2026-01-15",
-        "keywords": ["SaaS Development", "AI Integration", "Email Management", "Next.js", "React", "Full-Stack Development"]
+        "keywords": [
+          "SaaS Development",
+          "AI Integration",
+          "Email Management",
+          "Next.js",
+          "React",
+          "Full-Stack Development"
+        ]
       },
       "content": {
         "hero": {
@@ -1470,16 +2093,33 @@
           "title": "FlowMate: From Email Chaos to AI-Powered Clarity",
           "subtitle": "How I built a production SaaS that turns 200 emails into 5 decisions",
           "metrics": [
-            { "value": "300+", "label": "Development Hours" },
-            { "value": "4", "label": "Platforms Unified" },
-            { "value": "6", "label": "Months to Launch" },
-            { "value": "30min", "label": "Time to Learn" }
+            {
+              "value": "300+",
+              "label": "Development Hours"
+            },
+            {
+              "value": "4",
+              "label": "Platforms Unified"
+            },
+            {
+              "value": "6",
+              "label": "Months to Launch"
+            },
+            {
+              "value": "30min",
+              "label": "Time to Learn"
+            }
           ],
           "image": "/projects/flowmate-landing.webp",
           "liveUrl": "https://www.flowmate.click/",
           "liveUrlCta": "View Landing Page",
           "notice": "Personal learning project. The product is paused; the landing page remains live as a demo.",
-          "tags": ["SaaS", "AI Integration", "Full-Stack", "Multi-Platform"]
+          "tags": [
+            "SaaS",
+            "AI Integration",
+            "Full-Stack",
+            "Multi-Platform"
+          ]
         },
         "sections": [
           {
@@ -1596,11 +2236,26 @@
             "id": "scale",
             "title": "What Got Built",
             "metrics": [
-              { "value": "112", "label": "API Routes" },
-              { "value": "166", "label": "React Components" },
-              { "value": "23", "label": "Database Tables" },
-              { "value": "44", "label": "Migrations" },
-              { "value": "20", "label": "Custom Hooks" }
+              {
+                "value": "112",
+                "label": "API Routes"
+              },
+              {
+                "value": "166",
+                "label": "React Components"
+              },
+              {
+                "value": "23",
+                "label": "Database Tables"
+              },
+              {
+                "value": "44",
+                "label": "Migrations"
+              },
+              {
+                "value": "20",
+                "label": "Custom Hooks"
+              }
             ],
             "features": [
               "Unified inbox for Gmail, Outlook, Slack, Telegram",
@@ -1641,23 +2296,49 @@
           "categories": [
             {
               "name": "Frontend",
-              "items": ["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Framer Motion", "Radix UI"]
+              "items": [
+                "Next.js 15",
+                "React 19",
+                "TypeScript",
+                "Tailwind CSS",
+                "Framer Motion",
+                "Radix UI"
+              ]
             },
             {
               "name": "Backend",
-              "items": ["Node.js", "Supabase (PostgreSQL)", "Vercel Edge Functions"]
+              "items": [
+                "Node.js",
+                "Supabase (PostgreSQL)",
+                "Vercel Edge Functions"
+              ]
             },
             {
               "name": "AI & LLM",
-              "items": ["OpenRouter", "Claude 3 Haiku", "Vercel AI SDK"]
+              "items": [
+                "OpenRouter",
+                "Claude 3 Haiku",
+                "Vercel AI SDK"
+              ]
             },
             {
               "name": "Integrations",
-              "items": ["Gmail API", "Microsoft Graph", "Slack API", "Telegram MTProto"]
+              "items": [
+                "Gmail API",
+                "Microsoft Graph",
+                "Slack API",
+                "Telegram MTProto"
+              ]
             },
             {
               "name": "Infrastructure",
-              "items": ["Vercel", "Stripe", "Clerk", "Sentry", "Resend"]
+              "items": [
+                "Vercel",
+                "Stripe",
+                "Clerk",
+                "Sentry",
+                "Resend"
+              ]
             }
           ]
         },
@@ -1687,7 +2368,15 @@
     "seo": {
       "title": "Blog – Web Development, AI & Automation | Max Mendes",
       "metaDescription": "Articles on web development, AI automation, and freelance insights by Max Mendes. React, Next.js, SEO, and agentic workflows. +48 725 534 018",
-      "keywords": ["web development blog", "AI automation", "Next.js articles", "freelance developer blog", "React tutorials", "SEO tips", "agentic workflows"],
+      "keywords": [
+        "web development blog",
+        "AI automation",
+        "Next.js articles",
+        "freelance developer blog",
+        "React tutorials",
+        "SEO tips",
+        "agentic workflows"
+      ],
       "h1": "Blog",
       "ogTitle": "Blog – Web Development & AI Automation | Max Mendes"
     },

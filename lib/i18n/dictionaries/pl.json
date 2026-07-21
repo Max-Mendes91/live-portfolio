@@ -880,7 +880,7 @@
           {
             "title": "Ile kosztuje strona internetowa dla firmy",
             "paragraphs": [
-              "Konkretnie: prosta strona firmowa (5-7 podstron, formularz kontaktowy, wersja mobilna) kosztuje u mnie zwykle od 3 000 do 6 000 zł. Strona rozbudowana, z większą liczbą podstron, dwoma językami albo systemem rezerwacji, to przedział 8 000-15 000 zł. Dokładną cenę podaję po jednej rozmowie, następnego dnia roboczego, i ta cena nie rośnie w trakcie projektu.",
+              "Konkretnie: prosta strona firmowa (5-7 podstron, formularz kontaktowy, wersja mobilna) kosztuje u mnie zwykle od 3 000 do 6 000 zł. Strona rozbudowana, z większą liczbą podstron, dwoma językami albo systemem rezerwacji, to przedział 8 000-15 000 zł. Dokładną cenę podaję po jednej rozmowie, w ciągu doby, i ta cena nie rośnie w trakcie projektu.",
               "Na cenę wpływają trzy rzeczy: liczba podstron, funkcje (formularze, rezerwacje, mapy, wielojęzyczność) oraz to, czy masz gotowe treści i zdjęcia. Cały rozkład kosztów, razem z kosztami utrzymania, opisałem w osobnym artykule o cenach stron w Polsce."
             ],
             "links": [
@@ -956,7 +956,7 @@
         ],
         "cta": {
           "title": "Porozmawiajmy o Twojej stronie",
-          "subtitle": "Napisz, czym zajmuje się Twoja firma i czego potrzebujesz. W ciągu 24 godzin dostaniesz konkretną cenę i harmonogram, bez spotkań sprzedażowych.",
+          "subtitle": "Napisz, czym zajmuje się Twoja firma i czego potrzebujesz. Odezwę się w ciągu doby z konkretną ceną i harmonogramem, bez spotkań sprzedażowych.",
           "button": "Bezpłatna Wycena"
         },
         "faqTitle": "Najczęstsze pytania o strony internetowe",
@@ -1056,7 +1056,7 @@
             "title": "Co buduję: konta, panele, płatności, subskrypcje",
             "paragraphs": [
               "Buduję kompletne systemy: rejestrację i logowanie (także przez Google), role i uprawnienia, dashboardy z danymi na żywo, płatności jednorazowe i cykliczne przez Przelewy24, PayU lub Stripe, powiadomienia e-mail i push oraz integracje przez API z systemami, których już używasz.",
-              "Całość piszę w TypeScript, z testami, na sprawdzonym stacku: React i Next.js na froncie, Node.js i PostgreSQL na zapleczu. To nie jest eksperyment, tylko technologie, na których działają największe aplikacje webowe na świecie, a jednocześnie na tyle standardowe, że każdy kolejny programista może przejąć projekt."
+              "Całość piszę w TypeScript, z testami, na sprawdzonym stacku: React i Next.js na froncie, Node.js i PostgreSQL na zapleczu. React i Next.js to dziś branżowy standard, dojrzały na tyle, że każdy kolejny programista może przejąć projekt bez uczenia się autorskiego frameworka."
             ]
           },
           {
@@ -1109,7 +1109,7 @@
         ],
         "cta": {
           "title": "Masz pomysł na aplikację?",
-          "subtitle": "Opisz problem, który system ma rozwiązać. W ciągu 24 godzin dostaniesz moją ocenę zakresu MVP, widełki cenowe i pytania, które pomogą doprecyzować zakres.",
+          "subtitle": "Opisz problem, który system ma rozwiązać. Dostaniesz ode mnie ocenę zakresu MVP, widełki cenowe i pytania, które pomogą doprecyzować zakres, zwykle jeszcze tego samego dnia.",
           "button": "Opisz swój projekt"
         },
         "faqTitle": "Najczęstsze pytania o aplikacje webowe",
@@ -1128,7 +1128,7 @@
           },
           {
             "question": "Czy warto zlecić stworzenie aplikacji jednemu programiście zamiast agencji?",
-            "answer": "Przy MVP i systemach małej i średniej skali: tak, i zwykle wyraźnie taniej, bo nie płacisz za project managera ani narzut agencji. Masz bezpośredni kontakt z osobą, która pisze kod. Dla jasności: przy bardzo dużych systemach zespół ma sens, i mówię to wprost na etapie wyceny."
+            "answer": "Przy MVP i systemach małej i średniej skali: tak, i zwykle wyraźnie taniej, bo nie płacisz za project managera ani narzut agencji. Masz bezpośredni kontakt z osobą, która pisze kod. Wyjątek to bardzo duże systemy: tam zespół faktycznie ma sens, i słyszysz to ode mnie już na etapie wyceny."
           },
           {
             "question": "Ile kosztuje MVP aplikacji dla startupu?",
@@ -1183,19 +1183,19 @@
         ]
       },
       "content": {
-        "subtitle": "Dedykowane sklepy internetowe pisane w React: szybki checkout, polskie płatności, integracja z magazynem. Bez prowizji od sprzedaży i bez limitów platformy.",
+        "subtitle": "Dedykowane sklepy internetowe pisane w React: szybki checkout, polskie płatności, integracja z magazynem. Własny sklep, który rośnie razem ze sprzedażą, nie z kolejnymi opłatami platformy.",
         "sections": [
           {
             "title": "Sklep dedykowany czy abonament: co się bardziej opłaca",
             "paragraphs": [
-              "Sklep na platformie abonamentowej (Shoper, Shopify) to koszt od kilkuset złotych miesięcznie, plus prowizje i wtyczki. Sklep dedykowany, pisany od zera, to u mnie inwestycja od około 15 000 zł, ale bez abonamentu za platformę, bez prowizji od sprzedaży i bez opłat za każdą dodatkową funkcję.",
+              "Sklep na platformie abonamentowej (Shoper, Shopify) to koszt od kilkuset złotych miesięcznie, plus prowizje i wtyczki. Sklep dedykowany, pisany od zera, to zwykle 15 000-25 000 zł zależnie od liczby integracji, ale bez abonamentu za platformę, bez prowizji od sprzedaży i bez opłat za każdą dodatkową funkcję.",
               "Rachunek robi się ciekawy przy większej sprzedaży: sklep płacący platformie i wtyczkom kilkaset złotych miesięcznie plus prowizje wydaje w trzy lata więcej, niż kosztuje sklep dedykowany, który należy do Ciebie. Dokładną wycenę dostajesz po rozmowie o katalogu, integracjach i procesie zamówień."
             ]
           },
           {
             "title": "Shoper, WooCommerce czy sklep dedykowany",
             "paragraphs": [
-              "Wprost: jeśli dopiero testujesz sprzedaż online i masz mały katalog, platforma abonamentowa może być dobrym startem. Sklep dedykowany ma sens, gdy spełniasz przynajmniej jeden z tych warunków: potrzebujesz integracji z systemem magazynowym (np. Subiekt GT), prowizje i abonamenty zaczynają boleć, sklep na WooCommerce zwalnia mimo kolejnych optymalizacji, albo proces zakupowy ma być inny niż szablonowy.",
+              "Jeśli dopiero testujesz sprzedaż online i masz mały katalog, platforma abonamentowa bywa lepszym startem. Sklep dedykowany ma sens, gdy spełniasz przynajmniej jeden z tych warunków: potrzebujesz integracji z systemem magazynowym (np. Subiekt GT), prowizje i abonamenty zaczynają boleć, sklep na WooCommerce zwalnia mimo kolejnych optymalizacji, albo proces zakupowy ma być inny niż szablonowy.",
               "WooCommerce z pozoru jest darmowy, ale to wtyczka do WordPressa i dziedziczy wszystkie jego problemy: wtyczka na płatności, wtyczka na faktury, wtyczka na kuriera, i każda z nich to koszt, aktualizacje i kolejne spowolnienie. Sklep dedykowany ma te funkcje wbudowane w kod, bez warstwy pośredników."
             ]
           },
@@ -1207,7 +1207,7 @@
             ]
           },
           {
-            "title": "Co dostajesz w dedykowanym sklepie",
+            "title": "Elementy gotowego sklepu",
             "paragraphs": [
               "Witrynę sklepu w React, która ładuje się natychmiast i działa płynnie na telefonie, bo tam dzieje się większość zakupów. Checkout zoptymalizowany pod jak najmniej kliknięć, bo każdy dodatkowy krok to porzucone koszyki. Panel administracyjny dopasowany do Twojego procesu: produkty, zamówienia, klienci, rabaty.",
               "Od strony Google: każda karta produktu ma dane strukturalne (cena, dostępność, oceny), więc może pokazywać się w wynikach z ceną i gwiazdkami. Szybkość i techniczne SEO są wbudowane od startu, co przy sklepach bezpośrednio przekłada się na sprzedaż z ruchu organicznego."
@@ -1216,8 +1216,8 @@
           {
             "title": "Jak przebiega budowa sklepu i ile trwa",
             "paragraphs": [
-              "Zaczynamy od procesu, nie od wyglądu: jak wygląda Twój katalog, skąd przychodzą stany magazynowe, jak pakujesz i wysyłasz, co ma się dziać po zamówieniu. Potem projekt witryny, budowa, migracja produktów i testowe zamówienia przed startem.",
-              "Typowy sklep dedykowany buduję w 4-8 tygodni, zależnie od integracji. Po starcie sklep jest Twój: kod, dane i infrastruktura należą do Ciebie, a ja zostaję do dyspozycji przy rozwoju."
+              "Najpierw rozmawiamy o Twoim procesie sprzedaży: jak wygląda katalog, skąd biorą się stany magazynowe, jak pakujesz i wysyłasz zamówienia, co ma dziać się automatycznie po zakupie. Potem projekt witryny, budowa, migracja produktów i testowe zamówienia przed startem.",
+              "Budowa typowego sklepu zamyka się w 4-8 tygodniach; o tempie decydują głównie integracje. Po starcie sklep jest Twój: kod, dane i infrastruktura należą do Ciebie, a ja zostaję do dyspozycji przy rozwoju."
             ],
             "links": [
               {
@@ -1252,7 +1252,7 @@
         ],
         "cta": {
           "title": "Porozmawiajmy o Twoim sklepie",
-          "subtitle": "Opisz katalog, obecny system magazynowy i to, co dziś najbardziej przeszkadza w sprzedaży. W ciągu 24 godzin dostaniesz ocenę, czy sklep dedykowany ma u Ciebie sens, i widełki cenowe.",
+          "subtitle": "Opisz katalog, obecny system magazynowy i to, co dziś najbardziej przeszkadza w sprzedaży. Odpowiadam w ciągu doby: ocena, czy sklep dedykowany ma u Ciebie sens, plus widełki cenowe.",
           "button": "Bezpłatna wycena sklepu"
         },
         "faqTitle": "Najczęstsze pytania o sklepy internetowe",
@@ -1326,7 +1326,7 @@
         ]
       },
       "content": {
-        "subtitle": "Techniczna strona pozycjonowania: kod, szybkość, indeksowanie. Naprawiam to, przez co Google nie chce pokazywać Twojej strony, bez abonamentów i obietnic \"pierwszej pozycji\".",
+        "subtitle": "Techniczna strona pozycjonowania: kod, szybkość, indeksowanie. Naprawiam to, przez co Google nie chce pokazywać Twojej strony, i pokazuję efekt w liczbach, nie w obietnicach pierwszej pozycji.",
         "sections": [
           {
             "title": "Dlaczego Twoja strona nie jest widoczna w Google",
@@ -1339,7 +1339,7 @@
             "title": "Czym jest pozycjonowanie techniczne (i czym nie jest)",
             "paragraphs": [
               "Pozycjonowanie techniczne to praca w kodzie strony: szybkość ładowania, poprawne meta tagi, dane strukturalne, mapa strony, wersje językowe, przekierowania i wszystko, co decyduje o tym, czy Google rozumie i premiuje Twoją stronę. To fundament, bez którego wydatki na treści i reklamy pracują na pół gwizdka.",
-              "Czym ta usługa nie jest: nie sprzedaję linków, artykułów sponsorowanych ani miesięcznego abonamentu z raportem. Robię audyt, wdrażam poprawki w kodzie i pokazuję efekt w danych z Google Search Console. Jeśli Twoja strona potrzebuje głównie treści i linków, powiem to wprost zamiast brać pieniądze za technikę, której nie potrzebuje."
+              "Czym ta usługa nie jest: nie sprzedaję linków, artykułów sponsorowanych ani miesięcznego abonamentu z raportem. Robię audyt, wdrażam poprawki w kodzie i pokazuję efekt w danych z Google Search Console. Jeśli Twoja strona potrzebuje głównie treści i linków, po prostu to od mnie usłyszysz, zamiast płacić za technikę, której nie potrzebuje."
             ]
           },
           {
@@ -1395,7 +1395,7 @@
         ],
         "cta": {
           "title": "Wyślij adres swojej strony",
-          "subtitle": "Napisz, co Cię martwi: brak zapytań, spadki, wolne ładowanie. W ciągu 24 godzin dostaniesz wstępną ocenę techniczną i wycenę audytu, bez zobowiązań.",
+          "subtitle": "Napisz, co Cię martwi: brak zapytań, spadki, wolne ładowanie. Wstępną ocenę techniczną i wycenę audytu dostajesz w ciągu doby, bez zobowiązań.",
           "button": "Bezpłatna wstępna ocena"
         },
         "faqTitle": "Najczęstsze pytania o pozycjonowanie techniczne",
@@ -1504,7 +1504,7 @@
                 "href": "/pl/artykuly/automatyzacja-ai-wyszukiwanie-firm-bez-stron"
               },
               {
-                "text": "Zobacz projekty z AI →",
+                "text": "Zobacz, co zbudowałem →",
                 "href": "/pl/projekty"
               }
             ]
@@ -1625,26 +1625,26 @@
       "pl": "/pl/pytania"
     },
     "seo": {
-      "title": "Pytania o Tworzenie Stron - Proces, Cennik & AI | Max Mendes",
-      "metaDescription": "FAQ o tworzeniu stron internetowych: proces, cennik, technologie i integracja AI. Odpowiedzi o React, Next.js, SaaS, e-commerce i kosztach AI. Częstochowa, Polska.",
+      "title": "Pytania przed zleceniem strony internetowej | Max Mendes",
+      "metaDescription": "Jak wybrać wykonawcę strony, na co uważać przy zamawianiu, co z umową, kodem i domeną. Konkretne odpowiedzi programisty z Częstochowy, bez marketingu.",
       "keywords": [
-        "faq tworzenie stron",
-        "pytania programista częstochowa",
-        "cennik stron internetowych",
-        "ile kosztuje strona",
-        "programista częstochowa",
-        "tworzenie stron śląskie",
-        "integracja ai faq",
-        "koszty ai"
+        "jak wybrać wykonawcę strony internetowej",
+        "na co uważać zamawiając stronę internetową",
+        "umowa na stronę internetową",
+        "pytania przed zleceniem strony",
+        "strona internetowa koszt uzyskania przychodu",
+        "kto jest właścicielem strony internetowej",
+        "współpraca z programistą",
+        "jak wygląda tworzenie strony internetowej"
       ],
-      "h1": "Pytania o Tworzenie Stron Internetowych",
-      "ogTitle": "Pytania o Tworzenie Stron - Proces, Cennik & AI | Max Mendes"
+      "h1": "Pytania przed zleceniem strony internetowej",
+      "ogTitle": "Pytania przed zleceniem strony internetowej | Max Mendes"
     },
     "schema": {
       "type": "FAQPage",
       "description": "Często zadawane pytania o usługi tworzenia stron internetowych, cennik, terminy i szczegóły techniczne."
     },
-    "intro": "Jak pracuję, czego się spodziewać i co dzieje się po uruchomieniu.",
+    "intro": "Zanim zlecisz komuś stronę albo aplikację, warto wiedzieć, o co pytać. Zebrałem tu odpowiedzi na pytania, które klienci zadają mi najczęściej, i na te, które powinni zadawać: o wybór wykonawcy, umowę, własność kodu, płatności i to, co dzieje się po starcie. Ceny konkretnych usług znajdziesz na podstronach usług, tutaj jest wszystko dookoła.",
     "categories": [
       {
         "title": "Usługi i Podejście",
@@ -1735,29 +1735,27 @@
         ]
       },
       {
-        "title": "Pytania o Integrację AI",
+        "title": "Przed zleceniem projektu",
         "items": [
           {
-            "question": "Ile w praktyce kosztują funkcje AI?",
-            "answer": "Koszt integracji AI składa się z dwóch części: jednorazowego kosztu wdrożenia oraz bieżących kosztów API. Wdrożenie obejmuje zaprojektowanie, integrację i testy, a koszty API zależą od faktycznego użycia przez użytkowników. Oba elementy są omawiane z góry, tak aby nie było żadnych niespodzianek.",
-            "linkText": "Zobacz usługę integracji AI",
-            "linkHref": "/pl/uslugi/integracja-ai"
+            "question": "Jak wybrać wykonawcę strony internetowej?",
+            "answer": "Sprawdź trzy rzeczy, zanim spojrzysz na cenę. Po pierwsze, działające strony, nie makiety: kliknij realizacje i zobacz, jak szybko ładują się na telefonie. Po drugie, kto faktycznie pisze kod: w agencji często nie rozmawiasz z osobą, która zrobi Twoją stronę. Po trzecie, własność: kod, domena i hosting mają należeć do Ciebie od pierwszego dnia. Wykonawca, który krąży wokół tych pytań, właśnie odpowiedział."
           },
           {
-            "question": "Jak utrzymywane są koszty AI pod kontrolą i w przewidywalnym zakresie?",
-            "answer": "Koszty są kontrolowane poprzez cache, limity zapytań i wywoływanie AI tylko tam, gdzie realnie wnosi wartość. Powtarzalne wyniki są ponownie wykorzystywane zamiast generowane od nowa, co znacząco ogranicza koszty API. Funkcje projektuję tak, aby koszty skalowały się z wartością biznesową, a nie z technicznym szumem."
+            "question": "Na co uważać przy zamawianiu strony internetowej?",
+            "answer": "Najczęstsze pułapki: cena podana dopiero na spotkaniu, \"pozycjonowanie gratis\" bez wyjaśnienia, co obejmuje, abonament za \"opiekę techniczną\" nad stroną, która się nie zmienia, oraz domena rejestrowana na firmę wykonawcy zamiast na Ciebie. Ta ostatnia jest najgroźniejsza: gdy zechcesz odejść, okazuje się, że Twój adres internetowy nie jest Twój. Poproś też o przykład strony zrobionej od zera, nie z szablonu."
           },
           {
-            "question": "Co dzieje się z moimi danymi przy korzystaniu z dostawców AI?",
-            "answer": "Dane wysyłane do dostawców AI, takich jak OpenAI czy Anthropic, są przetwarzane przez zewnętrzne usługi, więc technicznie mają one dostęp do treści wejściowych. Minimalizuję zakres danych, unikam zbędnych danych osobowych i stosuję ustawienia prywatności zgodne z wymogami RODO. Jeśli potrzebna jest ścisła kontrola danych, ustalamy ograniczenia lub alternatywy przed rozpoczęciem prac."
+            "question": "Co powinna zawierać umowa na stronę internetową?",
+            "answer": "Minimum: dokładny zakres (liczba podstron, funkcje, języki), stała cena i harmonogram płatności, termin z realnym buforem, liczba rund poprawek oraz przeniesienie praw autorskich do kodu i projektu na Ciebie po zapłacie. Do tego lista dostępów, które otrzymujesz: domena, hosting, analityka, skrzynki. U mnie te punkty są standardem, i to jest dobry test dla każdego wykonawcy: poproś o nie i zobacz reakcję."
           },
           {
-            "question": "Jak niezawodne i dokładne jest AI w realnych produktach?",
-            "answer": "AI jest probabilistyczne, a nie deterministyczne, więc czasami może się mylić lub zwracać niespójne wyniki. Dlatego zawsze buduję fallbacki, walidację i czytelne stany interfejsu na wypadek niepewnych odpowiedzi. AI należy traktować jako wsparcie przyspieszające pracę, a nie rozwiązanie w 100% nieomylne."
+            "question": "Czy strona internetowa jest kosztem uzyskania przychodu?",
+            "answer": "Dla firmy co do zasady tak: wydatek na stronę służącą działalności można rozliczyć w kosztach, jednorazowo albo przez amortyzację, zależnie od kwoty i formy rozliczeń. Faktura ode mnie to normalny koszt firmowy. Zastrzeżenie: nie jestem doradcą podatkowym, więc szczegóły rozliczenia potwierdź ze swoją księgową, ale sama zasada jest prosta i księgowi znają ją na pamięć."
           },
           {
-            "question": "Którego dostawcę AI wybrać: OpenAI, Anthropic czy innego?",
-            "answer": "Wybór dostawcy zależy od konkretnego zadania, kosztów i wymagań dotyczących niezawodności. Jedne modele lepiej radzą sobie z klasyfikacją, inne z dłuższym wnioskowaniem lub bezpieczniejszymi odpowiedziami. Zazwyczaj testuję kilku dostawców na realnym przypadku użycia i wybieram na podstawie wyników, nie marek."
+            "question": "Kto jest właścicielem strony, kodu i domeny po zakończeniu projektu?",
+            "answer": "U mnie: Ty, w całości. Kod trafia do repozytorium, do którego masz dostęp, domena jest zarejestrowana na Ciebie, hosting na Twoje konto, a prawa autorskie przechodzą na Ciebie po rozliczeniu. To powinno być standardem, a bywa wyjątkiem: część firm trzyma domenę i hosting u siebie, żeby utrudnić odejście. Jeśli wykonawca nie chce przenieść własności, to nie jest oszczędność, tylko dług."
           }
         ]
       },
