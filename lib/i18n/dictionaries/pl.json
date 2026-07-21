@@ -1666,6 +1666,18 @@
           {
             "question": "Obsługujesz zarówno polskich jak i międzynarodowych klientów?",
             "answer": "Tak. Współpracuję z firmami w Polsce oraz z klientami międzynarodowymi z UK i USA. Komunikacja w języku polskim lub angielskim, a polska treść jest weryfikowana razem z moją żoną dla zapewnienia naturalności i precyzji."
+          },
+          {
+            "question": "Freelancer czy agencja, kto lepiej zrobi stronę internetową?",
+            "answer": "Agencja daje zespół i ciągłość, ale płacisz za opiekuna klienta, project managera i marżę, a Twoją stronę i tak robi jeden programista, tylko nie masz z nim kontaktu. U freelancera rozmawiasz z osobą, która pisze kod, i płacisz za pracę, nie za strukturę. Dla stron firmowych i sklepów małej i średniej skali to zwykle lepszy układ. Przy bardzo dużych systemach zespół ma przewagę i wtedy warto go mieć."
+          },
+          {
+            "question": "Co się stanie, jeśli zachorujesz albo będziesz niedostępny w trakcie projektu?",
+            "answer": "Realne pytanie przy jednej osobie, więc odpowiadam konkretnie. Po pierwsze, kod od pierwszego tygodnia jest w repozytorium, do którego masz dostęp, więc praca nigdy nie znika razem ze mną. Po drugie, piszę w standardowych technologiach (React, Next.js), które zna każdy programista na rynku, więc w skrajnej sytuacji ktokolwiek może przejąć projekt bez archeologii. Po trzecie, przy dłuższej niedostępności harmonogram przesuwamy, a nie udajemy, że nic się nie stało."
+          },
+          {
+            "question": "Czym różni się programista od grafika przy tworzeniu strony?",
+            "answer": "Grafik projektuje, jak strona wygląda. Programista sprawia, że działa: szybko się ładuje, dobrze indeksuje w Google, poprawnie działa formularz i nic się nie rozjeżdża na telefonie. Problem wielu stron polega na tym, że robił je tylko jeden z tych dwóch. U mnie dostajesz obie warstwy: projekt graficzny i kod, i jedną osobę odpowiedzialną za efekt końcowy, bez przerzucania winy między wykonawcami."
           }
         ]
       },
@@ -1684,11 +1696,31 @@
           },
           {
             "question": "Jak długo trwa realizacja typowego projektu?",
-            "answer": "Proste strony biznesowe: 3-5 tygodni. Platformy SaaS lub niestandardowe sklepy internetowe: zazwyczaj 8-12 tygodni, w zależności od integracji, złożoności bazy danych i wymagań funkcjonalnych."
+            "answer": "Zamiast podawać jedną liczbę: o terminie decydują trzy rzeczy. Zakres, czyli ile podstron i funkcji ma projekt. Treści, bo najczęstszym hamulcem jest czekanie na teksty i zdjęcia od klienta, dlatego pomagam je przygotować. I liczba integracji, bo płatności, magazyn czy systemy zewnętrzne wydłużają testy. Konkretne widełki czasowe dla każdej usługi znajdziesz na jej podstronie, a dokładny termin dostajesz w wycenie i on obowiązuje."
           },
           {
             "question": "Jak komunikujemy się podczas projektu?",
             "answer": "Bezpośrednia komunikacja przez email, Slack lub telefon, jak wolisz. Cotygodniowe spotkania informują Cię o postępach, przeszkodach i kolejnych krokach. Bez niepotrzebnych zebrań czy raportów statusowych."
+          },
+          {
+            "question": "Jak długo trwa przygotowanie wyceny projektu?",
+            "answer": "Dobę, czasem dwie przy bardziej złożonych systemach. Po jednej rozmowie albo wiadomości z opisem projektu dostajesz konkretną cenę i harmonogram, nie widełki od-do rozciągnięte tak, że nic nie znaczą. Wycena jest bezpłatna i do niczego nie zobowiązuje. Jeśli czegoś nie wiem, zadaję pytania od razu, zamiast wyceniać w ciemno i podnosić cenę w trakcie."
+          },
+          {
+            "question": "Co to jest brief projektowy i po co go wypełniam?",
+            "answer": "Brief to kilka pytań o Twoją firmę, klientów i cel strony: co ma się wydarzyć, gdy ktoś na nią wejdzie. Nie jest do tego potrzebny formularz na dwadzieścia stron. U mnie brief to zwykle jedna rozmowa i krótkie podsumowanie na piśmie, żebyśmy obaj wiedzieli, co budujemy. Dobrze wypełniony brief to mniej poprawek później, bo projekt od początku celuje w to, czego naprawdę potrzebujesz."
+          },
+          {
+            "question": "Jak wygląda proces tworzenia strony internetowej krok po kroku?",
+            "answer": "U mnie tak: rozmowa o celach i wycena w ciągu doby. Potem projekt graficzny do Twojej akceptacji, żadnego kodowania w ciemno. Po akceptacji piszę kod i wdrażam stronę na adres testowy, gdzie klikasz wszystko na żywo. Nanoszę poprawki, podpinamy domenę, analitykę i mapę strony, i startujemy. Na koniec dostajesz dostępy oraz krótkie szkolenie, jak samodzielnie ogarniać podstawy."
+          },
+          {
+            "question": "Czy mogę zmienić zakres projektu w trakcie realizacji?",
+            "answer": "Możesz, i to normalne, bo projekty żyją. Ważne, jak to jest rozliczane: drobne zmiany mieszczą się w rundach poprawek przewidzianych w umowie, a większe (nowa podstrona, dodatkowa funkcja) wyceniam osobno, zanim je zrobię, nie po fakcie. Dzięki temu wiesz, ile co kosztuje, przed decyzją. Czego nie robię: nie doliczam nic po cichu do końcowej faktury."
+          },
+          {
+            "question": "Jak wygląda odbiór końcowy strony internetowej?",
+            "answer": "Przed startem przechodzimy stronę razem: każda podstrona, formularz, wersja mobilna, szybkość ładowania. Dostajesz listę tego, co zostało zrobione, komplet dostępów (domena, hosting, analityka) i potwierdzenie przeniesienia praw do kodu. Dopiero po Twojej akceptacji strona idzie na produkcję. Jeśli w pierwszych tygodniach coś wyskoczy, poprawiam to w ramach gwarancji, bez dyskusji, czyj to problem."
           }
         ]
       },
@@ -1710,6 +1742,18 @@
           {
             "question": "Czy mogę płacić w ratach?",
             "answer": "Tak, przy większych projektach. Płatności są podzielone na jasne etapy powiązane z dostarczoną pracą, więc płacisz za rzeczywisty postęp."
+          },
+          {
+            "question": "Stała cena czy stawka godzinowa, co lepsze przy zamawianiu strony?",
+            "answer": "Dla klienta prawie zawsze stała cena, i taką pracuję. Przy stawce godzinowej ryzyko przeciągania projektu jest po Twojej stronie: im dłużej trwa, tym więcej płacisz. Przy stałej cenie ryzyko jest po mojej, więc mam powód, żeby pracować sprawnie. Stawka godzinowa ma sens tylko przy drobnych, trudnych do przewidzenia poprawkach w istniejących projektach, i wtedy mówię to otwarcie."
+          },
+          {
+            "question": "Czy zadatek jest zwrotny, jeśli zrezygnuję z projektu?",
+            "answer": "Zadatek z definicji zabezpiecza obie strony: jeśli rezygnujesz bez winy wykonawcy, zwykle przepada, a jeśli to wykonawca zawali, oddaje go podwójnie, tak działa to w polskim prawie. W praktyce u mnie: jeśli rezygnujesz zanim zacznę pracę, oddaję pieniądze, bo nie biorę zapłaty za nic. Jeśli praca już ruszyła, rozliczamy uczciwie wykonany etap. Wszystko to stoi w umowie, zanim cokolwiek podpiszesz."
+          },
+          {
+            "question": "Czy dostanę fakturę VAT za stronę internetową?",
+            "answer": "Tak, wystawiam normalną fakturę, którą Twoja księgowa rozliczy jak każdy koszt firmowy. To standard, ale warto pytać, bo część rynku działa bez działalności, na umowach o dzieło z osobą prywatną, co komplikuje rozliczenie i odpowiedzialność. Faktura porządkuje też gwarancję i prawa autorskie: jest dokument, jest strona, jest odpowiedzialny wykonawca."
           }
         ]
       },
@@ -1731,6 +1775,30 @@
           {
             "question": "Jak zapewniasz bezpieczeństwo i wydajność mojej strony?",
             "answer": "Stosuję nowoczesne praktyki bezpieczeństwa dla uwierzytelniania i obsługi danych. Renderowanie po stronie serwera, zoptymalizowane obrazy i odpowiednie cachowanie są wbudowane domyślnie. Core Web Vitals i czasy ładowania są traktowane jako wymagania, nie dodatki."
+          },
+          {
+            "question": "Czy moja strona potrzebuje certyfikatu SSL?",
+            "answer": "Tak, bez wyjątków. SSL (kłódka przy adresie) szyfruje dane między przeglądarką a stroną, a bez niego przeglądarki straszą użytkowników komunikatem o niebezpiecznej stronie i Google obniża pozycje. Dobra wiadomość: na nowoczesnym hostingu certyfikat jest darmowy i odnawia się sam. U mnie SSL jest skonfigurowany od pierwszego dnia, a jeśli ktoś każe Ci za niego płacić osobno, to znak ostrzegawczy."
+          },
+          {
+            "question": "Jak sprawdzić, czy strona internetowa jest bezpieczna dla klientów?",
+            "answer": "Trzy szybkie testy bez wiedzy technicznej: sprawdź kłódkę przy adresie (SSL), wpisz stronę w bezpłatny test Google PageSpeed i zobacz, czy nie wyświetla ostrzeżeń, oraz sprawdź, czy formularz kontaktowy ma informację o przetwarzaniu danych. Głębiej: strona bez systemu wtyczek (pisana od zera) ma po prostu mniej miejsc, przez które można się włamać, bo nie ma przestarzałych dodatków do wykorzystania."
+          },
+          {
+            "question": "Czy warto mieć responsywną wersję strony na telefon?",
+            "answer": "To już nie jest opcja. Ponad połowa ruchu w polskim internecie idzie z telefonów, a Google ocenia stronę przede wszystkim w wersji mobilnej, więc strona słaba na telefonie ma słabe pozycje także na komputerze. U mnie każdy projekt powstaje mobile-first: najpierw dopracowany na telefonie, potem na większych ekranach. Jeśli Twoja obecna strona wymaga szczypania palcami, żeby coś przeczytać, tracisz klientów codziennie."
+          },
+          {
+            "question": "Czy strona zgodna z RODO wymaga specjalnych funkcji?",
+            "answer": "Kilku konkretnych rzeczy: polityki prywatności, zgody przy formularzach, poprawnie skonfigurowanej analityki i baneru cookies tam, gdzie faktycznie jest potrzebny (nie wszędzie jest). To nie są ozdobniki, tylko obowiązek prawny z realnymi karami. Wbudowuję to w każdą stronę na etapie kodu, zamiast doklejać wtyczką. Zastrzeżenie: nie jestem prawnikiem, przy nietypowym przetwarzaniu danych warto skonsultować szczegóły z kancelarią."
+          },
+          {
+            "question": "Czy możesz przejąć i dokończyć projekt po innym programiście?",
+            "answer": "Tak, robię to regularnie, ale zawsze zaczynam od przeglądu kodu, bo bywa różnie: czasem wystarczy dokończyć, czasem taniej jest napisać od nowa niż ratować. Po przeglądzie dostajesz szczerą ocenę i obie ścieżki z cenami. Warunek: potrzebuję dostępu do kodu i hostingu. Jeśli poprzedni wykonawca nie chce ich wydać, to najpierw problem własności do rozwiązania, i pomogę Ci go nazwać po imieniu."
+          },
+          {
+            "question": "Jak przenieść stronę internetową do innego wykonawcy w przyszłości?",
+            "answer": "Jeśli strona była zrobiona porządnie, to proste: nowy wykonawca dostaje dostęp do repozytorium kodu, domeny i hostingu, i przejmuje projekt. Dlatego tak ważne jest, żeby te trzy rzeczy były Twoje od początku. U mnie to standard: kod w repozytorium z Twoim dostępem, domena i hosting na Ciebie. Żadnego uzależnienia od autorskiego systemu, którego nikt inny nie zna, i żadnych opłat za wyjście."
           }
         ]
       },
@@ -1756,6 +1824,26 @@
           {
             "question": "Kto jest właścicielem strony, kodu i domeny po zakończeniu projektu?",
             "answer": "U mnie: Ty, w całości. Kod trafia do repozytorium, do którego masz dostęp, domena jest zarejestrowana na Ciebie, hosting na Twoje konto, a prawa autorskie przechodzą na Ciebie po rozliczeniu. To powinno być standardem, a bywa wyjątkiem: część firm trzyma domenę i hosting u siebie, żeby utrudnić odejście. Jeśli wykonawca nie chce przenieść własności, to nie jest oszczędność, tylko dług."
+          },
+          {
+            "question": "Jak sprawdzić, czy programista jest wiarygodny, zanim podpiszę umowę?",
+            "answer": "Nie pytaj o technologie, tylko o dowody. Poproś o adresy działających stron i sprawdź je na telefonie: szybkość, wygląd, czy w ogóle żyją. Sprawdź, czy wykonawca pisze publicznie o swojej pracy, bo blef trudno utrzymać na piśmie przez lata. Zapytaj o dostępy: kto będzie właścicielem domeny i kodu. I zwróć uwagę, czy zadaje pytania o Twój biznes, czy tylko wysyła cennik. Ja te testy przechodzę z góry: realizacje i artykuły są publiczne."
+          },
+          {
+            "question": "Czy podpisujesz NDA przed poznaniem szczegółów projektu?",
+            "answer": "Tak, jeśli tego potrzebujesz, podpisuję umowę o poufności przed rozmową o szczegółach, to normalna praktyka przy pomysłach na produkty. Z doświadczenia dodam: przy typowej stronie firmowej NDA rzadko jest potrzebne, bo nie ma tam tajemnic handlowych, i nalega na nie głównie rynek aplikacji. Tak czy inaczej, szczegóły Twojego projektu nie krążą po moich socialach ani portfolio bez Twojej zgody."
+          },
+          {
+            "question": "Na kogo powinna być zarejestrowana domena, gdy zamawiam stronę?",
+            "answer": "Na Ciebie albo Twoją firmę, nigdy na wykonawcę. Domena to Twój adres w internecie: kto ją kontroluje, ten kontroluje Twoją obecność online. Rejestracja domeny na firmę wykonawcy to najczęstszy sposób przywiązywania klienta: przy próbie odejścia okazuje się, że adres nie jest Twój. U mnie domena od pierwszego dnia jest na Twoim koncie, ja dostaję tylko dostęp techniczny, który możesz w każdej chwili odebrać."
+          },
+          {
+            "question": "Umowa o dzieło czy zlecenie, jaką umowę podpisuję na stronę internetową?",
+            "answer": "Strona internetowa to klasyczna umowa o dzieło: zamawiasz konkretny rezultat, nie godziny starań. To dla Ciebie korzystne, bo rozliczamy efekt, a odpowiedzialność za jego osiągnięcie jest po mojej stronie. W praktyce podpisujemy umowę z opisem zakresu, ceną, terminem i przeniesieniem praw autorskich, a fakturę wystawiam z działalności. Umowa zlecenie pasuje raczej do stałej opieki nad stroną niż do jej budowy."
+          },
+          {
+            "question": "Ile rund poprawek powinna przewidywać umowa na stronę?",
+            "answer": "Standard rynkowy to dwie do trzech rund na etapie projektu graficznego i jedna lub dwie po wdrożeniu, i taka liczba powinna stać w umowie, bo \"poprawki do skutku\" kończą się źle dla obu stron. Ważniejsze od liczby jest zdefiniowanie, czym jest poprawka (korekta tego, co ustalone), a czym nowy zakres (nowa funkcja czy podstrona). U mnie to rozróżnienie jest w umowie wprost, więc nie ma sporów interpretacyjnych."
           }
         ]
       },
@@ -1777,6 +1865,22 @@
           {
             "question": "Co jeśli później potrzebuję nowych funkcji?",
             "answer": "Nowe funkcje mogą być dodane jako osobne projekty lub w ramach umowy serwisowej. Czysty kod oznacza, że rozszerzanie funkcjonalności jest zwykle proste i przewidywalne."
+          },
+          {
+            "question": "Jaka jest gwarancja na wykonaną stronę internetową i co obejmuje?",
+            "answer": "U mnie: błędy w tym, co zbudowałem, naprawiam bezpłatnie, bez limitu czasu na zgłoszenie oczywistych usterek i bez dyskusji. Gwarancja obejmuje działanie strony w kształcie z umowy: formularze, podstrony, wersję mobilną. Nie obejmuje nowych funkcji ani zmian treści, to normalna praca do wyceny. Warto to porównywać: część rynku daje 30 dni gwarancji i potem każe płacić nawet za naprawę własnych błędów."
+          },
+          {
+            "question": "Co zrobić, gdy strona internetowa przestała działać?",
+            "answer": "Najpierw sprawdź, czy to strona, czy domena: wejdź na adres z telefonu z wyłączonym Wi-Fi i sprawdź skrzynkę, czy nie przyszło przypomnienie o wygasającej domenie lub hostingu, bo to najczęstsza przyczyna. Potem napisz do wykonawcy. Strony, które buduję, mają monitoring, więc o awarii zwykle wiem, zanim ktoś zdąży się zdenerwować, a statyczna strona bez wtyczek ma po prostu bardzo mało powodów, żeby paść."
+          },
+          {
+            "question": "Czy robisz kopie zapasowe strony?",
+            "answer": "Tak, i to w sposób lepszy niż klasyczny backup: kod strony żyje w repozytorium z pełną historią zmian, więc każdą wersję da się odtworzyć w kilka minut, a wdrożenia można cofnąć jednym poleceniem. Treści z systemu zarządzania mają swoje kopie po stronie usługi. To duża różnica względem stron na wtyczkach, gdzie backup bywa wtyczką, która sama potrafi zawieść."
+          },
+          {
+            "question": "Co się stanie, jeśli przestanę płacić za utrzymanie strony?",
+            "answer": "U mnie nie ma tego problemu, bo nie sprzedaję abonamentu za opiekę. Strona pisana od zera nie wymaga comiesięcznego doglądania: nie ma wtyczek do aktualizowania, więc płacisz tylko za domenę i hosting, razem zwykle sto kilkadziesiąt złotych rocznie. Porównaj to z modelem, w którym po wstrzymaniu opłaty za \"pakiet opieki\" strona zostaje bez aktualizacji bezpieczeństwa i staje się rosnącym ryzykiem."
           }
         ]
       }
