@@ -128,7 +128,7 @@ const ServicePageClient: React.FC<ServicePageClientProps> = ({ locale, dictionar
                             viewport={shouldUseViewportTrigger ? { once: true } : undefined}
                             transition={{ duration: shouldUseViewportTrigger ? 0.6 : 0.2, delay: shouldUseViewportTrigger ? section.paragraphs.length * 0.1 : 0 }}
                             style={{ willChange: shouldUseViewportTrigger ? 'transform, opacity' : 'opacity' }}
-                            className="pt-2 sm:pt-3"
+                            className="pt-2 sm:pt-3 flex flex-col items-start gap-2 sm:gap-2.5"
                           >
                             {section.links.map((link, linkIndex) => (
                               <Link
