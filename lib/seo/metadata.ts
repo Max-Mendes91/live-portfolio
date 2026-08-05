@@ -58,8 +58,12 @@ export function generateHomePageMetadata(
   Object.entries(hrefLang).forEach(([lang, path]) => {
     languages[lang] = getFullUrl(path);
   });
-  // x-default points to English as the fallback
-  languages['x-default'] = languages['en'];
+  // x-default is the apex, NOT /en. The apex 307-redirects by Accept-Language
+  // (middleware.ts), which is exactly the "auto-redirecting selector page" that
+  // x-default is defined for. It is also the URL Google actually canonicalised
+  // the homepage to, so naming it here keeps the hreflang cluster and the
+  // indexed URL in agreement. Subpages keep x-default = /en (no apex twin).
+  languages['x-default'] = getFullUrl('/');
 
   return {
     ...generateBaseMetadata(locale),

@@ -9,6 +9,15 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 > **MANDATORY FOR RESPONSIVE:** For device breakpoints, see [.claude/DEVICE_BREAKPOINTS.md](.claude/DEVICE_BREAKPOINTS.md) - **ALWAYS reference when creating/editing components**
 > **CRITICAL:** For session handoffs, see [.claude/skills/handoff.md](.claude/skills/handoff.md) - USE THIS when user asks for "handoff"
 
+## Spec-Driven Development (MANDATORY)
+
+For any **new feature** (new page, new section, new functionality): write a spec first.
+
+1. Run `/spec <feature idea>` — it interviews the user, writes `specs/NNN-name.md` from `specs/TEMPLATE.md`
+2. No implementation code while the spec status is `draft` — wait for user approval
+3. Build exactly what the approved spec says; if reality forces a change, update the spec and confirm first
+4. Small fixes (typos, bug fixes, style tweaks) do NOT need a spec
+
 ## Project Overview
 
 Dark-themed portfolio website for Max Mendes, a freelance web developer based in Częstochowa, Poland.

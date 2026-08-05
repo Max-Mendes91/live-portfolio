@@ -16,6 +16,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     pl: string;
     priority: number;
     changeFrequency: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
+    // Override the x-default target. Only the homepage needs this: the apex is
+    // the Accept-Language redirector, which is what x-default is defined for.
+    xDefault?: string;
   }> = [
     // Homepage
     {
@@ -23,6 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       pl: '/pl',
       priority: 1.0,
       changeFrequency: 'weekly',
+      xDefault: '/',
     },
     // About
     {
@@ -113,7 +117,28 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Generate sitemap entries with hreflang alternates
   const sitemapEntries: MetadataRoute.Sitemap = [];
 
+  // The apex. Google canonicalised the English homepage to `/` (the 307 in
+  // middleware.ts is language-varying, so Google keeps the redirecting URL) and
+  // then reported /en as "Duplicate without user-selected canonical". Declaring
+  // the apex here stops the URL Google actually indexed from being absent from
+  // our own sitemap. Listed first so it reads as the entry point.
+  sitemapEntries.push({
+    url: `${baseUrl}/`,
+    lastModified,
+    changeFrequency: 'weekly',
+    priority: 1.0,
+    alternates: {
+      languages: {
+        en: `${baseUrl}/en`,
+        pl: `${baseUrl}/pl`,
+        'x-default': `${baseUrl}/`,
+      },
+    },
+  });
+
   pages.forEach((page) => {
+    const xDefault = `${baseUrl}${page.xDefault ?? page.en}`;
+
     // English version
     sitemapEntries.push({
       url: `${baseUrl}${page.en}`,
@@ -124,7 +149,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         languages: {
           en: `${baseUrl}${page.en}`,
           pl: `${baseUrl}${page.pl}`,
-          'x-default': `${baseUrl}${page.en}`,
+          'x-default': xDefault,
         },
       },
     });
@@ -139,7 +164,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         languages: {
           en: `${baseUrl}${page.en}`,
           pl: `${baseUrl}${page.pl}`,
-          'x-default': `${baseUrl}${page.en}`,
+          'x-default': xDefault,
         },
       },
     });
